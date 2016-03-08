@@ -4,17 +4,31 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>夏眠鱼</title>
+  <title>Git分支管理策略 | 夏眠鱼</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="夏眠鱼">
-<meta property="og:url" content="http://xiamianyu.github.io/index.html">
+  <meta name="description" content="Git的分支就像一把双刃剑，用对了风生水起，反之引来杀身之祸，哈哈，说得有些严重了。不管是团队开发还是个人开发，也不管是使用Git或是SVN，良好的版本管理策略定能使你事半功倍。
+这里有一篇来自国外牛人Vincent Driesse分享的「A successful Git branching model」，对应的中文翻译在这里，写得很不错，受益匪浅。
+下面是我对该文章的总结，作为学习的笔记吧。
+分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git分支管理策略">
+<meta property="og:url" content="http://xiamianyu.github.io/2016/03/08/Git分支管理策略/index.html">
 <meta property="og:site_name" content="夏眠鱼">
-<meta property="og:description">
+<meta property="og:description" content="Git的分支就像一把双刃剑，用对了风生水起，反之引来杀身之祸，哈哈，说得有些严重了。不管是团队开发还是个人开发，也不管是使用Git或是SVN，良好的版本管理策略定能使你事半功倍。
+这里有一篇来自国外牛人Vincent Driesse分享的「A successful Git branching model」，对应的中文翻译在这里，写得很不错，受益匪浅。
+下面是我对该文章的总结，作为学习的笔记吧。
+分">
+<meta property="og:image" content="http://xiamianyu.github.io/images/git-model.png">
+<meta property="og:image" content="http://xiamianyu.github.io/images/main-branches.png">
+<meta property="og:image" content="http://xiamianyu.github.io/images/feature-branches.png">
+<meta property="og:image" content="http://xiamianyu.github.io/images/hotfix-branches.png">
+<meta property="og:updated_time" content="2016-03-08T14:42:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="夏眠鱼">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Git分支管理策略">
+<meta name="twitter:description" content="Git的分支就像一把双刃剑，用对了风生水起，反之引来杀身之祸，哈哈，说得有些严重了。不管是团队开发还是个人开发，也不管是使用Git或是SVN，良好的版本管理策略定能使你事半功倍。
+这里有一篇来自国外牛人Vincent Driesse分享的「A successful Git branching model」，对应的中文翻译在这里，写得很不错，受益匪浅。
+下面是我对该文章的总结，作为学习的笔记吧。
+分">
   
   
     <link rel="icon" href="favicon.png">
@@ -152,9 +166,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-Git分支管理策略" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Git分支管理策略" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/03/08/Git分支管理策略/" class="article-date">
@@ -170,12 +182,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/08/Git分支管理策略/">Git分支管理策略</a>
+    <h1 class="article-title" itemprop="name">
+      Git分支管理策略
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分支管理/">分支管理</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -229,20 +252,19 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分支管理/">分支管理</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/08/新的开始/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">新的开始</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -253,66 +275,6 @@
 
 
 
-
-  
-    <article id="post-新的开始" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/08/新的开始/" class="article-date">
-  	<time datetime="2016-03-08T12:59:15.000Z" itemprop="datePublished">2016-03-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/08/新的开始/">新的开始</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>回顾过去的一年，脑子有些空白，只是感叹时间过得好快。静下心来想想，过去的一年，并非没有收获，只是总结得太少，以至于回望过去，总是患得患失。亡羊补牢为时不晚，从这一刻开始，用心记录自己的成长吧，你可以的。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -336,8 +298,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
