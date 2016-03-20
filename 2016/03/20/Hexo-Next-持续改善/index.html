@@ -75,7 +75,7 @@
 1## Plugins: http://hexo.io/plugins/&amp;#10;plugins: hexo-generate-feed
 在 主题配置 _config.xml中添加
 1# Set rss to false to disable fee">
-<meta property="og:updated_time" content="2016-03-20T14:51:23.000Z">
+<meta property="og:updated_time" content="2016-03-20T15:15:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo NexT持续改善">
 <meta name="twitter:description" content="添加 RSS安装插件
@@ -314,12 +314,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
 <p>部署到 Github</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#21551;&#21160;&#26381;&#21153;&#22120;&#26597;&#30475;&#26159;&#21542;&#26377;&#25928;&#10;$ hexo s&#10;&#10;# &#37096;&#32626;&#21040; Github &#10;$ hexo d</span><br></pre></td></tr></table></figure>
-<h3 id="u6DFB_u52A0_u9605_u8BFB_u6570"><a href="#u6DFB_u52A0_u9605_u8BFB_u6570" class="headerlink" title="添加阅读数"></a>添加阅读数</h3><p>在 <a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a> 平台申请一个账号，创建应用，获取 AppID 和 AppKey，在 <code>主题配置</code> _config.yml 中配置</p>
+<h3 id="u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1"><a href="#u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1" class="headerlink" title="添加文章阅读量统计"></a>添加文章阅读量统计</h3><blockquote>
+<p><a href="http://notes.xiamo.tk/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html" target="_blank" rel="external">更详细的教程</a></p>
+</blockquote>
+<p>在 <a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a> 平台申请一个账号，创建应用，配置相关信息，获取 AppID 和 AppKey，在 <code>主题配置</code> _config.yml 中配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Show number of visitors to each article.&#10;# You can visit https://leancloud.cn get AppID and AppKey.&#10;leancloud_visitors:&#10;  enable: true&#10;  app_id: xxx&#10;  app_key: xxx</span><br></pre></td></tr></table></figure>
 <h3 id="u6DFB_u52A0_CNZZ__u7EDF_u8BA1"><a href="#u6DFB_u52A0_CNZZ__u7EDF_u8BA1" class="headerlink" title="添加 CNZZ 统计"></a>添加 CNZZ 统计</h3><p>在 <a href="http://tongji.cnzz.com/" target="_blank" rel="external">CNZZ</a> 平台申请一个账号，添加站点，获取站点ID，在 <code>主题配置</code> _config.xml 中配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># CNZZ count&#10;cnzz_siteid: xxx</span><br></pre></td></tr></table></figure>
 <h3 id="u6DFB_u52A0_u591A_u8BF4"><a href="#u6DFB_u52A0_u591A_u8BF4" class="headerlink" title="添加多说"></a>添加多说</h3><p>在 <a href="http://duoshuo.com/" target="_blank" rel="external">多说</a> 平台申请一个账号，点击「我要安装」，创建站点，设置多说域名，在 <code>主题配置</code> _config.xml 中配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;# &#35774;&#32622;&#22810;&#35828;&#22495;&#21517;&#10;duoshuo_shortname: xiamianyu&#10;&#10;# &#24320;&#21551;&#22810;&#35828;&#20998;&#20139;&#10;duoshuo_share: true&#10;&#10;# &#24320;&#21551;&#22810;&#35828;&#28909;&#35780;&#25991;&#31456;&#10;duoshuo_hotartical: true&#10;&#10;# &#26174;&#31034;&#22810;&#35828;&#35780;&#35770;&#26694;UA&#20449;&#24687;&#10;# Make duoshuo show UA&#10;# user_id must NOT be null when admin_enable is true!&#10;# you can visit http://dev.duoshuo.com get duoshuo user id.&#10;duoshuo_info:&#10;  ua_enable: true&#10;  admin_enable: true&#10;  user_id: xxx&#10;  admin_nickname: xxx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#35774;&#32622;&#22810;&#35828;&#22495;&#21517;&#10;duoshuo_shortname: xiamianyu&#10;&#10;# &#24320;&#21551;&#22810;&#35828;&#20998;&#20139;&#10;duoshuo_share: true&#10;&#10;# &#24320;&#21551;&#22810;&#35828;&#28909;&#35780;&#25991;&#31456;&#10;duoshuo_hotartical: true&#10;&#10;# &#26174;&#31034;&#22810;&#35828;&#35780;&#35770;&#26694;UA&#20449;&#24687;&#10;# Make duoshuo show UA&#10;# user_id must NOT be null when admin_enable is true!&#10;# you can visit http://dev.duoshuo.com get duoshuo user id.&#10;duoshuo_info:&#10;  ua_enable: true&#10;  admin_enable: true&#10;  user_id: xxx&#10;  admin_nickname: xxx</span><br></pre></td></tr></table></figure>
 <p><strong>参考</strong></p>
 <p><a href="http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more" target="_blank" rel="external">http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more</a><br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">http://theme-next.iissnan.com/getting-started.html</a></p>
 
@@ -521,7 +524,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_RSS"><span class="nav-number">1.</span> <span class="nav-text">添加 RSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u9605_u8BFB_u6570"><span class="nav-number">2.</span> <span class="nav-text">添加阅读数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_CNZZ__u7EDF_u8BA1"><span class="nav-number">3.</span> <span class="nav-text">添加 CNZZ 统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u591A_u8BF4"><span class="nav-number">4.</span> <span class="nav-text">添加多说</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_RSS"><span class="nav-number">1.</span> <span class="nav-text">添加 RSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1"><span class="nav-number">2.</span> <span class="nav-text">添加文章阅读量统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_CNZZ__u7EDF_u8BA1"><span class="nav-number">3.</span> <span class="nav-text">添加 CNZZ 统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u591A_u8BF4"><span class="nav-number">4.</span> <span class="nav-text">添加多说</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
