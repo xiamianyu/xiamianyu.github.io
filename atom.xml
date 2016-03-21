@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Towards The Sea</title>
+  <title>风景不在别处</title>
   
   <link href="/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>http://xiamianyu.github.io/</id>
   
   <author>
-    <name>Ivan</name>
+    <name>夏眠鱼</name>
     
   </author>
   
