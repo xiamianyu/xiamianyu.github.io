@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-03-20T15:36:32.000Z</updated>
+  <updated>2016-03-21T14:14:45.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>团队建设构想</title>
+    <link href="http://xiamianyu.github.io/2016/03/21/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE%E6%9E%84%E6%83%B3/"/>
+    <id>http://xiamianyu.github.io/2016/03/21/团队建设构想/</id>
+    <published>2016-03-21T12:24:49.000Z</published>
+    <updated>2016-03-21T14:14:45.000Z</updated>
+    
+    <content type="html">&lt;p&gt;从去年8月份开始着手团队的建设，到今天可以说「革命才刚刚开始」。所幸的是，经过大半年的努力，团队有点军队的味道了，不再是各自为政。期间，我们有了的&lt;code&gt;开发规范&lt;/code&gt;、&lt;code&gt;项目文档管理规范&lt;/code&gt;、&lt;code&gt;Git版本管理策略&lt;/code&gt;、&lt;code&gt;每周站立会议&lt;/code&gt;、&lt;code&gt;每周技术分享&lt;/code&gt;等，&lt;code&gt;每周技术分享&lt;/code&gt;刚开始不久，效果差强人意，但是没关系，相信大家可以把它做得更好。&lt;/p&gt;
+&lt;h2 id=&quot;u4ECA_u5E74_u7684_u76EE_u6807&quot;&gt;&lt;a href=&quot;#u4ECA_u5E74_u7684_u76EE_u6807&quot; class=&quot;headerlink&quot; title=&quot;今年的目标&quot;&gt;&lt;/a&gt;今年的目标&lt;/h2&gt;&lt;h3 id=&quot;u642D_u5EFA_u56E2_u961F_u6280_u672F_u4ED3_u5E93&quot;&gt;&lt;a href=&quot;#u642D_u5EFA_u56E2_u961F_u6280_u672F_u4ED3_u5E93&quot; class=&quot;headerlink&quot; title=&quot;搭建团队技术仓库&quot;&gt;&lt;/a&gt;搭建团队技术仓库&lt;/h3&gt;&lt;p&gt;团队技术仓库，这个大家一定不陌生。团队在发展过程中，会慢慢积累自己的技术，我们可以把这些技术以依赖库的形式存放起来，可以被多个项目引用，这样可以大大提高团队开发效率。但是，怎样去管理依赖库呢？头疼… 如果把所有积累的技术都放到一个依赖库中，对于只用依赖库少许功能的项目，无形中添加了很多无关代码，APK 的体积更大，这是很不可取的。经过大家的讨论后，决定建两个技术仓库：常用技术仓库和备用技术仓库。&lt;/p&gt;
+&lt;h4 id=&quot;u5E38_u7528_u6280_u672F_u4ED3_u5E93&quot;&gt;&lt;a href=&quot;#u5E38_u7528_u6280_u672F_u4ED3_u5E93&quot; class=&quot;headerlink&quot; title=&quot;常用技术仓库&quot;&gt;&lt;/a&gt;常用技术仓库&lt;/h4&gt;&lt;p&gt;作为所有项目的基础依赖库，主要封装了 BaseActivity、BaseFragment、网络请求、通用适配器、图片加载、常用的工具类、自定义控件等大部分项目通用的技术。&lt;/p&gt;
+&lt;h4 id=&quot;u5907_u7528_u6280_u672F_u4ED3_u5E93&quot;&gt;&lt;a href=&quot;#u5907_u7528_u6280_u672F_u4ED3_u5E93&quot; class=&quot;headerlink&quot; title=&quot;备用技术仓库&quot;&gt;&lt;/a&gt;备用技术仓库&lt;/h4&gt;&lt;p&gt;这里存放的是一些项目通用性（因公司业务核心不用其通用性也不用）比较低的技术，如图片美化、视屏播放等&lt;/p&gt;
+&lt;h3 id=&quot;u642D_u5EFA_u56E2_u961F_u6280_u672F_u5206_u4EAB_u535A_u5BA2&quot;&gt;&lt;a href=&quot;#u642D_u5EFA_u56E2_u961F_u6280_u672F_u5206_u4EAB_u535A_u5BA2&quot; class=&quot;headerlink&quot; title=&quot;搭建团队技术分享博客&quot;&gt;&lt;/a&gt;搭建团队技术分享博客&lt;/h3&gt;&lt;p&gt;这段时间的技术分享，效果一般般，刚开始，大家都没经验，表达能力也有待提高，最重要是怎么去管理每次分享的内容，我们希望每一次的分享，都能够存档。目前的分享文档都放到SVN上管理，可我发现可读性很差，大家懒得去看那些 Word、PDF，而且这些文档没有什么排版，基本都是分享者临时的手稿，可读性很差，怎么破？于是我们想到了博客。每周分享，时间过于仓促，准备不足，后期可以把分享过程中遇到的问题补充完成，对排版和文字描述稍微润色，写到博客上，何尝不是件好事！我的想法是使用 Github + Hexo 来搭建轻量级的博客，而且CTO也同意了。&lt;/p&gt;
+&lt;h3 id=&quot;u642D_u5EFA_u81EA_u52A8_u5316_u6253_u5305_u5E73_u53F0&quot;&gt;&lt;a href=&quot;#u642D_u5EFA_u81EA_u52A8_u5316_u6253_u5305_u5E73_u53F0&quot; class=&quot;headerlink&quot; title=&quot;搭建自动化打包平台&quot;&gt;&lt;/a&gt;搭建自动化打包平台&lt;/h3&gt;&lt;p&gt;这个是看了「APP 研发录」才受到的启发，原来还有这么高级的事，看来自己真的是太low了。所谓自动化打包，就是有一个程序，它能获取你最新的代码、编译、打包、发邮件通知。由于「APP 研发录」给的是基于 Eclipse 的自动化打包教程，我们还得去调研基于 Android Studio 的自动化打包平台搭建。&lt;/p&gt;
+&lt;h3 id=&quot;u52A0_u5165_Code_Review&quot;&gt;&lt;a href=&quot;#u52A0_u5165_Code_Review&quot; class=&quot;headerlink&quot; title=&quot;加入 Code Review&quot;&gt;&lt;/a&gt;加入 Code Review&lt;/h3&gt;&lt;p&gt;虽然团队已经有了自己的开发规范，但是新人入职，刚开始参与项目，一般还不怎么适应，写的代码有些乱，这时候就需要加入代码审查机制。参照「APP 研发录」的，对老员工不再进行Code Review，对新员工、实习生和应届生，要为他们每个人指定一个 Code Review 的老员工，至少3个月之内。每周一次 Code Review。后面可能要加入 GitLab 等第三方可视化的代码审查平台。&lt;/p&gt;
+&lt;h2 id=&quot;u6574_u4F53_u65B9_u6848&quot;&gt;&lt;a href=&quot;#u6574_u4F53_u65B9_u6848&quot; class=&quot;headerlink&quot; title=&quot;整体方案&quot;&gt;&lt;/a&gt;整体方案&lt;/h2&gt;&lt;p&gt;用 Gliffy 导出来的图片有些模糊，怎么可以这样。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/team-building-all.png&quot; alt=&quot;team-building-all&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从去年8月份开始着手团队的建设，到今天可以说「革命才刚刚开始」。所幸的是，经过大半年的努力，团队有点军队的味道了，不再是各自为政。期间，我们有了的&lt;code&gt;开发规范&lt;/code&gt;、&lt;code&gt;项目文档管理规范&lt;/code&gt;、&lt;code&gt;Git版本管理策略&lt;/code&gt;、&lt;
+    
+    </summary>
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo NexT持续改善</title>
