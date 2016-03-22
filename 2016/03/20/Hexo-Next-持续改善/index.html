@@ -61,9 +61,9 @@
 
 <meta name="description" content="添加 RSS安装插件
 1$ npm install --save hexo-generator-feed
-在 站点配置 _config.xml中添加
+在 站点配置 _config.yml中添加
 12## Plugins: http://hexo.io/plugins/plugins: hexo-generate-feed
-在 主题配置 _config.xml中添加
+在 主题配置 _config.yml中添加
 1234# Set rss to false to disable feed">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo NexT持续改善">
@@ -71,18 +71,20 @@
 <meta property="og:site_name" content="风景不在别处">
 <meta property="og:description" content="添加 RSS安装插件
 1$ npm install --save hexo-generator-feed
-在 站点配置 _config.xml中添加
+在 站点配置 _config.yml中添加
 12## Plugins: http://hexo.io/plugins/plugins: hexo-generate-feed
-在 主题配置 _config.xml中添加
+在 主题配置 _config.yml中添加
 1234# Set rss to false to disable feed">
-<meta property="og:updated_time" content="2016-03-20T15:36:32.000Z">
+<meta property="og:image" content="http://xiamianyu.github.io/images/markdown-sublimetext.png">
+<meta property="og:image" content="http://xiamianyu.github.io/images/previewer-sublimetext.png">
+<meta property="og:updated_time" content="2016-03-22T16:06:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo NexT持续改善">
 <meta name="twitter:description" content="添加 RSS安装插件
 1$ npm install --save hexo-generator-feed
-在 站点配置 _config.xml中添加
+在 站点配置 _config.yml中添加
 12## Plugins: http://hexo.io/plugins/plugins: hexo-generate-feed
-在 主题配置 _config.xml中添加
+在 主题配置 _config.yml中添加
 1234# Set rss to false to disable feed">
 
 
@@ -305,24 +307,34 @@
 
       
         <h3 id="u6DFB_u52A0_RSS"><a href="#u6DFB_u52A0_RSS" class="headerlink" title="添加 RSS"></a>添加 RSS</h3><p>安装插件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-generator-feed</span><br></pre></td></tr></table></figure>
-<p>在 <code>站点配置</code> _config.xml中添加</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">plugins: hexo-generate-feed</span><br></pre></td></tr></table></figure>
-<p>在 <code>主题配置</code> _config.xml中添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<p>在 <code>站点配置</code> _config.yml中添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Plugins: http://hexo.io/plugins/</span></span><br><span class="line">plugins: hexo-generate-feed</span><br></pre></td></tr></table></figure>
+<p>在 <code>主题配置</code> _config.yml中添加</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Set rss to false to disable feed link.</span><br><span class="line"># Leave rss as empty to use site's feed link.</span><br><span class="line"># Set rss to specific value if you have burned your feed already.</span><br><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure>
 <p>生成 RSS Feed，在 ./public 文件夹中看到 atom.xml 文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<p>部署到 Github</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 启动服务器查看是否有效</span><br><span class="line">$ hexo s</span><br><span class="line"></span><br><span class="line"># 部署到 Github </span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<p>部署到 GitHub</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动服务器查看是否有效</span></span><br><span class="line">$ hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署到 Github </span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <h3 id="u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1"><a href="#u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1" class="headerlink" title="添加文章阅读量统计"></a>添加文章阅读量统计</h3><blockquote>
 <p><a href="http://notes.xiamo.tk/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html" target="_blank" rel="external">更详细的教程</a></p>
 </blockquote>
 <p>在 <a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a> 平台申请一个账号，创建应用，配置相关信息，获取 AppID 和 AppKey，在 <code>主题配置</code> _config.yml 中配置</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Show number of visitors to each article.</span><br><span class="line"># You can visit https://leancloud.cn get AppID and AppKey.</span><br><span class="line">leancloud_visitors:</span><br><span class="line">  enable: true</span><br><span class="line">  app_id: xxx</span><br><span class="line">  app_key: xxx</span><br></pre></td></tr></table></figure>
-<h3 id="u6DFB_u52A0_CNZZ__u7EDF_u8BA1"><a href="#u6DFB_u52A0_CNZZ__u7EDF_u8BA1" class="headerlink" title="添加 CNZZ 统计"></a>添加 CNZZ 统计</h3><p>在 <a href="http://tongji.cnzz.com/" target="_blank" rel="external">CNZZ</a> 平台申请一个账号，添加站点，获取站点ID，在 <code>主题配置</code> _config.xml 中配置</p>
+<h3 id="u6DFB_u52A0_CNZZ__u7EDF_u8BA1"><a href="#u6DFB_u52A0_CNZZ__u7EDF_u8BA1" class="headerlink" title="添加 CNZZ 统计"></a>添加 CNZZ 统计</h3><p>在 <a href="http://tongji.cnzz.com/" target="_blank" rel="external">CNZZ</a> 平台申请一个账号，添加站点，获取站点ID，在 <code>主题配置</code> _config.yml 中配置</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># CNZZ count</span><br><span class="line">cnzz_siteid: xxx</span><br></pre></td></tr></table></figure>
-<h3 id="u6DFB_u52A0_u591A_u8BF4"><a href="#u6DFB_u52A0_u591A_u8BF4" class="headerlink" title="添加多说"></a>添加多说</h3><p>在 <a href="http://duoshuo.com/" target="_blank" rel="external">多说</a> 平台申请一个账号，点击「我要安装」，创建站点，设置多说域名，在 <code>主题配置</code> _config.xml 中配置</p>
+<h3 id="u6DFB_u52A0_u591A_u8BF4"><a href="#u6DFB_u52A0_u591A_u8BF4" class="headerlink" title="添加多说"></a>添加多说</h3><p>在 <a href="http://duoshuo.com/" target="_blank" rel="external">多说</a> 平台申请一个账号，点击「我要安装」，创建站点，设置多说域名，在 <code>主题配置</code> _config.yml 中配置</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 设置多说域名</span><br><span class="line">duoshuo_shortname: xiamianyu</span><br><span class="line"></span><br><span class="line"># 开启多说分享</span><br><span class="line">duoshuo_share: true</span><br><span class="line"></span><br><span class="line"># 开启多说热评文章</span><br><span class="line">duoshuo_hotartical: true</span><br><span class="line"></span><br><span class="line"># 显示多说评论框UA信息</span><br><span class="line"># Make duoshuo show UA</span><br><span class="line"># user_id must NOT be null when admin_enable is true!</span><br><span class="line"># you can visit http://dev.duoshuo.com get duoshuo user id.</span><br><span class="line">duoshuo_info:</span><br><span class="line">  ua_enable: true</span><br><span class="line">  admin_enable: true</span><br><span class="line">  user_id: xxx</span><br><span class="line">  admin_nickname: xxx</span><br></pre></td></tr></table></figure>
+<h3 id="Markdown__u7F16_u8F91_u5668"><a href="#Markdown__u7F16_u8F91_u5668" class="headerlink" title="Markdown 编辑器"></a>Markdown 编辑器</h3><blockquote>
+<p><a href="http://www.linuxidc.com/Linux/2015-08/121178.htm" target="_blank" rel="external">MarkdownEditing 和 OmniMarkupPreviewer 的具体安装教程</a></p>
+</blockquote>
+<p>Markdown 编辑器市面上很多，不过个人喜欢用 Sublime Text，索性就在上面搭建 Markdown 写作环境。<a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="external">MarkdownEditing</a> 和 <a href="https://github.com/timonwong/OmniMarkupPreviewer" target="_blank" rel="external">OmniMarkupPreviewer</a> 是 Sublime Text 上比较好用的两款插件。</p>
+<p><strong>MarkdownEditing</strong></p>
+<p>实时高亮显示 Markdown 语法，支持很多编程语言的语法高亮显示</p>
+<p><img src="/images/markdown-sublimetext.png" alt="MarkdownEditing"></p>
+<p><strong>OmniMarkupPreviewer</strong> </p>
+<p>预览 Markdown 编辑的效果，支持渲染代码高亮的样式</p>
+<p><img src="/images/previewer-sublimetext.png" alt="OmniMarkupPreviewer"></p>
 <p><strong>参考</strong></p>
 <p><a href="http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more" target="_blank" rel="external">http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more</a><br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">http://theme-next.iissnan.com/getting-started.html</a></p>
 
@@ -528,7 +540,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_RSS"><span class="nav-number">1.</span> <span class="nav-text">添加 RSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1"><span class="nav-number">2.</span> <span class="nav-text">添加文章阅读量统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_CNZZ__u7EDF_u8BA1"><span class="nav-number">3.</span> <span class="nav-text">添加 CNZZ 统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u591A_u8BF4"><span class="nav-number">4.</span> <span class="nav-text">添加多说</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_RSS"><span class="nav-number">1.</span> <span class="nav-text">添加 RSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1"><span class="nav-number">2.</span> <span class="nav-text">添加文章阅读量统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_CNZZ__u7EDF_u8BA1"><span class="nav-number">3.</span> <span class="nav-text">添加 CNZZ 统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u591A_u8BF4"><span class="nav-number">4.</span> <span class="nav-text">添加多说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown__u7F16_u8F91_u5668"><span class="nav-number">5.</span> <span class="nav-text">Markdown 编辑器</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
