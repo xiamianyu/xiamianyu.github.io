@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-03-22T16:06:27.000Z</updated>
+  <updated>2016-03-31T04:05:41.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WindowManager BadTokenException</title>
+    <link href="http://xiamianyu.github.io/2016/03/31/WindowManager-BadTokenException/"/>
+    <id>http://xiamianyu.github.io/2016/03/31/WindowManager-BadTokenException/</id>
+    <published>2016-03-31T03:17:54.000Z</published>
+    <updated>2016-03-31T04:05:41.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;u95EE_u9898_u63CF_u8FF0&quot;&gt;&lt;a href=&quot;#u95EE_u9898_u63CF_u8FF0&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;在 Activity 的 onCreated() 中调用 PopupWindow 的 &lt;strong&gt;showAsDropDown()&lt;/strong&gt; 或 &lt;strong&gt;showAtLocation()&lt;/strong&gt; 出现一下异常：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;android.view.WindowManager$BadTokenException&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Unable to add window -- token null is not valid; is your activity running?&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;u539F_u56E0_u5206_u6790&quot;&gt;&lt;a href=&quot;#u539F_u56E0_u5206_u6790&quot; class=&quot;headerlink&quot; title=&quot;原因分析&quot;&gt;&lt;/a&gt;原因分析&lt;/h3&gt;&lt;p&gt;PopupWindow 的 &lt;strong&gt;showAsDropDown()&lt;/strong&gt; 或 &lt;strong&gt;showAtLocation()&lt;/strong&gt; 得在 PopupWindow 与 Window 相关联时才能生效。&lt;/p&gt;
+&lt;h3 id=&quot;u89E3_u51B3_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#u89E3_u51B3_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h3&gt;&lt;p&gt;在 Activity 中复写 Window 的 &lt;strong&gt;onAttachedToWindow()&lt;/strong&gt; and &lt;strong&gt;onDetachedFromWindow()&lt;/strong&gt; ，处理 PopupWindow 的显示和隐藏&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onAttachedToWindow&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onAttachedToWindow();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mHistoryPw.showAsDropDown(mActionBarView);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onDetachedFromWindow&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onDetachedFromWindow();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mHistoryPw.dismiss();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://stackoverflow.com/questions/4187673/problems-creating-a-popup-window-in-android-activity&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/4187673/problems-creating-a-popup-window-in-android-activity&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;u95EE_u9898_u63CF_u8FF0&quot;&gt;&lt;a href=&quot;#u95EE_u9898_u63CF_u8FF0&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;在 Activity 的 onCreated()
+    
+    </summary>
+    
+      <category term="Android Bug" scheme="http://xiamianyu.github.io/categories/Android-Bug/"/>
+    
+    
+      <category term="BadTokenException" scheme="http://xiamianyu.github.io/tags/BadTokenException/"/>
+    
+      <category term="PopupWindow" scheme="http://xiamianyu.github.io/tags/PopupWindow/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo NexT持续改善</title>
