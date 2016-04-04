@@ -51,7 +51,7 @@
     <link href="http://xiamianyu.github.io/2016/03/20/Hexo-Next-%E6%8C%81%E7%BB%AD%E6%94%B9%E5%96%84/"/>
     <id>http://xiamianyu.github.io/2016/03/20/Hexo-Next-持续改善/</id>
     <published>2016-03-20T13:21:29.000Z</published>
-    <updated>2016-03-22T16:06:27.000Z</updated>
+    <updated>2016-04-04T15:08:41.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;u6DFB_u52A0_RSS&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_RSS&quot; class=&quot;headerlink&quot; title=&quot;添加 RSS&quot;&gt;&lt;/a&gt;添加 RSS&lt;/h3&gt;&lt;p&gt;安装插件&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install --save hexo-generator-feed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -78,10 +78,10 @@
 &lt;p&gt;Markdown 编辑器市面上很多，不过个人喜欢用 Sublime Text，索性就在上面搭建 Markdown 写作环境。&lt;a href=&quot;https://github.com/SublimeText-Markdown/MarkdownEditing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MarkdownEditing&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/timonwong/OmniMarkupPreviewer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OmniMarkupPreviewer&lt;/a&gt; 是 Sublime Text 上比较好用的两款插件。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;MarkdownEditing&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;实时高亮显示 Markdown 语法，支持很多编程语言的语法高亮显示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/markdown-sublimetext.png&quot; alt=&quot;MarkdownEditing&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/7xs5pr.com1.z0.glb.clouddn.com/images/markdown-sublimetext.png&quot; alt=&quot;MarkdownEditing&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;OmniMarkupPreviewer&lt;/strong&gt; &lt;/p&gt;
 &lt;p&gt;预览 Markdown 编辑的效果，支持渲染代码高亮的样式&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/previewer-sublimetext.png&quot; alt=&quot;OmniMarkupPreviewer&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/7xs5pr.com1.z0.glb.clouddn.com/images/previewer-sublimetext.png&quot; alt=&quot;OmniMarkupPreviewer&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://theme-next.iissnan.com/getting-started.html&lt;/a&gt;&lt;/p&gt;
 </content>
