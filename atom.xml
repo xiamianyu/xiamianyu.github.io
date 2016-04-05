@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-03-31T04:05:41.000Z</updated>
+  <updated>2016-04-05T15:57:21.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>打造属于自己的作品</title>
+    <link href="http://xiamianyu.github.io/2016/04/05/%E6%89%93%E9%80%A0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+    <id>http://xiamianyu.github.io/2016/04/05/打造属于自己的作品/</id>
+    <published>2016-04-05T14:59:12.000Z</published>
+    <updated>2016-04-05T15:57:21.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;假设你是一个搞 Android 的，BOSS 交给你一个需求文档，你花几分钟浏览文档，迅速提取跟APP相关的功能需求，构建简易原型，提交给用户，根据用户反馈，将需求理清，界面最终定型，最后将定型的简易界面交给美工打磨漂亮。接下来开始APP的总体设计和详细设计，最后编码测试部署，一个人拿下所有，全栈工程师的初级体验。这是我去年8月份接手的一个项目，由于当时团队里只有我有空挡，于是 BOSS 让我全权负责它。从需求调研到交付到客户手里，差不多要2个月时间。做完这个项目后，我忽然发现自己开始喜欢这种工作方式，从只会 Coding ，到会需求调研、界面设计、APP 整体架构设计以及协同美工和测试等人员来完成一个项目，不得不说，是一个多方位的历练，对我来说是个不小的挑战，很庆幸的是，最后我把它拿下了。这段经历给我最大的感悟就是，不当码农是可以滴！&lt;/p&gt;
+&lt;h1 id=&quot;u6B63_u6587&quot;&gt;&lt;a href=&quot;#u6B63_u6587&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;p&gt;上面的那段经历也不过是昙花一现，接下来的日子跟大家一样，时不时 PM 说改需求，我屁颠屁颠改了，结果 PM 说砍掉，心碎中… 这样的日子，遥遥无绝期，时间就是浪费在无聊的工作上。所以就想到了做一款自己喜欢的应用，不为别的，就做给自己。当然了，「做一款自己喜欢的应用」这个理由有点过于牵强了。其实我是有目的的，哈哈哈…&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;理由&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在应用中实战前沿的技术，如：Material Design、MVP、RXJava等&lt;/li&gt;
+&lt;li&gt;充分发挥你的创作思维，如：产品设计、UI设计、UX设计等&lt;/li&gt;
+&lt;li&gt;将源码放到 GitHub 上，展示自己的编码规范，架构设计等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;整体而言，打造属于属于自己的作品，多多益善！&lt;/p&gt;
+&lt;h1 id=&quot;u4E0B_u671F_u5185_u5BB9&quot;&gt;&lt;a href=&quot;#u4E0B_u671F_u5185_u5BB9&quot; class=&quot;headerlink&quot; title=&quot;下期内容&quot;&gt;&lt;/a&gt;下期内容&lt;/h1&gt;&lt;p&gt;给出大体的需求，敬请期待！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;假设你是一个搞 Android 的，BOSS 交给你一个需求文档，你花几分钟浏览文档，迅速提取跟APP相
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>WindowManager BadTokenException</title>
@@ -51,7 +79,7 @@
     <link href="http://xiamianyu.github.io/2016/03/20/Hexo-Next-%E6%8C%81%E7%BB%AD%E6%94%B9%E5%96%84/"/>
     <id>http://xiamianyu.github.io/2016/03/20/Hexo-Next-持续改善/</id>
     <published>2016-03-20T13:21:29.000Z</published>
-    <updated>2016-04-04T15:25:25.000Z</updated>
+    <updated>2016-04-04T16:05:49.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;u6DFB_u52A0_RSS&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_RSS&quot; class=&quot;headerlink&quot; title=&quot;添加 RSS&quot;&gt;&lt;/a&gt;添加 RSS&lt;/h3&gt;&lt;p&gt;安装插件&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install --save hexo-generator-feed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
