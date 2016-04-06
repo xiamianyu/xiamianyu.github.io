@@ -52,7 +52,7 @@
     <link href="http://xiamianyu.github.io/2016/03/31/WindowManager-BadTokenException/"/>
     <id>http://xiamianyu.github.io/2016/03/31/WindowManager-BadTokenException/</id>
     <published>2016-03-31T03:17:54.000Z</published>
-    <updated>2016-03-31T04:05:41.000Z</updated>
+    <updated>2016-04-06T05:14:53.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;u95EE_u9898_u63CF_u8FF0&quot;&gt;&lt;a href=&quot;#u95EE_u9898_u63CF_u8FF0&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;在 Activity 的 onCreated() 中调用 PopupWindow 的 &lt;strong&gt;showAsDropDown()&lt;/strong&gt; 或 &lt;strong&gt;showAtLocation()&lt;/strong&gt; 出现一下异常：&lt;/p&gt;
 &lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;android.view.WindowManager$BadTokenException&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Unable to add window -- token null is not valid; is your activity running?&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -83,7 +83,7 @@
     <link href="http://xiamianyu.github.io/2016/03/20/Hexo-Next-%E6%8C%81%E7%BB%AD%E6%94%B9%E5%96%84/"/>
     <id>http://xiamianyu.github.io/2016/03/20/Hexo-Next-持续改善/</id>
     <published>2016-03-20T13:21:29.000Z</published>
-    <updated>2016-04-04T16:05:49.000Z</updated>
+    <updated>2016-04-06T05:09:15.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;u6DFB_u52A0_RSS&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_RSS&quot; class=&quot;headerlink&quot; title=&quot;添加 RSS&quot;&gt;&lt;/a&gt;添加 RSS&lt;/h3&gt;&lt;p&gt;安装插件&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install --save hexo-generator-feed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -110,10 +110,10 @@
 &lt;p&gt;Markdown 编辑器市面上很多，不过个人喜欢用 Sublime Text，索性就在上面搭建 Markdown 写作环境。&lt;a href=&quot;https://github.com/SublimeText-Markdown/MarkdownEditing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MarkdownEditing&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/timonwong/OmniMarkupPreviewer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OmniMarkupPreviewer&lt;/a&gt; 是 Sublime Text 上比较好用的两款插件。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;MarkdownEditing&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;实时高亮显示 Markdown 语法，支持很多编程语言的语法高亮显示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/markdown-sublimetext.png&quot; alt=&quot;MarkdownEditing&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/markdown-sublimetext.png&quot; alt=&quot;MarkdownEditing&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;OmniMarkupPreviewer&lt;/strong&gt; &lt;/p&gt;
 &lt;p&gt;预览 Markdown 编辑的效果，支持渲染代码高亮的样式&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/previewer-sublimetext.png&quot; alt=&quot;OmniMarkupPreviewer&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com//previewer-sublimetext.png&quot; alt=&quot;OmniMarkupPreviewer&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://theme-next.iissnan.com/getting-started.html&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -137,7 +137,7 @@
     <link href="http://xiamianyu.github.io/2016/03/12/Chrome-%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     <id>http://xiamianyu.github.io/2016/03/12/Chrome-插件推荐/</id>
     <published>2016-03-12T04:46:34.000Z</published>
-    <updated>2016-03-24T05:47:53.000Z</updated>
+    <updated>2016-04-06T05:12:41.000Z</updated>
     
     <content type="html">&lt;p&gt;前段时间stormzhang大哥在他的公众号&lt;code&gt;AndroidDeveloper&lt;/code&gt;中, 发表了一篇文章「&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;amp;mid=402064553&amp;amp;idx=1&amp;amp;sn=4bc95ed03916f87cc8dfd17baed54f24&amp;amp;scene=0#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;吐血推荐珍藏的Chrome插件&lt;/a&gt;」，特别棒！当时就立马下载去了。今天跟大家分享我觉得比较好用的插件，其中一些是从stormzhang大哥那里引用过来的，哈哈。&lt;/p&gt;
 &lt;h3 id=&quot;Postman&quot;&gt;&lt;a href=&quot;#Postman&quot; class=&quot;headerlink&quot; title=&quot;Postman&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Postman&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Postman是API调试的神器，基本功能如下：&lt;/p&gt;
@@ -148,57 +148,57 @@
 &lt;li&gt;支持以文件夹的形式将API管理起来并保存到本地或云端，也可以将该文件夹导出来&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;我个人的使用习惯是，将项目的所有API，在Postman中用文件夹管理起来，以后测试和查看接口，都不用打开接口文档，直接打开Postman，点击接口测试即可，大大提高工作效率。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-postman.png&quot; alt=&quot;Postman&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-postman.png&quot; alt=&quot;Postman&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;JSONView&quot;&gt;&lt;a href=&quot;#JSONView&quot; class=&quot;headerlink&quot; title=&quot;JSONView&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JSONView&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;直接在浏览器上对接API，一般返回的JSON数据没有格式化，看起来很乱，而JSONView可以将它们自动格式化好。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-jsonview.png&quot; alt=&quot;JSONView&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-jsonview.png&quot; alt=&quot;JSONView&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;JSON-handle&quot;&gt;&lt;a href=&quot;#JSON-handle&quot; class=&quot;headerlink&quot; title=&quot;JSON-handle&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/json-handle/iahnhfdhidomcpggpaimmmahffihkfnj&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JSON-handle&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;对于嵌套层级很深的JSON数据，如果想单独查看或复制某个字段下的数据就会很猥琐，而JSON-handle可以很好地处理这猥琐的事，让你倍儿爽。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-jsonhandle.png&quot; alt=&quot;JSON-handle&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-jsonhandle.png&quot; alt=&quot;JSON-handle&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Octotree&quot;&gt;&lt;a href=&quot;#Octotree&quot; class=&quot;headerlink&quot; title=&quot;Octotree&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?utm_source=chrome-ntp-icon&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Octotree&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;在Github上查看源码是一件很痛苦的事，要clone下来，导入IDE或者stublime text才能更好的看清项目的结构，而Octotree会在Chrome的侧边栏展示项目的结构，方面你阅读源码。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-octotree.png&quot; alt=&quot;Octotree&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-octotree.png&quot; alt=&quot;Octotree&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Isometric_Contributions&quot;&gt;&lt;a href=&quot;#Isometric_Contributions&quot; class=&quot;headerlink&quot; title=&quot;Isometric Contributions&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Isometric Contributions&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;像盖楼一样展示你Github上的commit信息，很好玩！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-isometric-contributions.png&quot; alt=&quot;Isometric Contributions&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-isometric-contributions.png&quot; alt=&quot;Isometric Contributions&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Avatars_for_Github&quot;&gt;&lt;a href=&quot;#Avatars_for_Github&quot; class=&quot;headerlink&quot; title=&quot;Avatars for Github&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/avatars-for-github/pgjmdbklnfklcjfbonjfkdhaonlfogbb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Avatars for Github&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;在GitHub主页动态中显示用户头像&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-avatar-for-github.png&quot; alt=&quot;Avatars for Github&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-avatar-for-github.png&quot; alt=&quot;Avatars for Github&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;ChromeADB&quot;&gt;&lt;a href=&quot;#ChromeADB&quot; class=&quot;headerlink&quot; title=&quot;ChromeADB&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/chromeadb/fhdoijgfljahinnpbolfdimpcfoicmnm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ChromeADB&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;通过USB或WiFi连接手机后，可以清理应用数据、卸载应用、暂停应用以及查看应用内存使用情况等&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-adb.png&quot; alt=&quot;ChromeADB&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-adb.png&quot; alt=&quot;ChromeADB&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Vysor&quot;&gt;&lt;a href=&quot;#Vysor&quot; class=&quot;headerlink&quot; title=&quot;Vysor&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vysor&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;让你在电脑上查看和操作Android手机&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-vysor.png&quot; alt=&quot;Vysor&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-vysor.png&quot; alt=&quot;Vysor&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;One-Click_Extensions_Manager&quot;&gt;&lt;a href=&quot;#One-Click_Extensions_Manager&quot; class=&quot;headerlink&quot; title=&quot;One-Click Extensions Manager&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/%E4%B8%80%E9%94%AE%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%89%A9%E5%B1%95/niemebbfnfbjfojajlmnbiikmcpjkkja&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;One-Click Extensions Manager&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;支持一键管理所有扩展，包括一键禁用所有扩展、一键开启原有扩展、扩展的逐个禁用和开启、右击扩展等功能&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-one-click.png&quot; alt=&quot;One-Click Extensions Manager&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-one-click.png&quot; alt=&quot;One-Click Extensions Manager&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;OneTab&quot;&gt;&lt;a href=&quot;#OneTab&quot; class=&quot;headerlink&quot; title=&quot;OneTab&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OneTab&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;一键保存打开的Tab，需要的时候还原。节省内存消耗，还你一个干净的Tab。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-one-tab.png&quot; alt=&quot;OneTab&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-one-tab.png&quot; alt=&quot;OneTab&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Pocket&quot;&gt;&lt;a href=&quot;#Pocket&quot; class=&quot;headerlink&quot; title=&quot;Pocket&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pocket&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;好文章，来不及读，那就放入Pocket吧，等你有空再回来看看。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-pocket.png&quot; alt=&quot;Pocket&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-pocket.png&quot; alt=&quot;Pocket&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;AdBlock&quot;&gt;&lt;a href=&quot;#AdBlock&quot; class=&quot;headerlink&quot; title=&quot;AdBlock&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AdBlock&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;屏蔽互联网广告，你值得拥有！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-abblock.png&quot; alt=&quot;AdBlock&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-abblock.png&quot; alt=&quot;AdBlock&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Bookmark_Manager&quot;&gt;&lt;a href=&quot;#Bookmark_Manager&quot; class=&quot;headerlink&quot; title=&quot;Bookmark Manager&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/bookmark-manager/gmlllbghnfkpflemihljekbapjopfjik&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bookmark Manager&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;由Google打造的优雅书签管理器&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-bookmark-manager.png&quot; alt=&quot;Bookmark Manager&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-bookmark-manager.png&quot; alt=&quot;Bookmark Manager&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Speed_Dial2&quot;&gt;&lt;a href=&quot;#Speed_Dial2&quot; class=&quot;headerlink&quot; title=&quot;Speed Dial2&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/speed-dial-2/jpfpebmajhhopeonhlcgidhclcccjcik&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Speed Dial2&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;有快速访问您最常访问网页的功能，书签和浏览历史记录的终极新标签页替代品&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-speed-dial2.png&quot; alt=&quot;Speed Dial2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-speed-dial2.png&quot; alt=&quot;Speed Dial2&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Chrono&quot;&gt;&lt;a href=&quot;#Chrono&quot; class=&quot;headerlink&quot; title=&quot;Chrono&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chrono&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Chrono接管你在Chrome中的所有下载，你的所有下载管理工作都在浏览器中完成，而不需要安装另外的程序。Chrono与Chrome浏览器紧密地整合在一起，添加了对浏览器菜单、工具栏和快捷键的支持。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-chrono.png&quot; alt=&quot;Chrono&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-chrono.png&quot; alt=&quot;Chrono&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Chrome_Gestures&quot;&gt;&lt;a href=&quot;#Chrome_Gestures&quot; class=&quot;headerlink&quot; title=&quot;Chrome Gestures&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/crxmouse-chrome-gestures/jlgkpaicikihijadgifklkbpdajbkhjo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chrome Gestures&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;支持鼠标手势,超级拖曳,滚轮手势,摇杆手势,平滑滚动,标签页列表等&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-gestures.png&quot; alt=&quot;Chrome Gestures&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-gestures.png&quot; alt=&quot;Chrome Gestures&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Firebug&quot;&gt;&lt;a href=&quot;#Firebug&quot; class=&quot;headerlink&quot; title=&quot;Firebug&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/firebug-lite-for-google-c/bmagokdooijbeehmkpknfglimnifench&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Firebug&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Chrome网页调试工具&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-firebug.png&quot; alt=&quot;Firebug&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-firebug.png&quot; alt=&quot;Firebug&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Reader_View&quot;&gt;&lt;a href=&quot;#Reader_View&quot; class=&quot;headerlink&quot; title=&quot;Reader View&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/reader-view/iibolhpkjjmoepndefdmdlmbpfhlgjpl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reader View&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;提供与Safari阅读模式功能一致的插件，浏览文章页时候可进入友好的阅读模式，并自定义阅读功能&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-readerview.png&quot; alt=&quot;Reader View&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-readerview.png&quot; alt=&quot;Reader View&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Draw-io_Desktop&quot;&gt;&lt;a href=&quot;#Draw-io_Desktop&quot; class=&quot;headerlink&quot; title=&quot;Draw.io Desktop&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Draw.io Desktop&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;离线免费的画图工具，支持流程图、UML、IOS/Android原型设计等&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-draw.io.png&quot; alt=&quot;Draw.io Desktop&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-draw.io.png&quot; alt=&quot;Draw.io Desktop&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Gliffy_Diagrams&quot;&gt;&lt;a href=&quot;#Gliffy_Diagrams&quot; class=&quot;headerlink&quot; title=&quot;Gliffy Diagrams&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/gliffy-diagrams/bhmicilclplefnflapjmnngmkkkkpfad&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gliffy Diagrams&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;同上，也是一款非常好的画图工具&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-gliffy-diagrams.png&quot; alt=&quot;Gliffy Diagrams&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-gliffy-diagrams.png&quot; alt=&quot;Gliffy Diagrams&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Page_Ruler&quot;&gt;&lt;a href=&quot;#Page_Ruler&quot; class=&quot;headerlink&quot; title=&quot;Page Ruler&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/page-ruler/jlpkojjdgbllmedoapgfodplfhcbnbpn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Page Ruler&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;网页尺寸测量工具&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-page-ruler.png&quot; alt=&quot;Page Ruler&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-page-ruler.png&quot; alt=&quot;Page Ruler&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Google_Keep&quot;&gt;&lt;a href=&quot;#Google_Keep&quot; class=&quot;headerlink&quot; title=&quot;Google Keep&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/google-keep-notes-and-lis/hmjkmjkepdijhoojdojkdfohbdgmmhki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Keep&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;快速记录您的所思所想&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-google-keep.png&quot; alt=&quot;Google Keep&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-google-keep.png&quot; alt=&quot;Google Keep&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Minimalist_Markdown_Editor&quot;&gt;&lt;a href=&quot;#Minimalist_Markdown_Editor&quot; class=&quot;headerlink&quot; title=&quot;Minimalist Markdown Editor&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/minimalist-markdown-edito/pghodfjepegmciihfhdipmimghiakcjf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Minimalist Markdown Editor&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;离线免费的 Mini Markdown 编辑器&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-markdown-editor.png&quot; alt=&quot;Minimalist Markdown Editor&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-markdown-editor.png&quot; alt=&quot;Minimalist Markdown Editor&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Pomodoro_Timer&quot;&gt;&lt;a href=&quot;#Pomodoro_Timer&quot; class=&quot;headerlink&quot; title=&quot;Pomodoro Timer&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/pomodoro-timer/hfgjlgjnpkpmnpojkkpfkogapiclopop&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pomodoro Timer&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;番茄土豆是番茄工作法和 To-do List 工具，它可以帮助你计划、管理、执行、记录工作。现在就开始使用番茄土豆，完成了不起的工作！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-pomotodo.png&quot; alt=&quot;Pomodoro Timer&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-pomotodo.png&quot; alt=&quot;Pomodoro Timer&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Inbox_By_Gmail&quot;&gt;&lt;a href=&quot;#Inbox_By_Gmail&quot; class=&quot;headerlink&quot; title=&quot;Inbox By Gmail&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/inbox-by-gmail/pkclgpgponpjmpfokoepglboejdobkpl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Inbox By Gmail&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;关注重要的事项，提高工作效率的 Gmail 收件箱&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-inbox-by-gmail.png&quot; alt=&quot;Inbox By Gmail&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-inbox-by-gmail.png&quot; alt=&quot;Inbox By Gmail&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Better_History&quot;&gt;&lt;a href=&quot;#Better_History&quot; class=&quot;headerlink&quot; title=&quot;Better History&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/better-history/obciceimmggglbmelaidpjlmodcebijb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Better History&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;更好地查看您的历史记录，为查看您的历史记录带来最好的搜索体验，最清晰的界面和最有帮助的筛选&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/chrome-better-history.png&quot; alt=&quot;Better History&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-better-history.png&quot; alt=&quot;Better History&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
