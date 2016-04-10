@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-04-07T15:39:19.000Z</updated>
+  <updated>2016-04-10T06:03:54.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://xiamianyu.github.io/2016/04/07/isolee-%E5%A4%A7%E4%BD%93%E9%9C%80%E6%B1%82/"/>
     <id>http://xiamianyu.github.io/2016/04/07/isolee-大体需求/</id>
     <published>2016-04-07T14:02:09.000Z</published>
-    <updated>2016-04-07T15:39:19.000Z</updated>
+    <updated>2016-04-10T06:03:54.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u627E_u4E2A_u7406_u7531&quot;&gt;&lt;a href=&quot;#u627E_u4E2A_u7406_u7531&quot; class=&quot;headerlink&quot; title=&quot;找个理由&quot;&gt;&lt;/a&gt;找个理由&lt;/h1&gt;&lt;p&gt;大学期间，喜欢上了摄影和骑行，拍了很多照片，有些还是挺（不）好（咋）看（滴）的，这些图片东躲西藏在网盘的各个角落，有时候想找她们都很难，因为我重点是想找好看的。怎么办？可不可以自己开发一个应用，把平时拍到的好照片放上去呢？恩，可以是可以，为什么不用第三方的 APP 呢？不为什么，因为只想给自己用，大体的功能我规划了一下，有些想法可能天马行空。梦想还是要有的，万一实现了呢？&lt;/p&gt;
 &lt;p&gt;对了，忘了一件很重要的事，这个应用还没起名字。昨晚想了一宿，就叫 isolee（影想力）吧&lt;/p&gt;
 &lt;h1 id=&quot;u529F_u80FD_u5217_u8868&quot;&gt;&lt;a href=&quot;#u529F_u80FD_u5217_u8868&quot; class=&quot;headerlink&quot; title=&quot;功能列表&quot;&gt;&lt;/a&gt;功能列表&lt;/h1&gt;&lt;p&gt;大体功能如下图所示，一共分为三期。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/isolee-structure.png.png&quot; alt=&quot;isolee-structure&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/isolee-structure.png&quot; alt=&quot;isolee-structure&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;u4E0B_u671F_u5185_u5BB9&quot;&gt;&lt;a href=&quot;#u4E0B_u671F_u5185_u5BB9&quot; class=&quot;headerlink&quot; title=&quot;下期内容&quot;&gt;&lt;/a&gt;下期内容&lt;/h1&gt;&lt;p&gt;技术调研，确定最终需求！&lt;/p&gt;
 </content>
     
