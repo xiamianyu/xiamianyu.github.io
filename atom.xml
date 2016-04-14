@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-04-10T06:03:54.000Z</updated>
+  <updated>2016-04-14T15:30:49.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今天我坐主席位</title>
+    <link href="http://xiamianyu.github.io/2016/04/14/%E4%BB%8A%E5%A4%A9%E6%88%91%E5%9D%90%E4%B8%BB%E5%B8%AD%E4%BD%8D/"/>
+    <id>http://xiamianyu.github.io/2016/04/14/今天我坐主席位/</id>
+    <published>2016-04-14T14:36:29.000Z</published>
+    <updated>2016-04-14T15:30:49.000Z</updated>
+    
+    <content type="html">&lt;p&gt;没错，今天我是会议主席，大家听我发号施令！实际情况是，最没自（意）信（见）的人要做主席位，哈哈。&lt;/p&gt;
+&lt;p&gt;今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出来。其中有一个问题，特别有意思，我复现当时的对白。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;杂物大人：这个产品做到现在还没流量，问题出现在哪里？&lt;br&gt;我们：沉默中…&lt;br&gt;杂物大人：作为产品的开发人员，自己有用过这个产品吗？&lt;br&gt;A 童鞋：我就是在调试 BUG 的时候用过…（杂物大人默默地笑了）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前我以为，作为开发者，只要按照产品经理说的做就可以把产品做好，产品能否带来PV、收益等是产品经理的事。是的，可能有些人跟我想法一样，但如果是比较年轻的公司，产品经理的经验也毕竟有限，需要的是大家的决策，不是什么都是产品经理说了算，如果产品经理设计的某些功能不合理，我们完全有理由提出来并打断他，不然到时候功能做出来了才说之前考虑不周，废掉这个功能，这简直就是浪费生命！再者，希望自己在负责的产品开发上，不要太局限于技术（在产品没有产生PV之前，再好的代码设计，也没有价值），要多去使用自己的产品，把产品不满意的地方跟产品经理提出来，因为我也是这个产品的用户。如果都懒得去用自己研发的产品，怎么去发现问题？怎么可能把它做好？&lt;/p&gt;
+&lt;p&gt;从今天开始，做一个有责任心的开发者吧。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;没错，今天我是会议主席，大家听我发号施令！实际情况是，最没自（意）信（见）的人要做主席位，哈哈。&lt;/p&gt;
+&lt;p&gt;今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://xiamianyu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="责任心" scheme="http://xiamianyu.github.io/tags/%E8%B4%A3%E4%BB%BB%E5%BF%83/"/>
+    
+      <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>isolee-大体需求</title>
@@ -51,10 +83,10 @@
     <link href="http://xiamianyu.github.io/2016/04/05/%E6%89%93%E9%80%A0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BD%9C%E5%93%81/"/>
     <id>http://xiamianyu.github.io/2016/04/05/打造属于自己的作品/</id>
     <published>2016-04-05T14:59:12.000Z</published>
-    <updated>2016-04-07T14:04:45.000Z</updated>
+    <updated>2016-04-10T09:51:48.000Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;假设你是一个搞 Android 的，BOSS 交给你一个需求文档，你花几分钟浏览文档，迅速提取跟APP相关的功能需求，构建简易原型，提交给用户，根据用户反馈，将需求理清，界面最终定型，最后将定型的简易界面交给美工打磨漂亮。接下来开始APP的总体设计和详细设计，最后编码测试部署，一个人拿下所有，全栈工程师的初级体验。这是我去年8月份接手的一个项目，由于当时团队里只有我有空挡，于是 BOSS 让我全权负责它。从需求调研到交付到客户手里，差不多要2个月时间。做完这个项目后，我忽然发现自己开始喜欢这种工作方式，从只会 Coding ，到会需求调研、界面设计、APP 整体架构设计以及协同美工和测试等人员来完成一个项目，不得不说，是一个多方位的历练，对我来说是个不小的挑战，很庆幸的是，最后我把它拿下了。这段经历给我最大的感悟就是，不当码农是可以滴！&lt;/p&gt;
-&lt;h1 id=&quot;u6B63_u6587&quot;&gt;&lt;a href=&quot;#u6B63_u6587&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;p&gt;上面的那段经历也不过是昙花一现，接下来的日子跟大家一样，时不时 PM 说改需求，屁颠屁颠改了，结果 PM 说砍掉，心碎中… 这样的日子，遥遥无绝期，时间就是浪费在无聊的工作上。所以就想到了做一款自己喜欢的应用，不为别的，就做给自己。当然了，「做一款自己喜欢的应用」这个理由有点过于牵强了。其实我是有目的的，哈哈哈…&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;假设你是一个搞 Android 的，BOSS 交给你一个需求文档，你花几分钟浏览文档，迅速提取跟APP相关的功能需求，构建简易原型，提交给用户，根据用户反馈，将需求理清，界面最终定型，最后将定型的简易界面交给美工打磨漂亮。接下来开始APP的总体设计和详细设计，最后编码测试部署，一个人拿下所有，全栈工程师的初级体验。这是我去年8月份接手的一个项目，由于当时团队里只有我有空挡，于是 BOSS 让我全权负责它。从需求调研到交付到客户手里，差不多要2个月时间。做完这个项目后，我忽然发现自己开始喜欢这种工作方式，从只会 Coding ，到会需求调研、界面设计、APP 整体架构设计以及协同美工和测试等人员来完成一个项目，不得不说，是一个多方位的历练，这段经历给我最大的感悟就是，不当码农是可以滴！&lt;/p&gt;
+&lt;h1 id=&quot;u6B63_u6587&quot;&gt;&lt;a href=&quot;#u6B63_u6587&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;p&gt;这段时间想到做一款自己喜欢的应用，不为别的，就做给自己。当然了，「做一款自己喜欢的应用」这个理由有点过于牵强，其实我是有目的的，哈哈哈…&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;理由&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在应用中实战前沿的技术，如：Material Design、MVP、RXJava等&lt;/li&gt;
