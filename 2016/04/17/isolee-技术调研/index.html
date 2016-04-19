@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="图片云储存不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求，只能退而求次，选择了满足我大部分要需求的七牛云，可惜免费的空间只有">
+<meta name="description" content="图片云储存不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求。七牛云是图片存储的好选择，但有一个要命的缺陷，就是图片描述信息太少">
 <meta property="og:type" content="article">
 <meta property="og:title" content="isolee-技术调研">
 <meta property="og:url" content="http://xiamianyu.github.io/2016/04/17/isolee-技术调研/index.html">
 <meta property="og:site_name" content="风景不在别处">
-<meta property="og:description" content="图片云储存不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求，只能退而求次，选择了满足我大部分要需求的七牛云，可惜免费的空间只有">
-<meta property="og:updated_time" content="2016-04-17T03:51:48.000Z">
+<meta property="og:description" content="图片云储存不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求。七牛云是图片存储的好选择，但有一个要命的缺陷，就是图片描述信息太少">
+<meta property="og:updated_time" content="2016-04-19T14:31:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="isolee-技术调研">
-<meta name="twitter:description" content="图片云储存不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求，只能退而求次，选择了满足我大部分要需求的七牛云，可惜免费的空间只有">
+<meta name="twitter:description" content="图片云储存不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求。七牛云是图片存储的好选择，但有一个要命的缺陷，就是图片描述信息太少">
 
 
 
@@ -289,9 +289,8 @@
       
 
       
-        <h1 id="u56FE_u7247_u4E91_u50A8_u5B58"><a href="#u56FE_u7247_u4E91_u50A8_u5B58" class="headerlink" title="图片云储存"></a>图片云储存</h1><p>不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求，只能退而求次，选择了满足我大部分要需求的七牛云，可惜免费的空间只有 10G，有点小，不过没关系，这个项目不是什么图片都放到云上，只放那些我认为好看的照片，相当于个人摄影展。</p>
-<h1 id="Android__u7AEF"><a href="#Android__u7AEF" class="headerlink" title="Android 端"></a>Android 端</h1><p>项目的主要实现还是在 Android 端，我想使用一些前沿的技术来实现，MVP + RxJava + MaterialDesign，之所以加入图片的色调等处理，是因为目前我对摄影的本身，还停留在构图方面，对图片的色调等调节没什么概念，完全靠感觉，所以图片的色调处理还是挺有意思的。</p>
-<h1 id="u539F_u578B_u8BBE_u8BA1"><a href="#u539F_u578B_u8BBE_u8BA1" class="headerlink" title="原型设计"></a>原型设计</h1><p>现在最头疼的就是原型设计了，MaterialDesign 风格，要慎重使用，毕竟不是说会使用它的 API 就可以，关键要理解它的精髓，也就是交互体验，这才是最重要的。</p>
+        <h1 id="u56FE_u7247_u4E91_u50A8_u5B58"><a href="#u56FE_u7247_u4E91_u50A8_u5B58" class="headerlink" title="图片云储存"></a>图片云储存</h1><p>不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求。七牛云是图片存储的好选择，但有一个要命的缺陷，就是图片描述信息太少，最后我选择了 bmob，可以设计云端数据库，必要时也可以写云端业务很棒！。</p>
+<h1 id="Android__u7AEF"><a href="#Android__u7AEF" class="headerlink" title="Android 端"></a>Android 端</h1><p>项目的主要实现还是在 Android 端，我想使用一些前沿的技术来实现，MVP + RxJava + MaterialDesign。之所以加入图片的色调等处理，是因为目前我对摄影的本身，还停留在构图方面，对图片的色调等调节没什么概念，完全靠感觉，所以图片的色调处理还是挺有意思的。</p>
 <h1 id="u4E0B_u671F_u5185_u5BB9"><a href="#u4E0B_u671F_u5185_u5BB9" class="headerlink" title="下期内容"></a>下期内容</h1><p>原型设计</p>
 
       
@@ -496,7 +495,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u56FE_u7247_u4E91_u50A8_u5B58"><span class="nav-number">1.</span> <span class="nav-text">图片云储存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android__u7AEF"><span class="nav-number">2.</span> <span class="nav-text">Android 端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u539F_u578B_u8BBE_u8BA1"><span class="nav-number">3.</span> <span class="nav-text">原型设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E0B_u671F_u5185_u5BB9"><span class="nav-number">4.</span> <span class="nav-text">下期内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u56FE_u7247_u4E91_u50A8_u5B58"><span class="nav-number">1.</span> <span class="nav-text">图片云储存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android__u7AEF"><span class="nav-number">2.</span> <span class="nav-text">Android 端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E0B_u671F_u5185_u5BB9"><span class="nav-number">3.</span> <span class="nav-text">下期内容</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
