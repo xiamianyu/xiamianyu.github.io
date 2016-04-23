@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-04-23T06:59:57.000Z</updated>
+  <updated>2016-04-23T07:03:35.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>isolee-原型设计</title>
+    <title>ISOLEE-原型设计</title>
     <link href="http://xiamianyu.github.io/2016/04/23/isolee-%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://xiamianyu.github.io/2016/04/23/isolee-原型设计/</id>
     <published>2016-04-23T06:15:09.000Z</published>
-    <updated>2016-04-23T06:59:57.000Z</updated>
+    <updated>2016-04-23T07:03:35.000Z</updated>
     
     <content type="html">&lt;p&gt;理想太伟大，实现很骨感，调整了排期。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/isolee-structure2.png&quot; alt=&quot;isolee-structure&quot;&gt;&lt;/p&gt;
@@ -36,23 +36,21 @@
     
     </summary>
     
-      <category term="我的作品" scheme="http://xiamianyu.github.io/categories/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+      <category term="ISOLEE" scheme="http://xiamianyu.github.io/categories/ISOLEE/"/>
     
     
       <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
     
-      <category term="isolee" scheme="http://xiamianyu.github.io/tags/isolee/"/>
-    
-      <category term="我的作品" scheme="http://xiamianyu.github.io/tags/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+      <category term="ISOLEE" scheme="http://xiamianyu.github.io/tags/ISOLEE/"/>
     
   </entry>
   
   <entry>
-    <title>isolee-技术调研</title>
+    <title>ISOLEE-技术调研</title>
     <link href="http://xiamianyu.github.io/2016/04/17/isolee-%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
     <id>http://xiamianyu.github.io/2016/04/17/isolee-技术调研/</id>
     <published>2016-04-17T03:25:30.000Z</published>
-    <updated>2016-04-19T14:31:31.000Z</updated>
+    <updated>2016-04-23T07:03:07.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u56FE_u7247_u4E91_u50A8_u5B58&quot;&gt;&lt;a href=&quot;#u56FE_u7247_u4E91_u50A8_u5B58&quot; class=&quot;headerlink&quot; title=&quot;图片云储存&quot;&gt;&lt;/a&gt;图片云储存&lt;/h1&gt;&lt;p&gt;不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求。七牛云是图片存储的好选择，但有一个要命的缺陷，就是图片描述信息太少，最后我选择了 bmob，可以设计云端数据库，必要时也可以写云端业务很棒！。&lt;/p&gt;
 &lt;h1 id=&quot;Android__u7AEF&quot;&gt;&lt;a href=&quot;#Android__u7AEF&quot; class=&quot;headerlink&quot; title=&quot;Android 端&quot;&gt;&lt;/a&gt;Android 端&lt;/h1&gt;&lt;p&gt;项目的主要实现还是在 Android 端，我想使用一些前沿的技术来实现，MVP + RxJava + MaterialDesign。之所以加入图片的色调等处理，是因为目前我对摄影的本身，还停留在构图方面，对图片的色调等调节没什么概念，完全靠感觉，所以图片的色调处理还是挺有意思的。&lt;/p&gt;
@@ -65,14 +63,12 @@
     
     </summary>
     
-      <category term="我的作品" scheme="http://xiamianyu.github.io/categories/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+      <category term="ISOLEE" scheme="http://xiamianyu.github.io/categories/ISOLEE/"/>
     
     
       <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
     
-      <category term="isolee" scheme="http://xiamianyu.github.io/tags/isolee/"/>
-    
-      <category term="我的作品" scheme="http://xiamianyu.github.io/tags/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+      <category term="ISOLEE" scheme="http://xiamianyu.github.io/tags/ISOLEE/"/>
     
   </entry>
   
@@ -202,14 +198,14 @@
   </entry>
   
   <entry>
-    <title>isolee-大体需求</title>
+    <title>ISOLEE-大体需求</title>
     <link href="http://xiamianyu.github.io/2016/04/07/isolee-%E5%A4%A7%E4%BD%93%E9%9C%80%E6%B1%82/"/>
     <id>http://xiamianyu.github.io/2016/04/07/isolee-大体需求/</id>
     <published>2016-04-07T14:02:09.000Z</published>
-    <updated>2016-04-17T03:45:33.000Z</updated>
+    <updated>2016-04-23T07:03:25.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u627E_u4E2A_u7406_u7531&quot;&gt;&lt;a href=&quot;#u627E_u4E2A_u7406_u7531&quot; class=&quot;headerlink&quot; title=&quot;找个理由&quot;&gt;&lt;/a&gt;找个理由&lt;/h1&gt;&lt;p&gt;大学期间，喜欢上了摄影和骑行，拍了很多照片，有些还是挺（不）好（咋）看（滴）的，这些图片东躲西藏在网盘的各个角落，有时候想找她们都很难，因为我重点是想找好看的。怎么办？可不可以自己开发一个应用，把平时拍到的好照片放上去呢？恩，可以是可以，为什么不用第三方的 APP 呢？不为什么，因为只想给自己用，大体的功能我规划了一下，有些想法可能天马行空。梦想还是要有的，万一实现了呢？&lt;/p&gt;
-&lt;p&gt;对了，忘了一件很重要的事，这个应用还没起名字。昨晚想了一宿，就叫 isolee（影想力）吧&lt;/p&gt;
+&lt;p&gt;对了，忘了一件很重要的事，这个应用还没起名字。昨晚想了一宿，就叫 ISOLEE 吧&lt;/p&gt;
 &lt;h1 id=&quot;u529F_u80FD_u5217_u8868&quot;&gt;&lt;a href=&quot;#u529F_u80FD_u5217_u8868&quot; class=&quot;headerlink&quot; title=&quot;功能列表&quot;&gt;&lt;/a&gt;功能列表&lt;/h1&gt;&lt;p&gt;大体功能如下图所示，一共分为三期。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/isolee-structure.png&quot; alt=&quot;isolee-structure&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;u4E0B_u671F_u5185_u5BB9&quot;&gt;&lt;a href=&quot;#u4E0B_u671F_u5185_u5BB9&quot; class=&quot;headerlink&quot; title=&quot;下期内容&quot;&gt;&lt;/a&gt;下期内容&lt;/h1&gt;&lt;p&gt;技术调研，确定最终需求！&lt;/p&gt;
@@ -221,14 +217,12 @@
     
     </summary>
     
-      <category term="我的作品" scheme="http://xiamianyu.github.io/categories/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+      <category term="ISOLEE" scheme="http://xiamianyu.github.io/categories/ISOLEE/"/>
     
     
       <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
     
-      <category term="isolee" scheme="http://xiamianyu.github.io/tags/isolee/"/>
-    
-      <category term="我的作品" scheme="http://xiamianyu.github.io/tags/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+      <category term="ISOLEE" scheme="http://xiamianyu.github.io/tags/ISOLEE/"/>
     
   </entry>
   
@@ -237,7 +231,7 @@
     <link href="http://xiamianyu.github.io/2016/04/05/%E6%89%93%E9%80%A0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BD%9C%E5%93%81/"/>
     <id>http://xiamianyu.github.io/2016/04/05/打造属于自己的作品/</id>
     <published>2016-04-05T14:59:12.000Z</published>
-    <updated>2016-04-10T09:51:48.000Z</updated>
+    <updated>2016-04-23T07:02:36.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;假设你是一个搞 Android 的，BOSS 交给你一个需求文档，你花几分钟浏览文档，迅速提取跟APP相关的功能需求，构建简易原型，提交给用户，根据用户反馈，将需求理清，界面最终定型，最后将定型的简易界面交给美工打磨漂亮。接下来开始APP的总体设计和详细设计，最后编码测试部署，一个人拿下所有，全栈工程师的初级体验。这是我去年8月份接手的一个项目，由于当时团队里只有我有空挡，于是 BOSS 让我全权负责它。从需求调研到交付到客户手里，差不多要2个月时间。做完这个项目后，我忽然发现自己开始喜欢这种工作方式，从只会 Coding ，到会需求调研、界面设计、APP 整体架构设计以及协同美工和测试等人员来完成一个项目，不得不说，是一个多方位的历练，这段经历给我最大的感悟就是，不当码农是可以滴！&lt;/p&gt;
 &lt;h1 id=&quot;u6B63_u6587&quot;&gt;&lt;a href=&quot;#u6B63_u6587&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;p&gt;这段时间想到做一款自己喜欢的应用，不为别的，就做给自己。当然了，「做一款自己喜欢的应用」这个理由有点过于牵强，其实我是有目的的，哈哈哈…&lt;/p&gt;
@@ -257,12 +251,12 @@
     
     </summary>
     
-      <category term="我的作品" scheme="http://xiamianyu.github.io/categories/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+      <category term="ISOLEE" scheme="http://xiamianyu.github.io/categories/ISOLEE/"/>
     
     
       <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
     
-      <category term="我的作品" scheme="http://xiamianyu.github.io/tags/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/"/>
+      <category term="ISOLEE" scheme="http://xiamianyu.github.io/tags/ISOLEE/"/>
     
   </entry>
   
