@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-04-23T07:03:35.000Z</updated>
+  <updated>2016-05-02T06:14:07.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数学之美</title>
+    <link href="http://xiamianyu.github.io/2016/05/02/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
+    <id>http://xiamianyu.github.io/2016/05/02/数学之美/</id>
+    <published>2016-05-02T03:58:55.000Z</published>
+    <updated>2016-05-02T06:14:07.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;u6587_u5B57_u548C_u8BED_u8A00_vs__u6570_u5B57_u548C_u4FE1_u606F&quot;&gt;&lt;a href=&quot;#u6587_u5B57_u548C_u8BED_u8A00_vs__u6570_u5B57_u548C_u4FE1_u606F&quot; class=&quot;headerlink&quot; title=&quot;文字和语言 vs 数字和信息&quot;&gt;&lt;/a&gt;文字和语言 vs 数字和信息&lt;/h1&gt;&lt;p&gt;语言的产生：早起的人类通过声音来传播信息，表达的信息越来越多，不再是几种不同的声音就能完全覆盖，语言由此产生，通过口述传到后代。&lt;/p&gt;
+&lt;p&gt;文字的产生：语言描述的共同因素形成了词汇，当语言和词汇多到一定程度时，人类仅靠大脑已经记不住所有的词汇，高效记录信息的需求（文字，包括数字）由此产生。&lt;/p&gt;
+&lt;h1 id=&quot;u81EA_u7136_u8BED_u8A00_u5904_u7406__u2013__u4ECE_u89C4_u5219_u5230_u7EDF_u8BA1&quot;&gt;&lt;a href=&quot;#u81EA_u7136_u8BED_u8A00_u5904_u7406__u2013__u4ECE_u89C4_u5219_u5230_u7EDF_u8BA1&quot; class=&quot;headerlink&quot; title=&quot;自然语言处理 – 从规则到统计&quot;&gt;&lt;/a&gt;自然语言处理 – 从规则到统计&lt;/h1&gt;&lt;p&gt;语言：信息编码的方式&lt;br&gt;语法：编解码的算法&lt;/p&gt;
+&lt;p&gt;把一个要表达的意思，通过某种语言的一句话表达出来，就是用这种语言的编码方式对头脑中的信息做了一次编码，编码的结果就是一串文字。而如果对方懂得这么语言，他就可以用这门语言的解码方法获得说话人要表达的信息。这就是语言的数学本质。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自然语言的处理&lt;/strong&gt;&lt;br&gt;自然语言的机器处理，现在又称「自然语言的处理」&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自然语言的发展历史&lt;/strong&gt;&lt;br&gt;20世纪50 ~ 70年代：用人脑模拟电脑，基于规则的句法分析走到了尽头&lt;br&gt;20世纪70年代之后：基于数据模型和统计的方法取得了很好的发展&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;从规则到统计&lt;/strong&gt;&lt;br&gt;如今，自然语言的处理研究，从单纯的句法分析和语义理解，变成非常贴近应用的机器翻译、语音识别、文本到数据库的自动生成、数据挖掘和只是的获取等。&lt;/p&gt;
+&lt;p&gt;基于统计的自然语言处理方法，在数学模型上和通信是相通的，甚至就是相同的。因此，在数学意义上自然语言处理又和语言的初衷「通信」联系在了一起。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;u6587_u5B57_u548C_u8BED_u8A00_vs__u6570_u5B57_u548C_u4FE1_u606F&quot;&gt;&lt;a href=&quot;#u6587_u5B57_u548C_u8BED_u8A00_vs__u6570_u5B57_u548C_u4FE1
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://xiamianyu.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数学之美" scheme="http://xiamianyu.github.io/tags/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
+    
+      <category term="读书笔记" scheme="http://xiamianyu.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>ISOLEE-原型设计</title>
@@ -296,7 +328,7 @@
     <link href="http://xiamianyu.github.io/2016/03/20/Hexo-Next-%E6%8C%81%E7%BB%AD%E6%94%B9%E5%96%84/"/>
     <id>http://xiamianyu.github.io/2016/03/20/Hexo-Next-持续改善/</id>
     <published>2016-03-20T13:21:29.000Z</published>
-    <updated>2016-04-06T05:09:15.000Z</updated>
+    <updated>2016-04-24T15:03:30.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;u6DFB_u52A0_RSS&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_RSS&quot; class=&quot;headerlink&quot; title=&quot;添加 RSS&quot;&gt;&lt;/a&gt;添加 RSS&lt;/h3&gt;&lt;p&gt;安装插件&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install --save hexo-generator-feed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
