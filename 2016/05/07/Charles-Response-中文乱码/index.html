@@ -75,7 +75,7 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
 修改 Info.plist
 打开 Info.plist，找到 -Xmx256m，添加 -Dfile.encoding=UTF-8 ，重启 Charles 即可
 123">
-<meta property="og:updated_time" content="2016-05-07T04:01:42.000Z">
+<meta property="og:updated_time" content="2016-05-07T07:22:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Charles Response 中文乱码">
 <meta name="twitter:description" content="使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：
@@ -306,7 +306,7 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
       
         <p>使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：</p>
 <p><strong>找到 Info.plist</strong></p>
-<p><code>Applications -&gt; Charles -&gt; Contents -&gt; Info.plist</code></p>
+<p>Applications -&gt; Charles -&gt; Contents -&gt; Info.plist</p>
 <p><strong>修改 Info.plist</strong></p>
 <p>打开 Info.plist，找到 <code>-Xmx256m</code>，添加 <code>-Dfile.encoding=UTF-8</code> ，重启 Charles 即可</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 修改之前 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">string</span>&gt;</span>-Xmx256m<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 修改之后 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">string</span>&gt;</span>-Xmx256m -Dfile.encoding=UTF-8<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br></pre></td></tr></table></figure>
