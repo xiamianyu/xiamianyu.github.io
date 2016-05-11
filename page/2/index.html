@@ -296,7 +296,8 @@
         
           
           问题描述在 Activity 的 onCreated() 中调用 PopupWindow 的 showAsDropDown() 或 showAtLocation() 出现一下异常：
-12android.view.WindowManager$BadTokenExceptionUnable to add
+12android.view.WindowManager$BadTokenExceptionUnable to add window -- token null is not valid; is your activity running?
+原因分析PopupWindow 的 showAsDropDown() 或 s
           ...
 
           <div class="post-more-link text-center">
@@ -429,7 +430,8 @@
 1$ npm install --save hexo-generator-feed
 在 站点配置 _config.yml中添加
 12## Plugins: http://hexo.io/plugins/plugins: hexo-generate-feed
-在 主题配置 _co
+在 主题配置 _config.yml中添加
+1234# Set rss to false to disable feed link.# Leave rss as empty to use site's feed link
           ...
 
           <div class="post-more-link text-center">
@@ -559,7 +561,12 @@
         
           
           前段时间stormzhang大哥在他的公众号AndroidDeveloper中, 发表了一篇文章「吐血推荐珍藏的Chrome插件」，特别棒！当时就立马下载去了。今天跟大家分享我觉得比较好用的插件，其中一些是从stormzhang大哥那里引用过来的，哈哈。
-PostmanPostman是API调试的神
+PostmanPostman是API调试的神器，基本功能如下：
+
+支持GET、POST、PUT、HEAD、DELETE等请求
+对请求返回的数据，支持JSON、XML、HTML、Text查看格式
+类似于浏览器，可以浏览和清空历史请求记录
+支持以文
           ...
 
           <div class="post-more-link text-center">
