@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-05-07T07:22:44.000Z</updated>
+  <updated>2016-05-15T03:10:34.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初尝面试官</title>
+    <link href="http://xiamianyu.github.io/2016/05/15/%E5%88%9D%E5%B0%9D%E9%9D%A2%E8%AF%95%E5%AE%98/"/>
+    <id>http://xiamianyu.github.io/2016/05/15/初尝面试官/</id>
+    <published>2016-05-15T01:47:51.000Z</published>
+    <updated>2016-05-15T03:10:34.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;第一次当面试官，激动且有点不知所措，以前都是别人面试我，现在轮到我面试别人，我应该怎么面试呢（想到大四去教育实习的经历）？在团队管理过程中，多少有了解面试方面的知识，但都是理论性的，自己没实战过，心里还是空落落的。这两天的面试，让我对它有了全新的认识，也深刻意识到其重要性。&lt;/p&gt;
+&lt;h1 id=&quot;u7B5B_u9009_u7B80_u5386&quot;&gt;&lt;a href=&quot;#u7B5B_u9009_u7B80_u5386&quot; class=&quot;headerlink&quot; title=&quot;筛选简历&quot;&gt;&lt;/a&gt;筛选简历&lt;/h1&gt;&lt;p&gt;这两天面试了五六个人，没有一个合格，看了简历之后，最大的感觉是，为什么他们能得到面试的机会。简历排版这么差、内容描述没重点、罗里吧嗦、简历信息不真实等，好浪费时间呐，如果你还不懂怎么写出合格的简历，请参考：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzAxNjI3MDkzOQ==&amp;amp;mid=405319124&amp;amp;idx=1&amp;amp;sn=1451f3e9ce9787b3576088c10bc9eac1#rd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;80% 以上简历都是不合格的&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzAxNjI3MDkzOQ==&amp;amp;mid=406353093&amp;amp;idx=1&amp;amp;sn=913d388ba08eb41430b131ec05ee1b9d#rd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;推荐两个技术简历模板&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;回归正题，「为什么他们能得到面试的机会？」，后来我才知道，HR 看到有简历投递过来就预约面试，这显然是有问题的。能得到面试机会的简历应该是被认为有能力胜任这个职位的人，因此简历务必经过开发部的审核，确定有意向再预约，这样可以大大提高面试的质量，找到合适的人。&lt;/p&gt;
+&lt;h1 id=&quot;u7B14_u8BD5_u9898_u76EE&quot;&gt;&lt;a href=&quot;#u7B14_u8BD5_u9898_u76EE&quot; class=&quot;headerlink&quot; title=&quot;笔试题目&quot;&gt;&lt;/a&gt;笔试题目&lt;/h1&gt;&lt;p&gt;IT 的面试，大多都有笔试，用于考察应聘者的硬技能，笔试的题目怎么出不可忽视。从这两天的面试效果来看，之前的笔试题目，太过简单，全都是基于 Android 最基础的知识点。总的来说，无法通过笔试来初次判断应聘者的功底，我认为是失败的。后来我临时补充了一些，加了 Java 基础和 Android 其他方面的 知识点，效果好了一些。笔试内容可以是 Java + Android ，从浅到深，有区分度，更好地考察应聘者的功底。&lt;/p&gt;
+&lt;h1 id=&quot;u8F6F_u6280_u80FD&quot;&gt;&lt;a href=&quot;#u8F6F_u6280_u80FD&quot; class=&quot;headerlink&quot; title=&quot;软技能&quot;&gt;&lt;/a&gt;软技能&lt;/h1&gt;&lt;p&gt;软技能指的是沟通能力、抗压能力、性格等，沟通能力在面试交流时，可以察觉到一些，性格、抗压能力，短短的一个面试还是挺难考察的。&lt;/p&gt;
+&lt;p&gt;以上是我作为一位小白面试官的经历，还是要多多学习。下面这篇文章是在知乎上看到的，有很大参考价值，值得好好学习。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/19765032/answer/74361190?group_id=654385507203747840&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;面试时，问哪些问题能试出一个 Android 应用开发者真正的水平？&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;第一次当面试官，激动且有点不知所措，以前都是别人面试我，现在轮到我面试别人，我应该怎么面试呢（想到大四去
+    
+    </summary>
+    
+      <category term="人力资源" scheme="http://xiamianyu.github.io/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/"/>
+    
+    
+      <category term="人力资源" scheme="http://xiamianyu.github.io/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="面试" scheme="http://xiamianyu.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Charles Response 中文乱码</title>
