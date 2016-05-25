@@ -59,13 +59,13 @@
 
 
 
-<meta name="description" content="用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「APP研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「APP研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「APP研发录」，有些做了细化，有助大家理解。
+<meta name="description" content="用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「App研发录」，有些做了细化，有助大家理解。
 登录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用户登录设计">
 <meta property="og:url" content="http://xiamianyu.github.io/2016/04/16/用户登录设计/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「APP研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「APP研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「APP研发录」，有些做了细化，有助大家理解。
+<meta property="og:description" content="用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「App研发录」，有些做了细化，有助大家理解。
 登录">
 <meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/login_action.png">
 <meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/register_bebavior.png">
@@ -77,10 +77,10 @@
 <meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/normal_login.png">
 <meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/auto_login.png">
 <meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/safe_login.png">
-<meta property="og:updated_time" content="2016-04-16T06:58:13.000Z">
+<meta property="og:updated_time" content="2016-05-19T15:25:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用户登录设计">
-<meta name="twitter:description" content="用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「APP研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「APP研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「APP研发录」，有些做了细化，有助大家理解。
+<meta name="twitter:description" content="用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「App研发录」，有些做了细化，有助大家理解。
 登录">
 
 
@@ -310,18 +310,18 @@
       
 
       
-        <p>用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「APP研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「APP研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「APP研发录」，有些做了细化，有助大家理解。</p>
+        <p>用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「App研发录」，有些做了细化，有助大家理解。</p>
 <h1 id="u767B_u5F55_u548C_u6CE8_u518C"><a href="#u767B_u5F55_u548C_u6CE8_u518C" class="headerlink" title="登录和注册"></a>登录和注册</h1><p>登录和注册就像一双筷子，缺一不可。</p>
 <p><strong>登录的作用</strong></p>
 <p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/login_action.png" alt="login_action"></p>
 <p><strong>注册的形式</strong></p>
-<p>有些 APP 是给专门的人用的，只有登录界面，账号是在服务器注册。</p>
+<p>有些 App 是给专门的人用的，只有登录界面，账号是在服务器注册。</p>
 <p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/register_bebavior.png" alt="register_bebavior"></p>
 <p>这样，登录和注册可以这样划分：</p>
 <p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/login_and_register.png" alt="login_and_register"></p>
-<h1 id="u7528_u6237_u4FE1_u606F_u7684_u5904_u7406"><a href="#u7528_u6237_u4FE1_u606F_u7684_u5904_u7406" class="headerlink" title="用户信息的处理"></a>用户信息的处理</h1><p>如果登录只是作为程序的入口，那么登录成功后的用户信息基本很少用到，这时候我们一般的做法是把它序列化到本地，需要的时候再取出来。但更多时候，用户信息贯穿整个 APP ，很多地方都会用到，我们可以把它放在一个全局变量中以便随时存取，为了防止全局变量被内存回收，还得把它序列化到本地，下面是代码的设计。</p>
+<h1 id="u7528_u6237_u4FE1_u606F_u7684_u5904_u7406"><a href="#u7528_u6237_u4FE1_u606F_u7684_u5904_u7406" class="headerlink" title="用户信息的处理"></a>用户信息的处理</h1><p>如果登录只是作为程序的入口，那么登录成功后的用户信息基本很少用到，这时候我们一般的做法是把它序列化到本地，需要的时候再取出来。但更多时候，用户信息贯穿整个 App ，很多地方都会用到，我们可以把它放在一个全局变量中以便随时存取，为了防止全局变量被内存回收，还得把它序列化到本地，下面是代码的设计。</p>
 <p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/class_user.png" alt="class_user"></p>
-<p>UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局变量。UserInfo 因 APP 而异，设计为 POJO 即可，这里重点讲解 User 类。</p>
+<p>UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局变量。UserInfo 因 App 而异，设计为 POJO 即可，这里重点讲解 User 类。</p>
 <p><strong>User</strong></p>
 <p>从上面我们可以得知，User 类应具备如下几个特性：</p>
 <ol>
@@ -357,7 +357,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LoginActivity</span></span><br><span class="line"></span><br><span class="line"><span class="annotation">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSucceed</span><span class="params">(UserInfo userInfo)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (userInfo != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// delete userInfo from database</span></span><br><span class="line">        User.getInstance().reset();</span><br><span class="line"></span><br><span class="line">        User.getInstance().setName(userInfo.getName());</span><br><span class="line">        User.getInstance().setSex(userInfo.getSex());</span><br><span class="line">        User.getInstance().setAvatar(userInfo.getAvatar());</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// save userInfo to databse</span></span><br><span class="line">        User.getInstance().save();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (isNeedCallback) &#123;</span><br><span class="line">        setResult(Activity.RESULT_OK);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        startActivity(<span class="keyword">new</span> Intent(<span class="keyword">this</span>, PersonalCenterActivity.class));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    finish();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们看到，登录成功会回调 onSucceed()，我们第一步是先保存用户信息，然后根据 isNeedCallback 做页面跳转判断，是不是很简单。</p>
 <h1 id="u81EA_u52A8_u767B_u5F55"><a href="#u81EA_u52A8_u767B_u5F55" class="headerlink" title="自动登录"></a>自动登录</h1><blockquote>
-<p>所谓自动登录，就是登录成功后，重启 APP，仍然是登录状态</p>
+<p>所谓自动登录，就是登录成功后，重启 App，仍然是登录状态</p>
 </blockquote>
 <p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/normal_login.png" alt="normal_login"></p>
 <p>最直接的方法是，登录成功后，本地保存用户名和密码。重启App后，检查本地是否有保存用户名和密码，如果有，则将用户名和密码传入到登录接口，模拟用户登录的行为。</p>
@@ -525,7 +525,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

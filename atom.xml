@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-05-19T13:09:44.000Z</updated>
+  <updated>2016-05-19T15:59:24.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新闻APP-Fragment的懒加载</title>
+    <link href="http://xiamianyu.github.io/2016/05/19/%E6%96%B0%E9%97%BBAPP-Fragment%E7%9A%84%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
+    <id>http://xiamianyu.github.io/2016/05/19/新闻APP-Fragment的懒加载/</id>
+    <published>2016-05-19T15:58:09.000Z</published>
+    <updated>2016-05-19T15:59:24.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Android" scheme="http://xiamianyu.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
+    
+      <category term="Fragment" scheme="http://xiamianyu.github.io/tags/Fragment/"/>
+    
+  </entry>
   
   <entry>
     <title>Fragment not attached to Activity</title>
@@ -44,42 +66,6 @@
     
     
       <category term="Fragment" scheme="http://xiamianyu.github.io/tags/Fragment/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初尝面试官</title>
-    <link href="http://xiamianyu.github.io/2016/05/15/%E5%88%9D%E5%B0%9D%E9%9D%A2%E8%AF%95%E5%AE%98/"/>
-    <id>http://xiamianyu.github.io/2016/05/15/初尝面试官/</id>
-    <published>2016-05-15T01:47:51.000Z</published>
-    <updated>2016-05-18T14:51:51.000Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;第一次当面试官，激动且有点不知所措，以前都是别人面试我，现在轮到我面试别人，我应该怎么面试呢（想到大四去教育实习的经历）？在团队管理过程中，多少有了解面试方面的知识，但都是理论性的，自己没实战过，心里还是空落落的。这两天的面试，让我对它有了全新的认识，也深刻意识到其重要性。&lt;/p&gt;
-&lt;h1 id=&quot;u7B5B_u9009_u7B80_u5386&quot;&gt;&lt;a href=&quot;#u7B5B_u9009_u7B80_u5386&quot; class=&quot;headerlink&quot; title=&quot;筛选简历&quot;&gt;&lt;/a&gt;筛选简历&lt;/h1&gt;&lt;p&gt;面试了五六个人，没有一个合格，看了简历之后，最大的感觉是，为什么他们能得到面试的机会。简历排版这么差、内容描述没重点、罗里吧嗦、简历信息不真实等，好浪费时间呐，如果你还不懂怎么写出合格的简历，请参考：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzAxNjI3MDkzOQ==&amp;amp;mid=405319124&amp;amp;idx=1&amp;amp;sn=1451f3e9ce9787b3576088c10bc9eac1#rd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;80% 以上简历都是不合格的&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzAxNjI3MDkzOQ==&amp;amp;mid=406353093&amp;amp;idx=1&amp;amp;sn=913d388ba08eb41430b131ec05ee1b9d#rd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;推荐两个技术简历模板&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;回归正题，「为什么他们能得到面试的机会？」，后来我才知道，HR 看到有简历投递过来就预约面试，这显然是有问题的。能得到面试机会的简历应该是被认为有能力胜任这个职位的人，因此简历务必经过开发部的审核，确定有意向再预约，这样可以大大提高面试的质量，找到合适的人。&lt;/p&gt;
-&lt;h1 id=&quot;u7B14_u8BD5_u9898_u76EE&quot;&gt;&lt;a href=&quot;#u7B14_u8BD5_u9898_u76EE&quot; class=&quot;headerlink&quot; title=&quot;笔试题目&quot;&gt;&lt;/a&gt;笔试题目&lt;/h1&gt;&lt;p&gt;IT 的面试，大多都有笔试，用于考察应聘者的硬技能，笔试的题目怎么出不可忽视。从这两天的面试效果来看，之前的笔试题目，太过简单，全都是基于 Android 最基础的知识点。总的来说，无法通过笔试来初次判断应聘者的功底，我认为是失败的。后来我临时补充了一些，加了 Java 基础和 Android 其他方面的 知识点，效果好了一些。笔试内容可以是 Java + Android ，从浅到深，有区分度，更好地考察应聘者的功底。&lt;/p&gt;
-&lt;h1 id=&quot;u8F6F_u6280_u80FD&quot;&gt;&lt;a href=&quot;#u8F6F_u6280_u80FD&quot; class=&quot;headerlink&quot; title=&quot;软技能&quot;&gt;&lt;/a&gt;软技能&lt;/h1&gt;&lt;p&gt;软技能指的是沟通能力、抗压能力、性格等，沟通能力在面试交流时，可以察觉到一些，性格、抗压能力，短短的一个面试还是挺难考察的。&lt;/p&gt;
-&lt;p&gt;以上是我作为一位小白面试官的经历，还是要多多学习。下面这篇文章是在知乎上看到的，有很大参考价值，值得好好学习。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/19765032/answer/74361190?group_id=654385507203747840&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;面试时，问哪些问题能试出一个 Android 应用开发者真正的水平？&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;第一次当面试官，激动且有点不知所措，以前都是别人面试我，现在轮到我面试别人，我应该怎么面试呢（想到大四去
-    
-    </summary>
-    
-      <category term="人力资源" scheme="http://xiamianyu.github.io/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/"/>
-    
-    
-      <category term="人力资源" scheme="http://xiamianyu.github.io/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/"/>
-    
-      <category term="面试" scheme="http://xiamianyu.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -269,20 +255,20 @@
     <link href="http://xiamianyu.github.io/2016/04/16/%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E8%AE%BE%E8%AE%A1/"/>
     <id>http://xiamianyu.github.io/2016/04/16/用户登录设计/</id>
     <published>2016-04-16T02:02:46.000Z</published>
-    <updated>2016-04-16T06:58:13.000Z</updated>
+    <updated>2016-05-19T15:25:49.000Z</updated>
     
-    <content type="html">&lt;p&gt;用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「APP研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「APP研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「APP研发录」，有些做了细化，有助大家理解。&lt;/p&gt;
+    <content type="html">&lt;p&gt;用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「App研发录」，有些做了细化，有助大家理解。&lt;/p&gt;
 &lt;h1 id=&quot;u767B_u5F55_u548C_u6CE8_u518C&quot;&gt;&lt;a href=&quot;#u767B_u5F55_u548C_u6CE8_u518C&quot; class=&quot;headerlink&quot; title=&quot;登录和注册&quot;&gt;&lt;/a&gt;登录和注册&lt;/h1&gt;&lt;p&gt;登录和注册就像一双筷子，缺一不可。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;登录的作用&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/login_action.png&quot; alt=&quot;login_action&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注册的形式&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;有些 APP 是给专门的人用的，只有登录界面，账号是在服务器注册。&lt;/p&gt;
+&lt;p&gt;有些 App 是给专门的人用的，只有登录界面，账号是在服务器注册。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/register_bebavior.png&quot; alt=&quot;register_bebavior&quot;&gt;&lt;/p&gt;
 &lt;p&gt;这样，登录和注册可以这样划分：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/login_and_register.png&quot; alt=&quot;login_and_register&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;u7528_u6237_u4FE1_u606F_u7684_u5904_u7406&quot;&gt;&lt;a href=&quot;#u7528_u6237_u4FE1_u606F_u7684_u5904_u7406&quot; class=&quot;headerlink&quot; title=&quot;用户信息的处理&quot;&gt;&lt;/a&gt;用户信息的处理&lt;/h1&gt;&lt;p&gt;如果登录只是作为程序的入口，那么登录成功后的用户信息基本很少用到，这时候我们一般的做法是把它序列化到本地，需要的时候再取出来。但更多时候，用户信息贯穿整个 APP ，很多地方都会用到，我们可以把它放在一个全局变量中以便随时存取，为了防止全局变量被内存回收，还得把它序列化到本地，下面是代码的设计。&lt;/p&gt;
+&lt;h1 id=&quot;u7528_u6237_u4FE1_u606F_u7684_u5904_u7406&quot;&gt;&lt;a href=&quot;#u7528_u6237_u4FE1_u606F_u7684_u5904_u7406&quot; class=&quot;headerlink&quot; title=&quot;用户信息的处理&quot;&gt;&lt;/a&gt;用户信息的处理&lt;/h1&gt;&lt;p&gt;如果登录只是作为程序的入口，那么登录成功后的用户信息基本很少用到，这时候我们一般的做法是把它序列化到本地，需要的时候再取出来。但更多时候，用户信息贯穿整个 App ，很多地方都会用到，我们可以把它放在一个全局变量中以便随时存取，为了防止全局变量被内存回收，还得把它序列化到本地，下面是代码的设计。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/class_user.png&quot; alt=&quot;class_user&quot;&gt;&lt;/p&gt;
-&lt;p&gt;UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局变量。UserInfo 因 APP 而异，设计为 POJO 即可，这里重点讲解 User 类。&lt;/p&gt;
+&lt;p&gt;UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局变量。UserInfo 因 App 而异，设计为 POJO 即可，这里重点讲解 User 类。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;从上面我们可以得知，User 类应具备如下几个特性：&lt;/p&gt;
 &lt;ol&gt;
@@ -318,7 +304,7 @@
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// LoginActivity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onSucceed&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(UserInfo userInfo)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (userInfo != &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// delete userInfo from database&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().reset();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().setName(userInfo.getName());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().setSex(userInfo.getSex());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().setAvatar(userInfo.getAvatar());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// save userInfo to databse&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().save();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (isNeedCallback) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        setResult(Activity.RESULT_OK);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        startActivity(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Intent(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, PersonalCenterActivity.class));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    finish();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;我们看到，登录成功会回调 onSucceed()，我们第一步是先保存用户信息，然后根据 isNeedCallback 做页面跳转判断，是不是很简单。&lt;/p&gt;
 &lt;h1 id=&quot;u81EA_u52A8_u767B_u5F55&quot;&gt;&lt;a href=&quot;#u81EA_u52A8_u767B_u5F55&quot; class=&quot;headerlink&quot; title=&quot;自动登录&quot;&gt;&lt;/a&gt;自动登录&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;所谓自动登录，就是登录成功后，重启 APP，仍然是登录状态&lt;/p&gt;
+&lt;p&gt;所谓自动登录，就是登录成功后，重启 App，仍然是登录状态&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/normal_login.png&quot; alt=&quot;normal_login&quot;&gt;&lt;/p&gt;
 &lt;p&gt;最直接的方法是，登录成功后，本地保存用户名和密码。重启App后，检查本地是否有保存用户名和密码，如果有，则将用户名和密码传入到登录接口，模拟用户登录的行为。&lt;/p&gt;
@@ -342,7 +328,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「APP研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「APP研发录」里都有相应的方案。所以这周的团队技术分享会拿
+      &lt;p&gt;用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿
     
     </summary>
     
