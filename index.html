@@ -225,8 +225,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/19/新闻APP-Fragment的懒加载/" itemprop="url">
-                  新闻APP-Fragment的懒加载
+                <a class="post-title-link" href="/2016/05/25/新闻客户端-保存列表状态/" itemprop="url">
+                  新闻客户端-保存列表状态
                 </a>
               
             
@@ -239,8 +239,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-19T23:58:09+08:00" content="2016-05-19">
-              2016-05-19
+            <time itemprop="dateCreated" datetime="2016-05-25T21:21:47+08:00" content="2016-05-25">
+              2016-05-25
             </time>
           </span>
 
@@ -253,8 +253,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/项目总结/" itemprop="url" rel="index">
+                    <span itemprop="name">项目总结</span>
                   </a>
                 </span>
 
@@ -269,8 +269,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/19/新闻APP-Fragment的懒加载/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/19/新闻APP-Fragment的懒加载/" itemprop="commentsCount"></span>
+                <a href="/2016/05/25/新闻客户端-保存列表状态/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/25/新闻客户端-保存列表状态/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,7 +280,7 @@
 
           
           
-             <span id="/2016/05/19/新闻APP-Fragment的懒加载/" class="leancloud_visitors" data-flag-title="新闻APP-Fragment的懒加载">
+             <span id="/2016/05/25/新闻客户端-保存列表状态/" class="leancloud_visitors" data-flag-title="新闻客户端-保存列表状态">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -303,11 +303,19 @@
       
         
           
-          
-          
+          前言目前的新闻客户端都是由多个栏目组成，每个栏目下有多篇文章，以列表的形式展现，用户通常会左右切换栏目看不同类别的文章，而左右切换栏目这个操作，看似简单，其实不易。
+对比今日头条、网易新闻等客户端，可以发现它们在左右切换栏目时有以下特点：
+
+每次打开 App，第一个栏目自动刷新数据
+左右切换栏目时，定时自动刷新栏目数据
+左右切换栏目时，保持最后离开的状态（列表数据以及在屏幕上的位置）
+
+下面是效果图：
+实现第 1 点相信你们都会做，这里主要是说明 2、3 点的实现思路。第 2 点和第 3 点看起
+          ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/19/新闻APP-Fragment的懒加载/#more" rel="contents">
+            <a class="btn" href="/2016/05/25/新闻客户端-保存列表状态/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1571,7 +1579,7 @@ Android 端项目
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1580,7 +1588,7 @@ Android 端项目
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
