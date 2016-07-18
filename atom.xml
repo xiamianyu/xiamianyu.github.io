@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-06-02T01:43:27.000Z</updated>
+  <updated>2016-07-18T15:42:20.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java 注解</title>
+    <link href="http://xiamianyu.github.io/2016/07/18/Java-%E6%B3%A8%E8%A7%A3/"/>
+    <id>http://xiamianyu.github.io/2016/07/18/Java-注解/</id>
+    <published>2016-07-18T15:27:31.000Z</published>
+    <updated>2016-07-18T15:42:20.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;u6982_u5FF5&quot;&gt;&lt;a href=&quot;#u6982_u5FF5&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;注解，也称元数据，在Java SE5中引入，为我们在代码中添加信息提供了一种形式化的方法，使我们在稍后某个时刻非常方面的使用这些数据。&lt;/p&gt;
+&lt;h2 id=&quot;u6807_u51C6_u6CE8_u89E3&quot;&gt;&lt;a href=&quot;#u6807_u51C6_u6CE8_u89E3&quot; class=&quot;headerlink&quot; title=&quot;标准注解&quot;&gt;&lt;/a&gt;标准注解&lt;/h2&gt;&lt;p&gt;标准注解指的是Java自带的三个注解：&lt;code&gt;Override&lt;/code&gt;、&lt;code&gt;Deprecated&lt;/code&gt;、&lt;code&gt;SuppressWarnings&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Override&lt;/strong&gt;&lt;br&gt;表示当前方法覆盖超类中的方法&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Deprecated&lt;/strong&gt;&lt;br&gt;表示已经过时，不建议使用&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SuppressWarnings&lt;/strong&gt;&lt;br&gt;关闭不正当的编译器警告&lt;/p&gt;
+&lt;h2 id=&quot;u5143_u6CE8_u89E3&quot;&gt;&lt;a href=&quot;#u5143_u6CE8_u89E3&quot; class=&quot;headerlink&quot; title=&quot;元注解&quot;&gt;&lt;/a&gt;元注解&lt;/h2&gt;&lt;p&gt;所谓的元注解，就是用来定义注解的注解，即是我们可以利用元注解来自定义其他注解。元注解有 &lt;code&gt;@Target&lt;/code&gt;、&lt;code&gt;@Retention&lt;/code&gt;、&lt;code&gt;@Document&lt;/code&gt;、&lt;code&gt;@Inherit&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;@Target&lt;/strong&gt;&lt;br&gt;表示该注解用于什么地方. &lt;code&gt;ElementType&lt;/code&gt; 参数包括：&lt;br&gt;&lt;code&gt;CONSTRUCTOR&lt;/code&gt;: 构造器的声明&lt;br&gt;&lt;code&gt;FIELD&lt;/code&gt;: 域声明（包括 enum）&lt;br&gt;&lt;code&gt;LOCAL_VARIABLE&lt;/code&gt;: 局部变量声明&lt;br&gt;&lt;code&gt;METHOD&lt;/code&gt;: 方法声明&lt;br&gt;&lt;code&gt;PACKAGE&lt;/code&gt;: 包声明&lt;br&gt;&lt;code&gt;PARAMETER&lt;/code&gt;: 参数声明&lt;br&gt;&lt;code&gt;TYPE&lt;/code&gt;: 类、接口（包括注解类型）或enum 声明&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;@Retention&lt;/strong&gt;&lt;br&gt;表示需要在什么级别保存该注解信息。可选的 &lt;code&gt;RetentionPolicy&lt;/code&gt; 参数包括：&lt;br&gt;&lt;code&gt;SOURCE&lt;/code&gt;：注解将被编译器丢弃&lt;br&gt;&lt;code&gt;CLASS&lt;/code&gt;：注解在 class 文件中可用，但会被 JVM 丢弃&lt;br&gt;&lt;code&gt;RUNTIME&lt;/code&gt;：JVM 运行时保留注解，可通过反射获取注解信息&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;@Document&lt;/strong&gt;&lt;br&gt;将次注解包含在 JavaDoc 中&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;@Inherit&lt;/strong&gt;&lt;br&gt;允许子类继承父类的注解&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;u6982_u5FF5&quot;&gt;&lt;a href=&quot;#u6982_u5FF5&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;注解，也称元数据，在Java SE5中引入，为我们在代码中添加信息提供了一种形式化的方法，使我们在稍后某
+    
+    </summary>
+    
+      <category term="Java" scheme="http://xiamianyu.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://xiamianyu.github.io/tags/Java/"/>
+    
+      <category term="注解" scheme="http://xiamianyu.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>SmartGit 破解</title>
