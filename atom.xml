@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-07-19T16:01:14.000Z</updated>
+  <updated>2016-07-20T16:02:58.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>App 项目文档管理</title>
+    <link href="http://xiamianyu.github.io/2016/07/20/App-%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86/"/>
+    <id>http://xiamianyu.github.io/2016/07/20/App-项目文档管理/</id>
+    <published>2016-07-20T15:27:48.000Z</published>
+    <updated>2016-07-20T16:02:58.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在麦子学院上跟 Sundy 学习敏捷开发时，第一次接触 App 项目文档管理。下面是 Sundy 老师对 App 项目文档管理的方式。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Requirement：需求分析文档&lt;br&gt;Design：总体设计和详细设计文档&lt;br&gt;Source：源码&lt;br&gt;Test：测试文档&lt;br&gt;Public：部署安装包&lt;br&gt;Help：帮助文档&lt;br&gt;Study：技术调研文档&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个 App 从需求到部署上线，每个阶段都会产生相应的文档，将每个阶段的文档整理起来，就形成 App 的项目文档。没有最好的，只有最合适的，受 Sundy 老师的启发，我们根据公司目前的情况作出了调整。我这边，一个 App 的产生，会有产品组、项目组、开发组的参与，各组的职责如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;产品组：负责产品的设计和提供UI&lt;br&gt;项目组：负责进度把控和 QC&lt;br&gt;开发组：Android、iOS 和后台&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了方便以后的项目维护和交接，我们将各个阶段产生的文档放到 SVN 上统一管理，并配置好权限。关于权限的配置，跟目录相反，目录是从小到大，而权限是从大到小。下面是目录和权限分配表：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/svn-app.png&quot; alt=&quot;svn-app&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这里面没有测试文档，我们将测试文档和进度放到禅道上管理。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在麦子学院上跟 Sundy 学习敏捷开发时，第一次接触 App 项目文档管理。下面是 Sundy 老师对 App 项目文档管理的方式。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Requirement：需求分析文档&lt;br&gt;Design：总体设计和详细设计文档&lt;br&gt;Sourc
+    
+    </summary>
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+      <category term="文档管理" scheme="http://xiamianyu.github.io/tags/%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 注解</title>
