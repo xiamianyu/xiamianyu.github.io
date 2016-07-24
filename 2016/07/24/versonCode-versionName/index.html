@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="One More Try">
 <meta property="og:description" content="学艺不精Android 开发中，我们对 versionCode 和 versionName 都不陌生，可能有些人对它们的理解还停留在 versionCode 对开发可见（对用户不可见），int 类型，versionName 对用户可见，String 类型。每次发布版本时都要修改 versionCode 和 versionName。最近因为版本控制命名问题造成的困扰，我才去 Android 官网查阅">
 <meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/android-version-downgrade.png">
-<meta property="og:updated_time" content="2016-07-24T08:09:06.000Z">
+<meta property="og:updated_time" content="2016-07-24T08:10:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="versonCode & versionName">
 <meta name="twitter:description" content="学艺不精Android 开发中，我们对 versionCode 和 versionName 都不陌生，可能有些人对它们的理解还停留在 versionCode 对开发可见（对用户不可见），int 类型，versionName 对用户可见，String 类型。每次发布版本时都要修改 versionCode 和 versionName。最近因为版本控制命名问题造成的困扰，我才去 Android 官网查阅">
@@ -311,7 +311,7 @@
 <blockquote>
 <p>类型：MAXINT(2e31 = 2147483647)<br>作用：标识 App 内部版本，对开发可见（对用户不可见），建议每次发布 release 版本时累加1<br>注意：长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。</p>
 </blockquote>
-<p>特别的，Android 中，覆盖安装时，不允许对 <code>versionCode</code> 做降级处理（按常理，降级是没必要），如：上一版 versionCode=”2”，新版 versionCode 不能小于2，否则覆盖安装失败。AS 上做了降级测试，出现以下提示：</p>
+<p>特别的，Android 中，覆盖安装时，不允许对 <code>versionCode</code> 做降级处理（按常理，没必要降级），如：上一版 versionCode=”2”，新版 versionCode 不能小于2，否则覆盖安装失败。AS 上做了降级测试，出现以下提示：</p>
 <p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/android-version-downgrade.png" alt="android-version-downgrade"></p>
 <p><strong>versionName</strong></p>
 <blockquote>
