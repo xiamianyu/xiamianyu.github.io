@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-07-24T08:10:21.000Z</updated>
+  <updated>2016-07-24T12:57:13.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac 显示隐藏文件</title>
+    <link href="http://xiamianyu.github.io/2016/07/24/Mac-%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/"/>
+    <id>http://xiamianyu.github.io/2016/07/24/Mac-显示隐藏文件/</id>
+    <published>2016-07-24T12:43:25.000Z</published>
+    <updated>2016-07-24T12:57:13.000Z</updated>
+    
+    <content type="html">&lt;p&gt;OS X Mavericks 和 OS X Yosemite 系统的版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 显示所有文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;defaults write com.apple.finder AppleShowAllFiles -boolean &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt; ; killall Finder&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 隐藏所有文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;defaults write com.apple.finder AppleShowAllFiles -boolean &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt; ; killall Finder&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;OS X Mountain Lion 和早期版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 显示所有文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;defaults write com.apple.finder AppleShowAllFiles TRUE ; killall Finder&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 隐藏所有文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;defaults write com.apple.finder AppleShowAllFiles FALSE ; killall Finder&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://sspai.com/26273&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://sspai.com/26273&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;OS X Mavericks 和 OS X Yosemite 系统的版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://xiamianyu.github.io/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="http://xiamianyu.github.io/tags/Mac/"/>
+    
+      <category term="隐藏文件" scheme="http://xiamianyu.github.io/tags/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>versonCode &amp; versionName</title>
@@ -804,30 +836,6 @@
     
     
       <category term="Chrome插件" scheme="http://xiamianyu.github.io/tags/Chrome%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新的开始</title>
-    <link href="http://xiamianyu.github.io/2016/03/08/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
-    <id>http://xiamianyu.github.io/2016/03/08/新的开始/</id>
-    <published>2016-03-08T12:59:15.000Z</published>
-    <updated>2016-03-20T15:36:01.000Z</updated>
-    
-    <content type="html">&lt;p&gt;回顾过去的一年，脑子有些空白，只是感叹时间过得好快。静下心来想想，过去的一年，并非没有收获，只是总结得太少，以至于回望过去，总是患得患失。亡羊补牢为时不晚，从这一刻开始，用心记录自己的成长吧，你可以的。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;回顾过去的一年，脑子有些空白，只是感叹时间过得好快。静下心来想想，过去的一年，并非没有收获，只是总结得太少，以至于回望过去，总是患得患失。亡羊补牢为时不晚，从这一刻开始，用心记录自己的成长吧，你可以的。&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://xiamianyu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
