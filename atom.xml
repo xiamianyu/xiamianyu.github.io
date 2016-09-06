@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-08-10T16:43:50.000Z</updated>
+  <updated>2016-09-06T10:18:53.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>资源整合</title>
+    <link href="http://xiamianyu.github.io/2016/09/06/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/"/>
+    <id>http://xiamianyu.github.io/2016/09/06/资源整合/</id>
+    <published>2016-09-06T10:18:31.000Z</published>
+    <updated>2016-09-06T10:18:53.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;u5F00_u53D1_u5DE5_u5177&quot;&gt;&lt;a href=&quot;#u5F00_u53D1_u5DE5_u5177&quot; class=&quot;headerlink&quot; title=&quot;开发工具&quot;&gt;&lt;/a&gt;开发工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.androiddevtools.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android 开发工具汇总&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;RESETful&quot;&gt;&lt;a href=&quot;#RESETful&quot; class=&quot;headerlink&quot; title=&quot;RESETful&quot;&gt;&lt;/a&gt;RESETful&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2011/09/restful&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;理解RESTful&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2014/05/restful_api.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RESTful API 设计指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Gradle&quot;&gt;&lt;a href=&quot;#Gradle&quot; class=&quot;headerlink&quot; title=&quot;Gradle&quot;&gt;&lt;/a&gt;Gradle&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://lippiouyang.gitbooks.io/gradle-in-action-cn/content/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle In Action&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000004229002&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle For Android&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;u81EA_u52A8_u96C6_u6210&quot;&gt;&lt;a href=&quot;#u81EA_u52A8_u96C6_u6210&quot; class=&quot;headerlink&quot; title=&quot;自动集成&quot;&gt;&lt;/a&gt;自动集成&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/c90e21bf4e23&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Jenkin+Git+Gradle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;u7F13_u5B58_u8BBE_u8BA1&quot;&gt;&lt;a href=&quot;#u7F13_u5B58_u8BBE_u8BA1&quot; class=&quot;headerlink&quot; title=&quot;缓存设计&quot;&gt;&lt;/a&gt;缓存设计&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/guolin_blog/article/details/28863651&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DiskLruCache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/guolin_blog/article/details/9316683&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LruCache&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;u5F00_u53D1_u5DE5_u5177&quot;&gt;&lt;a href=&quot;#u5F00_u53D1_u5DE5_u5177&quot; class=&quot;headerlink&quot; title=&quot;开发工具&quot;&gt;&lt;/a&gt;开发工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ww
+    
+    </summary>
+    
+      <category term="资源整合" scheme="http://xiamianyu.github.io/categories/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/"/>
+    
+    
+      <category term="资源整合" scheme="http://xiamianyu.github.io/tags/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 代码块</title>
@@ -867,40 +908,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;u627E_u4E2A_u7406_u7531&quot;&gt;&lt;a href=&quot;#u627E_u4E2A_u7406_u7531&quot; class=&quot;headerlink&quot; title=&quot;找个理由&quot;&gt;&lt;/a&gt;找个理由&lt;/h1&gt;&lt;p&gt;大学期间，喜欢上了摄影和骑行，拍了很多照片，有些
-    
-    </summary>
-    
-      <category term="ISOLEE" scheme="http://xiamianyu.github.io/categories/ISOLEE/"/>
-    
-    
-      <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
-    
-      <category term="ISOLEE" scheme="http://xiamianyu.github.io/tags/ISOLEE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打造属于自己的作品</title>
-    <link href="http://xiamianyu.github.io/2016/04/05/%E6%89%93%E9%80%A0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BD%9C%E5%93%81/"/>
-    <id>http://xiamianyu.github.io/2016/04/05/打造属于自己的作品/</id>
-    <published>2016-04-05T14:59:12.000Z</published>
-    <updated>2016-04-23T07:02:36.000Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;假设你是一个搞 Android 的，BOSS 交给你一个需求文档，你花几分钟浏览文档，迅速提取跟APP相关的功能需求，构建简易原型，提交给用户，根据用户反馈，将需求理清，界面最终定型，最后将定型的简易界面交给美工打磨漂亮。接下来开始APP的总体设计和详细设计，最后编码测试部署，一个人拿下所有，全栈工程师的初级体验。这是我去年8月份接手的一个项目，由于当时团队里只有我有空挡，于是 BOSS 让我全权负责它。从需求调研到交付到客户手里，差不多要2个月时间。做完这个项目后，我忽然发现自己开始喜欢这种工作方式，从只会 Coding ，到会需求调研、界面设计、APP 整体架构设计以及协同美工和测试等人员来完成一个项目，不得不说，是一个多方位的历练，这段经历给我最大的感悟就是，不当码农是可以滴！&lt;/p&gt;
-&lt;h1 id=&quot;u6B63_u6587&quot;&gt;&lt;a href=&quot;#u6B63_u6587&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;p&gt;这段时间想到做一款自己喜欢的应用，不为别的，就做给自己。当然了，「做一款自己喜欢的应用」这个理由有点过于牵强，其实我是有目的的，哈哈哈…&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;理由&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在应用中实战前沿的技术，如：Material Design、MVP、RXJava等&lt;/li&gt;
-&lt;li&gt;充分发挥你的创作思维，如：产品设计、UI设计、UX设计等&lt;/li&gt;
-&lt;li&gt;将源码放到 GitHub 上，展示自己的编码规范，架构设计等&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;整体而言，打造属于属于自己的作品，多多益善！&lt;/p&gt;
-&lt;h1 id=&quot;u4E0B_u671F_u5185_u5BB9&quot;&gt;&lt;a href=&quot;#u4E0B_u671F_u5185_u5BB9&quot; class=&quot;headerlink&quot; title=&quot;下期内容&quot;&gt;&lt;/a&gt;下期内容&lt;/h1&gt;&lt;p&gt;给出大体的需求，敬请期待！&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;假设你是一个搞 Android 的，BOSS 交给你一个需求文档，你花几分钟浏览文档，迅速提取跟APP相
     
     </summary>
     
