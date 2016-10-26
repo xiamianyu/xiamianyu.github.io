@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java,反射," />
+  <meta name="keywords" content="Code Review,团队建设," />
 
 
 
@@ -59,22 +59,22 @@
 
 
 
-<meta name="description" content="概念反射是指在程序运行时获取类的属性、方法、接口等信息，并且可以创建类的实例，改变其属性。
-原理
-一个 Java 源文件被编译后生成 class 文件，这个文件中包含了该类的属性、方法、接口等信息，程序运行时它会被 ClassLoader 加载到 JVM 中。当类被加载后，JVM 会在内存中自动产生一个 Class 对象。我们通过 new 的形式创建对象实际上就是通过这些 Class 来创建，只是">
+<meta name="description" content="前言阅读本教程需要掌握 Git 的基本命令和 Gitflow 流程。
+Code Review 工具一个好的团队，Code Review 必不可少。人数不多的团队，我们可以到对方电脑旁 Code Review，但这种方式终究打扰他人，在快速迭代开发的现在更不可取，所以 Code Review 工具应运而生。Git 的 Code Review 工具，目前主流的有 GitHub、GitLab、Bitbu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 反射">
-<meta property="og:url" content="http://xiamianyu.github.io/2016/07/31/Java-反射/index.html">
+<meta property="og:title" content="Gitflow + PullRequest 工作流">
+<meta property="og:url" content="http://xiamianyu.github.io/2016/10/26/Gitflow-PullRequest-工作流/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="概念反射是指在程序运行时获取类的属性、方法、接口等信息，并且可以创建类的实例，改变其属性。
-原理
-一个 Java 源文件被编译后生成 class 文件，这个文件中包含了该类的属性、方法、接口等信息，程序运行时它会被 ClassLoader 加载到 JVM 中。当类被加载后，JVM 会在内存中自动产生一个 Class 对象。我们通过 new 的形式创建对象实际上就是通过这些 Class 来创建，只是">
-<meta property="og:updated_time" content="2016-07-31T07:22:23.000Z">
+<meta property="og:description" content="前言阅读本教程需要掌握 Git 的基本命令和 Gitflow 流程。
+Code Review 工具一个好的团队，Code Review 必不可少。人数不多的团队，我们可以到对方电脑旁 Code Review，但这种方式终究打扰他人，在快速迭代开发的现在更不可取，所以 Code Review 工具应运而生。Git 的 Code Review 工具，目前主流的有 GitHub、GitLab、Bitbu">
+<meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/Gitflow.png">
+<meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/Pull%20Request.png">
+<meta property="og:image" content="http://7xs5pr.com1.z0.glb.clouddn.com/Gitflow%20+%20Pull%20Request.png">
+<meta property="og:updated_time" content="2016-10-26T06:19:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 反射">
-<meta name="twitter:description" content="概念反射是指在程序运行时获取类的属性、方法、接口等信息，并且可以创建类的实例，改变其属性。
-原理
-一个 Java 源文件被编译后生成 class 文件，这个文件中包含了该类的属性、方法、接口等信息，程序运行时它会被 ClassLoader 加载到 JVM 中。当类被加载后，JVM 会在内存中自动产生一个 Class 对象。我们通过 new 的形式创建对象实际上就是通过这些 Class 来创建，只是">
+<meta name="twitter:title" content="Gitflow + PullRequest 工作流">
+<meta name="twitter:description" content="前言阅读本教程需要掌握 Git 的基本命令和 Gitflow 流程。
+Code Review 工具一个好的团队，Code Review 必不可少。人数不多的团队，我们可以到对方电脑旁 Code Review，但这种方式终究打扰他人，在快速迭代开发的现在更不可取，所以 Code Review 工具应运而生。Git 的 Code Review 工具，目前主流的有 GitHub、GitLab、Bitbu">
 
 
 
@@ -92,7 +92,7 @@
   };
 </script>
 
-  <title> Java 反射 | One More Try </title>
+  <title> Gitflow + PullRequest 工作流 | One More Try </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -229,7 +229,7 @@
             
             
               
-                Java 反射
+                Gitflow + PullRequest 工作流
               
             
           </h1>
@@ -241,8 +241,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-31T13:54:15+08:00" content="2016-07-31">
-              2016-07-31
+            <time itemprop="dateCreated" datetime="2016-10-26T00:35:54+08:00" content="2016-10-26">
+              2016-10-26
             </time>
           </span>
 
@@ -255,8 +255,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/团队建设/" itemprop="url" rel="index">
+                    <span itemprop="name">团队建设</span>
                   </a>
                 </span>
 
@@ -271,8 +271,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/31/Java-反射/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/31/Java-反射/" itemprop="commentsCount"></span>
+                <a href="/2016/10/26/Gitflow-PullRequest-工作流/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/Gitflow-PullRequest-工作流/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -282,7 +282,7 @@
 
           
           
-             <span id="/2016/07/31/Java-反射/" class="leancloud_visitors" data-flag-title="Java 反射">
+             <span id="/2016/10/26/Gitflow-PullRequest-工作流/" class="leancloud_visitors" data-flag-title="Gitflow + PullRequest 工作流">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -303,19 +303,21 @@
       
 
       
-        <h2 id="u6982_u5FF5"><a href="#u6982_u5FF5" class="headerlink" title="概念"></a>概念</h2><p>反射是指在程序运行时获取类的属性、方法、接口等信息，并且可以创建类的实例，改变其属性。</p>
-<h2 id="u539F_u7406"><a href="#u539F_u7406" class="headerlink" title="原理"></a>原理</h2><blockquote>
-<p>一个 Java 源文件被编译后生成 class 文件，这个文件中包含了该类的属性、方法、接口等信息，程序运行时它会被 ClassLoader 加载到 JVM 中。当类被加载后，JVM 会在内存中自动产生一个 Class 对象。我们通过 new 的形式创建对象实际上就是通过这些 Class 来创建，只是这个过程对于我们是不透明的而已。</p>
-</blockquote>
-<h2 id="u83B7_u53D6_Class__u5BF9_u8C61"><a href="#u83B7_u53D6_Class__u5BF9_u8C61" class="headerlink" title="获取 Class 对象"></a>获取 Class 对象</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一：通过类获取</span></span><br><span class="line">Class cls = Student.class;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二：通过类所在的绝对路径获取</span></span><br><span class="line">Class cls = Class.forName(<span class="string">"fence.reflect.Student"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法三：通过对象获取</span></span><br><span class="line">Class cls = <span class="keyword">new</span> Student(<span class="string">"六年级"</span>, <span class="string">"XX小学"</span>).getClass();</span><br></pre></td></tr></table></figure>
-<h2 id="u83B7_u53D6_u6784_u9020_u65B9_u6CD5"><a href="#u83B7_u53D6_u6784_u9020_u65B9_u6CD5" class="headerlink" title="获取构造方法"></a>获取构造方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前类的所有 public 构造方法</span></span><br><span class="line"><span class="keyword">public</span> Constructor[]&lt;?&gt; getConstructors()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的某个 public 构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Constructor&lt;T&gt; <span class="title">getConstructor</span><span class="params">(Class...&lt;?&gt; parameterTypes)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的所有构造方法</span></span><br><span class="line"><span class="keyword">public</span> Constructor[]&lt;?&gt; <span class="title">getDeclaredConstructors</span><span class="params">()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的某个构造方法</span></span><br><span class="line"><span class="keyword">public</span> Constructor&lt;T&gt; <span class="title">getDeclaredConstructor</span><span class="params">(Class...&lt;?&gt; parameterTypes)</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="u83B7_u53D6_u65B9_u6CD5"><a href="#u83B7_u53D6_u65B9_u6CD5" class="headerlink" title="获取方法"></a>获取方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前类或父类的所有 public 方法</span></span><br><span class="line"><span class="keyword">public</span> Method[] getMethods()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类或父类的某个 public 方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Method <span class="title">getMethod</span><span class="params">(String name, Class...&lt;?&gt; parameterTypes)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的所有方法</span></span><br><span class="line"><span class="keyword">public</span> Method[] <span class="title">getDeclaredMethods</span><span class="params">()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的某个方法</span></span><br><span class="line"><span class="keyword">public</span> Method <span class="title">getDeclaredMethod</span><span class="params">(String name, Class...&lt;?&gt; parameterTypes)</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="u83B7_u53D6_u5C5E_u6027"><a href="#u83B7_u53D6_u5C5E_u6027" class="headerlink" title="获取属性"></a>获取属性</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前类的所有 public 属性</span></span><br><span class="line"><span class="keyword">public</span> Field[] getFields()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的某个 public 属性</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Field <span class="title">getField</span><span class="params">(String name)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的所有属性</span></span><br><span class="line"><span class="keyword">public</span> Field[] <span class="title">getDeclaredFields</span><span class="params">()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的某个属性</span></span><br><span class="line"><span class="keyword">public</span> Field <span class="title">getDeclaredField</span><span class="params">(String name)</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="u83B7_u53D6_u63A5_u53E3"><a href="#u83B7_u53D6_u63A5_u53E3" class="headerlink" title="获取接口"></a>获取接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前类实现的所有接口</span></span><br><span class="line"><span class="keyword">public</span> Class[]&lt;?&gt; getInterfaces()</span><br></pre></td></tr></table></figure>
-<h2 id="u83B7_u53D6_u7236_u7C7B"><a href="#u83B7_u53D6_u7236_u7C7B" class="headerlink" title="获取父类"></a>获取父类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Class&lt;? <span class="keyword">super</span> T&gt; getSuperclass()</span><br></pre></td></tr></table></figure>
-<h2 id="u83B7_u53D6_u6CE8_u89E3"><a href="#u83B7_u53D6_u6CE8_u89E3" class="headerlink" title="获取注解"></a>获取注解</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前类的某个注解</span></span><br><span class="line"><span class="keyword">public</span> &lt;A extends Annotation&gt; <span class="function">A <span class="title">getAnnotation</span><span class="params">(Class&lt;A&gt; annotationClass)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前类的所有注解</span></span><br><span class="line"><span class="keyword">public</span> Annotation[] <span class="title">getAnnotations</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="u63D0_u9AD8_u53CD_u5C04_u901F_u5EA6"><a href="#u63D0_u9AD8_u53CD_u5C04_u901F_u5EA6" class="headerlink" title="提高反射速度"></a>提高反射速度</h2><p>Java 中 AccessibleObject 类用于控制是否进行访问检查，它的子类有 Constructor、Field 和 Method，即是当我们获取到 Constructor、Field 或 Method 的对象时，通过 setAccessible(boolean flag) 来设置是否要进行访问检查，flag 为 true，取消访问检查，反之进行访问检查。通过取消访问检查可提升反射速度。</p>
-<p><strong>参考</strong><br><a href="http://www.codekk.com/blogs/detail/5596953ed6459ae7934997c5" target="_blank" rel="external">http://www.codekk.com/blogs/detail/5596953ed6459ae7934997c5</a><br><a href="http://blog.csdn.net/liujiahan629629/article/details/18013523" target="_blank" rel="external">http://blog.csdn.net/liujiahan629629/article/details/18013523</a><br><a href="https://developer.android.com/reference/java/lang/Class.html" target="_blank" rel="external">https://developer.android.com/reference/java/lang/Class.html</a></p>
+        <h2 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h2><p>阅读本教程需要掌握 Git 的基本命令和 Gitflow 流程。</p>
+<h2 id="Code_Review__u5DE5_u5177"><a href="#Code_Review__u5DE5_u5177" class="headerlink" title="Code Review 工具"></a>Code Review 工具</h2><p>一个好的团队，Code Review 必不可少。人数不多的团队，我们可以到对方电脑旁 Code Review，但这种方式终究打扰他人，在快速迭代开发的现在更不可取，所以 Code Review 工具应运而生。Git 的 Code Review 工具，目前主流的有 GitHub、GitLab、Bitbucket、Gogs 等等，这里我们选择轻量级的 Gogs。</p>
+<h2 id="Gitflow__u5DE5_u4F5C_u6D41"><a href="#Gitflow__u5DE5_u4F5C_u6D41" class="headerlink" title="Gitflow 工作流"></a>Gitflow 工作流</h2><p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/Gitflow.png" alt="Gitflow"><br>上图是典型的 Gitflow 工作流，由主分支（master、develop）和 辅助分支（feature-x、release-x、hofix-x）构成。主分支在本地仓库和远程仓库中始终存在，贯穿整个项目；辅助分支就不一样，只在本地仓库存在，完成自己的使命后就被删除了。关于 Gitflow 工作流，这里不再做详细介绍。</p>
+<h2 id="Pull_Request__u5DE5_u4F5C_u6D41"><a href="#Pull_Request__u5DE5_u4F5C_u6D41" class="headerlink" title="Pull Request 工作流"></a>Pull Request 工作流</h2><p>Pull Request 是 Code Review 工具的精髓所在，我们通过下面这张图来理解它的原理。</p>
+<p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/Pull%20Request.png" alt="Pull Request"></p>
+<p>在 Pull Request 工作流中，我们分 <strong>组织</strong> 和 <strong>个人</strong> 仓库。一般团队开发中，项目都是属于组织仓库，个人仓库作为 Pull Request 的辅助作用。</p>
+<p>以上图为例，undroid’repo 是组织仓库，fence’repo 是个人仓库。Pull Request 的工作流就是上图的 1 到 6 步，理解了这 6 步，也就明白了它的原理。其中 2、3、5 都是我们平时熟悉的，那我们把精力放在 1、4、6 这三招就可以收了它，好像很简单的样子。</p>
+<p>老板某天兴致勃勃得跟大家说，我们要做一个牛逼哄哄项目，理好需求和评估时间后，组长安排了 A 和 B 童鞋来做。于是组长在组织中创建一个 NiuBi 仓库，A 和 B 分别执 fork（步骤 1）, 将组织的 NiuBi仓库fork 到自己名下。这一步其实和 GitHub 中的 fork 是一个道理，不难理解吧。</p>
+<p>fork NiuBi 仓库到自己名下后，A 和 B 分别执行 clone（步骤 2），将个人的远程仓库 clone 到本地。按照约定的分工，A 和 B 像脱缰的野马开干了…, commit（步骤3）、pull origin (步骤 5)，A 首先向组织的 NiuBi仓库 发 Pull Request 请求（步骤 6），并指定组长合并。组织收到请求后，审查代码无误，合并代码到组织仓库。过了 1min，组长收到了 B 的 Pull Request，审查代码无误，合并代码，咦，失败了，报 conflict 错误。为啥？</p>
+<p>组长让 B 回去思考哪里出问题了，B 想了想，哎呀握草，怎么忘了执行 pull upstream (步骤 4) 啊。于是赶紧 pull upsteam，发现有冲突，原来和 A 同时改了 Application 类，解决完冲突，再 commit、pull origin、发送 Pull Request 请求，组长再次合并请求，顺利通过。步骤 4 是很多新手容易犯的错，没关系，跌倒几次就会了，勤加练习就好。</p>
+<p>当我们从个人仓库 clone NiuBi 到本地后，本地仓库会默认帮你关联了远程仓库 origin。没有 upstream 远程仓库（又称上游仓库），如何执行步骤 4 呢。这个就得我们自己手动添加了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#28155;&#21152;&#19978;&#28216;&#20179;&#24211; &#10;$ git remote add upstream yunrun@192.168.1.253:undroid/NiuBi.git&#8232;&#8232;&#10;&#10;# &#26356;&#26032;&#19978;&#28216;&#20179;&#24211;&#21040;&#26412;&#22320;&#10;&#8232;$ git pull upstream develop</span><br></pre></td></tr></table></figure>
+<h2 id="Gitflow_+_Pull_Request__u5DE5_u4F5C_u6D41"><a href="#Gitflow_+_Pull_Request__u5DE5_u4F5C_u6D41" class="headerlink" title="Gitflow + Pull Request 工作流"></a>Gitflow + Pull Request 工作流</h2><p>好戏一般在后头，最后我们将 Gitflow 和 Pull Request 结合。</p>
+<p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/Gitflow%20+%20Pull%20Request.png" alt="Gitflow + PullRequest"></p>
+<p>两者结合后，最让人头疼的应该是分支怎么管理了。分支管理还是用 GitFlow。以 A（项目主负责人） 和 B 童鞋为例，开发期间，A、B 都是在个人的 develop 上开发，等要发布正式版本时，A 先更新上游仓库的 develop 到本地，再合并本地 develop 到本地 master，修改版本信息，打标签，push 到个人仓库下，最后向组织仓库发 Pull Request。</p>
 
       
     </div>
@@ -330,9 +332,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag">#Java</a>
+            <a href="/tags/Code-Review/" rel="tag">#Code Review</a>
           
-            <a href="/tags/反射/" rel="tag">#反射</a>
+            <a href="/tags/团队建设/" rel="tag">#团队建设</a>
           
         </div>
       
@@ -341,17 +343,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/28/Android-命名规范/" rel="next" title="Android 命名规范">
-                <i class="fa fa-chevron-left"></i> Android 命名规范
+              <a href="/2016/09/06/资源整合/" rel="next" title="资源整合">
+                <i class="fa fa-chevron-left"></i> 资源整合
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/10/Java-代码块/" rel="prev" title="Java 代码块">
-                Java 代码块 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -366,10 +364,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/07/31/Java-反射/"
-     data-title="Java 反射"
+        <div class="ds-share flat" data-thread-key="2016/10/26/Gitflow-PullRequest-工作流/"
+     data-title="Gitflow + PullRequest 工作流"
      data-content=""
-     data-url="http://xiamianyu.github.io/2016/07/31/Java-反射/">
+     data-url="http://xiamianyu.github.io/2016/10/26/Gitflow-PullRequest-工作流/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -399,8 +397,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/31/Java-反射/"
-           data-title="Java 反射" data-url="http://xiamianyu.github.io/2016/07/31/Java-反射/">
+      <div class="ds-thread" data-thread-key="2016/10/26/Gitflow-PullRequest-工作流/"
+           data-title="Gitflow + PullRequest 工作流" data-url="http://xiamianyu.github.io/2016/10/26/Gitflow-PullRequest-工作流/">
       </div>
     
   </div>
@@ -521,7 +519,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6982_u5FF5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u539F_u7406"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83B7_u53D6_Class__u5BF9_u8C61"><span class="nav-number">3.</span> <span class="nav-text">获取 Class 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83B7_u53D6_u6784_u9020_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">获取构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83B7_u53D6_u65B9_u6CD5"><span class="nav-number">5.</span> <span class="nav-text">获取方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83B7_u53D6_u5C5E_u6027"><span class="nav-number">6.</span> <span class="nav-text">获取属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83B7_u53D6_u63A5_u53E3"><span class="nav-number">7.</span> <span class="nav-text">获取接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83B7_u53D6_u7236_u7C7B"><span class="nav-number">8.</span> <span class="nav-text">获取父类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83B7_u53D6_u6CE8_u89E3"><span class="nav-number">9.</span> <span class="nav-text">获取注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u63D0_u9AD8_u53CD_u5C04_u901F_u5EA6"><span class="nav-number">10.</span> <span class="nav-text">提高反射速度</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u524D_u8A00"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code_Review__u5DE5_u5177"><span class="nav-number">2.</span> <span class="nav-text">Code Review 工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitflow__u5DE5_u4F5C_u6D41"><span class="nav-number">3.</span> <span class="nav-text">Gitflow 工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pull_Request__u5DE5_u4F5C_u6D41"><span class="nav-number">4.</span> <span class="nav-text">Pull Request 工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitflow_+_Pull_Request__u5DE5_u4F5C_u6D41"><span class="nav-number">5.</span> <span class="nav-text">Gitflow + Pull Request 工作流</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
