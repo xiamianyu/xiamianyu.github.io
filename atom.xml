@@ -60,7 +60,7 @@
     <link href="http://xiamianyu.github.io/2016/09/06/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/"/>
     <id>http://xiamianyu.github.io/2016/09/06/资源整合/</id>
     <published>2016-09-06T10:18:31.000Z</published>
-    <updated>2016-09-06T10:23:25.000Z</updated>
+    <updated>2016-11-10T07:24:17.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;u5F00_u53D1_u5DE5_u5177&quot;&gt;&lt;a href=&quot;#u5F00_u53D1_u5DE5_u5177&quot; class=&quot;headerlink&quot; title=&quot;开发工具&quot;&gt;&lt;/a&gt;开发工具&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.androiddevtools.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android 开发工具汇总&lt;/a&gt;&lt;/li&gt;
@@ -72,6 +72,7 @@
 &lt;h2 id=&quot;Gradle&quot;&gt;&lt;a href=&quot;#Gradle&quot; class=&quot;headerlink&quot; title=&quot;Gradle&quot;&gt;&lt;/a&gt;Gradle&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://lippiouyang.gitbooks.io/gradle-in-action-cn/content/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle In Action&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000004229002&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle For Android&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zybuluo.com/xtccc/note/275168&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradlew&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;u81EA_u52A8_u96C6_u6210&quot;&gt;&lt;a href=&quot;#u81EA_u52A8_u96C6_u6210&quot; class=&quot;headerlink&quot; title=&quot;自动集成&quot;&gt;&lt;/a&gt;自动集成&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/c90e21bf4e23&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Jenkin+Git+Gradle&lt;/a&gt;&lt;/li&gt;
