@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-10-26T06:19:07.000Z</updated>
+  <updated>2016-12-17T16:36:48.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,100 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目发布规范</title>
+    <link href="http://xiamianyu.github.io/2016/12/17/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E8%A7%84%E8%8C%83/"/>
+    <id>http://xiamianyu.github.io/2016/12/17/项目发布规范/</id>
+    <published>2016-12-17T06:54:45.000Z</published>
+    <updated>2016-12-17T16:36:48.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;u7248_u672C_u540D_u79F0&quot;&gt;&lt;a href=&quot;#u7248_u672C_u540D_u79F0&quot; class=&quot;headerlink&quot; title=&quot;版本名称&quot;&gt;&lt;/a&gt;版本名称&lt;/h2&gt;&lt;h3 id=&quot;alpha&quot;&gt;&lt;a href=&quot;#alpha&quot; class=&quot;headerlink&quot; title=&quot;alpha&quot;&gt;&lt;/a&gt;alpha&lt;/h3&gt;&lt;p&gt;该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  &lt;/p&gt;
+&lt;h3 id=&quot;beta&quot;&gt;&lt;a href=&quot;#beta&quot; class=&quot;headerlink&quot; title=&quot;beta&quot;&gt;&lt;/a&gt;beta&lt;/h3&gt;&lt;p&gt;该版本相对于 alpha 版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。这一版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将结果反馈给开发者，开发者们再进行有针对性的修改。该版本也不适合一般用户安装。  &lt;/p&gt;
+&lt;h3 id=&quot;release&quot;&gt;&lt;a href=&quot;#release&quot; class=&quot;headerlink&quot; title=&quot;release&quot;&gt;&lt;/a&gt;release&lt;/h3&gt;&lt;p&gt;该版本意味“最终释放版”，在出了一系列的测试版之后，终归会有一个正式版本，对于用户而言，购买该版本的软件绝对不会错。该版本有时也称为标准版。&lt;/p&gt;
+&lt;h2 id=&quot;versionCode__26amp_3B_versionName&quot;&gt;&lt;a href=&quot;#versionCode__26amp_3B_versionName&quot; class=&quot;headerlink&quot; title=&quot;versionCode &amp;amp; versionName&quot;&gt;&lt;/a&gt;versionCode &amp;amp; versionName&lt;/h2&gt;&lt;h3 id=&quot;versionCode&quot;&gt;&lt;a href=&quot;#versionCode&quot; class=&quot;headerlink&quot; title=&quot;versionCode&quot;&gt;&lt;/a&gt;versionCode&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;类型：MAXINT(2e31 = 2147483647)&lt;br&gt;作用：标识 App 内部版本，对开发可见（对用户不可见），建议每次发布 &lt;strong&gt;release&lt;/strong&gt; 版本时累加1，长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Android 中，不允许对 &lt;code&gt;versionCode&lt;/code&gt; 做降级处理，否则覆盖安装失败。&lt;/p&gt;
+&lt;h3 id=&quot;versionName&quot;&gt;&lt;a href=&quot;#versionName&quot; class=&quot;headerlink&quot; title=&quot;versionName&quot;&gt;&lt;/a&gt;versionName&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;类型：String&lt;br&gt;格式：&amp;lt;主版本&amp;gt;.&amp;lt;子版本&amp;gt;.&amp;lt;修订版本&amp;gt;.&amp;lt;内部测试版本&amp;gt;&lt;br&gt;作用：标识 App 版本，对用户可见&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;主版本号：项目进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1，子版本号和修订版本号复位为 0&lt;br&gt;子版本号：项目增加了部分功能时，子版本号加 1，修订版本号复位为 0&lt;br&gt;修订版本号: bug 修复, 修订版本号加 1&lt;br&gt;测试版本号：开发期间，为方便测试人员识别每一次测试的版本，该版本号不在线上显示。&lt;/p&gt;
+&lt;h3 id=&quot;u7B2C_u4E00_u4E2A_release__u7248_u672C&quot;&gt;&lt;a href=&quot;#u7B2C_u4E00_u4E2A_release__u7248_u672C&quot; class=&quot;headerlink&quot; title=&quot;第一个 release 版本&quot;&gt;&lt;/a&gt;第一个 release 版本&lt;/h3&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;versionCode = &quot;1&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;versionName = &quot;1.0&quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;u5B89_u88C5_u5305_u540D_u79F0&quot;&gt;&lt;a href=&quot;#u5B89_u88C5_u5305_u540D_u79F0&quot; class=&quot;headerlink&quot; title=&quot;安装包名称&quot;&gt;&lt;/a&gt;安装包名称&lt;/h2&gt;&lt;h3 id=&quot;alpha-1&quot;&gt;&lt;a href=&quot;#alpha-1&quot; class=&quot;headerlink&quot; title=&quot;alpha&quot;&gt;&lt;/a&gt;alpha&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;appName&amp;gt;_&amp;lt;versionName&amp;gt;_&amp;lt;buildDate&amp;gt;_alpha.apk&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;新闻客户端: &lt;code&gt;news_v2.1.2_2015-09-30_alpha.apk&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;release-1&quot;&gt;&lt;a href=&quot;#release-1&quot; class=&quot;headerlink&quot; title=&quot;release&quot;&gt;&lt;/a&gt;release&lt;/h3&gt;&lt;h4 id=&quot;u591A_u6E20_u9053&quot;&gt;&lt;a href=&quot;#u591A_u6E20_u9053&quot; class=&quot;headerlink&quot; title=&quot;多渠道&quot;&gt;&lt;/a&gt;多渠道&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;appName&amp;gt;_&amp;lt;versionName&amp;gt;_&amp;lt;buildDate&amp;gt;_channel.apk&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;新闻客户端: &lt;code&gt;news_v2.1_2015-09-30_wandoujia.apk&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&quot;u975E_u591A_u6E20_u9053&quot;&gt;&lt;a href=&quot;#u975E_u591A_u6E20_u9053&quot; class=&quot;headerlink&quot; title=&quot;非多渠道&quot;&gt;&lt;/a&gt;非多渠道&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;appName&amp;gt;_&amp;lt;versionName&amp;gt;_&amp;lt;buildDate&amp;gt;_release.apk&lt;/code&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;新闻客户端: &lt;code&gt;news_v2.1_2015-09-30_release.apk&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;u53D1_u5E03_u524D_u68C0_u67E5_u9879&quot;&gt;&lt;a href=&quot;#u53D1_u5E03_u524D_u68C0_u67E5_u9879&quot; class=&quot;headerlink&quot; title=&quot;发布前检查项&quot;&gt;&lt;/a&gt;发布前检查项&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;服务器地址已改为正式？&lt;/li&gt;
+&lt;li&gt;调试日志（含第三方SDK）已关闭？&lt;/li&gt;
+&lt;li&gt;第三方SDK已授权正式版权限?&lt;/li&gt;
+&lt;li&gt;支付宝、微信支付金额已改为正式价格？&lt;/li&gt;
+&lt;li&gt;支付流程已跑通？&lt;/li&gt;
+&lt;li&gt;签名已改为正式？&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;versionCode&lt;/code&gt; 和 &lt;code&gt;versionName&lt;/code&gt; 已修改？&lt;/li&gt;
+&lt;li&gt;代码已混淆或加固？&lt;/li&gt;
+&lt;li&gt;安装包命名已修改？&lt;/li&gt;
+&lt;li&gt;已做覆盖或升级安装测试？&lt;/li&gt;
+&lt;li&gt;已通过测试人员测试？&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;u7248_u672C_u540D_u79F0&quot;&gt;&lt;a href=&quot;#u7248_u672C_u540D_u79F0&quot; class=&quot;headerlink&quot; title=&quot;版本名称&quot;&gt;&lt;/a&gt;版本名称&lt;/h2&gt;&lt;h3 id=&quot;alpha&quot;&gt;&lt;a href=&quot;#al
+    
+    </summary>
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初尝 TeamLeader</title>
+    <link href="http://xiamianyu.github.io/2016/12/17/%E5%88%9D%E5%B0%9D%20TeamLeader/"/>
+    <id>http://xiamianyu.github.io/2016/12/17/初尝 TeamLeader/</id>
+    <published>2016-12-17T05:33:12.000Z</published>
+    <updated>2016-12-18T12:20:48.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;u68A6_u60F3_u4E00_u5B9A_u8981_u6709&quot;&gt;&lt;a href=&quot;#u68A6_u60F3_u4E00_u5B9A_u8981_u6709&quot; class=&quot;headerlink&quot; title=&quot;梦想一定要有&quot;&gt;&lt;/a&gt;梦想一定要有&lt;/h2&gt;&lt;p&gt;两年前，刚走出校园，怀着迷迷糊糊的工作梦走进了现在这家公司，依稀记得面试时，面试官问我近期的计划是什么。我当时说想当个组长，现在想想都觉得有点好笑，笑自己的那份狂妄和天真。今年6月，由于一些因素，我开始全面接手 Android 团队的管理工作，在这半年管理中，主要展开了这些工作：健全团队建设文档、开站立会议、代码审查、技术分享、搭建团队基础框架和自动化构建平台等。&lt;/p&gt;
+&lt;h2 id=&quot;u56E2_u961F_u5EFA_u8BBE_u6587_u6863&quot;&gt;&lt;a href=&quot;#u56E2_u961F_u5EFA_u8BBE_u6587_u6863&quot; class=&quot;headerlink&quot; title=&quot;团队建设文档&quot;&gt;&lt;/a&gt;团队建设文档&lt;/h2&gt;&lt;p&gt;看一个团队是否成熟，只要去看它的团队建设文档就够了，无规矩不成方圆。在这个个性张扬的时代，谁都想表现得不一样，这本来没错，但在一个团队协作中，没有一定的规范约束，大家就会乱来。这里列出团队建设中我觉得必要的文档。&lt;/p&gt;
+&lt;h3 id=&quot;u5F00_u53D1_u547D_u540D_u89C4_u8303&quot;&gt;&lt;a href=&quot;#u5F00_u53D1_u547D_u540D_u89C4_u8303&quot; class=&quot;headerlink&quot; title=&quot;开发命名规范&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2016/07/28/Android-命名规范&quot;&gt;开发命名规范&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;团队开发中，统一开发命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。&lt;/p&gt;
+&lt;h3 id=&quot;u9879_u76EE_u7ED3_u6784_u89C4_u8303&quot;&gt;&lt;a href=&quot;#u9879_u76EE_u7ED3_u6784_u89C4_u8303&quot; class=&quot;headerlink&quot; title=&quot;项目结构规范&quot;&gt;&lt;/a&gt;项目结构规范&lt;/h3&gt;&lt;p&gt;今年 MVP（Model-View-Presenter） 特别火热，甚至 Google 都出了自家的 MVP 规范，目前市面上的 MVP 规范数不胜数。是否 MVP 能完全取代 MVC（Model-View-Controller），其实没有绝对之说，适合自己的才是最好的。确定了开发架构后，就把该架构对应的项目结构细则整理成文档。&lt;/p&gt;
+&lt;h3 id=&quot;u9879_u76EE_u6587_u6863_u7BA1_u7406_u89C4_u8303&quot;&gt;&lt;a href=&quot;#u9879_u76EE_u6587_u6863_u7BA1_u7406_u89C4_u8303&quot; class=&quot;headerlink&quot; title=&quot;项目文档管理规范&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2016/07/20/App-项目文档管理&quot;&gt;项目文档管理规范&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;一个 App 从需求到部署上线，会有产品组、项目组、开发组等的参与，每个阶段各组都会产生相应的文档，将它们用 SVN 的形式整理起来，形成了项目文档，开发期间不仅方便跨组沟通，而且有利于项目后期的维护和交接。&lt;/p&gt;
+&lt;h3 id=&quot;u9879_u76EE_u53D1_u5E03_u89C4_u8303&quot;&gt;&lt;a href=&quot;#u9879_u76EE_u53D1_u5E03_u89C4_u8303&quot; class=&quot;headerlink&quot; title=&quot;项目发布规范&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2016/12/17/项目发布规范&quot;&gt;项目发布规范&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;项目发布这一步特别重要，稍有不慎就会酿成大错。特别是像服务器地址、商品价格、支付流程、签名、证书等这些信息要检查正确。&lt;/p&gt;
+&lt;h3 id=&quot;u7248_u672C_u63A7_u5236_u7B56_u7565&quot;&gt;&lt;a href=&quot;#u7248_u672C_u63A7_u5236_u7B56_u7565&quot; class=&quot;headerlink&quot; title=&quot;版本控制策略&quot;&gt;&lt;/a&gt;版本控制策略&lt;/h3&gt;&lt;p&gt;不管是 SVN 还是 Git，多人协作总得有一套版本控制策略。本人比较推荐使用 Git，分布式、功能强大方便。Git 的版本控制策略可参考「&lt;a href=&quot;http://nvie.com/posts/a-successful-git-branching-model/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;A successful Git branching model&lt;/a&gt;」&lt;/p&gt;
+&lt;h2 id=&quot;u7AD9_u7ACB_u4F1A_u8BAE&quot;&gt;&lt;a href=&quot;#u7AD9_u7ACB_u4F1A_u8BAE&quot; class=&quot;headerlink&quot; title=&quot;站立会议&quot;&gt;&lt;/a&gt;站立会议&lt;/h2&gt;&lt;p&gt;开会是很多程序员都不喜欢的，有些喜欢在讨论组开会，效率不高。站立会议，总结昨天，计划今天，只需10 ~ 15 min，简短高效，执行以来，效果甚好。&lt;/p&gt;
+&lt;h2 id=&quot;u4EE3_u7801_u5BA1_u67E5&quot;&gt;&lt;a href=&quot;#u4EE3_u7801_u5BA1_u67E5&quot; class=&quot;headerlink&quot; title=&quot;代码审查&quot;&gt;&lt;/a&gt;代码审查&lt;/h2&gt;&lt;p&gt;如果你觉得有了「开发命名规范」和「项目结构规范」，组员的代码就会按照上面的规范写好，那真的是太天真了。所谓 5% 在策略，95% 在执行，组员的代码须通过代码审查不断纠正。一般老员工代码相对规范，不需过多审查，可由老员工审查试用期童鞋的代码，组长不定期抽查。代码审查工作可借助 GitLab、Gogs 等第三方平台，把不符合规范的代码打回重做。但这种形式的审查效果有点粗糙，所以我要求项目主负责人每周整体过一次搭档代码，找个时间统一修改完，这样效果会更好。&lt;/p&gt;
+&lt;h2 id=&quot;u6280_u672F_u5206_u4EAB&quot;&gt;&lt;a href=&quot;#u6280_u672F_u5206_u4EAB&quot; class=&quot;headerlink&quot; title=&quot;技术分享&quot;&gt;&lt;/a&gt;技术分享&lt;/h2&gt;&lt;p&gt;每周技术分享，说来惭愧，搞了 2 个月就夭折了。究其原因，一是团队比较年轻，技术积累较少，技术分享质量不高，二是组员积极性不高。后来就改为不定期技术分享，但是这样一来很少人主动技术分享，一方面是项目赶，另一方面是主动进修的人不多。&lt;/p&gt;
+&lt;h2 id=&quot;u56E2_u961F_u57FA_u7840_u6846_u67B6&quot;&gt;&lt;a href=&quot;#u56E2_u961F_u57FA_u7840_u6846_u67B6&quot; class=&quot;headerlink&quot; title=&quot;团队基础框架&quot;&gt;&lt;/a&gt;团队基础框架&lt;/h2&gt;&lt;p&gt;以前在 Wando 团队时，听他们说过，只要把「骨架」搭好，以后想变肥变瘦就轻而易举了。这里的「骨架」就是团队基础框架，它包含了大多数项目必须的功能，如网络请求、缓存、数据库操作、通用自定义控件等，只需简单配置就可以使用，避免重复造轮子，提高开发效率。&lt;/p&gt;
+&lt;h2 id=&quot;u81EA_u52A8_u5316_u6784_u5EFA_u5E73_u53F0&quot;&gt;&lt;a href=&quot;#u81EA_u52A8_u5316_u6784_u5EFA_u5E73_u53F0&quot; class=&quot;headerlink&quot; title=&quot;自动化构建平台&quot;&gt;&lt;/a&gt;自动化构建平台&lt;/h2&gt;&lt;p&gt;手动打包 -&amp;gt; 上传到 SVN -&amp;gt; 通知测试人员测试，好重复的动作，电脑也不给力，浪费时间。这些操作目前都过自动化平台解放双手。&lt;/p&gt;
+&lt;h2 id=&quot;u81EA_u6211_u53CD_u7701&quot;&gt;&lt;a href=&quot;#u81EA_u6211_u53CD_u7701&quot; class=&quot;headerlink&quot; title=&quot;自我反省&quot;&gt;&lt;/a&gt;自我反省&lt;/h2&gt;&lt;p&gt;当上管理层，最大的感受是责任感变强了。毕竟不再是小喽喽，组员的问题，就是我的问题。所以一直不敢怠慢，想方法去管理好团队。经过所有成员半年来的努力，团队逐渐走向规范，这特别让我欣慰，但我管理方面的能力还有待加强，目前发现的问题是给的压力不够、监管不严、手软等。2017 年，希望在管理好团队的同时，开始涉略产品方面，生活上多去接触周边人，不能太孤独，工作可不是作生活的全部，人生还有很多事没做，比如交女朋友哈。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;u68A6_u60F3_u4E00_u5B9A_u8981_u6709&quot;&gt;&lt;a href=&quot;#u68A6_u60F3_u4E00_u5B9A_u8981_u6709&quot; class=&quot;headerlink&quot; title=&quot;梦想一定要有&quot;&gt;&lt;/a&gt;梦想一定要有&lt;/h2
+    
+    </summary>
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>Gitflow + PullRequest 工作流</title>
@@ -171,7 +265,7 @@
     <link href="http://xiamianyu.github.io/2016/07/28/Android-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
     <id>http://xiamianyu.github.io/2016/07/28/Android-命名规范/</id>
     <published>2016-07-28T15:38:06.000Z</published>
-    <updated>2016-08-02T04:17:29.000Z</updated>
+    <updated>2016-12-17T06:28:50.000Z</updated>
     
     <content type="html">&lt;p&gt;团队开发中，统一命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。下面是我个人和团队沿用的代码规范。其中 Android 资源命名规范，当时参考了很多资料，没留底，如有雷同，还请多多包涵。&lt;/p&gt;
 &lt;h2 id=&quot;Java__u6587_u4EF6_u547D_u540D_u89C4_u8303&quot;&gt;&lt;a href=&quot;#Java__u6587_u4EF6_u547D_u540D_u89C4_u8303&quot; class=&quot;headerlink&quot; title=&quot;Java 文件命名规范&quot;&gt;&lt;/a&gt;Java 文件命名规范&lt;/h2&gt;&lt;blockquote&gt;
@@ -414,26 +508,39 @@
     <link href="http://xiamianyu.github.io/2016/07/20/App-%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86/"/>
     <id>http://xiamianyu.github.io/2016/07/20/App-项目文档管理/</id>
     <published>2016-07-20T15:27:48.000Z</published>
-    <updated>2016-07-20T16:02:58.000Z</updated>
+    <updated>2016-12-17T06:53:34.000Z</updated>
     
-    <content type="html">&lt;p&gt;在麦子学院上跟 Sundy 学习敏捷开发时，第一次接触 App 项目文档管理。下面是 Sundy 老师对 App 项目文档管理的方式。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Requirement：需求分析文档&lt;br&gt;Design：总体设计和详细设计文档&lt;br&gt;Source：源码&lt;br&gt;Test：测试文档&lt;br&gt;Public：部署安装包&lt;br&gt;Help：帮助文档&lt;br&gt;Study：技术调研文档&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;一个 App 从需求到部署上线，会有产品组、项目组、开发组等的参与，每个阶段各组都会产生相应的文档，将他们整理起来也就形成项目文档，方便以后项目的维护和交接。考虑到其他组的学习使用成本，我们使用SVN来管理。&lt;/p&gt;
+&lt;h2 id=&quot;SVN__u5DE5_u5177&quot;&gt;&lt;a href=&quot;#SVN__u5DE5_u5177&quot; class=&quot;headerlink&quot; title=&quot;SVN 工具&quot;&gt;&lt;/a&gt;SVN 工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Windows: TortoiseSVN、SmartSVN 等  &lt;/li&gt;
+&lt;li&gt;Mac: Cornerstone、SmartSVN 等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;u5404_u7EC4_u804C_u80FD&quot;&gt;&lt;a href=&quot;#u5404_u7EC4_u804C_u80FD&quot; class=&quot;headerlink&quot; title=&quot;各组职能&quot;&gt;&lt;/a&gt;各组职能&lt;/h2&gt;&lt;h4 id=&quot;u4EA7_u54C1_u7EC4&quot;&gt;&lt;a href=&quot;#u4EA7_u54C1_u7EC4&quot; class=&quot;headerlink&quot; title=&quot;产品组&quot;&gt;&lt;/a&gt;产品组&lt;/h4&gt;&lt;p&gt;负责产品设计和 UI  &lt;/p&gt;
+&lt;h4 id=&quot;u9879_u76EE_u7EC4&quot;&gt;&lt;a href=&quot;#u9879_u76EE_u7EC4&quot; class=&quot;headerlink&quot; title=&quot;项目组&quot;&gt;&lt;/a&gt;项目组&lt;/h4&gt;&lt;p&gt;负责进度把控和 QC  &lt;/p&gt;
+&lt;h4 id=&quot;u5F00_u53D1_u7EC4&quot;&gt;&lt;a href=&quot;#u5F00_u53D1_u7EC4&quot; class=&quot;headerlink&quot; title=&quot;开发组&quot;&gt;&lt;/a&gt;开发组&lt;/h4&gt;&lt;p&gt;Android、iOS 和后台&lt;/p&gt;
+&lt;h2 id=&quot;u76EE_u5F55_u548C_u6743_u9650_u8BF4_u660E&quot;&gt;&lt;a href=&quot;#u76EE_u5F55_u548C_u6743_u9650_u8BF4_u660E&quot; class=&quot;headerlink&quot; title=&quot;目录和权限说明&quot;&gt;&lt;/a&gt;目录和权限说明&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;根据各组职能分配的目录结构和权限如下：&lt;br&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/svn-app-achieve.png&quot; alt=&quot;svn-app-achieve&quot;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;一个 App 从需求到部署上线，每个阶段都会产生相应的文档，将每个阶段的文档整理起来，就形成 App 的项目文档。没有最好的，只有最合适的，受 Sundy 老师的启发，我们根据公司目前的情况作出了调整。我这边，一个 App 的产生，会有产品组、项目组、开发组的参与，各组的职责如下：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;产品组：负责产品的设计和提供UI&lt;br&gt;项目组：负责进度把控和 QC&lt;br&gt;开发组：Android、iOS 和后台&lt;/p&gt;
+&lt;p&gt;上图给到的只有三级目录，下面是所有层级目录的详细说明：&lt;/p&gt;
+&lt;h2 id=&quot;u8BBE_u8BA1&quot;&gt;&lt;a href=&quot;#u8BBE_u8BA1&quot; class=&quot;headerlink&quot; title=&quot;设计&quot;&gt;&lt;/a&gt;设计&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;存放产品组产出的文档&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;为了方便以后的项目维护和交接，我们将各个阶段产生的文档放到 SVN 上统一管理，并配置好权限。关于权限的配置，跟目录相反，目录是从小到大，而权限是从大到小。下面是目录和权限分配表：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/svn-app.png&quot; alt=&quot;svn-app&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这里面没有测试文档，我们将测试文档和进度放到禅道上管理。&lt;/p&gt;
+&lt;h4 id=&quot;u9700_u6C42_u5206_u6790&quot;&gt;&lt;a href=&quot;#u9700_u6C42_u5206_u6790&quot; class=&quot;headerlink&quot; title=&quot;需求分析&quot;&gt;&lt;/a&gt;需求分析&lt;/h4&gt;&lt;p&gt;需求分析文档  &lt;/p&gt;
+&lt;h4 id=&quot;u539F_u578B_u8BBE_u8BA1&quot;&gt;&lt;a href=&quot;#u539F_u578B_u8BBE_u8BA1&quot; class=&quot;headerlink&quot; title=&quot;原型设计&quot;&gt;&lt;/a&gt;原型设计&lt;/h4&gt;&lt;p&gt;包含灰度原型、交互原型、高保真图、切图和标注。&lt;/p&gt;
+&lt;h4 id=&quot;u529F_u80FD_u6D41_u7A0B_u56FE&quot;&gt;&lt;a href=&quot;#u529F_u80FD_u6D41_u7A0B_u56FE&quot; class=&quot;headerlink&quot; title=&quot;功能流程图&quot;&gt;&lt;/a&gt;功能流程图&lt;/h4&gt;&lt;p&gt;对于复杂的功能，画出流程图，方便开发和测试达成共识。&lt;/p&gt;
+&lt;h4 id=&quot;u4EA7_u54C1_u7ED3_u6784_u56FE&quot;&gt;&lt;a href=&quot;#u4EA7_u54C1_u7ED3_u6784_u56FE&quot; class=&quot;headerlink&quot; title=&quot;产品结构图&quot;&gt;&lt;/a&gt;产品结构图&lt;/h4&gt;&lt;p&gt;用思维导图画出 App 的整体结构，按功能模块划分。&lt;/p&gt;
+&lt;h2 id=&quot;u5F00_u53D1&quot;&gt;&lt;a href=&quot;#u5F00_u53D1&quot; class=&quot;headerlink&quot; title=&quot;开发&quot;&gt;&lt;/a&gt;开发&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;存放 Android、iOS 和 后台产出的文档&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;u6E90_u7801_u8BF4_u660E&quot;&gt;&lt;a href=&quot;#u6E90_u7801_u8BF4_u660E&quot; class=&quot;headerlink&quot; title=&quot;源码说明&quot;&gt;&lt;/a&gt;源码说明&lt;/h4&gt;&lt;p&gt;描述项目的目录结构、开发架构（MVC/MVP等）、使用的第三方SDK等  &lt;/p&gt;
+&lt;h4 id=&quot;u63A5_u53E3_u6587_u6863&quot;&gt;&lt;a href=&quot;#u63A5_u53E3_u6587_u6863&quot; class=&quot;headerlink&quot; title=&quot;接口文档&quot;&gt;&lt;/a&gt;接口文档&lt;/h4&gt;&lt;p&gt;接口文档包含请求类型、请求URL、请求参数、返回值、返回值示例等，最好使用自动化工具生成接口文档，如 Swagger 等。&lt;/p&gt;
+&lt;h2 id=&quot;u90E8_u7F72&quot;&gt;&lt;a href=&quot;#u90E8_u7F72&quot; class=&quot;headerlink&quot; title=&quot;部署&quot;&gt;&lt;/a&gt;部署&lt;/h2&gt;&lt;h4 id=&quot;u5E94_u7528_u5546_u5E97&quot;&gt;&lt;a href=&quot;#u5E94_u7528_u5546_u5E97&quot; class=&quot;headerlink&quot; title=&quot;应用商店&quot;&gt;&lt;/a&gt;应用商店&lt;/h4&gt;&lt;p&gt;存放 Android 或 iOS 应用商店申请上线的相关资料  &lt;/p&gt;
+&lt;h4 id=&quot;u5B89_u88C5_u5305&quot;&gt;&lt;a href=&quot;#u5B89_u88C5_u5305&quot; class=&quot;headerlink&quot; title=&quot;安装包&quot;&gt;&lt;/a&gt;安装包&lt;/h4&gt;&lt;p&gt;存放 Android 或 iOS 在测试阶段(alpha)、公测阶段(beta) 和正式发布阶段(release)的安装包&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;在麦子学院上跟 Sundy 学习敏捷开发时，第一次接触 App 项目文档管理。下面是 Sundy 老师对 App 项目文档管理的方式。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Requirement：需求分析文档&lt;br&gt;Design：总体设计和详细设计文档&lt;br&gt;Sourc
+      &lt;h2 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;一个 App 从需求到部署上线，会有产品组、项目组、开发组等的参与，每个阶段各组都会产生相应的文档，将他
     
     </summary>
     
@@ -593,38 +700,6 @@
   </entry>
   
   <entry>
-    <title>Fragment not attached to Activity</title>
-    <link href="http://xiamianyu.github.io/2016/05/18/Fragment-not-attached-to-Activity/"/>
-    <id>http://xiamianyu.github.io/2016/05/18/Fragment-not-attached-to-Activity/</id>
-    <published>2016-05-18T09:04:41.000Z</published>
-    <updated>2016-05-19T13:09:44.000Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;u5F02_u5E38_u65E5_u5FD7&quot;&gt;&lt;a href=&quot;#u5F02_u5E38_u65E5_u5FD7&quot; class=&quot;headerlink&quot; title=&quot;异常日志&quot;&gt;&lt;/a&gt;异常日志&lt;/h1&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;java.lang.IllegalStateException: Fragment NewsFragment&amp;#123;1ed1b091&amp;#125; not attached to Activity&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at android.support.v4.app.Fragment.getResources(Fragment.java:644)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at android.support.v4.app.Fragment.getString(Fragment.java:679)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at fence.mynews.ui.fragment.NewsFragment$3.handleMessage(NewsFragment.java:173)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at android.os.Handler.dispatchMessage(Handler.java:98)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at android.os.Looper.loop(Looper.java:135)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at android.app.ActivityThread.main(ActivityThread.java:5221)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at java.lang.reflect.Method.invoke(Native Method)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at java.lang.reflect.Method.invoke(Method.java:372)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:899)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:694)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;u539F_u56E0_u5206_u6790&quot;&gt;&lt;a href=&quot;#u539F_u56E0_u5206_u6790&quot; class=&quot;headerlink&quot; title=&quot;原因分析&quot;&gt;&lt;/a&gt;原因分析&lt;/h1&gt;&lt;p&gt;从异常日志中可以定位到 Fragment 的 &lt;code&gt;getResources()&lt;/code&gt; ，OK，看下 &lt;code&gt;getResources()&lt;/code&gt; 的源码。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  * Return &amp;lt;code&amp;gt;getActivity().getResources()&amp;lt;/code&amp;gt;.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; Resources &lt;span class=&quot;title&quot;&gt;getResources&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (mHost == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; IllegalStateException(&lt;span class=&quot;string&quot;&gt;&quot;Fragment &quot;&lt;/span&gt; + &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&quot; not attached to Activity&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mHost.getContext().getResources();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;从源码得知，当 mHost 为 null 时, 就会抛出该异常。mHost 是啥东西，根据 &lt;code&gt;mHost.getContext().getResources()&lt;/code&gt; 我们可以推断 mHost.getContext() 相当于 getActivity()，即异常的原因是 getActivity() 为 null。&lt;/p&gt;
-&lt;p&gt;造成 getActivity() 为 null 的场景可能有很多种，以 ViewPager + Fragment + FragmentStatePagerAdapter 组合为例，AFragment 中异步请求数据，请求成功我们就调用 &lt;code&gt;getString()&lt;/code&gt; ，在请求没有成功之前（网络很差），我们切换到BFragment，刚好这时，ViewPager 回收 AFragment （即 AFragmemnt 的 onDetach() 被执行），过了一会，AFragment 的请求成功并调用其 &lt;code&gt;getString()&lt;/code&gt;，这时 getActivity() 为 null，就会报 &lt;code&gt;Fragment not attached to Activity&lt;/code&gt; 异常。&lt;/p&gt;
-&lt;h1 id=&quot;u89E3_u51B3_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#u89E3_u51B3_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h1&gt;&lt;p&gt;&lt;strong&gt; 1. 添加 isAdd() 判断&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;isAdd()&lt;/code&gt; 是Fragment的方法，为 true 时，表示当前 Fragment 被添加到 Activity，即 getActivity() 不为 null。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (isAdd()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    getString(R.id.xxx);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt; 2. 断开异步请求 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;当 Fragment 的 onDestroy() 被回调时，断开异步请求。为防止断开失败，还是添加 isAdd() 做双重保险。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;u5F02_u5E38_u65E5_u5FD7&quot;&gt;&lt;a href=&quot;#u5F02_u5E38_u65E5_u5FD7&quot; class=&quot;headerlink&quot; title=&quot;异常日志&quot;&gt;&lt;/a&gt;异常日志&lt;/h1&gt;&lt;figure class=&quot;highlight xm
-    
-    </summary>
-    
-      <category term="Android Bug" scheme="http://xiamianyu.github.io/categories/Android-Bug/"/>
-    
-    
-      <category term="Fragment" scheme="http://xiamianyu.github.io/tags/Fragment/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Charles Response 中文乱码</title>
     <link href="http://xiamianyu.github.io/2016/05/07/Charles-Response-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
     <id>http://xiamianyu.github.io/2016/05/07/Charles-Response-中文乱码/</id>
@@ -691,119 +766,6 @@
       <category term="代码重构" scheme="http://xiamianyu.github.io/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/"/>
     
       <category term="项目总结" scheme="http://xiamianyu.github.io/tags/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>反向代理和正向代理</title>
-    <link href="http://xiamianyu.github.io/2016/05/05/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86/"/>
-    <id>http://xiamianyu.github.io/2016/05/05/反向代理和正向代理/</id>
-    <published>2016-05-05T14:45:37.000Z</published>
-    <updated>2016-05-05T15:26:14.000Z</updated>
-    
-    <content type="html">&lt;p&gt;正向代理：代理的是客户端&lt;br&gt;反向代理：代理的是服务器&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;正向代理：代理的是客户端&lt;br&gt;反向代理：代理的是服务器&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="名词解析" scheme="http://xiamianyu.github.io/categories/%E5%90%8D%E8%AF%8D%E8%A7%A3%E6%9E%90/"/>
-    
-    
-      <category term="名词解析" scheme="http://xiamianyu.github.io/tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数学之美</title>
-    <link href="http://xiamianyu.github.io/2016/05/02/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
-    <id>http://xiamianyu.github.io/2016/05/02/数学之美/</id>
-    <published>2016-05-02T03:58:55.000Z</published>
-    <updated>2016-05-02T06:14:07.000Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;u6587_u5B57_u548C_u8BED_u8A00_vs__u6570_u5B57_u548C_u4FE1_u606F&quot;&gt;&lt;a href=&quot;#u6587_u5B57_u548C_u8BED_u8A00_vs__u6570_u5B57_u548C_u4FE1_u606F&quot; class=&quot;headerlink&quot; title=&quot;文字和语言 vs 数字和信息&quot;&gt;&lt;/a&gt;文字和语言 vs 数字和信息&lt;/h1&gt;&lt;p&gt;语言的产生：早起的人类通过声音来传播信息，表达的信息越来越多，不再是几种不同的声音就能完全覆盖，语言由此产生，通过口述传到后代。&lt;/p&gt;
-&lt;p&gt;文字的产生：语言描述的共同因素形成了词汇，当语言和词汇多到一定程度时，人类仅靠大脑已经记不住所有的词汇，高效记录信息的需求（文字，包括数字）由此产生。&lt;/p&gt;
-&lt;h1 id=&quot;u81EA_u7136_u8BED_u8A00_u5904_u7406__u2013__u4ECE_u89C4_u5219_u5230_u7EDF_u8BA1&quot;&gt;&lt;a href=&quot;#u81EA_u7136_u8BED_u8A00_u5904_u7406__u2013__u4ECE_u89C4_u5219_u5230_u7EDF_u8BA1&quot; class=&quot;headerlink&quot; title=&quot;自然语言处理 – 从规则到统计&quot;&gt;&lt;/a&gt;自然语言处理 – 从规则到统计&lt;/h1&gt;&lt;p&gt;语言：信息编码的方式&lt;br&gt;语法：编解码的算法&lt;/p&gt;
-&lt;p&gt;把一个要表达的意思，通过某种语言的一句话表达出来，就是用这种语言的编码方式对头脑中的信息做了一次编码，编码的结果就是一串文字。而如果对方懂得这么语言，他就可以用这门语言的解码方法获得说话人要表达的信息。这就是语言的数学本质。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;自然语言的处理&lt;/strong&gt;&lt;br&gt;自然语言的机器处理，现在又称「自然语言的处理」&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;自然语言的发展历史&lt;/strong&gt;&lt;br&gt;20世纪50 ~ 70年代：用人脑模拟电脑，基于规则的句法分析走到了尽头&lt;br&gt;20世纪70年代之后：基于数据模型和统计的方法取得了很好的发展&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;从规则到统计&lt;/strong&gt;&lt;br&gt;如今，自然语言的处理研究，从单纯的句法分析和语义理解，变成非常贴近应用的机器翻译、语音识别、文本到数据库的自动生成、数据挖掘和只是的获取等。&lt;/p&gt;
-&lt;p&gt;基于统计的自然语言处理方法，在数学模型上和通信是相通的，甚至就是相同的。因此，在数学意义上自然语言处理又和语言的初衷「通信」联系在了一起。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;u6587_u5B57_u548C_u8BED_u8A00_vs__u6570_u5B57_u548C_u4FE1_u606F&quot;&gt;&lt;a href=&quot;#u6587_u5B57_u548C_u8BED_u8A00_vs__u6570_u5B57_u548C_u4FE1
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://xiamianyu.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数学之美" scheme="http://xiamianyu.github.io/tags/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
-    
-      <category term="读书笔记" scheme="http://xiamianyu.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ISOLEE-原型设计</title>
-    <link href="http://xiamianyu.github.io/2016/04/23/isolee-%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1/"/>
-    <id>http://xiamianyu.github.io/2016/04/23/isolee-原型设计/</id>
-    <published>2016-04-23T06:15:09.000Z</published>
-    <updated>2016-04-23T07:03:35.000Z</updated>
-    
-    <content type="html">&lt;p&gt;理想太伟大，实现很骨感，调整了排期。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/isolee-structure2.png&quot; alt=&quot;isolee-structure&quot;&gt;&lt;/p&gt;
-&lt;p&gt;罗马不是一天建成的，一期的界面，想到的只有这么多，先这样做吧。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/isolee-prototype.png&quot; alt=&quot;isolee-prototype&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;理想太伟大，实现很骨感，调整了排期。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/isolee-structure2.png&quot; alt=&quot;isolee-structure&quot;&gt;&lt;/p&gt;
-&lt;p&gt;罗马不是一天建成的
-    
-    </summary>
-    
-      <category term="ISOLEE" scheme="http://xiamianyu.github.io/categories/ISOLEE/"/>
-    
-    
-      <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
-    
-      <category term="ISOLEE" scheme="http://xiamianyu.github.io/tags/ISOLEE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ISOLEE-技术调研</title>
-    <link href="http://xiamianyu.github.io/2016/04/17/isolee-%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
-    <id>http://xiamianyu.github.io/2016/04/17/isolee-技术调研/</id>
-    <published>2016-04-17T03:25:30.000Z</published>
-    <updated>2016-04-23T07:03:07.000Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;u56FE_u7247_u4E91_u50A8_u5B58&quot;&gt;&lt;a href=&quot;#u56FE_u7247_u4E91_u50A8_u5B58&quot; class=&quot;headerlink&quot; title=&quot;图片云储存&quot;&gt;&lt;/a&gt;图片云储存&lt;/h1&gt;&lt;p&gt;不知不觉，已经过去了 10 天，技术调研一直拖到今天。技术调研的重点是图片云存储，这块没接触过，不知道实现起来有什么难度。在调研之前，我希望图片云存储是这样的：免费、容量大、提供外链、支持文件上传下载（断点续传）、缩略图展示。百度云盘和 360 云盘容量相对比较大，但他们只对商业合作伙伴提供 SDK，这明显不符合我的要求。七牛云是图片存储的好选择，但有一个要命的缺陷，就是图片描述信息太少，最后我选择了 bmob，可以设计云端数据库，必要时也可以写云端业务很棒！。&lt;/p&gt;
-&lt;h1 id=&quot;Android__u7AEF&quot;&gt;&lt;a href=&quot;#Android__u7AEF&quot; class=&quot;headerlink&quot; title=&quot;Android 端&quot;&gt;&lt;/a&gt;Android 端&lt;/h1&gt;&lt;p&gt;项目的主要实现还是在 Android 端，我想使用一些前沿的技术来实现，MVP + RxJava + MaterialDesign。之所以加入图片的色调等处理，是因为目前我对摄影的本身，还停留在构图方面，对图片的色调等调节没什么概念，完全靠感觉，所以图片的色调处理还是挺有意思的。&lt;/p&gt;
-&lt;h1 id=&quot;u4E0B_u671F_u5185_u5BB9&quot;&gt;&lt;a href=&quot;#u4E0B_u671F_u5185_u5BB9&quot; class=&quot;headerlink&quot; title=&quot;下期内容&quot;&gt;&lt;/a&gt;下期内容&lt;/h1&gt;&lt;p&gt;原型设计&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;u56FE_u7247_u4E91_u50A8_u5B58&quot;&gt;&lt;a href=&quot;#u56FE_u7247_u4E91_u50A8_u5B58&quot; class=&quot;headerlink&quot; title=&quot;图片云储存&quot;&gt;&lt;/a&gt;图片云储存&lt;/h1&gt;&lt;p&gt;不知不觉，已经过去了
-    
-    </summary>
-    
-      <category term="ISOLEE" scheme="http://xiamianyu.github.io/categories/ISOLEE/"/>
-    
-    
-      <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
-    
-      <category term="ISOLEE" scheme="http://xiamianyu.github.io/tags/ISOLEE/"/>
     
   </entry>
   
@@ -927,6 +889,166 @@
     
     
       <category term="责任心" scheme="http://xiamianyu.github.io/tags/%E8%B4%A3%E4%BB%BB%E5%BF%83/"/>
+    
+      <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo NexT持续改善</title>
+    <link href="http://xiamianyu.github.io/2016/03/20/Hexo-Next-%E6%8C%81%E7%BB%AD%E6%94%B9%E5%96%84/"/>
+    <id>http://xiamianyu.github.io/2016/03/20/Hexo-Next-持续改善/</id>
+    <published>2016-03-20T13:21:29.000Z</published>
+    <updated>2016-04-24T15:03:30.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;u6DFB_u52A0_RSS&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_RSS&quot; class=&quot;headerlink&quot; title=&quot;添加 RSS&quot;&gt;&lt;/a&gt;添加 RSS&lt;/h3&gt;&lt;p&gt;安装插件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install --save hexo-generator-feed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在 &lt;code&gt;站点配置&lt;/code&gt; _config.yml中添加&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;## Plugins: http://hexo.io/plugins/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plugins: hexo-generate-feed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在 &lt;code&gt;主题配置&lt;/code&gt; _config.yml中添加&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Set rss to false to disable feed link.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Leave rss as empty to use site&#39;s feed link.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Set rss to specific value if you have burned your feed already.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rss: /atom.xml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;生成 RSS Feed，在 ./public 文件夹中看到 atom.xml 文件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;部署到 GitHub&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 启动服务器查看是否有效&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 部署到 Github &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_u6587_u7AE0_u9605_u8BFB_u91CF_u7EDF_u8BA1&quot; class=&quot;headerlink&quot; title=&quot;添加文章阅读量统计&quot;&gt;&lt;/a&gt;添加文章阅读量统计&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://notes.xiamo.tk/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;更详细的教程&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 &lt;a href=&quot;https://leancloud.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LeanCloud&lt;/a&gt; 平台申请一个账号，创建应用，配置相关信息，获取 AppID 和 AppKey，在 &lt;code&gt;主题配置&lt;/code&gt; _config.yml 中配置&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Show number of visitors to each article.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# You can visit https://leancloud.cn get AppID and AppKey.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;leancloud_visitors:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  enable: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  app_id: xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  app_key: xxx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;u6DFB_u52A0_CNZZ__u7EDF_u8BA1&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_CNZZ__u7EDF_u8BA1&quot; class=&quot;headerlink&quot; title=&quot;添加 CNZZ 统计&quot;&gt;&lt;/a&gt;添加 CNZZ 统计&lt;/h3&gt;&lt;p&gt;在 &lt;a href=&quot;http://tongji.cnzz.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CNZZ&lt;/a&gt; 平台申请一个账号，添加站点，获取站点ID，在 &lt;code&gt;主题配置&lt;/code&gt; _config.yml 中配置&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# CNZZ count&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cnzz_siteid: xxx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;u6DFB_u52A0_u591A_u8BF4&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_u591A_u8BF4&quot; class=&quot;headerlink&quot; title=&quot;添加多说&quot;&gt;&lt;/a&gt;添加多说&lt;/h3&gt;&lt;p&gt;在 &lt;a href=&quot;http://duoshuo.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;多说&lt;/a&gt; 平台申请一个账号，点击「我要安装」，创建站点，设置多说域名，在 &lt;code&gt;主题配置&lt;/code&gt; _config.yml 中配置&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 设置多说域名&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;duoshuo_shortname: xiamianyu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 开启多说分享&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;duoshuo_share: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 开启多说热评文章&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;duoshuo_hotartical: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 显示多说评论框UA信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Make duoshuo show UA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# user_id must NOT be null when admin_enable is true!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# you can visit http://dev.duoshuo.com get duoshuo user id.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;duoshuo_info:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ua_enable: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  admin_enable: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  user_id: xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  admin_nickname: xxx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Markdown__u7F16_u8F91_u5668&quot;&gt;&lt;a href=&quot;#Markdown__u7F16_u8F91_u5668&quot; class=&quot;headerlink&quot; title=&quot;Markdown 编辑器&quot;&gt;&lt;/a&gt;Markdown 编辑器&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.linuxidc.com/Linux/2015-08/121178.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MarkdownEditing 和 OmniMarkupPreviewer 的具体安装教程&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Markdown 编辑器市面上很多，不过个人喜欢用 Sublime Text，索性就在上面搭建 Markdown 写作环境。&lt;a href=&quot;https://github.com/SublimeText-Markdown/MarkdownEditing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MarkdownEditing&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/timonwong/OmniMarkupPreviewer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OmniMarkupPreviewer&lt;/a&gt; 是 Sublime Text 上比较好用的两款插件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MarkdownEditing&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;实时高亮显示 Markdown 语法，支持很多编程语言的语法高亮显示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/markdown-sublimetext.png&quot; alt=&quot;MarkdownEditing&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OmniMarkupPreviewer&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;预览 Markdown 编辑的效果，支持渲染代码高亮的样式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com//previewer-sublimetext.png&quot; alt=&quot;OmniMarkupPreviewer&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://jovey-zheng.github.io/blog/2016/03/03/article-19/#more&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://theme-next.iissnan.com/getting-started.html&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;u6DFB_u52A0_RSS&quot;&gt;&lt;a href=&quot;#u6DFB_u52A0_RSS&quot; class=&quot;headerlink&quot; title=&quot;添加 RSS&quot;&gt;&lt;/a&gt;添加 RSS&lt;/h3&gt;&lt;p&gt;安装插件&lt;/p&gt;
+&lt;figure class=&quot;highlight ba
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://xiamianyu.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo NexT" scheme="http://xiamianyu.github.io/tags/Hexo-NexT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome 插件推荐</title>
+    <link href="http://xiamianyu.github.io/2016/03/12/Chrome-%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    <id>http://xiamianyu.github.io/2016/03/12/Chrome-插件推荐/</id>
+    <published>2016-03-12T04:46:34.000Z</published>
+    <updated>2016-04-06T05:12:41.000Z</updated>
+    
+    <content type="html">&lt;p&gt;前段时间stormzhang大哥在他的公众号&lt;code&gt;AndroidDeveloper&lt;/code&gt;中, 发表了一篇文章「&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;amp;mid=402064553&amp;amp;idx=1&amp;amp;sn=4bc95ed03916f87cc8dfd17baed54f24&amp;amp;scene=0#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;吐血推荐珍藏的Chrome插件&lt;/a&gt;」，特别棒！当时就立马下载去了。今天跟大家分享我觉得比较好用的插件，其中一些是从stormzhang大哥那里引用过来的，哈哈。&lt;/p&gt;
+&lt;h3 id=&quot;Postman&quot;&gt;&lt;a href=&quot;#Postman&quot; class=&quot;headerlink&quot; title=&quot;Postman&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Postman&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Postman是API调试的神器，基本功能如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持&lt;code&gt;GET&lt;/code&gt;、&lt;code&gt;POST&lt;/code&gt;、&lt;code&gt;PUT&lt;/code&gt;、&lt;code&gt;HEAD&lt;/code&gt;、&lt;code&gt;DELETE&lt;/code&gt;等请求&lt;/li&gt;
+&lt;li&gt;对请求返回的数据，支持&lt;code&gt;JSON&lt;/code&gt;、&lt;code&gt;XML&lt;/code&gt;、&lt;code&gt;HTML&lt;/code&gt;、&lt;code&gt;Text&lt;/code&gt;查看格式&lt;/li&gt;
+&lt;li&gt;类似于浏览器，可以浏览和清空历史请求记录&lt;/li&gt;
+&lt;li&gt;支持以文件夹的形式将API管理起来并保存到本地或云端，也可以将该文件夹导出来&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我个人的使用习惯是，将项目的所有API，在Postman中用文件夹管理起来，以后测试和查看接口，都不用打开接口文档，直接打开Postman，点击接口测试即可，大大提高工作效率。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-postman.png&quot; alt=&quot;Postman&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;JSONView&quot;&gt;&lt;a href=&quot;#JSONView&quot; class=&quot;headerlink&quot; title=&quot;JSONView&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JSONView&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;直接在浏览器上对接API，一般返回的JSON数据没有格式化，看起来很乱，而JSONView可以将它们自动格式化好。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-jsonview.png&quot; alt=&quot;JSONView&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;JSON-handle&quot;&gt;&lt;a href=&quot;#JSON-handle&quot; class=&quot;headerlink&quot; title=&quot;JSON-handle&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/json-handle/iahnhfdhidomcpggpaimmmahffihkfnj&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JSON-handle&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;对于嵌套层级很深的JSON数据，如果想单独查看或复制某个字段下的数据就会很猥琐，而JSON-handle可以很好地处理这猥琐的事，让你倍儿爽。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-jsonhandle.png&quot; alt=&quot;JSON-handle&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Octotree&quot;&gt;&lt;a href=&quot;#Octotree&quot; class=&quot;headerlink&quot; title=&quot;Octotree&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?utm_source=chrome-ntp-icon&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Octotree&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;在Github上查看源码是一件很痛苦的事，要clone下来，导入IDE或者stublime text才能更好的看清项目的结构，而Octotree会在Chrome的侧边栏展示项目的结构，方面你阅读源码。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-octotree.png&quot; alt=&quot;Octotree&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Isometric_Contributions&quot;&gt;&lt;a href=&quot;#Isometric_Contributions&quot; class=&quot;headerlink&quot; title=&quot;Isometric Contributions&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Isometric Contributions&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;像盖楼一样展示你Github上的commit信息，很好玩！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-isometric-contributions.png&quot; alt=&quot;Isometric Contributions&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Avatars_for_Github&quot;&gt;&lt;a href=&quot;#Avatars_for_Github&quot; class=&quot;headerlink&quot; title=&quot;Avatars for Github&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/avatars-for-github/pgjmdbklnfklcjfbonjfkdhaonlfogbb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Avatars for Github&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;在GitHub主页动态中显示用户头像&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-avatar-for-github.png&quot; alt=&quot;Avatars for Github&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;ChromeADB&quot;&gt;&lt;a href=&quot;#ChromeADB&quot; class=&quot;headerlink&quot; title=&quot;ChromeADB&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/chromeadb/fhdoijgfljahinnpbolfdimpcfoicmnm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ChromeADB&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;通过USB或WiFi连接手机后，可以清理应用数据、卸载应用、暂停应用以及查看应用内存使用情况等&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-adb.png&quot; alt=&quot;ChromeADB&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Vysor&quot;&gt;&lt;a href=&quot;#Vysor&quot; class=&quot;headerlink&quot; title=&quot;Vysor&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vysor&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;让你在电脑上查看和操作Android手机&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-vysor.png&quot; alt=&quot;Vysor&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;One-Click_Extensions_Manager&quot;&gt;&lt;a href=&quot;#One-Click_Extensions_Manager&quot; class=&quot;headerlink&quot; title=&quot;One-Click Extensions Manager&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/%E4%B8%80%E9%94%AE%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%89%A9%E5%B1%95/niemebbfnfbjfojajlmnbiikmcpjkkja&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;One-Click Extensions Manager&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;支持一键管理所有扩展，包括一键禁用所有扩展、一键开启原有扩展、扩展的逐个禁用和开启、右击扩展等功能&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-one-click.png&quot; alt=&quot;One-Click Extensions Manager&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;OneTab&quot;&gt;&lt;a href=&quot;#OneTab&quot; class=&quot;headerlink&quot; title=&quot;OneTab&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OneTab&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;一键保存打开的Tab，需要的时候还原。节省内存消耗，还你一个干净的Tab。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-one-tab.png&quot; alt=&quot;OneTab&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Pocket&quot;&gt;&lt;a href=&quot;#Pocket&quot; class=&quot;headerlink&quot; title=&quot;Pocket&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pocket&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;好文章，来不及读，那就放入Pocket吧，等你有空再回来看看。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-pocket.png&quot; alt=&quot;Pocket&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;AdBlock&quot;&gt;&lt;a href=&quot;#AdBlock&quot; class=&quot;headerlink&quot; title=&quot;AdBlock&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AdBlock&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;屏蔽互联网广告，你值得拥有！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-abblock.png&quot; alt=&quot;AdBlock&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Bookmark_Manager&quot;&gt;&lt;a href=&quot;#Bookmark_Manager&quot; class=&quot;headerlink&quot; title=&quot;Bookmark Manager&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/bookmark-manager/gmlllbghnfkpflemihljekbapjopfjik&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bookmark Manager&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;由Google打造的优雅书签管理器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-bookmark-manager.png&quot; alt=&quot;Bookmark Manager&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Speed_Dial2&quot;&gt;&lt;a href=&quot;#Speed_Dial2&quot; class=&quot;headerlink&quot; title=&quot;Speed Dial2&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/speed-dial-2/jpfpebmajhhopeonhlcgidhclcccjcik&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Speed Dial2&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;有快速访问您最常访问网页的功能，书签和浏览历史记录的终极新标签页替代品&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-speed-dial2.png&quot; alt=&quot;Speed Dial2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Chrono&quot;&gt;&lt;a href=&quot;#Chrono&quot; class=&quot;headerlink&quot; title=&quot;Chrono&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chrono&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Chrono接管你在Chrome中的所有下载，你的所有下载管理工作都在浏览器中完成，而不需要安装另外的程序。Chrono与Chrome浏览器紧密地整合在一起，添加了对浏览器菜单、工具栏和快捷键的支持。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-chrono.png&quot; alt=&quot;Chrono&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Chrome_Gestures&quot;&gt;&lt;a href=&quot;#Chrome_Gestures&quot; class=&quot;headerlink&quot; title=&quot;Chrome Gestures&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/crxmouse-chrome-gestures/jlgkpaicikihijadgifklkbpdajbkhjo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chrome Gestures&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;支持鼠标手势,超级拖曳,滚轮手势,摇杆手势,平滑滚动,标签页列表等&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-gestures.png&quot; alt=&quot;Chrome Gestures&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Firebug&quot;&gt;&lt;a href=&quot;#Firebug&quot; class=&quot;headerlink&quot; title=&quot;Firebug&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/firebug-lite-for-google-c/bmagokdooijbeehmkpknfglimnifench&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Firebug&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Chrome网页调试工具&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-firebug.png&quot; alt=&quot;Firebug&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Reader_View&quot;&gt;&lt;a href=&quot;#Reader_View&quot; class=&quot;headerlink&quot; title=&quot;Reader View&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/reader-view/iibolhpkjjmoepndefdmdlmbpfhlgjpl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reader View&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;提供与Safari阅读模式功能一致的插件，浏览文章页时候可进入友好的阅读模式，并自定义阅读功能&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-readerview.png&quot; alt=&quot;Reader View&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Draw-io_Desktop&quot;&gt;&lt;a href=&quot;#Draw-io_Desktop&quot; class=&quot;headerlink&quot; title=&quot;Draw.io Desktop&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Draw.io Desktop&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;离线免费的画图工具，支持流程图、UML、IOS/Android原型设计等&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-draw.io.png&quot; alt=&quot;Draw.io Desktop&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Gliffy_Diagrams&quot;&gt;&lt;a href=&quot;#Gliffy_Diagrams&quot; class=&quot;headerlink&quot; title=&quot;Gliffy Diagrams&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/gliffy-diagrams/bhmicilclplefnflapjmnngmkkkkpfad&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gliffy Diagrams&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;同上，也是一款非常好的画图工具&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-gliffy-diagrams.png&quot; alt=&quot;Gliffy Diagrams&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Page_Ruler&quot;&gt;&lt;a href=&quot;#Page_Ruler&quot; class=&quot;headerlink&quot; title=&quot;Page Ruler&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/page-ruler/jlpkojjdgbllmedoapgfodplfhcbnbpn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Page Ruler&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;网页尺寸测量工具&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-page-ruler.png&quot; alt=&quot;Page Ruler&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Google_Keep&quot;&gt;&lt;a href=&quot;#Google_Keep&quot; class=&quot;headerlink&quot; title=&quot;Google Keep&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/google-keep-notes-and-lis/hmjkmjkepdijhoojdojkdfohbdgmmhki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Keep&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;快速记录您的所思所想&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-google-keep.png&quot; alt=&quot;Google Keep&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Minimalist_Markdown_Editor&quot;&gt;&lt;a href=&quot;#Minimalist_Markdown_Editor&quot; class=&quot;headerlink&quot; title=&quot;Minimalist Markdown Editor&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/minimalist-markdown-edito/pghodfjepegmciihfhdipmimghiakcjf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Minimalist Markdown Editor&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;离线免费的 Mini Markdown 编辑器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-markdown-editor.png&quot; alt=&quot;Minimalist Markdown Editor&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Pomodoro_Timer&quot;&gt;&lt;a href=&quot;#Pomodoro_Timer&quot; class=&quot;headerlink&quot; title=&quot;Pomodoro Timer&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/pomodoro-timer/hfgjlgjnpkpmnpojkkpfkogapiclopop&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pomodoro Timer&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;番茄土豆是番茄工作法和 To-do List 工具，它可以帮助你计划、管理、执行、记录工作。现在就开始使用番茄土豆，完成了不起的工作！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-pomotodo.png&quot; alt=&quot;Pomodoro Timer&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Inbox_By_Gmail&quot;&gt;&lt;a href=&quot;#Inbox_By_Gmail&quot; class=&quot;headerlink&quot; title=&quot;Inbox By Gmail&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/inbox-by-gmail/pkclgpgponpjmpfokoepglboejdobkpl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Inbox By Gmail&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;关注重要的事项，提高工作效率的 Gmail 收件箱&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-inbox-by-gmail.png&quot; alt=&quot;Inbox By Gmail&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Better_History&quot;&gt;&lt;a href=&quot;#Better_History&quot; class=&quot;headerlink&quot; title=&quot;Better History&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/better-history/obciceimmggglbmelaidpjlmodcebijb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Better History&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;更好地查看您的历史记录，为查看您的历史记录带来最好的搜索体验，最清晰的界面和最有帮助的筛选&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/chrome-better-history.png&quot; alt=&quot;Better History&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前段时间stormzhang大哥在他的公众号&lt;code&gt;AndroidDeveloper&lt;/code&gt;中, 发表了一篇文章「&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;amp;mid=402064553
+    
+    </summary>
+    
+      <category term="Chrome" scheme="http://xiamianyu.github.io/categories/Chrome/"/>
+    
+    
+      <category term="Chrome插件" scheme="http://xiamianyu.github.io/tags/Chrome%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新的开始</title>
+    <link href="http://xiamianyu.github.io/2016/03/08/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    <id>http://xiamianyu.github.io/2016/03/08/新的开始/</id>
+    <published>2016-03-08T12:59:15.000Z</published>
+    <updated>2016-03-20T15:36:01.000Z</updated>
+    
+    <content type="html">&lt;p&gt;回顾过去的一年，脑子有些空白，只是感叹时间过得好快。静下心来想想，过去的一年，并非没有收获，只是总结得太少，以至于回望过去，总是患得患失。亡羊补牢为时不晚，从这一刻开始，用心记录自己的成长吧，你可以的。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;回顾过去的一年，脑子有些空白，只是感叹时间过得好快。静下心来想想，过去的一年，并非没有收获，只是总结得太少，以至于回望过去，总是患得患失。亡羊补牢为时不晚，从这一刻开始，用心记录自己的成长吧，你可以的。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://xiamianyu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
     
       <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
