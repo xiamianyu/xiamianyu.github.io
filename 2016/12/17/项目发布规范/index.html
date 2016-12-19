@@ -67,7 +67,7 @@ beta该版本相对于 alpha 版已有了很大的改进，消除了严重的错
 <meta property="og:site_name" content="One More Try">
 <meta property="og:description" content="版本名称alpha该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  
 beta该版本相对于 alpha 版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。这一版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将">
-<meta property="og:updated_time" content="2016-12-19T03:53:12.000Z">
+<meta property="og:updated_time" content="2016-12-19T06:39:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目发布规范">
 <meta name="twitter:description" content="版本名称alpha该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  
@@ -302,32 +302,23 @@ beta该版本相对于 alpha 版已有了很大的改进，消除了严重的错
       
         <h2 id="u7248_u672C_u540D_u79F0"><a href="#u7248_u672C_u540D_u79F0" class="headerlink" title="版本名称"></a>版本名称</h2><h3 id="alpha"><a href="#alpha" class="headerlink" title="alpha"></a>alpha</h3><p>该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  </p>
 <h3 id="beta"><a href="#beta" class="headerlink" title="beta"></a>beta</h3><p>该版本相对于 alpha 版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。这一版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将结果反馈给开发者，开发者们再进行有针对性的修改。该版本也不适合一般用户安装。  </p>
-<h3 id="release"><a href="#release" class="headerlink" title="release"></a>release</h3><p>该版本意味“最终释放版”，在出了一系列的测试版之后，终归会有一个正式版本，对于用户而言，购买该版本的软件绝对不会错。该版本有时也称为标准版。</p>
+<h3 id="release"><a href="#release" class="headerlink" title="release"></a>release</h3><p>该版本意味「最终释放版」，在出了一系列的测试版之后，终归会有一个正式版本，对于用户而言，购买该版本的软件绝对不会错。该版本有时也称为标准版。</p>
 <h2 id="versionCode__26amp_3B_versionName"><a href="#versionCode__26amp_3B_versionName" class="headerlink" title="versionCode &amp; versionName"></a>versionCode &amp; versionName</h2><h3 id="versionCode"><a href="#versionCode" class="headerlink" title="versionCode"></a>versionCode</h3><blockquote>
-<p>类型：MAXINT(2e31 = 2147483647)<br>作用：标识 App 内部版本，对开发可见（对用户不可见），建议每次发布 <strong>release</strong> 版本时累加1，长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。</p>
+<p>类型：MAXINT(2e31 = 2147483647)<br>作用：标识 App 内部版本，仅对开发人员可见</p>
 </blockquote>
-<p>Android 中，不允许对 <code>versionCode</code> 做降级处理，否则覆盖安装失败。</p>
-<h3 id="versionName"><a href="#versionName" class="headerlink" title="versionName"></a>versionName</h3><blockquote>
-<p>类型：String<br>格式：&lt;主版本&gt;.&lt;子版本&gt;.&lt;修订版本&gt;.&lt;内部测试版本&gt;<br>作用：标识 App 版本，对用户可见</p>
+<p>每次发布 <strong>release</strong> 版本时累加1，长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。Android 中，不允许对 <code>versionCode</code> 做降级处理，否则覆盖安装失败。</p>
+<h2 id="versionName"><a href="#versionName" class="headerlink" title="versionName"></a>versionName</h2><blockquote>
+<p>类型：String<br>格式：&lt;主版本号&gt;.&lt;子版本号&gt;.&lt;修订版本号&gt;[.内部测试版本号]<br>作用：标识 App 版本，对用户可见，即应用商店上的版本  </p>
 </blockquote>
-<p>主版本号：项目进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1，子版本号和修订版本号复位为 0<br>子版本号：项目增加了部分功能时，子版本号加 1，修订版本号复位为 0<br>修订版本号: bug 修复, 修订版本号加 1<br>测试版本号：开发期间，为方便测试人员识别每一次测试的版本，该版本号不在线上显示。</p>
-<h3 id="u7B2C_u4E00_u4E2A_release__u7248_u672C"><a href="#u7B2C_u4E00_u4E2A_release__u7248_u672C" class="headerlink" title="第一个 release 版本"></a>第一个 release 版本</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">versionCode = "1"</span><br><span class="line">versionName = "1.0.0"</span><br></pre></td></tr></table></figure>
-<h2 id="u5B89_u88C5_u5305_u540D_u79F0"><a href="#u5B89_u88C5_u5305_u540D_u79F0" class="headerlink" title="安装包名称"></a>安装包名称</h2><h3 id="alpha-1"><a href="#alpha-1" class="headerlink" title="alpha"></a>alpha</h3><blockquote>
-<p><code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_alpha.apk</code></p>
-</blockquote>
-<p>新闻客户端: <code>news_v2.1.2_2015-09-30_alpha.apk</code></p>
-<h3 id="beta-1"><a href="#beta-1" class="headerlink" title="beta"></a>beta</h3><blockquote>
-<p><code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_beta.apk</code></p>
-</blockquote>
-<p>新闻客户端: <code>news_v2.1.2_2015-09-30_beta.apk</code></p>
-<h3 id="release-1"><a href="#release-1" class="headerlink" title="release"></a>release</h3><h4 id="u591A_u6E20_u9053"><a href="#u591A_u6E20_u9053" class="headerlink" title="多渠道"></a>多渠道</h4><blockquote>
-<p><code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_channel.apk</code></p>
-</blockquote>
-<p>新闻客户端: <code>news_v2.1_2015-09-30_wandoujia.apk</code></p>
-<h4 id="u975E_u591A_u6E20_u9053"><a href="#u975E_u591A_u6E20_u9053" class="headerlink" title="非多渠道"></a>非多渠道</h4><blockquote>
-<p><code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_release.apk</code> </p>
-</blockquote>
-<p>新闻客户端: <code>news_v2.1_2015-09-30_release.apk</code></p>
+<h3 id="u4E3B_u7248_u672C_u53F7"><a href="#u4E3B_u7248_u672C_u53F7" class="headerlink" title="主版本号"></a>主版本号</h3><p>进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1，子版本号和修订版本号复位为 0。</p>
+<h3 id="u5B50_u7248_u672C_u53F7"><a href="#u5B50_u7248_u672C_u53F7" class="headerlink" title="子版本号"></a>子版本号</h3><p>增加了部分功能或同时修复上个版本 bug 时，子版本号加 1，修订版本号复位为 0。  </p>
+<h3 id="u4FEE_u8BA2_u7248_u672C_u53F7"><a href="#u4FEE_u8BA2_u7248_u672C_u53F7" class="headerlink" title="修订版本号"></a>修订版本号</h3><p>针对上个版本修复 bug, 修订版本号加 1。  </p>
+<h3 id="u5185_u90E8_u6D4B_u8BD5_u7248_u672C_u53F7"><a href="#u5185_u90E8_u6D4B_u8BD5_u7248_u672C_u53F7" class="headerlink" title="内部测试版本号"></a>内部测试版本号</h3><p>为方便测试人员识别每一次测试的版本，只在 alpha 期间显示该版本号。</p>
+<h2 id="u7B2C_u4E00_u4E2A_release__u7248_u672C"><a href="#u7B2C_u4E00_u4E2A_release__u7248_u672C" class="headerlink" title="第一个 release 版本"></a>第一个 release 版本</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">versionCode = "1"</span><br><span class="line">versionName = "1.0.0"</span><br></pre></td></tr></table></figure>
+<h2 id="u5B89_u88C5_u5305_u540D_u79F0"><a href="#u5B89_u88C5_u5305_u540D_u79F0" class="headerlink" title="安装包名称"></a>安装包名称</h2><h3 id="alpha-1"><a href="#alpha-1" class="headerlink" title="alpha"></a>alpha</h3><p>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_alpha.apk</code><br>示例: <code>news_v2.1.2.2_2015-09-30_alpha.apk</code></p>
+<h3 id="beta-1"><a href="#beta-1" class="headerlink" title="beta"></a>beta</h3><p>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_beta.apk</code><br>示例: <code>news_v2.1.1_2015-09-30_beta.apk</code></p>
+<h3 id="release-1"><a href="#release-1" class="headerlink" title="release"></a>release</h3><h4 id="u591A_u6E20_u9053"><a href="#u591A_u6E20_u9053" class="headerlink" title="多渠道"></a>多渠道</h4><p>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_channelName.apk</code><br>示例: <code>news_v2.1.1_2015-09-30_wandoujia.apk</code></p>
+<h4 id="u975E_u591A_u6E20_u9053"><a href="#u975E_u591A_u6E20_u9053" class="headerlink" title="非多渠道"></a>非多渠道</h4><p>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_release.apk</code><br>示例: <code>news_v2.1.1_2015-09-30_release.apk</code></p>
 <h2 id="u53D1_u5E03_u524D_u68C0_u67E5_u9879"><a href="#u53D1_u5E03_u524D_u68C0_u67E5_u9879" class="headerlink" title="发布前检查项"></a>发布前检查项</h2><ul>
 <li>服务器地址已改为正式？</li>
 <li>调试日志（含第三方SDK）已关闭？</li>
@@ -336,7 +327,6 @@ beta该版本相对于 alpha 版已有了很大的改进，消除了严重的错
 <li>支付流程已跑通？</li>
 <li>签名已改为正式？</li>
 <li><code>versionCode</code> 和 <code>versionName</code> 已修改？</li>
-<li>代码已混淆或加固？</li>
 <li>安装包命名已修改？</li>
 <li>已做覆盖或升级安装测试？</li>
 <li>已通过测试人员测试？</li>
@@ -540,7 +530,7 @@ beta该版本相对于 alpha 版已有了很大的改进，消除了严重的错
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7248_u672C_u540D_u79F0"><span class="nav-number">1.</span> <span class="nav-text">版本名称</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#alpha"><span class="nav-number">1.1.</span> <span class="nav-text">alpha</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#beta"><span class="nav-number">1.2.</span> <span class="nav-text">beta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#release"><span class="nav-number">1.3.</span> <span class="nav-text">release</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#versionCode__26amp_3B_versionName"><span class="nav-number">2.</span> <span class="nav-text">versionCode & versionName</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#versionCode"><span class="nav-number">2.1.</span> <span class="nav-text">versionCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#versionName"><span class="nav-number">2.2.</span> <span class="nav-text">versionName</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E00_u4E2A_release__u7248_u672C"><span class="nav-number">2.3.</span> <span class="nav-text">第一个 release 版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5_u5305_u540D_u79F0"><span class="nav-number">3.</span> <span class="nav-text">安装包名称</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#alpha-1"><span class="nav-number">3.1.</span> <span class="nav-text">alpha</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#beta-1"><span class="nav-number">3.2.</span> <span class="nav-text">beta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#release-1"><span class="nav-number">3.3.</span> <span class="nav-text">release</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u591A_u6E20_u9053"><span class="nav-number">3.3.1.</span> <span class="nav-text">多渠道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u975E_u591A_u6E20_u9053"><span class="nav-number">3.3.2.</span> <span class="nav-text">非多渠道</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u53D1_u5E03_u524D_u68C0_u67E5_u9879"><span class="nav-number">4.</span> <span class="nav-text">发布前检查项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7248_u672C_u540D_u79F0"><span class="nav-number">1.</span> <span class="nav-text">版本名称</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#alpha"><span class="nav-number">1.1.</span> <span class="nav-text">alpha</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#beta"><span class="nav-number">1.2.</span> <span class="nav-text">beta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#release"><span class="nav-number">1.3.</span> <span class="nav-text">release</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#versionCode__26amp_3B_versionName"><span class="nav-number">2.</span> <span class="nav-text">versionCode & versionName</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#versionCode"><span class="nav-number">2.1.</span> <span class="nav-text">versionCode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#versionName"><span class="nav-number">3.</span> <span class="nav-text">versionName</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E3B_u7248_u672C_u53F7"><span class="nav-number">3.1.</span> <span class="nav-text">主版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B50_u7248_u672C_u53F7"><span class="nav-number">3.2.</span> <span class="nav-text">子版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4FEE_u8BA2_u7248_u672C_u53F7"><span class="nav-number">3.3.</span> <span class="nav-text">修订版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5185_u90E8_u6D4B_u8BD5_u7248_u672C_u53F7"><span class="nav-number">3.4.</span> <span class="nav-text">内部测试版本号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B2C_u4E00_u4E2A_release__u7248_u672C"><span class="nav-number">4.</span> <span class="nav-text">第一个 release 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5_u5305_u540D_u79F0"><span class="nav-number">5.</span> <span class="nav-text">安装包名称</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#alpha-1"><span class="nav-number">5.1.</span> <span class="nav-text">alpha</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#beta-1"><span class="nav-number">5.2.</span> <span class="nav-text">beta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#release-1"><span class="nav-number">5.3.</span> <span class="nav-text">release</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u591A_u6E20_u9053"><span class="nav-number">5.3.1.</span> <span class="nav-text">多渠道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u975E_u591A_u6E20_u9053"><span class="nav-number">5.3.2.</span> <span class="nav-text">非多渠道</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u53D1_u5E03_u524D_u68C0_u67E5_u9879"><span class="nav-number">6.</span> <span class="nav-text">发布前检查项</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
