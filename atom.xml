@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2016-12-19T06:39:12.000Z</updated>
+  <updated>2017-02-15T16:25:42.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu下搭建Jenkins</title>
+    <link href="http://xiamianyu.github.io/2017/02/14/Ubuntu%E4%B8%8B%E6%90%AD%E5%BB%BAJenkins/"/>
+    <id>http://xiamianyu.github.io/2017/02/14/Ubuntu下搭建Jenkins/</id>
+    <published>2017-02-14T10:17:25.000Z</published>
+    <updated>2017-02-15T16:25:42.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;u642D_u5EFA_u524D_u51C6_u5907&quot;&gt;&lt;a href=&quot;#u642D_u5EFA_u524D_u51C6_u5907&quot; class=&quot;headerlink&quot; title=&quot;搭建前准备&quot;&gt;&lt;/a&gt;搭建前准备&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Ubuntu 上需安装好 Java 7 或更高版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;u5B89_u88C5_Jenkins&quot;&gt;&lt;a href=&quot;#u5B89_u88C5_Jenkins&quot; class=&quot;headerlink&quot; title=&quot;安装 Jenkins&quot;&gt;&lt;/a&gt;安装 Jenkins&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo sh -c &lt;span class=&quot;string&quot;&gt;&#39;echo deb http://pkg.jenkins.io/debian-stable binary/ &amp;gt; /etc/apt/sources.list.d/jenkins.list&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo apt-get install jenkins&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装成功后，默认会自动开启 Jenkins 服务。在浏览器上访问 &lt;code&gt;http://&amp;lt;服务器 IP&amp;gt;:8080&lt;/code&gt; 即可看到 Jenkins 的界面，接下来按照提示配置 Jenkins 即可。&lt;/p&gt;
+&lt;p&gt;开启 Jenkins 服务失败时，在 &lt;code&gt;/var/log/jenkins/jenkins.log&lt;/code&gt; 中查看出错日志。&lt;/p&gt;
+&lt;h1 id=&quot;u542F_u52A8_/__u5173_u95ED_Jenkins__u670D_u52A1&quot;&gt;&lt;a href=&quot;#u542F_u52A8_/__u5173_u95ED_Jenkins__u670D_u52A1&quot; class=&quot;headerlink&quot; title=&quot;启动 / 关闭 Jenkins 服务&quot;&gt;&lt;/a&gt;启动 / 关闭 Jenkins 服务&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 启动&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo /etc/init.d/jenkins start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 关闭&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo /etc/init.d/jenkins stop&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 重启&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo /etc/init.d/jenkins restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由于上面的命令需要记住 Jenkins 的路径，费脑，推荐使用下面这种命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 启动&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo service jenkins start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 关闭&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo service jenkins stop&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 重启&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo service jenkins restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;u81EA_u5B9A_u4E49_Jenkins__u7AEF_u53E3&quot;&gt;&lt;a href=&quot;#u81EA_u5B9A_u4E49_Jenkins__u7AEF_u53E3&quot; class=&quot;headerlink&quot; title=&quot;自定义 Jenkins 端口&quot;&gt;&lt;/a&gt;自定义 Jenkins 端口&lt;/h1&gt;&lt;p&gt;在 &lt;code&gt;/etc/default/jenkins&lt;/code&gt; 中配置 &lt;code&gt;HTTP_PORT&lt;/code&gt;：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;HTTP_PORT=8080&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;u8E29_u8FC7_u7684_u5751&quot;&gt;&lt;a href=&quot;#u8E29_u8FC7_u7684_u5751&quot; class=&quot;headerlink&quot; title=&quot;踩过的坑&quot;&gt;&lt;/a&gt;踩过的坑&lt;/h1&gt;&lt;p&gt;由于本人 Ubuntu 上的 Java 版本为 Java 6，升级到 Java 8 后，重新安装 Jenkins，发现服务启动不了，报的错还是因为我系统使用了 Java 6。在排除 Java 版本没问题后，我怀疑 Jenkins 配置文件中 Java 版本可能还是旧的，后面真的就在 &lt;code&gt;/etc/default/jenkins&lt;/code&gt; 中找到了解决方案：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# location of java&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;JAVA=升级后的Java路径&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;u53C2_u8003&quot;&gt;&lt;a href=&quot;#u53C2_u8003&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Installing Jenkins on Ubuntu&lt;/a&gt;，by Jenkins&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;u642D_u5EFA_u524D_u51C6_u5907&quot;&gt;&lt;a href=&quot;#u642D_u5EFA_u524D_u51C6_u5907&quot; class=&quot;headerlink&quot; title=&quot;搭建前准备&quot;&gt;&lt;/a&gt;搭建前准备&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Ubun
+    
+    </summary>
+    
+      <category term="Jenkins" scheme="http://xiamianyu.github.io/categories/Jenkins/"/>
+    
+    
+      <category term="Jenkins" scheme="http://xiamianyu.github.io/tags/Jenkins/"/>
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>项目发布规范</title>
@@ -108,7 +147,7 @@
     <link href="http://xiamianyu.github.io/2016/10/26/Gitflow-PullRequest-%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
     <id>http://xiamianyu.github.io/2016/10/26/Gitflow-PullRequest-工作流/</id>
     <published>2016-10-25T16:35:54.000Z</published>
-    <updated>2016-10-26T06:19:07.000Z</updated>
+    <updated>2017-02-15T16:25:26.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;阅读本教程需要掌握 Git 的基本命令和 Gitflow 流程。&lt;/p&gt;
 &lt;h2 id=&quot;Code_Review__u5DE5_u5177&quot;&gt;&lt;a href=&quot;#Code_Review__u5DE5_u5177&quot; class=&quot;headerlink&quot; title=&quot;Code Review 工具&quot;&gt;&lt;/a&gt;Code Review 工具&lt;/h2&gt;&lt;p&gt;一个好的团队，Code Review 必不可少。人数不多的团队，我们可以到对方电脑旁 Code Review，但这种方式终究打扰他人，在快速迭代开发的现在更不可取，所以 Code Review 工具应运而生。Git 的 Code Review 工具，目前主流的有 GitHub、GitLab、Bitbucket、Gogs 等等，这里我们选择轻量级的 Gogs。&lt;/p&gt;
@@ -1021,30 +1060,6 @@
     
     
       <category term="Chrome插件" scheme="http://xiamianyu.github.io/tags/Chrome%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新的开始</title>
-    <link href="http://xiamianyu.github.io/2016/03/08/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
-    <id>http://xiamianyu.github.io/2016/03/08/新的开始/</id>
-    <published>2016-03-08T12:59:15.000Z</published>
-    <updated>2016-03-20T15:36:01.000Z</updated>
-    
-    <content type="html">&lt;p&gt;回顾过去的一年，脑子有些空白，只是感叹时间过得好快。静下心来想想，过去的一年，并非没有收获，只是总结得太少，以至于回望过去，总是患得患失。亡羊补牢为时不晚，从这一刻开始，用心记录自己的成长吧，你可以的。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;回顾过去的一年，脑子有些空白，只是感叹时间过得好快。静下心来想想，过去的一年，并非没有收获，只是总结得太少，以至于回望过去，总是患得患失。亡羊补牢为时不晚，从这一刻开始，用心记录自己的成长吧，你可以的。&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://xiamianyu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
