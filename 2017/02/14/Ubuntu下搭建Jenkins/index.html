@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Jenkins,团队建设," />
+  <meta name="keywords" content="Jenkins,自动化构建," />
 
 
 
@@ -59,25 +59,19 @@
 
 
 
-<meta name="description" content="搭建前准备
-Ubuntu 上需安装好 Java 7 或更高版本
-
-安装 Jenkins1234$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -$ sudo sh -c &apos;echo deb http://pkg.jenkins.io/debian-stable binary/ &amp;g">
+<meta name="description" content="搭建前准备Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。
+安装 Jenkins1234$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -$ sudo sh -c &apos;echo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下搭建Jenkins">
+<meta property="og:title" content="Ubuntu 下搭建 Jenkins">
 <meta property="og:url" content="http://xiamianyu.github.io/2017/02/14/Ubuntu下搭建Jenkins/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="搭建前准备
-Ubuntu 上需安装好 Java 7 或更高版本
-
-安装 Jenkins1234$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -$ sudo sh -c &apos;echo deb http://pkg.jenkins.io/debian-stable binary/ &amp;g">
-<meta property="og:updated_time" content="2017-02-15T16:25:42.000Z">
+<meta property="og:description" content="搭建前准备Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。
+安装 Jenkins1234$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -$ sudo sh -c &apos;echo">
+<meta property="og:updated_time" content="2017-02-22T15:53:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下搭建Jenkins">
-<meta name="twitter:description" content="搭建前准备
-Ubuntu 上需安装好 Java 7 或更高版本
-
-安装 Jenkins1234$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -$ sudo sh -c &apos;echo deb http://pkg.jenkins.io/debian-stable binary/ &amp;g">
+<meta name="twitter:title" content="Ubuntu 下搭建 Jenkins">
+<meta name="twitter:description" content="搭建前准备Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。
+安装 Jenkins1234$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -$ sudo sh -c &apos;echo">
 
 
 
@@ -95,7 +89,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
   };
 </script>
 
-  <title> Ubuntu下搭建Jenkins | One More Try </title>
+  <title> Ubuntu 下搭建 Jenkins | One More Try </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -232,7 +226,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
             
             
               
-                Ubuntu下搭建Jenkins
+                Ubuntu 下搭建 Jenkins
               
             
           </h1>
@@ -258,8 +252,8 @@ Ubuntu 上需安装好 Java 7 或更高版本
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
-                    <span itemprop="name">Jenkins</span>
+                  <a href="/categories/自动化构建/" itemprop="url" rel="index">
+                    <span itemprop="name">自动化构建</span>
                   </a>
                 </span>
 
@@ -285,7 +279,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
 
           
           
-             <span id="/2017/02/14/Ubuntu下搭建Jenkins/" class="leancloud_visitors" data-flag-title="Ubuntu下搭建Jenkins">
+             <span id="/2017/02/14/Ubuntu下搭建Jenkins/" class="leancloud_visitors" data-flag-title="Ubuntu 下搭建 Jenkins">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -306,9 +300,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
       
 
       
-        <h1 id="u642D_u5EFA_u524D_u51C6_u5907"><a href="#u642D_u5EFA_u524D_u51C6_u5907" class="headerlink" title="搭建前准备"></a>搭建前准备</h1><ul>
-<li>Ubuntu 上需安装好 Java 7 或更高版本</li>
-</ul>
+        <h1 id="u642D_u5EFA_u524D_u51C6_u5907"><a href="#u642D_u5EFA_u524D_u51C6_u5907" class="headerlink" title="搭建前准备"></a>搭建前准备</h1><p>Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。</p>
 <h1 id="u5B89_u88C5_Jenkins"><a href="#u5B89_u88C5_Jenkins" class="headerlink" title="安装 Jenkins"></a>安装 Jenkins</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -</span><br><span class="line">$ sudo sh -c <span class="string">'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'</span></span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install jenkins</span><br></pre></td></tr></table></figure>
 <p>安装成功后，默认会自动开启 Jenkins 服务。在浏览器上访问 <code>http://&lt;服务器 IP&gt;:8080</code> 即可看到 Jenkins 的界面，接下来按照提示配置 Jenkins 即可。</p>
 <p>开启 Jenkins 服务失败时，在 <code>/var/log/jenkins/jenkins.log</code> 中查看出错日志。</p>
@@ -336,7 +328,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
           
             <a href="/tags/Jenkins/" rel="tag">#Jenkins</a>
           
-            <a href="/tags/团队建设/" rel="tag">#团队建设</a>
+            <a href="/tags/自动化构建/" rel="tag">#自动化构建</a>
           
         </div>
       
@@ -353,6 +345,10 @@ Ubuntu 上需安装好 Java 7 或更高版本
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/02/22/搭建Android自动化构建平台/" rel="prev" title="搭建Android自动化构建平台">
+                搭建Android自动化构建平台 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -367,7 +363,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2017/02/14/Ubuntu下搭建Jenkins/"
-     data-title="Ubuntu下搭建Jenkins"
+     data-title="Ubuntu 下搭建 Jenkins"
      data-content=""
      data-url="http://xiamianyu.github.io/2017/02/14/Ubuntu下搭建Jenkins/">
   <div class="ds-share-inline">
@@ -400,7 +396,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2017/02/14/Ubuntu下搭建Jenkins/"
-           data-title="Ubuntu下搭建Jenkins" data-url="http://xiamianyu.github.io/2017/02/14/Ubuntu下搭建Jenkins/">
+           data-title="Ubuntu 下搭建 Jenkins" data-url="http://xiamianyu.github.io/2017/02/14/Ubuntu下搭建Jenkins/">
       </div>
     
   </div>
@@ -445,7 +441,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -462,7 +458,7 @@ Ubuntu 上需安装好 Java 7 或更高版本
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
