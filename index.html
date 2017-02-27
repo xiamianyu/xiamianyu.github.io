@@ -303,8 +303,10 @@
       
         
           
-          低效率的工作方式2015 年至今短短两年，公司一共生产了十几个 App，每当 App 完成一次小迭代或是修复了 Bug，就得将构建好的安装包上传到 SVN，再通知测试人员测试，反反复复的操作，我们可以将它们自动化，不仅提高我们的工作效率，还不容易出错。
-自动化构建平台根据团队的情况，我们选择 Jenkins 自动化构建平台。团队代码管理用 Git 和 Gogs，自动化构建使用 Android Studio 自带的 Gradle，项目文件归档使用 SVN，因此我们需要在 Jenins 上配置好这些
+          自动化构建平台根据团队的情况，我们选择 Jenkins + Git + Gogs + Gradle 来搭建 Android 自动化构建平台。
+Ubuntu 环境配置登录远程 Ubuntu如果你可以直接在 Ubuntu 上操作，这一步可以跳过。我是通过 SSH 登录 Ubuntu，在命令行下完成所有的操作。在终端输入下面命令，回车后输入密码即可登录到远程 Ubuntu。
+1$ ssh yunrun@192.168.1.1
+配置 Android SDK下载 SDK1$ curl http://dl.
           ...
 
           <div class="post-more-link text-center">
