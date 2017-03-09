@@ -225,29 +225,23 @@
     <link href="http://xiamianyu.github.io/2016/10/26/Gitflow-PullRequest-%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
     <id>http://xiamianyu.github.io/2016/10/26/Gitflow-PullRequest-工作流/</id>
     <published>2016-10-25T16:35:54.000Z</published>
-    <updated>2017-02-15T16:25:26.000Z</updated>
+    <updated>2017-03-09T08:37:40.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;阅读本教程需要掌握 Git 的基本命令和 Gitflow 流程。&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;阅读本教程需要掌握 Git 的基本命令和 Gitflow 工作流。&lt;/p&gt;
 &lt;h2 id=&quot;Code_Review__u5DE5_u5177&quot;&gt;&lt;a href=&quot;#Code_Review__u5DE5_u5177&quot; class=&quot;headerlink&quot; title=&quot;Code Review 工具&quot;&gt;&lt;/a&gt;Code Review 工具&lt;/h2&gt;&lt;p&gt;一个好的团队，Code Review 必不可少。人数不多的团队，我们可以到对方电脑旁 Code Review，但这种方式终究打扰他人，在快速迭代开发的现在更不可取，所以 Code Review 工具应运而生。Git 的 Code Review 工具，目前主流的有 GitHub、GitLab、Bitbucket、Gogs 等等，这里我们选择轻量级的 Gogs。&lt;/p&gt;
 &lt;h2 id=&quot;Gitflow__u5DE5_u4F5C_u6D41&quot;&gt;&lt;a href=&quot;#Gitflow__u5DE5_u4F5C_u6D41&quot; class=&quot;headerlink&quot; title=&quot;Gitflow 工作流&quot;&gt;&lt;/a&gt;Gitflow 工作流&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/Gitflow.png&quot; alt=&quot;Gitflow&quot;&gt;&lt;br&gt;上图是典型的 Gitflow 工作流，由主分支（master、develop）和 辅助分支（feature-x、release-x、hofix-x）构成。主分支在本地仓库和远程仓库中始终存在，贯穿整个项目；辅助分支就不一样，只在本地仓库存在，完成自己的使命后就被删除了。关于 Gitflow 工作流，这里不再做详细介绍。&lt;/p&gt;
-&lt;h2 id=&quot;Pull_Request__u5DE5_u4F5C_u6D41&quot;&gt;&lt;a href=&quot;#Pull_Request__u5DE5_u4F5C_u6D41&quot; class=&quot;headerlink&quot; title=&quot;Pull Request 工作流&quot;&gt;&lt;/a&gt;Pull Request 工作流&lt;/h2&gt;&lt;p&gt;Pull Request 是 Code Review 工具的精髓所在，我们通过下面这张图来理解它的原理。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/Pull%20Request.png&quot; alt=&quot;Pull Request&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在 Pull Request 工作流中，我们分 &lt;strong&gt;组织&lt;/strong&gt; 和 &lt;strong&gt;个人&lt;/strong&gt; 仓库。一般团队开发中，项目都是属于组织仓库，个人仓库作为 Pull Request 的辅助作用。&lt;/p&gt;
-&lt;p&gt;以上图为例，undroid’repo 是组织仓库，fence’repo 是个人仓库。Pull Request 的工作流就是上图的 1 到 6 步，理解了这 6 步，也就明白了它的原理。其中 2、3、5 都是我们平时熟悉的，那我们把精力放在 1、4、6 这三招就可以收了它，好像很简单的样子。&lt;/p&gt;
-&lt;p&gt;老板某天兴致勃勃得跟大家说，我们要做一个牛逼哄哄项目，理好需求和评估时间后，组长安排了 A 和 B 童鞋来做。于是组长在组织中创建一个 NiuBi 仓库，A 和 B 分别执 fork（步骤 1）, 将组织的 NiuBi仓库fork 到自己名下。这一步其实和 GitHub 中的 fork 是一个道理，不难理解吧。&lt;/p&gt;
-&lt;p&gt;fork NiuBi 仓库到自己名下后，A 和 B 分别执行 clone（步骤 2），将个人的远程仓库 clone 到本地。按照约定的分工，A 和 B 像脱缰的野马开干了…, commit（步骤3）、pull origin (步骤 5)，A 首先向组织的 NiuBi仓库 发 Pull Request 请求（步骤 6），并指定组长合并。组织收到请求后，审查代码无误，合并代码到组织仓库。过了 1min，组长收到了 B 的 Pull Request，审查代码无误，合并代码，咦，失败了，报 conflict 错误。为啥？&lt;/p&gt;
-&lt;p&gt;组长让 B 回去思考哪里出问题了，B 想了想，哎呀握草，怎么忘了执行 pull upstream (步骤 4) 啊。于是赶紧 pull upsteam，发现有冲突，原来和 A 同时改了 Application 类，解决完冲突，再 commit、pull origin、发送 Pull Request 请求，组长再次合并请求，顺利通过。步骤 4 是很多新手容易犯的错，没关系，跌倒几次就会了，勤加练习就好。&lt;/p&gt;
-&lt;p&gt;当我们从个人仓库 clone NiuBi 到本地后，本地仓库会默认帮你关联了远程仓库 origin。没有 upstream 远程仓库（又称上游仓库），如何执行步骤 4 呢。这个就得我们自己手动添加了。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &amp;#28155;&amp;#21152;&amp;#19978;&amp;#28216;&amp;#20179;&amp;#24211; &amp;#10;$ git remote add upstream yunrun@192.168.1.253:undroid/NiuBi.git&amp;#8232;&amp;#8232;&amp;#10;&amp;#10;# &amp;#26356;&amp;#26032;&amp;#19978;&amp;#28216;&amp;#20179;&amp;#24211;&amp;#21040;&amp;#26412;&amp;#22320;&amp;#10;&amp;#8232;$ git pull upstream develop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Gitflow_+_Pull_Request__u5DE5_u4F5C_u6D41&quot;&gt;&lt;a href=&quot;#Gitflow_+_Pull_Request__u5DE5_u4F5C_u6D41&quot; class=&quot;headerlink&quot; title=&quot;Gitflow + Pull Request 工作流&quot;&gt;&lt;/a&gt;Gitflow + Pull Request 工作流&lt;/h2&gt;&lt;p&gt;好戏一般在后头，最后我们将 Gitflow 和 Pull Request 结合。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/Gitflow%20+%20Pull%20Request.png&quot; alt=&quot;Gitflow + PullRequest&quot;&gt;&lt;/p&gt;
-&lt;p&gt;两者结合后，最让人头疼的应该是分支怎么管理了。分支管理还是用 GitFlow。以 A（项目主负责人） 和 B 童鞋为例，开发期间，A、B 都是在个人的 develop 上开发，等要发布正式版本时，A 先更新上游仓库的 develop 到本地，再合并本地 develop 到本地 master，修改版本信息，打标签，push 到个人仓库下，最后向组织仓库发 Pull Request。&lt;/p&gt;
+&lt;h2 id=&quot;Pull_Request__u5DE5_u4F5C_u6D41&quot;&gt;&lt;a href=&quot;#Pull_Request__u5DE5_u4F5C_u6D41&quot; class=&quot;headerlink&quot; title=&quot;Pull Request 工作流&quot;&gt;&lt;/a&gt;Pull Request 工作流&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/Pull%20Request.png&quot; alt=&quot;Pull Request&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;项目主负责人&lt;/strong&gt;直接操作组织仓库，搭档 fork 组织仓库。&lt;/p&gt;
+&lt;p&gt;第 4 步对应的操作：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &amp;#28155;&amp;#21152;&amp;#19978;&amp;#28216;&amp;#20179;&amp;#24211; &amp;#10;$ git remote add upstream yunrun@192.168.1.253:undroid/foo.git&amp;#8232;&amp;#8232;&amp;#10;&amp;#10;# &amp;#26356;&amp;#26032;&amp;#19978;&amp;#28216;&amp;#20179;&amp;#24211;&amp;#21040;&amp;#26412;&amp;#22320;&amp;#10;&amp;#8232;$ git pull upstream develop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Gitflow_+_Pull_Request__u5DE5_u4F5C_u6D41&quot;&gt;&lt;a href=&quot;#Gitflow_+_Pull_Request__u5DE5_u4F5C_u6D41&quot; class=&quot;headerlink&quot; title=&quot;Gitflow + Pull Request 工作流&quot;&gt;&lt;/a&gt;Gitflow + Pull Request 工作流&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/Gitflow%20+%20Pull%20Request.png&quot; alt=&quot;Gitflow + PullRequest&quot;&gt;&lt;/p&gt;
+&lt;p&gt;两者结合后，分支管理还是用 Gitflow。开发期间所有人都在 develop 分支上提交代码，发布正式版本时，由&lt;strong&gt;项目主负责人&lt;/strong&gt;合并代码到 master 分支，并打 tag。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;阅读本教程需要掌握 Git 的基本命令和 Gitflow 流程。&lt;/p&gt;
-&lt;h2 id=&quot;Code_Re
+      &lt;h2 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;阅读本教程需要掌握 Git 的基本命令和 Gitflow 工作流。&lt;/p&gt;
+&lt;h2 id=&quot;Code_R
     
     </summary>
     
