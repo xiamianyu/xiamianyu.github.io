@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2017-03-11T08:34:35.000Z</updated>
+  <updated>2017-04-17T16:01:15.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java Lambda</title>
+    <link href="http://xiamianyu.github.io/2017/05/04/Java-Lambda/"/>
+    <id>http://xiamianyu.github.io/2017/05/04/Java-Lambda/</id>
+    <published>2017-05-04T02:01:37.000Z</published>
+    <updated>2017-04-17T16:01:15.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;u80CC_u666F&quot;&gt;&lt;a href=&quot;#u80CC_u666F&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。&lt;/p&gt;
+&lt;h1 id=&quot;u51FD_u6570_u5F0F_u63A5_u53E3&quot;&gt;&lt;a href=&quot;#u51FD_u6570_u5F0F_u63A5_u53E3&quot; class=&quot;headerlink&quot; title=&quot;函数式接口&quot;&gt;&lt;/a&gt;函数式接口&lt;/h1&gt;&lt;p&gt;Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。&lt;/p&gt;
+&lt;p&gt;Java 8 为函数式接口提供了 @FunctionalInterface 注解，作用于类型，指定该接口必须是函数式接口。&lt;/p&gt;
+&lt;h1 id=&quot;Lambda__u8868_u8FBE_u5F0F_u8BED_u6CD5&quot;&gt;&lt;a href=&quot;#Lambda__u8868_u8FBE_u5F0F_u8BED_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;Lambda 表达式语法&quot;&gt;&lt;/a&gt;Lambda 表达式语法&lt;/h1&gt;&lt;p&gt;Lambda 表达式语法由形参列表、箭头和代码块三部分构成：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;形参列表&lt;/th&gt;
+&lt;th&gt;箭头&lt;/th&gt;
+&lt;th&gt;代码块&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;(int x, int y)&lt;/td&gt;
+&lt;td&gt;-&amp;gt;&lt;/td&gt;
+&lt;td&gt;x + y&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;u5F62_u53C2_u5217_u8868&quot;&gt;&lt;a href=&quot;#u5F62_u53C2_u5217_u8868&quot; class=&quot;headerlink&quot; title=&quot;形参列表&quot;&gt;&lt;/a&gt;形参列表&lt;/h2&gt;&lt;p&gt;形参列表允许省略形参参数。如果形参列表中只有一个参数，可以省略圆括号。&lt;/p&gt;
+&lt;h2 id=&quot;u7BAD_u5934&quot;&gt;&lt;a href=&quot;#u7BAD_u5934&quot; class=&quot;headerlink&quot; title=&quot;箭头&quot;&gt;&lt;/a&gt;箭头&lt;/h2&gt;&lt;p&gt;-&amp;gt;：由英文中划线和大于号组成&lt;/p&gt;
+&lt;h2 id=&quot;u4EE3_u7801_u5757&quot;&gt;&lt;a href=&quot;#u4EE3_u7801_u5757&quot; class=&quot;headerlink&quot; title=&quot;代码块&quot;&gt;&lt;/a&gt;代码块&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;只有一条语句时，可省略代码块的花括号；&lt;/li&gt;
+&lt;li&gt;只有一条 return 语句时，可省略 return 关键字。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;u4EE3_u7801_u793A_u4F8B&quot;&gt;&lt;a href=&quot;#u4EE3_u7801_u793A_u4F8B&quot; class=&quot;headerlink&quot; title=&quot;代码示例&quot;&gt;&lt;/a&gt;代码示例&lt;/h1&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Anonymous Runnable&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Runnable run1 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Runnable() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;hello world1&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Lambda Runnable&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Runnable run2 = () -&amp;gt; System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;hello world2&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;Lamba__u4E0E_u533F_u540D_u5185_u90E8_u7C7B_u7684_u5F02_u540C&quot;&gt;&lt;a href=&quot;#Lamba__u4E0E_u533F_u540D_u5185_u90E8_u7C7B_u7684_u5F02_u540C&quot; class=&quot;headerlink&quot; title=&quot;Lamba 与匿名内部类的异同&quot;&gt;&lt;/a&gt;Lamba 与匿名内部类的异同&lt;/h1&gt;&lt;h2 id=&quot;u76F8_u540C_u70B9&quot;&gt;&lt;a href=&quot;#u76F8_u540C_u70B9&quot; class=&quot;headerlink&quot; title=&quot;相同点&quot;&gt;&lt;/a&gt;相同点&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;都可以直接访问 effectively final 局部变量、外部类的成员变量（实例变量和类变量）；&lt;/li&gt;
+&lt;li&gt;都可以直接调用从接口中继承的&lt;strong&gt;默认方法&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;u4E0D_u540C_u70B9&quot;&gt;&lt;a href=&quot;#u4E0D_u540C_u70B9&quot; class=&quot;headerlink&quot; title=&quot;不同点&quot;&gt;&lt;/a&gt;不同点&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;匿名内部类可以为任意接口创建实例，不管接口包含多少个抽象方法，只要匿名内部类实现所有的抽象方法即可，但 Lambda 表达式只能为函数式接口创建实例；&lt;/li&gt;
+&lt;li&gt;匿名内部类可以为抽象类甚至普通类创建实例，但 Lambda 表达式只能为函数式接口创建实例；&lt;/li&gt;
+&lt;li&gt;匿名内部类实现的抽象方法的方法体允许调用接口定义的默认方法，但 Lambda 表达式的代码块中不允许调用接口中定义的默认方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;u53C2_u8003&quot;&gt;&lt;a href=&quot;#u53C2_u8003&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;《疯狂 Java 讲义3》&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Oracle Lambda&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;u80CC_u666F&quot;&gt;&lt;a href=&quot;#u80CC_u666F&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部
+    
+    </summary>
+    
+      <category term="Java" scheme="http://xiamianyu.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://xiamianyu.github.io/tags/Java/"/>
+    
+      <category term="Lambda" scheme="http://xiamianyu.github.io/tags/Lambda/"/>
+    
+  </entry>
   
   <entry>
     <title>提高代码审查的效率</title>
@@ -1016,38 +1080,6 @@
       <category term="代码重构" scheme="http://xiamianyu.github.io/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/"/>
     
       <category term="项目总结" scheme="http://xiamianyu.github.io/tags/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>今天我坐主席位</title>
-    <link href="http://xiamianyu.github.io/2016/04/14/%E4%BB%8A%E5%A4%A9%E6%88%91%E5%9D%90%E4%B8%BB%E5%B8%AD%E4%BD%8D/"/>
-    <id>http://xiamianyu.github.io/2016/04/14/今天我坐主席位/</id>
-    <published>2016-04-14T14:36:29.000Z</published>
-    <updated>2016-04-14T15:30:49.000Z</updated>
-    
-    <content type="html">&lt;p&gt;没错，今天我是会议主席，大家听我发号施令！实际情况是，最没自（意）信（见）的人要做主席位，哈哈。&lt;/p&gt;
-&lt;p&gt;今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出来。其中有一个问题，特别有意思，我复现当时的对白。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;杂物大人：这个产品做到现在还没流量，问题出现在哪里？&lt;br&gt;我们：沉默中…&lt;br&gt;杂物大人：作为产品的开发人员，自己有用过这个产品吗？&lt;br&gt;A 童鞋：我就是在调试 BUG 的时候用过…（杂物大人默默地笑了）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;之前我以为，作为开发者，只要按照产品经理说的做就可以把产品做好，产品能否带来PV、收益等是产品经理的事。是的，可能有些人跟我想法一样，但如果是比较年轻的公司，产品经理的经验也毕竟有限，需要的是大家的决策，不是什么都是产品经理说了算，如果产品经理设计的某些功能不合理，我们完全有理由提出来并打断他，不然到时候功能做出来了才说之前考虑不周，废掉这个功能，这简直就是浪费生命！再者，希望自己在负责的产品开发上，不要太局限于技术（在产品没有产生PV之前，再好的代码设计，也没有价值），要多去使用自己的产品，把产品不满意的地方跟产品经理提出来，因为我也是这个产品的用户。如果都懒得去用自己研发的产品，怎么去发现问题？怎么可能把它做好？&lt;/p&gt;
-&lt;p&gt;从今天开始，做一个有责任心的开发者吧。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;没错，今天我是会议主席，大家听我发号施令！实际情况是，最没自（意）信（见）的人要做主席位，哈哈。&lt;/p&gt;
-&lt;p&gt;今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://xiamianyu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="责任心" scheme="http://xiamianyu.github.io/tags/%E8%B4%A3%E4%BB%BB%E5%BF%83/"/>
-    
-      <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
