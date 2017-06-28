@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2017-04-17T16:01:15.000Z</updated>
+  <updated>2017-06-28T06:54:30.000Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,258 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java 启动参数</title>
+    <link href="http://xiamianyu.github.io/2017/06/28/Java-%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/"/>
+    <id>http://xiamianyu.github.io/2017/06/28/Java-启动参数/</id>
+    <published>2017-06-28T06:25:22.000Z</published>
+    <updated>2017-06-28T06:54:30.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些参数平时我们都遇到过，如最常见的 &lt;code&gt;Xmx2g&lt;/code&gt;，表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。&lt;/p&gt;
+&lt;h1 id=&quot;u6807_u51C6_u53C2_u6570&quot;&gt;&lt;a href=&quot;#u6807_u51C6_u53C2_u6570&quot; class=&quot;headerlink&quot; title=&quot;标准参数&quot;&gt;&lt;/a&gt;标准参数&lt;/h1&gt;&lt;p&gt;使用 &lt;code&gt;-&lt;/code&gt; 前缀表示。所有的 JVM 都必须实现这些参数的功能，而且向后兼容。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-client&lt;/strong&gt;&lt;br&gt;设置 JVM 使用 client 模式，特点是启动速度比较快，但运行时性能和内存管理效率不高，通常用于客户端应用程序或者PC应用开发和调试。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-server&lt;/strong&gt;&lt;br&gt;设置 JVM 使 server 模式，特点是启动速度比较慢，但运行时性能和内存管理效率很高，适用于生产环境。在具有64位能力的 JDK 环境下将默认启用该模式，而忽略 &lt;code&gt;-client&lt;/code&gt; 参数。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-agentlib:libname[=options]&lt;/strong&gt;&lt;br&gt;用于装载本地lib包。其中 &lt;code&gt;libname&lt;/code&gt; 为本地代理库文件名，默认搜索路径为环境变量 PATH 中的路径，&lt;code&gt;options&lt;/code&gt; 为传给本地库启动时的参数，多个参数之间用逗号分隔。在 Windows 平台上 JVM  搜索本地库名为 libname.dll 的文件，在 Linux 上 JVM 搜索本地库名为 libname.so 的文件，搜索路径环境变量在不同系统上有所不同，比如 Solaries 上就默认搜索 LD_LIBRARY_PATH。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-agentlib:hprof&lt;/strong&gt;&lt;br&gt;用来获取 JVM 的运行情况，包括CPU、内存、线程等的运行数据，并可输出到指定文件中；Windows 中搜索路径为 &lt;code&gt;JRE_HOME/bin/hprof.dll&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-agentpath:pathname[=options]&lt;/strong&gt;&lt;br&gt;按全路径装载本地库，不再搜索 PATH 中的路径；其他功能和 &lt;code&gt;agentlib&lt;/code&gt; 相同。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-classpath&lt;/strong&gt;&lt;br&gt;用来告知 JVM 搜索目录名、jar 文档名、zip文档名，之间用分号分隔；使用 &lt;code&gt;-classpath&lt;/code&gt; 后 JVM 将不再使用 CLASSPATH 中的类搜索路径，如果&lt;code&gt;-classpath&lt;/code&gt;和 CLASSPATH 都没有设置，则 JVM 使用当前路径(.)作为类搜索路径。&lt;br&gt; JVM 搜索类的方式和顺序为：Bootstrap，Extension，User。&lt;/p&gt;
+&lt;p&gt;Bootstrap 中的路径是 JVM 自带的 jar 或 zip 文件，JVM 首先搜索这些包文件，用 System.getProperty(“sun.boot.class.path”) 可得到搜索路径。&lt;/p&gt;
+&lt;p&gt;Extension 是位于 &lt;code&gt;JRE_HOME/lib/ext&lt;/code&gt; 目录下的 jar 文件，JVM 在搜索完 Bootstrap 后就搜索该目录下的 jar 文件，用 System.getProperty(“java.ext.dirs”) 可得到搜索路径。&lt;/p&gt;
+&lt;p&gt;User 搜索顺序为当前路径&lt;code&gt;.&lt;/code&gt;、&lt;code&gt;CLASSPATH&lt;/code&gt;、&lt;code&gt;-classpath&lt;/code&gt;，JVM 最后搜索这些目录，用 System.getProperty(“java.class.path”) 可得到搜索路径。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Dproperty=value&lt;/strong&gt;&lt;br&gt;设置系统属性名/值对，运行在此 JVM 之上的应用程序可用 System.getProperty(“property”) 得到 value 的值。如果 value 中有空格，则需要用双引号将该值括起来，如 &lt;code&gt;-Dname=&amp;quot;spacestring&amp;quot;&lt;/code&gt;。&lt;br&gt;该参数通常用于设置系统级全局变量值，如配置文件路径，以便该属性在程序中任何地方都可访问。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-enableassertions[:&lt;packagename&gt;“…”|:&lt;classname&gt;]&lt;/classname&gt;&lt;/packagename&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;-ea[:&lt;packagename&gt;“…”|:&lt;classname&gt;]&lt;/classname&gt;&lt;/packagename&gt;&lt;/strong&gt;&lt;br&gt;用来设置 JVM 是否启动断言机制（从JDK1.4开始支持），缺省时 JVM 关闭断言机制。用-ea可打开断言机制，不加 &lt;packagename&gt; 和 classname 时运行所有包和类中的断言，如果希望只运行某些包或类中的断言，可将包名或类名加到&lt;code&gt;-ea&lt;/code&gt; 之后。例如要启动包 com.wombat.fruitbat 中的断言，可用命令&lt;code&gt;java-ea:com.wombat.fruitbat...&amp;lt;MainClass&amp;gt;&lt;/code&gt;。&lt;/packagename&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-disableassertions[:&lt;packagename&gt;“…”|:&amp;lt;class;]&lt;/packagename&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;-da[:&lt;packagename&gt;“…”|:&lt;classname&gt;]&lt;/classname&gt;&lt;/packagename&gt;&lt;/strong&gt;&lt;br&gt;用来设置 JVM 关闭断言处理，packagename 和 classname 的使用方法和 &lt;code&gt;-ea&lt;/code&gt; 相同， JVM 默认就是关闭状态。&lt;br&gt;该参数一般用于相同 package 内某些 class 不需要断言的场景，比如 com.wombat.fruitbat 需要断言，但是 com.wombat.fruitbat.Brickbat 该类不需要，则可以如下运行：&lt;br&gt;&lt;code&gt;java-ea:com.wombat.fruitbat...-da:com.wombat.fruitbat.Brickbat&amp;lt;MainClass&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-enablesystemassertions&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;-esa&lt;/strong&gt;&lt;br&gt;激活系统类的断言。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-disablesystemassertions&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;-dsa&lt;/strong&gt;&lt;br&gt;关闭系统类的断言。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-jar&lt;/strong&gt;&lt;br&gt;指定以 jar 包的形式执行一个应用程序。&lt;br&gt;要这样执行一个应用程序，必须让 jar 包的 manifest 文件中声明初始加载的 Main-class，当然那 Main-class 必须有 public static void main(String[]args) 方法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-javaagent:jarpath[=options]&lt;/strong&gt;&lt;br&gt;指定 JVM 启动时装入 JAVA 语言设备代理。&lt;/p&gt;
+&lt;p&gt;Jarpath 文件中的 mainfest 文件必须有 Agent-Class 属性。代理类也必须实现公共的静态 public static void premain(StringagentArgs, Instrumentationinst)方法（和main方法类似）。当 JVM 初始化时，将按代理类的说明顺序调用 premain 方法；具体参见 java.lang.instrument 软件包的描述。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-verbose&lt;/strong&gt;&lt;br&gt;&lt;code&gt;-verbose:class&lt;/code&gt;：输出 JVM 载入类的相关信&lt;br&gt;&lt;code&gt;-verbose:gc&lt;/code&gt;：输出 JVM 每次 GC 的情况&lt;br&gt;&lt;code&gt;-verbose:jni&lt;/code&gt;：输出 native 方法调用的相关情况&lt;/p&gt;
+&lt;h1 id=&quot;u975E_u6807_u51C6_u53C2_u6570&quot;&gt;&lt;a href=&quot;#u975E_u6807_u51C6_u53C2_u6570&quot; class=&quot;headerlink&quot; title=&quot;非标准参数&quot;&gt;&lt;/a&gt;非标准参数&lt;/h1&gt;&lt;p&gt;使用 &lt;code&gt;-X&lt;/code&gt; 前缀表示。默认的 JVM 实现这些参数的功能，但不保证所有的 JVM 实现满足，而且不保证向后兼容。&lt;/p&gt;
+&lt;p&gt;非标准参数又称为扩展参数，其列表如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xint&lt;/strong&gt;&lt;br&gt;设置 JVM 以解释模式运行，所有的字节码将被直接执行，而不会编译成本地码。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xbatch&lt;/strong&gt;&lt;br&gt;关闭后台代码编译，强制在前台编译，编译完成之后才能进行代码执行；默认情况下， JVM 在后台进行编译，若没有编译完成，则前台运行代码时以解释模式运行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xbootclasspath:bootclasspath&lt;/strong&gt;&lt;br&gt;让 JVM 从指定路径（可以是分号分隔的目录、jar、或者zip）中加载bootclass，用来替换jdk的rt.jar；若非必要，一般不会用到.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xbootclasspath/a:path&lt;/strong&gt;&lt;br&gt;将指定路径的所有文件追加到默认bootstrap路径中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xbootclasspath/p:path&lt;/strong&gt;&lt;br&gt;让 JVM 优先于bootstrap默认路径加载指定路径的所有文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xcheck:jni&lt;/strong&gt;&lt;br&gt;对JNI函数进行附加check；此时 JVM 将校验传递给JNI函数参数的合法性，在本地代码中遇到非法数据时，jmv将报一个致命错误而终止；使用该参数后将造成性能下降，请慎用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xfuture&lt;/strong&gt;&lt;br&gt;让 JVM 对类文件执行严格的格式检查（默认 JVM 不进行严格格式检查），以符合类文件格式规范，推荐开发人员使用该参数。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xnoclassgc&lt;/strong&gt;&lt;br&gt;关闭针对class的gc功能；因为其阻止内存回收，所以可能会导致OutOfMemoryError错误，慎用；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xincgc&lt;/strong&gt;&lt;br&gt;开启增量gc（默认为关闭）；这有助于减少长时间GC时应用程序出现的停顿；但由于可能和应用程序并发执行，所以会降低CPU对应用的处理能力。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xloggc:file&lt;/strong&gt;&lt;br&gt;与-verbose:gc功能类似，只是将每次GC事件的相关情况记录到一个文件中，文件的位置最好在本地，以避免网络的潜在问题。&lt;br&gt; 若与verbose命令同时出现在命令行中，则以-Xloggc为准。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xmsn&lt;/strong&gt;&lt;br&gt;指定 JVM 堆的初始大小，默认为物理内存的1/64，最小为1M；可以指定单位，比如k、m，若不指定，则默认为字节。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xmxn&lt;/strong&gt;&lt;br&gt;指定 JVM 堆的最大值，默认为物理内存的1/4或者1G，最小为2M；单位与-Xms一致。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xprof&lt;/strong&gt;&lt;br&gt;跟踪正运行的程序，并将跟踪数据在标准输出输出；适合于开发环境调试。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xrs&lt;/strong&gt;&lt;br&gt;减少 JVM 对操作系统信号（signals）的使用，该参数从1.3.1开始有效。&lt;/p&gt;
+&lt;p&gt;从jdk1.3.0开始， JVM 允许程序在关闭之前还可以执行一些代码（比如关闭数据库的连接池），即使 JVM 被突然终止。&lt;/p&gt;
+&lt;p&gt;JVM 关闭工具通过监控控制台的相关事件而满足以上的功能；更确切的说，通知在关闭工具执行之前，先注册控制台的控制handler，然后对CTRL_C_EVENT, CTRL_CLOSE_EVENT, CTRL_LOGOFF_EVENT, and CTRL_SHUTDOWN_EVENT这几类事件直接返回true。&lt;/p&gt;
+&lt;p&gt;但如果 JVM 以服务的形式在后台运行（比如servlet引擎），他能接收CTRL_LOGOFF_EVENT事件，但此时并不需要初始化关闭程序；为了避免类似冲突的再次出现，从jdk1.3.1开始提供-Xrs参数；当此参数被设置之后， JVM 将不接收控制台的控制handler，也就是说他不监控和处理CTRL_C_EVENT, CTRL_CLOSE_EVENT, CTRL_LOGOFF_EVENT, or CTRL_SHUTDOWN_EVENT事件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-Xssn&lt;/strong&gt;&lt;br&gt;设置单个线程栈的大小，一般默认为512k。&lt;/p&gt;
+&lt;h1 id=&quot;u975E_Stable__u53C2_u6570&quot;&gt;&lt;a href=&quot;#u975E_Stable__u53C2_u6570&quot; class=&quot;headerlink&quot; title=&quot;非 Stable 参数&quot;&gt;&lt;/a&gt;非 Stable 参数&lt;/h1&gt;&lt;p&gt;使用 &lt;code&gt;-XX&lt;/code&gt; 前缀表示。此类参数各个 JVM 实现会有所不同，将来可能会随时取消，需要慎重使用。&lt;/p&gt;
+&lt;p&gt;非 Stable 参数可以松散地分为以下三类：&lt;br&gt;&lt;strong&gt;行为参数（Behavioral Options）&lt;/strong&gt;：用于改变 JVM 的一些基础行为&lt;br&gt;&lt;strong&gt;性能调优（Performance Tuning）&lt;/strong&gt;：用于 JVM 的性能调优&lt;br&gt;&lt;strong&gt;调试参数（Debugging Options）&lt;/strong&gt;：一般用于打开跟踪、打印、输出等 JVM 参数，用于显示 JVM 更加详细的信息&lt;/p&gt;
+&lt;h2 id=&quot;u884C_u4E3A_u53C2_u6570&quot;&gt;&lt;a href=&quot;#u884C_u4E3A_u53C2_u6570&quot; class=&quot;headerlink&quot; title=&quot;行为参数&quot;&gt;&lt;/a&gt;行为参数&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数及其默认值&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-DisableExplicitGC&lt;/td&gt;
+&lt;td&gt;禁止调用System.gc()；但 JVM 的gc仍然有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:+MaxFDLimit&lt;/td&gt;
+&lt;td&gt;最大化文件描述符的数量限制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:+ScavengeBeforeFullGC&lt;/td&gt;
+&lt;td&gt;新生代GC优先于Full GC执行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:+UseGCOverheadLimit&lt;/td&gt;
+&lt;td&gt;在抛出OOM之前限制 JVM 耗费在GC上的时间比例&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:-UseConcMarkSweepGC&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;对老生代采用并发标记交换算法进行GC&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:-UseParallelGC&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;启用并行GC&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-UseParallelOldGC&lt;/td&gt;
+&lt;td&gt;对Full GC启用并行，当-XX:-UseParallelGC启用时该项自动启用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:-UseSerialGC&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;启用串行GC&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:+UseThreadPriorities&lt;/td&gt;
+&lt;td&gt;启用本地线程优先级&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;上面表格中黑体的三个参数代表着 JVM 中GC执行的三种方式，即串行、并行、并发。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;串行（SerialGC）&lt;/strong&gt; 是 JVM 的默认GC方式，一般适用于小型应用和单处理器，算法比较简单，GC效率也较高，但可能会给应用带来停顿；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;并行（ParallelGC）&lt;/strong&gt;&lt;br&gt;是指GC运行时，对应用程序运行没有影响，GC和app两者的线程在并发执行，这样可以最大限度不影响app的运行；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;并发（ConcMarkSweepGC）&lt;/strong&gt; 是指多个线程并发执行GC，一般适用于多处理器系统中，可以提高GC的效率，但算法复杂，系统消耗较大；&lt;/p&gt;
+&lt;h2 id=&quot;u6027_u80FD_u8C03_u4F18&quot;&gt;&lt;a href=&quot;#u6027_u80FD_u8C03_u4F18&quot; class=&quot;headerlink&quot; title=&quot;性能调优&quot;&gt;&lt;/a&gt;性能调优&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数及其默认值&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:LargePageSizeInBytes=4m&lt;/td&gt;
+&lt;td&gt;设置用于Java堆的大页面尺寸&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:MaxHeapFreeRatio=70&lt;/td&gt;
+&lt;td&gt;GC后java堆中空闲量占的最大比例&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:MaxNewSize=size&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;新生成对象能占用内存的最大值&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:MaxPermSize=64m&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;老生代对象能占用内存的最大值&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:MinHeapFreeRatio=40&lt;/td&gt;
+&lt;td&gt;GC后java堆中空闲量占的最小比例&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:NewRatio=2&lt;/td&gt;
+&lt;td&gt;新生代内存容量与老生代内存容量的比例&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:NewSize=2.125m&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;新生代对象生成时占用内存的默认值&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:ReservedCodeCacheSize=32m&lt;/td&gt;
+&lt;td&gt;保留代码占用的内存容量&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:ThreadStackSize=512&lt;/td&gt;
+&lt;td&gt;设置线程栈大小，若为0则使用系统默认值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:+UseLargePages&lt;/td&gt;
+&lt;td&gt;使用大页面内存&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;u8C03_u8BD5_u53C2_u6570&quot;&gt;&lt;a href=&quot;#u8C03_u8BD5_u53C2_u6570&quot; class=&quot;headerlink&quot; title=&quot;调试参数&quot;&gt;&lt;/a&gt;调试参数&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数及其默认值&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-CITime&lt;/td&gt;
+&lt;td&gt;打印消耗在JIT编译的时间&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:ErrorFile=./hs_err_pid&lt;pid&gt;.log&lt;/pid&gt;&lt;/td&gt;
+&lt;td&gt;保存错误日志或者数据到文件中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-ExtendedDTraceProbes&lt;/td&gt;
+&lt;td&gt;开启solaris特有的dtrace探针&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:HeapDumpPath=./java_pid&lt;pid&gt;.hprof&lt;/pid&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;指定导出堆信息时的路径或文件名&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:-HeapDumpOnOutOfMemoryError&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;当首次遭遇OOM时导出此时堆中相关信息&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:OnError=”&lt;cmd args=&quot;&quot;&gt;;&lt;cmd args=&quot;&quot;&gt;“&lt;/cmd&gt;&lt;/cmd&gt;&lt;/td&gt;
+&lt;td&gt;出现致命ERROR之后运行自定义命令&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:OnOutOfMemoryError=”&lt;cmd args=&quot;&quot;&gt;;&lt;cmd args=&quot;&quot;&gt;“&lt;/cmd&gt;&lt;/cmd&gt;&lt;/td&gt;
+&lt;td&gt;当首次遭遇OOM时执行自定义命令&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-PrintClassHistogram&lt;/td&gt;
+&lt;td&gt;遇到Ctrl-Break后打印类实例的柱状信息，与jmap -histo功能相同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-XX:-PrintConcurrentLocks&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;遇到Ctrl-Break后打印并发锁的相关信息，与jstack -l功能相同&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-PrintCommandLineFlags&lt;/td&gt;
+&lt;td&gt;打印在命令行中出现过的标记&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-PrintCompilation&lt;/td&gt;
+&lt;td&gt;当一个方法被编译时打印相关信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-PrintGC&lt;/td&gt;
+&lt;td&gt;每次GC时打印相关信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-PrintGC Details&lt;/td&gt;
+&lt;td&gt;每次GC时打印详细信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-PrintGCTimeStamps&lt;/td&gt;
+&lt;td&gt;打印每次GC的时间戳&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-TraceClassLoadin&lt;/td&gt;
+&lt;td&gt;跟踪类的加载信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-TraceClassLoadingPreorder&lt;/td&gt;
+&lt;td&gt;跟踪被引用到的所有类的加载信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-TraceClassResolution&lt;/td&gt;
+&lt;td&gt;跟踪常量池&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-TraceClassUnloading&lt;/td&gt;
+&lt;td&gt;跟踪类的卸载信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-XX:-TraceLoaderConstraints&lt;/td&gt;
+&lt;td&gt;跟踪类加载器约束的相关信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些参数平时我们都遇到过，如最常见
+    
+    </summary>
+    
+      <category term="Java" scheme="http://xiamianyu.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://xiamianyu.github.io/tags/Java/"/>
+    
+      <category term="启动参数" scheme="http://xiamianyu.github.io/tags/%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Java Lambda</title>
@@ -976,99 +1228,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;u627E_u4E2A_u7406_u7531&quot;&gt;&lt;a href=&quot;#u627E_u4E2A_u7406_u7531&quot; class=&quot;headerlink&quot; title=&quot;找个理由&quot;&gt;&lt;/a&gt;找个理由&lt;/h1&gt;&lt;p&gt;获取「新闻列表」的请求地址，一般我们是这样写的：
-    
-    </summary>
-    
-      <category term="项目总结" scheme="http://xiamianyu.github.io/categories/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
-    
-      <category term="代码重构" scheme="http://xiamianyu.github.io/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/"/>
-    
-      <category term="项目总结" scheme="http://xiamianyu.github.io/tags/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用户登录设计</title>
-    <link href="http://xiamianyu.github.io/2016/04/16/%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E8%AE%BE%E8%AE%A1/"/>
-    <id>http://xiamianyu.github.io/2016/04/16/用户登录设计/</id>
-    <published>2016-04-16T02:02:46.000Z</published>
-    <updated>2016-05-29T03:54:13.000Z</updated>
-    
-    <content type="html">&lt;p&gt;用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「App研发录」，有些做了细化，有助大家理解。&lt;/p&gt;
-&lt;h1 id=&quot;u767B_u5F55_u548C_u6CE8_u518C&quot;&gt;&lt;a href=&quot;#u767B_u5F55_u548C_u6CE8_u518C&quot; class=&quot;headerlink&quot; title=&quot;登录和注册&quot;&gt;&lt;/a&gt;登录和注册&lt;/h1&gt;&lt;p&gt;登录和注册就像一双筷子，缺一不可。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;登录的作用&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/login_action.png&quot; alt=&quot;login_action&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注册的形式&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;有些 App 是给专门的人用的，只有登录界面，账号是在服务器注册。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/register_bebavior.png&quot; alt=&quot;register_bebavior&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这样，登录和注册可以这样划分：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/login_and_register.png&quot; alt=&quot;login_and_register&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;u7528_u6237_u4FE1_u606F_u7684_u5904_u7406&quot;&gt;&lt;a href=&quot;#u7528_u6237_u4FE1_u606F_u7684_u5904_u7406&quot; class=&quot;headerlink&quot; title=&quot;用户信息的处理&quot;&gt;&lt;/a&gt;用户信息的处理&lt;/h1&gt;&lt;p&gt;如果登录只是作为程序的入口，那么登录成功后的用户信息基本很少用到，这时候我们一般的做法是把它序列化到本地，需要的时候再取出来。但更多时候，用户信息贯穿整个 App ，很多地方都会用到，我们可以把它放在一个全局变量中以便随时存取，为了防止全局变量被内存回收，还得把它序列化到本地，下面是代码的设计。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/class_user.png&quot; alt=&quot;class_user&quot;&gt;&lt;/p&gt;
-&lt;p&gt;UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局变量。UserInfo 因 App 而异，设计为 POJO 即可，这里重点讲解 User 类。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;从上面我们可以得知，User 类应具备如下几个特性：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;单实例&lt;/li&gt;
-&lt;li&gt;用户信息序列化&lt;/li&gt;
-&lt;li&gt;用户信息存取&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;下面是 User 的代码实现&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;User&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; UserInfo mUserInfo;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; isLogined = &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        mUserInfo = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; UserInfo();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;SingletonFactory&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; User sInstance = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; User();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; User &lt;span class=&quot;title&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; SingletonFactory.sInstance;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// delete userInfo from database&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// save userInfo to database&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String name)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        mUserInfo.setName(name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setSex&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String sex)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        mUserInfo.setSex(sex);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setAvatar&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String avatar)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        mUserInfo.setAvatar(avatar);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mUserInfo.getName();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;getSex&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mUserInfo.getSex();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;getAvatar&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mUserInfo.getAvatar();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setStatus&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; isLogined)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.isLogined = isLogined;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isLogined&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; isLogined;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;关于 User 的使用方法，后面会详细讲解。&lt;/p&gt;
-&lt;h1 id=&quot;u767B_u5F55_u6210_u529F_u540E_u7684_u5404_u79CD_u573A_u666F&quot;&gt;&lt;a href=&quot;#u767B_u5F55_u6210_u529F_u540E_u7684_u5404_u79CD_u573A_u666F&quot; class=&quot;headerlink&quot; title=&quot;登录成功后的各种场景&quot;&gt;&lt;/a&gt;登录成功后的各种场景&lt;/h1&gt;&lt;p&gt;登录成功后的场景可以归纳为以下3种：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;场景1&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/login_scene1.png&quot; alt=&quot;login_scene1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这种场景最直接，登录完直接跳转到个人中心页。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;场景2&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/login_scene2.png&quot; alt=&quot;login_scene2&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这个场景很常见，比如在评论页面发表评论，发现没有登录，跳转到登录页面登录成功后，回来再发表评论。这时候 startActivityForResult 就派上用场了。代码设计如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// CommentActivity.java&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onCommentBtnClick&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(View view)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (User.getInstance().isLogined()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        makeComments();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        startActivityForResult(LoginActivity.newIntent(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;), REQUEST_COMMENT);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onActivityResult&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; requestCode, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; resultCode, Intent data)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (resultCode != Activity.RESULT_OK) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (requestCode == REQUEST_COMMENT) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        makeComments();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;makeComments&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 4/12/16&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;场景3&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/login_scene3.png&quot; alt=&quot;login_scene3&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这个场景相对复杂一点，B 页面携带参数跳转到 C 页面，但必须是在登录的情况下。如果发现没有登录，同场景2，也是需要登录回调，再跳转到 C 页面。代码设计如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// BBActivity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onBtnClick&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(View view)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (User.getInstance().isLogined()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        gotoCCActivity();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Intent intent = LoginActivity.newIntent(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        startActivityForResult(intent, REQUEST_BB);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onActivityResult&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; requestCode, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; resultCode, Intent data)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (resultCode != Activity.RESULT_OK) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (requestCode == REQUEST_BB) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        gotoCCActivity();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;gotoCCActivity&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    startActivity(CCActivity.newIntent(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;good night&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;只有一个登录页面&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;针对登录成功后的3种或者更多的场景，登录页面如何设计呢？聪明的你此刻是不是想到了什么呢。对，我们可以在登录页面接收上一个页面传来的标志位，通过它来判断登录成功后是否要返回上一个页面，代码设计如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;接收上一个页面传来的标志位&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// LoginActivity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; String NEED_CALLBACK = &lt;span class=&quot;string&quot;&gt;&quot;need_callback&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; isNeedCallback = &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Intent &lt;span class=&quot;title&quot;&gt;newIntent&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Context context, &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; isNeedCallback)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Intent intent = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Intent(context, LoginActivity.class);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    intent.putExtra(NEED_CALLBACK, isNeedCallback);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; intent;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Bundle savedInstanceState)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onCreate(savedInstanceState);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    setContentView(R.layout.activity_login);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    isNeedCallback = getIntent().getBooleanExtra(NEED_CALLBACK, &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;LoginActivity 提供静态方法 newIntent() 来接收上一个页面传来的标志位。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;登录成功&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// LoginActivity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onSucceed&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(UserInfo userInfo)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (userInfo != &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// delete userInfo from database&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().reset();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().setName(userInfo.getName());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().setSex(userInfo.getSex());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().setAvatar(userInfo.getAvatar());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// save userInfo to databse&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        User.getInstance().save();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (isNeedCallback) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        setResult(Activity.RESULT_OK);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        startActivity(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Intent(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, PersonalCenterActivity.class));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    finish();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;我们看到，登录成功会回调 onSucceed()，我们第一步是先保存用户信息，然后根据 isNeedCallback 做页面跳转判断，是不是很简单。&lt;/p&gt;
-&lt;h1 id=&quot;u81EA_u52A8_u767B_u5F55&quot;&gt;&lt;a href=&quot;#u81EA_u52A8_u767B_u5F55&quot; class=&quot;headerlink&quot; title=&quot;自动登录&quot;&gt;&lt;/a&gt;自动登录&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;所谓自动登录，就是登录成功后，重启 App，仍然是登录状态&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/normal_login.png&quot; alt=&quot;normal_login&quot;&gt;&lt;/p&gt;
-&lt;p&gt;最直接的方法是，登录成功后，本地保存用户名和密码。重启App后，检查本地是否有保存用户名和密码，如果有，则将用户名和密码传入到登录接口，模拟用户登录的行为。&lt;/p&gt;
-&lt;p&gt;那么登录之后呢？市面上大多数 App 的逻辑都有问题，它们会在本地保存一个 isLogin 的全局变量，登录成功后设置为 true。接下来涉及用户相关的 MobileAPI，只有在这个值为true时才能调用，它们会把 UserId 传递给服务器。&lt;/p&gt;
-&lt;p&gt;服务器的解决方案通常也很简陋，它没有任何安全机制，包括用户信息相关的 MobileAPI 接口，只要接口调用参数中有 UserId ，它就会去把相关的数据取出并返回。有没有更好的方案呢？其实自动登录，Web 方面做得很好，就是使用 Cookie 来实现。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Cookie&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Cookie：也叫 Token，用户身份的唯一标识&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;使用流程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/auto_login.png&quot; alt=&quot;auto_login&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;u9632_u6B62_u9ED1_u5BA2_u5237_u5E93&quot;&gt;&lt;a href=&quot;#u9632_u6B62_u9ED1_u5BA2_u5237_u5E93&quot; class=&quot;headerlink&quot; title=&quot;防止黑客刷库&quot;&gt;&lt;/a&gt;防止黑客刷库&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;刷库原因&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;用户信息泄露&lt;/li&gt;
-&lt;li&gt;用户名和密码多个平台共用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;加入验证码机制，而且这个验证码必须是手动输入，否则起不到防刷库的作用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/safe_login.png&quot; alt=&quot;safe_login&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿
     
     </summary>
     
