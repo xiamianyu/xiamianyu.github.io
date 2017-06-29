@@ -59,22 +59,22 @@
 
 
 
-<meta name="description" content="前言Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些参数平时我们都遇到过，如最常见的 Xmx2g，表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。
+<meta name="description" content="前言Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些启动参数，我们平时或多或少都有接触过，可能我们并不知道它们就是启动参数，如常见的 Xmx2g，它表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。
 标准参数使用 - 前缀表示。所有的 JVM 都必须实现这些参数的功能，而且向后兼容。
--client设置 JVM 使用 client 模式，特点是启动速度比较快，但运行">
+-client设置 JVM 使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 启动参数">
 <meta property="og:url" content="http://xiamianyu.github.io/2017/06/28/Java-启动参数/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="前言Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些参数平时我们都遇到过，如最常见的 Xmx2g，表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。
+<meta property="og:description" content="前言Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些启动参数，我们平时或多或少都有接触过，可能我们并不知道它们就是启动参数，如常见的 Xmx2g，它表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。
 标准参数使用 - 前缀表示。所有的 JVM 都必须实现这些参数的功能，而且向后兼容。
--client设置 JVM 使用 client 模式，特点是启动速度比较快，但运行">
-<meta property="og:updated_time" content="2017-06-28T06:54:30.000Z">
+-client设置 JVM 使用">
+<meta property="og:updated_time" content="2017-06-29T02:54:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 启动参数">
-<meta name="twitter:description" content="前言Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些参数平时我们都遇到过，如最常见的 Xmx2g，表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。
+<meta name="twitter:description" content="前言Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些启动参数，我们平时或多或少都有接触过，可能我们并不知道它们就是启动参数，如常见的 Xmx2g，它表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。
 标准参数使用 - 前缀表示。所有的 JVM 都必须实现这些参数的功能，而且向后兼容。
--client设置 JVM 使用 client 模式，特点是启动速度比较快，但运行">
+-client设置 JVM 使用">
 
 
 
@@ -303,7 +303,7 @@
       
 
       
-        <h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些参数平时我们都遇到过，如最常见的 <code>Xmx2g</code>，表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。</p>
+        <h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些启动参数，我们平时或多或少都有接触过，可能我们并不知道它们就是启动参数，如常见的 <code>Xmx2g</code>，它表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。</p>
 <h1 id="u6807_u51C6_u53C2_u6570"><a href="#u6807_u51C6_u53C2_u6570" class="headerlink" title="标准参数"></a>标准参数</h1><p>使用 <code>-</code> 前缀表示。所有的 JVM 都必须实现这些参数的功能，而且向后兼容。</p>
 <p><strong>-client</strong><br>设置 JVM 使用 client 模式，特点是启动速度比较快，但运行时性能和内存管理效率不高，通常用于客户端应用程序或者PC应用开发和调试。</p>
 <p><strong>-server</strong><br>设置 JVM 使 server 模式，特点是启动速度比较慢，但运行时性能和内存管理效率很高，适用于生产环境。在具有64位能力的 JDK 环境下将默认启用该模式，而忽略 <code>-client</code> 参数。</p>
