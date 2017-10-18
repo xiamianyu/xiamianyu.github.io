@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java,Lambda," />
+  <meta name="keywords" content="Java,泛型," />
 
 
 
@@ -59,22 +59,25 @@
 
 
 
-<meta name="description" content="背景Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。
-函数式接口Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。
-Java 8 为函数式接口">
+<meta name="description" content="前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
+12List&amp;lt;B&amp;gt; bList = new ArrayList&amp;lt;&amp;gt;();List&amp;lt;A&amp;gt; aList = bList; // compile error
+抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
+12List&amp;lt;?">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java Lambda">
-<meta property="og:url" content="http://xiamianyu.github.io/2017/05/04/Java-Lambda/index.html">
+<meta property="og:title" content="Java 泛型">
+<meta property="og:url" content="http://xiamianyu.github.io/2017/10/17/Java-泛型/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="背景Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。
-函数式接口Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。
-Java 8 为函数式接口">
-<meta property="og:updated_time" content="2017-04-17T16:01:15.000Z">
+<meta property="og:description" content="前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
+12List&amp;lt;B&amp;gt; bList = new ArrayList&amp;lt;&amp;gt;();List&amp;lt;A&amp;gt; aList = bList; // compile error
+抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
+12List&amp;lt;?">
+<meta property="og:updated_time" content="2017-10-18T10:26:02.210Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java Lambda">
-<meta name="twitter:description" content="背景Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。
-函数式接口Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。
-Java 8 为函数式接口">
+<meta name="twitter:title" content="Java 泛型">
+<meta name="twitter:description" content="前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
+12List&amp;lt;B&amp;gt; bList = new ArrayList&amp;lt;&amp;gt;();List&amp;lt;A&amp;gt; aList = bList; // compile error
+抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
+12List&amp;lt;?">
 
 
 
@@ -92,7 +95,7 @@ Java 8 为函数式接口">
   };
 </script>
 
-  <title> Java Lambda | One More Try </title>
+  <title> Java 泛型 | One More Try </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -229,7 +232,7 @@ Java 8 为函数式接口">
             
             
               
-                Java Lambda
+                Java 泛型
               
             
           </h1>
@@ -241,8 +244,8 @@ Java 8 为函数式接口">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-05-04T10:01:37+08:00" content="2017-05-04">
-              2017-05-04
+            <time itemprop="dateCreated" datetime="2017-10-17T16:57:51+08:00" content="2017-10-17">
+              2017-10-17
             </time>
           </span>
 
@@ -271,8 +274,8 @@ Java 8 为函数式接口">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/05/04/Java-Lambda/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/04/Java-Lambda/" itemprop="commentsCount"></span>
+                <a href="/2017/10/17/Java-泛型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/17/Java-泛型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -282,7 +285,7 @@ Java 8 为函数式接口">
 
           
           
-             <span id="/2017/05/04/Java-Lambda/" class="leancloud_visitors" data-flag-title="Java Lambda">
+             <span id="/2017/10/17/Java-泛型/" class="leancloud_visitors" data-flag-title="Java 泛型">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -303,46 +306,42 @@ Java 8 为函数式接口">
       
 
       
-        <h1 id="u80CC_u666F"><a href="#u80CC_u666F" class="headerlink" title="背景"></a>背景</h1><p>Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。</p>
-<h1 id="u51FD_u6570_u5F0F_u63A5_u53E3"><a href="#u51FD_u6570_u5F0F_u63A5_u53E3" class="headerlink" title="函数式接口"></a>函数式接口</h1><p>Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。</p>
-<p>Java 8 为函数式接口提供了 @FunctionalInterface 注解，作用于类型，指定该接口必须是函数式接口。</p>
-<h1 id="Lambda__u8868_u8FBE_u5F0F_u8BED_u6CD5"><a href="#Lambda__u8868_u8FBE_u5F0F_u8BED_u6CD5" class="headerlink" title="Lambda 表达式语法"></a>Lambda 表达式语法</h1><p>Lambda 表达式语法由形参列表、箭头和代码块三部分构成：</p>
-<table>
-<thead>
-<tr>
-<th>形参列表</th>
-<th>箭头</th>
-<th>代码块</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>(int x, int y)</td>
-<td>-&gt;</td>
-<td>x + y</td>
-</tr>
-</tbody>
-</table>
-<h2 id="u5F62_u53C2_u5217_u8868"><a href="#u5F62_u53C2_u5217_u8868" class="headerlink" title="形参列表"></a>形参列表</h2><p>形参列表允许省略形参参数。如果形参列表中只有一个参数，可以省略圆括号。</p>
-<h2 id="u7BAD_u5934"><a href="#u7BAD_u5934" class="headerlink" title="箭头"></a>箭头</h2><p>-&gt;：由英文中划线和大于号组成</p>
-<h2 id="u4EE3_u7801_u5757"><a href="#u4EE3_u7801_u5757" class="headerlink" title="代码块"></a>代码块</h2><ul>
-<li>只有一条语句时，可省略代码块的花括号；</li>
-<li>只有一条 return 语句时，可省略 return 关键字。</li>
+        <h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;B&gt; bList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;A&gt; aList = bList; <span class="comment">// compile error</span></span><br></pre></td></tr></table></figure>
+<p>抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在<a href="https://docs.oracle.com/javase/tutorial/java/generics/index.html" target="_blank" rel="external">官网教程</a>中看到有解决方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends B&gt; bList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;? extends A&gt; aList = bList;</span><br></pre></td></tr></table></figure>
+<p>鉴于之前对泛型的泛泛而学，我决定将官网的教程翻译下来，如有翻译不对的地方，请大家纠正，谢谢！准备开车咯，系好安全带呐 ^_^</p>
+<h1 id="u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B"><a href="#u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B" class="headerlink" title="为什么使用泛型"></a>为什么使用泛型</h1><p>简而言之，在定义类、接口和方法时，泛型能让类或接口变成参数，这样的参数又叫类型参数（Type Parameter）。就像方法声明中的形参一样，类型参数提供了代码复用的通道，不同的是形参接收的是值，类型参数接收的是类型。</p>
+<p>使用泛型的好处：</p>
+<ul>
+<li>编译时强类型检查</li>
+<li>消除类型转化</li>
+<li>实现通用算法</li>
 </ul>
-<h1 id="u4EE3_u7801_u793A_u4F8B"><a href="#u4EE3_u7801_u793A_u4F8B" class="headerlink" title="代码示例"></a>代码示例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Anonymous Runnable</span></span><br><span class="line">Runnable run1 = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello world1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lambda Runnable</span></span><br><span class="line">Runnable run2 = () -&gt; System.out.println(<span class="string">"hello world2"</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="Lamba__u4E0E_u533F_u540D_u5185_u90E8_u7C7B_u7684_u5F02_u540C"><a href="#Lamba__u4E0E_u533F_u540D_u5185_u90E8_u7C7B_u7684_u5F02_u540C" class="headerlink" title="Lamba 与匿名内部类的异同"></a>Lamba 与匿名内部类的异同</h1><h2 id="u76F8_u540C_u70B9"><a href="#u76F8_u540C_u70B9" class="headerlink" title="相同点"></a>相同点</h2><ul>
-<li>都可以直接访问 effectively final 局部变量、外部类的成员变量（实例变量和类变量）；</li>
-<li>都可以直接调用从接口中继承的<strong>默认方法</strong>。</li>
+<h1 id="u6CDB_u578B"><a href="#u6CDB_u578B" class="headerlink" title="泛型"></a>泛型</h1><p>下面我们通过 Box 类来论证什么是泛型。</p>
+<h2 id="u7B80_u5355_u7684_Box"><a href="#u7B80_u5355_u7684_Box" class="headerlink" title="简单的 Box"></a>简单的 Box</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object object;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.object = object; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> object; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于 box 接收或返回一个 object，所以你可以自由的传入任何你想要的非基本类型，因此在编译阶段无法判断 box 的使用情况。下面的例子在运行时会发生 <code>ClassCastException</code> 错误。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box box = <span class="keyword">new</span> Box();</span><br><span class="line">box.set(<span class="string">"hello worlds"</span>);</span><br><span class="line"><span class="keyword">int</span> result = (Integer) box.get();</span><br></pre></td></tr></table></figure>
+<h2 id="u6CDB_u578B_u7248_u672C_u7684_Box"><a href="#u6CDB_u578B_u7248_u672C_u7684_Box" class="headerlink" title="泛型版本的 Box"></a>泛型版本的 Box</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T t;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.t = t; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> T; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，所有的 Object 都被替换成 T。我们称 T 为类型参数（Type Parameter）或类型变量（Type Variable），它可以是任何的非基本类型：类、接口、数组、甚至是类型参数。</p>
+<p>根据上面的例子，我们可以得出泛型类的定义格式：<br><code>class name&lt;T1, T2, ..., Tn&gt; {/* ... */}</code></p>
+<p>用尖括号（&lt;&gt;）分割的类型参数，遵循类名。泛型接口的定义和泛型类相似。</p>
+<h2 id="u6CDB_u578B_u53C2_u6570_u7684_u547D_u540D_u60EF_u4F8B"><a href="#u6CDB_u578B_u53C2_u6570_u7684_u547D_u540D_u60EF_u4F8B" class="headerlink" title="泛型参数的命名惯例"></a>泛型参数的命名惯例</h2><p>按照惯例，泛型参数的命名是单个大写字母，这样可以很好地区分类型变量和普通类或接口。</p>
+<p>最常用的类型变量参数如下：</p>
+<ul>
+<li>E - Element</li>
+<li>K - Key</li>
+<li>V - Value</li>
+<li>T - Type</li>
+<li>N - Number</li>
+<li>S,U,V etc. - 2nd, 3rd, 4th types</li>
 </ul>
-<h2 id="u4E0D_u540C_u70B9"><a href="#u4E0D_u540C_u70B9" class="headerlink" title="不同点"></a>不同点</h2><ul>
-<li>匿名内部类可以为任意接口创建实例，不管接口包含多少个抽象方法，只要匿名内部类实现所有的抽象方法即可，但 Lambda 表达式只能为函数式接口创建实例；</li>
-<li>匿名内部类可以为抽象类甚至普通类创建实例，但 Lambda 表达式只能为函数式接口创建实例；</li>
-<li>匿名内部类实现的抽象方法的方法体允许调用接口定义的默认方法，但 Lambda 表达式的代码块中不允许调用接口中定义的默认方法。</li>
-</ul>
-<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><ul>
-<li>《疯狂 Java 讲义3》</li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html" target="_blank" rel="external">Oracle Lambda</a></li>
-</ul>
+<h2 id="u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316"><a href="#u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316" class="headerlink" title="泛型的调用和实例化"></a>泛型的调用和实例化</h2><p>还是以上面的 Box 为例，Box 的调用和实例化如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化</span></span><br><span class="line">Box&lt;Integer&gt; box = <span class="keyword">new</span> Box&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 box 的 get 方法</span></span><br><span class="line"><span class="keyword">int</span> result = box.get();</span><br></pre></td></tr></table></figure>
+<h2 id="Type_Paramemter__u548C_Type_Argument"><a href="#Type_Paramemter__u548C_Type_Argument" class="headerlink" title="Type Paramemter 和 Type Argument"></a>Type Paramemter 和 Type Argument</h2><p>虽然 Type Parameter 和 Type Argument 在中文上都是叫类型参数，但两者是有区别的。在编写代码时，为了创建参数化类型，可以提供类型参数（Type Argument）。因此，<code>Box&lt;T&gt;</code> 中的 T 是一个 Type Paramemter，而 <code>Box&lt;Integer&gt;</code> 的 Integer 是一个 Type Argument。</p>
+<h2 id="u53C2_u6570_u5316_u7C7B_u578B"><a href="#u53C2_u6570_u5316_u7C7B_u578B" class="headerlink" title="参数化类型"></a>参数化类型</h2><p>像 <code>List&lt;String&gt;</code> 这种带 Type Argument 的类型，我们称为参数化类型。泛型的实例化也支持参数化类型。如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化</span></span><br><span class="line">Box&lt;List&lt;Integer&gt;&gt; box = <span class="keyword">new</span> Box&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 box 的 get 方法</span></span><br><span class="line">List&lt;Integer&gt; results = box.get();</span><br></pre></td></tr></table></figure>
+<p>// 未完待续</p>
 
       
     </div>
@@ -359,7 +358,7 @@ Java 8 为函数式接口">
           
             <a href="/tags/Java/" rel="tag">#Java</a>
           
-            <a href="/tags/Lambda/" rel="tag">#Lambda</a>
+            <a href="/tags/泛型/" rel="tag">#泛型</a>
           
         </div>
       
@@ -368,17 +367,13 @@ Java 8 为函数式接口">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/09/提高代码审查的效率/" rel="next" title="提高代码审查的效率">
-                <i class="fa fa-chevron-left"></i> 提高代码审查的效率
+              <a href="/2017/06/28/Java-启动参数/" rel="next" title="Java 启动参数">
+                <i class="fa fa-chevron-left"></i> Java 启动参数
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/28/Java-启动参数/" rel="prev" title="Java 启动参数">
-                Java 启动参数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -393,10 +388,10 @@ Java 8 为函数式接口">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/05/04/Java-Lambda/"
-     data-title="Java Lambda"
+        <div class="ds-share flat" data-thread-key="2017/10/17/Java-泛型/"
+     data-title="Java 泛型"
      data-content=""
-     data-url="http://xiamianyu.github.io/2017/05/04/Java-Lambda/">
+     data-url="http://xiamianyu.github.io/2017/10/17/Java-泛型/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -426,8 +421,8 @@ Java 8 为函数式接口">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/05/04/Java-Lambda/"
-           data-title="Java Lambda" data-url="http://xiamianyu.github.io/2017/05/04/Java-Lambda/">
+      <div class="ds-thread" data-thread-key="2017/10/17/Java-泛型/"
+           data-title="Java 泛型" data-url="http://xiamianyu.github.io/2017/10/17/Java-泛型/">
       </div>
     
   </div>
@@ -548,7 +543,7 @@ Java 8 为函数式接口">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u80CC_u666F"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u51FD_u6570_u5F0F_u63A5_u53E3"><span class="nav-number">2.</span> <span class="nav-text">函数式接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda__u8868_u8FBE_u5F0F_u8BED_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">Lambda 表达式语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F62_u53C2_u5217_u8868"><span class="nav-number">3.1.</span> <span class="nav-text">形参列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7BAD_u5934"><span class="nav-number">3.2.</span> <span class="nav-text">箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4EE3_u7801_u5757"><span class="nav-number">3.3.</span> <span class="nav-text">代码块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4EE3_u7801_u793A_u4F8B"><span class="nav-number">4.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lamba__u4E0E_u533F_u540D_u5185_u90E8_u7C7B_u7684_u5F02_u540C"><span class="nav-number">5.</span> <span class="nav-text">Lamba 与匿名内部类的异同</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u76F8_u540C_u70B9"><span class="nav-number">5.1.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E0D_u540C_u70B9"><span class="nav-number">5.2.</span> <span class="nav-text">不同点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u53C2_u8003"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u524D_u8A00"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B"><span class="nav-number">2.</span> <span class="nav-text">为什么使用泛型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B"><span class="nav-number">3.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B80_u5355_u7684_Box"><span class="nav-number">3.1.</span> <span class="nav-text">简单的 Box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u7248_u672C_u7684_Box"><span class="nav-number">3.2.</span> <span class="nav-text">泛型版本的 Box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u53C2_u6570_u7684_u547D_u540D_u60EF_u4F8B"><span class="nav-number">3.3.</span> <span class="nav-text">泛型参数的命名惯例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316"><span class="nav-number">3.4.</span> <span class="nav-text">泛型的调用和实例化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type_Paramemter__u548C_Type_Argument"><span class="nav-number">3.5.</span> <span class="nav-text">Type Paramemter 和 Type Argument</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u53C2_u6570_u5316_u7C7B_u578B"><span class="nav-number">3.6.</span> <span class="nav-text">参数化类型</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
