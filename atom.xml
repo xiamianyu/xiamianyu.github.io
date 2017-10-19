@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2017-10-19T14:17:14.302Z</updated>
+  <updated>2017-10-19T15:19:38.477Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,30 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>责任心和主动性</title>
-    <link href="http://xiamianyu.github.io/2017/10/19/%E8%B4%A3%E4%BB%BB%E5%BF%83%E5%92%8C%E4%B8%BB%E5%8A%A8%E6%80%A7/"/>
-    <id>http://xiamianyu.github.io/2017/10/19/责任心和主动性/</id>
-    <published>2017-10-19T13:41:56.000Z</published>
-    <updated>2017-10-19T14:17:14.302Z</updated>
-    
-    <content type="html">&lt;p&gt;最近有些烦躁，因为我又「多管闲事」了。很多人会说，谁叫你多管闲事呢，认真做好领导安排的任务不就行了？自讨苦吃！&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近有些烦躁，因为我又「多管闲事」了。很多人会说，谁叫你多管闲事呢，认真做好领导安排的任务不就行了？自讨苦吃！&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
-    
-    
-      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
-    
-  </entry>
   
   <entry>
     <title>Java 泛型</title>
@@ -1265,6 +1241,39 @@
       <category term="ViewPager" scheme="http://xiamianyu.github.io/tags/ViewPager/"/>
     
       <category term="新闻客户端" scheme="http://xiamianyu.github.io/tags/%E6%96%B0%E9%97%BB%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Charles Response 中文乱码</title>
+    <link href="http://xiamianyu.github.io/2016/05/07/Charles-Response-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
+    <id>http://xiamianyu.github.io/2016/05/07/Charles-Response-中文乱码/</id>
+    <published>2016-05-07T03:44:01.000Z</published>
+    <updated>2016-06-02T01:43:49.000Z</updated>
+    
+    <content type="html">&lt;p&gt;使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;找到 Info.plist&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;修改 Info.plist&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;打开 Info.plist，找到 &lt;code&gt;-Xmx256m&lt;/code&gt;，添加 &lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt; ，重启 Charles 即可&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 修改之前 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;-Xmx256m&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 修改之后 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;-Xmx256m -Dfile.encoding=UTF-8&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/huanghr_1/article/details/39735335&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/huanghr_1/article/details/39735335&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;找到 Info.plist&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; 
+    
+    </summary>
+    
+      <category term="工具" scheme="http://xiamianyu.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Charles" scheme="http://xiamianyu.github.io/tags/Charles/"/>
+    
+      <category term="工具" scheme="http://xiamianyu.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
