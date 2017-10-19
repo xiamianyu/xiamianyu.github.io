@@ -71,7 +71,7 @@
 12List&amp;lt;B&amp;gt; bList = new ArrayList&amp;lt;&amp;gt;();List&amp;lt;A&amp;gt; aList = bList; // compile error
 抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
 12List&amp;lt;?">
-<meta property="og:updated_time" content="2017-10-18T10:26:02.210Z">
+<meta property="og:updated_time" content="2017-10-19T15:19:38.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型">
 <meta name="twitter:description" content="前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
@@ -318,7 +318,7 @@
 <li>消除类型转化</li>
 <li>实现通用算法</li>
 </ul>
-<h1 id="u6CDB_u578B"><a href="#u6CDB_u578B" class="headerlink" title="泛型"></a>泛型</h1><p>下面我们通过 Box 类来论证什么是泛型。</p>
+<h1 id="u6CDB_u578B"><a href="#u6CDB_u578B" class="headerlink" title="泛型"></a>泛型</h1><p>泛型（Generic Type）是带类型参数的或接口。下面我们通过 Box 类来论述什么是泛型。</p>
 <h2 id="u7B80_u5355_u7684_Box"><a href="#u7B80_u5355_u7684_Box" class="headerlink" title="简单的 Box"></a>简单的 Box</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object object;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.object = object; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> object; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于 box 接收或返回一个 object，所以你可以自由的传入任何你想要的非基本类型，因此在编译阶段无法判断 box 的使用情况。下面的例子在运行时会发生 <code>ClassCastException</code> 错误。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box box = <span class="keyword">new</span> Box();</span><br><span class="line">box.set(<span class="string">"hello worlds"</span>);</span><br><span class="line"><span class="keyword">int</span> result = (Integer) box.get();</span><br></pre></td></tr></table></figure>
@@ -338,9 +338,20 @@
 </ul>
 <h2 id="u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316"><a href="#u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316" class="headerlink" title="泛型的调用和实例化"></a>泛型的调用和实例化</h2><p>还是以上面的 Box 为例，Box 的调用和实例化如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化</span></span><br><span class="line">Box&lt;Integer&gt; box = <span class="keyword">new</span> Box&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 box 的 get 方法</span></span><br><span class="line"><span class="keyword">int</span> result = box.get();</span><br></pre></td></tr></table></figure>
+<h2 id="u83F1_u5F62"><a href="#u83F1_u5F62" class="headerlink" title="菱形"></a>菱形</h2><p>在 Java SE 7 和之后，你可以用一个空的类型参数（一对尖括号：&lt;&gt;）来替换泛型类的构造函数，只要编译器可以确定或者推断出上下文中的类型参数。这对尖括号叫做菱形。例如，你可以使用下面的语句创建一个 Box 示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Integer&gt; integerBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<p>棱形和类型推断，我们后续会讲到。</p>
 <h2 id="Type_Paramemter__u548C_Type_Argument"><a href="#Type_Paramemter__u548C_Type_Argument" class="headerlink" title="Type Paramemter 和 Type Argument"></a>Type Paramemter 和 Type Argument</h2><p>虽然 Type Parameter 和 Type Argument 在中文上都是叫类型参数，但两者是有区别的。在编写代码时，为了创建参数化类型，可以提供类型参数（Type Argument）。因此，<code>Box&lt;T&gt;</code> 中的 T 是一个 Type Paramemter，而 <code>Box&lt;Integer&gt;</code> 的 Integer 是一个 Type Argument。</p>
 <h2 id="u53C2_u6570_u5316_u7C7B_u578B"><a href="#u53C2_u6570_u5316_u7C7B_u578B" class="headerlink" title="参数化类型"></a>参数化类型</h2><p>像 <code>List&lt;String&gt;</code> 这种带 Type Argument 的类型，我们称为参数化类型。泛型的实例化也支持参数化类型。如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化</span></span><br><span class="line">Box&lt;List&lt;Integer&gt;&gt; box = <span class="keyword">new</span> Box&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 box 的 get 方法</span></span><br><span class="line">List&lt;Integer&gt; results = box.get();</span><br></pre></td></tr></table></figure>
+<h1 id="u539F_u59CB_u7C7B_u578B"><a href="#u539F_u59CB_u7C7B_u578B" class="headerlink" title="原始类型"></a>原始类型</h1><p>原始类型（Raw Type）是指没有 Type Argument 的泛型类或接口。</p>
+<p>要创建一个 <code>Box&lt;T&gt;</code> 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Integer&gt; intBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br></pre></td></tr></table></figure></p>
+<p>如果实际的类型参数被省略，你就会创建一个 <code>Box&lt;T&gt;</code> 的原始类型：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Box intBox = <span class="keyword">new</span> Box();</span><br></pre></td></tr></table></figure></p>
+<p>因此，Box 是泛型 <code>Box&lt;T&gt;</code> 的原始类型。但是，一个非泛型的类或接口不是原始类型。</p>
+<p>由于 JDK 5.0 之前 API 中的很多类（比如集合类）是不支持泛型的，所以原始类型出现在旧有代码中。为了向后兼容，是允许将一个参数化类型指向原始类型的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;String&gt; stringBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">Box rawBox = stringBox;               <span class="comment">// OK</span></span><br></pre></td></tr></table></figure></p>
+<p>但是如果你将一个原始类型指向一个参数化类型就会得到一个警告：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Box rawBox = <span class="keyword">new</span> Box();           <span class="comment">// rawBox is a raw type of Box&lt;T&gt;</span></span><br><span class="line">Box&lt;Integer&gt; intBox = rawBox;     <span class="comment">// warning: unchecked conversion</span></span><br></pre></td></tr></table></figure></p>
+<p>如果你使用原始类型来调用相应泛型中定义的泛型方法，你也会得到一个警告：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;String&gt; stringBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">Box rawBox = stringBox;</span><br><span class="line">rawBox.set(<span class="number">8</span>);  <span class="comment">// warning: unchecked invocation to set(T)</span></span><br></pre></td></tr></table></figure></p>
+<p>警告表明，原始类型会绕过泛型检查，将不安全代码的捕获推迟到运行时。因此，你应该避免使用原始类型。</p>
 <p>// 未完待续</p>
 
       
@@ -374,6 +385,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/19/责任心和主动性/" rel="prev" title="责任心和主动性">
+                责任心和主动性 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -467,7 +482,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">27</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -543,7 +558,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u524D_u8A00"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B"><span class="nav-number">2.</span> <span class="nav-text">为什么使用泛型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B"><span class="nav-number">3.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B80_u5355_u7684_Box"><span class="nav-number">3.1.</span> <span class="nav-text">简单的 Box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u7248_u672C_u7684_Box"><span class="nav-number">3.2.</span> <span class="nav-text">泛型版本的 Box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u53C2_u6570_u7684_u547D_u540D_u60EF_u4F8B"><span class="nav-number">3.3.</span> <span class="nav-text">泛型参数的命名惯例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316"><span class="nav-number">3.4.</span> <span class="nav-text">泛型的调用和实例化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type_Paramemter__u548C_Type_Argument"><span class="nav-number">3.5.</span> <span class="nav-text">Type Paramemter 和 Type Argument</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u53C2_u6570_u5316_u7C7B_u578B"><span class="nav-number">3.6.</span> <span class="nav-text">参数化类型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u524D_u8A00"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B"><span class="nav-number">2.</span> <span class="nav-text">为什么使用泛型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B"><span class="nav-number">3.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B80_u5355_u7684_Box"><span class="nav-number">3.1.</span> <span class="nav-text">简单的 Box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u7248_u672C_u7684_Box"><span class="nav-number">3.2.</span> <span class="nav-text">泛型版本的 Box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u53C2_u6570_u7684_u547D_u540D_u60EF_u4F8B"><span class="nav-number">3.3.</span> <span class="nav-text">泛型参数的命名惯例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316"><span class="nav-number">3.4.</span> <span class="nav-text">泛型的调用和实例化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83F1_u5F62"><span class="nav-number">3.5.</span> <span class="nav-text">菱形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type_Paramemter__u548C_Type_Argument"><span class="nav-number">3.6.</span> <span class="nav-text">Type Paramemter 和 Type Argument</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u53C2_u6570_u5316_u7C7B_u578B"><span class="nav-number">3.7.</span> <span class="nav-text">参数化类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u539F_u59CB_u7C7B_u578B"><span class="nav-number">4.</span> <span class="nav-text">原始类型</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

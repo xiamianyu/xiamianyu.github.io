@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2017-10-18T10:26:02.210Z</updated>
+  <updated>2017-10-19T14:17:14.302Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>责任心和主动性</title>
+    <link href="http://xiamianyu.github.io/2017/10/19/%E8%B4%A3%E4%BB%BB%E5%BF%83%E5%92%8C%E4%B8%BB%E5%8A%A8%E6%80%A7/"/>
+    <id>http://xiamianyu.github.io/2017/10/19/责任心和主动性/</id>
+    <published>2017-10-19T13:41:56.000Z</published>
+    <updated>2017-10-19T14:17:14.302Z</updated>
+    
+    <content type="html">&lt;p&gt;最近有些烦躁，因为我又「多管闲事」了。很多人会说，谁叫你多管闲事呢，认真做好领导安排的任务不就行了？自讨苦吃！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近有些烦躁，因为我又「多管闲事」了。很多人会说，谁叫你多管闲事呢，认真做好领导安排的任务不就行了？自讨苦吃！&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java 泛型</title>
     <link href="http://xiamianyu.github.io/2017/10/17/Java-%E6%B3%9B%E5%9E%8B/"/>
     <id>http://xiamianyu.github.io/2017/10/17/Java-泛型/</id>
     <published>2017-10-17T08:57:51.000Z</published>
-    <updated>2017-10-18T10:26:02.210Z</updated>
+    <updated>2017-10-19T15:19:38.477Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;B&amp;gt; bList = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;A&amp;gt; aList = bList; &lt;span class=&quot;comment&quot;&gt;// compile error&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -34,7 +58,7 @@
 &lt;li&gt;消除类型转化&lt;/li&gt;
 &lt;li&gt;实现通用算法&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;u6CDB_u578B&quot;&gt;&lt;a href=&quot;#u6CDB_u578B&quot; class=&quot;headerlink&quot; title=&quot;泛型&quot;&gt;&lt;/a&gt;泛型&lt;/h1&gt;&lt;p&gt;下面我们通过 Box 类来论证什么是泛型。&lt;/p&gt;
+&lt;h1 id=&quot;u6CDB_u578B&quot;&gt;&lt;a href=&quot;#u6CDB_u578B&quot; class=&quot;headerlink&quot; title=&quot;泛型&quot;&gt;&lt;/a&gt;泛型&lt;/h1&gt;&lt;p&gt;泛型（Generic Type）是带类型参数的或接口。下面我们通过 Box 类来论述什么是泛型。&lt;/p&gt;
 &lt;h2 id=&quot;u7B80_u5355_u7684_Box&quot;&gt;&lt;a href=&quot;#u7B80_u5355_u7684_Box&quot; class=&quot;headerlink&quot; title=&quot;简单的 Box&quot;&gt;&lt;/a&gt;简单的 Box&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Box&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Object object;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Object object)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.object = object; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; Object &lt;span class=&quot;title&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; object; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;由于 box 接收或返回一个 object，所以你可以自由的传入任何你想要的非基本类型，因此在编译阶段无法判断 box 的使用情况。下面的例子在运行时会发生 &lt;code&gt;ClassCastException&lt;/code&gt; 错误。&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Box box = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;box.set(&lt;span class=&quot;string&quot;&gt;&quot;hello worlds&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; result = (Integer) box.get();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -54,9 +78,20 @@
 &lt;/ul&gt;
 &lt;h2 id=&quot;u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316&quot;&gt;&lt;a href=&quot;#u6CDB_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316&quot; class=&quot;headerlink&quot; title=&quot;泛型的调用和实例化&quot;&gt;&lt;/a&gt;泛型的调用和实例化&lt;/h2&gt;&lt;p&gt;还是以上面的 Box 为例，Box 的调用和实例化如下：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 实例化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Box&amp;lt;Integer&amp;gt; box = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box&amp;lt;Integer&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 调用 box 的 get 方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; result = box.get();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;u83F1_u5F62&quot;&gt;&lt;a href=&quot;#u83F1_u5F62&quot; class=&quot;headerlink&quot; title=&quot;菱形&quot;&gt;&lt;/a&gt;菱形&lt;/h2&gt;&lt;p&gt;在 Java SE 7 和之后，你可以用一个空的类型参数（一对尖括号：&amp;lt;&amp;gt;）来替换泛型类的构造函数，只要编译器可以确定或者推断出上下文中的类型参数。这对尖括号叫做菱形。例如，你可以使用下面的语句创建一个 Box 示例：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Box&amp;lt;Integer&amp;gt; integerBox = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;棱形和类型推断，我们后续会讲到。&lt;/p&gt;
 &lt;h2 id=&quot;Type_Paramemter__u548C_Type_Argument&quot;&gt;&lt;a href=&quot;#Type_Paramemter__u548C_Type_Argument&quot; class=&quot;headerlink&quot; title=&quot;Type Paramemter 和 Type Argument&quot;&gt;&lt;/a&gt;Type Paramemter 和 Type Argument&lt;/h2&gt;&lt;p&gt;虽然 Type Parameter 和 Type Argument 在中文上都是叫类型参数，但两者是有区别的。在编写代码时，为了创建参数化类型，可以提供类型参数（Type Argument）。因此，&lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; 中的 T 是一个 Type Paramemter，而 &lt;code&gt;Box&amp;lt;Integer&amp;gt;&lt;/code&gt; 的 Integer 是一个 Type Argument。&lt;/p&gt;
 &lt;h2 id=&quot;u53C2_u6570_u5316_u7C7B_u578B&quot;&gt;&lt;a href=&quot;#u53C2_u6570_u5316_u7C7B_u578B&quot; class=&quot;headerlink&quot; title=&quot;参数化类型&quot;&gt;&lt;/a&gt;参数化类型&lt;/h2&gt;&lt;p&gt;像 &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt; 这种带 Type Argument 的类型，我们称为参数化类型。泛型的实例化也支持参数化类型。如：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 实例化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Box&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; box = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 调用 box 的 get 方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;Integer&amp;gt; results = box.get();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;u539F_u59CB_u7C7B_u578B&quot;&gt;&lt;a href=&quot;#u539F_u59CB_u7C7B_u578B&quot; class=&quot;headerlink&quot; title=&quot;原始类型&quot;&gt;&lt;/a&gt;原始类型&lt;/h1&gt;&lt;p&gt;原始类型（Raw Type）是指没有 Type Argument 的泛型类或接口。&lt;/p&gt;
+&lt;p&gt;要创建一个 &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Box&amp;lt;Integer&amp;gt; intBox = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果实际的类型参数被省略，你就会创建一个 &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; 的原始类型：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Box intBox = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;因此，Box 是泛型 &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; 的原始类型。但是，一个非泛型的类或接口不是原始类型。&lt;/p&gt;
+&lt;p&gt;由于 JDK 5.0 之前 API 中的很多类（比如集合类）是不支持泛型的，所以原始类型出现在旧有代码中。为了向后兼容，是允许将一个参数化类型指向原始类型的：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Box&amp;lt;String&amp;gt; stringBox = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Box rawBox = stringBox;               &lt;span class=&quot;comment&quot;&gt;// OK&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但是如果你将一个原始类型指向一个参数化类型就会得到一个警告：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Box rawBox = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box();           &lt;span class=&quot;comment&quot;&gt;// rawBox is a raw type of Box&amp;lt;T&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Box&amp;lt;Integer&amp;gt; intBox = rawBox;     &lt;span class=&quot;comment&quot;&gt;// warning: unchecked conversion&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果你使用原始类型来调用相应泛型中定义的泛型方法，你也会得到一个警告：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Box&amp;lt;String&amp;gt; stringBox = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Box&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Box rawBox = stringBox;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rawBox.set(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;);  &lt;span class=&quot;comment&quot;&gt;// warning: unchecked invocation to set(T)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;警告表明，原始类型会绕过泛型检查，将不安全代码的捕获推迟到运行时。因此，你应该避免使用原始类型。&lt;/p&gt;
 &lt;p&gt;// 未完待续&lt;/p&gt;
 </content>
     
@@ -1230,39 +1265,6 @@
       <category term="ViewPager" scheme="http://xiamianyu.github.io/tags/ViewPager/"/>
     
       <category term="新闻客户端" scheme="http://xiamianyu.github.io/tags/%E6%96%B0%E9%97%BB%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Charles Response 中文乱码</title>
-    <link href="http://xiamianyu.github.io/2016/05/07/Charles-Response-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
-    <id>http://xiamianyu.github.io/2016/05/07/Charles-Response-中文乱码/</id>
-    <published>2016-05-07T03:44:01.000Z</published>
-    <updated>2016-06-02T01:43:49.000Z</updated>
-    
-    <content type="html">&lt;p&gt;使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;找到 Info.plist&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;修改 Info.plist&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;打开 Info.plist，找到 &lt;code&gt;-Xmx256m&lt;/code&gt;，添加 &lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt; ，重启 Charles 即可&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 修改之前 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;-Xmx256m&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 修改之后 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;-Xmx256m -Dfile.encoding=UTF-8&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/huanghr_1/article/details/39735335&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/huanghr_1/article/details/39735335&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;找到 Info.plist&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; 
-    
-    </summary>
-    
-      <category term="工具" scheme="http://xiamianyu.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Charles" scheme="http://xiamianyu.github.io/tags/Charles/"/>
-    
-      <category term="工具" scheme="http://xiamianyu.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
