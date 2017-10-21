@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2017-10-21T06:58:43.353Z</updated>
+  <updated>2017-10-21T07:08:25.839Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xiamianyu.github.io/2017/10/17/Java-%E6%B3%9B%E5%9E%8B/"/>
     <id>http://xiamianyu.github.io/2017/10/17/Java-泛型/</id>
     <published>2017-10-17T08:57:51.000Z</published>
-    <updated>2017-10-21T06:58:43.353Z</updated>
+    <updated>2017-10-21T07:08:25.839Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;B&amp;gt; bList = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;A&amp;gt; aList = bList; &lt;span class=&quot;comment&quot;&gt;// compile error&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -101,14 +101,14 @@
 &lt;p&gt;下图中，虽然 Integer 是 Number 的子类，但 &lt;code&gt;Box&amp;lt;Integer&amp;gt;&lt;/code&gt; 不是 &lt;code&gt;Box&amp;lt;Number&amp;gt;&lt;/code&gt; 的子类：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/../images/generics-subtype-relationship.png&quot; alt=&quot;generics-subtype-relationship&quot;&gt;&lt;/p&gt;
 &lt;p&gt;从上图我们可以得出：给定两个具体的类型 A 和 B（例如 Number 和 Integer），&lt;code&gt;MyClass&amp;lt;A&amp;gt;&lt;/code&gt; 和 &lt;code&gt;MyClass&amp;lt;B&amp;gt;&lt;/code&gt; 没有半毛钱关系。不管 A 和 B 是否相关，&lt;code&gt;MyClass&amp;lt;A&amp;gt;&lt;/code&gt; 和 &lt;code&gt;MyClass&amp;lt;B&amp;gt;&lt;/code&gt; 的共同父类是 Object。&lt;/p&gt;
-&lt;p&gt;当类型参数（Type Argument）相关时，如何在两个泛型之间建立子类关系，这个我们再后续的「通配符和子类」会讲到。&lt;/p&gt;
+&lt;p&gt;当类型参数（Type Argument）相关时，如何在两个泛型之间建立子类关系，这个我们在后续的「通配符和子类」会讲到。&lt;/p&gt;
 &lt;h2 id=&quot;u6CDB_u578B_u548C_u5B50_u7C7B&quot;&gt;&lt;a href=&quot;#u6CDB_u578B_u548C_u5B50_u7C7B&quot; class=&quot;headerlink&quot; title=&quot;泛型和子类&quot;&gt;&lt;/a&gt;泛型和子类&lt;/h2&gt;&lt;p&gt;我们可以通过继承或实现泛型来创建一个子类的泛型类或泛型接口。一个类或接口的类型参数（Type Parameter）与另一个之间的关系由 extends 和 implements 子句来决定。&lt;/p&gt;
 &lt;p&gt;以 Collections 类为例，&lt;code&gt;ArrayList&amp;lt;E&amp;gt;&lt;/code&gt; implements &lt;code&gt;List&amp;lt;E&amp;gt;&lt;/code&gt;， &lt;code&gt;List&amp;lt;E&amp;gt;&lt;/code&gt; extends &lt;code&gt;Collection&amp;lt;E&amp;gt;&lt;/code&gt;。所以 &lt;code&gt;ArrayList&amp;lt;String&amp;gt;&lt;/code&gt; 是 &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt; 的子类，&lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt; 是 &lt;code&gt;Collection&amp;lt;String&amp;gt;&lt;/code&gt; 的子类。只要我们不改变类型参数（Type Argument），就可以保留类型之间的子类关系。&lt;/p&gt;
 &lt;p&gt;下图是一个简单的 Collections 类的层次结构：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/../images/generics-sample-hierarchy.png&quot; alt=&quot;generics-sample-hierarchy&quot;&gt;&lt;/p&gt;
-&lt;p&gt;现在假设我们想定义我们自己的 List 接口 PayloadList，它将泛型类型 P 与每个元素的可选值关联起来。它的声明可能看起来像：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PayloadList&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;E&lt;/span&gt;,&lt;span class=&quot;title&quot;&gt;P&lt;/span&gt;&amp;gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;List&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;E&lt;/span&gt;&amp;gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setPayload&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; index, P val)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;PayloadList 的以下参数是 &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt; 的子类&lt;/p&gt;
+&lt;p&gt;现在假设我们想定义我们自己的 List 接口 PayloadList，它将类型参数 P 与每个元素的可选值关联起来。它的声明可能看起来像：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PayloadList&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;E&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;P&lt;/span&gt;&amp;gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;List&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;E&lt;/span&gt;&amp;gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setPayload&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; index, P val)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以下参数化的PayloadList 是 &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt; 的子类&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;PayloadList&amp;lt;String,String&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PayloadList&amp;lt;String,Integer&amp;gt;&lt;/code&gt;&lt;/li&gt;

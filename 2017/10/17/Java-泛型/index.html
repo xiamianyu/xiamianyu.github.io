@@ -74,7 +74,7 @@
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-subtype-relationship.png">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-sample-hierarchy.png">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-payload-List-hierarchy.png">
-<meta property="og:updated_time" content="2017-10-21T06:58:43.353Z">
+<meta property="og:updated_time" content="2017-10-21T07:08:25.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型">
 <meta name="twitter:description" content="前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
@@ -388,14 +388,14 @@
 <p>下图中，虽然 Integer 是 Number 的子类，但 <code>Box&lt;Integer&gt;</code> 不是 <code>Box&lt;Number&gt;</code> 的子类：</p>
 <p><img src="/../images/generics-subtype-relationship.png" alt="generics-subtype-relationship"></p>
 <p>从上图我们可以得出：给定两个具体的类型 A 和 B（例如 Number 和 Integer），<code>MyClass&lt;A&gt;</code> 和 <code>MyClass&lt;B&gt;</code> 没有半毛钱关系。不管 A 和 B 是否相关，<code>MyClass&lt;A&gt;</code> 和 <code>MyClass&lt;B&gt;</code> 的共同父类是 Object。</p>
-<p>当类型参数（Type Argument）相关时，如何在两个泛型之间建立子类关系，这个我们再后续的「通配符和子类」会讲到。</p>
+<p>当类型参数（Type Argument）相关时，如何在两个泛型之间建立子类关系，这个我们在后续的「通配符和子类」会讲到。</p>
 <h2 id="u6CDB_u578B_u548C_u5B50_u7C7B"><a href="#u6CDB_u578B_u548C_u5B50_u7C7B" class="headerlink" title="泛型和子类"></a>泛型和子类</h2><p>我们可以通过继承或实现泛型来创建一个子类的泛型类或泛型接口。一个类或接口的类型参数（Type Parameter）与另一个之间的关系由 extends 和 implements 子句来决定。</p>
 <p>以 Collections 类为例，<code>ArrayList&lt;E&gt;</code> implements <code>List&lt;E&gt;</code>， <code>List&lt;E&gt;</code> extends <code>Collection&lt;E&gt;</code>。所以 <code>ArrayList&lt;String&gt;</code> 是 <code>List&lt;String&gt;</code> 的子类，<code>List&lt;String&gt;</code> 是 <code>Collection&lt;String&gt;</code> 的子类。只要我们不改变类型参数（Type Argument），就可以保留类型之间的子类关系。</p>
 <p>下图是一个简单的 Collections 类的层次结构：</p>
 <p><img src="/../images/generics-sample-hierarchy.png" alt="generics-sample-hierarchy"></p>
-<p>现在假设我们想定义我们自己的 List 接口 PayloadList，它将泛型类型 P 与每个元素的可选值关联起来。它的声明可能看起来像：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PayloadList</span>&lt;<span class="title">E</span>,<span class="title">P</span>&gt; <span class="keyword">extends</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setPayload</span><span class="params">(<span class="keyword">int</span> index, P val)</span></span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>PayloadList 的以下参数是 <code>List&lt;String&gt;</code> 的子类</p>
+<p>现在假设我们想定义我们自己的 List 接口 PayloadList，它将类型参数 P 与每个元素的可选值关联起来。它的声明可能看起来像：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PayloadList</span>&lt;<span class="title">E</span>, <span class="title">P</span>&gt; <span class="keyword">extends</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setPayload</span><span class="params">(<span class="keyword">int</span> index, P val)</span></span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以下参数化的PayloadList 是 <code>List&lt;String&gt;</code> 的子类</p>
 <ul>
 <li><code>PayloadList&lt;String,String&gt;</code></li>
 <li><code>PayloadList&lt;String,Integer&gt;</code></li>
