@@ -69,9 +69,9 @@
 <meta property="og:description" content="在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。
 下面的小节将更详细地讨论通配符，包括上界通配符、无界通配符、下界通配符等。
 上界通配符我们可以使用上界通配符来放松对变量的限制。比如我们想要编写一个在 List&amp;lt;In">
-<meta property="og:image" content="http://xiamianyu.github.io/..images/generics-list-parent.png">
-<meta property="og:image" content="http://xiamianyu.github.io/..images/generics-wildcard-subtyping.png">
-<meta property="og:updated_time" content="2017-10-24T15:17:08.937Z">
+<meta property="og:image" content="http://xiamianyu.github.io/../images/generics-list-parent.png">
+<meta property="og:image" content="http://xiamianyu.github.io/../images/generics-wildcard-subtyping.png">
+<meta property="og:updated_time" content="2017-10-24T15:19:27.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型-通配符">
 <meta name="twitter:description" content="在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。
@@ -342,13 +342,13 @@
 <p>上面的例子表明常规类的继承遵循子类型规则：如果 B 是 A 的子类，那么 B 是 A 的子类型。但是这个规则不适用在泛型类型中：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;B&gt; lb = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;A&gt; la = lb;   <span class="comment">// compile-time error</span></span><br></pre></td></tr></table></figure>
 <p>给定 Integer 是 Number 的子类型，那么 <code>List&lt;Integer&gt;</code> 和 <code>List&lt;Number&gt;</code> 如下：</p>
-<p><img src="/..images/generics-list-parent.png" alt="generics-list-parent"></p>
+<p><img src="/../images/generics-list-parent.png" alt="generics-list-parent"></p>
 <p>虽然 Integer 是 Number 的子类型，但 <code>List&lt;Integer&gt;</code> 不是 <code>List&lt;Number&gt;</code> 的子类型，实际上，它们是不相关的。<code>List&lt;Integer&gt;</code> 和 <code>List&lt;Number&gt;</code> 的公共父类是 <code>List&lt;?&gt;</code></p>
 <p>为了让 <code>List&lt;Integer&gt;</code> 和 <code>List&lt;Number&gt;</code> 产生关系，我们可以使用一个上界通配符：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends Integer&gt; intList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;? extends Number&gt;  numList = intList;  <span class="comment">// OK. List&lt;? extends Integer&gt; is a subtype of List&lt;? extends Number&gt;</span></span><br></pre></td></tr></table></figure>
 <p>因为 Integer 是 Number 的子类型，numList 是 Number 对象的集合，所以现在 intList 和 numList 建立了关系。</p>
 <p>下面的关系图显示了几个已声明为上下有界通配符的列表类之间的关系：</p>
-<p><img src="/..images/generics-wildcard-subtyping.png" alt="generics-wildcard-subtyping"></p>
+<p><img src="/../images/generics-wildcard-subtyping.png" alt="generics-wildcard-subtyping"></p>
 
       
     </div>

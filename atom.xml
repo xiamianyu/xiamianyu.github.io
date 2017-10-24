@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2017-10-24T15:17:08.937Z</updated>
+  <updated>2017-10-24T15:19:27.906Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xiamianyu.github.io/2017/10/24/Java-%E6%B3%9B%E5%9E%8B-%E9%80%9A%E9%85%8D%E7%AC%A6/"/>
     <id>http://xiamianyu.github.io/2017/10/24/Java-泛型-通配符/</id>
     <published>2017-10-24T01:09:18.000Z</published>
-    <updated>2017-10-24T15:17:08.937Z</updated>
+    <updated>2017-10-24T15:19:27.906Z</updated>
     
     <content type="html">&lt;p&gt;在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。&lt;/p&gt;
 &lt;p&gt;下面的小节将更详细地讨论通配符，包括上界通配符、无界通配符、下界通配符等。&lt;/p&gt;
@@ -59,13 +59,13 @@
 &lt;p&gt;上面的例子表明常规类的继承遵循子类型规则：如果 B 是 A 的子类，那么 B 是 A 的子类型。但是这个规则不适用在泛型类型中：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;B&amp;gt; lb = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;A&amp;gt; la = lb;   &lt;span class=&quot;comment&quot;&gt;// compile-time error&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;给定 Integer 是 Number 的子类型，那么 &lt;code&gt;List&amp;lt;Integer&amp;gt;&lt;/code&gt; 和 &lt;code&gt;List&amp;lt;Number&amp;gt;&lt;/code&gt; 如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/..images/generics-list-parent.png&quot; alt=&quot;generics-list-parent&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../images/generics-list-parent.png&quot; alt=&quot;generics-list-parent&quot;&gt;&lt;/p&gt;
 &lt;p&gt;虽然 Integer 是 Number 的子类型，但 &lt;code&gt;List&amp;lt;Integer&amp;gt;&lt;/code&gt; 不是 &lt;code&gt;List&amp;lt;Number&amp;gt;&lt;/code&gt; 的子类型，实际上，它们是不相关的。&lt;code&gt;List&amp;lt;Integer&amp;gt;&lt;/code&gt; 和 &lt;code&gt;List&amp;lt;Number&amp;gt;&lt;/code&gt; 的公共父类是 &lt;code&gt;List&amp;lt;?&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;为了让 &lt;code&gt;List&amp;lt;Integer&amp;gt;&lt;/code&gt; 和 &lt;code&gt;List&amp;lt;Number&amp;gt;&lt;/code&gt; 产生关系，我们可以使用一个上界通配符：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;? extends Integer&amp;gt; intList = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;? extends Number&amp;gt;  numList = intList;  &lt;span class=&quot;comment&quot;&gt;// OK. List&amp;lt;? extends Integer&amp;gt; is a subtype of List&amp;lt;? extends Number&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;因为 Integer 是 Number 的子类型，numList 是 Number 对象的集合，所以现在 intList 和 numList 建立了关系。&lt;/p&gt;
 &lt;p&gt;下面的关系图显示了几个已声明为上下有界通配符的列表类之间的关系：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/..images/generics-wildcard-subtyping.png&quot; alt=&quot;generics-wildcard-subtyping&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../images/generics-wildcard-subtyping.png&quot; alt=&quot;generics-wildcard-subtyping&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
