@@ -71,7 +71,7 @@
 上界通配符我们可以使用上界通配符来放松对变量的限制。比如我们想要编写一个在 List&amp;lt;In">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-list-parent.png">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-wildcard-subtyping.png">
-<meta property="og:updated_time" content="2017-10-24T15:19:27.906Z">
+<meta property="og:updated_time" content="2017-10-24T15:34:27.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型-通配符">
 <meta name="twitter:description" content="在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。
@@ -334,7 +334,7 @@
 <p>要编写参数类型为 Integer 和 Integer 父类的方法，例如 Integer、Number 和 Object，您将指定 <code>List &lt;? super Integer&gt;</code>。<code>List&lt;Integer&gt;</code> 比 <code>List&lt;? super Integer&gt;</code> 更限制，因为前者只匹配 Integer 类型，而后者匹配任何 Integer 父类的类型。</p>
 <p>下面的代码将数字 1 到 10 添加到列表的末尾：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addNumbers</span><span class="params">(List&lt;? <span class="keyword">super</span> Integer&gt; list)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">        list.add(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="u901A_u914D_u7B26_u548C_u5B50_u7C7B_u578B"><a href="#u901A_u914D_u7B26_u548C_u5B50_u7C7B_u578B" class="headerlink" title="通配符和子类型"></a>通配符和子类型</h1><p>正如 <a href="/2017/10/23/Java-泛型-继承和子类型">Java 泛型-继承和子类型</a> 中描述一样，泛型类或接口是没有联系的，只是因为它们的类型之间存在关系。然而，使用通配符来创建泛型类或接口之间的关系。</p>
+<h1 id="u901A_u914D_u7B26_u548C_u5B50_u7C7B_u578B"><a href="#u901A_u914D_u7B26_u548C_u5B50_u7C7B_u578B" class="headerlink" title="通配符和子类型"></a>通配符和子类型</h1><p>正如 <a href="/2017/10/22/Java-泛型-继承和子类型">Java 泛型-继承和子类型</a> 中描述一样，泛型类或接口是没有联系的，只是因为它们的类型之间存在关系。然而，使用通配符来创建泛型类或接口之间的关系。</p>
 <p>下面是两个常规（非泛型）的类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br></pre></td></tr></table></figure>
 <p>以下代码是合理的：</p>
