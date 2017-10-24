@@ -225,8 +225,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/10/17/Java-泛型/" itemprop="url">
-                  Java 泛型
+                <a class="post-title-link" href="/2017/10/24/Java-泛型-通配符/" itemprop="url">
+                  Java 泛型-通配符
                 </a>
               
             
@@ -239,7 +239,931 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-10-17T16:57:51+08:00" content="2017-10-17">
+            <time itemprop="dateCreated" datetime="2017-10-24T09:09:18+08:00" content="2017-10-24">
+              2017-10-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/24/Java-泛型-通配符/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/24/Java-泛型-通配符/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/24/Java-泛型-通配符/" class="leancloud_visitors" data-flag-title="Java 泛型-通配符">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。
+下面的小节将更详细地讨论通配符，包括上界通配符、无界通配符、下界通配符和通配符捕获等。
+上界通配符我们可以使用上界通配符来放松对变量的限制。比如我们想要编写一个在 List&lt;Integer&gt;、List&lt;Double&gt; 和 List&lt;Numbe
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/24/Java-泛型-通配符/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/23/Java-泛型-类型推断/" itemprop="url">
+                  Java 泛型-类型推断
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-23T19:09:13+08:00" content="2017-10-23">
+              2017-10-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/23/Java-泛型-类型推断/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/23/Java-泛型-类型推断/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/23/Java-泛型-类型推断/" class="leancloud_visitors" data-flag-title="Java 泛型-类型推断">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法确定参数的类型，如果可用，则指定被分配的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
+为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型：
+12345static &lt;T&gt; T pick(T a1, T a2) &#123; 
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/23/Java-泛型-类型推断/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/23/Java-泛型-继承和子类型/" itemprop="url">
+                  Java 泛型-继承和子类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-23T09:09:01+08:00" content="2017-10-23">
+              2017-10-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/23/Java-泛型-继承和子类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/23/Java-泛型-继承和子类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/23/Java-泛型-继承和子类型/" class="leancloud_visitors" data-flag-title="Java 泛型-继承和子类型">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 超类之一：
+123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteger;   // OK
+在面向对象的术语中，这被称为「是」关系。因为 Integer 是一种 Obj
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/23/Java-泛型-继承和子类型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/21/Java-泛型-泛型边界/" itemprop="url">
+                  Java 泛型-泛型边界
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-21T12:08:44+08:00" content="2017-10-21">
+              2017-10-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/21/Java-泛型-泛型边界/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/21/Java-泛型-泛型边界/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/21/Java-泛型-泛型边界/" class="leancloud_visitors" data-flag-title="Java 泛型-泛型边界">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，那么可以使用泛型边界。使用泛型边界也很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
+泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。主要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
+我们看下面一个例子：
+1234567891011121314151617181920212223pub
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/21/Java-泛型-泛型边界/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/21/Java-泛型-泛型方法/" itemprop="url">
+                  Java 泛型-泛型方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-21T09:14:15+08:00" content="2017-10-21">
+              2017-10-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/21/Java-泛型-泛型方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/21/Java-泛型-泛型方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/21/Java-泛型-泛型方法/" class="leancloud_visitors" data-flag-title="Java 泛型-泛型方法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          泛型方法（Generic Method）是引入类型参数（Type Parameter）的方法。它类似声明泛型类型，但是类型参数的作用域仅限于自己。Java 允许静态和非静态的泛型方法，泛型构造方法也是。
+泛型方法的语法：在尖括号内包含一个类型参数列表，出现在方法的返回值前面。
+下面我们通过示例来展示泛型方法的声明和调用：
+
+泛型方法的声明：
+
+123456789101112131415161718192021222324252627282930313233public class Util &#
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/21/Java-泛型-泛型方法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/20/Java-泛型-原始类型/" itemprop="url">
+                  Java 泛型-原始类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-20T20:08:30+08:00" content="2017-10-20">
+              2017-10-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/20/Java-泛型-原始类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/20/Java-泛型-原始类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/20/Java-泛型-原始类型/" class="leancloud_visitors" data-flag-title="Java 泛型-原始类型">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          原始类型（Raw Type）是指没有类型参数（Type Argument）的泛型类或接口。
+要创建一个 Box&lt;T&gt; 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：
+1Box&lt;Integer&gt; intBox = new Box&lt;&gt;();
+如果实际的类型参数被省略，你就会创建一个 Box&lt;T&gt; 的原始类型：
+1Box intBox = new Box();
+因此，Box 是泛型 Box&lt;T&gt; 的原始类型。但是，一个非泛型的类
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/20/Java-泛型-原始类型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/18/Java-泛型-泛型类型/" itemprop="url">
+                  Java 泛型-泛型类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-18T19:08:39+08:00" content="2017-10-18">
+              2017-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/18/Java-泛型-泛型类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/18/Java-泛型-泛型类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/18/Java-泛型-泛型类型/" class="leancloud_visitors" data-flag-title="Java 泛型-泛型类型">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          泛型类型（Generic Type）是带类型参数的或接口。下面我们通过 Box 类来论述什么是泛型类型。
+简单的 Box1234567891011public class Box &#123;    private Object object;    public void set(Object object) &#123;        this.object = object;     &#125;    public Object get() &#123;        return ob
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/18/Java-泛型-泛型类型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/17/Java-泛型-作用/" itemprop="url">
+                  Java 泛型-作用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-17T16:58:51+08:00" content="2017-10-17">
               2017-10-17
             </time>
           </span>
@@ -269,8 +1193,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/10/17/Java-泛型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/17/Java-泛型/" itemprop="commentsCount"></span>
+                <a href="/2017/10/17/Java-泛型-作用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/17/Java-泛型-作用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,7 +1204,7 @@
 
           
           
-             <span id="/2017/10/17/Java-泛型/" class="leancloud_visitors" data-flag-title="Java 泛型">
+             <span id="/2017/10/17/Java-泛型-作用/" class="leancloud_visitors" data-flag-title="Java 泛型-作用">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -305,12 +1229,12 @@
           
           前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
 12List&lt;B&gt; bList = new ArrayList&lt;&gt;();List&lt;A&gt; aList = bList; // compile error
-抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
-12List&lt;? extends B&gt; bList = new ArrayList&lt;&gt;();List
+抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在[官网教程][generics]中看到有解决方法：
+12List&lt;? extends B&gt; bList = new ArrayList&lt
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/10/17/Java-泛型/#more" rel="contents">
+            <a class="btn" href="/2017/10/17/Java-泛型-作用/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -599,947 +1523,11 @@ L
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/09/提高代码审查的效率/" itemprop="url">
-                  提高代码审查的效率
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-03-09T22:33:56+08:00" content="2017-03-09">
-              2017-03-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/团队建设/" itemprop="url" rel="index">
-                    <span itemprop="name">团队建设</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/03/09/提高代码审查的效率/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/09/提高代码审查的效率/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/03/09/提高代码审查的效率/" class="leancloud_visitors" data-flag-title="提高代码审查的效率">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          前言CheckStyle 是一个帮助 Java 开发人员遵守代码规范的工具，它能够自动化代码规范检查过程，从而使得开发人员从这项重要但枯燥的任务中解脱。
-我们会发现，GitHub 上很多开源项目都有个 checkstyle.xml，目的是希望大家能够准守约定的代码规范去贡献代码。所以 CheckStyle 的出现，主要是服务于多人协作的项目，如果你们的团队也很注重代码规范且人工审查它，那就赶紧用上 CheckStyle 吧。
-CheckStyle 检验的内容
-Javadoc 注释
-命名约定
-标题
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/09/提高代码审查的效率/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/22/搭建Android自动化构建平台/" itemprop="url">
-                  搭建Android自动化构建平台
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-02-22T22:13:21+08:00" content="2017-02-22">
-              2017-02-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/自动化构建/" itemprop="url" rel="index">
-                    <span itemprop="name">自动化构建</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/22/搭建Android自动化构建平台/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/22/搭建Android自动化构建平台/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/02/22/搭建Android自动化构建平台/" class="leancloud_visitors" data-flag-title="搭建Android自动化构建平台">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          自动化构建平台根据团队的情况，我们选择 Jenkins + Git + Gogs + Gradle 来搭建 Android 自动化构建平台。
-Ubuntu 环境配置登录远程 Ubuntu如果你可以直接在 Ubuntu 上操作，这一步可以跳过。我是通过 SSH 登录 Ubuntu，在命令行下完成所有的操作。在终端输入下面命令，回车后输入密码即可登录到远程 Ubuntu。
-1$ ssh yunrun@192.168.1.1
-配置 Android SDK下载 SDK1$ curl http://dl.
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/22/搭建Android自动化构建平台/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/14/Ubuntu下搭建Jenkins/" itemprop="url">
-                  Ubuntu 下搭建 Jenkins
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-02-14T18:17:25+08:00" content="2017-02-14">
-              2017-02-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/自动化构建/" itemprop="url" rel="index">
-                    <span itemprop="name">自动化构建</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/14/Ubuntu下搭建Jenkins/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/Ubuntu下搭建Jenkins/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/02/14/Ubuntu下搭建Jenkins/" class="leancloud_visitors" data-flag-title="Ubuntu 下搭建 Jenkins">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          搭建前准备Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。
-安装 Jenkins1234$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -$ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ &g
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/14/Ubuntu下搭建Jenkins/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/17/项目发布规范/" itemprop="url">
-                  项目发布规范
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-17T14:54:45+08:00" content="2016-12-17">
-              2016-12-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/团队建设/" itemprop="url" rel="index">
-                    <span itemprop="name">团队建设</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/12/17/项目发布规范/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/17/项目发布规范/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/12/17/项目发布规范/" class="leancloud_visitors" data-flag-title="项目发布规范">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          版本名称alpha该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  
-beta该版本相对于 alpha 版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。这一版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将结果反馈给开发者，开发者们再进行有针对性的修改。该版本也不适合一般用户安装。  
-release该版
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/17/项目发布规范/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/17/初尝 TeamLeader/" itemprop="url">
-                  初尝 TeamLeader
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-17T13:33:12+08:00" content="2016-12-17">
-              2016-12-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/团队建设/" itemprop="url" rel="index">
-                    <span itemprop="name">团队建设</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/12/17/初尝 TeamLeader/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/17/初尝 TeamLeader/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/12/17/初尝 TeamLeader/" class="leancloud_visitors" data-flag-title="初尝 TeamLeader">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          梦想一定要有两年前，刚走出校园，怀着迷迷糊糊的工作梦走进了现在这家公司，依稀记得面试时，面试官问我近期的计划是什么。我当时说想当个组长，现在想想都觉得有点好笑，笑自己的那份狂妄和天真。今年6月，由于一些因素，我开始全面接手 Android 团队的管理工作，在这半年管理中，主要展开了这些工作：健全团队建设文档、开站立会议、代码审查、技术分享、搭建团队基础框架和自动化构建平台等。
-团队建设文档看一个团队是否成熟，只要去看它的团队建设文档就够了，无规矩不成方圆。在这个个性张扬的时代，谁都想表现得不一样
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/17/初尝 TeamLeader/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/26/Gitflow-PullRequest-工作流/" itemprop="url">
-                  Gitflow + PullRequest 工作流
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-26T00:35:54+08:00" content="2016-10-26">
-              2016-10-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/团队建设/" itemprop="url" rel="index">
-                    <span itemprop="name">团队建设</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/26/Gitflow-PullRequest-工作流/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/Gitflow-PullRequest-工作流/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/26/Gitflow-PullRequest-工作流/" class="leancloud_visitors" data-flag-title="Gitflow + PullRequest 工作流">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          前言阅读本教程需要掌握 Git 的基本命令和 Gitflow 工作流。
-Code Review 工具一个好的团队，Code Review 必不可少。人数不多的团队，我们可以到对方电脑旁 Code Review，但这种方式终究打扰他人，在快速迭代开发的现在更不可取，所以 Code Review 工具应运而生。Git 的 Code Review 工具，目前主流的有 GitHub、GitLab、Bitbucket、Gogs 等等，这里我们选择轻量级的 Gogs。
-Gitflow 工作流上图是典型的 G
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/26/Gitflow-PullRequest-工作流/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/06/资源整合/" itemprop="url">
-                  资源整合
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-06T18:18:31+08:00" content="2016-09-06">
-              2016-09-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/资源整合/" itemprop="url" rel="index">
-                    <span itemprop="name">资源整合</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/06/资源整合/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/资源整合/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/06/资源整合/" class="leancloud_visitors" data-flag-title="资源整合">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          开发工具
-Android 开发工具汇总
-
-RESETful
-理解RESTful  
-RESTful API 设计指南
-
-Gradle
-Gradle In Action
-Gradle For Android
-Gradlew
-
-自动集成
-Jenkin+Git+Gradle
-
-缓存设计
-Android-DiskLruCache
-Android-LruCache
-
-
-          
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/06/资源整合/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1580,7 +1568,7 @@ Android-LruCache
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
