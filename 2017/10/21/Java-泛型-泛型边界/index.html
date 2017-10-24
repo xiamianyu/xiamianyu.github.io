@@ -59,22 +59,22 @@
 
 
 
-<meta name="description" content="在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，那么可以使用泛型边界。使用泛型边界也很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
-泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。主要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
-我">
+<meta name="description" content="在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，这时就会用到泛型边界。使用泛型边界很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
+泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。需要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
+我们">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 泛型-泛型边界">
 <meta property="og:url" content="http://xiamianyu.github.io/2017/10/21/Java-泛型-泛型边界/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，那么可以使用泛型边界。使用泛型边界也很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
-泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。主要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
-我">
-<meta property="og:updated_time" content="2017-10-24T01:26:47.115Z">
+<meta property="og:description" content="在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，这时就会用到泛型边界。使用泛型边界很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
+泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。需要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
+我们">
+<meta property="og:updated_time" content="2017-10-24T14:53:16.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型-泛型边界">
-<meta name="twitter:description" content="在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，那么可以使用泛型边界。使用泛型边界也很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
-泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。主要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
-我">
+<meta name="twitter:description" content="在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，这时就会用到泛型边界。使用泛型边界很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
+泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。需要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
+我们">
 
 
 
@@ -303,11 +303,11 @@
       
 
       
-        <p>在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，那么可以使用泛型边界。使用泛型边界也很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。</p>
-<h1 id="u6CDB_u578B_u7C7B_u578B_u8FB9_u754C"><a href="#u6CDB_u578B_u7C7B_u578B_u8FB9_u754C" class="headerlink" title="泛型类型边界"></a>泛型类型边界</h1><p>声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。主要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。</p>
+        <p>在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，这时就会用到泛型边界。使用泛型边界很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。</p>
+<h1 id="u6CDB_u578B_u7C7B_u578B_u8FB9_u754C"><a href="#u6CDB_u578B_u7C7B_u578B_u8FB9_u754C" class="headerlink" title="泛型类型边界"></a>泛型类型边界</h1><p>声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。需要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。</p>
 <p>我们看下面一个例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> T t;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.t = t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> &lt;U extends Number&gt; <span class="function"><span class="keyword">void</span> <span class="title">inspect</span><span class="params">(U u)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"T: "</span> + t.getClass().getName());</span><br><span class="line">        System.out.println(<span class="string">"U: "</span> + u.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Box&lt;Integer&gt; integerBox = <span class="keyword">new</span> Box&lt;Integer&gt;();</span><br><span class="line">        integerBox.set(<span class="keyword">new</span> Integer(<span class="number">10</span>));</span><br><span class="line">        integerBox.inspect(<span class="string">"some text"</span>); <span class="comment">// compile error</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="u6CDB_u578B_u65B9_u6CD5_u8FB9_u754C"><a href="#u6CDB_u578B_u65B9_u6CD5_u8FB9_u754C" class="headerlink" title="泛型方法边界"></a>泛型方法边界</h1><p>有界类型参数（Type Parameter）是实现通用算法的关键。下面的方法，计算 <code>T[]</code> 数组中大于指定元素 elem 的元素个数。</p>
+<h1 id="u6CDB_u578B_u65B9_u6CD5_u8FB9_u754C"><a href="#u6CDB_u578B_u65B9_u6CD5_u8FB9_u754C" class="headerlink" title="泛型方法边界"></a>泛型方法边界</h1><p>有界类型参数是实现通用算法的关键。下面的方法是计算 <code>T[]</code> 数组中大于指定元素 elem 的元素个数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">int</span> <span class="title">countGreaterThan</span><span class="params">(T[] anArray, T elem)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T e : anArray) &#123;</span><br><span class="line">        <span class="keyword">if</span> (e &gt; elem) &#123; <span class="comment">// compiler error</span></span><br><span class="line">            ++count;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面的方法实现很简单，但是编译不通过，因为 <code>&gt;</code> 运算符只接收基本类型，比如 short、int、double、long、float、byte 和 char。我们不能使用 <code>&gt;</code> 运算符来比较对象。为了解决这个问题，我们可以使用边界为 <code>Comparable&lt;T&gt;</code> 接口的类型参数：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparable</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(T o)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -337,7 +337,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/21/Java-泛型-泛型方法/" rel="next" title="Java 泛型-泛型方法">
+              <a href="/2017/10/20/Java-泛型-泛型方法/" rel="next" title="Java 泛型-泛型方法">
                 <i class="fa fa-chevron-left"></i> Java 泛型-泛型方法
               </a>
             
@@ -345,7 +345,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/23/Java-泛型-继承和子类型/" rel="prev" title="Java 泛型-继承和子类型">
+              <a href="/2017/10/22/Java-泛型-继承和子类型/" rel="prev" title="Java 泛型-继承和子类型">
                 Java 泛型-继承和子类型 <i class="fa fa-chevron-right"></i>
               </a>
             

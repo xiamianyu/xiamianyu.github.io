@@ -59,22 +59,28 @@
 
 
 
-<meta name="description" content="继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 超类之一：
-123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteg">
+<meta name="description" content="原始类型（Raw Type）是指没有类型参数（Type Argument）的泛型类或接口。
+要创建一个 Box&amp;lt;T&amp;gt; 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：
+1Box&amp;lt;Integer&amp;gt; intBox = new Box&amp;lt;&amp;gt;();
+如果实际的类型参数被省略，你就会创建一个 Box&amp;lt;T&amp;gt; 的原始类型：
+1Box intBox = n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 泛型-继承和子类型">
-<meta property="og:url" content="http://xiamianyu.github.io/2017/10/23/Java-泛型-继承和子类型/index.html">
+<meta property="og:title" content="Java 泛型-原始类型">
+<meta property="og:url" content="http://xiamianyu.github.io/2017/10/19/Java-泛型-原始类型/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 超类之一：
-123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteg">
-<meta property="og:image" content="http://xiamianyu.github.io/../images/generics-subtype-relationship.png">
-<meta property="og:image" content="http://xiamianyu.github.io/../images/generics-sample-hierarchy.png">
-<meta property="og:image" content="http://xiamianyu.github.io/../images/generics-payload-List-hierarchy.png">
-<meta property="og:updated_time" content="2017-10-24T01:41:40.459Z">
+<meta property="og:description" content="原始类型（Raw Type）是指没有类型参数（Type Argument）的泛型类或接口。
+要创建一个 Box&amp;lt;T&amp;gt; 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：
+1Box&amp;lt;Integer&amp;gt; intBox = new Box&amp;lt;&amp;gt;();
+如果实际的类型参数被省略，你就会创建一个 Box&amp;lt;T&amp;gt; 的原始类型：
+1Box intBox = n">
+<meta property="og:updated_time" content="2017-10-24T14:47:58.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 泛型-继承和子类型">
-<meta name="twitter:description" content="继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 超类之一：
-123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteg">
+<meta name="twitter:title" content="Java 泛型-原始类型">
+<meta name="twitter:description" content="原始类型（Raw Type）是指没有类型参数（Type Argument）的泛型类或接口。
+要创建一个 Box&amp;lt;T&amp;gt; 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：
+1Box&amp;lt;Integer&amp;gt; intBox = new Box&amp;lt;&amp;gt;();
+如果实际的类型参数被省略，你就会创建一个 Box&amp;lt;T&amp;gt; 的原始类型：
+1Box intBox = n">
 
 
 
@@ -92,7 +98,7 @@
   };
 </script>
 
-  <title> Java 泛型-继承和子类型 | One More Try </title>
+  <title> Java 泛型-原始类型 | One More Try </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -229,7 +235,7 @@
             
             
               
-                Java 泛型-继承和子类型
+                Java 泛型-原始类型
               
             
           </h1>
@@ -241,8 +247,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-10-23T09:09:01+08:00" content="2017-10-23">
-              2017-10-23
+            <time itemprop="dateCreated" datetime="2017-10-19T20:08:30+08:00" content="2017-10-19">
+              2017-10-19
             </time>
           </span>
 
@@ -271,8 +277,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/10/23/Java-泛型-继承和子类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/23/Java-泛型-继承和子类型/" itemprop="commentsCount"></span>
+                <a href="/2017/10/19/Java-泛型-原始类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/19/Java-泛型-原始类型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -282,7 +288,7 @@
 
           
           
-             <span id="/2017/10/23/Java-泛型-继承和子类型/" class="leancloud_visitors" data-flag-title="Java 泛型-继承和子类型">
+             <span id="/2017/10/19/Java-泛型-原始类型/" class="leancloud_visitors" data-flag-title="Java 泛型-原始类型">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -303,33 +309,19 @@
       
 
       
-        <h1 id="u7EE7_u627F_u548C_u5B50_u7C7B_u578B"><a href="#u7EE7_u627F_u548C_u5B50_u7C7B_u578B" class="headerlink" title="继承和子类型"></a>继承和子类型</h1><p>正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 超类之一：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object someObject = <span class="keyword">new</span> Object();</span><br><span class="line">Integer someInteger = <span class="keyword">new</span> Integer(<span class="number">10</span>);</span><br><span class="line">someObject = someInteger;   <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
-<p>在面向对象的术语中，这被称为「是」关系。因为 Integer 是一种 Object，所以赋值是允许的。但是 Integer 也是一种 Number，所以下面的代码也是有效的：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">someMethod</span><span class="params">(Number n)</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line"></span><br><span class="line">someMethod(<span class="keyword">new</span> Integer(<span class="number">10</span>));   <span class="comment">// OK</span></span><br><span class="line">someMethod(<span class="keyword">new</span> Double(<span class="number">10.1</span>));   <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
-<p>对于泛型来说也是如此。你可以执行一个泛型调用，将 Number 作为类型参数（Type Argument）传入，如果参数与 Number 兼容，则后续的任何调用都是允许的：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Number&gt; box = <span class="keyword">new</span> Box&lt;Number&gt;();</span><br><span class="line">box.add(<span class="keyword">new</span> Integer(<span class="number">10</span>));   <span class="comment">// OK</span></span><br><span class="line">box.add(<span class="keyword">new</span> Double(<span class="number">10.1</span>));  <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
-<p>现在思考下面的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">boxTest</span><span class="params">(Box&lt;Number&gt; n)</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br></pre></td></tr></table></figure>
-<p>上面的方法接收的是什么参数类型？通过查看签名，我们可以看到它接收一个类型为 <code>Box&lt;Number&gt;</code> 的参数。但这意味着什么呢？会像你期待的那样，它允许传入 <code>Box&lt;Integer&gt;</code> 或 <code>Box&lt;Double&gt;</code>？答案是 no，因为 <code>Box&lt;Integer&gt;</code> 和 <code>Box&lt;Double&gt;</code> 不是 <code>Box&lt;Number&gt;</code> 的子类型。在使用泛型编程时，这是一个常见的误解，但这是一个很重要的概念。</p>
-<p>下图中，虽然 Integer 是 Number 的子类型，但 <code>Box&lt;Integer&gt;</code> 不是 <code>Box&lt;Number&gt;</code> 的子类型：</p>
-<p><img src="/../images/generics-subtype-relationship.png" alt="generics-subtype-relationship"></p>
-<p>从上图我们可以得出：给定两个具体的类型 A 和 B（例如 Number 和 Integer），<code>MyClass&lt;A&gt;</code> 和 <code>MyClass&lt;B&gt;</code> 没有半毛钱关系。不管 A 和 B 是否相关，<code>MyClass&lt;A&gt;</code> 和 <code>MyClass&lt;B&gt;</code> 的共同父类是 Object。</p>
-<p>当类型参数（Type Argument）相关时，如何在两个泛型之间建立子类型关系，这个我们在后续的「通配符和子类型」会讲到。</p>
-<h1 id="u6CDB_u578B_u548C_u5B50_u7C7B_u578B"><a href="#u6CDB_u578B_u548C_u5B50_u7C7B_u578B" class="headerlink" title="泛型和子类型"></a>泛型和子类型</h1><p>我们可以通过继承或实现泛型来创建一个子类型的泛型类或泛型接口。一个类或接口的类型参数（Type Parameter）与另一个之间的关系由 extends 和 implements 子句来决定。</p>
-<p>以 Collections 类为例，<code>ArrayList&lt;E&gt;</code> implements <code>List&lt;E&gt;</code>， <code>List&lt;E&gt;</code> extends <code>Collection&lt;E&gt;</code>。所以 <code>ArrayList&lt;String&gt;</code> 是 <code>List&lt;String&gt;</code> 的子类型，<code>List&lt;String&gt;</code> 是 <code>Collection&lt;String&gt;</code> 的子类型。只要我们不改变它们的类型参数（Type Argument），就可以保留类型之间的子类型关系。</p>
-<p>下图是一个简单的 Collections 类的层次结构：</p>
-<p><img src="/../images/generics-sample-hierarchy.png" alt="generics-sample-hierarchy"></p>
-<p>现在假设我们想定义我们自己的 List 接口 PayloadList，它将类型参数 P 与每个元素的可选值关联起来。它的声明可能看起来像：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PayloadList</span>&lt;<span class="title">E</span>, <span class="title">P</span>&gt; <span class="keyword">extends</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setPayload</span><span class="params">(<span class="keyword">int</span> index, P val)</span></span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以下参数化的 PayloadList 是 <code>List&lt;String&gt;</code> 的子类型</p>
-<ul>
-<li><code>PayloadList&lt;String,String&gt;</code></li>
-<li><code>PayloadList&lt;String,Integer&gt;</code></li>
-<li><code>PayloadList&lt;String,Exception&gt;</code></li>
-</ul>
-<p>它们之间的类层次结构如下：</p>
-<p><img src="/../images/generics-payload-List-hierarchy.png" alt="generics-payload-List-hierarchy"></p>
+        <p>原始类型（Raw Type）是指没有类型参数（Type Argument）的泛型类或接口。</p>
+<p>要创建一个 <code>Box&lt;T&gt;</code> 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Integer&gt; intBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<p>如果实际的类型参数被省略，你就会创建一个 <code>Box&lt;T&gt;</code> 的原始类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Box intBox = <span class="keyword">new</span> Box();</span><br></pre></td></tr></table></figure>
+<p>因此，Box 是泛型 <code>Box&lt;T&gt;</code> 的原始类型。<strong>但是，一个非泛型的类或接口不是原始类型</strong>。</p>
+<p>由于 JDK 5.0 之前 API 中的很多类（比如集合类）是不支持泛型的，所以原始类型出现在旧有代码中。为了向后兼容，允许将一个参数化类型指向原始类型的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;String&gt; stringBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">Box rawBox = stringBox;               <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+<p>但是如果你将一个原始类型指向一个参数化类型就会得到一个警告：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Box rawBox = <span class="keyword">new</span> Box();           <span class="comment">// rawBox is a raw type of Box&lt;T&gt;</span></span><br><span class="line">Box&lt;Integer&gt; intBox = rawBox;     <span class="comment">// warning: unchecked conversion</span></span><br></pre></td></tr></table></figure>
+<p>如果你使用原始类型来调用相应泛型中定义的泛型方法，你也会得到一个警告：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;String&gt; stringBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">Box rawBox = stringBox;</span><br><span class="line">rawBox.set(<span class="number">8</span>);  <span class="comment">// warning: unchecked invocation to set(T)</span></span><br></pre></td></tr></table></figure>
+<p>警告表明，原始类型会绕过泛型检查，将不安全代码的捕获推迟到运行时。<strong>因此，你应该避免使用原始类型</strong>。</p>
 
       
     </div>
@@ -355,16 +347,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/21/Java-泛型-泛型边界/" rel="next" title="Java 泛型-泛型边界">
-                <i class="fa fa-chevron-left"></i> Java 泛型-泛型边界
+              <a href="/2017/10/18/Java-泛型-泛型类型/" rel="next" title="Java 泛型-泛型类型">
+                <i class="fa fa-chevron-left"></i> Java 泛型-泛型类型
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/23/Java-泛型-类型推断/" rel="prev" title="Java 泛型-类型推断">
-                Java 泛型-类型推断 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/20/Java-泛型-泛型方法/" rel="prev" title="Java 泛型-泛型方法">
+                Java 泛型-泛型方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -380,10 +372,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/10/23/Java-泛型-继承和子类型/"
-     data-title="Java 泛型-继承和子类型"
+        <div class="ds-share flat" data-thread-key="2017/10/19/Java-泛型-原始类型/"
+     data-title="Java 泛型-原始类型"
      data-content=""
-     data-url="http://xiamianyu.github.io/2017/10/23/Java-泛型-继承和子类型/">
+     data-url="http://xiamianyu.github.io/2017/10/19/Java-泛型-原始类型/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -413,8 +405,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/10/23/Java-泛型-继承和子类型/"
-           data-title="Java 泛型-继承和子类型" data-url="http://xiamianyu.github.io/2017/10/23/Java-泛型-继承和子类型/">
+      <div class="ds-thread" data-thread-key="2017/10/19/Java-泛型-原始类型/"
+           data-title="Java 泛型-原始类型" data-url="http://xiamianyu.github.io/2017/10/19/Java-泛型-原始类型/">
       </div>
     
   </div>
@@ -535,7 +527,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u7EE7_u627F_u548C_u5B50_u7C7B_u578B"><span class="nav-number">1.</span> <span class="nav-text">继承和子类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B_u548C_u5B50_u7C7B_u578B"><span class="nav-number">2.</span> <span class="nav-text">泛型和子类型</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

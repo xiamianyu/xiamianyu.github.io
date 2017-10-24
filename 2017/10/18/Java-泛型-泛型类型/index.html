@@ -59,19 +59,19 @@
 
 
 
-<meta name="description" content="泛型类型（Generic Type）是带类型参数的或接口。下面我们通过 Box 类来论述什么是泛型类型。
-简单的 Box1234567891011public class Box &amp;#123;    private Object object;    public void set(Object object) &amp;#123;        this.object = object;     &amp;#1">
+<meta name="description" content="泛型类型（Generic Type）是带类型参数的类或接口。下面我们通过 Box 类来论述什么是泛型类型。
+简单的 Box1234567891011public class Box &amp;#123;    private Object object;    public void set(Object object) &amp;#123;        this.object = object;     &amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 泛型-泛型类型">
 <meta property="og:url" content="http://xiamianyu.github.io/2017/10/18/Java-泛型-泛型类型/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="泛型类型（Generic Type）是带类型参数的或接口。下面我们通过 Box 类来论述什么是泛型类型。
-简单的 Box1234567891011public class Box &amp;#123;    private Object object;    public void set(Object object) &amp;#123;        this.object = object;     &amp;#1">
-<meta property="og:updated_time" content="2017-10-24T01:34:35.835Z">
+<meta property="og:description" content="泛型类型（Generic Type）是带类型参数的类或接口。下面我们通过 Box 类来论述什么是泛型类型。
+简单的 Box1234567891011public class Box &amp;#123;    private Object object;    public void set(Object object) &amp;#123;        this.object = object;     &amp;#">
+<meta property="og:updated_time" content="2017-10-24T14:45:33.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型-泛型类型">
-<meta name="twitter:description" content="泛型类型（Generic Type）是带类型参数的或接口。下面我们通过 Box 类来论述什么是泛型类型。
-简单的 Box1234567891011public class Box &amp;#123;    private Object object;    public void set(Object object) &amp;#123;        this.object = object;     &amp;#1">
+<meta name="twitter:description" content="泛型类型（Generic Type）是带类型参数的类或接口。下面我们通过 Box 类来论述什么是泛型类型。
+简单的 Box1234567891011public class Box &amp;#123;    private Object object;    public void set(Object object) &amp;#123;        this.object = object;     &amp;#">
 
 
 
@@ -300,13 +300,13 @@
       
 
       
-        <p>泛型类型（Generic Type）是带类型参数的或接口。下面我们通过 Box 类来论述什么是泛型类型。</p>
+        <p>泛型类型（Generic Type）是带类型参数的类或接口。下面我们通过 Box 类来论述什么是泛型类型。</p>
 <h1 id="u7B80_u5355_u7684_Box"><a href="#u7B80_u5355_u7684_Box" class="headerlink" title="简单的 Box"></a>简单的 Box</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object object;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.object = object; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> object; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于 box 接收或返回一个 object，所以你可以自由的传入任何你想要的非基本类型，因此在编译阶段无法判断 box 的使用情况。下面的例子在运行时会发生 <code>ClassCastException</code> 错误。</p>
+<p>由于 box 接收或返回一个 Object 对象，你可以传入任何你想要的非基本类型，因此在编译阶段无法判断 box 的使用情况。下面的例子在运行时会发生 <code>ClassCastException</code> 错误。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box box = <span class="keyword">new</span> Box();</span><br><span class="line">box.set(<span class="string">"hello worlds"</span>);</span><br><span class="line"><span class="keyword">int</span> result = (Integer) box.get();</span><br></pre></td></tr></table></figure>
 <h1 id="u6CDB_u578B_u7248_u672C_u7684_Box"><a href="#u6CDB_u578B_u7248_u672C_u7684_Box" class="headerlink" title="泛型版本的 Box"></a>泛型版本的 Box</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T t;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.t = t; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> T; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以看到，所有的 Object 都被替换成 T。我们称 T 为类型参数或类型变量，它可以是任何的非基本类型：类、接口、数组、甚至是类型参数。</p>
-<p>根据上面的例子，我们可以得出泛型类的语法：<br><code>class name&lt;T1, T2, ..., Tn&gt; {/* ... */}</code></p>
+<p>根据上面的例子，我们可以得出泛型类定义的语法：<br><code>class name&lt;T1, T2, ..., Tn&gt; {/* ... */}</code></p>
 <p>用尖括号（&lt;&gt;）分割的类型参数，遵循类名。泛型接口的定义和泛型类相似。</p>
 <h1 id="u7C7B_u578B_u53C2_u6570_u7684_u547D_u540D_u60EF_u4F8B"><a href="#u7C7B_u578B_u53C2_u6570_u7684_u547D_u540D_u60EF_u4F8B" class="headerlink" title="类型参数的命名惯例"></a>类型参数的命名惯例</h1><p>按照惯例，类型参数的命名是单个大写字母，这样可以很好地区分类型参数和普通类或接口。</p>
 <p>最常用的类型参数如下：</p>
@@ -320,9 +320,9 @@
 </ul>
 <h1 id="u6CDB_u578B_u7C7B_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316"><a href="#u6CDB_u578B_u7C7B_u578B_u7684_u8C03_u7528_u548C_u5B9E_u4F8B_u5316" class="headerlink" title="泛型类型的调用和实例化"></a>泛型类型的调用和实例化</h1><p>还是以上面的 Box 为例，Box 的调用和实例化如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化</span></span><br><span class="line">Box&lt;Integer&gt; box = <span class="keyword">new</span> Box&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 box 的 get 方法</span></span><br><span class="line"><span class="keyword">int</span> result = box.get();</span><br></pre></td></tr></table></figure>
-<h1 id="u68F1_u5F62"><a href="#u68F1_u5F62" class="headerlink" title="棱形"></a>棱形</h1><p>在 Java SE 7 和之后，你可以用一个空的类型参数（一对尖括号：&lt;&gt;）来替换泛型类的构造函数，只要编译器可以确定或者推断出上下文中的类型参数。这对尖括号叫做棱形。例如，你可以使用下面的语句创建一个 Box 示例：</p>
+<h1 id="u68F1_u5F62"><a href="#u68F1_u5F62" class="headerlink" title="棱形"></a>棱形</h1><p>在 Java SE 7 和 Java SE 7 之后，你可以用一个空的类型参数（一对尖括号：&lt;&gt;）来替换泛型类的构造，只要编译器可以确定或者推断出上下文中的类型参数。这对尖括号叫做棱形。例如，你可以使用下面的语句创建一个 Box 示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Integer&gt; integerBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br></pre></td></tr></table></figure>
-<p>棱形和类型推断，我们后续会讲到。</p>
+<p>更多关于棱形和类型推断，请查看 <a href="/2017/10/23/Java-泛型-类型推断">Java 泛型-类型推断</a>。</p>
 <h1 id="Type_Paramemter__u548C_Type_Argument"><a href="#Type_Paramemter__u548C_Type_Argument" class="headerlink" title="Type Paramemter 和 Type Argument"></a>Type Paramemter 和 Type Argument</h1><p>Type Parameter 和 Type Argument 在中文上都是叫类型参数，很多开发者容易认为是同一个概念，其实它们是有区别的。在编写代码时，为了创建参数化类型，可以提供类型参数（Type Argument）。因此，<code>Box&lt;T&gt;</code> 中的 T 是一个 Type Paramemter，而 <code>Box&lt;Integer&gt;</code> 的 Integer 是一个 Type Argument。</p>
 <h1 id="u53C2_u6570_u5316_u7C7B_u578B"><a href="#u53C2_u6570_u5316_u7C7B_u578B" class="headerlink" title="参数化类型"></a>参数化类型</h1><p>像 <code>List&lt;String&gt;</code> 这种带类型参数的类型，我们称为参数化类型。泛型的实例化也支持参数化类型。如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化</span></span><br><span class="line">Box&lt;List&lt;Integer&gt;&gt; box = <span class="keyword">new</span> Box&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 box 的 get 方法</span></span><br><span class="line">List&lt;Integer&gt; results = box.get();</span><br></pre></td></tr></table></figure>
@@ -358,7 +358,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/20/Java-泛型-原始类型/" rel="prev" title="Java 泛型-原始类型">
+              <a href="/2017/10/19/Java-泛型-原始类型/" rel="prev" title="Java 泛型-原始类型">
                 Java 泛型-原始类型 <i class="fa fa-chevron-right"></i>
               </a>
             

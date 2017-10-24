@@ -59,18 +59,18 @@
 
 
 
-<meta name="description" content="类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法确定参数的类型，如果可用，则指定被分配的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
+<meta name="description" content="类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
 为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 泛型-类型推断">
 <meta property="og:url" content="http://xiamianyu.github.io/2017/10/23/Java-泛型-类型推断/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法确定参数的类型，如果可用，则指定被分配的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
+<meta property="og:description" content="类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
 为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型">
-<meta property="og:updated_time" content="2017-10-24T01:44:53.598Z">
+<meta property="og:updated_time" content="2017-10-24T15:06:23.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型-类型推断">
-<meta name="twitter:description" content="类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法确定参数的类型，如果可用，则指定被分配的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
+<meta name="twitter:description" content="类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
 为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型">
 
 
@@ -300,10 +300,10 @@
       
 
       
-        <p>类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法确定参数的类型，如果可用，则指定被分配的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。</p>
+        <p>类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。</p>
 <p>为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">pick</span><span class="params">(T a1, T a2)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> a2; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Serializable s = pick(<span class="string">"d"</span>, <span class="keyword">new</span> ArrayList&lt;String&gt;());</span><br></pre></td></tr></table></figure>
-<h1 id="u6CDB_u578B_u65B9_u6CD5"><a href="#u6CDB_u578B_u65B9_u6CD5" class="headerlink" title="泛型方法"></a>泛型方法</h1><p>引入类型推断的泛型方法，能够让你像调用普通方法一样调用泛型方法，而不需要在尖括号中指定类型。思考下面的例子，BoxDemo，它需要 Box 类。</p>
+<h1 id="u7C7B_u578B_u63A8_u65AD_u548C_u6CDB_u578B_u65B9_u6CD5"><a href="#u7C7B_u578B_u63A8_u65AD_u548C_u6CDB_u578B_u65B9_u6CD5" class="headerlink" title="类型推断和泛型方法"></a>类型推断和泛型方法</h1><p>引入类型推断的泛型方法，能够让你像调用普通方法一样调用泛型方法，而不需要在尖括号中指定类型。思考下面的例子，BoxDemo，它需要 Box 类。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BoxDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;U&gt; <span class="function"><span class="keyword">void</span> <span class="title">addBox</span><span class="params">(U u, </span><br><span class="line">      java.util.List&lt;Box&lt;U&gt;&gt; boxes)</span> </span>&#123;</span><br><span class="line">    Box&lt;U&gt; box = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">    box.set(u);</span><br><span class="line">    boxes.add(box);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;U&gt; <span class="function"><span class="keyword">void</span> <span class="title">outputBoxes</span><span class="params">(java.util.List&lt;Box&lt;U&gt;&gt; boxes)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (Box&lt;U&gt; box: boxes) &#123;</span><br><span class="line">      U boxContents = box.get();</span><br><span class="line">      System.out.println(<span class="string">"Box #"</span> + counter + <span class="string">" contains ["</span> +</span><br><span class="line">             boxContents.toString() + <span class="string">"]"</span>);</span><br><span class="line">      counter++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    java.util.ArrayList&lt;Box&lt;Integer&gt;&gt; listOfIntegerBoxes =</span><br><span class="line">      <span class="keyword">new</span> java.util.ArrayList&lt;&gt;();</span><br><span class="line">    BoxDemo.&lt;Integer&gt;addBox(Integer.valueOf(<span class="number">10</span>), listOfIntegerBoxes);</span><br><span class="line">    BoxDemo.addBox(Integer.valueOf(<span class="number">20</span>), listOfIntegerBoxes);</span><br><span class="line">    BoxDemo.addBox(Integer.valueOf(<span class="number">30</span>), listOfIntegerBoxes);</span><br><span class="line">    BoxDemo.outputBoxes(listOfIntegerBoxes);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>下面是这个例子的输出结果：<br>Box #0 contains [10]<br>Box #1 contains [20]<br>Box #2 contains [30]</p>
 <p>泛型方法 addBox 定义了一个名叫 U 的类型参数。一般 Java 编译器能推断泛型方法调用的类型参数。因此，大多数情况下，你不需要指定类型参数。例如，为了调用泛型方法 addBox，你可以使用类型证据指定一个类型参数：</p>
@@ -366,7 +366,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/23/Java-泛型-继承和子类型/" rel="next" title="Java 泛型-继承和子类型">
+              <a href="/2017/10/22/Java-泛型-继承和子类型/" rel="next" title="Java 泛型-继承和子类型">
                 <i class="fa fa-chevron-left"></i> Java 泛型-继承和子类型
               </a>
             
@@ -546,7 +546,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B_u65B9_u6CD5"><span class="nav-number">1.</span> <span class="nav-text">泛型方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B_u7C7B_u7684_u5B9E_u4F8B_u5316"><span class="nav-number">2.</span> <span class="nav-text">泛型类的实例化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B_u6784_u9020_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">泛型构造方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u76EE_u6807_u7C7B_u578B"><span class="nav-number">4.</span> <span class="nav-text">目标类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u7C7B_u578B_u63A8_u65AD_u548C_u6CDB_u578B_u65B9_u6CD5"><span class="nav-number">1.</span> <span class="nav-text">类型推断和泛型方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B_u7C7B_u7684_u5B9E_u4F8B_u5316"><span class="nav-number">2.</span> <span class="nav-text">泛型类的实例化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B_u6784_u9020_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">泛型构造方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u76EE_u6807_u7C7B_u578B"><span class="nav-number">4.</span> <span class="nav-text">目标类型</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

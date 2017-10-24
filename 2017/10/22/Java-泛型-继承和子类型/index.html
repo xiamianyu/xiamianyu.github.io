@@ -59,34 +59,22 @@
 
 
 
-<meta name="description" content="泛型方法（Generic Method）是引入类型参数（Type Parameter）的方法。它类似声明泛型类型，但是类型参数的作用域仅限于自己。Java 允许静态和非静态的泛型方法，泛型构造方法也是。
-泛型方法的语法：在尖括号内包含一个类型参数列表，出现在方法的返回值前面。
-下面我们通过示例来展示泛型方法的声明和调用：
-
-泛型方法的声明：
-
-123456789101112131415161718">
+<meta name="description" content="继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：
+123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteg">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 泛型-泛型方法">
-<meta property="og:url" content="http://xiamianyu.github.io/2017/10/21/Java-泛型-泛型方法/index.html">
+<meta property="og:title" content="Java 泛型-继承和子类型">
+<meta property="og:url" content="http://xiamianyu.github.io/2017/10/22/Java-泛型-继承和子类型/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="泛型方法（Generic Method）是引入类型参数（Type Parameter）的方法。它类似声明泛型类型，但是类型参数的作用域仅限于自己。Java 允许静态和非静态的泛型方法，泛型构造方法也是。
-泛型方法的语法：在尖括号内包含一个类型参数列表，出现在方法的返回值前面。
-下面我们通过示例来展示泛型方法的声明和调用：
-
-泛型方法的声明：
-
-123456789101112131415161718">
-<meta property="og:updated_time" content="2017-10-24T01:40:53.427Z">
+<meta property="og:description" content="继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：
+123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteg">
+<meta property="og:image" content="http://xiamianyu.github.io/../images/generics-subtype-relationship.png">
+<meta property="og:image" content="http://xiamianyu.github.io/../images/generics-sample-hierarchy.png">
+<meta property="og:image" content="http://xiamianyu.github.io/../images/generics-payload-List-hierarchy.png">
+<meta property="og:updated_time" content="2017-10-24T15:01:48.157Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 泛型-泛型方法">
-<meta name="twitter:description" content="泛型方法（Generic Method）是引入类型参数（Type Parameter）的方法。它类似声明泛型类型，但是类型参数的作用域仅限于自己。Java 允许静态和非静态的泛型方法，泛型构造方法也是。
-泛型方法的语法：在尖括号内包含一个类型参数列表，出现在方法的返回值前面。
-下面我们通过示例来展示泛型方法的声明和调用：
-
-泛型方法的声明：
-
-123456789101112131415161718">
+<meta name="twitter:title" content="Java 泛型-继承和子类型">
+<meta name="twitter:description" content="继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：
+123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteg">
 
 
 
@@ -104,7 +92,7 @@
   };
 </script>
 
-  <title> Java 泛型-泛型方法 | One More Try </title>
+  <title> Java 泛型-继承和子类型 | One More Try </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -241,7 +229,7 @@
             
             
               
-                Java 泛型-泛型方法
+                Java 泛型-继承和子类型
               
             
           </h1>
@@ -253,8 +241,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-10-21T09:14:15+08:00" content="2017-10-21">
-              2017-10-21
+            <time itemprop="dateCreated" datetime="2017-10-22T09:09:01+08:00" content="2017-10-22">
+              2017-10-22
             </time>
           </span>
 
@@ -283,8 +271,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/10/21/Java-泛型-泛型方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/21/Java-泛型-泛型方法/" itemprop="commentsCount"></span>
+                <a href="/2017/10/22/Java-泛型-继承和子类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/22/Java-泛型-继承和子类型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -294,7 +282,7 @@
 
           
           
-             <span id="/2017/10/21/Java-泛型-泛型方法/" class="leancloud_visitors" data-flag-title="Java 泛型-泛型方法">
+             <span id="/2017/10/22/Java-泛型-继承和子类型/" class="leancloud_visitors" data-flag-title="Java 泛型-继承和子类型">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -315,17 +303,34 @@
       
 
       
-        <p>泛型方法（Generic Method）是引入类型参数（Type Parameter）的方法。它类似声明泛型类型，但是类型参数的作用域仅限于自己。Java 允许静态和非静态的泛型方法，泛型构造方法也是。</p>
-<p>泛型方法的语法：在尖括号内包含一个类型参数列表，出现在方法的返回值前面。</p>
-<p>下面我们通过示例来展示泛型方法的声明和调用：</p>
+        <h1 id="u7EE7_u627F_u548C_u5B50_u7C7B_u578B"><a href="#u7EE7_u627F_u548C_u5B50_u7C7B_u578B" class="headerlink" title="继承和子类型"></a>继承和子类型</h1><p>正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object someObject = <span class="keyword">new</span> Object();</span><br><span class="line">Integer someInteger = <span class="keyword">new</span> Integer(<span class="number">10</span>);</span><br><span class="line">someObject = someInteger;   <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+<p>在面向对象的术语中，这被称为「是」关系。因为 Integer 是一种 Object，所以赋值是允许的。但是 Integer 也是一种 Number，所以下面的代码也是有效的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">someMethod</span><span class="params">(Number n)</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line"></span><br><span class="line">someMethod(<span class="keyword">new</span> Integer(<span class="number">10</span>));   <span class="comment">// OK</span></span><br><span class="line">someMethod(<span class="keyword">new</span> Double(<span class="number">10.1</span>));   <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+<p>对于泛型来说也是如此。你可以执行一个泛型调用，将 Number 作为类型参数（Type Argument）传入，如果参数与 Number 兼容，则后续的任何调用都是允许的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Number&gt; box = <span class="keyword">new</span> Box&lt;Number&gt;();</span><br><span class="line">box.add(<span class="keyword">new</span> Integer(<span class="number">10</span>));   <span class="comment">// OK</span></span><br><span class="line">box.add(<span class="keyword">new</span> Double(<span class="number">10.1</span>));  <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+<p>现在思考下面的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">boxTest</span><span class="params">(Box&lt;Number&gt; n)</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>上面方法接收的参数是什么类型？通过查看签名，我们可以看到它接收一个类型为 <code>Box&lt;Number&gt;</code> 的参数。但这意味着什么呢？会像你期待的那样，它允许传入 <code>Box&lt;Integer&gt;</code> 或 <code>Box&lt;Double&gt;</code>？答案是 no，因为 <code>Box&lt;Integer&gt;</code> 和 <code>Box&lt;Double&gt;</code> 不是 <code>Box&lt;Number&gt;</code> 的子类型。在使用泛型编程时，这是一个常见的误解，但这是一个很重要的概念。</p>
+<p>下图中，虽然 Integer 是 Number 的子类型，但 <code>Box&lt;Integer&gt;</code> 不是 <code>Box&lt;Number&gt;</code> 的子类型：</p>
+<p><img src="/../images/generics-subtype-relationship.png" alt="generics-subtype-relationship"></p>
+<p>从上图我们可以得出：给定两个具体的类型 A 和 B（例如 Number 和 Integer），<code>MyClass&lt;A&gt;</code> 和 <code>MyClass&lt;B&gt;</code> 没有半毛钱关系。不管 A 和 B 是否相关，<code>MyClass&lt;A&gt;</code> 和 <code>MyClass&lt;B&gt;</code> 的共同父类是 Object。</p>
+<p>当类型参数（Type Argument）相关时，如何在两个泛型之间建立子类型关系，这个我们在后续的<a href="/2017/10/24/Java-泛型-通配符">ava 泛型-通配符</a>会讲到。</p>
+<h1 id="u6CDB_u578B_u548C_u5B50_u7C7B_u578B"><a href="#u6CDB_u578B_u548C_u5B50_u7C7B_u578B" class="headerlink" title="泛型和子类型"></a>泛型和子类型</h1><p>我们可以通过继承或实现泛型来创建一个子类型的泛型类或泛型接口。一个类或接口的类型参数（Type Parameter）与另一个之间的关系由 extends 和 implements 子句来决定。</p>
+<p>以 Collections 类为例，<code>ArrayList&lt;E&gt;</code> implements <code>List&lt;E&gt;</code>， <code>List&lt;E&gt;</code> extends <code>Collection&lt;E&gt;</code>。所以 <code>ArrayList&lt;String&gt;</code> 是 <code>List&lt;String&gt;</code> 的子类型，<code>List&lt;String&gt;</code> 是 <code>Collection&lt;String&gt;</code> 的子类型。只要我们不改变它们的类型参数（Type Argument），就可以保留类型之间的子类型关系。</p>
+<p>下图是一个简单的 Collections 类的层次结构：</p>
+<p><img src="/../images/generics-sample-hierarchy.png" alt="generics-sample-hierarchy"></p>
+<p>现在假设我们想定义我们自己的 List 接口 PayloadList，它将类型参数 P 与每个元素的可选值关联起来。它的声明可能看起来像：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PayloadList</span>&lt;<span class="title">E</span>, <span class="title">P</span>&gt; <span class="keyword">extends</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setPayload</span><span class="params">(<span class="keyword">int</span> index, P val)</span></span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以下参数化的 PayloadList 是 <code>List&lt;String&gt;</code> 的子类型</p>
 <ul>
-<li>泛型方法的声明：</li>
+<li><code>PayloadList&lt;String,String&gt;</code></li>
+<li><code>PayloadList&lt;String,Integer&gt;</code></li>
+<li><code>PayloadList&lt;String,Exception&gt;</code></li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Util</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;K, V&gt; <span class="function"><span class="keyword">boolean</span> <span class="title">compare</span><span class="params">(Pair&lt;K, V&gt; p1, Pair&lt;K, V&gt; p2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> p1.getKey().equals(p2.getKey()) &amp;&amp;</span><br><span class="line">               p1.getValue().equals(p2.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> K key;</span><br><span class="line">    <span class="keyword">private</span> V value;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.key = key;</span><br><span class="line">        <span class="keyword">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setKey</span><span class="params">(K key)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.key = key; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setValue</span><span class="params">(V value)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.value = value; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> K <span class="title">getKey</span><span class="params">()</span>   </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> key; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> V <span class="title">getValue</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> value; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>泛型方法的调用：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Pair&lt;Integer, String&gt; p1 = <span class="keyword">new</span> Pair&lt;&gt;(<span class="number">1</span>, <span class="string">"apple"</span>);</span><br><span class="line">Pair&lt;Integer, String&gt; p2 = <span class="keyword">new</span> Pair&lt;&gt;(<span class="number">2</span>, <span class="string">"pear"</span>);</span><br><span class="line"><span class="keyword">boolean</span> same = Util.compare(p1, p2);</span><br></pre></td></tr></table></figure>
+<p>它们之间的类层次结构如下：</p>
+<p><img src="/../images/generics-payload-List-hierarchy.png" alt="generics-payload-List-hierarchy"></p>
+
       
     </div>
 
@@ -350,16 +355,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/20/Java-泛型-原始类型/" rel="next" title="Java 泛型-原始类型">
-                <i class="fa fa-chevron-left"></i> Java 泛型-原始类型
+              <a href="/2017/10/21/Java-泛型-泛型边界/" rel="next" title="Java 泛型-泛型边界">
+                <i class="fa fa-chevron-left"></i> Java 泛型-泛型边界
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/21/Java-泛型-泛型边界/" rel="prev" title="Java 泛型-泛型边界">
-                Java 泛型-泛型边界 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/23/Java-泛型-类型推断/" rel="prev" title="Java 泛型-类型推断">
+                Java 泛型-类型推断 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -375,10 +380,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/10/21/Java-泛型-泛型方法/"
-     data-title="Java 泛型-泛型方法"
+        <div class="ds-share flat" data-thread-key="2017/10/22/Java-泛型-继承和子类型/"
+     data-title="Java 泛型-继承和子类型"
      data-content=""
-     data-url="http://xiamianyu.github.io/2017/10/21/Java-泛型-泛型方法/">
+     data-url="http://xiamianyu.github.io/2017/10/22/Java-泛型-继承和子类型/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -408,8 +413,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/10/21/Java-泛型-泛型方法/"
-           data-title="Java 泛型-泛型方法" data-url="http://xiamianyu.github.io/2017/10/21/Java-泛型-泛型方法/">
+      <div class="ds-thread" data-thread-key="2017/10/22/Java-泛型-继承和子类型/"
+           data-title="Java 泛型-继承和子类型" data-url="http://xiamianyu.github.io/2017/10/22/Java-泛型-继承和子类型/">
       </div>
     
   </div>
@@ -530,7 +535,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u7EE7_u627F_u548C_u5B50_u7C7B_u578B"><span class="nav-number">1.</span> <span class="nav-text">继承和子类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6CDB_u578B_u548C_u5B50_u7C7B_u578B"><span class="nav-number">2.</span> <span class="nav-text">泛型和子类型</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
