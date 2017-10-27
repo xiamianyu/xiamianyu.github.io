@@ -461,11 +461,11 @@
     <link href="http://xiamianyu.github.io/2017/10/17/Java-%E6%B3%9B%E5%9E%8B-%E4%BD%9C%E7%94%A8/"/>
     <id>http://xiamianyu.github.io/2017/10/17/Java-泛型-作用/</id>
     <published>2017-10-17T08:58:51.000Z</published>
-    <updated>2017-10-27T02:28:51.531Z</updated>
+    <updated>2017-10-27T02:54:54.980Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;B&amp;gt; bList = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;A&amp;gt; aList = bList; &lt;span class=&quot;comment&quot;&gt;// 编译错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在[官网教程][generics]中看到有解决方法：&lt;/p&gt;
+&lt;p&gt;抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在[官网教程][&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/generics/index.html]中看到有解决方法：&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://docs.oracle.com/javase/tutorial/java/generics/index.html]中看到有解决方法：&lt;/a&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;? extends B&amp;gt; bList = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;? extends A&amp;gt; aList = bList;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;泛型是 Java 中一个很强大的特性，学好它事半功倍。我决定将官网的教程翻译下来，当然不是一字一句地翻译，尽量根据自己的理解翻译出来。&lt;/p&gt;
 &lt;h1 id=&quot;u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B&quot;&gt;&lt;a href=&quot;#u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B&quot; class=&quot;headerlink&quot; title=&quot;为什么使用泛型&quot;&gt;&lt;/a&gt;为什么使用泛型&lt;/h1&gt;&lt;p&gt;简而言之，在定义类、接口和方法时，泛型能让类或接口变成参数，这样的参数又叫类型参数。就像方法声明中的形参一样，类型参数提供了代码复用的通道，不同的是形参接收的是值，类型参数接收的是类型。&lt;/p&gt;
