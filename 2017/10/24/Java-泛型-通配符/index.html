@@ -71,7 +71,7 @@
 上界通配符我们可以使用上界通配符来放松对变量的限制。比如我们想要编写一个在 List&amp;lt;In">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-list-parent.png">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-wildcard-subtyping.png">
-<meta property="og:updated_time" content="2017-10-24T15:34:27.787Z">
+<meta property="og:updated_time" content="2017-10-27T02:33:15.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型-通配符">
 <meta name="twitter:description" content="在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。
@@ -327,7 +327,7 @@
 <p>printList 的目标是打印任何类型的列表，但是它不能实现这一目标，只能打印 Object 实例的列表。它不能打印 <code>List&lt;Integer&gt;</code>、<code>List&lt;String&gt;</code>、<code>List&lt;Double&gt;</code> 等等，因为她们不是 <code>List&lt;Object&gt;</code> 的子类型。为了实现通用化的 printList，使用 <code>List&lt;?&gt;</code>：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printList</span><span class="params">(List&lt;?&gt; list)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (Object elem: list) &#123;</span><br><span class="line">        System.out.print(elem + <span class="string">" "</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>需要注意的是，<code>List&lt;Object&gt;</code> 和 <code>List&lt;?&gt;</code> 是不一样的。我们可以向 <code>List&lt;Object&gt;</code> 对象中插入一个 Object 或任何 Object 子类的对象，但是我们只能向 <code>List&lt;?&gt;</code> 中插入 null：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> T t;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.t = t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Box&lt;?&gt; boxs = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">box.set(<span class="keyword">null</span>); <span class="comment">// compile ok</span></span><br><span class="line">box.set(<span class="string">"hello"</span>); <span class="comment">// compile error</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> T t;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.t = t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Box&lt;?&gt; boxs = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">box.set(<span class="keyword">null</span>); <span class="comment">// 编译正确</span></span><br><span class="line">box.set(<span class="string">"hello"</span>); <span class="comment">// 编译错误</span></span><br></pre></td></tr></table></figure>
 <h1 id="u4E0B_u754C_u901A_u914D_u7B26"><a href="#u4E0B_u754C_u901A_u914D_u7B26" class="headerlink" title="下界通配符"></a>下界通配符</h1><p>与上界通配符相似，下界通配符将未知类型限制为指定类型或指定类型的父类。一个下界通配符使用通配符字符（?）表示，然后跟着是 super 关键字，最后跟着是它的下界。</p>
 <p>注意，你可以为通配符指定一个上限，或者您可以指定一个下界，但不能同时指定两者。</p>
 <p>假设你想编写一个方法，将 Integer 对象放入一个列表中。为了最大化灵活化，你希望该方法在 <code>List&lt;Integer&gt;</code>、<code>List&lt;Number&gt;</code> 和 <code>List&lt;Object&gt;</code> 上工作。</p>
@@ -340,12 +340,12 @@
 <p>以下代码是合理的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B b = <span class="keyword">new</span> B();</span><br><span class="line">A a = b;</span><br></pre></td></tr></table></figure>
 <p>上面的例子表明常规类的继承遵循子类型规则：如果 B 是 A 的子类，那么 B 是 A 的子类型。但是这个规则不适用在泛型类型中：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;B&gt; lb = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;A&gt; la = lb;   <span class="comment">// compile-time error</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;B&gt; lb = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;A&gt; la = lb;   <span class="comment">// 编译错误</span></span><br></pre></td></tr></table></figure>
 <p>给定 Integer 是 Number 的子类型，那么 <code>List&lt;Integer&gt;</code> 和 <code>List&lt;Number&gt;</code> 如下：</p>
 <p><img src="/../images/generics-list-parent.png" alt="generics-list-parent"></p>
 <p>虽然 Integer 是 Number 的子类型，但 <code>List&lt;Integer&gt;</code> 不是 <code>List&lt;Number&gt;</code> 的子类型，实际上，它们是不相关的。<code>List&lt;Integer&gt;</code> 和 <code>List&lt;Number&gt;</code> 的公共父类是 <code>List&lt;?&gt;</code></p>
 <p>为了让 <code>List&lt;Integer&gt;</code> 和 <code>List&lt;Number&gt;</code> 产生关系，我们可以使用一个上界通配符：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends Integer&gt; intList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;? extends Number&gt;  numList = intList;  <span class="comment">// OK. List&lt;? extends Integer&gt; is a subtype of List&lt;? extends Number&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends Integer&gt; intList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;? extends Number&gt;  numList = intList;  <span class="comment">// 正确，因为 List&lt;? extends Integer&gt; 是 List&lt;? extends Number&gt; 的子类型</span></span><br></pre></td></tr></table></figure>
 <p>因为 Integer 是 Number 的子类型，numList 是 Number 对象的集合，所以现在 intList 和 numList 建立了关系。</p>
 <p>下面的关系图显示了几个已声明为上下有界通配符的列表类之间的关系：</p>
 <p><img src="/../images/generics-wildcard-subtyping.png" alt="generics-wildcard-subtyping"></p>
@@ -381,6 +381,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/26/Java-泛型-类型擦除/" rel="prev" title="Java 泛型-类型擦除">
+                Java 泛型-类型擦除 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -474,7 +478,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

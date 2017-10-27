@@ -70,7 +70,7 @@
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-subtype-relationship.png">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-sample-hierarchy.png">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/generics-payload-List-hierarchy.png">
-<meta property="og:updated_time" content="2017-10-24T15:01:48.157Z">
+<meta property="og:updated_time" content="2017-10-27T02:32:15.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型-继承和子类型">
 <meta name="twitter:description" content="继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：
@@ -304,11 +304,11 @@
 
       
         <h1 id="u7EE7_u627F_u548C_u5B50_u7C7B_u578B"><a href="#u7EE7_u627F_u548C_u5B50_u7C7B_u578B" class="headerlink" title="继承和子类型"></a>继承和子类型</h1><p>正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object someObject = <span class="keyword">new</span> Object();</span><br><span class="line">Integer someInteger = <span class="keyword">new</span> Integer(<span class="number">10</span>);</span><br><span class="line">someObject = someInteger;   <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object someObject = <span class="keyword">new</span> Object();</span><br><span class="line">Integer someInteger = <span class="keyword">new</span> Integer(<span class="number">10</span>);</span><br><span class="line">someObject = someInteger; <span class="comment">// 正确</span></span><br></pre></td></tr></table></figure>
 <p>在面向对象的术语中，这被称为「是」关系。因为 Integer 是一种 Object，所以赋值是允许的。但是 Integer 也是一种 Number，所以下面的代码也是有效的：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">someMethod</span><span class="params">(Number n)</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line"></span><br><span class="line">someMethod(<span class="keyword">new</span> Integer(<span class="number">10</span>));   <span class="comment">// OK</span></span><br><span class="line">someMethod(<span class="keyword">new</span> Double(<span class="number">10.1</span>));   <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">someMethod</span><span class="params">(Number n)</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line"></span><br><span class="line">someMethod(<span class="keyword">new</span> Integer(<span class="number">10</span>)); <span class="comment">// 正确</span></span><br><span class="line">someMethod(<span class="keyword">new</span> Double(<span class="number">10.1</span>)); <span class="comment">// 正确</span></span><br></pre></td></tr></table></figure>
 <p>对于泛型来说也是如此。你可以执行一个泛型调用，将 Number 作为类型参数（Type Argument）传入，如果参数与 Number 兼容，则后续的任何调用都是允许的：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Number&gt; box = <span class="keyword">new</span> Box&lt;Number&gt;();</span><br><span class="line">box.add(<span class="keyword">new</span> Integer(<span class="number">10</span>));   <span class="comment">// OK</span></span><br><span class="line">box.add(<span class="keyword">new</span> Double(<span class="number">10.1</span>));  <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Number&gt; box = <span class="keyword">new</span> Box&lt;Number&gt;();</span><br><span class="line">box.add(<span class="keyword">new</span> Integer(<span class="number">10</span>)); <span class="comment">// 正确</span></span><br><span class="line">box.add(<span class="keyword">new</span> Double(<span class="number">10.1</span>)); <span class="comment">// 正确</span></span><br></pre></td></tr></table></figure>
 <p>现在思考下面的方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">boxTest</span><span class="params">(Box&lt;Number&gt; n)</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br></pre></td></tr></table></figure>
 <p>上面方法接收的参数是什么类型？通过查看签名，我们可以看到它接收一个类型为 <code>Box&lt;Number&gt;</code> 的参数。但这意味着什么呢？会像你期待的那样，它允许传入 <code>Box&lt;Integer&gt;</code> 或 <code>Box&lt;Double&gt;</code>？答案是 no，因为 <code>Box&lt;Integer&gt;</code> 和 <code>Box&lt;Double&gt;</code> 不是 <code>Box&lt;Number&gt;</code> 的子类型。在使用泛型编程时，这是一个常见的误解，但这是一个很重要的概念。</p>
@@ -459,7 +459,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

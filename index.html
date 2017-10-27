@@ -225,6 +225,142 @@
             
               
                 
+                <a class="post-title-link" href="/2017/10/26/Java-泛型-类型擦除/" itemprop="url">
+                  Java 泛型-类型擦除
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-26T20:41:46+08:00" content="2017-10-26">
+              2017-10-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/26/Java-泛型-类型擦除/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/26/Java-泛型-类型擦除/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/26/Java-泛型-类型擦除/" class="leancloud_visitors" data-flag-title="Java 泛型-类型擦除">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          泛型被引入到 Java 语言中，以便在编译时提供更严格的类型检查，并支持泛型编程。为了落实泛型，Java 编译器使用了类型擦除：
+
+使用泛型边界或 Object（如果没有边界）来替换泛型类型中的所有类型参数。因此，产生的字节码只包含普通类、接口和方法。
+如果需要，插入类型强制转换以保护类型安全。
+在扩展泛型类型中生成桥梁方法以保存多态性。
+
+类型擦除确保没有为参数化类型创建新类，因此，泛型不会产生运行时开销。
+泛型类型的擦除在类型擦除过程中，Java 编译器会擦除所有的类型参数，如果类型参数是有
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/26/Java-泛型-类型擦除/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/10/24/Java-泛型-通配符/" itemprop="url">
                   Java 泛型-通配符
                 </a>
@@ -566,8 +702,8 @@
         
           
           继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：
-123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteger;   // OK
-在面向对象的术语中，这被称为「是」关系。因为 Integer 是一种 Obj
+123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteger; // 正确
+在面向对象的术语中，这被称为「是」关系。因为 Integer 是一种 Objec
           ...
 
           <div class="post-more-link text-center">
@@ -1228,9 +1364,9 @@
         
           
           前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
-12List&lt;B&gt; bList = new ArrayList&lt;&gt;();List&lt;A&gt; aList = bList; // compile error
+12List&lt;B&gt; bList = new ArrayList&lt;&gt;();List&lt;A&gt; aList = bList; // 编译错误
 抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在[官网教程][generics]中看到有解决方法：
-12List&lt;? extends B&gt; bList = new ArrayList&lt
+12List&lt;? extends B&gt; bList = new ArrayList&lt;&gt;();L
           ...
 
           <div class="post-more-link text-center">
@@ -1391,138 +1527,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/04/Java-Lambda/" itemprop="url">
-                  Java Lambda
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-05-04T10:01:37+08:00" content="2017-05-04">
-              2017-05-04
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/05/04/Java-Lambda/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/04/Java-Lambda/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/05/04/Java-Lambda/" class="leancloud_visitors" data-flag-title="Java Lambda">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          背景Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。
-函数式接口Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。
-Java 8 为函数式接口提供了 @FunctionalInterface 注解，作用于类型，指定该接口必须是函数式接口。
-L
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/05/04/Java-Lambda/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1568,7 +1572,7 @@ L
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
