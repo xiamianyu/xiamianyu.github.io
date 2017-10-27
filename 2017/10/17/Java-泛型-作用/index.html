@@ -61,20 +61,23 @@
 
 <meta name="description" content="前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
 12List&amp;lt;B&amp;gt; bList = new ArrayList&amp;lt;&amp;gt;();List&amp;lt;A&amp;gt; aList = bList; // 编译错误
-抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在[官网教程][https://docs.oracle.com/java">
+抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
+12List&amp;lt;? extends B">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 泛型-作用">
 <meta property="og:url" content="http://xiamianyu.github.io/2017/10/17/Java-泛型-作用/index.html">
 <meta property="og:site_name" content="One More Try">
 <meta property="og:description" content="前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
 12List&amp;lt;B&amp;gt; bList = new ArrayList&amp;lt;&amp;gt;();List&amp;lt;A&amp;gt; aList = bList; // 编译错误
-抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在[官网教程][https://docs.oracle.com/java">
-<meta property="og:updated_time" content="2017-10-27T02:54:54.980Z">
+抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
+12List&amp;lt;? extends B">
+<meta property="og:updated_time" content="2017-10-27T02:56:13.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 泛型-作用">
 <meta name="twitter:description" content="前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
 12List&amp;lt;B&amp;gt; bList = new ArrayList&amp;lt;&amp;gt;();List&amp;lt;A&amp;gt; aList = bList; // 编译错误
-抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在[官网教程][https://docs.oracle.com/java">
+抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
+12List&amp;lt;? extends B">
 
 
 
@@ -305,7 +308,7 @@
       
         <h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;B&gt; bList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;A&gt; aList = bList; <span class="comment">// 编译错误</span></span><br></pre></td></tr></table></figure>
-<p>抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在[官网教程][<a href="https://docs.oracle.com/javase/tutorial/java/generics/index.html]中看到有解决方法：" target="_blank" rel="external">https://docs.oracle.com/javase/tutorial/java/generics/index.html]中看到有解决方法：</a></p>
+<p>抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在<a href="https://docs.oracle.com/javase/tutorial/java/generics/index.html" target="_blank" rel="external">官网教程</a>中看到有解决方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends B&gt; bList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;? extends A&gt; aList = bList;</span><br></pre></td></tr></table></figure>
 <p>泛型是 Java 中一个很强大的特性，学好它事半功倍。我决定将官网的教程翻译下来，当然不是一字一句地翻译，尽量根据自己的理解翻译出来。</p>
 <h1 id="u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B"><a href="#u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B" class="headerlink" title="为什么使用泛型"></a>为什么使用泛型</h1><p>简而言之，在定义类、接口和方法时，泛型能让类或接口变成参数，这样的参数又叫类型参数。就像方法声明中的形参一样，类型参数提供了代码复用的通道，不同的是形参接收的是值，类型参数接收的是类型。</p>
