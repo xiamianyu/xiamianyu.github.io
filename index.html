@@ -304,14 +304,14 @@
         
           
           前言继上一篇「搭建Android自动化构建平台」的发布到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。
-Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradle-2.14.1-all.zip。
+Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradle-4.1-all.zip。
 将压缩包上传到 Jenkins 所在的主机：1$ scp gradle-4.1-all.zip ubuntu@192.168.1.253
 解压压缩包到指定目录：1$ sudo unzip gradle-4.1-all.zip -d /opt/gradle/
 接着配置 Gradle 环境：
 进入配置文件1$ sudo vim /etc/profile
 更新以下内容并保存：12export GRADLE_HOME=/opt/gradle/gradle-2.14.1export PATH=$GRADLE_HOME/bin:$PATH
 让上面设置的环境变量立即生效：1$ source /etc/profile
-检查升级是否
+检查升级是否成功：
           ...
 
           <div class="post-more-link text-center">
