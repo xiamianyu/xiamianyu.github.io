@@ -225,6 +225,143 @@
             
               
                 
+                <a class="post-title-link" href="/2018/02/23/Android-自动化构建平台的维护/" itemprop="url">
+                  Android 自动化构建平台的维护
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-02-23T20:36:29+08:00" content="2018-02-23">
+              2018-02-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/自动化构建/" itemprop="url" rel="index">
+                    <span itemprop="name">自动化构建</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/02/23/Android-自动化构建平台的维护/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/02/23/Android-自动化构建平台的维护/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/02/23/Android-自动化构建平台的维护/" class="leancloud_visitors" data-flag-title="Android 自动化构建平台的维护">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          前言继上一篇「搭建Android自动化构建平台」的发布到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。
+Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradle-2.14.1-all.zip。
+将压缩包上传到 Jenkins 所在的主机：1$ scp gradle-4.1-all.zip ubuntu@192.168.1.253
+解压压缩包到指定目录：1$ sudo unzip gradle-4.1-all.zip -d /opt/gradle/
+接着配置 Gradle 环境：
+进入配置文件1$ sudo vim /etc/profile
+更新以下内容并保存：12export GRADLE_HOME=/opt/gradle/gradle-2.14.1export PATH=$GRADLE_HOME/bin:$PATH
+让上面设置的环境变量立即生效：1$ source /etc/profile
+检查升级是否
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/02/23/Android-自动化构建平台的维护/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/10/27/Java-泛型-使用限制/" itemprop="url">
                   Java 泛型-使用限制
                 </a>
@@ -314,7 +451,10 @@
 一个类不能有多个在类型擦除后具有相同签名的重载方法
 
 不能使用基本类型来初始化泛型类型思考下面的参数化类型：
-123456789101112class Pair&lt;K, V&gt; &#123;    private K ke
+123456789101112class Pair&lt;K, V&gt; &#123;    private K key;    private V value;    public Pair(K key, V value) &#123;        this.key = key;        this.value = value;    &#125;    // ...&#125;
+要创建一个 Pair 对象，我们不能使用基本类型来替换类型参数 K 或 V：
+1Pair&lt;int, char&gt; p = new Pair&lt;&gt;(8, 'a'); // 编译错误
+我们只能使用非基本类型来替
           ...
 
           <div class="post-more-link text-center">
@@ -450,7 +590,9 @@
 在扩展泛型类型中生成桥梁方法以保存多态性。
 
 类型擦除确保没有为参数化类型创建新类，因此，泛型不会产生运行时开销。
-泛型类型的擦除在类型擦除过程中，Java 编译器会擦除所有的类型参数，如果类型参数是有
+泛型类型的擦除在类型擦除过程中，Java 编译器会擦除所有的类型参数，如果类型参数是有边界的，则将它的第一个边界来替换每一个类型参数，如果类型参数是无界的，则将 Object 类型替换每一个类型参数。
+我们来看下面的这个泛型类：
+12345678910111213141516public class Node&lt;T&gt; &#123;    private T data;    private Node&lt;T&gt; next;    public Node(T data, Node&lt;T&gt; next) &#123;        this.data = da
           ...
 
           <div class="post-more-link text-center">
@@ -581,7 +723,10 @@
           
           在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。
 下面的小节将更详细地讨论通配符，包括上界通配符、无界通配符、下界通配符等。
-上界通配符我们可以使用上界通配符来放松对变量的限制。比如我们想要编写一个在 List&lt;Integer&gt;、List&lt;Double&gt; 和 List&lt;Number&gt; 
+上界通配符我们可以使用上界通配符来放松对变量的限制。比如我们想要编写一个在 List&lt;Integer&gt;、List&lt;Double&gt; 和 List&lt;Number&gt; 中工作的方法，就可以通过使用上界通配符来实现。
+一个上界通配符使用通配符字符（?）表示，然后跟着是 extends 关键字，最后跟着是它的上界。注意，在这里 extends 通常用于表示 extends（如在类中）或 implements（如在接口中）。
+为了编写一个方法，它的参数为 List&lt;Number&gt; 或 List&lt;Number 的子类&gt; ，我们应该指定方法的参数类型为 List&lt;? extends Number&gt;。
+思考下面的 process 方法：
           ...
 
           <div class="post-more-link text-center">
@@ -712,7 +857,9 @@
           
           类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
 为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型：
-12345static &lt;T&gt; T pick(T a1, T a2) &#123; 
+12345static &lt;T&gt; T pick(T a1, T a2) &#123;     return a2; &#125;Serializable s = pick("d", new ArrayList&lt;String&gt;());
+类型推断和泛型方法引入类型推断的泛型方法，能够让你像调用普通方法一样调用泛型方法，而不需要在尖括号中指定类型。思考下面的例子，BoxDemo，它需要 Box 类。
+12345678910111213141516171819202122232425262728public class BoxDemo &#123;  public stati
           ...
 
           <div class="post-more-link text-center">
@@ -843,7 +990,9 @@
           
           继承和子类型正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：
 123Object someObject = new Object();Integer someInteger = new Integer(10);someObject = someInteger; // 正确
-在面向对象的术语中，这被称为「是」关系。因为 Integer 是一种 Objec
+在面向对象的术语中，这被称为「是」关系。因为 Integer 是一种 Object，所以赋值是允许的。但是 Integer 也是一种 Number，所以下面的代码也是有效的：
+1234public void someMethod(Number n) &#123; /* ... */ &#125;someMethod(new Integer(10)); // 正确someMethod(new Double(10.1)); // 正确
+对于泛型来说也是如此。你可以执行一个泛型调用，将 Number 作为类型参数（Type Argument）传入，如果参数与 Number 兼容，
           ...
 
           <div class="post-more-link text-center">
@@ -975,7 +1124,7 @@
           在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，这时就会用到泛型边界。使用泛型边界很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
 泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。需要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
 我们看下面一个例子：
-1234567891011121314151617181920212223publ
+1234567891011121314151617181920212223public class Box&lt;T&gt; &#123;    private T t;    public void set(T t) &#123;        this.t = t;    &#125;    public T get() &#123;        return t;    &#125;    public &lt;U extends Number&gt; void inspect(U u)&#123;        System.out.println("T: " + 
           ...
 
           <div class="post-more-link text-center">
@@ -1110,7 +1259,7 @@
 
 泛型方法的声明：
 
-123456789101112131415161718192021222324252627282930313233public class Util &#
+123456789101112131415161718192021222324252627282930313233public class Util &#123;    public static &lt;K, V&gt; boolean compare(Pair&lt;K, V&gt; p1, Pair&lt;K, V&gt; p2) &#123;        return p1.getKey().equals(p2.getKey()) &amp;&amp;               p1.getValue().equals(p2.getValue());    &#125;&#125;public class Pair&lt;K, V&g
           ...
 
           <div class="post-more-link text-center">
@@ -1244,7 +1393,11 @@
 1Box&lt;Integer&gt; intBox = new Box&lt;&gt;();
 如果实际的类型参数被省略，你就会创建一个 Box&lt;T&gt; 的原始类型：
 1Box intBox = new Box();
-因此，Box 是泛型 Box&lt;T&gt; 的原始类型。但是，一个非泛型的类
+因此，Box 是泛型 Box&lt;T&gt; 的原始类型。但是，一个非泛型的类或接口不是原始类型。
+由于 JDK 5.0 之前 API 中的很多类（比如集合类）是不支持泛型的，所以原始类型出现在旧有代码中。为了向后兼容，允许将一个参数化类型指向原始类型的：
+12Box&lt;String&gt; stringBox = new Box&lt;&gt;();Box rawBox = stringBox; // 正确
+但是如果你将一个原始类型指向一个参数化类型就会得到一个警告：
+12Box rawBox = new Box(); // rawBox 是 `Box&lt;T&g
           ...
 
           <div class="post-more-link text-center">
@@ -1374,143 +1527,14 @@
         
           
           泛型类型（Generic Type）是带类型参数的类或接口。下面我们通过 Box 类来论述什么是泛型类型。
-简单的 Box1234567891011public class Box &#123;    private Object object;    public void set(Object object) &#123;        this.object = object;     &#125;    public Object get() &#123;        return o
+简单的 Box1234567891011public class Box &#123;    private Object object;    public void set(Object object) &#123;        this.object = object;     &#125;    public Object get() &#123;        return object;     &#125;&#125;
+由于 box 接收或返回一个 Object 对象，你可以传入任何你想要的非基本类型，因此在编译阶段无法判断 box 的使用情况。下面的例子在运行时会发生 ClassCastException 错误。
+123Box box = new Box();box.set("hello worlds");int result = (Integer) box.get();
+泛型版本的 Box1234567891011public class Box&lt;T&g
           ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/10/18/Java-泛型-泛型类型/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/17/Java-泛型-作用/" itemprop="url">
-                  Java 泛型-作用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-10-17T16:58:51+08:00" content="2017-10-17">
-              2017-10-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/10/17/Java-泛型-作用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/17/Java-泛型-作用/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/10/17/Java-泛型-作用/" class="leancloud_visitors" data-flag-title="Java 泛型-作用">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          前言前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？
-12List&lt;B&gt; bList = new ArrayList&lt;&gt;();List&lt;A&gt; aList = bList; // 编译错误
-抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在官网教程中看到有解决方法：
-12List&lt;? extends B&gt; bList = new ArrayList&lt;&gt;();List&lt;? ext
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/10/17/Java-泛型-作用/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1581,7 +1605,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1589,7 +1613,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1598,7 +1622,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1662,7 +1686,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

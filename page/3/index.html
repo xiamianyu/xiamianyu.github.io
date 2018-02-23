@@ -225,537 +225,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/31/Java-反射/" itemprop="url">
-                  Java 反射
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-31T13:54:15+08:00" content="2016-07-31">
-              2016-07-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/31/Java-反射/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/31/Java-反射/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/31/Java-反射/" class="leancloud_visitors" data-flag-title="Java 反射">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          概念反射是指在程序运行时获取类的属性、方法、接口等信息，并且可以创建类的实例，改变其属性。
-原理
-一个 Java 源文件被编译后生成 class 文件，这个文件中包含了该类的属性、方法、接口等信息，程序运行时它会被 ClassLoader 加载到 JVM 中。当类被加载后，JVM 会在内存中自动产生一个 Class 对象。我们通过 new 的形式创建对象实际上就是通过这些 Class 来创建，只是这个过程对于我们是不透明的而已。
-
-获取 Class 对象12345678// 方法一：通过类获取C
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/31/Java-反射/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/28/Android-命名规范/" itemprop="url">
-                  Android 命名规范
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-28T23:38:06+08:00" content="2016-07-28">
-              2016-07-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/团队建设/" itemprop="url" rel="index">
-                    <span itemprop="name">团队建设</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/28/Android-命名规范/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/28/Android-命名规范/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/28/Android-命名规范/" class="leancloud_visitors" data-flag-title="Android 命名规范">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          团队开发中，统一命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。下面是我个人和团队沿用的代码规范。其中 Android 资源命名规范，当时参考了很多资料，没留底，如有雷同，还请多多包涵。
-Java 文件命名规范
-采用驼峰命名法
-
-Activity以 Activity 作为后缀，如：OrderActivity
-Fragment以 Fragment 作为后缀，如：NewsFragment
-Adapter以 Adapter 作为后缀，如：NewsA
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/28/Android-命名规范/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/24/Mac-显示隐藏文件/" itemprop="url">
-                  Mac 显示隐藏文件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-24T20:43:25+08:00" content="2016-07-24">
-              2016-07-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/24/Mac-显示隐藏文件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/Mac-显示隐藏文件/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/24/Mac-显示隐藏文件/" class="leancloud_visitors" data-flag-title="Mac 显示隐藏文件">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          OS X Mavericks 和 OS X Yosemite 系统的版本
-12# 显示所有文件defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
-12# 隐藏所有文件defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
-OS X Mountain Lion 和早期版本
-12# 显
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/24/Mac-显示隐藏文件/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/24/versonCode-versionName/" itemprop="url">
-                  versonCode & versionName
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-24T15:00:26+08:00" content="2016-07-24">
-              2016-07-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/24/versonCode-versionName/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/versonCode-versionName/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/24/versonCode-versionName/" class="leancloud_visitors" data-flag-title="versonCode & versionName">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          学艺不精Android 开发中，我们对 versionCode 和 versionName 都不陌生，可能有些人对它们的理解还停留在 versionCode 对开发可见（对用户不可见），int 类型，versionName 对用户可见，String 类型。每次发布版本时都要修改 versionCode 和 versionName。最近因为版本控制命名问题造成的困扰，我才去 Android 官网查阅关于它们的介绍。
-官网定义versionCode — An integer used as an i
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/24/versonCode-versionName/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/07/20/App-项目文档管理/" itemprop="url">
                   App 项目文档管理
                 </a>
@@ -843,7 +312,21 @@ Mac: Cornerstone、SmartSVN 等
 项目组负责进度把控和 QC  
 开发组Android、iOS 和后台
 目录和权限说明
-根据各组职能分配的目
+根据各组职能分配的目录结构和权限如下：
+
+上图给到的只有三级目录，下面是所有层级目录的详细说明：
+设计
+存放产品组产出的文档
+
+需求分析需求分析文档  
+原型设计包含灰度原型、交互原型、高保真图、切图和标注。
+功能流程图对于复杂的功能，画出流程图，方便开发和测试达成共识。
+产品结构图用思维导图画出 App 的整体结构，按功能模块划分。
+开发
+存放 Android、iOS 和 后台产出的文档
+
+源码说明描述项目的目录结构、开发架构（MVC/MVP等）、使用的第三方SDK等  
+接口文档接口文档包含请求类型、请求URL
           ...
 
           <div class="post-more-link text-center">
@@ -979,7 +462,9 @@ Mac: Cornerstone、SmartSVN 等
 Override表示当前方法覆盖超类中的方法
 Deprecated表示已经过时，不建议使用
 SuppressWarnings关闭不正当的编译器警告
-元注解所谓的元注解，就是用来定义注解的注解，即是我们可以利用元注解来自定义其他注解。元注
+元注解所谓的元注解，就是用来定义注解的注解，即是我们可以利用元注解来自定义其他注解。元注解有 @Target、@Retention、@Document、@Inherit。
+@Target表示该注解用于什么地方. ElementType 参数包括：CONSTRUCTOR: 构造器的声明FIELD: 域声明（包括 enum）LOCAL_VARIABLE: 局部变量声明METHOD: 方法声明PACKAGE: 包声明PARAMETER: 参数声明TYPE: 类、接口（包括注解类型）或enum 声明
+@Retention表示需要在什么级别保存该注解信息。可选的 RetentionPolic
           ...
 
           <div class="post-more-link text-center">
@@ -1250,7 +735,8 @@ Unix/Linux1~/.smartgit/
 左右切换栏目时，保持最后离开的状态（列表数据以及在屏幕上的位置）
 
 下面是效果图：
-实现第 1 点相信你们都会做，这里主要是说明 2、3 点的实现思路。第 2 点和第 3 点看起
+实现第 1 点相信你们都会做，这里主要是说明 2、3 点的实现思路。第 2 点和第 3 点看起来有点矛盾，其实不是。我们分开讨论，先看第 2 点，假设我在看 A 栏目，然后切换到 C 栏目逗留了 10 min（假设定时刷新时间间隔为 5 min），当切换回A栏目时，发现栏目自动下拉刷新数据。再看第3点，基于前面这个情节，我在 C 栏目的逗留时间为 4 min， 当我切换回A栏目时，发现栏目 并没有 自动下拉刷新，而是上次浏览的状态，这里的状态包括列表的数据和在屏幕上停留的位置。听得一脸懵逼？怪我描述得一塌糊涂。
+整体框架ViewPager + Fragment + FragmentSta
           ...
 
           <div class="post-more-link text-center">
@@ -1384,8 +870,10 @@ Unix/Linux1~/.smartgit/
 Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
 修改 Info.plist
 打开 Info.plist，找到 -Xmx256m，添加 -Dfile.encoding=UTF-8 ，重启 Charles 即可
-12345&lt;!-- 修改之前 --&gt;&lt;string&gt;-Xmx256m&lt;/st
-          ...
+12345&lt;!-- 修改之前 --&gt;&lt;string&gt;-Xmx256m&lt;/string&gt;&lt;!-- 修改之后 --&gt;&lt;string&gt;-Xmx256m -Dfile.encoding=UTF-8&lt;/string&gt;
+参考http://blog.csdn.net/huanghr_1/article/details/39735335
+
+          
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/07/Charles-Response-中文乱码/#more" rel="contents">
@@ -1515,11 +1003,572 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
           
           找个理由获取「新闻列表」的请求地址，一般我们是这样写的：
 1String url = MobileApi.GET_NEWSES + "?channelID=" + mChannelID + "pageNo=" + mPageNo + "&amp;pageSize=30";
-这种写法其实不利于项目的后期维护，如果项目大规模地更改接口字段名，就要一个个文件去查找修改，单查找这步就消耗了很多时间，这显然不符合程序员懒惰的特性。我的做法是把请求参数实体化，并放到一个package下统一管理，以后要修改，
+这种写法其实不利于项目的后期维护，如果项目大规模地更改接口字段名，就要一个个文件去查找修改，单查找这步就消耗了很多时间，这显然不符合程序员懒惰的特性。我的做法是把请求参数实体化，并放到一个package下统一管理，以后要修改，直接去package下找到对应的参数（实体类）修改就可以了。
+实体化请求参数后的写法：
+12NewsParam param = new NewsParam(mChannelID, mPageNo);String url =  MobileApi.GET_NEWSES + ParamFormatter.toUri(param);
+具体实现假设「获取新闻列表」请求接口地址为：http:localhost/getNewses?channelID=&amp;pageNo=&amp;pageSize
+接口
           ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/06/实体化请求参数/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/16/用户登录设计/" itemprop="url">
+                  用户登录设计
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T10:02:46+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/项目总结/" itemprop="url" rel="index">
+                    <span itemprop="name">项目总结</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/16/用户登录设计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/用户登录设计/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/16/用户登录设计/" class="leancloud_visitors" data-flag-title="用户登录设计">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「App研发录」，有些做了细化，有助大家理解。
+登录和注册登录和注册就像一双筷子，缺一不可。
+登录的作用
+
+注册的形式
+有些 App 是给专门的人用的，只有登录界面，账号是在服务器注册。
+
+这样，登录和注册可以这样划分：
+
+用户信息的处理如果登录只是作为程序的入口，那么登录成功后的用户信息基本很少用到，这时候我们一般的做法是把它序列化到本地，需要的时候再取出来。但更多时候，用户信息贯穿整个 App ，很多地方都会用到，我们可以把它放在一个全局变量中以便随时存取，为了防止全局变量被内存回收，还得把它序列化到本地，下面是代码的设计。
+
+UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局变量。UserInfo 因 App 而异，
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/16/用户登录设计/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/14/今天我坐主席位/" itemprop="url">
+                  今天我坐主席位
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-14T22:36:29+08:00" content="2016-04-14">
+              2016-04-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/14/今天我坐主席位/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/14/今天我坐主席位/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/14/今天我坐主席位/" class="leancloud_visitors" data-flag-title="今天我坐主席位">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          没错，今天我是会议主席，大家听我发号施令！实际情况是，最没自（意）信（见）的人要做主席位，哈哈。
+今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出来。其中有一个问题，特别有意思，我复现当时的对白。
+
+杂物大人：这个产品做到现在还没流量，问题出现在哪里？我们：沉默中…杂物大人：作为产品的开发人员，自己有用过这个产品吗？A 童鞋：我就是在调试 BUG 的时候用过…（杂物大人默默地笑了）
+
+之前我以为，作为开发者，只要按照产品经理说的做就可以把产品做好，产品能否带来PV、收益等是产品经理的事。是的，可能有些人跟我想法一样，但如果是比较年轻的公司，产品经理的经验也毕竟有限，需要的是大家的决策，不是什么都是产品经理说了算，如果产品经理设计的某些功能不合理，我们完全有理由提出来并打断他，不然到时候功能做出来了才说之前考虑不周，废掉这个功能，这简直就是浪费生命！再者，希望自己在负责的产品开发上，不要太局限于技术（在产品没有产生PV之前，再好的代码设计，也没有价值），要多去使
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/14/今天我坐主席位/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/20/Hexo-Next-持续改善/" itemprop="url">
+                  Hexo NexT持续改善
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-20T21:21:29+08:00" content="2016-03-20">
+              2016-03-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/20/Hexo-Next-持续改善/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/Hexo-Next-持续改善/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/20/Hexo-Next-持续改善/" class="leancloud_visitors" data-flag-title="Hexo NexT持续改善">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          添加 RSS安装插件
+1$ npm install --save hexo-generator-feed
+在 站点配置 _config.yml中添加
+12## Plugins: http://hexo.io/plugins/plugins: hexo-generate-feed
+在 主题配置 _config.yml中添加
+1234# Set rss to false to disable feed link.# Leave rss as empty to use site's feed link.# Set rss to specific value if you have burned your feed already.rss: /atom.xml
+生成 RSS Feed，在 ./public 文件夹中看到 atom.xml 文件
+1$ hexo g
+部署到 GitHub
+12345# 启动服务器查看是否有效$ hexo s# 部署到 Github $ hexo d
+添加文章阅读量统计
+更详细的教程
+
+在 LeanCloud 平台申请一个账号，创建应用，配置相关信息，获取 AppI
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/20/Hexo-Next-持续改善/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/12/Chrome-插件推荐/" itemprop="url">
+                  Chrome 插件推荐
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-12T12:46:34+08:00" content="2016-03-12">
+              2016-03-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Chrome/" itemprop="url" rel="index">
+                    <span itemprop="name">Chrome</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/12/Chrome-插件推荐/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/12/Chrome-插件推荐/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/12/Chrome-插件推荐/" class="leancloud_visitors" data-flag-title="Chrome 插件推荐">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          前段时间stormzhang大哥在他的公众号AndroidDeveloper中, 发表了一篇文章「吐血推荐珍藏的Chrome插件」，特别棒！当时就立马下载去了。今天跟大家分享我觉得比较好用的插件，其中一些是从stormzhang大哥那里引用过来的，哈哈。
+PostmanPostman是API调试的神器，基本功能如下：
+
+支持GET、POST、PUT、HEAD、DELETE等请求
+对请求返回的数据，支持JSON、XML、HTML、Text查看格式
+类似于浏览器，可以浏览和清空历史请求记录
+支持以文件夹的形式将API管理起来并保存到本地或云端，也可以将该文件夹导出来
+
+我个人的使用习惯是，将项目的所有API，在Postman中用文件夹管理起来，以后测试和查看接口，都不用打开接口文档，直接打开Postman，点击接口测试即可，大大提高工作效率。
+
+JSONView直接在浏览器上对接API，一般返回的JSON数据没有格式化，看起来很乱，而JSONView可以将它们自动格式化好。
+
+JSON-handle对于嵌套层级很深的JSON数据，如果想单独查看或复制某个字段下的数据就会很猥琐，而JSON-
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/12/Chrome-插件推荐/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1590,7 +1639,7 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1598,7 +1647,7 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1607,7 +1656,7 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1671,7 +1720,7 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
