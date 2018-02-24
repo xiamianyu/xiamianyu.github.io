@@ -59,22 +59,22 @@
 
 
 
-<meta name="description" content="前言继上一篇「搭建Android自动化构建平台」的发布到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。
+<meta name="description" content="前言继上一篇文章「搭建Android自动化构建平台」的发表到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。
 Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradle-4.1-all.zip。
-将压缩包上传到 Jenkin">
+将压缩包上传到 Jenk">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 自动化构建平台的维护">
 <meta property="og:url" content="http://xiamianyu.github.io/2018/02/23/Android-自动化构建平台的维护/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="前言继上一篇「搭建Android自动化构建平台」的发布到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。
+<meta property="og:description" content="前言继上一篇文章「搭建Android自动化构建平台」的发表到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。
 Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradle-4.1-all.zip。
-将压缩包上传到 Jenkin">
-<meta property="og:updated_time" content="2018-02-24T07:36:28.572Z">
+将压缩包上传到 Jenk">
+<meta property="og:updated_time" content="2018-02-24T07:43:19.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 自动化构建平台的维护">
-<meta name="twitter:description" content="前言继上一篇「搭建Android自动化构建平台」的发布到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。
+<meta name="twitter:description" content="前言继上一篇文章「搭建Android自动化构建平台」的发表到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。
 Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradle-4.1-all.zip。
-将压缩包上传到 Jenkin">
+将压缩包上传到 Jenk">
 
 
 
@@ -303,7 +303,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
       
 
       
-        <h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>继上一篇「<a href="/2017/02/22/搭建Android自动化构建平台">搭建Android自动化构建平台</a>」的发布到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。</p>
+        <h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>继上一篇文章「<a href="/2017/02/22/搭建Android自动化构建平台">搭建Android自动化构建平台</a>」的发表到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。</p>
 <h1 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h1><p>通过本地电脑，从<a href="https://gradle.org/releases/" target="_blank" rel="external">官网</a>下载指定版本的压缩包，如：gradle-4.1-all.zip。</p>
 <p>将压缩包上传到 Jenkins 所在的主机：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp gradle-<span class="number">4.1</span>-all.zip ubuntu@<span class="number">192.168</span>.<span class="number">1.253</span></span><br></pre></td></tr></table></figure></p>
 <p>解压压缩包到指定目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo unzip gradle-<span class="number">4.1</span>-all.zip <span class="operator">-d</span> /opt/gradle/</span><br></pre></td></tr></table></figure></p>
