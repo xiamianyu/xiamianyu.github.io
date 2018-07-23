@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2018-02-24T07:43:19.285Z</updated>
+  <updated>2018-07-23T13:29:59.748Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>管理成长记</title>
+    <link href="http://xiamianyu.github.io/2018/07/22/%E7%AE%A1%E7%90%86%E6%88%90%E9%95%BF%E8%AE%B0/"/>
+    <id>http://xiamianyu.github.io/2018/07/22/管理成长记/</id>
+    <published>2018-07-22T07:03:45.000Z</published>
+    <updated>2018-07-23T13:29:59.748Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;u7BA1_u7406_u542F_u8499&quot;&gt;&lt;a href=&quot;#u7BA1_u7406_u542F_u8499&quot; class=&quot;headerlink&quot; title=&quot;管理启蒙&quot;&gt;&lt;/a&gt;管理启蒙&lt;/h1&gt;&lt;p&gt;大三的时候有幸加入了 W 学生团队，进入团队的第一个月是学习期，师兄列了一份培训计划，大概内容有 Java 基础、Android 基础、代码规范、项目结构规范、Git 版本控制以及阶段项目实战等。而代码规范、项目结构规范和 Git 版本控制是我之前从来没接触过的，是它们把我从野蛮堆中拯救出来。&lt;/p&gt;
+&lt;p&gt;W 团队平时的学习或工作是怎么样的呢？以我所在的 Android 部门为例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;每天列出任务清单，下班日结；&lt;/li&gt;
+&lt;li&gt;每两天一次例会，总结前两天，计划明后天，时间不超过 30 min；&lt;/li&gt;
+&lt;li&gt;项目开发期间，每天早上站立会，时间不超过 15 min；&lt;/li&gt;
+&lt;li&gt;每个项目会指定一个项目主负责人，主负责人把控整体进度和代码规范等；&lt;/li&gt;
+&lt;li&gt;不定期举行分享会，不限于技术。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 W 团队期间，有两个问题一直困扰这我，一是项目结构规范，二是 Git 版本控制策略。项目结构规范，我们遵循的是类似于《Android 权威指南》上的 MVC 架构，不知道外面是怎么样的。Git 版本控制策略基本上没有，开发和发布基本都在 dev 分支上，跟使用 SVN 差不多吧。当时特别渴望出去实习，寻找答案，所以大四下学期我就出来工作了。&lt;/p&gt;
+&lt;h1 id=&quot;u53C2_u52A0_u5DE5_u4F5C&quot;&gt;&lt;a href=&quot;#u53C2_u52A0_u5DE5_u4F5C&quot; class=&quot;headerlink&quot; title=&quot;参加工作&quot;&gt;&lt;/a&gt;参加工作&lt;/h1&gt;&lt;p&gt;大四下学期来到广州，经过一个星期的面试，终于在 U 公司安定下来，内心无比的鸡冻，毕竟也是工作一族了嘛。在 U 公司 Android 部门工作了一个月后，我发现它有以下特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;团队只有口头开发规范，一个项目有好几种命名规范；&lt;/li&gt;
+&lt;li&gt;Git 版本控制过于随意，如 commit 信息就写个日期；&lt;/li&gt;
+&lt;li&gt;杂碎项目比较多，经常一个人负责几个项目；&lt;/li&gt;
+&lt;li&gt;有人经常加班，有人早早下班；&lt;/li&gt;
+&lt;li&gt;团队成员之间不知道对方最近在忙什么；&lt;br&gt;…&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我入职后被安排独立开发一个新闻客户端，由于急着上线，中途安排一个搭档与我一起奋战。让我意想不到的是搭档 1 个月后突然跑路，项目交接匆匆忙忙，草草了事，这时候也没有空闲的人手来帮我，只能是我一个人包揽整个项目。由于搭档的命名规范跟我的相差太多，有点洁癖的我加班加点，硬是把他负责的模块重写了一遍。我暗自发誓，永远不要再做这种吃力不讨好的事了！于是我把之前在 W 团队的规范稍作整理，推荐给组长，组长当时回了一句「参考网上的就可以了」，我内心毫无波动，甚至织起了毛衣。&lt;/p&gt;
+&lt;p&gt;我想你们可能会说干脆辞职另找一家算了，刚开始我也是这么想的，但后面就打消了这个念头，我只是被拒绝了一次，一次就气馁了？这不像我喔。&lt;/p&gt;
+&lt;p&gt;接下来的一段时间，我在网上查阅了大量的开发规范资料，吸取精华的部分，整理出一份比较齐全的文档，然后发到团队讨论组上，大家也只是口头敷衍一下，又继续蛮干了。&lt;/p&gt;
+&lt;h1 id=&quot;u5E26_u65B0_u4EBA&quot;&gt;&lt;a href=&quot;#u5E26_u65B0_u4EBA&quot; class=&quot;headerlink&quot; title=&quot;带新人&quot;&gt;&lt;/a&gt;带新人&lt;/h1&gt;&lt;p&gt;有一次 CTO 找到团队成员 A 问，怎么对接个接口要这么久？&lt;/p&gt;
+&lt;p&gt;A：这个接口字段太多了，一个个 JSON 字段取出来要花些时间。&lt;br&gt;CTO（苦笑）： Android 没有 JSON 解析工具吗？&lt;/p&gt;
+&lt;p&gt;我当时坐在旁边就顺便回了一句：有，GSON。谁能想到就这一句话竟然是我职业生涯的转折点。&lt;/p&gt;
+&lt;p&gt;几个月后，CTO 突然叫我去谈话，大概的意思是目前 Android 团队工作效率很低，看出我比较有潜力，想找个新人给我带，看能否把工作效率提上来。当时我才入职 9 个月，有点受宠若惊，也怕不能胜任，后面想想怎么也得试试吧，机不可失。&lt;/p&gt;
+&lt;p&gt;晚上回去就睡不着了，心想怎么带新人呢？这时我想起来在 W 团队的经历，师兄怎么带的我，我就怎么带新人不就得了吗？&lt;/p&gt;
+&lt;p&gt;第二天我跟新人做了个全方位的了解，根据他的情况指定一份 1 个月后能实战的培训计划。培训计划跟在 W 团队时的差不多，另外针对他薄弱的部分加以强化以及补充 UML 的学习。&lt;/p&gt;
+&lt;p&gt;培训完毕后，刚好有一个为期 1 month 的小项目，我跟组长争取让新人来开发，我辅助（不参与开发）。新人的成长速度比我想象的要快，项目提前开发完成，顺利收工。我这才长舒一口气，带人这事总算不负所托。&lt;/p&gt;
+&lt;h1 id=&quot;u5E26_u56E2_u961F&quot;&gt;&lt;a href=&quot;#u5E26_u56E2_u961F&quot; class=&quot;headerlink&quot; title=&quot;带团队&quot;&gt;&lt;/a&gt;带团队&lt;/h1&gt;&lt;p&gt;16 年 5 月份，组长突然离职并推荐我上位，事情来得有点突然，没有一点心理准备。组长离职后，团队就剩下 3 个人，其余两人入职都还不到 1 年，入戏不深，我觉得这是团队洗心革面的好机会。&lt;/p&gt;
+&lt;p&gt;在带新人的过程中，我同时在思考一个问题：如果我当组长，该怎么管理团队，一个团队需要具备什么马车？很幸运的是我在老司机的窝里看到一本「App 研发录」，翻开目录的那一刹那，我欣喜若狂，这不就是我迫切需要的吗？看完「App 研发录」后，我立刻着手拟定一份旨在提高团队工作效率的团队建设规划图，原稿如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../images/teambuilding.png&quot; alt=&quot;teambuilding.png.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;除此之外，团队开发规范、项目结构规范和 Git 版本控制策略之前都已经准备完毕，所以我上位后要做的就是执行这些计划。&lt;/p&gt;
+&lt;h1 id=&quot;u8BA1_u5212_u843D_u5730&quot;&gt;&lt;a href=&quot;#u8BA1_u5212_u843D_u5730&quot; class=&quot;headerlink&quot; title=&quot;计划落地&quot;&gt;&lt;/a&gt;计划落地&lt;/h1&gt;&lt;p&gt;所谓 5% 在策略，95% 在执行。计划实施过程异常艰辛，活生生得把我变成一个霸道哥。第一个要落地的计划是统一开发规范，因为它是基石。&lt;/p&gt;
+&lt;p&gt;开发规范，据我所知，很多公司都是比较混乱的，统一开发规范，如何落地？如果你把它看得跟国家统一一样重要，那事件就简单许多了，因为它上升为原则问题，原则没得商量，你要么遵守，要么出门右拐。那是不是一两天就能彻底落地好呢？不是，适应新的开发规范需要改变一个人的习惯，我给组员的时间是 3 个月，三个月后必须基本纠正。除了团队技术博客夭折之外，其余计划半年后基本完成。&lt;/p&gt;
+&lt;h1 id=&quot;u8DE8_u90E8_u95E8_u534F_u4F5C&quot;&gt;&lt;a href=&quot;#u8DE8_u90E8_u95E8_u534F_u4F5C&quot; class=&quot;headerlink&quot; title=&quot;跨部门协作&quot;&gt;&lt;/a&gt;跨部门协作&lt;/h1&gt;&lt;p&gt;当把团队内部梳理得七七八八的时候，一个更大的问题来了，它就是跨部门协作。一个 App 从需求分析到部署上线，会有产品组、设计组、测试组和开发组等参与，每个阶段各组都会产生相应的文档。而我们当时习惯性地用 QQ 讨论组传文件，每次都是全量下载，很多时候会弄错版本造成信息不同步。后来便和其他组的组长约定好一套文档管理规范，用 SVN 统一管理起来，形成了项目文档。这样开发期间不仅方便跨组协作，同时有利于项目后期的维护和交接。当然文档统一管理只是跨部门协作中冰山一角。&lt;/p&gt;
+&lt;h1 id=&quot;u7BA1_u7406_u8005_u7684_u81EA_u6211_u4FEE_u517B&quot;&gt;&lt;a href=&quot;#u7BA1_u7406_u8005_u7684_u81EA_u6211_u4FEE_u517B&quot; class=&quot;headerlink&quot; title=&quot;管理者的自我修养&quot;&gt;&lt;/a&gt;管理者的自我修养&lt;/h1&gt;&lt;p&gt;前面零零碎碎讲了一些团队建设方面的内容，下面我们来聊聊管理者的自我修养。&lt;/p&gt;
+&lt;h2 id=&quot;u89D2_u8272_u8F6C_u53D8&quot;&gt;&lt;a href=&quot;#u89D2_u8272_u8F6C_u53D8&quot; class=&quot;headerlink&quot; title=&quot;角色转变&quot;&gt;&lt;/a&gt;角色转变&lt;/h2&gt;&lt;p&gt;担任组长的 1 个月里，我还将自己当成组员，跟组员「抢」工作，而自己已经开始参与中层事务的管理，一天下来就没多少开发时间，只能加班赶工。我就在想，组长的职责是什么？很幸运我在「格鲁夫给经理人的第一课」中找到了答案，组长的职责应该是为组员搭建一个高效的工作平台、合理安排任务、协调资源、把控风险、技术引导等，因此我就辞去大部分开发任务。&lt;/p&gt;
+&lt;h2 id=&quot;u6811_u7ACB_u5A01_u4E25&quot;&gt;&lt;a href=&quot;#u6811_u7ACB_u5A01_u4E25&quot; class=&quot;headerlink&quot; title=&quot;树立威严&quot;&gt;&lt;/a&gt;树立威严&lt;/h2&gt;&lt;p&gt;威严这块，我吃过一次亏。大四上学期我在一所中学教育实习，当时领导对我说，第一次和学生见面一定要树立威严，不能随便，否则你后面很难管。我不以为然，我行我素，果然没几天我就中招了。其实管理者何尝不像老师呢？&lt;/p&gt;
+&lt;h2 id=&quot;u6811_u7ACB_u5A01_u4FE1&quot;&gt;&lt;a href=&quot;#u6811_u7ACB_u5A01_u4FE1&quot; class=&quot;headerlink&quot; title=&quot;树立威信&quot;&gt;&lt;/a&gt;树立威信&lt;/h2&gt;&lt;p&gt;树立威信的方法是持续做正确的事。&lt;/p&gt;
+&lt;h2 id=&quot;u7528_u597D_u8BD5_u7528_u671F&quot;&gt;&lt;a href=&quot;#u7528_u597D_u8BD5_u7528_u671F&quot; class=&quot;headerlink&quot; title=&quot;用好试用期&quot;&gt;&lt;/a&gt;用好试用期&lt;/h2&gt;&lt;p&gt;我身边有些管理者会反馈一个问题：招的人转正后没怎么听话。我问他们试用期都对新人干了什么？他们说就做项目呗，这就是问题所在了。试用期是新人转正的过渡期，这期间主要是考核新人的适应能力、技术能力、沟通表达能力、抗压能力、责任心和进取心等，如果这期间你对新人放任自如，后面烂摊子有你收拾的。&lt;/p&gt;
+&lt;h2 id=&quot;u7528_u4EBA&quot;&gt;&lt;a href=&quot;#u7528_u4EBA&quot; class=&quot;headerlink&quot; title=&quot;用人&quot;&gt;&lt;/a&gt;用人&lt;/h2&gt;&lt;p&gt;有时候觉着自己不像个管理者，更像个老师。因为我希望自己的组员都能有出息，这让我鸭梨山大，还好后来想通了：我不是老师。团队中有人技术强，有人责任心强、有人协调能力强，有人就打打杂混日子。重要的任务当然是交给能力强的人主导，一般般的、杂碎的任务就交给打杂的处理。也许你们会埋怨管理者太偏心，那为啥不学学隔壁老王呢？&lt;/p&gt;
+&lt;h1 id=&quot;u603B_u7ED3&quot;&gt;&lt;a href=&quot;#u603B_u7ED3&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;以上就是我快 2 年的管理之路以及感悟，参考参考就好，我说的不一定对。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;u7BA1_u7406_u542F_u8499&quot;&gt;&lt;a href=&quot;#u7BA1_u7406_u542F_u8499&quot; class=&quot;headerlink&quot; title=&quot;管理启蒙&quot;&gt;&lt;/a&gt;管理启蒙&lt;/h1&gt;&lt;p&gt;大三的时候有幸加入了 W 学生团队，进入团队的第
+    
+    </summary>
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+      <category term="管理" scheme="http://xiamianyu.github.io/tags/%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Android 自动化构建平台的维护</title>
@@ -1165,7 +1231,7 @@
     <link href="http://xiamianyu.github.io/2016/12/17/%E5%88%9D%E5%B0%9D%20TeamLeader/"/>
     <id>http://xiamianyu.github.io/2016/12/17/初尝 TeamLeader/</id>
     <published>2016-12-17T05:33:12.000Z</published>
-    <updated>2016-12-18T12:20:48.000Z</updated>
+    <updated>2018-07-22T07:26:06.833Z</updated>
     
     <content type="html">&lt;h2 id=&quot;u68A6_u60F3_u4E00_u5B9A_u8981_u6709&quot;&gt;&lt;a href=&quot;#u68A6_u60F3_u4E00_u5B9A_u8981_u6709&quot; class=&quot;headerlink&quot; title=&quot;梦想一定要有&quot;&gt;&lt;/a&gt;梦想一定要有&lt;/h2&gt;&lt;p&gt;两年前，刚走出校园，怀着迷迷糊糊的工作梦走进了现在这家公司，依稀记得面试时，面试官问我近期的计划是什么。我当时说想当个组长，现在想想都觉得有点好笑，笑自己的那份狂妄和天真。今年6月，由于一些因素，我开始全面接手 Android 团队的管理工作，在这半年管理中，主要展开了这些工作：健全团队建设文档、开站立会议、代码审查、技术分享、搭建团队基础框架和自动化构建平台等。&lt;/p&gt;
 &lt;h2 id=&quot;u56E2_u961F_u5EFA_u8BBE_u6587_u6863&quot;&gt;&lt;a href=&quot;#u56E2_u961F_u5EFA_u8BBE_u6587_u6863&quot; class=&quot;headerlink&quot; title=&quot;团队建设文档&quot;&gt;&lt;/a&gt;团队建设文档&lt;/h2&gt;&lt;p&gt;看一个团队是否成熟，只要去看它的团队建设文档就够了，无规矩不成方圆。在这个个性张扬的时代，谁都想表现得不一样，这本来没错，但在一个团队协作中，没有一定的规范约束，大家就会乱来。这里列出团队建设中我觉得必要的文档。&lt;/p&gt;
@@ -1177,7 +1243,7 @@
 &lt;h2 id=&quot;u7AD9_u7ACB_u4F1A_u8BAE&quot;&gt;&lt;a href=&quot;#u7AD9_u7ACB_u4F1A_u8BAE&quot; class=&quot;headerlink&quot; title=&quot;站立会议&quot;&gt;&lt;/a&gt;站立会议&lt;/h2&gt;&lt;p&gt;开会是很多程序员都不喜欢的，有些喜欢在讨论组开会，效率不高。站立会议，总结昨天，计划今天，只需10 ~ 15 min，简短高效，执行以来，效果甚好。&lt;/p&gt;
 &lt;h2 id=&quot;u4EE3_u7801_u5BA1_u67E5&quot;&gt;&lt;a href=&quot;#u4EE3_u7801_u5BA1_u67E5&quot; class=&quot;headerlink&quot; title=&quot;代码审查&quot;&gt;&lt;/a&gt;代码审查&lt;/h2&gt;&lt;p&gt;如果你觉得有了「开发命名规范」和「项目结构规范」，组员的代码就会按照上面的规范写好，那真的是太天真了。所谓 5% 在策略，95% 在执行，组员的代码须通过代码审查不断纠正。一般老员工代码相对规范，不需过多审查，可由老员工审查试用期童鞋的代码，组长不定期抽查。代码审查工作可借助 GitLab、Gogs 等第三方平台，把不符合规范的代码打回重做。但这种形式的审查效果有点粗糙，所以我要求项目主负责人每周整体过一次搭档代码，找个时间统一修改完，这样效果会更好。&lt;/p&gt;
 &lt;h2 id=&quot;u6280_u672F_u5206_u4EAB&quot;&gt;&lt;a href=&quot;#u6280_u672F_u5206_u4EAB&quot; class=&quot;headerlink&quot; title=&quot;技术分享&quot;&gt;&lt;/a&gt;技术分享&lt;/h2&gt;&lt;p&gt;每周技术分享，说来惭愧，搞了 2 个月就夭折了。究其原因，一是团队比较年轻，技术积累较少，技术分享质量不高，二是组员积极性不高。后来就改为不定期技术分享，但是这样一来很少人主动技术分享，一方面是项目赶，另一方面是主动进修的人不多。&lt;/p&gt;
-&lt;h2 id=&quot;u56E2_u961F_u57FA_u7840_u6846_u67B6&quot;&gt;&lt;a href=&quot;#u56E2_u961F_u57FA_u7840_u6846_u67B6&quot; class=&quot;headerlink&quot; title=&quot;团队基础框架&quot;&gt;&lt;/a&gt;团队基础框架&lt;/h2&gt;&lt;p&gt;以前在 Wando 团队时，听他们说过，只要把「骨架」搭好，以后想变肥变瘦就轻而易举了。这里的「骨架」就是团队基础框架，它包含了大多数项目必须的功能，如网络请求、缓存、数据库操作、通用自定义控件等，只需简单配置就可以使用，避免重复造轮子，提高开发效率。&lt;/p&gt;
+&lt;h2 id=&quot;u56E2_u961F_u57FA_u7840_u6846_u67B6&quot;&gt;&lt;a href=&quot;#u56E2_u961F_u57FA_u7840_u6846_u67B6&quot; class=&quot;headerlink&quot; title=&quot;团队基础框架&quot;&gt;&lt;/a&gt;团队基础框架&lt;/h2&gt;&lt;p&gt;以前在 W 团队时，听他们说过，只要把「骨架」搭好，以后想变肥变瘦就轻而易举了。这里的「骨架」就是团队基础框架，它包含了大多数项目必须的功能，如网络请求、缓存、数据库操作、通用自定义控件等，只需简单配置就可以使用，避免重复造轮子，提高开发效率。&lt;/p&gt;
 &lt;h2 id=&quot;u81EA_u52A8_u5316_u6784_u5EFA_u5E73_u53F0&quot;&gt;&lt;a href=&quot;#u81EA_u52A8_u5316_u6784_u5EFA_u5E73_u53F0&quot; class=&quot;headerlink&quot; title=&quot;自动化构建平台&quot;&gt;&lt;/a&gt;自动化构建平台&lt;/h2&gt;&lt;p&gt;手动打包 -&amp;gt; 上传到 SVN -&amp;gt; 通知测试人员测试，好重复的动作，电脑也不给力，浪费时间。这些操作目前都过自动化平台解放双手。&lt;/p&gt;
 &lt;h2 id=&quot;u81EA_u6211_u53CD_u7701&quot;&gt;&lt;a href=&quot;#u81EA_u6211_u53CD_u7701&quot; class=&quot;headerlink&quot; title=&quot;自我反省&quot;&gt;&lt;/a&gt;自我反省&lt;/h2&gt;&lt;p&gt;当上管理层，最大的感受是责任感变强了。毕竟不再是小喽喽，组员的问题，就是我的问题。所以一直不敢怠慢，想方法去管理好团队。经过所有成员半年来的努力，团队逐渐走向规范，这特别让我欣慰，但我管理方面的能力还有待加强，目前发现的问题是给的压力不够、监管不严、手软等。2017 年，希望在管理好团队的同时，开始涉略产品方面，生活上多去接触周边人，不能太孤独，工作可不是作生活的全部，人生还有很多事没做，比如交女朋友哈。&lt;/p&gt;
 </content>
@@ -1192,6 +1258,8 @@
     
     
       <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
+    
+      <category term="管理" scheme="http://xiamianyu.github.io/tags/%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -1363,49 +1431,6 @@
       <category term="命名规范" scheme="http://xiamianyu.github.io/tags/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
     
       <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>versonCode &amp; versionName</title>
-    <link href="http://xiamianyu.github.io/2016/07/24/versonCode-versionName/"/>
-    <id>http://xiamianyu.github.io/2016/07/24/versonCode-versionName/</id>
-    <published>2016-07-24T07:00:26.000Z</published>
-    <updated>2016-07-24T08:10:21.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;u5B66_u827A_u4E0D_u7CBE&quot;&gt;&lt;a href=&quot;#u5B66_u827A_u4E0D_u7CBE&quot; class=&quot;headerlink&quot; title=&quot;学艺不精&quot;&gt;&lt;/a&gt;学艺不精&lt;/h2&gt;&lt;p&gt;Android 开发中，我们对 &lt;code&gt;versionCode&lt;/code&gt; 和 &lt;code&gt;versionName&lt;/code&gt; 都不陌生，可能有些人对它们的理解还停留在 &lt;code&gt;versionCode&lt;/code&gt; 对开发可见（对用户不可见），&lt;code&gt;int&lt;/code&gt; 类型，&lt;code&gt;versionName&lt;/code&gt; 对用户可见，&lt;code&gt;String&lt;/code&gt; 类型。每次发布版本时都要修改 &lt;code&gt;versionCode&lt;/code&gt; 和 &lt;code&gt;versionName&lt;/code&gt;。最近因为版本控制命名问题造成的困扰，我才去 Android 官网查阅关于它们的介绍。&lt;/p&gt;
-&lt;h2 id=&quot;u5B98_u7F51_u5B9A_u4E49&quot;&gt;&lt;a href=&quot;#u5B98_u7F51_u5B9A_u4E49&quot; class=&quot;headerlink&quot; title=&quot;官网定义&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://developer.android.com/studio/publish/versioning.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网定义&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;versionCode&lt;/strong&gt; — An integer used as an internal version number. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions. This is not the version number shown to users; that number is set by the versionName setting, below.&lt;/p&gt;
-&lt;p&gt;The value is an integer so that other apps can programmatically evaluate it, for example to check an upgrade or downgrade relationship. You can set the value to any integer you want, however you should make sure that each successive release of your app uses a greater value. The system does not enforce this behavior, but increasing the value with successive releases is normative.&lt;/p&gt;
-&lt;p&gt;Typically, you would release the first version of your app with versionCode set to 1, then monotonically increase the value with each release, regardless whether the release constitutes a major or minor release. This means that the versionCode value does not necessarily have a strong resemblance to the app release version that is visible to the user (see versionName, below). Apps and publishing services should not display this version value to users.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: The greatest possible value for versionCode is MAXINT (2147483647). However, if you upload an app with this value, your app can’t ever be updated.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;versionName&lt;/strong&gt; — A string used as the version number shown to users. This setting can be specified as a raw string or as a reference to a string resource.&lt;br&gt;The value is a string so that you can describe the app version as a &lt;code&gt;&amp;lt;major&amp;gt;&lt;/code&gt;.&lt;code&gt;&amp;lt;minor&amp;gt;&lt;/code&gt;.&lt;code&gt;&amp;lt;point&amp;gt;&lt;/code&gt; string, or as any other type of absolute or relative version identifier. The versionName has no purpose other than to be displayed to users.&lt;/p&gt;
-&lt;h2 id=&quot;u7406_u89E3_u6D88_u5316&quot;&gt;&lt;a href=&quot;#u7406_u89E3_u6D88_u5316&quot; class=&quot;headerlink&quot; title=&quot;理解消化&quot;&gt;&lt;/a&gt;理解消化&lt;/h2&gt;&lt;p&gt;可以看到，官网对 &lt;code&gt;versionCode&lt;/code&gt; 和 &lt;code&gt;versionName&lt;/code&gt; 做了很详细的说明，用程序员能理解的总结如下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;versionCode&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;类型：MAXINT(2e31 = 2147483647)&lt;br&gt;作用：标识 App 内部版本，对开发可见（对用户不可见），建议每次发布 release 版本时累加1&lt;br&gt;注意：长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;特别的，Android 中，覆盖安装时，不允许对 &lt;code&gt;versionCode&lt;/code&gt; 做降级处理（按常理，没必要降级），如：上一版 versionCode=”2”，新版 versionCode 不能小于2，否则覆盖安装失败。AS 上做了降级测试，出现以下提示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5pr.com1.z0.glb.clouddn.com/android-version-downgrade.png&quot; alt=&quot;android-version-downgrade&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;versionName&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;类型：String&lt;br&gt;格式：&lt;code&gt;&amp;lt;major&amp;gt;&lt;/code&gt;.&lt;code&gt;&amp;lt;minor&amp;gt;&lt;/code&gt;.&lt;code&gt;&amp;lt;point&amp;gt;&lt;/code&gt;（&amp;lt;主版本号&amp;gt;.&amp;lt;子版本号&amp;gt;.&amp;lt;修订版本号&amp;gt;）&lt;br&gt;作用：标识 App 版本，对用户可见&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;u5B66_u827A_u4E0D_u7CBE&quot;&gt;&lt;a href=&quot;#u5B66_u827A_u4E0D_u7CBE&quot; class=&quot;headerlink&quot; title=&quot;学艺不精&quot;&gt;&lt;/a&gt;学艺不精&lt;/h2&gt;&lt;p&gt;Android 开发中，我们对 &lt;code&gt;ve
-    
-    </summary>
-    
-      <category term="Android" scheme="http://xiamianyu.github.io/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
-    
-      <category term="Version" scheme="http://xiamianyu.github.io/tags/Version/"/>
     
   </entry>
   
