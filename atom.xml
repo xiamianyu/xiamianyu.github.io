@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2019-01-10T08:02:34.710Z</updated>
+  <updated>2019-03-06T02:29:16.626Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码没排版，亲人两行泪</title>
+    <link href="http://xiamianyu.github.io/2019/03/06/%E4%BB%A3%E7%A0%81%E6%B2%A1%E6%8E%92%E7%89%88%EF%BC%8C%E4%BA%B2%E4%BA%BA%E4%B8%A4%E8%A1%8C%E6%B3%AA/"/>
+    <id>http://xiamianyu.github.io/2019/03/06/代码没排版，亲人两行泪/</id>
+    <published>2019-03-06T02:27:51.000Z</published>
+    <updated>2019-03-06T02:29:16.626Z</updated>
+    
+    <content type="html">&lt;p&gt;上小学时，有一次大姐在家里写作文，还没见过作文的我特别好奇，就在旁边静静地看着。我发现大姐每段开头都要空两格，就算前一个段落最后一行只有一个字，下一个段落也要另起一行。我心里特别纳闷，这不是很浪费纸吗？干嘛不一写到底呀？大姐也不知道作何解释，只是说那是写作文的要求。后来我才知道这些要求都是为了让作文段落分明，易于阅读。&lt;/p&gt;
+&lt;p&gt;可惜很多人把这个要求给忘了，就拿我所处的软件行业来说，很多人写的代码几乎没有排版可言，只要软件能跑起来就算万事大吉，代码排版？不存在的。&lt;/p&gt;
+&lt;p&gt;很多次，看到别人开发出那些炫酷吊炸天的功能，我都特别想抱他们大腿，但是看了他们没有排版、乱糟糟的代码后，我只想说，I need a（安）v（慰）。&lt;/p&gt;
+&lt;p&gt;对我来说，代码排版放第一位，因为我是一个人，不是机器，良好的排版能让人赏心悦目，易于阅读。试想一下，如果把高考满分作文不分段落地写出来，在高考这种高强度的批卷下，老师是没有耐心一字一句去看作文的，想要满分何其艰难。而软件开发更是一个高强度脑力劳动的职业，为了不让大家早点秃顶，还是注重一下代码排版吧。&lt;/p&gt;
+&lt;p&gt;别的不说，就连农民伯伯都知道要按合理的间距种菜，这样才能让它们各自有充足的空间成长，不至于种出来的菜高矮胖瘦，影响产量，而我们为何不能把代码排版这件小事做好呢？&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上小学时，有一次大姐在家里写作文，还没见过作文的我特别好奇，就在旁边静静地看着。我发现大姐每段开头都要空两格，就算前一个段落最后一行只有一个字，下一个段落也要另起一行。我心里特别纳闷，这不是很浪费纸吗？干嘛不一写到底呀？大姐也不知道作何解释，只是说那是写作文的要求。后来我才
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://xiamianyu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="排版" scheme="http://xiamianyu.github.io/tags/%E6%8E%92%E7%89%88/"/>
+    
+      <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>2018 年回顾</title>
@@ -1225,177 +1254,6 @@
       <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
     
       <category term="管理" scheme="http://xiamianyu.github.io/tags/%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 命名规范</title>
-    <link href="http://xiamianyu.github.io/2016/07/28/Android-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
-    <id>http://xiamianyu.github.io/2016/07/28/Android-命名规范/</id>
-    <published>2016-07-28T10:28:40.000Z</published>
-    <updated>2017-12-24T10:40:26.159Z</updated>
-    
-    <content type="html">&lt;p&gt;团队开发中，统一命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。下面是我个人和团队沿用的代码规范。其中 Android 资源命名规范，当时参考了很多资料，没留底，如有雷同，还请多多包涵。&lt;/p&gt;
-&lt;h1 id=&quot;Java__u6587_u4EF6&quot;&gt;&lt;a href=&quot;#Java__u6587_u4EF6&quot; class=&quot;headerlink&quot; title=&quot;Java 文件&quot;&gt;&lt;/a&gt;Java 文件&lt;/h1&gt;&lt;p&gt;采用驼峰命名法&lt;/p&gt;
-&lt;h2 id=&quot;u7C7B_u6216_u63A5_u53E3_u6CE8_u91CA&quot;&gt;&lt;a href=&quot;#u7C7B_u6216_u63A5_u53E3_u6CE8_u91CA&quot; class=&quot;headerlink&quot; title=&quot;类或接口注释&quot;&gt;&lt;/a&gt;类或接口注释&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; * file descriptions&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; * &lt;span class=&quot;doctag&quot;&gt;@author&lt;/span&gt; $&amp;#123;USER&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; * &lt;span class=&quot;doctag&quot;&gt;@date&lt;/span&gt; $&amp;#123;DATE&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Activity&quot;&gt;&lt;a href=&quot;#Activity&quot; class=&quot;headerlink&quot; title=&quot;Activity&quot;&gt;&lt;/a&gt;Activity&lt;/h2&gt;&lt;p&gt;以 &lt;code&gt;Activity&lt;/code&gt; 作为后缀，如：&lt;code&gt;OrderActivity&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Fragment&quot;&gt;&lt;a href=&quot;#Fragment&quot; class=&quot;headerlink&quot; title=&quot;Fragment&quot;&gt;&lt;/a&gt;Fragment&lt;/h2&gt;&lt;p&gt;以 &lt;code&gt;Fragment&lt;/code&gt; 作为后缀，如：&lt;code&gt;NewsFragment&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Adapter&quot;&gt;&lt;a href=&quot;#Adapter&quot; class=&quot;headerlink&quot; title=&quot;Adapter&quot;&gt;&lt;/a&gt;Adapter&lt;/h2&gt;&lt;p&gt;以 &lt;code&gt;Adapter&lt;/code&gt; 作为后缀，如：&lt;code&gt;NewsAdapter&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;u5E38_u91CF&quot;&gt;&lt;a href=&quot;#u5E38_u91CF&quot; class=&quot;headerlink&quot; title=&quot;常量&quot;&gt;&lt;/a&gt;常量&lt;/h2&gt;&lt;p&gt;全部大写，单词之间用下划线分开，如：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; String CACHE_PATH = &lt;span class=&quot;string&quot;&gt;&quot;xxx&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;u9759_u6001_u53D8_u91CF&quot;&gt;&lt;a href=&quot;#u9759_u6001_u53D8_u91CF&quot; class=&quot;headerlink&quot; title=&quot;静态变量&quot;&gt;&lt;/a&gt;静态变量&lt;/h2&gt;&lt;p&gt;首字母小写，加前缀s，如：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; String sName;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;u6210_u5458_u53D8_u91CF&quot;&gt;&lt;a href=&quot;#u6210_u5458_u53D8_u91CF&quot; class=&quot;headerlink&quot; title=&quot;成员变量&quot;&gt;&lt;/a&gt;成员变量&lt;/h2&gt;&lt;p&gt;首字母小写，加前缀m，如：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; mAge;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;u5C40_u90E8_u53D8_u91CF&quot;&gt;&lt;a href=&quot;#u5C40_u90E8_u53D8_u91CF&quot; class=&quot;headerlink&quot; title=&quot;局部变量&quot;&gt;&lt;/a&gt;局部变量&lt;/h2&gt;&lt;p&gt;首字母小写，不用加前缀，如：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; age;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;u63A7_u4EF6_u53D8_u91CF&quot;&gt;&lt;a href=&quot;#u63A7_u4EF6_u53D8_u91CF&quot; class=&quot;headerlink&quot; title=&quot;控件变量&quot;&gt;&lt;/a&gt;控件变量&lt;/h2&gt;&lt;p&gt;Android的控件变量，采用“逻辑功能+控件缩写”的形式，如：登陆按钮 &lt;code&gt;loginBtn&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;常见的控件缩写对照表&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;组件名称&lt;/th&gt;
-&lt;th&gt;缩写&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;TextView&lt;/td&gt;
-&lt;td&gt;Tv (tv)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ListView&lt;/td&gt;
-&lt;td&gt;Lv (lv)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;EditText&lt;/td&gt;
-&lt;td&gt;Edt (edt)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;CheckBox&lt;/td&gt;
-&lt;td&gt;Chk (chk)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Button&lt;/td&gt;
-&lt;td&gt;Btn (btn)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ImageButton&lt;/td&gt;
-&lt;td&gt;Ibtn (ibtn)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ToggleButton&lt;/td&gt;
-&lt;td&gt;Tbtn (tbtn)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;RadioButton&lt;/td&gt;
-&lt;td&gt;Rbtn (rbtn)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ImageView&lt;/td&gt;
-&lt;td&gt;Iv (iv)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ProgressBar&lt;/td&gt;
-&lt;td&gt;Pbar (pbar)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ScrollView&lt;/td&gt;
-&lt;td&gt;Sclv (sclv)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;LinearLayout&lt;/td&gt;
-&lt;td&gt;Llyt (llyt)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;RelativeLayout&lt;/td&gt;
-&lt;td&gt;Rlyt (rlyt)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TableLayout&lt;/td&gt;
-&lt;td&gt;Tlyt (tlyt)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;FrameLayout&lt;/td&gt;
-&lt;td&gt;Flyt (flyt)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;这里有个小细节，变量声明一般这样，static 变量放在最前面，控件变量放中间，普通成员变量放在后面，示例如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// static 变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; String PHOTO = &lt;span class=&quot;string&quot;&gt;&quot;photo&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 控件变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; ImageView mPhotoIv;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; FloatingActionButton mEditFbtn;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; EditText mDescriptionEdt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; EditText mAddressEdt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; EditText mTimeEdt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; EditText mCategoryEdt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 普通成员变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Photo mPhoto;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;Android__u8D44_u6E90_u6587_u4EF6&quot;&gt;&lt;a href=&quot;#Android__u8D44_u6E90_u6587_u4EF6&quot; class=&quot;headerlink&quot; title=&quot;Android 资源文件&quot;&gt;&lt;/a&gt;Android 资源文件&lt;/h1&gt;&lt;h2 id=&quot;layout&quot;&gt;&lt;a href=&quot;#layout&quot; class=&quot;headerlink&quot; title=&quot;layout&quot;&gt;&lt;/a&gt;layout&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1. 布局文件&lt;/strong&gt;  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;格式：界面类型_模块.xml / 界面类型_模块_描述.xml&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如：&lt;code&gt;activity_login.xml&lt;/code&gt;, &lt;code&gt;fragment_login.xml&lt;/code&gt;, &lt;code&gt;dialog_login.xml&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. 列表项&lt;/strong&gt;  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;格式：item_控件类型_功能描述 / item_控件类型_模块_功能描述&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如：&lt;code&gt;item_listview_order.xml&lt;/code&gt;, &lt;code&gt;item_gridview_main_photo.xml&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3. 包含项&lt;/strong&gt;  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;格式：包含类型_模块_描述 / 包含类型_控件类型_描述&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如： &lt;code&gt;merge_detail_footer.xml&lt;/code&gt;, &lt;code&gt;include_refreshview_header.xml&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4. 控件id&lt;/strong&gt;    &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;格式：模块名_控件类型_描述&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;activity_category.xml 文件下显示姓名的 TextView，其命名为 &lt;code&gt;android:id=&amp;quot;@+id/category_tv_name&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;drawable&quot;&gt;&lt;a href=&quot;#drawable&quot; class=&quot;headerlink&quot; title=&quot;drawable&quot;&gt;&lt;/a&gt;drawable&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1. 静态图片&lt;/strong&gt;  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;格式：&lt;br&gt;类型_common_描述：多个模块共用&lt;br&gt;类型_模块_描述：单个模块共用&lt;br&gt;类型_模块_描述_状态：配合动态风格使用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;ic_common_delete.png (删除按钮，多个模块共用)&lt;br&gt;ic_accont_head.png（账户模块下的头像）&lt;br&gt;ic_theme_add_nomal.png (添加主题按钮的正常状态)&lt;br&gt;ic_theme_add_pressed.png (添加主题按钮的被按下状态)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. 动态风格&lt;/strong&gt;  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;格式：&lt;br&gt;common_描述：多个模块共用&lt;br&gt;模块_描述：单个某块共用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;common_delete.xml (共用)&lt;br&gt;theme_add.xml （添加主题按钮）  &lt;/p&gt;
-&lt;h2 id=&quot;string-xml&quot;&gt;&lt;a href=&quot;#string-xml&quot; class=&quot;headerlink&quot; title=&quot;string.xml&quot;&gt;&lt;/a&gt;string.xml&lt;/h2&gt;&lt;p&gt;Java 文件和布局文件中，除了注释可以是中文，其他文字性说明都要放入 string.xml 中统一管理，它们在 string.xml 中的命名规范如下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. xml&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;格式：&lt;br&gt;控件id：控件有声明 id&lt;br&gt;模块_描述：控件无声明 id  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;”account_btn_login”&lt;/span&gt;&amp;gt;&lt;/span&gt;登录&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;”account_forget_pwd”&lt;/span&gt;&amp;gt;&lt;/span&gt;忘记密码&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;2. Java&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;格式：模块_描述  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;新闻详情页，用户点击收藏时提示「已收藏」：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ToastUtil.show(getString(R.string.detail_collected));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;colors-xml&quot;&gt;&lt;a href=&quot;#colors-xml&quot; class=&quot;headerlink&quot; title=&quot;colors.xml&quot;&gt;&lt;/a&gt;colors.xml&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;只定义颜色表，colors.xml文件中只是映射颜色的一个RGBA值，而没有其它的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;糟糕的例子&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;listview_divider&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#cfcfd2&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;listview_normal&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#ffffff&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;listview_selected&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#fafafa&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;actionbar_item_normal&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#20699f&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;actionbar_item_selected&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#105085&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;使用这种格式，你会非常容易的开始重复定义RGBA值，这使如果需要改变基本色变的很复杂。同时，这些定义是跟一些环境关联起来的，如 button, 应该放到一个按钮风格中，而不是在color.xml文件中。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;好的例子&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- grayscale --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;white&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#FFFFFF&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;gray_light&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#DBDBDB&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;gray&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#939393&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;gray_dark&quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;#5F5F5F&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- basic colors --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;green&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#27D34D&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;blue&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#2A91BD&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;orange&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#FF9D2F&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;red&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;#FF432F&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;color&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;dimens-xml&quot;&gt;&lt;a href=&quot;#dimens-xml&quot; class=&quot;headerlink&quot; title=&quot;dimens.xml&quot;&gt;&lt;/a&gt;dimens.xml&lt;/h2&gt;&lt;p&gt;像对待colors.xml一样对待dimens.xml文件，看个好的例子:&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- font sizes --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;font_larger&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;22sp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;font_large&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;18sp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;font_normal&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;15sp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;font_small&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;12sp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- typical spacing between two views --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;spacing_huge&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;40dp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;spacing_large&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;24dp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;spacing_normal&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;14dp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;spacing_small&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;10dp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;spacing_tiny&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;4dp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- typical sizes of views --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;button_height_tall&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;60dp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;button_height_normal&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;40dp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;button_height_short&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;32dp&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dimen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;style-xml&quot;&gt;&lt;a href=&quot;#style-xml&quot; class=&quot;headerlink&quot; title=&quot;style.xml&quot;&gt;&lt;/a&gt;style.xml&lt;/h2&gt;&lt;p&gt;Android中，styles这个文件名称并没有作用，起作用的是在文件里xml的 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;标签。因此你可以有多个style文件，如：    &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;styles.xml&lt;/li&gt;
-&lt;li&gt;style_home.xml&lt;/li&gt;
-&lt;li&gt;styles_forms.xml&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;团队开发中，统一命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。下面是我个人和团队沿用的代码规范。其中 Android 资源命名规范，当时参考了很多资料，没留底，如有雷同，还请多多包涵。&lt;/p&gt;
-&lt;h1 id=&quot;Java
-    
-    </summary>
-    
-      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
-    
-    
-      <category term="命名规范" scheme="http://xiamianyu.github.io/tags/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
-    
-      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
     
   </entry>
   

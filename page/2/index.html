@@ -225,6 +225,144 @@
             
               
                 
+                <a class="post-title-link" href="/2017/10/19/Java-泛型-原始类型/" itemprop="url">
+                  Java 泛型-原始类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-19T20:08:30+08:00" content="2017-10-19">
+              2017-10-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/10/19/Java-泛型-原始类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/19/Java-泛型-原始类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/19/Java-泛型-原始类型/" class="leancloud_visitors" data-flag-title="Java 泛型-原始类型">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          原始类型（Raw Type）是指没有类型参数（Type Argument）的泛型类或接口。
+要创建一个 Box&lt;T&gt; 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：
+1Box&lt;Integer&gt; intBox = new Box&lt;&gt;();
+如果实际的类型参数被省略，你就会创建一个 Box&lt;T&gt; 的原始类型：
+1Box intBox = new Box();
+因此，Box 是泛型 Box&lt;T&gt; 的原始类型。但是，一个非泛型的类或接口不是原始类型。
+由于 JDK 5.0 之前 API 中的很多类（比如集合类）是不支持泛型的，所以原始类型出现在旧有代码中。为了向后兼容，允许将一个参数化类型指向原始类型的：
+12Box&lt;String&gt; stringBox = new Box&lt;&gt;();Box rawBox = stringBox; // 正确
+但是如果你将一个原始类型指向一个参数化类型就会得到一个警告：
+12Box rawBox = new Box(); // rawBox 是 `Box&lt;T&g
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/19/Java-泛型-原始类型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/10/18/Java-泛型-泛型类型/" itemprop="url">
                   Java 泛型-泛型类型
                 </a>
@@ -1448,147 +1586,6 @@ versionCode &amp; versionNameversionCode
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/28/Android-命名规范/" itemprop="url">
-                  Android 命名规范
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-28T18:28:40+08:00" content="2016-07-28">
-              2016-07-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/团队建设/" itemprop="url" rel="index">
-                    <span itemprop="name">团队建设</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/28/Android-命名规范/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/28/Android-命名规范/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/28/Android-命名规范/" class="leancloud_visitors" data-flag-title="Android 命名规范">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          团队开发中，统一命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。下面是我个人和团队沿用的代码规范。其中 Android 资源命名规范，当时参考了很多资料，没留底，如有雷同，还请多多包涵。
-Java 文件采用驼峰命名法
-类或接口注释123456/** * file descriptions * * @author $&#123;USER&#125; * @date $&#123;DATE&#125; */
-Activity以 Activity 作为后缀，如：OrderActivity
-Fragment以 Fragment 作为后缀，如：NewsFragment
-Adapter以 Adapter 作为后缀，如：NewsAdapter
-常量全部大写，单词之间用下划线分开，如：
-1public final String CACHE_PATH = "xxx";
-静态变量首字母小写，加前缀s，如：
-1public static String sName;
-成员变量首字母小写，加前缀m，如：
-1private int mAge;
-局部变量首字母小
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/28/Android-命名规范/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1634,7 +1631,7 @@ Adapter以 Adapter 作为后缀，如：NewsAdapter
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1651,7 +1648,7 @@ Adapter以 Adapter 作为后缀，如：NewsAdapter
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
