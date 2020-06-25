@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2019-10-05T04:11:43.618Z</updated>
+  <updated>2020-06-25T22:56:34.591Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android 连麦云端合图实践</title>
+    <link href="http://xiamianyu.github.io/2020/06/21/Android%20%E8%BF%9E%E9%BA%A6%E4%BA%91%E7%AB%AF%E5%90%88%E5%9B%BE%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://xiamianyu.github.io/2020/06/21/Android 连麦云端合图实践/</id>
+    <published>2020-06-21T08:00:59.000Z</published>
+    <updated>2020-06-25T22:56:34.591Z</updated>
+    
+    <content type="html">&lt;p&gt;连麦合图有两个方案，一是云端合图，二是 App 端合图，一般推荐使用云端合图，因为 App 端合图要多路播放，对手机性能要求较高。&lt;/p&gt;
+&lt;p&gt;连麦的界面布局一般是大小屏，如下图：&lt;br&gt;&lt;img src=&quot;/../images/guestlive-stream1.png&quot; alt=&quot;guestlive-stream1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这里有两个问题需要解决：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;手机分辨率碎片化严重，合图会被裁剪，怎么避免连麦用户被裁剪？&lt;/li&gt;
+&lt;li&gt;连麦用户和连麦UI窗口如何吻合？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;从友盟全域罗盘中了解到，Android 手机分辨率高宽比在 1.7 ~ 2.1 之间，未来手机分辨率高宽比呈增大趋势。连麦用户放置在右下角时，其右边比底部更容易被裁剪，所以在旁路推流参数中，主播宽高比应该接近 2.1。在实践中发现，将主播的分辨率设为 960x480，连麦用户的分辨率设为 200x160，再调整连麦用户的左边距和上边距就可以解决问题一。&lt;br&gt;&lt;img src=&quot;/../images/guestlive-stream2.png&quot; alt=&quot;guestlive-stream2&quot;&gt;&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; aw = &lt;span class=&quot;number&quot;&gt;480&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 主播的宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; ah = &lt;span class=&quot;number&quot;&gt;960&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 主播的高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; gw = &lt;span class=&quot;number&quot;&gt;160&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 连麦用户的宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; gh = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 连麦用户的高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; leftMargin = aw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; * (aw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - gw) / &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 连麦用户的左边距&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; topMargin = ah / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * (ah / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - gh) / &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 连麦用户的上边距&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;接下来看看问题二，合图被裁剪有种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;合图高宽比大于屏幕高宽比，基于屏幕宽等比例拉伸，垂直方向裁剪&lt;br&gt;&lt;img src=&quot;/../images/guestlive-adapter-vertical.png&quot; alt=&quot;guestlive-adapter-vertical&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;合图高宽比小于屏幕高宽比，基于屏幕高等比例拉伸，水平方向被裁剪&lt;br&gt;&lt;img src=&quot;/../images/guestlive-adapter-horizontal.png&quot; alt=&quot;guestlive-adapter-horizontal&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基于旁路推流参数和合图被裁剪的分析，可以得出连麦用户和连麦UI窗口的吻合参数：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; aRatio = (&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) ah / aw; &lt;span class=&quot;comment&quot;&gt;// 合图高宽比&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; sRatio = (&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) sh / sw; &lt;span class=&quot;comment&quot;&gt;// 屏幕高宽比&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; leftMargin; &lt;span class=&quot;comment&quot;&gt;// 连麦UI窗口的左边距&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; topMargin; &lt;span class=&quot;comment&quot;&gt;// 连麦UI窗口的上边距&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; scaleGw; &lt;span class=&quot;comment&quot;&gt;// 拉伸后的连麦UI窗口宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; scaleGh; &lt;span class=&quot;comment&quot;&gt;// 拉伸后的连麦UI窗口高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (aRatio &amp;gt; sRatio) &amp;#123; &lt;span class=&quot;comment&quot;&gt;// 合图高宽比大于屏幕高宽比&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; scaleRatio = (&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) sw / aw;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; scaleAw = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * aw);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; scaleAh = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * ah);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scaleGw = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * gw);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scaleGh = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * gh);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    leftMargin = scaleAw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; * (scaleAw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - scaleGw) / &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    topMargin = scaleAh / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * (scaleAh / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - scaleGh) / &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; - (scaleAh - sh) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (aRatio &amp;lt; sRatio) &amp;#123; &lt;span class=&quot;comment&quot;&gt;// 合图高宽比小于屏幕高宽比&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; scaleRatio = (&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) sh / ah; &lt;span class=&quot;comment&quot;&gt;// 小窗口缩放比&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; scaleAw = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * aw);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; scaleAh = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * ah);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scaleGw = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * gw);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scaleGh = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * gh);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    leftMargin = scaleAw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; * (scaleAw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - scaleGw) / &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt; - (scaleAw - sw) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    topMargin = scaleAh / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * (scaleAh / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - scaleGh) / &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123; &lt;span class=&quot;comment&quot;&gt;// 合图高宽比等于屏幕高宽比&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; scaleRatio = (&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) sw / aw;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; scaleAw = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * aw);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; scaleAh = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * ah);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scaleGw = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * gw);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scaleGh = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) (scaleRatio * gh);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    leftMargin = scaleAw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; * (scaleAw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - scaleGw) / &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    topMargin = scaleAh / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * (scaleAh / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - scaleGh) / &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;连麦合图有两个方案，一是云端合图，二是 App 端合图，一般推荐使用云端合图，因为 App 端合图要多路播放，对手机性能要求较高。&lt;/p&gt;
+&lt;p&gt;连麦的界面布局一般是大小屏，如下图：&lt;br&gt;&lt;img src=&quot;/../images/guestlive-stream1.png
+    
+    </summary>
+    
+      <category term="音视频开发" scheme="http://xiamianyu.github.io/categories/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="http://xiamianyu.github.io/tags/Android/"/>
+    
+      <category term="连麦" scheme="http://xiamianyu.github.io/tags/%E8%BF%9E%E9%BA%A6/"/>
+    
+      <category term="音视频开发" scheme="http://xiamianyu.github.io/tags/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>做 Android 马甲的一些心得体会</title>
@@ -1274,59 +1317,6 @@
       <category term="Jenkins" scheme="http://xiamianyu.github.io/tags/Jenkins/"/>
     
       <category term="自动化构建" scheme="http://xiamianyu.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>项目发布规范</title>
-    <link href="http://xiamianyu.github.io/2016/12/17/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E8%A7%84%E8%8C%83/"/>
-    <id>http://xiamianyu.github.io/2016/12/17/项目发布规范/</id>
-    <published>2016-12-17T06:54:45.000Z</published>
-    <updated>2016-12-19T06:39:12.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;u7248_u672C_u540D_u79F0&quot;&gt;&lt;a href=&quot;#u7248_u672C_u540D_u79F0&quot; class=&quot;headerlink&quot; title=&quot;版本名称&quot;&gt;&lt;/a&gt;版本名称&lt;/h2&gt;&lt;h3 id=&quot;alpha&quot;&gt;&lt;a href=&quot;#alpha&quot; class=&quot;headerlink&quot; title=&quot;alpha&quot;&gt;&lt;/a&gt;alpha&lt;/h3&gt;&lt;p&gt;该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  &lt;/p&gt;
-&lt;h3 id=&quot;beta&quot;&gt;&lt;a href=&quot;#beta&quot; class=&quot;headerlink&quot; title=&quot;beta&quot;&gt;&lt;/a&gt;beta&lt;/h3&gt;&lt;p&gt;该版本相对于 alpha 版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。这一版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将结果反馈给开发者，开发者们再进行有针对性的修改。该版本也不适合一般用户安装。  &lt;/p&gt;
-&lt;h3 id=&quot;release&quot;&gt;&lt;a href=&quot;#release&quot; class=&quot;headerlink&quot; title=&quot;release&quot;&gt;&lt;/a&gt;release&lt;/h3&gt;&lt;p&gt;该版本意味「最终释放版」，在出了一系列的测试版之后，终归会有一个正式版本，对于用户而言，购买该版本的软件绝对不会错。该版本有时也称为标准版。&lt;/p&gt;
-&lt;h2 id=&quot;versionCode__26amp_3B_versionName&quot;&gt;&lt;a href=&quot;#versionCode__26amp_3B_versionName&quot; class=&quot;headerlink&quot; title=&quot;versionCode &amp;amp; versionName&quot;&gt;&lt;/a&gt;versionCode &amp;amp; versionName&lt;/h2&gt;&lt;h3 id=&quot;versionCode&quot;&gt;&lt;a href=&quot;#versionCode&quot; class=&quot;headerlink&quot; title=&quot;versionCode&quot;&gt;&lt;/a&gt;versionCode&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;类型：MAXINT(2e31 = 2147483647)&lt;br&gt;作用：标识 App 内部版本，仅对开发人员可见&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;每次发布 &lt;strong&gt;release&lt;/strong&gt; 版本时累加1，长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。Android 中，不允许对 &lt;code&gt;versionCode&lt;/code&gt; 做降级处理，否则覆盖安装失败。&lt;/p&gt;
-&lt;h2 id=&quot;versionName&quot;&gt;&lt;a href=&quot;#versionName&quot; class=&quot;headerlink&quot; title=&quot;versionName&quot;&gt;&lt;/a&gt;versionName&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;类型：String&lt;br&gt;格式：&amp;lt;主版本号&amp;gt;.&amp;lt;子版本号&amp;gt;.&amp;lt;修订版本号&amp;gt;[.内部测试版本号]&lt;br&gt;作用：标识 App 版本，对用户可见，即应用商店上的版本  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;u4E3B_u7248_u672C_u53F7&quot;&gt;&lt;a href=&quot;#u4E3B_u7248_u672C_u53F7&quot; class=&quot;headerlink&quot; title=&quot;主版本号&quot;&gt;&lt;/a&gt;主版本号&lt;/h3&gt;&lt;p&gt;进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1，子版本号和修订版本号复位为 0。&lt;/p&gt;
-&lt;h3 id=&quot;u5B50_u7248_u672C_u53F7&quot;&gt;&lt;a href=&quot;#u5B50_u7248_u672C_u53F7&quot; class=&quot;headerlink&quot; title=&quot;子版本号&quot;&gt;&lt;/a&gt;子版本号&lt;/h3&gt;&lt;p&gt;增加了部分功能或同时修复上个版本 bug 时，子版本号加 1，修订版本号复位为 0。  &lt;/p&gt;
-&lt;h3 id=&quot;u4FEE_u8BA2_u7248_u672C_u53F7&quot;&gt;&lt;a href=&quot;#u4FEE_u8BA2_u7248_u672C_u53F7&quot; class=&quot;headerlink&quot; title=&quot;修订版本号&quot;&gt;&lt;/a&gt;修订版本号&lt;/h3&gt;&lt;p&gt;针对上个版本修复 bug, 修订版本号加 1。  &lt;/p&gt;
-&lt;h3 id=&quot;u5185_u90E8_u6D4B_u8BD5_u7248_u672C_u53F7&quot;&gt;&lt;a href=&quot;#u5185_u90E8_u6D4B_u8BD5_u7248_u672C_u53F7&quot; class=&quot;headerlink&quot; title=&quot;内部测试版本号&quot;&gt;&lt;/a&gt;内部测试版本号&lt;/h3&gt;&lt;p&gt;为方便测试人员识别每一次测试的版本，只在 alpha 期间显示该版本号。&lt;/p&gt;
-&lt;h2 id=&quot;u7B2C_u4E00_u4E2A_release__u7248_u672C&quot;&gt;&lt;a href=&quot;#u7B2C_u4E00_u4E2A_release__u7248_u672C&quot; class=&quot;headerlink&quot; title=&quot;第一个 release 版本&quot;&gt;&lt;/a&gt;第一个 release 版本&lt;/h2&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;versionCode = &quot;1&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;versionName = &quot;1.0.0&quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;u5B89_u88C5_u5305_u540D_u79F0&quot;&gt;&lt;a href=&quot;#u5B89_u88C5_u5305_u540D_u79F0&quot; class=&quot;headerlink&quot; title=&quot;安装包名称&quot;&gt;&lt;/a&gt;安装包名称&lt;/h2&gt;&lt;h3 id=&quot;alpha-1&quot;&gt;&lt;a href=&quot;#alpha-1&quot; class=&quot;headerlink&quot; title=&quot;alpha&quot;&gt;&lt;/a&gt;alpha&lt;/h3&gt;&lt;p&gt;语法: &lt;code&gt;&amp;lt;appName&amp;gt;_&amp;lt;versionName&amp;gt;_&amp;lt;buildDate&amp;gt;_alpha.apk&lt;/code&gt;&lt;br&gt;示例: &lt;code&gt;news_v2.1.2.2_2015-09-30_alpha.apk&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;beta-1&quot;&gt;&lt;a href=&quot;#beta-1&quot; class=&quot;headerlink&quot; title=&quot;beta&quot;&gt;&lt;/a&gt;beta&lt;/h3&gt;&lt;p&gt;语法: &lt;code&gt;&amp;lt;appName&amp;gt;_&amp;lt;versionName&amp;gt;_&amp;lt;buildDate&amp;gt;_beta.apk&lt;/code&gt;&lt;br&gt;示例: &lt;code&gt;news_v2.1.1_2015-09-30_beta.apk&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;release-1&quot;&gt;&lt;a href=&quot;#release-1&quot; class=&quot;headerlink&quot; title=&quot;release&quot;&gt;&lt;/a&gt;release&lt;/h3&gt;&lt;h4 id=&quot;u591A_u6E20_u9053&quot;&gt;&lt;a href=&quot;#u591A_u6E20_u9053&quot; class=&quot;headerlink&quot; title=&quot;多渠道&quot;&gt;&lt;/a&gt;多渠道&lt;/h4&gt;&lt;p&gt;语法: &lt;code&gt;&amp;lt;appName&amp;gt;_&amp;lt;versionName&amp;gt;_&amp;lt;buildDate&amp;gt;_channelName.apk&lt;/code&gt;&lt;br&gt;示例: &lt;code&gt;news_v2.1.1_2015-09-30_wandoujia.apk&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&quot;u975E_u591A_u6E20_u9053&quot;&gt;&lt;a href=&quot;#u975E_u591A_u6E20_u9053&quot; class=&quot;headerlink&quot; title=&quot;非多渠道&quot;&gt;&lt;/a&gt;非多渠道&lt;/h4&gt;&lt;p&gt;语法: &lt;code&gt;&amp;lt;appName&amp;gt;_&amp;lt;versionName&amp;gt;_&amp;lt;buildDate&amp;gt;_release.apk&lt;/code&gt;&lt;br&gt;示例: &lt;code&gt;news_v2.1.1_2015-09-30_release.apk&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;u53D1_u5E03_u524D_u68C0_u67E5_u9879&quot;&gt;&lt;a href=&quot;#u53D1_u5E03_u524D_u68C0_u67E5_u9879&quot; class=&quot;headerlink&quot; title=&quot;发布前检查项&quot;&gt;&lt;/a&gt;发布前检查项&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;服务器地址已改为正式？&lt;/li&gt;
-&lt;li&gt;调试日志（含第三方SDK）已关闭？&lt;/li&gt;
-&lt;li&gt;第三方SDK已授权正式版权限?&lt;/li&gt;
-&lt;li&gt;支付宝、微信支付金额已改为正式价格？&lt;/li&gt;
-&lt;li&gt;支付流程已跑通？&lt;/li&gt;
-&lt;li&gt;签名已改为正式？&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;versionCode&lt;/code&gt; 和 &lt;code&gt;versionName&lt;/code&gt; 已修改？&lt;/li&gt;
-&lt;li&gt;安装包命名已修改？&lt;/li&gt;
-&lt;li&gt;已做覆盖或升级安装测试？&lt;/li&gt;
-&lt;li&gt;已通过测试人员测试？&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;u7248_u672C_u540D_u79F0&quot;&gt;&lt;a href=&quot;#u7248_u672C_u540D_u79F0&quot; class=&quot;headerlink&quot; title=&quot;版本名称&quot;&gt;&lt;/a&gt;版本名称&lt;/h2&gt;&lt;h3 id=&quot;alpha&quot;&gt;&lt;a href=&quot;#al
-    
-    </summary>
-    
-      <category term="团队建设" scheme="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
-    
-    
-      <category term="团队建设" scheme="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
     
   </entry>
   

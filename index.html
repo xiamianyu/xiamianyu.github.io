@@ -219,6 +219,126 @@
             
               
                 
+                <a class="post-title-link" href="/2020/06/21/Android 连麦云端合图实践/" itemprop="url">
+                  Android 连麦云端合图实践
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2020-06-21T16:00:59+08:00" content="2020-06-21">
+              2020-06-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/音视频开发/" itemprop="url" rel="index">
+                    <span itemprop="name">音视频开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          连麦合图有两个方案，一是云端合图，二是 App 端合图，一般推荐使用云端合图，因为 App 端合图要多路播放，对手机性能要求较高。
+连麦的界面布局一般是大小屏，如下图：
+这里有两个问题需要解决：
+
+手机分辨率碎片化严重，合图会被裁剪，怎么避免连麦用户被裁剪？
+连麦用户和连麦UI窗口如何吻合？
+
+从友盟全域罗盘中了解到，Android 手机分辨率高宽比在 1.7 ~ 2.1 之间，未来手机分辨率高宽比呈增大趋势。连麦用户放置在右下角时，其右边比底部更容易被裁剪，所以在旁路推流参数中，主播宽高比应该接近 2.1。在实践中发现，将主播的分辨率设为 960x480，连麦用户的分辨率设为 200x160，再调整连麦用户的左边距和上边距就可以解决问题一。123456int aw = 480; // 主播的宽度int ah = 960; // 主播的高度int gw = 160; // 连麦用户的宽度int gh = 200; // 连麦用户的高度int leftMargin = aw / 2 + 5 * (aw / 2 - gw) / 6; // 连麦用户的左边距int topMargin = a
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2020/06/21/Android 连麦云端合图实践/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2019/09/03/做Android马甲的一些心得体会/" itemprop="url">
                   做 Android 马甲的一些心得体会
                 </a>
@@ -1312,122 +1432,6 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/21/Java-泛型-泛型边界/" itemprop="url">
-                  Java 泛型-泛型边界
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-10-21T12:08:44+08:00" content="2017-10-21">
-              2017-10-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，这时就会用到泛型边界。使用泛型边界很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。
-泛型类型边界声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。需要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。
-我们看下面一个例子：
-1234567891011121314151617181920212223public class Box&lt;T&gt; &#123;    private T t;    public void set(T t) &#123;        this.t = t;    &#125;    public T get() &#123;        return t;    &#125;    public &lt;U extends Number&gt; void inspect(U u)&#123;        System.out.println("T: " + 
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/10/21/Java-泛型-泛型边界/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1473,7 +1477,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1481,7 +1485,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1490,7 +1494,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

@@ -219,6 +219,125 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/17/项目发布规范/" itemprop="url">
+                  项目发布规范
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-12-17T14:54:45+08:00" content="2016-12-17">
+              2016-12-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/团队建设/" itemprop="url" rel="index">
+                    <span itemprop="name">团队建设</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          版本名称alpha该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  
+beta该版本相对于 alpha 版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。这一版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将结果反馈给开发者，开发者们再进行有针对性的修改。该版本也不适合一般用户安装。  
+release该版本意味「最终释放版」，在出了一系列的测试版之后，终归会有一个正式版本，对于用户而言，购买该版本的软件绝对不会错。该版本有时也称为标准版。
+versionCode &amp; versionNameversionCode
+类型：MAXINT(2e31 = 2147483647)作用：标识 App 内部版本，仅对开发人员可见
+
+每次发布 release 版本时累加1，长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。Android 中，不允许对 versi
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/17/项目发布规范/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/12/17/初尝 TeamLeader/" itemprop="url">
                   初尝 TeamLeader
                 </a>
@@ -1289,130 +1408,6 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/16/用户登录设计/" itemprop="url">
-                  用户登录设计
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-16T10:02:46+08:00" content="2016-04-16">
-              2016-04-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/项目总结/" itemprop="url" rel="index">
-                    <span itemprop="name">项目总结</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          用户登录，一个很熟悉的名字，然而有多少人能把它做好呢？在看「App研发录」之前，我也是对用户登录这块很苦恼，苦恼的原因是，不知道怎样更好地设计用户信息，怎样做自动登录，怎么应付登录成功后的各种场景等，然而这些问题，「App研发录」里都有相应的方案。所以这周的团队技术分享会拿出来跟大家分享，虽然不是什么高大上的东西，但是却很重要！以下内容大部分来自「App研发录」，有些做了细化，有助大家理解。
-登录和注册登录和注册就像一双筷子，缺一不可。
-登录的作用
-
-注册的形式
-有些 App 是给专门的人用的，只有登录界面，账号是在服务器注册。
-
-这样，登录和注册可以这样划分：
-
-用户信息的处理如果登录只是作为程序的入口，那么登录成功后的用户信息基本很少用到，这时候我们一般的做法是把它序列化到本地，需要的时候再取出来。但更多时候，用户信息贯穿整个 App ，很多地方都会用到，我们可以把它放在一个全局变量中以便随时存取，为了防止全局变量被内存回收，还得把它序列化到本地，下面是代码的设计。
-
-UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局变量。UserInfo 因 App 而异，
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/16/用户登录设计/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1458,7 +1453,7 @@ UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1466,7 +1461,7 @@ UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1475,7 +1470,7 @@ UserInfo 是登录成功返回的用户信息，User 存放用户信息的全局
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
