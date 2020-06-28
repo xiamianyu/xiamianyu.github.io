@@ -219,6 +219,123 @@
             
               
                 
+                <a class="post-title-link" href="/2017/02/14/Ubuntu下搭建Jenkins/" itemprop="url">
+                  Ubuntu 下搭建 Jenkins
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-02-14T18:17:25+08:00" content="2017-02-14">
+              2017-02-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/自动化构建/" itemprop="url" rel="index">
+                    <span itemprop="name">自动化构建</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          搭建前准备Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。
+安装 Jenkins1234$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -$ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'$ sudo apt-get update$ sudo apt-get install jenkins
+安装成功后，默认会自动开启 Jenkins 服务。在浏览器上访问 http://&lt;服务器 IP&gt;:8080 即可看到 Jenkins 的界面，接下来按照提示配置 Jenkins 即可。
+开启 Jenkins 服务失败时，在 /var/log/jenkins/jenkins.log 中查看出错日志。
+启动
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/14/Ubuntu下搭建Jenkins/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/12/17/项目发布规范/" itemprop="url">
                   项目发布规范
                 </a>
@@ -1289,125 +1406,6 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/06/实体化请求参数/" itemprop="url">
-                  实体化请求参数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-06T15:29:19+08:00" content="2016-05-06">
-              2016-05-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/项目总结/" itemprop="url" rel="index">
-                    <span itemprop="name">项目总结</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          找个理由获取「新闻列表」的请求地址，一般我们是这样写的：
-1String url = MobileApi.GET_NEWSES + "?channelID=" + mChannelID + "pageNo=" + mPageNo + "&amp;pageSize=30";
-这种写法其实不利于项目的后期维护，如果项目大规模地更改接口字段名，就要一个个文件去查找修改，单查找这步就消耗了很多时间，这显然不符合程序员懒惰的特性。我的做法是把请求参数实体化，并放到一个package下统一管理，以后要修改，直接去package下找到对应的参数（实体类）修改就可以了。
-实体化请求参数后的写法：
-12NewsParam param = new NewsParam(mChannelID, mPageNo);String url =  MobileApi.GET_NEWSES + ParamFormatter.toUri(param);
-具体实现假设「获取新闻列表」请求接口地址为：http:localhost/getNewses?channelID=&amp;pageNo=&amp;pageSize
-接口
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/06/实体化请求参数/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1453,7 +1451,7 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

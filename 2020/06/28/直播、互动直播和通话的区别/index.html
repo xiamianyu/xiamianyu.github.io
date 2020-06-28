@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Charles,工具," />
+  <meta name="keywords" content="音视频开发," />
 
 
 
@@ -59,31 +59,25 @@
 
 
 
-<meta name="description" content="使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：
-找到 Info.plist
-Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
-修改 Info.plist
-打开 Info.plist，找到 -Xmx256m，添加 -Dfile.encoding=UTF-8 ，重启 Charles 即可
-123">
+<meta name="description" content="直播大致可分为非交互式直播和交互式直播两类。
+非交互式直播场景：阅兵直播、NBA 直播和欧冠直播等。特点：交互性不强，允许延迟 10s 或 10s 以上。源（主播）比较少，适合做多路转码，用户可以根据网络条件观看超清、高清、标清等多路视频。
+交互式直播场景：秀场直播、游戏直播等。特点：交互性较强，要求延迟在 5s 以内。源比较多，不适合做多路转码，中间服务器只作为一个中转的角色。
+交互式直播的种类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Charles Response 中文乱码">
-<meta property="og:url" content="http://xiamianyu.github.io/2016/05/07/Charles-Response-中文乱码/index.html">
+<meta property="og:title" content="直播的种类">
+<meta property="og:url" content="http://xiamianyu.github.io/2020/06/28/直播、互动直播和通话的区别/index.html">
 <meta property="og:site_name" content="One More Try">
-<meta property="og:description" content="使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：
-找到 Info.plist
-Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
-修改 Info.plist
-打开 Info.plist，找到 -Xmx256m，添加 -Dfile.encoding=UTF-8 ，重启 Charles 即可
-123">
-<meta property="og:updated_time" content="2016-06-02T01:43:49.000Z">
+<meta property="og:description" content="直播大致可分为非交互式直播和交互式直播两类。
+非交互式直播场景：阅兵直播、NBA 直播和欧冠直播等。特点：交互性不强，允许延迟 10s 或 10s 以上。源（主播）比较少，适合做多路转码，用户可以根据网络条件观看超清、高清、标清等多路视频。
+交互式直播场景：秀场直播、游戏直播等。特点：交互性较强，要求延迟在 5s 以内。源比较多，不适合做多路转码，中间服务器只作为一个中转的角色。
+交互式直播的种类">
+<meta property="og:updated_time" content="2020-06-28T07:08:44.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Charles Response 中文乱码">
-<meta name="twitter:description" content="使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：
-找到 Info.plist
-Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
-修改 Info.plist
-打开 Info.plist，找到 -Xmx256m，添加 -Dfile.encoding=UTF-8 ，重启 Charles 即可
-123">
+<meta name="twitter:title" content="直播的种类">
+<meta name="twitter:description" content="直播大致可分为非交互式直播和交互式直播两类。
+非交互式直播场景：阅兵直播、NBA 直播和欧冠直播等。特点：交互性不强，允许延迟 10s 或 10s 以上。源（主播）比较少，适合做多路转码，用户可以根据网络条件观看超清、高清、标清等多路视频。
+交互式直播场景：秀场直播、游戏直播等。特点：交互性较强，要求延迟在 5s 以内。源比较多，不适合做多路转码，中间服务器只作为一个中转的角色。
+交互式直播的种类">
 
 
 
@@ -101,7 +95,7 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
   };
 </script>
 
-  <title> Charles Response 中文乱码 | One More Try </title>
+  <title> 直播的种类 | One More Try </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -232,7 +226,7 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
             
             
               
-                Charles Response 中文乱码
+                直播的种类
               
             
           </h1>
@@ -244,8 +238,8 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-07T11:44:01+08:00" content="2016-05-07">
-              2016-05-07
+            <time itemprop="dateCreated" datetime="2020-06-28T11:26:24+08:00" content="2020-06-28">
+              2020-06-28
             </time>
           </span>
 
@@ -258,8 +252,8 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/音视频开发/" itemprop="url" rel="index">
+                    <span itemprop="name">音视频开发</span>
                   </a>
                 </span>
 
@@ -290,13 +284,14 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
       
 
       
-        <p>使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：</p>
-<p><strong>找到 Info.plist</strong></p>
-<p>Applications -&gt; Charles -&gt; Contents -&gt; Info.plist</p>
-<p><strong>修改 Info.plist</strong></p>
-<p>打开 Info.plist，找到 <code>-Xmx256m</code>，添加 <code>-Dfile.encoding=UTF-8</code> ，重启 Charles 即可</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 修改之前 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">string</span>&gt;</span>-Xmx256m<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 修改之后 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">string</span>&gt;</span>-Xmx256m -Dfile.encoding=UTF-8<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>参考</strong><br><a href="http://blog.csdn.net/huanghr_1/article/details/39735335" target="_blank" rel="external">http://blog.csdn.net/huanghr_1/article/details/39735335</a></p>
+        <p>直播大致可分为非交互式直播和交互式直播两类。</p>
+<p><strong>非交互式直播</strong><br>场景：阅兵直播、NBA 直播和欧冠直播等。<br>特点：交互性不强，允许延迟 10s 或 10s 以上。源（主播）比较少，适合做多路转码，用户可以根据网络条件观看超清、高清、标清等多路视频。</p>
+<p><strong>交互式直播</strong><br>场景：秀场直播、游戏直播等。<br>特点：交互性较强，要求延迟在 5s 以内。源比较多，不适合做多路转码，中间服务器只作为一个中转的角色。</p>
+<p><strong>交互式直播的种类</strong><br>1）直播<br>场景：秀场直播、游戏直播等；<br>特点：一个推流端（主播），多个拉流端（观众）。</p>
+<p>2）互动直播<br>互动直播是在实时音视频的基础上，增加观众与主播，或主播与主播的连麦互动，并通过旁路直播的方式直播。因此在互动直播中，主播与连麦者之间延迟与实时音视频一致，而主播/连麦者与普通观众之间的延时则与普通直播相同。</p>
+<p><strong>实时音视频</strong><br>场景：音视频通话，适用于多人群组通话，如QQ通话、微信通话等；<br>特点：多个推流端。和互动直播不同，实时音视频不区分主播和观众，所有用户都可以发言。</p>
+<p><strong>旁路直播</strong><br>旁路直播是将主副播实时音视频通话时整个房间的画面复制一份到云端进行混流，并将混流后的画面推流给直播系统的工作方式。因混流后的数据流和主副播通话并不是同一路流，而是在平行的一路，因而称为旁路。</p>
+<p><strong>参考</strong><br>1）<a href="https://book.douban.com/subject/30124646/" target="_blank" rel="external">音视频开发进阶指南</a><br>2）<a href="https://blog.csdn.net/kaida1234/article/details/105117742" target="_blank" rel="external">直播、互动直播、实时音视频、旁路直播的区别以及联系？</a></p>
 
       
     </div>
@@ -311,9 +306,7 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
       
         <div class="post-tags">
           
-            <a href="/tags/Charles/" rel="tag">#Charles</a>
-          
-            <a href="/tags/工具/" rel="tag">#工具</a>
+            <a href="/tags/音视频开发/" rel="tag">#音视频开发</a>
           
         </div>
       
@@ -322,17 +315,13 @@ Applications -&amp;gt; Charles -&amp;gt; Contents -&amp;gt; Info.plist
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/06/实体化请求参数/" rel="next" title="实体化请求参数">
-                <i class="fa fa-chevron-left"></i> 实体化请求参数
+              <a href="/2020/06/21/Android 连麦云端合图实践/" rel="next" title="Android 连麦云端合图实践">
+                <i class="fa fa-chevron-left"></i> Android 连麦云端合图实践
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/25/新闻客户端-保存列表状态/" rel="prev" title="新闻客户端-保存列表状态">
-                新闻客户端-保存列表状态 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
