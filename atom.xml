@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2020-06-25T22:56:34.591Z</updated>
+  <updated>2020-06-28T02:05:32.248Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xiamianyu.github.io/2020/06/21/Android%20%E8%BF%9E%E9%BA%A6%E4%BA%91%E7%AB%AF%E5%90%88%E5%9B%BE%E5%AE%9E%E8%B7%B5/"/>
     <id>http://xiamianyu.github.io/2020/06/21/Android 连麦云端合图实践/</id>
     <published>2020-06-21T08:00:59.000Z</published>
-    <updated>2020-06-25T22:56:34.591Z</updated>
+    <updated>2020-06-28T02:05:32.248Z</updated>
     
     <content type="html">&lt;p&gt;连麦合图有两个方案，一是云端合图，二是 App 端合图，一般推荐使用云端合图，因为 App 端合图要多路播放，对手机性能要求较高。&lt;/p&gt;
 &lt;p&gt;连麦的界面布局一般是大小屏，如下图：&lt;br&gt;&lt;img src=&quot;/../images/guestlive-stream1.png&quot; alt=&quot;guestlive-stream1&quot;&gt;&lt;/p&gt;
@@ -30,7 +30,7 @@
 &lt;li&gt;连麦用户和连麦UI窗口如何吻合？&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;从友盟全域罗盘中了解到，Android 手机分辨率高宽比在 1.7 ~ 2.1 之间，未来手机分辨率高宽比呈增大趋势。连麦用户放置在右下角时，其右边比底部更容易被裁剪，所以在旁路推流参数中，主播宽高比应该接近 2.1。在实践中发现，将主播的分辨率设为 960x480，连麦用户的分辨率设为 200x160，再调整连麦用户的左边距和上边距就可以解决问题一。&lt;br&gt;&lt;img src=&quot;/../images/guestlive-stream2.png&quot; alt=&quot;guestlive-stream2&quot;&gt;&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; aw = &lt;span class=&quot;number&quot;&gt;480&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 主播的宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; ah = &lt;span class=&quot;number&quot;&gt;960&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 主播的高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; gw = &lt;span class=&quot;number&quot;&gt;160&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 连麦用户的宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; gh = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 连麦用户的高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; leftMargin = aw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; * (aw / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - gw) / &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 连麦用户的左边距&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; topMargin = ah / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * (ah / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; - gh) / &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 连麦用户的上边距&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;接下来看看问题二，合图被裁剪有种情况：&lt;/p&gt;
+&lt;p&gt;接下来看看问题二，合图被裁剪有两种情况：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;合图高宽比大于屏幕高宽比，基于屏幕宽等比例拉伸，垂直方向裁剪&lt;br&gt;&lt;img src=&quot;/../images/guestlive-adapter-vertical.png&quot; alt=&quot;guestlive-adapter-vertical&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;

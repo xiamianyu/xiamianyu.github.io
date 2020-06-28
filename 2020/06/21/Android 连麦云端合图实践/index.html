@@ -83,7 +83,7 @@
 <meta property="og:image" content="http://xiamianyu.github.io/../images/guestlive-stream2.png">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/guestlive-adapter-vertical.png">
 <meta property="og:image" content="http://xiamianyu.github.io/../images/guestlive-adapter-horizontal.png">
-<meta property="og:updated_time" content="2020-06-25T22:56:34.591Z">
+<meta property="og:updated_time" content="2020-06-28T02:05:32.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 连麦云端合图实践">
 <meta name="twitter:description" content="连麦合图有两个方案，一是云端合图，二是 App 端合图，一般推荐使用云端合图，因为 App 端合图要多路播放，对手机性能要求较高。
@@ -308,7 +308,7 @@
 <li>连麦用户和连麦UI窗口如何吻合？</li>
 </ol>
 <p>从友盟全域罗盘中了解到，Android 手机分辨率高宽比在 1.7 ~ 2.1 之间，未来手机分辨率高宽比呈增大趋势。连麦用户放置在右下角时，其右边比底部更容易被裁剪，所以在旁路推流参数中，主播宽高比应该接近 2.1。在实践中发现，将主播的分辨率设为 960x480，连麦用户的分辨率设为 200x160，再调整连麦用户的左边距和上边距就可以解决问题一。<br><img src="/../images/guestlive-stream2.png" alt="guestlive-stream2"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> aw = <span class="number">480</span>; <span class="comment">// 主播的宽度</span></span><br><span class="line"><span class="keyword">int</span> ah = <span class="number">960</span>; <span class="comment">// 主播的高度</span></span><br><span class="line"><span class="keyword">int</span> gw = <span class="number">160</span>; <span class="comment">// 连麦用户的宽度</span></span><br><span class="line"><span class="keyword">int</span> gh = <span class="number">200</span>; <span class="comment">// 连麦用户的高度</span></span><br><span class="line"><span class="keyword">int</span> leftMargin = aw / <span class="number">2</span> + <span class="number">5</span> * (aw / <span class="number">2</span> - gw) / <span class="number">6</span>; <span class="comment">// 连麦用户的左边距</span></span><br><span class="line"><span class="keyword">int</span> topMargin = ah / <span class="number">2</span> + <span class="number">2</span> * (ah / <span class="number">2</span> - gh) / <span class="number">5</span>; <span class="comment">// 连麦用户的上边距</span></span><br></pre></td></tr></table></figure></p>
-<p>接下来看看问题二，合图被裁剪有种情况：</p>
+<p>接下来看看问题二，合图被裁剪有两种情况：</p>
 <ol>
 <li><p>合图高宽比大于屏幕高宽比，基于屏幕宽等比例拉伸，垂直方向裁剪<br><img src="/../images/guestlive-adapter-vertical.png" alt="guestlive-adapter-vertical"></p>
 </li>
