@@ -219,6 +219,123 @@
             
               
                 
+                <a class="post-title-link" href="/2017/10/23/Java-泛型-类型推断/" itemprop="url">
+                  Java 泛型-类型推断
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-23T19:09:13+08:00" content="2017-10-23">
+              2017-10-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
+为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型：
+12345static &lt;T&gt; T pick(T a1, T a2) &#123;     return a2; &#125;Serializable s = pick("d", new ArrayList&lt;String&gt;());
+类型推断和泛型方法引入类型推断的泛型方法，能够让你像调用普通方法一样调用泛型方法，而不需要在尖括号中指定类型。思考下面的例子，BoxDemo，它需要 Box 类。
+12345678910111213141516171819202122232425262728public class BoxDemo &#123;  public stati
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/23/Java-泛型-类型推断/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/10/22/Java-泛型-继承和子类型/" itemprop="url">
                   Java 泛型-继承和子类型
                 </a>
@@ -1300,126 +1417,6 @@ import 语句
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/22/搭建Android自动化构建平台/" itemprop="url">
-                  搭建 Android 自动化构建平台
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-02-22T22:13:21+08:00" content="2017-02-22">
-              2017-02-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/自动化构建/" itemprop="url" rel="index">
-                    <span itemprop="name">自动化构建</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          平台选择根据团队的情况，我们选择 Jenkins + Git + Gogs + Gradle + Ubuntu 来搭建 Android 自动化构建平台。
-需要的硬件资源：一台装有 Ubuntu 系统的主机。
-环境配置远程登录通用 SSH 远程登录的方式进入装有 Ubuntu 系统的主机：
-1$ ssh ubuntu@192.168.1.253
-配置 Android SDK下载 SDK进入 Ubuntu 后，可选择下面其中一种方式下载 Android SDK，下载成功后将压缩包的内容解压到 android/sdk 目录下。
-官网下载1$ curl http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz --output android/sdk
-官网下载的 SDK，在运行过程中会报两个异常：
-异常一1Ionic build error : You have not accepted the license agreements of the following SDK components: [Android SDK Platf
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/22/搭建Android自动化构建平台/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1465,7 +1462,7 @@ import 语句
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1482,7 +1479,7 @@ import 语句
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1546,7 +1543,7 @@ import 语句
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -219,6 +219,123 @@
             
               
                 
+                <a class="post-title-link" href="/2021/01/04/按需下载Android源码/" itemprop="url">
+                  按需下载Android源码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2021-01-04T11:00:38+08:00" content="2021-01-04">
+              2021-01-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Android每个版本的源码大小都是巨大的，特别占存储空间，如果要编译源码，那只能下载完整的源码，而如果只是想看源码，个人建议按需下载，下载想看的模块即可，这样可以节省很多存储空间。由于Android源码各个模块是分仓库管理的，仓库特别多，直接用Git来管理会比较麻烦，为此Google开发了Repo工具，Repo在Git的基础上封装了管理源码的操作，使源码管理更容易了。下面是按需下载Android源码的步骤：
+下载Repo工具12curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o repochmod +x repo
+为了方便使用Repo，可以将其添加到PATH里。
+建立工作目录12mkdir WORKING_DIRECTORYcd WORKING_DIRECTORY
+初始化仓库一般而言，我们只需要下载某个特定的Android版本（版本列表）：1repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-4.0
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2021/01/04/按需下载Android源码/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2020/06/28/直播、互动直播和通话的区别/" itemprop="url">
                   直播的种类
                 </a>
@@ -1317,123 +1434,6 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/23/Java-泛型-类型推断/" itemprop="url">
-                  Java 泛型-类型推断
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-10-23T19:09:13+08:00" content="2017-10-23">
-              2017-10-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。
-为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型：
-12345static &lt;T&gt; T pick(T a1, T a2) &#123;     return a2; &#125;Serializable s = pick("d", new ArrayList&lt;String&gt;());
-类型推断和泛型方法引入类型推断的泛型方法，能够让你像调用普通方法一样调用泛型方法，而不需要在尖括号中指定类型。思考下面的例子，BoxDemo，它需要 Box 类。
-12345678910111213141516171819202122232425262728public class BoxDemo &#123;  public stati
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/10/23/Java-泛型-类型推断/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1479,7 +1479,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1496,7 +1496,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1560,7 +1560,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -219,6 +219,126 @@
             
               
                 
+                <a class="post-title-link" href="/2017/02/22/搭建Android自动化构建平台/" itemprop="url">
+                  搭建 Android 自动化构建平台
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-02-22T22:13:21+08:00" content="2017-02-22">
+              2017-02-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/自动化构建/" itemprop="url" rel="index">
+                    <span itemprop="name">自动化构建</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          平台选择根据团队的情况，我们选择 Jenkins + Git + Gogs + Gradle + Ubuntu 来搭建 Android 自动化构建平台。
+需要的硬件资源：一台装有 Ubuntu 系统的主机。
+环境配置远程登录通用 SSH 远程登录的方式进入装有 Ubuntu 系统的主机：
+1$ ssh ubuntu@192.168.1.253
+配置 Android SDK下载 SDK进入 Ubuntu 后，可选择下面其中一种方式下载 Android SDK，下载成功后将压缩包的内容解压到 android/sdk 目录下。
+官网下载1$ curl http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz --output android/sdk
+官网下载的 SDK，在运行过程中会报两个异常：
+异常一1Ionic build error : You have not accepted the license agreements of the following SDK components: [Android SDK Platf
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/22/搭建Android自动化构建平台/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/02/14/Ubuntu下搭建Jenkins/" itemprop="url">
                   Ubuntu 下搭建 Jenkins
                 </a>
@@ -1286,126 +1406,6 @@ Unix/Linux1~/.smartgit/
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/07/Charles-Response-中文乱码/" itemprop="url">
-                  Charles Response 中文乱码
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-07T11:44:01+08:00" content="2016-05-07">
-              2016-05-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          使用 Charles Http 抓包时，Response 中文显示乱码，解决方案如下：
-找到 Info.plist
-Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
-修改 Info.plist
-打开 Info.plist，找到 -Xmx256m，添加 -Dfile.encoding=UTF-8 ，重启 Charles 即可
-12345&lt;!-- 修改之前 --&gt;&lt;string&gt;-Xmx256m&lt;/string&gt;&lt;!-- 修改之后 --&gt;&lt;string&gt;-Xmx256m -Dfile.encoding=UTF-8&lt;/string&gt;
-参考http://blog.csdn.net/huanghr_1/article/details/39735335
-
-          
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/07/Charles-Response-中文乱码/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1451,7 +1451,7 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1468,7 +1468,7 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1532,7 +1532,7 @@ Applications -&gt; Charles -&gt; Contents -&gt; Info.plist
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
