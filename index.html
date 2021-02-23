@@ -219,6 +219,269 @@
             
               
                 
+                <a class="post-title-link" href="/2021/02/18/Java-Lambda/" itemprop="url">
+                  Java Lambda
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2021-02-18T20:00:50+08:00" content="2021-02-18">
+              2021-02-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          背景Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。
+函数式接口Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。
+Java 8 为函数式接口提供了 @FunctionalInterface 注解，作用于类型，指定该接口必须是函数式接口。
+Lambda 表达式语法Lambda 表达式语法由形参列表、箭头和代码块三部分构成：
+
+
+
+形参列表
+箭头
+代码块
+
+
+
+
+(int x, int y)
+-&gt;
+x + y
+
+
+
+形参列表形参列表允许省略形参参数。如果形参列表中只有一个参数，可以省略圆括号。
+箭头-&gt;：由英文中划线和大于号组成
+代码块
+只有一条语句时，可省略代码块的花括号；
+只有一条 return 语句时，可省略 return 关键字。
+
+代码示例1234567891011// Anonymous RunnableRun
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2021/02/18/Java-Lambda/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2021/01/12/使用Logcat显示和过滤/" itemprop="url">
+                  使用Logcat显示和过滤
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2021-01-12T14:55:36+08:00" content="2021-01-12">
+              2021-01-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          前段时间帮同事排查一个不易复现的闪退，而IDE又经常抽风，闪退日志不翼而飞，有没有一定会捕捉到闪退日志的方法呢？—— 使用adb logcat来捕捉。
+使用过adb logcat的同学会发现，如果直接敲adb logcat，往往马上就会看到一大段无关的日志，特别影响排查，怎么办呢？这就得了解一下Android的日志系统了。
+传统日志系统是从用户空间切换至内核空间，在内核空间执行磁盘IO操作，而Android日志系统是从用户空间切换至内核空间，直接内存操作，以环形缓冲区和日志分类来管理日志，如果想详细了解Android日志系统，可参考老罗的文章。
+Android日志分为四种：
+
+Main，记录应用程序类型日志，次要，文本格式/dev/log/main
+System，记录系统类型日志，重要，文本格式/dev/log/system
+Radio，记录无线相关日志，频繁 ，文本格式/dev/log/radio
+Event，记录系统事件日志，特殊用途，二进制格式/dev/log/events
+
+adb logcat会从Main里查询日志，如果你要指定
+
+          
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2021/01/12/使用Logcat显示和过滤/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2021/01/04/按需下载Android源码/" itemprop="url">
                   按需下载Android源码
                 </a>
@@ -1194,246 +1457,6 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/26/Java-泛型-类型擦除/" itemprop="url">
-                  Java 泛型-类型擦除
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-10-26T20:41:46+08:00" content="2017-10-26">
-              2017-10-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          泛型被引入到 Java 语言中，以便在编译时提供更严格的类型检查，并支持泛型编程。为了落实泛型，Java 编译器使用了类型擦除：
-
-使用泛型边界或 Object（如果没有边界）来替换泛型类型中的所有类型参数。因此，产生的字节码只包含普通类、接口和方法。
-如果需要，插入类型强制转换以保护类型安全。
-在扩展泛型类型中生成桥梁方法以保存多态性。
-
-类型擦除确保没有为参数化类型创建新类，因此，泛型不会产生运行时开销。
-泛型类型的擦除在类型擦除过程中，Java 编译器会擦除所有的类型参数，如果类型参数是有边界的，则将它的第一个边界来替换每一个类型参数，如果类型参数是无界的，则将 Object 类型替换每一个类型参数。
-我们来看下面的这个泛型类：
-12345678910111213141516public class Node&lt;T&gt; &#123;    private T data;    private Node&lt;T&gt; next;    public Node(T data, Node&lt;T&gt; next) &#123;        this.data = da
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/10/26/Java-泛型-类型擦除/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/24/Java-泛型-通配符/" itemprop="url">
-                  Java 泛型-通配符
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-10-24T09:09:18+08:00" content="2017-10-24">
-              2017-10-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。
-下面的小节将更详细地讨论通配符，包括上界通配符、无界通配符、下界通配符等。
-上界通配符我们可以使用上界通配符来放松对变量的限制。比如我们想要编写一个在 List&lt;Integer&gt;、List&lt;Double&gt; 和 List&lt;Number&gt; 中工作的方法，就可以通过使用上界通配符来实现。
-一个上界通配符使用通配符字符（?）表示，然后跟着是 extends 关键字，最后跟着是它的上界。注意，在这里 extends 通常用于表示 extends（如在类中）或 implements（如在接口中）。
-为了编写一个方法，它的参数为 List&lt;Number&gt; 或 List&lt;Number 的子类&gt; ，我们应该指定方法的参数类型为 List&lt;? extends Number&gt;。
-思考下面的 process 方法：
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/10/24/Java-泛型-通配符/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1479,7 +1502,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-count">38</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1496,7 +1519,7 @@ Gradle通过本地电脑，从官网下载指定版本的压缩包，如：gradl
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

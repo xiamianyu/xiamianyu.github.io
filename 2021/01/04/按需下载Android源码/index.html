@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://xiamianyu.github.io/2021/01/04/按需下载Android源码/index.html">
 <meta property="og:site_name" content="One More Try">
 <meta property="og:description" content="Android每个版本的源码大小都是巨大的，特别占存储空间，如果要编译源码，那只能下载完整的源码，而如果只是想看源码，个人建议按需下载，下载想看的模块即可，这样可以节省很多存储空间。由于Android源码各个模块是分仓库管理的，仓库特别多，直接用Git来管理会比较麻烦，为此Google开发了Repo工具，Repo在Git的基础上封装了管理源码的操作，使源码管理更容易了。下面是按需下载Android">
-<meta property="og:updated_time" content="2021-01-04T03:55:38.805Z">
+<meta property="og:updated_time" content="2021-01-04T04:10:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="按需下载Android源码">
 <meta name="twitter:description" content="Android每个版本的源码大小都是巨大的，特别占存储空间，如果要编译源码，那只能下载完整的源码，而如果只是想看源码，个人建议按需下载，下载想看的模块即可，这样可以节省很多存储空间。由于Android源码各个模块是分仓库管理的，仓库特别多，直接用Git来管理会比较麻烦，为此Google开发了Repo工具，Repo在Git的基础上封装了管理源码的操作，使源码管理更容易了。下面是按需下载Android">
@@ -281,7 +281,11 @@
 <h1 id="u5EFA_u7ACB_u5DE5_u4F5C_u76EE_u5F55"><a href="#u5EFA_u7ACB_u5DE5_u4F5C_u76EE_u5F55" class="headerlink" title="建立工作目录"></a>建立工作目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir WORKING_DIRECTORY</span><br><span class="line"><span class="built_in">cd</span> WORKING_DIRECTORY</span><br></pre></td></tr></table></figure>
 <h1 id="u521D_u59CB_u5316_u4ED3_u5E93"><a href="#u521D_u59CB_u5316_u4ED3_u5E93" class="headerlink" title="初始化仓库"></a>初始化仓库</h1><p>一般而言，我们只需要下载某个特定的Android版本（<a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" target="_blank" rel="external">版本列表</a>）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-<span class="number">4.0</span>.<span class="number">1</span>_r1</span><br></pre></td></tr></table></figure></p>
 <h1 id="u6309_u9700_u4E0B_u8F7D"><a href="#u6309_u9700_u4E0B_u8F7D" class="headerlink" title="按需下载"></a>按需下载</h1><p>在<code>.repo/manifests/default.xml</code>中找到要下载模块的path，比如我想看dalvik模块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo sync dalvik</span><br></pre></td></tr></table></figure></p>
-<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><p><a href="https://source.android.com/setup/build/requirements" target="_blank" rel="external">Android源码下载要求</a><br><a href="https://source.android.com/setup/develop" target="_blank" rel="external">Android源码控制工具</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP" target="_blank" rel="external">Android镜像使用帮助</a></p>
+<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://source.android.com/setup/build/requirements" target="_blank" rel="external">Android源码下载要求</a></li>
+<li><a href="https://source.android.com/setup/develop" target="_blank" rel="external">Android源码控制工具</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP" target="_blank" rel="external">Android镜像使用帮助</a></li>
+</ul>
 
       
     </div>
@@ -314,6 +318,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/12/使用Logcat显示和过滤/" rel="prev" title="使用Logcat显示和过滤">
+                使用Logcat显示和过滤 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -381,7 +389,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-count">38</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -398,7 +406,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
