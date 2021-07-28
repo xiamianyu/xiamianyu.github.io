@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2021-07-28T06:16:08.674Z</updated>
+  <updated>2021-07-28T06:20:21.878Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://xiamianyu.github.io/2021/01/04/%E6%8C%89%E9%9C%80%E4%B8%8B%E8%BD%BDAndroid%E6%BA%90%E7%A0%81/"/>
     <id>http://xiamianyu.github.io/2021/01/04/按需下载Android源码/</id>
     <published>2021-01-04T03:00:38.000Z</published>
-    <updated>2021-07-28T06:16:08.674Z</updated>
+    <updated>2021-07-28T06:20:21.878Z</updated>
     
     <content type="html">&lt;p&gt;Android每个版本的源码大小都是巨大的，特别占存储空间，如果要编译源码，那只能下载完整的源码，而如果只是想看源码，个人建议按需下载，下载想看的模块即可，这样可以节省很多存储空间。由于Android源码各个模块是分仓库管理的，仓库特别多，直接用Git来管理会比较麻烦，为此Google开发了Repo工具，Repo在Git的基础上封装了管理源码的操作，使源码管理更容易了。下面是按需下载Android源码的步骤：&lt;/p&gt;
 &lt;h1 id=&quot;u4E0B_u8F7DRepo_u5DE5_u5177&quot;&gt;&lt;a href=&quot;#u4E0B_u8F7DRepo_u5DE5_u5177&quot; class=&quot;headerlink&quot; title=&quot;下载Repo工具&quot;&gt;&lt;/a&gt;下载Repo工具&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o repo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;chmod +x repo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;为了方便使用Repo，可以将其添加到PATH里。&lt;/p&gt;
-&lt;h1 id=&quot;u4FEE_u6539REPO_URL&quot;&gt;&lt;a href=&quot;#u4FEE_u6539REPO_URL&quot; class=&quot;headerlink&quot; title=&quot;修改REPO_URL&quot;&gt;&lt;/a&gt;修改REPO_URL&lt;/h1&gt;&lt;p&gt;用文本编辑器打开repo文件，将REPO_URL改为&lt;code&gt;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&lt;/code&gt;。&lt;/p&gt;
+&lt;h1 id=&quot;u4FEE_u6539REPO_URL&quot;&gt;&lt;a href=&quot;#u4FEE_u6539REPO_URL&quot; class=&quot;headerlink&quot; title=&quot;修改REPO_URL&quot;&gt;&lt;/a&gt;修改REPO_URL&lt;/h1&gt;&lt;p&gt;用文本编辑器打开repo文件，将REPO_URL改为:&lt;br&gt;&lt;code&gt;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&quot;u5EFA_u7ACB_u5DE5_u4F5C_u76EE_u5F55&quot;&gt;&lt;a href=&quot;#u5EFA_u7ACB_u5DE5_u4F5C_u76EE_u5F55&quot; class=&quot;headerlink&quot; title=&quot;建立工作目录&quot;&gt;&lt;/a&gt;建立工作目录&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir WORKING_DIRECTORY&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; WORKING_DIRECTORY&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;u521D_u59CB_u5316_u4ED3_u5E93&quot;&gt;&lt;a href=&quot;#u521D_u59CB_u5316_u4ED3_u5E93&quot; class=&quot;headerlink&quot; title=&quot;初始化仓库&quot;&gt;&lt;/a&gt;初始化仓库&lt;/h1&gt;&lt;p&gt;一般而言，我们只需要下载某个特定的Android版本（&lt;a href=&quot;https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds&quot;&gt;版本列表&lt;/a&gt;）：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-4.0.1_r1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h1 id=&quot;u6309_u9700_u4E0B_u8F7D&quot;&gt;&lt;a href=&quot;#u6309_u9700_u4E0B_u8F7D&quot; class=&quot;headerlink&quot; title=&quot;按需下载&quot;&gt;&lt;/a&gt;按需下载&lt;/h1&gt;&lt;p&gt;在&lt;code&gt;.repo/manifests/default.xml&lt;/code&gt;中找到要下载模块的path，比如我想看dalvik模块：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;repo sync dalvik&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
