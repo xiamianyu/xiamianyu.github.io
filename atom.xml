@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2021-02-24T08:06:50.268Z</updated>
+  <updated>2021-07-28T04:07:22.213Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -20,11 +20,12 @@
     <link href="http://xiamianyu.github.io/2021/01/04/%E6%8C%89%E9%9C%80%E4%B8%8B%E8%BD%BDAndroid%E6%BA%90%E7%A0%81/"/>
     <id>http://xiamianyu.github.io/2021/01/04/按需下载Android源码/</id>
     <published>2021-01-04T03:00:38.000Z</published>
-    <updated>2021-02-24T08:06:50.268Z</updated>
+    <updated>2021-07-28T04:07:22.213Z</updated>
     
     <content type="html">&lt;p&gt;Android每个版本的源码大小都是巨大的，特别占存储空间，如果要编译源码，那只能下载完整的源码，而如果只是想看源码，个人建议按需下载，下载想看的模块即可，这样可以节省很多存储空间。由于Android源码各个模块是分仓库管理的，仓库特别多，直接用Git来管理会比较麻烦，为此Google开发了Repo工具，Repo在Git的基础上封装了管理源码的操作，使源码管理更容易了。下面是按需下载Android源码的步骤：&lt;/p&gt;
 &lt;h1 id=&quot;u4E0B_u8F7DRepo_u5DE5_u5177&quot;&gt;&lt;a href=&quot;#u4E0B_u8F7DRepo_u5DE5_u5177&quot; class=&quot;headerlink&quot; title=&quot;下载Repo工具&quot;&gt;&lt;/a&gt;下载Repo工具&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o repo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;chmod +x repo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;为了方便使用Repo，可以将其添加到PATH里。&lt;/p&gt;
+&lt;h1 id=&quot;u4FEE_u6539REPO_URL&quot;&gt;&lt;a href=&quot;#u4FEE_u6539REPO_URL&quot; class=&quot;headerlink&quot; title=&quot;修改REPO_URL&quot;&gt;&lt;/a&gt;修改REPO_URL&lt;/h1&gt;&lt;p&gt;用文本编辑器打开repo文件，将&lt;code&gt;REPO_URL&lt;/code&gt;改为&lt;code&gt;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&quot;u5EFA_u7ACB_u5DE5_u4F5C_u76EE_u5F55&quot;&gt;&lt;a href=&quot;#u5EFA_u7ACB_u5DE5_u4F5C_u76EE_u5F55&quot; class=&quot;headerlink&quot; title=&quot;建立工作目录&quot;&gt;&lt;/a&gt;建立工作目录&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir WORKING_DIRECTORY&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; WORKING_DIRECTORY&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;u521D_u59CB_u5316_u4ED3_u5E93&quot;&gt;&lt;a href=&quot;#u521D_u59CB_u5316_u4ED3_u5E93&quot; class=&quot;headerlink&quot; title=&quot;初始化仓库&quot;&gt;&lt;/a&gt;初始化仓库&lt;/h1&gt;&lt;p&gt;一般而言，我们只需要下载某个特定的Android版本（&lt;a href=&quot;https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds&quot;&gt;版本列表&lt;/a&gt;）：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-4.0.1_r1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h1 id=&quot;u6309_u9700_u4E0B_u8F7D&quot;&gt;&lt;a href=&quot;#u6309_u9700_u4E0B_u8F7D&quot; class=&quot;headerlink&quot; title=&quot;按需下载&quot;&gt;&lt;/a&gt;按需下载&lt;/h1&gt;&lt;p&gt;在&lt;code&gt;.repo/manifests/default.xml&lt;/code&gt;中找到要下载模块的path，比如我想看dalvik模块：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;repo sync dalvik&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -55,7 +56,7 @@
     <link href="http://xiamianyu.github.io/2020/06/28/%E7%9B%B4%E6%92%AD%E3%80%81%E4%BA%92%E5%8A%A8%E7%9B%B4%E6%92%AD%E5%92%8C%E9%80%9A%E8%AF%9D%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://xiamianyu.github.io/2020/06/28/直播、互动直播和通话的区别/</id>
     <published>2020-06-28T03:26:24.000Z</published>
-    <updated>2021-02-24T08:07:12.525Z</updated>
+    <updated>2021-02-24T08:07:12.000Z</updated>
     
     <content type="html">&lt;p&gt;直播大致可分为非交互式直播和交互式直播两类。&lt;/p&gt;
 &lt;h1 id=&quot;u975E_u4EA4_u4E92_u5F0F_u76F4_u64AD&quot;&gt;&lt;a href=&quot;#u975E_u4EA4_u4E92_u5F0F_u76F4_u64AD&quot; class=&quot;headerlink&quot; title=&quot;非交互式直播&quot;&gt;&lt;/a&gt;非交互式直播&lt;/h1&gt;&lt;p&gt;场景：阅兵直播、NBA 直播和欧冠直播等。&lt;br&gt;特点：交互性不强，允许延迟 10s 或 10s 以上。源（主播）比较少，适合做多路转码，用户可以根据网络条件观看超清、高清、标清等多路视频。&lt;/p&gt;
@@ -85,7 +86,7 @@
     <link href="http://xiamianyu.github.io/2020/06/21/Android%20%E8%BF%9E%E9%BA%A6%E4%BA%91%E7%AB%AF%E5%90%88%E5%9B%BE%E5%AE%9E%E8%B7%B5/"/>
     <id>http://xiamianyu.github.io/2020/06/21/Android 连麦云端合图实践/</id>
     <published>2020-06-21T08:00:59.000Z</published>
-    <updated>2021-02-24T08:04:47.749Z</updated>
+    <updated>2021-02-24T08:04:46.000Z</updated>
     
     <content type="html">&lt;p&gt;连麦合图有两个方案，一是云端合图，二是 App 端合图，一般推荐使用云端合图，因为 App 端合图要多路播放，对手机性能要求较高。&lt;/p&gt;
 &lt;p&gt;连麦的界面布局一般是大小屏，如下图：&lt;br&gt;&lt;img src=&quot;/../images/guestlive-stream1.png&quot; alt=&quot;guestlive-stream1&quot;&gt;&lt;/p&gt;
@@ -127,7 +128,7 @@
     <link href="http://xiamianyu.github.io/2019/09/03/%E5%81%9AAndroid%E9%A9%AC%E7%94%B2%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
     <id>http://xiamianyu.github.io/2019/09/03/做Android马甲的一些心得体会/</id>
     <published>2019-09-03T04:05:56.000Z</published>
-    <updated>2021-02-24T08:06:37.423Z</updated>
+    <updated>2021-02-24T08:06:36.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u9A6C_u7532_u7684_u4F5C_u7528&quot;&gt;&lt;a href=&quot;#u9A6C_u7532_u7684_u4F5C_u7528&quot; class=&quot;headerlink&quot; title=&quot;马甲的作用&quot;&gt;&lt;/a&gt;马甲的作用&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;导量&lt;/li&gt;
@@ -234,7 +235,7 @@
     <link href="http://xiamianyu.github.io/2019/03/06/%E4%BB%A3%E7%A0%81%E6%B2%A1%E6%8E%92%E7%89%88%EF%BC%8C%E4%BA%B2%E4%BA%BA%E4%B8%A4%E8%A1%8C%E6%B3%AA/"/>
     <id>http://xiamianyu.github.io/2019/03/06/代码没排版，亲人两行泪/</id>
     <published>2019-03-06T02:27:51.000Z</published>
-    <updated>2021-02-24T08:00:50.828Z</updated>
+    <updated>2021-02-24T08:00:50.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/../images/garden.png&quot; alt=&quot;garden&quot;&gt;2019-02-06 摄于菜园&lt;/p&gt;
 &lt;p&gt;上小学时，有一次大姐在家里写作文，还没见过作文的我特别好奇，就在旁边静静地看着。我发现大姐每段开头都要空两格，就算前一个段落最后一行只有一个字，下一个段落也要另起一行。我心里特别纳闷，这不是很浪费纸吗？干嘛不一写到底呀？大姐也不知道作何解释，只是说那是写作文的要求。后来我才知道这些要求都是为了让作文段落分明，易于阅读。&lt;/p&gt;
@@ -264,7 +265,7 @@
     <link href="http://xiamianyu.github.io/2019/01/10/2018-%E5%B9%B4%E5%9B%9E%E9%A1%BE/"/>
     <id>http://xiamianyu.github.io/2019/01/10/2018-年回顾/</id>
     <published>2019-01-10T02:22:50.000Z</published>
-    <updated>2021-02-24T08:04:36.829Z</updated>
+    <updated>2021-02-24T08:04:36.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u9003_u79BB_u5E7F_u5DDE&quot;&gt;&lt;a href=&quot;#u9003_u79BB_u5E7F_u5DDE&quot; class=&quot;headerlink&quot; title=&quot;逃离广州&quot;&gt;&lt;/a&gt;逃离广州&lt;/h1&gt;&lt;p&gt;2018 年初从呆了三年的 A 公司离职了，有些同事觉得我太突然，都做到组长的职位了，多少人梦寐以求，谁离职都不会轮到我呀，一般这时候我都是嘿嘿一笑了事。&lt;/p&gt;
 &lt;p&gt;我真正离职的原因是找不到自己存在的价值。16 年下半年我开始全面接手团队的管理工作，与大家一起，经过一年的撸力，完成了团队的基础建设，团队趋于规范和稳定，我的管理工作逐渐轻松，这时不安分的我尝试跨部门学习数据挖掘，三个月后倍感不适，果断放弃。后面的日子基本是跨组打杂，每天如行尸走肉，浑浑噩噩，找不到工作重心，经常为此深夜失眠，内心煎熬，最终引发离职，思考人生去。&lt;/p&gt;
@@ -295,7 +296,7 @@
     <link href="http://xiamianyu.github.io/2018/02/23/Android-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B9%B3%E5%8F%B0%E7%9A%84%E7%BB%B4%E6%8A%A4/"/>
     <id>http://xiamianyu.github.io/2018/02/23/Android-自动化构建平台的维护/</id>
     <published>2018-02-23T12:36:29.000Z</published>
-    <updated>2021-02-24T08:04:52.301Z</updated>
+    <updated>2021-02-24T08:04:52.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;继上一篇文章「&lt;a href=&quot;/2017/02/22/%E6%90%AD%E5%BB%BAAndroid%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B9%B3%E5%8F%B0&quot;&gt;搭建Android自动化构建平台&lt;/a&gt;」的发表到现在已经过去一年，在过去一年中，随着 Android Studio 和 Android SDK 的升级和更新，Android 自动化构建平台也需要同步升级，主要升级的内容是 Gradle 和 Android SDK。&lt;/p&gt;
 &lt;h1 id=&quot;Gradle&quot;&gt;&lt;a href=&quot;#Gradle&quot; class=&quot;headerlink&quot; title=&quot;Gradle&quot;&gt;&lt;/a&gt;Gradle&lt;/h1&gt;&lt;p&gt;通过本地电脑，从&lt;a href=&quot;https://gradle.org/releases/&quot;&gt;官网&lt;/a&gt;下载指定版本的压缩包，如：gradle-4.1-all.zip。&lt;/p&gt;
@@ -336,7 +337,7 @@
     <link href="http://xiamianyu.github.io/2017/10/27/Java-%E6%B3%9B%E5%9E%8B-%E4%BD%BF%E7%94%A8%E9%99%90%E5%88%B6/"/>
     <id>http://xiamianyu.github.io/2017/10/27/Java-泛型-使用限制/</id>
     <published>2017-10-27T03:16:43.000Z</published>
-    <updated>2021-02-24T08:05:25.735Z</updated>
+    <updated>2021-02-24T08:05:24.000Z</updated>
     
     <content type="html">&lt;p&gt;为了有效使用泛型，我们必须考虑以下的限制：&lt;/p&gt;
 &lt;ul&gt;
@@ -416,7 +417,7 @@
     <link href="http://xiamianyu.github.io/2017/10/26/Java-%E6%B3%9B%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%93%A6%E9%99%A4/"/>
     <id>http://xiamianyu.github.io/2017/10/26/Java-泛型-类型擦除/</id>
     <published>2017-10-26T12:41:46.000Z</published>
-    <updated>2021-02-24T08:05:59.121Z</updated>
+    <updated>2021-02-24T08:05:58.000Z</updated>
     
     <content type="html">&lt;p&gt;泛型被引入到 Java 语言中，以便在编译时提供更严格的类型检查，并支持泛型编程。为了落实泛型，Java 编译器使用了类型擦除：&lt;/p&gt;
 &lt;ul&gt;
@@ -512,7 +513,7 @@
     <link href="http://xiamianyu.github.io/2017/10/24/Java-%E6%B3%9B%E5%9E%8B-%E9%80%9A%E9%85%8D%E7%AC%A6/"/>
     <id>http://xiamianyu.github.io/2017/10/24/Java-泛型-通配符/</id>
     <published>2017-10-24T01:09:18.000Z</published>
-    <updated>2021-02-24T08:06:08.646Z</updated>
+    <updated>2021-02-24T08:06:08.000Z</updated>
     
     <content type="html">&lt;p&gt;在泛型代码中，问号（?）叫做通配符，代表未知类型。通配符可以在各种情况下使用：作为参数、字段或局部变量的类型；有时作为返回类型（虽然更具体的编程实践是更好的）。通配符永远不会用作泛型方法调用、泛型类实例创建或超类型的类型参数。&lt;/p&gt;
 &lt;p&gt;下面的小节将更详细地讨论通配符，包括上界通配符、无界通配符、下界通配符等。&lt;/p&gt;
@@ -580,7 +581,7 @@
     <link href="http://xiamianyu.github.io/2017/10/23/Java-%E6%B3%9B%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD/"/>
     <id>http://xiamianyu.github.io/2017/10/23/Java-泛型-类型推断/</id>
     <published>2017-10-23T11:09:13.000Z</published>
-    <updated>2021-02-24T08:05:55.409Z</updated>
+    <updated>2021-02-24T08:05:54.000Z</updated>
     
     <content type="html">&lt;p&gt;类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。&lt;/p&gt;
 &lt;p&gt;为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型：&lt;/p&gt;
@@ -645,7 +646,7 @@
     <link href="http://xiamianyu.github.io/2017/10/22/Java-%E6%B3%9B%E5%9E%8B-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%AD%90%E7%B1%BB%E5%9E%8B/"/>
     <id>http://xiamianyu.github.io/2017/10/22/Java-泛型-继承和子类型/</id>
     <published>2017-10-22T01:09:01.000Z</published>
-    <updated>2021-02-24T08:06:03.137Z</updated>
+    <updated>2021-02-24T08:06:02.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u7EE7_u627F_u548C_u5B50_u7C7B_u578B&quot;&gt;&lt;a href=&quot;#u7EE7_u627F_u548C_u5B50_u7C7B_u578B&quot; class=&quot;headerlink&quot; title=&quot;继承和子类型&quot;&gt;&lt;/a&gt;继承和子类型&lt;/h1&gt;&lt;p&gt;正如你所知，如果类型是兼容的，就可以将一个类型的对象赋值给另一个类型的对象。例如，你可以将一个 Integer 对象赋值给 Object 对象，因为 Object 是 Integer 父类之一：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Object someObject = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Object();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Integer someInteger = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Integer(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;someObject = someInteger; &lt;span class=&quot;comment&quot;&gt;// 正确&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -696,7 +697,7 @@
     <link href="http://xiamianyu.github.io/2017/10/21/Java-%E6%B3%9B%E5%9E%8B-%E6%B3%9B%E5%9E%8B%E8%BE%B9%E7%95%8C/"/>
     <id>http://xiamianyu.github.io/2017/10/21/Java-泛型-泛型边界/</id>
     <published>2017-10-21T04:08:44.000Z</published>
-    <updated>2021-02-24T08:05:51.305Z</updated>
+    <updated>2021-02-24T08:05:50.000Z</updated>
     
     <content type="html">&lt;p&gt;在泛型使用过程中，有时候我们希望可以限制类型参数（Type Argument）的类型，这时就会用到泛型边界。使用泛型边界很简单，在定义泛型类型或泛型方法时，使用 extends 关键字即可。&lt;/p&gt;
 &lt;h1 id=&quot;u6CDB_u578B_u7C7B_u578B_u8FB9_u754C&quot;&gt;&lt;a href=&quot;#u6CDB_u578B_u7C7B_u578B_u8FB9_u754C&quot; class=&quot;headerlink&quot; title=&quot;泛型类型边界&quot;&gt;&lt;/a&gt;泛型类型边界&lt;/h1&gt;&lt;p&gt;声明一个有界的泛型类型，语法类似类的继承，在类型参数后面添加 extends 关键字，extends 后面添加边界。需要注意的是，这里的 extends 有「类的继承」或「接口的实现」之意。&lt;/p&gt;
@@ -729,7 +730,7 @@
     <link href="http://xiamianyu.github.io/2017/10/20/Java-%E6%B3%9B%E5%9E%8B-%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95/"/>
     <id>http://xiamianyu.github.io/2017/10/20/Java-泛型-泛型方法/</id>
     <published>2017-10-20T01:14:15.000Z</published>
-    <updated>2021-02-24T08:01:47.491Z</updated>
+    <updated>2021-02-24T08:01:46.000Z</updated>
     
     <content type="html">&lt;p&gt;泛型方法（Generic Method）是引入类型参数（Type Parameter）的方法。它类似声明泛型类型，但是类型参数的作用域仅限于自己。Java 允许静态和非静态的泛型方法，泛型构造方法也是。&lt;/p&gt;
 &lt;p&gt;泛型方法的语法：在尖括号内包含一个类型参数列表，出现在方法的返回值前面。&lt;/p&gt;
@@ -763,7 +764,7 @@
     <link href="http://xiamianyu.github.io/2017/10/19/Java-%E6%B3%9B%E5%9E%8B-%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/"/>
     <id>http://xiamianyu.github.io/2017/10/19/Java-泛型-原始类型/</id>
     <published>2017-10-19T12:08:30.000Z</published>
-    <updated>2021-02-24T08:01:55.868Z</updated>
+    <updated>2021-02-24T08:01:54.000Z</updated>
     
     <content type="html">&lt;p&gt;原始类型（Raw Type）是指没有类型参数（Type Argument）的泛型类或接口。&lt;/p&gt;
 &lt;p&gt;要创建一个 &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; 的参数化类型，你需要给类型参数 T 赋予一个实际的类型参数：&lt;/p&gt;
@@ -800,7 +801,7 @@
     <link href="http://xiamianyu.github.io/2017/10/18/Java-%E6%B3%9B%E5%9E%8B-%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B/"/>
     <id>http://xiamianyu.github.io/2017/10/18/Java-泛型-泛型类型/</id>
     <published>2017-10-18T11:08:39.000Z</published>
-    <updated>2021-02-24T08:05:47.432Z</updated>
+    <updated>2021-02-24T08:05:46.000Z</updated>
     
     <content type="html">&lt;p&gt;泛型类型（Generic Type）是带类型参数的类或接口。下面我们通过 Box 类来论述什么是泛型类型。&lt;/p&gt;
 &lt;h1 id=&quot;u7B80_u5355_u7684_Box&quot;&gt;&lt;a href=&quot;#u7B80_u5355_u7684_Box&quot; class=&quot;headerlink&quot; title=&quot;简单的 Box&quot;&gt;&lt;/a&gt;简单的 Box&lt;/h1&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Box&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Object object;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Object object)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.object = object; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; Object &lt;span class=&quot;title&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; object; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -849,7 +850,7 @@
     <link href="http://xiamianyu.github.io/2017/10/17/Java-%E6%B3%9B%E5%9E%8B-%E4%BD%9C%E7%94%A8/"/>
     <id>http://xiamianyu.github.io/2017/10/17/Java-泛型-作用/</id>
     <published>2017-10-17T08:58:51.000Z</published>
-    <updated>2021-02-24T08:05:22.319Z</updated>
+    <updated>2021-02-24T08:05:22.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;B&amp;gt; bList = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List&amp;lt;A&amp;gt; aList = bList; &lt;span class=&quot;comment&quot;&gt;// 编译错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -885,7 +886,7 @@
     <link href="http://xiamianyu.github.io/2017/06/28/Java-%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/"/>
     <id>http://xiamianyu.github.io/2017/06/28/Java-启动参数/</id>
     <published>2017-06-28T06:25:22.000Z</published>
-    <updated>2021-02-24T08:05:15.639Z</updated>
+    <updated>2021-02-24T08:05:14.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些启动参数，我们平时或多或少都有接触过，可能我们并不知道它们就是启动参数，如常见的 &lt;code&gt;Xmx2g&lt;/code&gt;，它表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。&lt;/p&gt;
 &lt;h1 id=&quot;u6807_u51C6_u53C2_u6570&quot;&gt;&lt;a href=&quot;#u6807_u51C6_u53C2_u6570&quot; class=&quot;headerlink&quot; title=&quot;标准参数&quot;&gt;&lt;/a&gt;标准参数&lt;/h1&gt;&lt;p&gt;使用 &lt;code&gt;-&lt;/code&gt; 前缀表示。所有的 JVM 都必须实现这些参数的功能，而且向后兼容。&lt;/p&gt;
@@ -1137,7 +1138,7 @@
     <link href="http://xiamianyu.github.io/2017/03/09/%E6%8F%90%E9%AB%98%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%E7%9A%84%E6%95%88%E7%8E%87/"/>
     <id>http://xiamianyu.github.io/2017/03/09/提高代码审查的效率/</id>
     <published>2017-03-09T14:33:56.000Z</published>
-    <updated>2021-02-24T08:06:53.608Z</updated>
+    <updated>2021-02-24T08:06:52.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u524D_u8A00&quot;&gt;&lt;a href=&quot;#u524D_u8A00&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;CheckStyle 是一个帮助 Java 开发人员遵守代码规范的工具，它能够自动化代码规范检查过程，从而使得开发人员从这项重要但枯燥的任务中解脱。&lt;/p&gt;
 &lt;p&gt;我们会发现，GitHub 上很多开源项目都有个 checkstyle.xml，目的是希望大家能够准守约定的代码规范去贡献代码。所以 CheckStyle 的出现，主要是服务于多人协作的项目，如果你们的团队也很注重代码规范且人工审查它，那就赶紧用上 CheckStyle 吧。&lt;/p&gt;
@@ -1189,7 +1190,7 @@
     <link href="http://xiamianyu.github.io/2017/02/22/%E6%90%AD%E5%BB%BAAndroid%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B9%B3%E5%8F%B0/"/>
     <id>http://xiamianyu.github.io/2017/02/22/搭建Android自动化构建平台/</id>
     <published>2017-02-22T14:13:21.000Z</published>
-    <updated>2021-02-24T08:06:57.828Z</updated>
+    <updated>2021-02-24T08:06:56.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;u5E73_u53F0_u9009_u62E9&quot;&gt;&lt;a href=&quot;#u5E73_u53F0_u9009_u62E9&quot; class=&quot;headerlink&quot; title=&quot;平台选择&quot;&gt;&lt;/a&gt;平台选择&lt;/h1&gt;&lt;p&gt;根据团队的情况，我们选择 &lt;code&gt;Jenkins + Git + Gogs + Gradle + Ubuntu&lt;/code&gt; 来搭建 Android 自动化构建平台。&lt;/p&gt;
 &lt;p&gt;需要的硬件资源：一台装有 Ubuntu 系统的主机。&lt;/p&gt;
