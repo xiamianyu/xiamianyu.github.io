@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2021-09-26T05:57:29.583Z</updated>
+  <updated>2021-11-01T09:55:17.543Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NAT术语</title>
+    <link href="http://xiamianyu.github.io/2021/11/01/NAT%E6%9C%AF%E8%AF%AD/"/>
+    <id>http://xiamianyu.github.io/2021/11/01/NAT术语/</id>
+    <published>2021-11-01T09:13:05.000Z</published>
+    <updated>2021-11-01T09:55:17.543Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Inside/Outside</strong>：从主机位置来看，分内网主机（Inside）和外网主机（Outside）<br><strong>Local/Global</strong>：从网络视角来看，分内网（Local）和外网（Global）</p><p>所以就有下面四个组合：<br><strong>Inside Local</strong>：内网主机的IP地址，通常是一个私有地址<br><strong>Inside Global</strong>：内网主机的对外IP地址，通常是外网地址，由ISP提供<br><strong>Outside Local</strong>：外网主机的IP地址，不一定是外网地址<br><strong>Outside Global</strong>：外网主机的对外IP地址，通常由ISP提供</p>]]></content>
+    
+    <summary type="html">
+    
+      Inside/Outside Local/Global
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="http://xiamianyu.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="计算机网络" scheme="http://xiamianyu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>包的生命周期</title>
@@ -473,30 +495,6 @@
       <category term="Java" scheme="http://xiamianyu.github.io/tags/Java/"/>
     
       <category term="泛型" scheme="http://xiamianyu.github.io/tags/%E6%B3%9B%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java 启动参数</title>
-    <link href="http://xiamianyu.github.io/2017/06/28/Java-%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/"/>
-    <id>http://xiamianyu.github.io/2017/06/28/Java-启动参数/</id>
-    <published>2017-06-28T06:25:22.000Z</published>
-    <updated>2021-02-24T08:05:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。这些启动参数，我们平时或多或少都有接触过，可能我们并不知道它们就是启动参数，如常见的 <code>Xmx2g</code>，它表示 JVM 堆的最大值为 2G。理解并掌握常用的启动参数，可以帮助我们更好得调试和优化 Java 程序。</p><h1 id="u6807_u51C6_u53C2_u6570"><a href="#u6807_u51C6_u53C2_u6570" class="headerlink" title="标准参数"></a>标准参数</h1><p>使用 <code>-</code> 前缀表示。所有的 JVM 都必须实现这些参数的功能，而且向后兼容。</p><p><strong>-client</strong><br>设置 JVM 使用 client 模式，特点是启动速度比较快，但运行时性能和内存管理效率不高，通常用于客户端应用程序或者PC应用开发和调试。</p><p><strong>-server</strong><br>设置 JVM 使 server 模式，特点是启动速度比较慢，但运行时性能和内存管理效率很高，适用于生产环境。在具有64位能力的 JDK 环境下将默认启用该模式，而忽略 <code>-client</code> 参数。</p><p><strong>-agentlib:libname[=options]</strong><br>用于装载本地lib包。其中 <code>libname</code> 为本地代理库文件名，默认搜索路径为环境变量 PATH 中的路径，<code>options</code> 为传给本地库启动时的参数，多个参数之间用逗号分隔。在 Windows 平台上 JVM  搜索本地库名为 libname.dll 的文件，在 Linux 上 JVM 搜索本地库名为 libname.so 的文件，搜索路径环境变量在不同系统上有所不同，比如 Solaries 上就默认搜索 LD_LIBRARY_PATH。</p><p><strong>-agentlib:hprof</strong><br>用来获取 JVM 的运行情况，包括CPU、内存、线程等的运行数据，并可输出到指定文件中；Windows 中搜索路径为 <code>JRE_HOME/bin/hprof.dll</code>。</p><p><strong>-agentpath:pathname[=options]</strong><br>按全路径装载本地库，不再搜索 PATH 中的路径；其他功能和 <code>agentlib</code> 相同。</p><p><strong>-classpath</strong><br>用来告知 JVM 搜索目录名、jar 文档名、zip文档名，之间用分号分隔；使用 <code>-classpath</code> 后 JVM 将不再使用 CLASSPATH 中的类搜索路径，如果<code>-classpath</code>和 CLASSPATH 都没有设置，则 JVM 使用当前路径(.)作为类搜索路径。<br> JVM 搜索类的方式和顺序为：Bootstrap，Extension，User。</p><p>Bootstrap 中的路径是 JVM 自带的 jar 或 zip 文件，JVM 首先搜索这些包文件，用 System.getProperty(“sun.boot.class.path”) 可得到搜索路径。</p><p>Extension 是位于 <code>JRE_HOME/lib/ext</code> 目录下的 jar 文件，JVM 在搜索完 Bootstrap 后就搜索该目录下的 jar 文件，用 System.getProperty(“java.ext.dirs”) 可得到搜索路径。</p><p>User 搜索顺序为当前路径<code>.</code>、<code>CLASSPATH</code>、<code>-classpath</code>，JVM 最后搜索这些目录，用 System.getProperty(“java.class.path”) 可得到搜索路径。</p><p><strong>-Dproperty=value</strong><br>设置系统属性名/值对，运行在此 JVM 之上的应用程序可用 System.getProperty(“property”) 得到 value 的值。如果 value 中有空格，则需要用双引号将该值括起来，如 <code>-Dname=&quot;spacestring&quot;</code>。<br>该参数通常用于设置系统级全局变量值，如配置文件路径，以便该属性在程序中任何地方都可访问。</p><p><strong>-enableassertions[:<packagename>“…”|:<classname>]</strong><br><strong>-ea[:<packagename>“…”|:<classname>]</strong><br>用来设置 JVM 是否启动断言机制（从JDK1.4开始支持），缺省时 JVM 关闭断言机制。用-ea可打开断言机制，不加 <packagename> 和 classname 时运行所有包和类中的断言，如果希望只运行某些包或类中的断言，可将包名或类名加到<code>-ea</code> 之后。例如要启动包 com.wombat.fruitbat 中的断言，可用命令<code>java-ea:com.wombat.fruitbat...&lt;MainClass&gt;</code>。</p><p><strong>-disableassertions[:<packagename>“…”|:&lt;class;]</strong><br><strong>-da[:<packagename>“…”|:<classname>]</strong><br>用来设置 JVM 关闭断言处理，packagename 和 classname 的使用方法和 <code>-ea</code> 相同， JVM 默认就是关闭状态。<br>该参数一般用于相同 package 内某些 class 不需要断言的场景，比如 com.wombat.fruitbat 需要断言，但是 com.wombat.fruitbat.Brickbat 该类不需要，则可以如下运行：<br><code>java-ea:com.wombat.fruitbat...-da:com.wombat.fruitbat.Brickbat&lt;MainClass&gt;</code>。</p><p><strong>-enablesystemassertions</strong><br><strong>-esa</strong><br>激活系统类的断言。</p><p><strong>-disablesystemassertions</strong><br><strong>-dsa</strong><br>关闭系统类的断言。</p><p><strong>-jar</strong><br>指定以 jar 包的形式执行一个应用程序。<br>要这样执行一个应用程序，必须让 jar 包的 manifest 文件中声明初始加载的 Main-class，当然那 Main-class 必须有 public static void main(String[]args) 方法。</p><p><strong>-javaagent:jarpath[=options]</strong><br>指定 JVM 启动时装入 JAVA 语言设备代理。</p><p>Jarpath 文件中的 mainfest 文件必须有 Agent-Class 属性。代理类也必须实现公共的静态 public static void premain(StringagentArgs, Instrumentationinst)方法（和main方法类似）。当 JVM 初始化时，将按代理类的说明顺序调用 premain 方法；具体参见 java.lang.instrument 软件包的描述。</p><p><strong>-verbose</strong><br><code>-verbose:class</code>：输出 JVM 载入类的相关信<br><code>-verbose:gc</code>：输出 JVM 每次 GC 的情况<br><code>-verbose:jni</code>：输出 native 方法调用的相关情况</p><h1 id="u975E_u6807_u51C6_u53C2_u6570"><a href="#u975E_u6807_u51C6_u53C2_u6570" class="headerlink" title="非标准参数"></a>非标准参数</h1><p>使用 <code>-X</code> 前缀表示。默认的 JVM 实现这些参数的功能，但不保证所有的 JVM 实现满足，而且不保证向后兼容。</p><p>非标准参数又称为扩展参数，其列表如下：</p><p><strong>-Xint</strong><br>设置 JVM 以解释模式运行，所有的字节码将被直接执行，而不会编译成本地码。</p><p><strong>-Xbatch</strong><br>关闭后台代码编译，强制在前台编译，编译完成之后才能进行代码执行；默认情况下， JVM 在后台进行编译，若没有编译完成，则前台运行代码时以解释模式运行。</p><p><strong>-Xbootclasspath:bootclasspath</strong><br>让 JVM 从指定路径（可以是分号分隔的目录、jar、或者zip）中加载bootclass，用来替换jdk的rt.jar；若非必要，一般不会用到.</p><p><strong>-Xbootclasspath/a:path</strong><br>将指定路径的所有文件追加到默认bootstrap路径中。</p><p><strong>-Xbootclasspath/p:path</strong><br>让 JVM 优先于bootstrap默认路径加载指定路径的所有文件。</p><p><strong>-Xcheck:jni</strong><br>对JNI函数进行附加check；此时 JVM 将校验传递给JNI函数参数的合法性，在本地代码中遇到非法数据时，jmv将报一个致命错误而终止；使用该参数后将造成性能下降，请慎用。</p><p><strong>-Xfuture</strong><br>让 JVM 对类文件执行严格的格式检查（默认 JVM 不进行严格格式检查），以符合类文件格式规范，推荐开发人员使用该参数。</p><p><strong>-Xnoclassgc</strong><br>关闭针对class的gc功能；因为其阻止内存回收，所以可能会导致OutOfMemoryError错误，慎用；</p><p><strong>-Xincgc</strong><br>开启增量gc（默认为关闭）；这有助于减少长时间GC时应用程序出现的停顿；但由于可能和应用程序并发执行，所以会降低CPU对应用的处理能力。</p><p><strong>-Xloggc:file</strong><br>与-verbose:gc功能类似，只是将每次GC事件的相关情况记录到一个文件中，文件的位置最好在本地，以避免网络的潜在问题。<br> 若与verbose命令同时出现在命令行中，则以-Xloggc为准。</p><p><strong>-Xmsn</strong><br>指定 JVM 堆的初始大小，默认为物理内存的1/64，最小为1M；可以指定单位，比如k、m，若不指定，则默认为字节。</p><p><strong>-Xmxn</strong><br>指定 JVM 堆的最大值，默认为物理内存的1/4或者1G，最小为2M；单位与-Xms一致。</p><p><strong>-Xprof</strong><br>跟踪正运行的程序，并将跟踪数据在标准输出输出；适合于开发环境调试。</p><p><strong>-Xrs</strong><br>减少 JVM 对操作系统信号（signals）的使用，该参数从1.3.1开始有效。</p><p>从jdk1.3.0开始， JVM 允许程序在关闭之前还可以执行一些代码（比如关闭数据库的连接池），即使 JVM 被突然终止。</p><p>JVM 关闭工具通过监控控制台的相关事件而满足以上的功能；更确切的说，通知在关闭工具执行之前，先注册控制台的控制handler，然后对CTRL_C_EVENT, CTRL_CLOSE_EVENT, CTRL_LOGOFF_EVENT, and CTRL_SHUTDOWN_EVENT这几类事件直接返回true。</p><p>但如果 JVM 以服务的形式在后台运行（比如servlet引擎），他能接收CTRL_LOGOFF_EVENT事件，但此时并不需要初始化关闭程序；为了避免类似冲突的再次出现，从jdk1.3.1开始提供-Xrs参数；当此参数被设置之后， JVM 将不接收控制台的控制handler，也就是说他不监控和处理CTRL_C_EVENT, CTRL_CLOSE_EVENT, CTRL_LOGOFF_EVENT, or CTRL_SHUTDOWN_EVENT事件。</p><p><strong>-Xssn</strong><br>设置单个线程栈的大小，一般默认为512k。</p><h1 id="u975E_Stable__u53C2_u6570"><a href="#u975E_Stable__u53C2_u6570" class="headerlink" title="非 Stable 参数"></a>非 Stable 参数</h1><p>使用 <code>-XX</code> 前缀表示。此类参数各个 JVM 实现会有所不同，将来可能会随时取消，需要慎重使用。</p><p>非 Stable 参数可以松散地分为以下三类：<br><strong>行为参数（Behavioral Options）</strong>：用于改变 JVM 的一些基础行为<br><strong>性能调优（Performance Tuning）</strong>：用于 JVM 的性能调优<br><strong>调试参数（Debugging Options）</strong>：一般用于打开跟踪、打印、输出等 JVM 参数，用于显示 JVM 更加详细的信息</p><h2 id="u884C_u4E3A_u53C2_u6570"><a href="#u884C_u4E3A_u53C2_u6570" class="headerlink" title="行为参数"></a>行为参数</h2><table><thead><tr><th>参数及其默认值</th><th>描述</th></tr></thead><tbody><tr><td>-XX:-DisableExplicitGC</td><td>禁止调用System.gc()；但 JVM 的gc仍然有效</td></tr><tr><td>-XX:+MaxFDLimit</td><td>最大化文件描述符的数量限制</td></tr><tr><td>-XX:+ScavengeBeforeFullGC</td><td>新生代GC优先于Full GC执行</td></tr><tr><td>-XX:+UseGCOverheadLimit</td><td>在抛出OOM之前限制 JVM 耗费在GC上的时间比例</td></tr><tr><td><strong>-XX:-UseConcMarkSweepGC</strong></td><td><strong>对老生代采用并发标记交换算法进行GC</strong></td></tr><tr><td><strong>-XX:-UseParallelGC</strong></td><td><strong>启用并行GC</strong></td></tr><tr><td>-XX:-UseParallelOldGC</td><td>对Full GC启用并行，当-XX:-UseParallelGC启用时该项自动启用</td></tr><tr><td><strong>-XX:-UseSerialGC</strong></td><td><strong>启用串行GC</strong></td></tr><tr><td>-XX:+UseThreadPriorities</td><td>启用本地线程优先级</td></tr></tbody></table><p>上面表格中黑体的三个参数代表着 JVM 中GC执行的三种方式，即串行、并行、并发。</p><p><strong>串行（SerialGC）</strong> 是 JVM 的默认GC方式，一般适用于小型应用和单处理器，算法比较简单，GC效率也较高，但可能会给应用带来停顿；</p><p><strong>并行（ParallelGC）</strong><br>是指GC运行时，对应用程序运行没有影响，GC和app两者的线程在并发执行，这样可以最大限度不影响app的运行；</p><p><strong>并发（ConcMarkSweepGC）</strong> 是指多个线程并发执行GC，一般适用于多处理器系统中，可以提高GC的效率，但算法复杂，系统消耗较大；</p><h2 id="u6027_u80FD_u8C03_u4F18"><a href="#u6027_u80FD_u8C03_u4F18" class="headerlink" title="性能调优"></a>性能调优</h2><table><thead><tr><th>参数及其默认值</th><th>描述</th></tr></thead><tbody><tr><td>-XX:LargePageSizeInBytes=4m</td><td>设置用于Java堆的大页面尺寸</td></tr><tr><td>-XX:MaxHeapFreeRatio=70</td><td>GC后java堆中空闲量占的最大比例</td></tr><tr><td><strong>-XX:MaxNewSize=size</strong></td><td><strong>新生成对象能占用内存的最大值</strong></td></tr><tr><td><strong>-XX:MaxPermSize=64m</strong></td><td><strong>老生代对象能占用内存的最大值</strong></td></tr><tr><td>-XX:MinHeapFreeRatio=40</td><td>GC后java堆中空闲量占的最小比例</td></tr><tr><td>-XX:NewRatio=2</td><td>新生代内存容量与老生代内存容量的比例</td></tr><tr><td><strong>-XX:NewSize=2.125m</strong></td><td><strong>新生代对象生成时占用内存的默认值</strong></td></tr><tr><td>-XX:ReservedCodeCacheSize=32m</td><td>保留代码占用的内存容量</td></tr><tr><td>-XX:ThreadStackSize=512</td><td>设置线程栈大小，若为0则使用系统默认值</td></tr><tr><td>-XX:+UseLargePages</td><td>使用大页面内存</td></tr></tbody></table><h2 id="u8C03_u8BD5_u53C2_u6570"><a href="#u8C03_u8BD5_u53C2_u6570" class="headerlink" title="调试参数"></a>调试参数</h2><table><thead><tr><th>参数及其默认值</th><th>描述</th></tr></thead><tbody><tr><td>-XX:-CITime</td><td>打印消耗在JIT编译的时间</td></tr><tr><td>-XX:ErrorFile=./hs_err_pid<pid>.log</td><td>保存错误日志或者数据到文件中</td></tr><tr><td>-XX:-ExtendedDTraceProbes</td><td>开启solaris特有的dtrace探针</td></tr><tr><td><strong>-XX:HeapDumpPath=./java_pid<pid>.hprof</strong></td><td><strong>指定导出堆信息时的路径或文件名</strong></td></tr><tr><td><strong>-XX:-HeapDumpOnOutOfMemoryError</strong></td><td><strong>当首次遭遇OOM时导出此时堆中相关信息</strong></td></tr><tr><td>-XX:OnError=”<cmd args>;<cmd args>“</td><td>出现致命ERROR之后运行自定义命令</td></tr><tr><td>-XX:OnOutOfMemoryError=”<cmd args>;<cmd args>“</td><td>当首次遭遇OOM时执行自定义命令</td></tr><tr><td>-XX:-PrintClassHistogram</td><td>遇到Ctrl-Break后打印类实例的柱状信息，与jmap -histo功能相同</td></tr><tr><td><strong>-XX:-PrintConcurrentLocks</strong></td><td><strong>遇到Ctrl-Break后打印并发锁的相关信息，与jstack -l功能相同</strong></td></tr><tr><td>-XX:-PrintCommandLineFlags</td><td>打印在命令行中出现过的标记</td></tr><tr><td>-XX:-PrintCompilation</td><td>当一个方法被编译时打印相关信息</td></tr><tr><td>-XX:-PrintGC</td><td>每次GC时打印相关信息</td></tr><tr><td>-XX:-PrintGC Details</td><td>每次GC时打印详细信息</td></tr><tr><td>-XX:-PrintGCTimeStamps</td><td>打印每次GC的时间戳</td></tr><tr><td>-XX:-TraceClassLoadin</td><td>跟踪类的加载信息</td></tr><tr><td>-XX:-TraceClassLoadingPreorder</td><td>跟踪被引用到的所有类的加载信息</td></tr><tr><td>-XX:-TraceClassResolution</td><td>跟踪常量池</td></tr><tr><td>-XX:-TraceClassUnloading</td><td>跟踪类的卸载信息</td></tr><tr><td>-XX:-TraceLoaderConstraints</td><td>跟踪类加载器约束的相关信息</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      Java 的启动参数分为标准参数、非标准参数和非 Stable 参数。
-    
-    </summary>
-    
-      <category term="Java" scheme="http://xiamianyu.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://xiamianyu.github.io/tags/Java/"/>
-    
-      <category term="启动参数" scheme="http://xiamianyu.github.io/tags/%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/"/>
     
   </entry>
   

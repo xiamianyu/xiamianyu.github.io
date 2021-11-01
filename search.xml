@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>NAT术语</title>
+      <link href="2021/11/01/NAT%E6%9C%AF%E8%AF%AD/"/>
+      <url>2021/11/01/NAT%E6%9C%AF%E8%AF%AD/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Inside/Outside</strong>：从主机位置来看，分内网主机（Inside）和外网主机（Outside）<br><strong>Local/Global</strong>：从网络视角来看，分内网（Local）和外网（Global）</p><p>所以就有下面四个组合：<br><strong>Inside Local</strong>：内网主机的IP地址，通常是一个私有地址<br><strong>Inside Global</strong>：内网主机的对外IP地址，通常是外网地址，由ISP提供<br><strong>Outside Local</strong>：外网主机的IP地址，不一定是外网地址<br><strong>Outside Global</strong>：外网主机的对外IP地址，通常由ISP提供</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>包的生命周期</title>
       <link href="2021/09/14/%E5%8C%85%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
       <url>2021/09/14/%E5%8C%85%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
