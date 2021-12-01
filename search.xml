@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>NAT术语</title>
-      <link href="2021/11/01/NAT%E6%9C%AF%E8%AF%AD/"/>
-      <url>2021/11/01/NAT%E6%9C%AF%E8%AF%AD/</url>
+      <title>关于NAT</title>
+      <link href="2021/11/01/%E5%85%B3%E4%BA%8ENAT/"/>
+      <url>2021/11/01/%E5%85%B3%E4%BA%8ENAT/</url>
       
-        <content type="html"><![CDATA[<p><strong>Inside/Outside</strong>：从主机位置来看，分内网主机（Inside）和外网主机（Outside）<br><strong>Local/Global</strong>：从网络视角来看，分内网（Local）和外网（Global）</p><p>所以就有下面四个组合：<br><strong>Inside Local</strong>：内网主机的IP地址，通常是一个私有地址<br><strong>Inside Global</strong>：内网主机的对外IP地址，通常是外网地址，由ISP提供<br><strong>Outside Local</strong>：外网主机的IP地址，不一定是外网地址<br><strong>Outside Global</strong>：外网主机的对外IP地址，通常由ISP提供</p>]]></content>
+        <content type="html"><![CDATA[<p><strong>Inside/Outside与Local/Global</strong><br>Inside/Outside：从主机位置来看，分内网主机（Inside）和外网主机（Outside）<br>Local/Global：从网络视角来看，分内网（Local）和外网（Global）</p><p>所以就有下面四个组合：<br>Inside Local：内网主机的IP地址，通常是一个私有地址<br>Inside Global：内网主机的对外IP地址，通常是外网地址，由ISP提供<br>Outside Local：外网主机的IP地址，不一定是外网地址<br>Outside Global：外网主机的对外IP地址，通常由ISP提供</p><p><strong>NAT类型</strong><br>完全圆锥型NAT（Full cone NAT）</p><ul><li>一旦内部地址（iAddr:iPort）映射到外部地址（eAddr:ePort），所有发自iAddr:iPort的数据包都经由eAddr:ePort向外发送。</li><li>任意外部主机都能经由发送数据包给eAddr:ePort到达iAddr:iPort。</li></ul><p>受限圆锥型NAT（Restricted cone NAT）</p><ul><li>一旦内部地址（iAddr:iPort）映射到外部地址（eAddr:ePort），所有发自iAddr:iPort的数据包都经由eAddr:ePort向外发送。</li><li>只有iAddr:iPort曾经发送数据包到外部主机（nAddr:any），外部主机才能经由发送数据包给eAddr:ePort到达iAddr:iPort。（注：any指外部主机源端口不受限制）</li></ul><p>端口受限圆锥型NAT（Port-Restricted cone NAT）</p><ul><li>一旦内部地址（iAddr:iPort）映射到外部地址（eAddr:ePort），所有发自iAddr:iPort的数据包都经由eAddr:ePort向外发送。</li><li>在受限圆锥型NAT基础上增加了外部主机源端口必须是固定的。</li></ul><p>对称NAT（Symmetric NAT）</p><ul><li>每一个来自相同内部IP与端口，到一个特定目的地IP和端口的请求，都映射到一个独特的外部IP和端口。同一内部IP与端口发到不同的目的地和端口的信息包，都使用不同的映射。</li><li>只有曾经收到过内部主机数据的外部主机，才能够把数据包发回。</li></ul>]]></content>
       
       
       <categories>
