@@ -720,36 +720,11 @@
       
         <tags>
             
+            <tag> Android </tag>
+            
             <tag> 命名规范 </tag>
             
             <tag> 团队建设 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>versonCode &amp; versionName</title>
-      <link href="2016/07/24/versonCode-versionName/"/>
-      <url>2016/07/24/versonCode-versionName/</url>
-      
-        <content type="html"><![CDATA[<p>Android 开发中，我们对 <code>versionCode</code> 和 <code>versionName</code> 都不陌生，可能有些人对它们的理解还停留在 <code>versionCode</code> 对开发可见（对用户不可见），<code>int</code> 类型，<code>versionName</code> 对用户可见，<code>String</code> 类型。每次发布版本时都要修改 <code>versionCode</code> 和 <code>versionName</code>。最近因为版本控制命名问题造成的困扰，我才去 Android 官网查阅关于它们的介绍。</p><h1 id="u5B98_u7F51_u5B9A_u4E49"><a href="#u5B98_u7F51_u5B9A_u4E49" class="headerlink" title="官网定义"></a><a href="https://developer.android.com/studio/publish/versioning.html">官网定义</a></h1><p><strong>versionCode</strong> — An integer used as an internal version number. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions. This is not the version number shown to users; that number is set by the versionName setting, below.</p><p>The value is an integer so that other apps can programmatically evaluate it, for example to check an upgrade or downgrade relationship. You can set the value to any integer you want, however you should make sure that each successive release of your app uses a greater value. The system does not enforce this behavior, but increasing the value with successive releases is normative.</p><p>Typically, you would release the first version of your app with versionCode set to 1, then monotonically increase the value with each release, regardless whether the release constitutes a major or minor release. This means that the versionCode value does not necessarily have a strong resemblance to the app release version that is visible to the user (see versionName, below). Apps and publishing services should not display this version value to users.</p><blockquote><p><strong>Warning</strong>: The greatest possible value for versionCode is MAXINT (2147483647). However, if you upload an app with this value, your app can’t ever be updated.</p></blockquote><p><strong>versionName</strong> — A string used as the version number shown to users. This setting can be specified as a raw string or as a reference to a string resource.<br>The value is a string so that you can describe the app version as a <code>&lt;major&gt;</code>.<code>&lt;minor&gt;</code>.<code>&lt;point&gt;</code> string, or as any other type of absolute or relative version identifier. The versionName has no purpose other than to be displayed to users.</p><h1 id="u7406_u89E3_u6D88_u5316"><a href="#u7406_u89E3_u6D88_u5316" class="headerlink" title="理解消化"></a>理解消化</h1><p>可以看到，官网对 <code>versionCode</code> 和 <code>versionName</code> 做了很详细的说明，用程序员能理解的总结如下：</p><p><strong>versionCode</strong></p><blockquote></blockquote><p>类型：MAXINT(2e31 = 2147483647)<br>作用：标识 App 内部版本，对开发可见（对用户不可见），建议每次发布 release 版本时累加1<br>注意：长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。</p><p>特别的，Android 中，覆盖安装时，不允许对 <code>versionCode</code> 做降级处理（按常理，没必要降级），如：上一版 versionCode=”2”，新版 versionCode 不能小于2，否则覆盖安装失败。AS 上做了降级测试，出现以下提示：</p><p><img src="http://7xs5pr.com1.z0.glb.clouddn.com/android-version-downgrade.png" alt="android-version-downgrade"></p><p><strong>versionName</strong></p><blockquote></blockquote><p>类型：String<br>格式：<code>&lt;major&gt;</code>.<code>&lt;minor&gt;</code>.<code>&lt;point&gt;</code>（&lt;主版本号&gt;.&lt;子版本号&gt;.&lt;修订版本号&gt;）<br>作用：标识 App 版本，对用户可见</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Android </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Version </tag>
             
         </tags>
       
