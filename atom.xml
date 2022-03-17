@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2022-03-04T06:46:09.643Z</updated>
+  <updated>2022-03-17T13:08:31.604Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>技术之外</title>
+    <link href="http://xiamianyu.github.io/2022/03/17/%E6%8A%80%E6%9C%AF%E4%B9%8B%E5%A4%96/"/>
+    <id>http://xiamianyu.github.io/2022/03/17/技术之外/</id>
+    <published>2022-03-17T12:11:27.000Z</published>
+    <updated>2022-03-17T13:08:31.604Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近百无聊赖，居然把以前的博客看了一遍，当看到<a href="/2016/04/14/%E4%BB%8A%E5%A4%A9%E6%88%91%E5%9D%90%E4%B8%BB%E5%B8%AD%E4%BD%8D/index.html">《今天我坐主席位》</a>时不禁感慨，当时的悟性真不错，但也是这两年才真正地去实践那些点，证明了前辈的唠叨是对的。</p><p>迄今为止，我先在外包公司呆了3年，后在产品公司也呆了3年，如果说哪段经历对我很重要，我觉得都重要。也许是初入职场有使不完的劲，在外包公司时， 我把公司当成自己的家，公司的事就是我的事，主动承担更多责任。可能在外人看来我很傻，多管闲事，老板又不会多给你一毛钱。我之所以会这样傻是因为当时看到一篇文章，印象中是一位华为高管的采访，他大概的意思是拿3k干8k的事，初入职场的前几年经历比待遇更重要，要让自己快速成长。我当时估计是被洗脑了，从那时起就很亢奋，表现得特别积极，主动提出很多想法。也正因为这样，我才有机会被CTO赏识，入职9个月后带新人，一年半后担任团队Leader，参与公司的核心产品和技术，那几年成长得很迅速，技术、产品、管理都接触了一遍，虽然现在来看，其实做得一般，但是起码我尝试了，试错了，纠正了，我觉得很好，这经历不是每个人都有，自己是幸运的。</p><p>未完待续…</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近百无聊赖，居然把以前的博客看了一遍，当看到&lt;a href=&quot;/2016/04/14/%E4%BB%8A%E5%A4%A9%E6%88%91%E5%9D%90%E4%B8%BB%E5%B8%AD%E4%BD%8D/index.html&quot;&gt;《今天我坐主席位》&lt;/a&gt;时不禁感
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://xiamianyu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>关于NAT</title>
@@ -462,30 +487,6 @@
     <summary type="html">
     
       泛型类型（Generic Type）是带类型参数的类或接口。
-    
-    </summary>
-    
-      <category term="Java" scheme="http://xiamianyu.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://xiamianyu.github.io/tags/Java/"/>
-    
-      <category term="泛型" scheme="http://xiamianyu.github.io/tags/%E6%B3%9B%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java 泛型-作用</title>
-    <link href="http://xiamianyu.github.io/2017/10/17/Java-%E6%B3%9B%E5%9E%8B-%E4%BD%9C%E7%94%A8/"/>
-    <id>http://xiamianyu.github.io/2017/10/17/Java-泛型-作用/</id>
-    <published>2017-10-17T08:58:51.000Z</published>
-    <updated>2021-02-24T08:05:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;B&gt; bList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;A&gt; aList = bList; <span class="comment">// 编译错误</span></span><br></pre></td></tr></table></figure><p>抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在<a href="https://docs.oracle.com/javase/tutorial/java/generics/subtyping.html">官网教程</a>中看到有解决方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends B&gt; bList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;? extends A&gt; aList = bList;</span><br></pre></td></tr></table></figure><p>泛型是 Java 中一个很强大的特性，学好它事半功倍。我决定将官网的教程翻译下来，当然不是一字一句地翻译，尽量根据自己的理解翻译出来。</p><h1 id="u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B"><a href="#u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B" class="headerlink" title="为什么使用泛型"></a>为什么使用泛型</h1><p>简而言之，在定义类、接口和方法时，泛型能让类或接口变成参数，这样的参数又叫类型参数。就像方法声明中的形参一样，类型参数提供了代码复用的通道，不同的是形参接收的是值，类型参数接收的是类型。</p><p>使用泛型的好处：</p><ul><li>编译时强类型检查</li><li>消除类型转化</li><li>实现通用算法</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      泛型的好处是编译时强类型检查、消除类型转化、实现通用算法。
     
     </summary>
     
