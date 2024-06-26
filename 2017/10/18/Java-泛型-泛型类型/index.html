@@ -1,4 +1,101 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Java 泛型-泛型类型 | 夏眠鱼</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="/css/dark.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Java 泛型-泛型类型</h1><a id="logo" href="/.">夏眠鱼</a><p class="description">大刀砍蜻蜓，枯枝击游鱼</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Java 泛型-泛型类型</h1><div class="post-meta">2017-10-18<span> | </span><span class="category"><a href="/categories/Java/">Java</a></span></div><div class="post-content"><p>泛型类型（Generic Type）是带类型参数的类或接口。下面我们通过 Box 类来论述什么是泛型类型。</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="undefined" />
+  <meta name="author" content="夏眠鱼" />
+  <meta name="description" content="null" />
+  
+  
+  <title>
+    
+      Java 泛型-泛型类型 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="rss" target="_blank" href="/atom.xml">      <i class="iconfont icon-rss"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Oct 18, 2017
+  </h3>
+  <h1>
+    Java 泛型-泛型类型
+  </h1>
+  <div class="content markdown-body">
+    <p>泛型类型（Generic Type）是带类型参数的类或接口。下面我们通过 Box 类来论述什么是泛型类型。</p>
 <h1 id="u7B80_u5355_u7684_Box"><a href="#u7B80_u5355_u7684_Box" class="headerlink" title="简单的 Box"></a>简单的 Box</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object object;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.object = object; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> object; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于 box 接收或返回一个 Object 对象，你可以传入任何你想要的非基本类型，因此在编译阶段无法判断 box 的使用情况。下面的例子在运行时会发生 <code>ClassCastException</code> 错误。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box box = <span class="keyword">new</span> Box();</span><br><span class="line">box.set(<span class="string">&quot;hello worlds&quot;</span>);</span><br><span class="line"><span class="keyword">int</span> result = (Integer) box.get();</span><br></pre></td></tr></table></figure>
@@ -23,10 +120,43 @@
 <p>更多关于棱形和类型推断，请查看 <a href="/2017/10/23/Java-%E6%B3%9B%E5%9E%8B-%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD">Java 泛型-类型推断</a>。</p>
 <h1 id="Type_Paramemter__u548C_Type_Argument"><a href="#Type_Paramemter__u548C_Type_Argument" class="headerlink" title="Type Paramemter 和 Type Argument"></a>Type Paramemter 和 Type Argument</h1><p>Type Parameter 和 Type Argument 在中文上都是叫类型参数，很多开发者容易认为是同一个概念，其实它们是有区别的。在编写代码时，为了创建参数化类型，可以提供类型参数（Type Argument）。因此，<code>Box&lt;T&gt;</code> 中的 T 是一个 Type Paramemter，而 <code>Box&lt;Integer&gt;</code> 的 Integer 是一个 Type Argument。</p>
 <h1 id="u53C2_u6570_u5316_u7C7B_u578B"><a href="#u53C2_u6570_u5316_u7C7B_u578B" class="headerlink" title="参数化类型"></a>参数化类型</h1><p>像 <code>List&lt;String&gt;</code> 这种带类型参数的类型，我们称为参数化类型。泛型的实例化也支持参数化类型。如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化</span></span><br><span class="line">Box&lt;List&lt;Integer&gt;&gt; box = <span class="keyword">new</span> Box&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 box 的 get 方法</span></span><br><span class="line">List&lt;Integer&gt; results = box.get();</span><br></pre></td></tr></table></figure></div><div class="tags"><a href="/tags/Java/"><i class="fa fa-tag"></i>Java</a><a href="/tags/%E6%B3%9B%E5%9E%8B/"><i class="fa fa-tag"></i>泛型</a></div><div class="post-nav"><a class="pre" href="/2017/10/19/Java-%E6%B3%9B%E5%9E%8B-%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/">Java 泛型-原始类型</a><a class="next" href="/2017/10/17/Java-%E6%B3%9B%E5%9E%8B-%E4%BD%9C%E7%94%A8/">Java 泛型-作用</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/">团队建设</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E6%A8%A1%E6%8B%9F%E5%B7%A5%E5%85%B7/">网络模拟工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/">自动化构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%BC%80%E5%8F%91/">音视频开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">项目总结</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2024 <a href="/." rel="nofollow">夏眠鱼.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><link rel="stylesheet" type="text/css" href="/css/search.css?v=1.0.0"><script type="text/javascript" src="/js/search.js?v=1.0.0"></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-   search_path = 'search.xml';
-}
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化</span></span><br><span class="line">Box&lt;List&lt;Integer&gt;&gt; box = <span class="keyword">new</span> Box&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 box 的 get 方法</span></span><br><span class="line">List&lt;Integer&gt; results = box.get();</span><br></pre></td></tr></table></figure>
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2017/10/17/Java-%E6%B3%9B%E5%9E%8B-%E4%BD%9C%E7%94%A8/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2017/10/19/Java-%E6%B3%9B%E5%9E%8B-%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        Copyright © 夏眠鱼 2024
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+
+
+    </div>
+  </body>
+</html>
