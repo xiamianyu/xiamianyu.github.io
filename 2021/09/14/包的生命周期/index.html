@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="undefined" />
+  <meta name="author" content="夏眠鱼" />
+  <meta name="description" content="null" />
+  
+  
+  <title>
+    
+      包的生命周期 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Sep 14, 2021
+  </h3>
+  <h1>
+    包的生命周期
+  </h1>
+  <div class="content markdown-body">
+    <p>在搭建Facebook ATC的过程中，发现自己对计算机网络二三层的基本工作原理并不熟悉，后来发现思科网络模拟工具（Cisco Packet Tracer，简称PT）可以模拟二三层的工作原理，特别不错。</p>
+<p>我们先来看下二三层的设备，二层是交换机，三层是路由器。</p>
+<p><strong>交换机的特点</strong></p>
+<ul>
+<li>有多个网口（通常24个以上）供终端主机连接</li>
+<li>为同一局域网内的主机提供连接</li>
+<li>不能为不同局域网或因特网提供连接</li>
+</ul>
+<p><strong>路由器的特点</strong>  </p>
+<ul>
+<li>网口比交换机少</li>
+<li>为不同局域网提供连接</li>
+<li>能发送数据到因特网</li>
+</ul>
+<p>下面我们通过一个简单的网络拓扑图来讲解包的生命周期。<br><img src="/../images/net-topology.png" alt="网络拓扑图（用PT画的）"><br>从上图我们可以得到以下信息：</p>
+<ul>
+<li>路由器R1连接了两个局域网</li>
+<li>局域网1（192.168.1.0/24）中，主机PC1连接交换机SW1</li>
+<li>局域网2（192.168.2.0/24）中，主机PC2连接交换机SW2</li>
+<li>PC1的IP为192.168.1.1，默认网关为192.168.1.254，MAC地址为0011（MAC地址为48位，这里为了简单，我用16位来表示）</li>
+<li>PC2的IP为192.168.2.1，默认网关为192.168.2.254，MAC地址为0021</li>
+<li>R1左端口的IP为192.168.1.254，MAC地址为1254</li>
+<li>R1右端口的IP为192.168.2.254，MAC地址为2254</li>
+</ul>
+<p>现在我们思考一个问题：PC1 ping PC2的具体过程是怎么样的？当然你可以作弊，用PT单步调试看每一步的细节。下面是我用PT单步调试后结合自己理解的过程：</p>
+<ol>
+<li>PC1把目标IP和自己的子网掩码做逻辑与运算，发现目标IP和自己不在同一个子网，所以把包发给默认网关</li>
+<li>PC1在自己的ARP缓存表中查询默认网关的MAC地址，发现没有找到，于是发送一个ARP广播包</li>
+<li>SW1收到ARP包后，发现是个广播包，于是广播除PC1连接端口外的所有端口</li>
+<li>R1收到ARP包后，取出头部查看，发现目标IP是自己，于是将自己的MAC地址返回给PC1</li>
+<li>PC1将R1的MAC地址更新到ARP缓存表</li>
+<li>PC1发送包给R1</li>
+<li>R1收到包后发现目标IP所在子网就在自己右端口上</li>
+<li>R1在自己的ARP缓存表中查询目标IP的MAC地址，发现没有找到，于是从右端口发送一个ARP广播包</li>
+<li>SW2收到ARP包后，发现是个广播包，于是广播除R1连接端口外的所有端口</li>
+<li>PC2收到ARP包后，取出头部查看，发现目标IP是自己，于是将自己的MAC地址返回给R1</li>
+<li>R1将PC2的MAC地址更新到ARP缓存表</li>
+<li>R1发送包给PC2</li>
+<li>PC2收到包后给PC1发送回应</li>
+<li>发送回应的过程跟发送的过程类似，只是少了ARP过程，因为发送方的IP与MAC地址的映射关系已经记录在ARP缓存表中</li>
+</ol>
+<p>我们留意到，整个过程涉及到三个表：</p>
+<ul>
+<li>交换机有MAC地址表，存储着MAC地址和端口的映射关系</li>
+<li>路由器有路由表，存储着IP和端口的映射关系</li>
+<li>主机和路由器都有ARP缓存表，存储着IP和MAC地址的映射关系</li>
+</ul>
+<p>这三张表是怎么来的：</p>
+<ul>
+<li>MAC地址表通过局域网内各节点之间不断通过交换机通信逐步完善起来的</li>
+<li>路由表是各种路由算法+人工配置逐步完善起来的</li>
+<li>ARP缓存表是不断通过ARP协议的请求逐步完善起来的</li>
+</ul>
+<p>如果用PT单步调式，你会发现原始包的目标IP始终不变，变的只是目标MAC地址，所以其实三层并不具备传输包的功能，而是靠二层去传输。</p>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2021/08/27/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%90%AD%E5%BB%BAFacebook-ATC/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2021/11/01/%E5%85%B3%E4%BA%8ENAT/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        Copyright © 夏眠鱼 2024
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="undefined" />
+  <meta name="author" content="夏眠鱼" />
+  <meta name="description" content="null" />
+  
+  
+  <title>
+    
+      Java 泛型-类型推断 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Oct 23, 2017
+  </h3>
+  <h1>
+    Java 泛型-类型推断
+  </h1>
+  <div class="content markdown-body">
+    <p>类型推断（Type Inference）是指 Java 编译器能查看每个方法的调用和相应声明，以确定调用合适的类型参数（Type Argument）或参数。推断算法决定参数的类型，如果可用，则指定被赋值的类型或返回的类型。最后，推断算法试图在一起工作的所有参数中找到最具体的类型。</p>
+<p>为了说明最后一点，在下面的例子中，泛型推断确定将传入 pick 方法的第二个参数作为 Serializable 的类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">pick</span><span class="params">(T a1, T a2)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> a2; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Serializable s = pick(<span class="string">&quot;d&quot;</span>, <span class="keyword">new</span> ArrayList&lt;String&gt;());</span><br></pre></td></tr></table></figure>
+<h1 id="u7C7B_u578B_u63A8_u65AD_u548C_u6CDB_u578B_u65B9_u6CD5"><a href="#u7C7B_u578B_u63A8_u65AD_u548C_u6CDB_u578B_u65B9_u6CD5" class="headerlink" title="类型推断和泛型方法"></a>类型推断和泛型方法</h1><p>引入类型推断的泛型方法，能够让你像调用普通方法一样调用泛型方法，而不需要在尖括号中指定类型。思考下面的例子，BoxDemo，它需要 Box 类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BoxDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;U&gt; <span class="function"><span class="keyword">void</span> <span class="title">addBox</span><span class="params">(U u, </span></span></span><br><span class="line"><span class="function"><span class="params">      java.util.List&lt;Box&lt;U&gt;&gt; boxes)</span> </span>&#123;</span><br><span class="line">    Box&lt;U&gt; box = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">    box.set(u);</span><br><span class="line">    boxes.add(box);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;U&gt; <span class="function"><span class="keyword">void</span> <span class="title">outputBoxes</span><span class="params">(java.util.List&lt;Box&lt;U&gt;&gt; boxes)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (Box&lt;U&gt; box: boxes) &#123;</span><br><span class="line">      U boxContents = box.get();</span><br><span class="line">      System.out.println(<span class="string">&quot;Box #&quot;</span> + counter + <span class="string">&quot; contains [&quot;</span> +</span><br><span class="line">             boxContents.toString() + <span class="string">&quot;]&quot;</span>);</span><br><span class="line">      counter++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    java.util.ArrayList&lt;Box&lt;Integer&gt;&gt; listOfIntegerBoxes =</span><br><span class="line">      <span class="keyword">new</span> java.util.ArrayList&lt;&gt;();</span><br><span class="line">    BoxDemo.&lt;Integer&gt;addBox(Integer.valueOf(<span class="number">10</span>), listOfIntegerBoxes);</span><br><span class="line">    BoxDemo.addBox(Integer.valueOf(<span class="number">20</span>), listOfIntegerBoxes);</span><br><span class="line">    BoxDemo.addBox(Integer.valueOf(<span class="number">30</span>), listOfIntegerBoxes);</span><br><span class="line">    BoxDemo.outputBoxes(listOfIntegerBoxes);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是这个例子的输出结果：<br>Box #0 contains [10]<br>Box #1 contains [20]<br>Box #2 contains [30]</p>
+<p>泛型方法 addBox 定义了一个名叫 U 的类型参数。一般 Java 编译器能推断泛型方法调用的类型参数。因此，大多数情况下，你不需要指定类型参数。例如，为了调用泛型方法 addBox，你可以使用类型证据指定一个类型参数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BoxDemo.&lt;Integer&gt;addBox(Integer.valueOf(<span class="number">10</span>), listOfIntegerBoxes);</span><br></pre></td></tr></table></figure>
+<p>或者，你可以省略类型证据，Java 编译器能从传入泛型方法的参数中自动推断出类型参数为 Integer：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BoxDemo.addBox(Integer.valueOf(<span class="number">20</span>), listOfIntegerBoxes);</span><br></pre></td></tr></table></figure>
+<h1 id="u6CDB_u578B_u7C7B_u7684_u5B9E_u4F8B_u5316"><a href="#u6CDB_u578B_u7C7B_u7684_u5B9E_u4F8B_u5316" class="headerlink" title="泛型类的实例化"></a>泛型类的实例化</h1><p>只要编译器能从上下文中推断出类型参数，我们就可以使用空的类型参数（棱形）来替换类型参数去调用泛型类的构造方法。</p>
+<p>例如，思考下面的变量声明：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;String&gt;&gt; myMap = <span class="keyword">new</span> HashMap&lt;String, List&lt;String&gt;&gt;();</span><br></pre></td></tr></table></figure>
+<p>我们可以使用空的类型参数（棱形）来代替构造方法的参数化类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;String&gt;&gt; myMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<p>注意，为了在泛型类实例化过程中使用类型推断，你必须使用棱形。下面的例子中，因为 HashMap() 的构造方法引用了 HashMap 原始类型而不是 <code>HashMap&lt;String, List&lt;String&gt;&gt;</code>，所以编译器生成一个 <code>unchecked conversion</code> 的警告。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;String&gt;&gt; myMap = <span class="keyword">new</span> HashMap(); <span class="comment">// unchecked conversion warning</span></span><br></pre></td></tr></table></figure>
+<h1 id="u6CDB_u578B_u6784_u9020_u65B9_u6CD5"><a href="#u6CDB_u578B_u6784_u9020_u65B9_u6CD5" class="headerlink" title="泛型构造方法"></a>泛型构造方法</h1><p>注意，泛型类或非泛型类的构造方法可以是泛化的（换句话说是声明它们自己的类型参数）。思考下面的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>&lt;<span class="title">X</span>&gt; </span>&#123;</span><br><span class="line">    &lt;T&gt; MyClass(T t) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>思考下面 MyClass 类的实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> MyClass&lt;Integer&gt;(<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>这个语句创建一个参数化类型为 <code>MyClass&lt;Integer&gt;</code> 的实例，也明确指定 <code>MyClass&lt;X&gt;</code> 中类型参数 X 是 Integer 类型。注意，这个泛型类的构造方法包含一个类型参数 T。编译器推断出这个泛型类的构造方法的类型参数 T 是 String 类型，因为构造器的实际参数是一个 String 对象。</p>
+<p>在 Java SE 7 之前发布的编译器能够推断泛型构造方法的实际类型参数，类似于泛型方法。但是，Java SE 7 和后面的编译器可以推断出使用了棱形的泛型类的实际类型参数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyClass&lt;Integer&gt; myObject = <span class="keyword">new</span> MyClass&lt;&gt;(<span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，编译器能推断出泛型类 <code>MyClass&lt;X&gt;</code> 中 X 是 Integer 类型，泛型构造方法中 T 是 String 类型。</p>
+<p>需要注意的是，类型推断算法仅适用调用参数、目标类型，以及可能明显的预期返回类型来推断类型。类型推断算法不使用后面程序中的结果。</p>
+<h1 id="u76EE_u6807_u7C7B_u578B"><a href="#u76EE_u6807_u7C7B_u578B" class="headerlink" title="目标类型"></a>目标类型</h1><p>Java 编译器利用目标类型来推断出泛型方法调用的类型参数。表达式的目标类型是 Java 编译器所期望的数据类型，这取决于表达式出现的位置。思考下面声明的 Collections.emptyList 方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">emptyList</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>思考下面的赋值语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; listOne = Collections.emptyList();</span><br></pre></td></tr></table></figure>
+<p>这个语句期望得到一个 <code>List&lt;String&gt;</code> 实例，<code>List&lt;String&gt;</code> 是目标类型。因为 emptyList 方法返回一个 <code>List&lt;T&gt;</code> 类型的值，编译器推断出类型参数 T 一定是一个 String。这在 Java SE 7 或 8 中都有效。或者我们可以使用类型证据并指定 T 的值如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; listOne = Collections.&lt;String&gt;emptyList();</span><br></pre></td></tr></table></figure>
+<p>在这个上下文中，我们并不需要这么做。不过在其他上下文中是需要的，思考下面的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processStringList</span><span class="params">(List&lt;String&gt; stringList)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// process stringList</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设你想使用一个 emptyList 来调用 processStringList 方法，在 Java SE 7 中，下面的语句是编译不通过的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">processStringList(Collections.emptyList());</span><br></pre></td></tr></table></figure>
+<p>Java SE 7 编译会生成一个错误类似如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object&gt; cannot be converted to List&lt;String&gt;</span><br></pre></td></tr></table></figure>
+<p>编译器需要类型参数 T 的值，所以 T 从 Object 开始。因此，调用 Collections.emptyList 会返回 <code>List&lt;Object&gt;</code>，这个与 processStringList 方法不兼容。所以在 Java SE 7 中，我们必须制定类型参数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">processStringList(Collections.&lt;String&gt;emptyList());</span><br></pre></td></tr></table></figure>
+<p>在 Java SE 8 中已经不需要这样。例如 processStringList 方法的参数，目标类型已经被扩展到包含方法参数。在这种情况下，processStringList 方法需要一个 <code>List&lt;String&gt;</code> 类型的参数，Collections.emptyList 方法返回一个 <code>List&lt;T&gt;</code> 类型的值，所以使用 <code>List&lt;String&gt;</code> 的目标类型，编译器推断类型参数 T 具有一个 String 的值。所以在 Java SE 8 中，下面的语句能编译通过：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">processStringList(Collections.emptyList());</span><br></pre></td></tr></table></figure>
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2017/10/22/Java-%E6%B3%9B%E5%9E%8B-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%AD%90%E7%B1%BB%E5%9E%8B/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2017/10/24/Java-%E6%B3%9B%E5%9E%8B-%E9%80%9A%E9%85%8D%E7%AC%A6/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        Copyright © 夏眠鱼 2024
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+
+
+    </div>
+  </body>
+</html>

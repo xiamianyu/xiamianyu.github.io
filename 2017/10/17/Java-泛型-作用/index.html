@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="undefined" />
+  <meta name="author" content="夏眠鱼" />
+  <meta name="description" content="null" />
+  
+  
+  <title>
+    
+      Java 泛型-作用 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Oct 17, 2017
+  </h3>
+  <h1>
+    Java 泛型-作用
+  </h1>
+  <div class="content markdown-body">
+    <h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>前段时间，有位同事向我请教一个问题：B 是 A 的子类，为什么下面的代码编译不通过呢？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;B&gt; bList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;A&gt; aList = bList; <span class="comment">// 编译错误</span></span><br></pre></td></tr></table></figure>
+<p>抓耳挠腮，印象中我也遇到这个问题啊，忘记怎么解决了-_-||。后来在<a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/generics/subtyping.html">官网教程</a>中看到有解决方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends B&gt; bList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;? extends A&gt; aList = bList;</span><br></pre></td></tr></table></figure>
+<p>泛型是 Java 中一个很强大的特性，学好它事半功倍。我决定将官网的教程翻译下来，当然不是一字一句地翻译，尽量根据自己的理解翻译出来。</p>
+<h1 id="u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B"><a href="#u4E3A_u4EC0_u4E48_u4F7F_u7528_u6CDB_u578B" class="headerlink" title="为什么使用泛型"></a>为什么使用泛型</h1><p>简而言之，在定义类、接口和方法时，泛型能让类或接口变成参数，这样的参数又叫类型参数。就像方法声明中的形参一样，类型参数提供了代码复用的通道，不同的是形参接收的是值，类型参数接收的是类型。</p>
+<p>使用泛型的好处：</p>
+<ul>
+<li>编译时强类型检查</li>
+<li>消除类型转化</li>
+<li>实现通用算法</li>
+</ul>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2017/06/28/Java-%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2017/10/18/Java-%E6%B3%9B%E5%9E%8B-%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        Copyright © 夏眠鱼 2024
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+
+
+    </div>
+  </body>
+</html>

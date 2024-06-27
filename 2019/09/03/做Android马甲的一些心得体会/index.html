@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="undefined" />
+  <meta name="author" content="夏眠鱼" />
+  <meta name="description" content="null" />
+  
+  
+  <title>
+    
+      做 Android 马甲的一些心得体会 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Sep 03, 2019
+  </h3>
+  <h1>
+    做 Android 马甲的一些心得体会
+  </h1>
+  <div class="content markdown-body">
+    <h1 id="u9A6C_u7532_u7684_u4F5C_u7528"><a href="#u9A6C_u7532_u7684_u4F5C_u7528" class="headerlink" title="马甲的作用"></a>马甲的作用</h1><ul>
+<li>导量</li>
+<li>刷榜</li>
+<li>增加关键词覆盖数</li>
+<li>替主 App 改版测试，将风险最小化</li>
+</ul>
+<h1 id="u9A6C_u7532_u7684_u5206_u7C7B"><a href="#u9A6C_u7532_u7684_u5206_u7C7B" class="headerlink" title="马甲的分类"></a>马甲的分类</h1><ul>
+<li>矩阵马甲：马甲的名称、icon、内容和主 App 基本一样</li>
+<li>备胎马甲：当主 App 被下架后，在主 App 的基础上换个 Logo、名称、开发者账号重新上架</li>
+<li>目标用户马甲：截取主 App 的部分功能，针对不用的目标用户加上一些特殊功能</li>
+</ul>
+<h1 id="u9A6C_u7532_u7684_u7BA1_u7406"><a href="#u9A6C_u7532_u7684_u7BA1_u7406" class="headerlink" title="马甲的管理"></a>马甲的管理</h1><p>第一次做马甲时，以为马甲是一次性的，即发布完就不会更新，导致后续更新马甲时头特别大。不管马甲是不是一次性的，我们都应该考虑马甲的更新问题，你永远不知道以后会发生什么，总得留给自己一条后路。</p>
+<h2 id="u98CE_u9669_u9694_u79BB"><a href="#u98CE_u9669_u9694_u79BB" class="headerlink" title="风险隔离"></a>风险隔离</h2><p>马甲与主 App 尽量使用不同的签名、开发者账号、域名等，避免被一锅端。</p>
+<h2 id="u7248_u672C_u63A7_u5236"><a href="#u7248_u672C_u63A7_u5236" class="headerlink" title="版本控制"></a>版本控制</h2><p>使用 Branch 区分主包和马甲包，Tag 标记各个包的版本号，在项目的 README 中记录如下：</p>
+<table>
+<thead>
+<tr>
+<th>应用名称</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主包的应用名称</td>
+<td>主包</td>
+</tr>
+<tr>
+<td>wc1 的应用名称</td>
+<td>马甲</td>
+</tr>
+<tr>
+<td>wc2 的应用名称</td>
+<td>马甲</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Branch</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>master</td>
+<td>主包的应用名称</td>
+</tr>
+<tr>
+<td>wc1</td>
+<td>wc1 的应用名称</td>
+</tr>
+<tr>
+<td>wc2</td>
+<td>wc2 的应用名称</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v*</td>
+<td>主包的应用名称</td>
+</tr>
+<tr>
+<td>wc1-v*</td>
+<td>wc1 的应用名称</td>
+</tr>
+<tr>
+<td>wc2-v*</td>
+<td>wc2 的应用名称</td>
+</tr>
+</tbody>
+</table>
+<h2 id="u5C0F_u6280_u5DE7"><a href="#u5C0F_u6280_u5DE7" class="headerlink" title="小技巧"></a>小技巧</h2><p>Android 的马甲包，直接更改 app/build.gradle 中 ApplicationId 即可。尽量不要改动源码中的包名，否则后续 merge 主包代码时会引起大量冲突，到时候改得你够呛。</p>
+<p>当然，像第三方登录如微信，得建一个 ApplicationId 对应的目录树存放 <code>wxapi/WXEntryActivity</code> 文件。</p>
+<h1 id="u53C2_u8003_u94FE_u63A5"><a href="#u53C2_u8003_u94FE_u63A5" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lzc4869/article/details/79057390">关于“马甲app”你不得不知的一些常识</a></p>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2019/03/06/%E4%BB%A3%E7%A0%81%E6%B2%A1%E6%8E%92%E7%89%88%EF%BC%8C%E4%BA%B2%E4%BA%BA%E4%B8%A4%E8%A1%8C%E6%B3%AA/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2020/06/21/Android%20%E8%BF%9E%E9%BA%A6%E4%BA%91%E7%AB%AF%E5%90%88%E5%9B%BE%E5%AE%9E%E8%B7%B5/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        Copyright © 夏眠鱼 2024
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+
+
+    </div>
+  </body>
+</html>

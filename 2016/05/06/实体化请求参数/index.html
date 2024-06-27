@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="undefined" />
+  <meta name="author" content="夏眠鱼" />
+  <meta name="description" content="null" />
+  
+  
+  <title>
+    
+      实体化请求参数 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    May 06, 2016
+  </h3>
+  <h1>
+    实体化请求参数
+  </h1>
+  <div class="content markdown-body">
+    <h1 id="u627E_u4E2A_u7406_u7531"><a href="#u627E_u4E2A_u7406_u7531" class="headerlink" title="找个理由"></a>找个理由</h1><p>获取「新闻列表」的请求地址，一般我们是这样写的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String url = MobileApi.GET_NEWSES + <span class="string">&quot;?channelID=&quot;</span> + mChannelID + <span class="string">&quot;pageNo=&quot;</span> + mPageNo + <span class="string">&quot;&amp;pageSize=30&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>这种写法其实不利于项目的后期维护，如果项目大规模地更改接口字段名，就要一个个文件去查找修改，单查找这步就消耗了很多时间，这显然不符合程序员懒惰的特性。我的做法是把请求参数实体化，并放到一个package下统一管理，以后要修改，直接去package下找到对应的参数（实体类）修改就可以了。</p>
+<p>实体化请求参数后的写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NewsParam param = <span class="keyword">new</span> NewsParam(mChannelID, mPageNo);</span><br><span class="line">String url =  MobileApi.GET_NEWSES + ParamFormatter.toUri(param);</span><br></pre></td></tr></table></figure>
+<h1 id="u5177_u4F53_u5B9E_u73B0"><a href="#u5177_u4F53_u5B9E_u73B0" class="headerlink" title="具体实现"></a>具体实现</h1><p>假设「获取新闻列表」请求接口地址为：<code>http:localhost/getNewses?channelID=&amp;pageNo=&amp;pageSize</code></p>
+<h2 id="u63A5_u53E3_u53C2_u6570_u6620_u5C04"><a href="#u63A5_u53E3_u53C2_u6570_u6620_u5C04" class="headerlink" title="接口参数映射"></a>接口参数映射</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MobileApi</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String HOST = <span class="string">&quot;http:localhost/&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取新闻列表</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> finsl String GET_NEWSES = HOST + <span class="string">&quot;getNewses&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewsParam</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 栏目ID</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;channelID&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mChannelID;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 页码</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;pageNo&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mPageNo;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 每页大小，这里固定是30条</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;pageSize&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mPageSize = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NewsParam</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NewsParam</span><span class="params">(<span class="keyword">int</span> channelID, <span class="keyword">int</span> pageNo)</span> </span>&#123;</span><br><span class="line">        mChannelID = channelID;</span><br><span class="line">        mPageNo = pageNo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// getting and setters</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用 Gson 的注解 <code>SerializedName</code> 将接口字段名称映射为自定义名称，如 channelID 映射为 mChannelID，这样如果接口字段名称改了，只需修改 SerializedName 的值即可，是不是很方便。</p>
+<h2 id="u53C2_u6570_u7C7B_u578B_u8F6C_u6362"><a href="#u53C2_u6570_u7C7B_u578B_u8F6C_u6362" class="headerlink" title="参数类型转换"></a>参数类型转换</h2><p>做了接口参数名称映射后，下一步就是对 <code>Get / Post</code> 请求参数做类型转换了，我们把类型转换工作放到 ParamFormatter 中处理，下面是它的具体实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamFormatter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成json</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toJson</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Gson().toJson(object);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成uri</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toUri</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> generateUri(<span class="string">&quot;?&quot;</span>, object);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成多个参数拼接</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">generateUri</span><span class="params">(String prefix, Object object)</span> </span>&#123;</span><br><span class="line">        StringBuffer uriSb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line"></span><br><span class="line">        JSONObject jsonObject = <span class="keyword">null</span>;</span><br><span class="line">        Iterator&lt;String&gt; keys = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            jsonObject = <span class="keyword">new</span> JSONObject(toJson(object));</span><br><span class="line">            keys = jsonObject.keys();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (keys.hasNext()) &#123;</span><br><span class="line">                String key = keys.next();</span><br><span class="line">                Object value = jsonObject.get(key);</span><br><span class="line"></span><br><span class="line">                key = URLEncoder.encode(key);</span><br><span class="line">                value = URLEncoder.encode(String.valueOf(value));</span><br><span class="line"></span><br><span class="line">                uriSb.append(<span class="string">&quot;&amp;&quot;</span>).append(key).append(<span class="string">&quot;=&quot;</span>).append(value);</span><br><span class="line">                uriSb.replace(<span class="number">0</span>, <span class="number">1</span>, prefix);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> uriSb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成Map</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title">toMap</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line"></span><br><span class="line">        JSONObject jsonObject = <span class="keyword">null</span>;</span><br><span class="line">        Iterator&lt;String&gt; keys = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            jsonObject = <span class="keyword">new</span> JSONObject(toJson(object));</span><br><span class="line">            keys = jsonObject.keys();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (keys.hasNext()) &#123;</span><br><span class="line">                String key = keys.next();</span><br><span class="line">                String value = String.valueOf(jsonObject.get(key));</span><br><span class="line">                map.put(key, value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 后续可以添加各种格式的转换...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="u96F6_u4EF6_u7EC4_u88C5"><a href="#u96F6_u4EF6_u7EC4_u88C5" class="headerlink" title="零件组装"></a>零件组装</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewsFragment</span> <span class="keyword">extends</span> <span class="title">CommonFragment</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> NewsParam mNewsParam;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initVariables</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        mNewsParam = <span class="keyword">new</span> NewsParam();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> String <span class="title">getUrl</span><span class="params">(<span class="keyword">int</span> channelID, <span class="keyword">int</span> pageNo)</span> </span>&#123;</span><br><span class="line">        mNewsParam.setChannelID(channelID);</span><br><span class="line">        mNewsParam.setPageNo(pageNo);</span><br><span class="line">        <span class="keyword">return</span> MobileApi.GET_NEWSES + ParamFormatter.toUri(mNewsParam);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2016/04/14/%E4%BB%8A%E5%A4%A9%E6%88%91%E5%9D%90%E4%B8%BB%E5%B8%AD%E4%BD%8D/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2016/07/10/Java-Lambda/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        Copyright © 夏眠鱼 2024
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+
+
+    </div>
+  </body>
+</html>
