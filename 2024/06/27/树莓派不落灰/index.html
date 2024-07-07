@@ -101,9 +101,9 @@
 <p>由于NAS仅支持SMB协议，访问方式比较受限，能不能搭建一个Web文件管理服务，读取NAS全部资源呢？最好还有读写权限控制，使用<a target="_blank" rel="noopener" href="https://filebrowser.org/">File Browser</a>就可以搞定。</p>
 <p>有了娃之后，我一直想着用树莓派做点什么。想到的第一个就是搭建一个博客，记录娃成长历程，以后娃也可以在上面写写日记啥的，便用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>+<a target="_blank" rel="noopener" href="https://github.com/nginx/nginx">Nginx</a>搭了个静态博客。</p>
 <p>好像还缺了点什么，怎么能没有游戏呢？！对于游戏的选择，我还是想装经典单机游戏，找了很久，终于找到Web版<a target="_blank" rel="noopener" href="https://hub.docker.com/r/wangz2019/jsnes/tags">FC Games</a>。到此为止，树莓派上已经有很多好玩的东西了，等娃大一些还可以装<a target="_blank" rel="noopener" href="https://github.com/scratchfoundation/scratch-gui">Scratch</a>少儿编程。</p>
-<p>忘了告诉你们，我树莓派是2G内存+32G存储，只装程序不存数据，数据存到NAS，所以跑上面那些服务绰绰有余啦！</p>
-<p>最后将Nginx的端口改为80，入口改成导航，连上家里WiFi，浏览器输入raspberrypi.local就能访问导航了，最终成品如下：</p>
-<p><img src="/../images/nas-navi.png" alt="导航"></p>
+<p>忘了告诉你们，我的树莓派是2G内存+32G存储，只装程序不存数据，数据存到NAS，所以跑上面的那些服务还是能撑得住。</p>
+<p>最后将Nginx的端口改为80，入口改成导航，连上家里WiFi，浏览器输入raspberrypi.local就能访问导航了。</p>
+<p>到目前为止，树莓派上已经部署了不少程序，这时候我会比较关心它的负载，需要监控CPU、内存、磁盘、温度等指标。监控服务器最简单粗暴的方式是SSH进入服务器使用top查看各项指标，有没有更友好的方式，可以在网页端查看监控呢？<a target="_blank" rel="noopener" href="https://nicolargo.github.io/glances/">Glances</a>就能解决这个问题，不仅支持终端查看，还可以支持网页端查看，使用起来非常方便。</p>
 
   </div>
   
