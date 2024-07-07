@@ -97,7 +97,7 @@
 <p>借助树莓派的蓝牙模块，可使用<a target="_blank" rel="noopener" href="https://github.com/pulseaudio/pulseaudio">PluseAudio</a>将家里的老旧音箱改造成蓝牙音箱，手机连接树莓派的蓝牙即可播放音乐。</p>
 <p>因为现在的在线音乐基本要开会员才能使用，所以我一直在收集MP3格式的音乐存到NAS里。既然树莓派可以输出音频到音箱，那可不可以在树莓派上装一个无界面的播放器，从NAS读取MP3文件并输出到音箱呢？答案是可以的，使用<a target="_blank" rel="noopener" href="https://mpg123.de/">mpg123</a>就能满足这个需求。</p>
 <p>mpg123每次播放音乐都要SSH进去服务器执行命令才能播放，非专业人士就不知道怎么使用了。想着让家里人都能共享音乐资源，最好是有界面可以访问，能选歌和播放，于是用<a target="_blank" rel="noopener" href="https://www.navidrome.org/docs/">Navidrome</a>搭建了Web在线音乐服务，读取NAS中的所有音乐。我还发现一款很棒的NAS音乐播放器<a target="_blank" rel="noopener" href="https://music.aqzscn.cn/docs/intro">音流</a>，它可以连接到Navidrome。</p>
-<p>在查找寻找Web在线音乐服务，意外收获了<a target="_blank" rel="noopener" href="https://emby.media/">Emby</a>，Emby不仅支持音频在线播放，还支持视频、图片和书籍的管理，可以说是NAS一站式服务。实际使用后发现，Emby的书籍功能有缺陷，不能打开打开PDF这类的文件。</p>
+<p>在查找寻找Web在线音乐服务时意外收获了<a target="_blank" rel="noopener" href="https://emby.media/">Emby</a>，Emby不仅支持音频在线播放，还支持视频、图片和书籍的管理，可以说是NAS一站式服务。实际使用后发现，Emby的书籍功能有缺陷，不能打开PDF这类的文件，在GitHub Issues里找解决方案发现书籍功能已经不能使用了，有点小遗憾。</p>
 <p>家里的WiFi带宽有限，白天用的人多，网络特别卡，于是想弄个离线下载服务，在夜间人少时下载，充分利用闲时带宽。使用<a target="_blank" rel="noopener" href="https://github.com/aria2/aria2">Aira2</a>+<a target="_blank" rel="noopener" href="https://ariang.mayswind.net/">AriaNg</a>就能很好得满足这一需求。</p>
 <p>由于NAS仅支持SMB协议，访问方式比较受限，能不能搭建一个Web文件管理服务，读取NAS全部资源呢？最好还有读写权限控制，使用<a target="_blank" rel="noopener" href="https://filebrowser.org/">File Browser</a>就可以搞定。</p>
 <p>有了娃之后，我一直想着用树莓派做点什么。想到的第一个就是搭建一个博客，记录娃成长历程，以后娃也可以在上面写写日记啥的，便用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>+<a target="_blank" rel="noopener" href="https://github.com/nginx/nginx">Nginx</a>搭了个静态博客。</p>
