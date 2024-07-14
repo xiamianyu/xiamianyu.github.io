@@ -4,9 +4,9 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="undefined" />
+  <meta name="keywords" content="" />
   <meta name="author" content="夏眠鱼" />
-  <meta name="description" content="null" />
+  <meta name="description" content="" />
   
   
   <title>
@@ -50,7 +50,7 @@
 <script src="/js/fancybox.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
   <body>
@@ -62,7 +62,8 @@
 
       <p class="links">
   
-    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
     </a>
   
 </p>
@@ -92,20 +93,20 @@
     做 Android 马甲的一些心得体会
   </h1>
   <div class="content markdown-body">
-    <h1 id="u9A6C_u7532_u7684_u4F5C_u7528"><a href="#u9A6C_u7532_u7684_u4F5C_u7528" class="headerlink" title="马甲的作用"></a>马甲的作用</h1><ul>
+    <h1 id="马甲的作用"><a href="#马甲的作用" class="headerlink" title="马甲的作用"></a>马甲的作用</h1><ul>
 <li>导量</li>
 <li>刷榜</li>
 <li>增加关键词覆盖数</li>
 <li>替主 App 改版测试，将风险最小化</li>
 </ul>
-<h1 id="u9A6C_u7532_u7684_u5206_u7C7B"><a href="#u9A6C_u7532_u7684_u5206_u7C7B" class="headerlink" title="马甲的分类"></a>马甲的分类</h1><ul>
+<h1 id="马甲的分类"><a href="#马甲的分类" class="headerlink" title="马甲的分类"></a>马甲的分类</h1><ul>
 <li>矩阵马甲：马甲的名称、icon、内容和主 App 基本一样</li>
 <li>备胎马甲：当主 App 被下架后，在主 App 的基础上换个 Logo、名称、开发者账号重新上架</li>
 <li>目标用户马甲：截取主 App 的部分功能，针对不用的目标用户加上一些特殊功能</li>
 </ul>
-<h1 id="u9A6C_u7532_u7684_u7BA1_u7406"><a href="#u9A6C_u7532_u7684_u7BA1_u7406" class="headerlink" title="马甲的管理"></a>马甲的管理</h1><p>第一次做马甲时，以为马甲是一次性的，即发布完就不会更新，导致后续更新马甲时头特别大。不管马甲是不是一次性的，我们都应该考虑马甲的更新问题，你永远不知道以后会发生什么，总得留给自己一条后路。</p>
-<h2 id="u98CE_u9669_u9694_u79BB"><a href="#u98CE_u9669_u9694_u79BB" class="headerlink" title="风险隔离"></a>风险隔离</h2><p>马甲与主 App 尽量使用不同的签名、开发者账号、域名等，避免被一锅端。</p>
-<h2 id="u7248_u672C_u63A7_u5236"><a href="#u7248_u672C_u63A7_u5236" class="headerlink" title="版本控制"></a>版本控制</h2><p>使用 Branch 区分主包和马甲包，Tag 标记各个包的版本号，在项目的 README 中记录如下：</p>
+<h1 id="马甲的管理"><a href="#马甲的管理" class="headerlink" title="马甲的管理"></a>马甲的管理</h1><p>第一次做马甲时，以为马甲是一次性的，即发布完就不会更新，导致后续更新马甲时头特别大。不管马甲是不是一次性的，我们都应该考虑马甲的更新问题，你永远不知道以后会发生什么，总得留给自己一条后路。</p>
+<h2 id="风险隔离"><a href="#风险隔离" class="headerlink" title="风险隔离"></a>风险隔离</h2><p>马甲与主 App 尽量使用不同的签名、开发者账号、域名等，避免被一锅端。</p>
+<h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><p>使用 Branch 区分主包和马甲包，Tag 标记各个包的版本号，在项目的 README 中记录如下：</p>
 <table>
 <thead>
 <tr>
@@ -113,8 +114,7 @@
 <th>类型</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>主包的应用名称</td>
 <td>主包</td>
 </tr>
@@ -126,8 +126,7 @@
 <td>wc2 的应用名称</td>
 <td>马甲</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <table>
 <thead>
 <tr>
@@ -135,8 +134,7 @@
 <th>备注</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>master</td>
 <td>主包的应用名称</td>
 </tr>
@@ -148,8 +146,7 @@
 <td>wc2</td>
 <td>wc2 的应用名称</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <table>
 <thead>
 <tr>
@@ -157,8 +154,7 @@
 <th>备注</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>v*</td>
 <td>主包的应用名称</td>
 </tr>
@@ -170,11 +166,10 @@
 <td>wc2-v*</td>
 <td>wc2 的应用名称</td>
 </tr>
-</tbody>
-</table>
-<h2 id="u5C0F_u6280_u5DE7"><a href="#u5C0F_u6280_u5DE7" class="headerlink" title="小技巧"></a>小技巧</h2><p>Android 的马甲包，直接更改 app/build.gradle 中 ApplicationId 即可。尽量不要改动源码中的包名，否则后续 merge 主包代码时会引起大量冲突，到时候改得你够呛。</p>
+</tbody></table>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>Android 的马甲包，直接更改 app&#x2F;build.gradle 中 ApplicationId 即可。尽量不要改动源码中的包名，否则后续 merge 主包代码时会引起大量冲突，到时候改得你够呛。</p>
 <p>当然，像第三方登录如微信，得建一个 ApplicationId 对应的目录树存放 <code>wxapi/WXEntryActivity</code> 文件。</p>
-<h1 id="u53C2_u8003_u94FE_u63A5"><a href="#u53C2_u8003_u94FE_u63A5" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lzc4869/article/details/79057390">关于“马甲app”你不得不知的一些常识</a></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://blog.csdn.net/lzc4869/article/details/79057390">关于“马甲app”你不得不知的一些常识</a></p>
 
   </div>
   

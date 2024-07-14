@@ -4,9 +4,9 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="undefined" />
+  <meta name="keywords" content="" />
   <meta name="author" content="夏眠鱼" />
-  <meta name="description" content="null" />
+  <meta name="description" content="" />
   
   
   <title>
@@ -50,7 +50,7 @@
 <script src="/js/fancybox.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
   <body>
@@ -62,7 +62,8 @@
 
       <p class="links">
   
-    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
     </a>
   
 </p>
@@ -92,17 +93,17 @@
     项目发布规范
   </h1>
   <div class="content markdown-body">
-    <h1 id="u7248_u672C_u540D_u79F0"><a href="#u7248_u672C_u540D_u79F0" class="headerlink" title="版本名称"></a>版本名称</h1><p><strong>alpha</strong><br>该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  </p>
+    <h1 id="版本名称"><a href="#版本名称" class="headerlink" title="版本名称"></a>版本名称</h1><p><strong>alpha</strong><br>该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的 bug 较多，普通用户最好不要安装。  </p>
 <p><strong>beta</strong><br>该版本相对于 alpha 版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。这一版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将结果反馈给开发者，开发者们再进行有针对性的修改。该版本也不适合一般用户安装。  </p>
 <p><strong>release</strong><br>该版本意味「最终释放版」，在出了一系列的测试版之后，终归会有一个正式版本，对于用户而言，购买该版本的软件绝对不会错。该版本有时也称为标准版。</p>
-<h1 id="versionCode__26amp_3B_versionName"><a href="#versionCode__26amp_3B_versionName" class="headerlink" title="versionCode &amp; versionName"></a>versionCode &amp; versionName</h1><p><strong>versionCode</strong><br>类型：MAXINT(2e31 = 2147483647)<br>作用：标识 App 内部版本，仅对开发人员可见</p>
-<p>每次发布 <strong>release</strong> 版本时累加1，长度不能超过 MAXINT(2e31 = 2147483647)，否则 App 将无法再升级。Android 中，不允许对 <code>versionCode</code> 做降级处理，否则覆盖安装失败。</p>
+<h1 id="versionCode-versionName"><a href="#versionCode-versionName" class="headerlink" title="versionCode &amp; versionName"></a>versionCode &amp; versionName</h1><p><strong>versionCode</strong><br>类型：MAXINT(2e31 &#x3D; 2147483647)<br>作用：标识 App 内部版本，仅对开发人员可见</p>
+<p>每次发布 <strong>release</strong> 版本时累加1，长度不能超过 MAXINT(2e31 &#x3D; 2147483647)，否则 App 将无法再升级。Android 中，不允许对 <code>versionCode</code> 做降级处理，否则覆盖安装失败。</p>
 <p><strong>versionName</strong><br>类型：String<br>格式：&lt;主版本号&gt;.&lt;子版本号&gt;.&lt;修订版本号&gt;[.内部测试版本号]<br>作用：标识 App 版本，对用户可见，即应用商店上的版本  </p>
 <p><strong>主版本号</strong><br>进行了重大修改或局部修正累积较多，而导致项目整体发生全局变化时，主版本号加 1，子版本号和修订版本号复位为 0。</p>
 <p><strong>子版本号</strong><br>增加了部分功能或同时修复上个版本 bug 时，子版本号加 1，修订版本号复位为 0。</p>
 <p><strong>修订版本号</strong><br>针对上个版本修复 bug, 修订版本号加 1。  </p>
 <p><strong>内部测试版本号</strong><br>为方便测试人员识别每一次测试的版本，只在 alpha 期间显示该版本号。</p>
-<h1 id="u5B89_u88C5_u5305_u540D_u79F0"><a href="#u5B89_u88C5_u5305_u540D_u79F0" class="headerlink" title="安装包名称"></a>安装包名称</h1><p><strong>alpha</strong><br>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_alpha.apk</code><br>示例: <code>news_v2.1.2.2_2015-09-30_alpha.apk</code></p>
+<h1 id="安装包名称"><a href="#安装包名称" class="headerlink" title="安装包名称"></a>安装包名称</h1><p><strong>alpha</strong><br>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_alpha.apk</code><br>示例: <code>news_v2.1.2.2_2015-09-30_alpha.apk</code></p>
 <p><strong>beta</strong><br>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_beta.apk</code><br>示例: <code>news_v2.1.1_2015-09-30_beta.apk</code></p>
 <p><strong>release</strong></p>
 <blockquote>
@@ -111,7 +112,7 @@
 <blockquote>
 <p>非多渠道<br>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_release.apk</code><br>示例: <code>news_v2.1.1_2015-09-30_release.apk</code></p>
 </blockquote>
-<h1 id="u53D1_u5E03_u524D_u68C0_u67E5_u9879"><a href="#u53D1_u5E03_u524D_u68C0_u67E5_u9879" class="headerlink" title="发布前检查项"></a>发布前检查项</h1><ul>
+<h1 id="发布前检查项"><a href="#发布前检查项" class="headerlink" title="发布前检查项"></a>发布前检查项</h1><ul>
 <li>服务器地址已改为正式？</li>
 <li>调试日志（含第三方SDK）已关闭？</li>
 <li>第三方SDK已授权正式版权限?</li>

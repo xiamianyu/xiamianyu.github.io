@@ -4,9 +4,9 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="undefined" />
+  <meta name="keywords" content="" />
   <meta name="author" content="夏眠鱼" />
-  <meta name="description" content="null" />
+  <meta name="description" content="" />
   
   
   <title>
@@ -50,7 +50,7 @@
 <script src="/js/fancybox.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
   <body>
@@ -62,7 +62,8 @@
 
       <p class="links">
   
-    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
     </a>
   
 </p>
@@ -92,18 +93,25 @@
     Ubuntu 下搭建 Jenkins
   </h1>
   <div class="content markdown-body">
-    <h1 id="u642D_u5EFA_u524D_u51C6_u5907"><a href="#u642D_u5EFA_u524D_u51C6_u5907" class="headerlink" title="搭建前准备"></a>搭建前准备</h1><p>Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。</p>
-<h1 id="u5B89_u88C5_Jenkins"><a href="#u5B89_u88C5_Jenkins" class="headerlink" title="安装 Jenkins"></a>安装 Jenkins</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -</span><br><span class="line">$ sudo sh -c <span class="string">&#x27;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#x27;</span></span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install jenkins</span><br></pre></td></tr></table></figure>
+    <h1 id="搭建前准备"><a href="#搭建前准备" class="headerlink" title="搭建前准备"></a>搭建前准备</h1><p>Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。</p>
+<h1 id="安装-Jenkins"><a href="#安装-Jenkins" class="headerlink" title="安装 Jenkins"></a>安装 Jenkins</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="built_in">sudo</span> apt-key add -</span><br><span class="line">$ <span class="built_in">sudo</span> sh -c <span class="string">&#x27;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#x27;</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get update</span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install jenkins</span><br></pre></td></tr></table></figure>
+
 <p>安装成功后，默认会自动开启 Jenkins 服务。在浏览器上访问 <code>http://&lt;服务器 IP&gt;:8080</code> 即可看到 Jenkins 的界面，接下来按照提示配置 Jenkins 即可。</p>
 <p>开启 Jenkins 服务失败时，在 <code>/var/log/jenkins/jenkins.log</code> 中查看出错日志。</p>
-<h1 id="u542F_u52A8_/__u5173_u95ED_Jenkins__u670D_u52A1"><a href="#u542F_u52A8_/__u5173_u95ED_Jenkins__u670D_u52A1" class="headerlink" title="启动 / 关闭 Jenkins 服务"></a>启动 / 关闭 Jenkins 服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ sudo /etc/init.d/jenkins start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">$ sudo /etc/init.d/jenkins stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">$ sudo /etc/init.d/jenkins restart</span><br></pre></td></tr></table></figure>
+<h1 id="启动-关闭-Jenkins-服务"><a href="#启动-关闭-Jenkins-服务" class="headerlink" title="启动 &#x2F; 关闭 Jenkins 服务"></a>启动 &#x2F; 关闭 Jenkins 服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins restart</span><br></pre></td></tr></table></figure>
+
 <p>由于上面的命令需要记住 Jenkins 的路径，费脑，推荐使用下面这种命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ sudo service jenkins start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">$ sudo service jenkins stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">$ sudo service jenkins restart</span><br></pre></td></tr></table></figure>
-<h1 id="u81EA_u5B9A_u4E49_Jenkins__u7AEF_u53E3"><a href="#u81EA_u5B9A_u4E49_Jenkins__u7AEF_u53E3" class="headerlink" title="自定义 Jenkins 端口"></a>自定义 Jenkins 端口</h1><p>在 <code>/etc/default/jenkins</code> 中配置 <code>HTTP_PORT</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins restart</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="自定义-Jenkins-端口"><a href="#自定义-Jenkins-端口" class="headerlink" title="自定义 Jenkins 端口"></a>自定义 Jenkins 端口</h1><p>在 <code>/etc/default/jenkins</code> 中配置 <code>HTTP_PORT</code>：</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP_PORT=8080</span><br></pre></td></tr></table></figure>
-<h1 id="u8E29_u8FC7_u7684_u5751"><a href="#u8E29_u8FC7_u7684_u5751" class="headerlink" title="踩过的坑"></a>踩过的坑</h1><p>由于本人 Ubuntu 上的 Java 版本为 Java 6，升级到 Java 8 后，重新安装 Jenkins，发现服务启动不了，报的错还是因为我系统使用了 Java 6。在排除 Java 版本没问题后，我怀疑 Jenkins 配置文件中 Java 版本可能还是旧的，后面真的就在 <code>/etc/default/jenkins</code> 中找到了解决方案：</p>
+
+
+<h1 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h1><p>由于本人 Ubuntu 上的 Java 版本为 Java 6，升级到 Java 8 后，重新安装 Jenkins，发现服务启动不了，报的错还是因为我系统使用了 Java 6。在排除 Java 版本没问题后，我怀疑 Jenkins 配置文件中 Java 版本可能还是旧的，后面真的就在 <code>/etc/default/jenkins</code> 中找到了解决方案：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># location of java</span></span><br><span class="line">JAVA=升级后的Java路径</span><br></pre></td></tr></table></figure>
-<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">Installing Jenkins on Ubuntu</a>，by Jenkins</p>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">Installing Jenkins on Ubuntu</a>，by Jenkins</p>
 
   </div>
   

@@ -4,9 +4,9 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="undefined" />
+  <meta name="keywords" content="" />
   <meta name="author" content="夏眠鱼" />
-  <meta name="description" content="null" />
+  <meta name="description" content="" />
   
   
   <title>
@@ -50,7 +50,7 @@
 <script src="/js/fancybox.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
   <body>
@@ -62,7 +62,8 @@
 
       <p class="links">
   
-    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
     </a>
   
 </p>
@@ -92,10 +93,10 @@
     Java Lambda
   </h1>
   <div class="content markdown-body">
-    <h1 id="u80CC_u666F"><a href="#u80CC_u666F" class="headerlink" title="背景"></a>背景</h1><p>Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。</p>
-<h1 id="u51FD_u6570_u5F0F_u63A5_u53E3"><a href="#u51FD_u6570_u5F0F_u63A5_u53E3" class="headerlink" title="函数式接口"></a>函数式接口</h1><p>Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。</p>
+    <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>Lambda 表达式支持将代码块作为方法参数，以更简洁的方式创建函数式接口的实例。主要作用是代替匿名内部类的烦琐语法。</p>
+<h1 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h1><p>Lambda 表达式的类型，也被成为目标类型（target type），必须是函数式接口（functional interface）。函数式接口是指可以包含多个默认方法（default 关键字修饰）、类方法，但只能包含一个抽象方法的接口。</p>
 <p>Java 8 为函数式接口提供了 @FunctionalInterface 注解，作用于类型，指定该接口必须是函数式接口。</p>
-<h1 id="Lambda__u8868_u8FBE_u5F0F_u8BED_u6CD5"><a href="#Lambda__u8868_u8FBE_u5F0F_u8BED_u6CD5" class="headerlink" title="Lambda 表达式语法"></a>Lambda 表达式语法</h1><p>Lambda 表达式语法由形参列表、箭头和代码块三部分构成：</p>
+<h1 id="Lambda-表达式语法"><a href="#Lambda-表达式语法" class="headerlink" title="Lambda 表达式语法"></a>Lambda 表达式语法</h1><p>Lambda 表达式语法由形参列表、箭头和代码块三部分构成：</p>
 <table>
 <thead>
 <tr>
@@ -104,33 +105,32 @@
 <th>代码块</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>(int x, int y)</td>
 <td>-&gt;</td>
 <td>x + y</td>
 </tr>
-</tbody>
-</table>
-<h2 id="u5F62_u53C2_u5217_u8868"><a href="#u5F62_u53C2_u5217_u8868" class="headerlink" title="形参列表"></a>形参列表</h2><p>形参列表允许省略形参参数。如果形参列表中只有一个参数，可以省略圆括号。</p>
-<h2 id="u7BAD_u5934"><a href="#u7BAD_u5934" class="headerlink" title="箭头"></a>箭头</h2><p>-&gt;：由英文中划线和大于号组成</p>
-<h2 id="u4EE3_u7801_u5757"><a href="#u4EE3_u7801_u5757" class="headerlink" title="代码块"></a>代码块</h2><ul>
+</tbody></table>
+<h2 id="形参列表"><a href="#形参列表" class="headerlink" title="形参列表"></a>形参列表</h2><p>形参列表允许省略形参参数。如果形参列表中只有一个参数，可以省略圆括号。</p>
+<h2 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h2><p>-&gt;：由英文中划线和大于号组成</p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><ul>
 <li>只有一条语句时，可省略代码块的花括号；</li>
 <li>只有一条 return 语句时，可省略 return 关键字。</li>
 </ul>
-<h1 id="u4EE3_u7801_u793A_u4F8B"><a href="#u4EE3_u7801_u793A_u4F8B" class="headerlink" title="代码示例"></a>代码示例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Anonymous Runnable</span></span><br><span class="line">Runnable run1 = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello world1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lambda Runnable</span></span><br><span class="line">Runnable run2 = () -&gt; System.out.println(<span class="string">&quot;hello world2&quot;</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="Lamba__u4E0E_u533F_u540D_u5185_u90E8_u7C7B_u7684_u5F02_u540C"><a href="#Lamba__u4E0E_u533F_u540D_u5185_u90E8_u7C7B_u7684_u5F02_u540C" class="headerlink" title="Lamba 与匿名内部类的异同"></a>Lamba 与匿名内部类的异同</h1><h2 id="u76F8_u540C_u70B9"><a href="#u76F8_u540C_u70B9" class="headerlink" title="相同点"></a>相同点</h2><ul>
+<h1 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Anonymous Runnable</span></span><br><span class="line"><span class="type">Runnable</span> <span class="variable">run1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello world1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lambda Runnable</span></span><br><span class="line"><span class="type">Runnable</span> <span class="variable">run2</span> <span class="operator">=</span> () -&gt; System.out.println(<span class="string">&quot;hello world2&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Lamba-与匿名内部类的异同"><a href="#Lamba-与匿名内部类的异同" class="headerlink" title="Lamba 与匿名内部类的异同"></a>Lamba 与匿名内部类的异同</h1><h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><ul>
 <li>都可以直接访问 effectively final 局部变量、外部类的成员变量（实例变量和类变量）；</li>
 <li>都可以直接调用从接口中继承的<strong>默认方法</strong>。</li>
 </ul>
-<h2 id="u4E0D_u540C_u70B9"><a href="#u4E0D_u540C_u70B9" class="headerlink" title="不同点"></a>不同点</h2><ul>
+<h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><ul>
 <li>匿名内部类可以为任意接口创建实例，不管接口包含多少个抽象方法，只要匿名内部类实现所有的抽象方法即可，但 Lambda 表达式只能为函数式接口创建实例；</li>
 <li>匿名内部类可以为抽象类甚至普通类创建实例，但 Lambda 表达式只能为函数式接口创建实例；</li>
 <li>匿名内部类实现的抽象方法的方法体允许调用接口定义的默认方法，但 Lambda 表达式的代码块中不允许调用接口中定义的默认方法。</li>
 </ul>
-<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
 <li>《疯狂 Java 讲义3》</li>
-<li><a target="_blank" rel="noopener" href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html">Oracle Lambda</a></li>
+<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html">Oracle Lambda</a></li>
 </ul>
 
   </div>

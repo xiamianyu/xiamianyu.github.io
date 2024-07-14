@@ -4,9 +4,9 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="undefined" />
+  <meta name="keywords" content="" />
   <meta name="author" content="夏眠鱼" />
-  <meta name="description" content="null" />
+  <meta name="description" content="" />
   
   
   <title>
@@ -50,7 +50,7 @@
 <script src="/js/fancybox.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
   <body>
@@ -62,7 +62,8 @@
 
       <p class="links">
   
-    <a title="archives" target="" href="/archives/">      <i class="iconfont icon-bookmark"></i>
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
     </a>
   
 </p>
@@ -92,32 +93,32 @@
     App 项目文档管理
   </h1>
   <div class="content markdown-body">
-    <h1 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h1><p>一个 App 从需求到部署上线，会有产品组、项目组、开发组等的参与，每个阶段各组都会产生相应的文档，将他们整理起来也就形成项目文档，方便以后项目的维护和交接。考虑到其他组的学习使用成本，我们使用SVN来管理。</p>
-<h1 id="SVN__u5DE5_u5177"><a href="#SVN__u5DE5_u5177" class="headerlink" title="SVN 工具"></a>SVN 工具</h1><ul>
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一个 App 从需求到部署上线，会有产品组、项目组、开发组等的参与，每个阶段各组都会产生相应的文档，将他们整理起来也就形成项目文档，方便以后项目的维护和交接。考虑到其他组的学习使用成本，我们使用SVN来管理。</p>
+<h1 id="SVN-工具"><a href="#SVN-工具" class="headerlink" title="SVN 工具"></a>SVN 工具</h1><ul>
 <li>Windows: TortoiseSVN、SmartSVN 等  </li>
 <li>Mac: Cornerstone、SmartSVN 等</li>
 </ul>
-<h1 id="u5404_u7EC4_u804C_u80FD"><a href="#u5404_u7EC4_u804C_u80FD" class="headerlink" title="各组职能"></a>各组职能</h1><h2 id="u4EA7_u54C1_u7EC4"><a href="#u4EA7_u54C1_u7EC4" class="headerlink" title="产品组"></a>产品组</h2><p>负责产品设计和 UI。</p>
-<h2 id="u9879_u76EE_u7EC4"><a href="#u9879_u76EE_u7EC4" class="headerlink" title="项目组"></a>项目组</h2><p>负责进度把控和 QC。</p>
-<h2 id="u5F00_u53D1_u7EC4"><a href="#u5F00_u53D1_u7EC4" class="headerlink" title="开发组"></a>开发组</h2><p>Android、iOS 和后台。</p>
-<h1 id="u76EE_u5F55_u548C_u6743_u9650_u8BF4_u660E"><a href="#u76EE_u5F55_u548C_u6743_u9650_u8BF4_u660E" class="headerlink" title="目录和权限说明"></a>目录和权限说明</h1><blockquote>
+<h1 id="各组职能"><a href="#各组职能" class="headerlink" title="各组职能"></a>各组职能</h1><h2 id="产品组"><a href="#产品组" class="headerlink" title="产品组"></a>产品组</h2><p>负责产品设计和 UI。</p>
+<h2 id="项目组"><a href="#项目组" class="headerlink" title="项目组"></a>项目组</h2><p>负责进度把控和 QC。</p>
+<h2 id="开发组"><a href="#开发组" class="headerlink" title="开发组"></a>开发组</h2><p>Android、iOS 和后台。</p>
+<h1 id="目录和权限说明"><a href="#目录和权限说明" class="headerlink" title="目录和权限说明"></a>目录和权限说明</h1><blockquote>
 <p>根据各组职能分配的目录结构和权限如下：<br><img src="http://7xs5pr.com1.z0.glb.clouddn.com/svn-app-achieve.png" alt="svn-app-achieve"></p>
 </blockquote>
 <p>上图给到的只有三级目录，下面是所有层级目录的详细说明：</p>
-<h2 id="u8BBE_u8BA1"><a href="#u8BBE_u8BA1" class="headerlink" title="设计"></a>设计</h2><blockquote>
+<h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><blockquote>
 <p>存放产品组产出的文档</p>
 </blockquote>
-<h3 id="u9700_u6C42_u5206_u6790"><a href="#u9700_u6C42_u5206_u6790" class="headerlink" title="需求分析"></a>需求分析</h3><p>需求分析文档。</p>
-<h3 id="u539F_u578B_u8BBE_u8BA1"><a href="#u539F_u578B_u8BBE_u8BA1" class="headerlink" title="原型设计"></a>原型设计</h3><p>包含灰度原型、交互原型、高保真图、切图和标注。</p>
-<h3 id="u529F_u80FD_u6D41_u7A0B_u56FE"><a href="#u529F_u80FD_u6D41_u7A0B_u56FE" class="headerlink" title="功能流程图"></a>功能流程图</h3><p>对于复杂的功能，画出流程图，方便开发和测试达成共识。</p>
-<h3 id="u4EA7_u54C1_u7ED3_u6784_u56FE"><a href="#u4EA7_u54C1_u7ED3_u6784_u56FE" class="headerlink" title="产品结构图"></a>产品结构图</h3><p>用思维导图画出 App 的整体结构，按功能模块划分。</p>
-<h2 id="u5F00_u53D1"><a href="#u5F00_u53D1" class="headerlink" title="开发"></a>开发</h2><blockquote>
+<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>需求分析文档。</p>
+<h3 id="原型设计"><a href="#原型设计" class="headerlink" title="原型设计"></a>原型设计</h3><p>包含灰度原型、交互原型、高保真图、切图和标注。</p>
+<h3 id="功能流程图"><a href="#功能流程图" class="headerlink" title="功能流程图"></a>功能流程图</h3><p>对于复杂的功能，画出流程图，方便开发和测试达成共识。</p>
+<h3 id="产品结构图"><a href="#产品结构图" class="headerlink" title="产品结构图"></a>产品结构图</h3><p>用思维导图画出 App 的整体结构，按功能模块划分。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><blockquote>
 <p>存放 Android、iOS 和 后台产出的文档。</p>
 </blockquote>
-<h3 id="u6E90_u7801_u8BF4_u660E"><a href="#u6E90_u7801_u8BF4_u660E" class="headerlink" title="源码说明"></a>源码说明</h3><p>描述项目的目录结构、开发架构（MVC/MVP等）、使用的第三方SDK等  。</p>
-<h3 id="u63A5_u53E3_u6587_u6863"><a href="#u63A5_u53E3_u6587_u6863" class="headerlink" title="接口文档"></a>接口文档</h3><p>接口文档包含请求类型、请求URL、请求参数、返回值、返回值示例等，最好使用自动化工具生成接口文档，如 Swagger 等。</p>
-<h2 id="u90E8_u7F72"><a href="#u90E8_u7F72" class="headerlink" title="部署"></a>部署</h2><h3 id="u5E94_u7528_u5546_u5E97"><a href="#u5E94_u7528_u5546_u5E97" class="headerlink" title="应用商店"></a>应用商店</h3><p>存放 Android 或 iOS 应用商店申请上线的相关资料。</p>
-<h3 id="u5B89_u88C5_u5305"><a href="#u5B89_u88C5_u5305" class="headerlink" title="安装包"></a>安装包</h3><p>存放 Android 或 iOS 在测试阶段(alpha)、公测阶段(beta) 和正式发布阶段(release)的安装包。</p>
+<h3 id="源码说明"><a href="#源码说明" class="headerlink" title="源码说明"></a>源码说明</h3><p>描述项目的目录结构、开发架构（MVC&#x2F;MVP等）、使用的第三方SDK等  。</p>
+<h3 id="接口文档"><a href="#接口文档" class="headerlink" title="接口文档"></a>接口文档</h3><p>接口文档包含请求类型、请求URL、请求参数、返回值、返回值示例等，最好使用自动化工具生成接口文档，如 Swagger 等。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="应用商店"><a href="#应用商店" class="headerlink" title="应用商店"></a>应用商店</h3><p>存放 Android 或 iOS 应用商店申请上线的相关资料。</p>
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><p>存放 Android 或 iOS 在测试阶段(alpha)、公测阶段(beta) 和正式发布阶段(release)的安装包。</p>
 
   </div>
   
