@@ -93,9 +93,19 @@
     关于NAT
   </h1>
   <div class="content markdown-body">
-    <p><strong>Inside&#x2F;Outside与Local&#x2F;Global</strong><br>Inside&#x2F;Outside：从主机位置来看，分内网主机（Inside）和外网主机（Outside）<br>Local&#x2F;Global：从网络视角来看，分内网（Local）和外网（Global）</p>
-<p>所以就有下面四个组合：<br>Inside Local：内网主机的IP地址，通常是一个私有地址<br>Inside Global：内网主机的对外IP地址，通常是外网地址，由ISP提供<br>Outside Local：外网主机的IP地址，不一定是外网地址<br>Outside Global：外网主机的对外IP地址，通常由ISP提供</p>
-<p><strong>NAT类型</strong><br>完全圆锥型NAT（Full cone NAT）</p>
+    <p><strong>Inside&#x2F;Outside</strong></p>
+<p>从主机位置来看，分内网主机（Inside）和外网主机（Outside）</p>
+<p><strong>Local&#x2F;Global</strong></p>
+<p>从网络视角来看，分内网（Local）和外网（Global）</p>
+<p><strong>Inside&#x2F;Outside与Local&#x2F;Global组合</strong></p>
+<ul>
+<li>Inside Local：内网主机的IP地址，通常是一个私有地址</li>
+<li>Inside Global：内网主机的对外IP地址，通常是外网地址，由ISP提供</li>
+<li>Outside Local：外网主机的IP地址，不一定是外网地址</li>
+<li>Outside Global：外网主机的对外IP地址，通常由ISP提供</li>
+</ul>
+<p><strong>NAT类型</strong></p>
+<p>完全圆锥型NAT（Full cone NAT）</p>
 <ul>
 <li>一旦内部地址（iAddr:iPort）映射到外部地址（eAddr:ePort），所有发自iAddr:iPort的数据包都经由eAddr:ePort向外发送。</li>
 <li>任意外部主机都能经由发送数据包给eAddr:ePort到达iAddr:iPort。</li>
