@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="夏眠鱼" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      Ubuntu 下搭建 Jenkins 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Feb 14, 2017
+  </h3>
+  <h1>
+    Ubuntu 下搭建 Jenkins
+  </h1>
+  <div class="content markdown-body">
+    <h1 id="搭建前准备"><a href="#搭建前准备" class="headerlink" title="搭建前准备"></a>搭建前准备</h1><p>Jenkins 需要 Java 7 或更好版本，我们需要在 Ubuntu（我的是 Ubuntu 12.04）上装好，关于 Java 的安装，这里不再敖述。</p>
+<h1 id="安装-Jenkins"><a href="#安装-Jenkins" class="headerlink" title="安装 Jenkins"></a>安装 Jenkins</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="built_in">sudo</span> apt-key add -</span><br><span class="line">$ <span class="built_in">sudo</span> sh -c <span class="string">&#x27;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#x27;</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get update</span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install jenkins</span><br></pre></td></tr></table></figure>
+
+<p>安装成功后，默认会自动开启 Jenkins 服务。在浏览器上访问 <code>http://&lt;服务器 IP&gt;:8080</code> 即可看到 Jenkins 的界面，接下来按照提示配置 Jenkins 即可。</p>
+<p>开启 Jenkins 服务失败时，在 <code>/var/log/jenkins/jenkins.log</code> 中查看出错日志。</p>
+<h1 id="启动-关闭-Jenkins-服务"><a href="#启动-关闭-Jenkins-服务" class="headerlink" title="启动 &#x2F; 关闭 Jenkins 服务"></a>启动 &#x2F; 关闭 Jenkins 服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins restart</span><br></pre></td></tr></table></figure>
+
+<p>由于上面的命令需要记住 Jenkins 的路径，费脑，推荐使用下面这种命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins restart</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="自定义-Jenkins-端口"><a href="#自定义-Jenkins-端口" class="headerlink" title="自定义 Jenkins 端口"></a>自定义 Jenkins 端口</h1><p>在 <code>/etc/default/jenkins</code> 中配置 <code>HTTP_PORT</code>：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP_PORT=8080</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h1><p>由于本人 Ubuntu 上的 Java 版本为 Java 6，升级到 Java 8 后，重新安装 Jenkins，发现服务启动不了，报的错还是因为我系统使用了 Java 6。在排除 Java 版本没问题后，我怀疑 Jenkins 配置文件中 Java 版本可能还是旧的，后面真的就在 <code>/etc/default/jenkins</code> 中找到了解决方案：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># location of java</span></span><br><span class="line">JAVA=升级后的Java路径</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">Installing Jenkins on Ubuntu</a>，by Jenkins</p>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2016/12/17/%E5%88%9D%E5%B0%9D%20TeamLeader/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2017/02/22/%E6%90%AD%E5%BB%BAAndroid%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B9%B3%E5%8F%B0/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 夏眠鱼 2016 - 2024
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+
+
+    </div>
+  </body>
+</html>

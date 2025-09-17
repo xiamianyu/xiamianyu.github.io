@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="夏眠鱼" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      搭建 Android 自动化构建平台 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Feb 22, 2017
+  </h3>
+  <h1>
+    搭建 Android 自动化构建平台
+  </h1>
+  <div class="content markdown-body">
+    <h1 id="平台选择"><a href="#平台选择" class="headerlink" title="平台选择"></a>平台选择</h1><p>根据团队的情况，我们选择 <code>Jenkins + Git + Gogs + Gradle + Ubuntu</code> 来搭建 Android 自动化构建平台。</p>
+<p>需要的硬件资源：一台装有 Ubuntu 系统的主机。</p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h2><p>通用 SSH 远程登录的方式进入装有 Ubuntu 系统的主机：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh ubuntu@192.168.1.253</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置-Android-SDK"><a href="#配置-Android-SDK" class="headerlink" title="配置 Android SDK"></a>配置 Android SDK</h2><h3 id="下载-SDK"><a href="#下载-SDK" class="headerlink" title="下载 SDK"></a>下载 SDK</h3><p>进入 Ubuntu 后，可选择下面其中一种方式下载 Android SDK，下载成功后将压缩包的内容解压到 <code>android/sdk</code> 目录下。</p>
+<h4 id="官网下载"><a href="#官网下载" class="headerlink" title="官网下载"></a>官网下载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz --output android/sdk</span><br></pre></td></tr></table></figure>
+
+<p>官网下载的 SDK，在运行过程中会报两个异常：</p>
+<h5 id="异常一"><a href="#异常一" class="headerlink" title="异常一"></a>异常一</h5><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ionic build error : You have not accepted the license agreements of the following SDK components: [Android SDK Platform XX]</span><br></pre></td></tr></table></figure>
+
+<p><strong>原因分析</strong><br>通过命令行下载的 Android SDK 没有接受了许可协议。</p>
+<p><strong>解决方法</strong><br>手动添加 licenses：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> android/sdk</span><br><span class="line">$ <span class="built_in">mkdir</span> licenses</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;8933bad161af4178b1185d1a37fbf41ea5269c55&quot;</span> &gt; <span class="string">&quot;licenses/android-sdk-license&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="异常二"><a href="#异常二" class="headerlink" title="异常二"></a>异常二</h5><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/lib/jenkins/.android/repositories.cfg could not be loaded</span><br></pre></td></tr></table></figure>
+
+<p><strong>原因分析</strong><br>暂时找不出具体原因，应该也是通过命令行下载的 Android SDK 导致的。</p>
+<p><strong>解决方法</strong><br>手动添加 repositories.cfg：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> -e <span class="string">&quot;### User Sources for Android SDK Manager\ncount=0&quot;</span> &gt; /var/lib/jenkins/.android/repositories.cfg</span><br></pre></td></tr></table></figure>
+
+<h4 id="第三方下载"><a href="#第三方下载" class="headerlink" title="第三方下载"></a>第三方下载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp android-sdk_r24.4.1-linux.tar ubuntu@192.168.1.253:android/sdk</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>文件末尾添加以下内容并保存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ANDROID_HOME=/home/jenkins/android/sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$ANDROID_HOME</span>/tools:<span class="variable">$ANDROID_HOME</span>/platfom-tools:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<p>让上面设置的环境变量立即生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载 Git</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查是否安装成功</span></span><br><span class="line">$ git --version</span><br><span class="line">git version 2.11.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置-SVN"><a href="#配置-SVN" class="headerlink" title="配置 SVN"></a>配置 SVN</h2><h3 id="下载-SVN"><a href="#下载-SVN" class="headerlink" title="下载 SVN"></a>下载 SVN</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载 SVN</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install svn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查是否安装成功</span></span><br><span class="line">$ svn --version</span><br><span class="line">svn，版本 1.6.17 (r1128011)</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加安全认证"><a href="#添加安全认证" class="headerlink" title="添加安全认证"></a>添加安全认证</h3><p>SVN Publisher 插件的原理，其实是调用了 SVN 命令行来操作文件。虽然在「系统设置」中配置了 SVN 的账户密码，但是在构建 Job 时，还会出现安全认证失败的错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SEVERE: *SVNForceImport Error: svn: E170001: Authentication required for &#x27;&lt;http://svn-server:80&gt; </span><br></pre></td></tr></table></figure>
+
+<p>解决方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换当前用户到 jenkins</span></span><br><span class="line">$ su jenkins</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除已经存在的 .subversion</span></span><br><span class="line">$ <span class="built_in">rm</span> -fr ~/.subversion</span><br><span class="line"></span><br><span class="line"><span class="comment"># 该操作的目的是保存 svn 的用户名和密码。</span></span><br><span class="line"><span class="comment"># 输入完密码后，会询问你是否需要保存密码，输入 yes 以保存 SVN 密码</span></span><br><span class="line">$ svn checkout --username &lt;username&gt; &lt;svn-repo-url&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置-Gradle"><a href="#配置-Gradle" class="headerlink" title="配置 Gradle"></a>配置 Gradle</h2><h3 id="下载-Gradle"><a href="#下载-Gradle" class="headerlink" title="下载 Gradle"></a>下载 Gradle</h3><p>为了方便，我直接从<a href="http://www.androiddevtools.cn/">这里</a>下载 gradle-2.14.1-all.zip，下载好之后，使用 <code>scp</code> 拷贝到 Ubuntu 中并解压：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp gradle-2.14.1-all.zip ubuntu@192.168.1.253:.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> unzip gradle-2.14.1-all.zip -d /opt/gradle/</span><br></pre></td></tr></table></figure>
+
+<p>当然你也可以选择从<a href="https://gradle.org/releases/">官网</a>下载。</p>
+<h3 id="配置环境变量-1"><a href="#配置环境变量-1" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>文件末尾添加以下内容并保存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GRADLE_HOME=/opt/gradle/gradle-2.14.1</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$GRADLE_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<p>让上面设置的环境变量立即生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ gradle -v</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">Gradle 2.14.1</span><br><span class="line">------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">Build time:   2016-07-18 06:38:37 UTC</span><br><span class="line">Revision:     d9e2113d9fb05a5caabba61798bdb8dfdca83719</span><br><span class="line"></span><br><span class="line">Groovy:       2.4.4</span><br><span class="line">Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015</span><br><span class="line">JVM:          1.8.0_121 (Oracle Corporation 25.121-b13)</span><br><span class="line">OS:           Linux 3.5.0-47-generic amd64</span><br></pre></td></tr></table></figure>
+
+<h1 id="Jenkins-环境配置"><a href="#Jenkins-环境配置" class="headerlink" title="Jenkins 环境配置"></a>Jenkins 环境配置</h1><h2 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h2><p>在 Jenkins 的「管理插件」中下载 Git、Gogs、Gradle 和 SVN Publisher 插件。</p>
+<h2 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h2><p>打开「系统管理」-&gt;「系统设置」，配置以下环境。</p>
+<h3 id="配置-Android-SDK-环境变量"><a href="#配置-Android-SDK-环境变量" class="headerlink" title="配置 Android SDK 环境变量"></a>配置 Android SDK 环境变量</h3><p><img src="/../images/jenkins-system-setting1.png" alt="jenkins-system-setting1.png"></p>
+<h3 id="配置-SVN-账号密码"><a href="#配置-SVN-账号密码" class="headerlink" title="配置 SVN 账号密码"></a>配置 SVN 账号密码</h3><p><img src="/../images/jenkins-system-setting2.png" alt="jenkins-system-setting2.png"></p>
+<h3 id="配置-JDK-Git-Gradle"><a href="#配置-JDK-Git-Gradle" class="headerlink" title="配置 JDK &amp; Git &amp; Gradle"></a>配置 JDK &amp; Git &amp; Gradle</h3><p>打开「系统管理」-&gt;「Global Tool Configuration」，配置以下环境。</p>
+<p>通过 <code>which</code> 查看可执行命令路径：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> java</span><br><span class="line">/usr/local/java/jdk1.8.0_121/bin/java</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">which</span> git</span><br><span class="line">/usr/bin/git</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">which</span> gradle</span><br><span class="line">/opt/gradle/gradle-2.14.1/bin/gradle</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/jenkins-system-setting3.png" alt="jenkins-system-setting3.png"></p>
+<p>注意，GRADLE_HOME 填 <code>/opt/gradle/gradle-2.14.1</code>，不是 <code>/opt/gradle/gradle-2.14.1/bin/gradle</code>：<br><img src="/../images/jenkins-system-setting4.png" alt="jenkins-system-setting4.png"></p>
+<h1 id="Jenkins-的使用"><a href="#Jenkins-的使用" class="headerlink" title="Jenkins 的使用"></a>Jenkins 的使用</h1><h2 id="创建-Job"><a href="#创建-Job" class="headerlink" title="创建 Job"></a>创建 Job</h2><p><img src="/../images/jenkins-create-job1.png" alt="jenkins-create-job1"></p>
+<p><img src="/../images/jenkins-create-job2.png" alt="jenkins-create-job2"></p>
+<h2 id="配置-Job"><a href="#配置-Job" class="headerlink" title="配置 Job"></a>配置 Job</h2><p><img src="/../images/jenkins-config-job1.png" alt="jenkins-config-job1"><br><img src="/../images/jenkins-config-job2.png" alt="jenkins-config-job2"></p>
+<p><img src="/../images/jenkins-config-job3.png" alt="jenkins-config-job3"></p>
+<p><img src="/../images/jenkins-config-job4.png" alt="jenkins-config-job4"></p>
+<p><img src="/../images/jenkins-config-job5.png" alt="jenkins-config-job5"></p>
+<p><img src="/../images/jenkins-config-job6.png" alt="jenkins-config-job6"></p>
+<h2 id="Gogs-上配置-web-钩子"><a href="#Gogs-上配置-web-钩子" class="headerlink" title="Gogs 上配置 web 钩子"></a>Gogs 上配置 web 钩子</h2><p><img src="/../images/gogs-config-webhook1.png" alt="gogs-config-webhook1"></p>
+<p><img src="/../images/gogs-config-webhook2.png" alt="gogs-config-webhook2"></p>
+<p><img src="/../images/gogs-config-webhook3.png" alt="gogs-config-webhook3"></p>
+<p><img src="/../images/gogs-config-webhook4.png" alt="gogs-config-webhook4"></p>
+<h2 id="测试-web-钩子"><a href="#测试-web-钩子" class="headerlink" title="测试 web 钩子"></a>测试 web 钩子</h2><p><img src="/../images/gogs-config-webhook5.png" alt="gogs-config-webhook5"></p>
+<p><img src="/../images/jenkins-build-history.png" alt="jenkins-build-history"></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="http://blog.csdn.net/CheNorton/article/details/50345039">CentOS7 命令行安装 Android SDK</a></li>
+<li><a href="http://blog.csdn.net/stwstw0123/article/details/47809189">Ubuntu 上安装 Gradle</a></li>
+<li><a href="http://www.mamicode.com/info-detail-529578.html">上传文件到 SVN 报错</a></li>
+<li><a href="http://stackoverflow.com/questions/40392345/ionic-build-error-you-have-not-accepted-the-license-agreements-of-the-followin">Android SDK 不接受许可协议</a></li>
+<li><a href="http://stackoverflow.com/questions/38448482/installing-android-studio-in-ubuntu-14-04-64-bit-android-repositories-cfg-could">.android&#x2F;repositories.cfg could not be loaded</a></li>
+</ul>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2017/02/14/Ubuntu%E4%B8%8B%E6%90%AD%E5%BB%BAJenkins/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2017/03/09/%E6%8F%90%E9%AB%98%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%E7%9A%84%E6%95%88%E7%8E%87/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 夏眠鱼 2016 - 2024
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+
+
+    </div>
+  </body>
+</html>
