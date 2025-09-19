@@ -150,7 +150,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换当前用户到jenkins</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">su jenkins</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除已经存在的.subversion</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">rm</span> -fr ~/.subversion</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该操作的目的是保存svn的用户名和密码。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入完密码后，会询问你是否需要保存密码，输入<span class="built_in">yes</span>以保存SVN密码</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">svn checkout --username &lt;username&gt; &lt;svn-repo-url&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>配置Gradle</strong></p>
-<p>为了方便，我直接从<a href="http://www.androiddevtools.cn/">这里</a>下载gradle-2.14.1-all.zip，下载好之后，使用<code>scp</code>拷贝到Ubuntu中并解压：</p>
+<p>为了方便，我直接从<a target="_blank" rel="noopener" href="http://www.androiddevtools.cn/">这里</a>下载gradle-2.14.1-all.zip，下载好之后，使用<code>scp</code>拷贝到Ubuntu中并解压：</p>
 <figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> scp gradle<span class="number">-2.14</span><span class="number">.1</span>-<span class="keyword">all</span>.zip ubuntu@<span class="number">192.168</span><span class="number">.1</span><span class="number">.253</span>:.</span><br><span class="line"><span class="symbol">$</span> sudo unzip gradle<span class="number">-2.14</span><span class="number">.1</span>-<span class="keyword">all</span>.zip -d /opt/gradle/</span><br></pre></td></tr></table></figure>
 
 <p>配置环境变量：</p>
@@ -190,11 +190,11 @@
 <p><img src="/../images/gogs-config-webhook5.webp" alt="gogs-config-webhook5"><br><img src="/../images/jenkins-build-history.webp" alt="jenkins-build-history"></p>
 <p><strong>参考</strong></p>
 <ul>
-<li><a href="http://blog.csdn.net/CheNorton/article/details/50345039">CentOS7 命令行安装Android SDK</a></li>
-<li><a href="http://blog.csdn.net/stwstw0123/article/details/47809189">Ubuntu 上安装Gradle</a></li>
-<li><a href="http://www.mamicode.com/info-detail-529578.html">上传文件到SVN报错</a></li>
-<li><a href="http://stackoverflow.com/questions/40392345/ionic-build-error-you-have-not-accepted-the-license-agreements-of-the-followin">AndroidSDK不接受许可协议</a></li>
-<li><a href="http://stackoverflow.com/questions/38448482/installing-android-studio-in-ubuntu-14-04-64-bit-android-repositories-cfg-could">.android&#x2F;repositories.cfg could not be loaded</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/CheNorton/article/details/50345039">CentOS7 命令行安装Android SDK</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/stwstw0123/article/details/47809189">Ubuntu 上安装Gradle</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.mamicode.com/info-detail-529578.html">上传文件到SVN报错</a></li>
+<li><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/40392345/ionic-build-error-you-have-not-accepted-the-license-agreements-of-the-followin">AndroidSDK不接受许可协议</a></li>
+<li><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/38448482/installing-android-studio-in-ubuntu-14-04-64-bit-android-repositories-cfg-could">.android&#x2F;repositories.cfg could not be loaded</a></li>
 </ul>
 
   </div>
