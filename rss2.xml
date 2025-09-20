@@ -474,10 +474,38 @@
     </item>
     
     <item>
+      <title>App发布规范</title>
+      <link>http://xiamianyu.github.io/2016/12/17/app-deploy-specification/</link>
+      <guid>http://xiamianyu.github.io/2016/12/17/app-deploy-specification/</guid>
+      <pubDate>Sat, 17 Dec 2016 06:54:45 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;&lt;strong&gt;发版类型&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;alpha：&lt;br&gt;该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的bug较多，普通用户最好不要安装。&lt;/p&gt;
+&lt;p&gt;beta：&lt;br&gt;该版本</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p><strong>发版类型</strong></p><p>alpha：<br>该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的bug较多，普通用户最好不要安装。</p><p>beta：<br>该版本相对于alpha版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。该版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将结果反馈给开发者，开发者们再进行有针对性的修改。该版本也不适合一般用户安装。</p><p>release：<br>该版本意味「最终释放版」，在出了一系列的测试版之后，终归会有一个正式版本，对于用户而言，购买该版本的软件绝对不会错。该版本有时也称为标准版。</p><p><strong>versionCode</strong>  </p><ul><li>类型：MAXINT(2e31 &#x3D; 2147483647)  </li><li>作用：标识App内部版本，仅对开发人员可见</li></ul><p>长度不能超过MAXINT(2^31 &#x3D; 2147483647)，否则App将无法再升级。</p><p><strong>versionName</strong>  </p><ul><li>类型：String  </li><li>格式：&lt;主版本号&gt;.&lt;子版本号&gt;.&lt;修订版本号&gt;[.内部测试版本号]</li><li>作用：标识App版本，对用户可见，即应用商店上的版本</li></ul><p><strong>安装包名称</strong></p><p>以新闻App的安装包为例</p><p>alpha包</p><ul><li>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_alpha.apk</code>  </li><li>示例: <code>news_v2.1.2.2_2015-09-30_alpha.apk</code></li></ul><p>beta包</p><ul><li>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_beta.apk</code>  </li><li>示例: <code>news_v2.1.1_2015-09-30_beta.apk</code></li></ul><p>release包</p><ul><li>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_&lt;channel&gt;.apk</code>   </li><li>示例: <code>news_v2.1.1_2015-09-30_wandoujia.apk</code></li></ul><p><strong>发布前检查项</strong></p><ul><li>服务器地址已改为正式？</li><li>调试日志（含第三方SDK）已关闭？</li><li>第三方SDK已授权正式版权限?</li><li>支付宝、微信支付金额已改为正式价格？</li><li>支付流程已跑通？</li><li>签名已改为正式？</li><li>versionCode和versionName已修改？</li><li>安装包命名已修改？</li><li>已做覆盖或升级安装测试？</li><li>已通过测试人员测试？</li></ul>]]></content:encoded>
+      
+      
+      <category domain="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/">团队建设</category>
+      
+      
+      <category domain="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/">团队建设</category>
+      
+      
+      <comments>http://xiamianyu.github.io/2016/12/17/app-deploy-specification/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
       <title>小小梦想</title>
-      <link>http://xiamianyu.github.io/2016/12/18/little-dream/</link>
-      <guid>http://xiamianyu.github.io/2016/12/18/little-dream/</guid>
-      <pubDate>Sun, 18 Dec 2016 06:54:45 GMT</pubDate>
+      <link>http://xiamianyu.github.io/2016/12/17/little-dream/</link>
+      <guid>http://xiamianyu.github.io/2016/12/17/little-dream/</guid>
+      <pubDate>Sat, 17 Dec 2016 05:33:12 GMT</pubDate>
       
         
         
@@ -498,35 +526,7 @@
       <category domain="http://xiamianyu.github.io/tags/%E7%AE%A1%E7%90%86/">管理</category>
       
       
-      <comments>http://xiamianyu.github.io/2016/12/18/little-dream/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>App发布规范</title>
-      <link>http://xiamianyu.github.io/2016/12/09/app-deploy-specification/</link>
-      <guid>http://xiamianyu.github.io/2016/12/09/app-deploy-specification/</guid>
-      <pubDate>Fri, 09 Dec 2016 05:33:12 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;&lt;strong&gt;发版类型&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;alpha：&lt;br&gt;该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的bug较多，普通用户最好不要安装。&lt;/p&gt;
-&lt;p&gt;beta：&lt;br&gt;该版本</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p><strong>发版类型</strong></p><p>alpha：<br>该版本表示该软件仅仅是一个初步完成品，通常只在软件开发者内部交流，也有很少一部分发布给专业测试人员。一般而言，该版本软件的bug较多，普通用户最好不要安装。</p><p>beta：<br>该版本相对于alpha版已有了很大的改进，消除了严重的错误，但还是存在着一些缺陷，需要经过大规模的发布测试来进一步消除。该版本通常由软件公司免费发布，用户可从相关的站点下载。通过一些专业爱好者的测试，将结果反馈给开发者，开发者们再进行有针对性的修改。该版本也不适合一般用户安装。</p><p>release：<br>该版本意味「最终释放版」，在出了一系列的测试版之后，终归会有一个正式版本，对于用户而言，购买该版本的软件绝对不会错。该版本有时也称为标准版。</p><p><strong>versionCode</strong>  </p><ul><li>类型：MAXINT(2e31 &#x3D; 2147483647)  </li><li>作用：标识App内部版本，仅对开发人员可见</li></ul><p>长度不能超过MAXINT(2^31 &#x3D; 2147483647)，否则App将无法再升级。</p><p><strong>versionName</strong>  </p><ul><li>类型：String  </li><li>格式：&lt;主版本号&gt;.&lt;子版本号&gt;.&lt;修订版本号&gt;[.内部测试版本号]</li><li>作用：标识App版本，对用户可见，即应用商店上的版本</li></ul><p><strong>安装包名称</strong></p><p>以新闻App的安装包为例</p><p>alpha包</p><ul><li>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_alpha.apk</code>  </li><li>示例: <code>news_v2.1.2.2_2015-09-30_alpha.apk</code></li></ul><p>beta包</p><ul><li>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_beta.apk</code>  </li><li>示例: <code>news_v2.1.1_2015-09-30_beta.apk</code></li></ul><p>release包</p><ul><li>语法: <code>&lt;appName&gt;_&lt;versionName&gt;_&lt;buildDate&gt;_&lt;channel&gt;.apk</code>   </li><li>示例: <code>news_v2.1.1_2015-09-30_wandoujia.apk</code></li></ul><p><strong>发布前检查项</strong></p><ul><li>服务器地址已改为正式？</li><li>调试日志（含第三方SDK）已关闭？</li><li>第三方SDK已授权正式版权限?</li><li>支付宝、微信支付金额已改为正式价格？</li><li>支付流程已跑通？</li><li>签名已改为正式？</li><li>versionCode和versionName已修改？</li><li>安装包命名已修改？</li><li>已做覆盖或升级安装测试？</li><li>已通过测试人员测试？</li></ul>]]></content:encoded>
-      
-      
-      <category domain="http://xiamianyu.github.io/categories/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/">团队建设</category>
-      
-      
-      <category domain="http://xiamianyu.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/">团队建设</category>
-      
-      
-      <comments>http://xiamianyu.github.io/2016/12/09/app-deploy-specification/#disqus_thread</comments>
+      <comments>http://xiamianyu.github.io/2016/12/17/little-dream/#disqus_thread</comments>
       
     </item>
     
