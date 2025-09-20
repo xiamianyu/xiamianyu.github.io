@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2025 
+      拥抱AI 
       
       
     
@@ -33,6 +33,10 @@
 
 
   
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
 
   
 
@@ -72,267 +76,46 @@
 
 
       <div class="main">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2025</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="拥抱AI">
-        <div class="time-m-d">09-20</div>
-        <div class="title">
-          <a href="/2025/09/20/embrace-ai/">
-            
-              <span>拥抱AI</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="小小包租公">
-        <div class="time-m-d">09-17</div>
-        <div class="title">
-          <a href="/2025/09/17/little-landlord/">
-            
-              <span>小小包租公</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2024</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="树莓派不落灰">
-        <div class="time-m-d">06-27</div>
-        <div class="title">
-          <a href="/2024/06/27/raspberry-pi-never-idle/">
-            
-              <span>树莓派不落灰</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="技术之外">
-        <div class="time-m-d">03-27</div>
-        <div class="title">
-          <a href="/2022/03/27/beyond-tech/">
-            
-              <span>技术之外</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="关于NAT">
-        <div class="time-m-d">11-01</div>
-        <div class="title">
-          <a href="/2021/11/01/about-nat/">
-            
-              <span>关于NAT</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="关于Packet">
-        <div class="time-m-d">09-14</div>
-        <div class="title">
-          <a href="/2021/09/14/about-packet/">
-            
-              <span>关于Packet</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="搭建Facebook ATC">
-        <div class="time-m-d">08-27</div>
-        <div class="title">
-          <a href="/2021/08/27/facebook-atc-deploy/">
-            
-              <span>搭建Facebook ATC</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2020</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="直播种类">
-        <div class="time-m-d">06-28</div>
-        <div class="title">
-          <a href="/2020/06/28/live-category/">
-            
-              <span>直播种类</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="App连麦云端合图实践">
-        <div class="time-m-d">06-21</div>
-        <div class="title">
-          <a href="/2020/06/21/guestlive-server-mix/">
-            
-              <span>App连麦云端合图实践</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2019</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="代码没排版">
-        <div class="time-m-d">03-06</div>
-        <div class="title">
-          <a href="/2019/03/06/code-not-formatted/">
-            
-              <span>代码没排版</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="18年回顾">
-        <div class="time-m-d">01-10</div>
-        <div class="title">
-          <a href="/2019/01/10/2018-review/">
-            
-              <span>18年回顾</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2018</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Android自动化构建平台的维护">
-        <div class="time-m-d">02-23</div>
-        <div class="title">
-          <a href="/2018/02/23/android-auto-build-platform-maintenance/">
-            
-              <span>Android自动化构建平台的维护</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2017</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="提高代码审查的效率">
-        <div class="time-m-d">03-09</div>
-        <div class="title">
-          <a href="/2017/03/09/improve-efficiency-of-code-review/">
-            
-              <span>提高代码审查的效率</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="搭建Android自动化构建平台">
-        <div class="time-m-d">02-22</div>
-        <div class="title">
-          <a href="/2017/02/22/android-auto-build-platform-deploy/">
-            
-              <span>搭建Android自动化构建平台</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Ubuntu下搭建Jenkins">
-        <div class="time-m-d">02-14</div>
-        <div class="title">
-          <a href="/2017/02/14/ubuntu-jenkins-deploy/">
-            
-              <span>Ubuntu下搭建Jenkins</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2016</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="小小梦想">
-        <div class="time-m-d">12-17</div>
-        <div class="title">
-          <a href="/2016/12/17/little-dream/">
-            
-              <span>小小梦想</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="主席位">
-        <div class="time-m-d">04-14</div>
-        <div class="title">
-          <a href="/2016/04/14/leader-seat/">
-            
-              <span>主席位</span>
-            
-          </a>
-        </div>
-      </div>
-    
+<div class="post">
+  <h3 class="date">
+    Sep 20, 2025
+  </h3>
+  <h1>
+    拥抱AI
+  </h1>
+  <div class="content markdown-body">
+    <p>今年春节期间DeepSeek突然出圈，家人也开始关注AI，我给他们装上了AI App，教他们怎么使用，用过都说不错。</p>
+<p>虽然有时候AI答非所问，但只要你不断得跟它对话纠正，结果就会慢慢往正确方向靠拢，这也是对话推理的魅力。</p>
+<p>家人表示，以前经常用百度，找的答案不够全，有AI之后，它能聚合并整理出答案，而且排版很好看，节省很多时间。能提高效率就是好工具。</p>
+<p>我自己呢，会用AI辅助写代码。现在我不再局限于自己熟悉的编程语言，只要有需求，就让AI帮写个工具，编程语言选最合适的即可。</p>
+<p>身边的同事，基本都在用AI辅助写代码。从我的实践来看，目前AI在代码片段上写得比个人还要好，工程上就差一些。</p>
+<p>前阵子，用AI写了几个pyhon脚本分析工具，帮助App成功上架，意料之外。</p>
+<p>最近，用AI写了个离线微信小程序给家人用，依靠广告变现，无需运营，无服务器成本。睡后收入，赚（终于不是挣了）点零花钱，何乐而不为。</p>
+<p>拥抱AI，让生活工作轻松一点！</p>
+
   </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2025/09/17/little-landlord/">OLDER&nbsp;&gt;</a>
+      
+        
+            
 </div>
-
         <div class="footer">
   
     <div class="footer-more">
