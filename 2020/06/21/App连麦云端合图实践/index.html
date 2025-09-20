@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2024/6 
+      App连麦云端合图实践 
       
       
     
@@ -33,6 +33,10 @@
 
 
   
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
 
   
 
@@ -76,256 +80,59 @@
 
 
       <div class="main">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2025</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="小小包租公">
-        <div class="time-m-d">09-17</div>
-        <div class="title">
-          <a href="/2025/09/17/%E5%B0%8F%E5%B0%8F%E5%8C%85%E7%A7%9F%E5%85%AC/">
-            
-              <span>小小包租公</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2024</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="树莓派不落灰">
-        <div class="time-m-d">06-27</div>
-        <div class="title">
-          <a href="/2024/06/27/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8D%E8%90%BD%E7%81%B0/">
-            
-              <span>树莓派不落灰</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="技术之外">
-        <div class="time-m-d">03-27</div>
-        <div class="title">
-          <a href="/2022/03/27/%E6%8A%80%E6%9C%AF%E4%B9%8B%E5%A4%96/">
-            
-              <span>技术之外</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="关于NAT">
-        <div class="time-m-d">11-01</div>
-        <div class="title">
-          <a href="/2021/11/01/%E5%85%B3%E4%BA%8ENAT/">
-            
-              <span>关于NAT</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="关于Packet">
-        <div class="time-m-d">09-14</div>
-        <div class="title">
-          <a href="/2021/09/14/%E5%85%B3%E4%BA%8EPacket/">
-            
-              <span>关于Packet</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="搭建Facebook ATC">
-        <div class="time-m-d">08-27</div>
-        <div class="title">
-          <a href="/2021/08/27/%E6%90%AD%E5%BB%BAFacebook-ATC/">
-            
-              <span>搭建Facebook ATC</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2020</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="直播种类">
-        <div class="time-m-d">06-28</div>
-        <div class="title">
-          <a href="/2020/06/28/%E7%9B%B4%E6%92%AD%E7%A7%8D%E7%B1%BB/">
-            
-              <span>直播种类</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="App连麦云端合图实践">
-        <div class="time-m-d">06-21</div>
-        <div class="title">
-          <a href="/2020/06/21/App%E8%BF%9E%E9%BA%A6%E4%BA%91%E7%AB%AF%E5%90%88%E5%9B%BE%E5%AE%9E%E8%B7%B5/">
-            
-              <span>App连麦云端合图实践</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2019</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="代码没排版">
-        <div class="time-m-d">03-06</div>
-        <div class="title">
-          <a href="/2019/03/06/%E4%BB%A3%E7%A0%81%E6%B2%A1%E6%8E%92%E7%89%88/">
-            
-              <span>代码没排版</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="18年回顾">
-        <div class="time-m-d">01-10</div>
-        <div class="title">
-          <a href="/2019/01/10/18%E5%B9%B4%E5%9B%9E%E9%A1%BE/">
-            
-              <span>18年回顾</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2018</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Android自动化构建平台的维护">
-        <div class="time-m-d">02-23</div>
-        <div class="title">
-          <a href="/2018/02/23/Android%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B9%B3%E5%8F%B0%E7%9A%84%E7%BB%B4%E6%8A%A4/">
-            
-              <span>Android自动化构建平台的维护</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2017</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="提高代码审查的效率">
-        <div class="time-m-d">03-09</div>
-        <div class="title">
-          <a href="/2017/03/09/%E6%8F%90%E9%AB%98%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%E7%9A%84%E6%95%88%E7%8E%87/">
-            
-              <span>提高代码审查的效率</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="搭建Android自动化构建平台">
-        <div class="time-m-d">02-22</div>
-        <div class="title">
-          <a href="/2017/02/22/%E6%90%AD%E5%BB%BAAndroid%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B9%B3%E5%8F%B0/">
-            
-              <span>搭建Android自动化构建平台</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Ubuntu下搭建Jenkins">
-        <div class="time-m-d">02-14</div>
-        <div class="title">
-          <a href="/2017/02/14/Ubuntu%E4%B8%8B%E6%90%AD%E5%BB%BAJenkins/">
-            
-              <span>Ubuntu下搭建Jenkins</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2016</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="小小梦想">
-        <div class="time-m-d">12-17</div>
-        <div class="title">
-          <a href="/2016/12/17/%E5%B0%8F%E5%B0%8F%E6%A2%A6%E6%83%B3/">
-            
-              <span>小小梦想</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="主席位">
-        <div class="time-m-d">04-14</div>
-        <div class="title">
-          <a href="/2016/04/14/%E4%B8%BB%E5%B8%AD%E4%BD%8D/">
-            
-              <span>主席位</span>
-            
-          </a>
-        </div>
-      </div>
-    
+<div class="post">
+  <h3 class="date">
+    Jun 21, 2020
+  </h3>
+  <h1>
+    App连麦云端合图实践
+  </h1>
+  <div class="content markdown-body">
+    <p>连麦合图有两个方案，一是云端合图，二是App端合图，一般推荐使用云端合图，因为App端合图需要多路播放，对手机性能要求较高。</p>
+<p>连麦的界面布局一般是大小屏，如下图：<br><img src="/../images/guestlive-stream1.webp" alt="guestlive-stream1"></p>
+<p>这里有两个问题需要解决：</p>
+<ol>
+<li>手机分辨率碎片化严重，合图会被裁剪，怎么避免连麦用户视频画面被裁剪？</li>
+<li>连麦用户视频画面和连麦用户信息如何吻合？</li>
+</ol>
+<p>从大数据中了解到，手机分辨率高宽比在1.7~2.1之间，未来手机分辨率高宽比呈增大趋势。连麦用户放置在右下角时，其右边比底部更容易被裁剪，所以在旁路推流参数中，主播宽高比应该接近2.1。在实践中发现，将主播的分辨率设为960x480，连麦用户的分辨率设为200x160，再调整连麦用户的左边距和上边距就可以解决问题一。</p>
+<p><img src="/../images/guestlive-stream2.webp" alt="guestlive-stream2"></p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> aw = <span class="number">480</span>; <span class="comment">// 主播的宽度</span></span><br><span class="line"><span class="keyword">int</span> ah = <span class="number">960</span>; <span class="comment">// 主播的高度</span></span><br><span class="line"><span class="keyword">int</span> gw = <span class="number">160</span>; <span class="comment">// 连麦用户的宽度</span></span><br><span class="line"><span class="keyword">int</span> gh = <span class="number">200</span>; <span class="comment">// 连麦用户的高度</span></span><br><span class="line"><span class="keyword">int</span> leftMargin = aw <span class="regexp">/ 2 + 5 * (aw /</span> <span class="number">2</span> - gw) <span class="regexp">/ 6; /</span>/ 连麦用户的左边距</span><br><span class="line"><span class="keyword">int</span> topMargin = ah <span class="regexp">/ 2 + 2 * (ah /</span> <span class="number">2</span> - gh) <span class="regexp">/ 5; /</span>/ 连麦用户的上边距</span><br></pre></td></tr></table></figure>
+
+<p>接下来看看问题二，合图被裁剪有两种情况：</p>
+<ol>
+<li><p>合图高宽比大于屏幕高宽比，基于屏幕宽等比例拉伸，垂直方向裁剪<br><img src="/../images/guestlive-adapter-vertical.webp" alt="guestlive-adapter-vertical"></p>
+</li>
+<li><p>合图高宽比小于屏幕高宽比，基于屏幕高等比例拉伸，水平方向被裁剪<br><img src="/../images/guestlive-adapter-horizontal.webp" alt="guestlive-adapter-horizontal"></p>
+</li>
+</ol>
+<p>基于旁路推流参数和合图被裁剪的分析，可以得出连麦用户和连麦UI窗口的吻合参数：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">float</span> aRatio = (<span class="built_in">float</span>) ah / aw; <span class="comment">// 合图高宽比</span></span><br><span class="line"><span class="built_in">float</span> sRatio = (<span class="built_in">float</span>) sh / sw; <span class="comment">// 屏幕高宽比</span></span><br><span class="line"><span class="built_in">int</span> leftMargin; <span class="comment">// 连麦UI窗口的左边距</span></span><br><span class="line"><span class="built_in">int</span> topMargin; <span class="comment">// 连麦UI窗口的上边距</span></span><br><span class="line"><span class="built_in">int</span> scaleGw; <span class="comment">// 拉伸后的连麦UI窗口宽度</span></span><br><span class="line"><span class="built_in">int</span> scaleGh; <span class="comment">// 拉伸后的连麦UI窗口高度</span></span><br><span class="line"><span class="keyword">if</span> (aRatio &gt; sRatio) &#123; <span class="comment">// 合图高宽比大于屏幕高宽比</span></span><br><span class="line">    <span class="built_in">float</span> scaleRatio = (<span class="built_in">float</span>) sw / aw;</span><br><span class="line">    <span class="built_in">int</span> scaleAw = (<span class="built_in">int</span>) (scaleRatio * aw);</span><br><span class="line">    <span class="built_in">int</span> scaleAh = (<span class="built_in">int</span>) (scaleRatio * ah);</span><br><span class="line">    scaleGw = (<span class="built_in">int</span>) (scaleRatio * gw);</span><br><span class="line">    scaleGh = (<span class="built_in">int</span>) (scaleRatio * gh);</span><br><span class="line">    leftMargin = scaleAw / <span class="number">2</span> + <span class="number">5</span> * (scaleAw / <span class="number">2</span> - scaleGw) / <span class="number">6</span>;</span><br><span class="line">    topMargin = scaleAh / <span class="number">2</span> + <span class="number">2</span> * (scaleAh / <span class="number">2</span> - scaleGh) / <span class="number">5</span> - (scaleAh - sh) / <span class="number">2</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (aRatio &lt; sRatio) &#123; <span class="comment">// 合图高宽比小于屏幕高宽比</span></span><br><span class="line">    <span class="built_in">float</span> scaleRatio = (<span class="built_in">float</span>) sh / ah; <span class="comment">// 小窗口缩放比</span></span><br><span class="line">    <span class="built_in">int</span> scaleAw = (<span class="built_in">int</span>) (scaleRatio * aw);</span><br><span class="line">    <span class="built_in">int</span> scaleAh = (<span class="built_in">int</span>) (scaleRatio * ah);</span><br><span class="line">    scaleGw = (<span class="built_in">int</span>) (scaleRatio * gw);</span><br><span class="line">    scaleGh = (<span class="built_in">int</span>) (scaleRatio * gh);</span><br><span class="line">    leftMargin = scaleAw / <span class="number">2</span> + <span class="number">5</span> * (scaleAw / <span class="number">2</span> - scaleGw) / <span class="number">6</span> - (scaleAw - sw) / <span class="number">2</span>;</span><br><span class="line">    topMargin = scaleAh / <span class="number">2</span> + <span class="number">2</span> * (scaleAh / <span class="number">2</span> - scaleGh) / <span class="number">5</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123; <span class="comment">// 合图高宽比等于屏幕高宽比</span></span><br><span class="line">    <span class="built_in">float</span> scaleRatio = (<span class="built_in">float</span>) sw / aw;</span><br><span class="line">    <span class="built_in">int</span> scaleAw = (<span class="built_in">int</span>) (scaleRatio * aw);</span><br><span class="line">    <span class="built_in">int</span> scaleAh = (<span class="built_in">int</span>) (scaleRatio * ah);</span><br><span class="line">    scaleGw = (<span class="built_in">int</span>) (scaleRatio * gw);</span><br><span class="line">    scaleGh = (<span class="built_in">int</span>) (scaleRatio * gh);</span><br><span class="line">    leftMargin = scaleAw / <span class="number">2</span> + <span class="number">5</span> * (scaleAw / <span class="number">2</span> - scaleGw) / <span class="number">6</span>;</span><br><span class="line">    topMargin = scaleAh / <span class="number">2</span> + <span class="number">2</span> * (scaleAh / <span class="number">2</span> - scaleGh) / <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2019/03/06/%E4%BB%A3%E7%A0%81%E6%B2%A1%E6%8E%92%E7%89%88/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2020/06/28/%E7%9B%B4%E6%92%AD%E7%A7%8D%E7%B1%BB/">&lt;&nbsp;NEWER</a>
+          
+            
 </div>
-
         <div class="footer">
   
     <div class="footer-more">
