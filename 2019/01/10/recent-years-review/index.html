@@ -11,7 +11,7 @@
   
   <title>
     
-      按需下载Android源码 
+      近几年回顾 
       
       
     
@@ -93,47 +93,34 @@
 
 <div class="post">
   <h3 class="date">
-    Jan 04, 2021
+    Jan 10, 2019
   </h3>
   <h1>
-    按需下载Android源码
+    近几年回顾
   </h1>
   <div class="content markdown-body">
-    <p>Android每个版本的源码大小都是巨大的，特别占存储空间，如果要编译源码，那只能下载完整的源码，而如果只是想看源码，个人建议按需下载，下载想看的模块即可，这样可以节省很多存储空间。</p>
-<p>由于Android源码各个模块是分仓库管理的，仓库特别多，直接用Git来管理会比较麻烦，为此Google开发了Repo工具，Repo在Git的基础上封装了管理源码的操作，使源码管理更容易了。下面是按需下载Android源码的步骤：</p>
-<p><strong>下载Repo工具</strong></p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl https:<span class="regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="regexp">/git/gi</span>t-repo -o repo</span><br><span class="line">chmod +x repo</span><br></pre></td></tr></table></figure>
-
-<p>为了方便使用Repo，可以将其添加到PATH里。</p>
-<p><strong>修改REPO_URL</strong></p>
-<p>用文本编辑器打开repo文件，将REPO_URL改为：</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="regexp">/git/gi</span>t-repo</span><br></pre></td></tr></table></figure>
-
-<p><strong>建立工作目录</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> WORKING_DIRECTORY</span><br><span class="line"><span class="built_in">cd</span> WORKING_DIRECTORY</span><br></pre></td></tr></table></figure>
-
-<p><strong>初始化仓库</strong></p>
-<p>一般而言，我们只需要下载某个特定的Android版本（<a target="_blank" rel="noopener" href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds">版本列表</a>）：</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">repo</span> init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-<span class="number">4</span>.<span class="number">0</span>.<span class="number">1</span>_r1</span><br></pre></td></tr></table></figure>
-
-<p><strong>按需下载</strong></p>
-<p>在<code>.repo/manifests/default.xml</code>中找到要下载模块的path，比如我想看dalvik模块：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">repo <span class="built_in">sync</span> dalvik</span><br></pre></td></tr></table></figure>
-
-<p><strong>参考</strong></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://source.android.com/setup/build/requirements">Android源码下载要求</a></li>
-<li><a target="_blank" rel="noopener" href="https://source.android.com/setup/develop">Android源码控制工具</a></li>
-<li><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP">Android镜像使用帮助</a></li>
-</ul>
+    <p>16年下半年开始全面接手团队的管理工作，与大家一起，经过一年的撸力，完成了团队的基础建设，团队趋于规范和稳定，我的管理工作逐渐轻松，这时不安分的我尝试跨部门学习数据挖掘，三个月后倍感不适，果断放弃。</p>
+<p>后面的日子基本是跨组打杂，每天如行尸走肉，浑浑噩噩，找不到工作重心，经常为此深夜失眠，内心煎熬，最终引发离职，思考人生去。</p>
+<p>离职后，回到领导身边当起了家庭主男，闲暇时间或到户外走走拍拍，或窝在家里写写画画，也正是这个时候，我注册了个人微信公众号，记录生活点滴，不再局限于技术。</p>
+<p>本来打算在领导这边找家公司安顿下来，不用再为异地恋长相思两头奔波，可惜小地方的选择性太少，从一线回到小地方的极度不适应感挥之不去，半个月后，不安分的我又重返广州，干起了老本行，加入现在的公司。</p>
+<p>新公司给了我全新的体验，这里的组织架构、产品定义、市场推广和运营等都引起我的兴趣，最重要的是妹子又多又漂亮，有妹子的加持，工作更有动力了。</p>
+<p>18年9月16日13点38分，许久未联系的老朋友突然发来一条爆炸性的消息「大傻帽，我要结婚了，我到时候可能需要劳烦你呢」，我很自然地赶紧抓起手机回了一句「需要我去拍照吗？」。</p>
+<p>果然不出所料，还好我负责的只是结婚的花絮，正式的婚礼由专门摄影师负责，我这才捏了一把冷汗。</p>
+<p>我只会手机拍照，第一次用的单反是帮她拍毕业照时借别人的，当时还特意请教了别人几个简单操作，如今早已忘却。一生才一次的结婚，我用手机拍，多对不住人家，我这两年不也是考虑入坑单反吗？再不买可说不过去了。</p>
+<p>都说“单反穷三代，摄影毁一生”，起初我对这句话的理解仅仅停留在玩器材上，所以一直与器材划清界限，但却开始玩起了户外。</p>
+<p>平时周末有空就出去拍照，当周边的知名景点都走遍后，我的目光投向了徒步，渐渐爱上它。</p>
+<p>深入丛林看花花草草，爬到山顶看蓝天白云，早已把家里的山地车忘记了。</p>
+<p>入坑徒步后，我又得入手徒步的装备，徒步背包、登山杖、冲锋衣和登山鞋等等，好烧钱。</p>
+<p>此时此刻我才真正理解“单反穷三代，摄影毁一生”的意思，当然徒步的利大于弊，观赏美景的同时可结交天下英雄豪杰，看花花草草蓝天白云的同时不忘偷窥附近的美女，学习决定性瞬间（偷拍）技术。</p>
+<p>过去的一年，身边很多同学朋友都在感慨身体状况欠佳，病痛不断，我自己也深有体会，19年希望大家身体都健健康康的，有个好身体才能做更多有意思的事情。</p>
 
   </div>
   
     
-      <a id="older" class="blog-nav" href="/2020/06/28/live-category/">OLDER&nbsp;&gt;</a>
+      <a id="older" class="blog-nav" href="/2017/03/09/improve-efficiency-of-code-review/">OLDER&nbsp;&gt;</a>
       
         
-          <a id="newer" class="blog-nav" href="/2021/08/27/facebook-atc-deploy/">&lt;&nbsp;NEWER</a>
+          <a id="newer" class="blog-nav" href="/2019/03/06/code-not-formatted/">&lt;&nbsp;NEWER</a>
           
             
 </div>
@@ -141,7 +128,7 @@
   
     <div class="footer-more">
       
-        © 夏眠鱼 2016 - 2025
+        © 2025 夏眠鱼
         
     </div>
   
