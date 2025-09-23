@@ -66,8 +66,3 @@
   letter-spacing: 1px;
   border-bottom: 3px solid transparent;
 }
-
-.index-nav:hover {
-  color: #333;
-  border-bottom-color: #333;
-}
