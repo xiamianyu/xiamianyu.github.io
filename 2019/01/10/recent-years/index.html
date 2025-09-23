@@ -2,30 +2,21 @@
 <html lang="zh-CN">
 
   <head>
+  
+
+  <title>近几年</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="" />
-  <meta name="author" content="夏眠鱼" />
-  <meta name="description" content="" />
-  
-  
-  <title>
-    
-      标签 
-       : 年度总结
-      
-    
-  </title>
 
   
-    <link rel="apple-touch-icon" href="/images/favicon.webp">
     <link rel="icon" href="/images/favicon.webp">
   
 
-  <!-- Raleway-Font -->
+  <!-- raleway font -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
 
-  <!-- hexo site css -->
+  <!-- site css -->
   
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/common.css">
@@ -35,21 +26,21 @@
   
 
   
+    
+<link rel="stylesheet" href="/css/post.css">
 
-  <!-- jquery3.3.1 -->
+  
+
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- fancybox -->
   <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
   <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
   
 <script src="/js/fancybox.js"></script>
 
-
 <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="夏眠鱼" type="application/rss+xml">
 </head>
-
 
   <body>
     <div id="app">
@@ -72,316 +63,60 @@
 
 
       <div class="main">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2025</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="拥抱AI">
-        <div class="time-m-d">09-20</div>
-        <div class="title">
-          <a href="/2025/09/20/embrace-ai/">
-            
-              <span>拥抱AI</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="小小包租公">
-        <div class="time-m-d">09-17</div>
-        <div class="title">
-          <a href="/2025/09/17/little-landlord/">
-            
-              <span>小小包租公</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2024</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="树莓派不落灰">
-        <div class="time-m-d">06-27</div>
-        <div class="title">
-          <a href="/2024/06/27/raspberry-pi-never-idle/">
-            
-              <span>树莓派不落灰</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="技术之外">
-        <div class="time-m-d">03-27</div>
-        <div class="title">
-          <a href="/2022/03/27/beyond-tech/">
-            
-              <span>技术之外</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="关于NAT">
-        <div class="time-m-d">11-01</div>
-        <div class="title">
-          <a href="/2021/11/01/about-nat/">
-            
-              <span>关于NAT</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="关于Packet">
-        <div class="time-m-d">09-14</div>
-        <div class="title">
-          <a href="/2021/09/14/about-packet/">
-            
-              <span>关于Packet</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="搭建Facebook ATC">
-        <div class="time-m-d">08-27</div>
-        <div class="title">
-          <a href="/2021/08/27/facebook-atc-deploy/">
-            
-              <span>搭建Facebook ATC</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="按需下载Android源码">
-        <div class="time-m-d">01-04</div>
-        <div class="title">
-          <a href="/2021/01/04/download-android-sources-as-needed/">
-            
-              <span>按需下载Android源码</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2020</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="直播种类">
-        <div class="time-m-d">06-28</div>
-        <div class="title">
-          <a href="/2020/06/28/live-category/">
-            
-              <span>直播种类</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="App连麦云端合图实践">
-        <div class="time-m-d">06-21</div>
-        <div class="title">
-          <a href="/2020/06/21/guestlive-server-mix/">
-            
-              <span>App连麦云端合图实践</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2019</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="代码没排版">
-        <div class="time-m-d">03-06</div>
-        <div class="title">
-          <a href="/2019/03/06/code-not-formatted/">
-            
-              <span>代码没排版</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="18年回顾">
-        <div class="time-m-d">01-10</div>
-        <div class="title">
-          <a href="/2019/01/10/2018-review/">
-            
-              <span>18年回顾</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2018</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Android自动化构建平台的维护">
-        <div class="time-m-d">02-23</div>
-        <div class="title">
-          <a href="/2018/02/23/android-auto-build-platform-maintenance/">
-            
-              <span>Android自动化构建平台的维护</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2017</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="提高代码审查的效率">
-        <div class="time-m-d">03-09</div>
-        <div class="title">
-          <a href="/2017/03/09/improve-efficiency-of-code-review/">
-            
-              <span>提高代码审查的效率</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="搭建Android自动化构建平台">
-        <div class="time-m-d">02-22</div>
-        <div class="title">
-          <a href="/2017/02/22/android-auto-build-platform-deploy/">
-            
-              <span>搭建Android自动化构建平台</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Ubuntu下搭建Jenkins">
-        <div class="time-m-d">02-14</div>
-        <div class="title">
-          <a href="/2017/02/14/ubuntu-jenkins-deploy/">
-            
-              <span>Ubuntu下搭建Jenkins</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2016</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="小小梦想">
-        <div class="time-m-d">12-17</div>
-        <div class="title">
-          <a href="/2016/12/17/little-dream/">
-            
-              <span>小小梦想</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="App发布规范">
-        <div class="time-m-d">12-09</div>
-        <div class="title">
-          <a href="/2016/12/09/app-deploy-specification/">
-            
-              <span>App发布规范</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Android命名规范">
-        <div class="time-m-d">07-28</div>
-        <div class="title">
-          <a href="/2016/07/28/android-code-style/">
-            
-              <span>Android命名规范</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="实体化请求参数">
-        <div class="time-m-d">05-06</div>
-        <div class="title">
-          <a href="/2016/05/06/req-params-object/">
-            
-              <span>实体化请求参数</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="主席位">
-        <div class="time-m-d">04-14</div>
-        <div class="title">
-          <a href="/2016/04/14/leader-seat/">
-            
-              <span>主席位</span>
-            
-          </a>
-        </div>
-      </div>
-    
+<div class="post">
+  <h3 class="date">
+    Jan 10, 2019
+  </h3>
+  <h1>
+    近几年
+  </h1>
+  <div class="content markdown-body">
+    <p>16年下半年开始全面接手团队的管理工作，与大家一起，经过一年的撸力，完成了团队的基础建设，团队趋于规范和稳定，管理工作逐渐轻松。</p>
+<p>不安分的我跨部门学习数据挖掘，几个月后没做出啥成绩，从入门到放弃。</p>
+<p>后面的日子基本是跨组打杂，浑浑噩噩，找不到工作重心，最后心一狠，干脆自愿领盒饭算了。</p>
+<p>离职后，回到领导身边当起了家庭主男。闲暇时间或到户外走走拍拍，或窝在家里写写画画。</p>
+<p>本来打算在领导这边找家公司安顿下来，不用再为异地恋两头奔波。可惜小地方的选择太少，从一线回到小地方的极度不适应感挥之不去。半个月后，我又重返一线干起了老本行，加入现在的公司。</p>
+<p>新公司的组织架构、产品定义、市场推广和运营等勾我的兴趣，这是以前公司没有经历过的，更最重要的是妹子又多又漂亮，有妹子的加持，工作更有动力了。</p>
+<p>18年中，许久未联系的老朋友突然发来一条红色炸弹，我很自然地赶紧抓起手机回了一句「需要我去拍照吗？」。</p>
+<p>果然不出所料，还好我负责的只是结婚的花絮，正式的婚礼由专门摄影师负责，捏了一把冷汗。</p>
+<p>我比较喜欢用手机拍照，没有携带负担。前几年用过一次单反，借别人的，当时还特意请教好心人几个简单操作，如今早已忘却。老朋友的婚礼，我用手机拍，多对不住人家，我这两年不是在考虑入坑单反吗？再不买可说不过去了。</p>
+<p>都说“单反穷三代，摄影毁一生”，起初我对这句话的理解仅仅停留在玩器材上，所以一直与器材划清界限。</p>
+<p>平时周末有空就出去拍照，当周边的知名景点都走遍后，我的目光投向了徒步。</p>
+<p>深入丛林看花花草草，爬到山顶看蓝天白云，早已把家里的山地车忘记了。</p>
+<p>入坑徒步后，又得入手徒步装备，背包、登山杖、冲锋衣和登山鞋等等，好烧钱…</p>
+<p>此时我才真正理解“单反穷三代，摄影毁一生”的意思，当然徒步还是有很多好处的，观赏美景的同时可结交天下英雄豪杰，看花花草草蓝天白云的同时不忘偷窥附近的美女，学习决定性瞬间（偷拍）技术。</p>
+<p>过去一年，身边很多同学朋友都在感慨身体状况欠佳，病痛不断，我自己也深有体会，19年希望大家身体都健健康康的，有个好身体才能做更多有意思的事情。</p>
+
   </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2018/02/23/android-auto-build-platform-maintenance/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2019/03/06/code-not-formatted/">&lt;&nbsp;NEWER</a>
+          
+            
 </div>
-
         <div class="footer">
   
     <div class="footer-more">
       
-        © 夏眠鱼 2016 - 2025
+        © 2025 夏眠鱼
         
     </div>
   

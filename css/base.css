@@ -233,7 +233,7 @@ a:hover {
 }
 
 .footer {
-  padding-top: 15px;
+  padding: 15px 0;
   font-size: 1.2rem;
   color: #aaa;
 }
@@ -256,7 +256,6 @@ a:hover {
 }
 
 .footer-more {
-  padding-bottom: 5px;
   text-align: center;
 }
 
