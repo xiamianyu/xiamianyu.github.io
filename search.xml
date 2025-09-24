@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>轻量级博客</title>
+      <link href="/2025/09/24/tiny-blog/"/>
+      <url>/2025/09/24/tiny-blog/</url>
+      
+        <content type="html"><![CDATA[<p>不知不觉，个人博客已经十年了，近几年没什么输出，生活和工作变成了转陀螺。</p><p>记得刚工作时非常有激情，跟一个同事玩得很好，俩人决定开个博客玩玩。</p><p>对于博客我们有两个指标，一是支持markdown语法，二是免费域名+零服务器成本。</p><p>最终我们选择用<a href="https://hexo.io/zh-cn/">Hexo</a>写博客，再将博客部署到<a href="https://docs.github.com/en/pages">GitHub Pages</a>上。</p><p>去年阿里云搞促销，我觉得是时候给博客弄个专属域名了，一百多块买下域名xiamianyu.site，10年期。</p><p>最近把博客分享给老友，老友吐槽博客访问特别慢。我申请的是国内域名，博客却托管在GitHub，国内访问自然慢。</p><p>CloudFlare在全球有很多CDN节点，对个人免费，将域名的NameServer换成CloudFlare的后，访问速度就上去了，老友终于满意了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>拥抱AI</title>
       <link href="/2025/09/20/embrace-ai/"/>
       <url>/2025/09/20/embrace-ai/</url>

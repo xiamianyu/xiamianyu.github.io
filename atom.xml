@@ -6,7 +6,7 @@
   <link href="http://xiamianyu.github.io/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2025-09-23T13:07:46.313Z</updated>
+  <updated>2025-09-24T05:40:01.260Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>轻量级博客</title>
+    <link href="http://xiamianyu.github.io/2025/09/24/tiny-blog/"/>
+    <id>http://xiamianyu.github.io/2025/09/24/tiny-blog/</id>
+    <published>2025-09-24T04:52:25.000Z</published>
+    <updated>2025-09-24T05:40:01.260Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知不觉，个人博客已经十年了，近几年没什么输出，生活和工作变成了转陀螺。</p><p>记得刚工作时非常有激情，跟一个同事玩得很好，俩人决定开个博客玩玩。</p><p>对于博客我们有两个指标，一是支持markdown语法，二是免费域名+零服务器成本。</p><p>最终我们选择用<a href="https://hexo.io/zh-cn/">Hexo</a>写博客，再将博客部署到<a href="https://docs.github.com/en/pages">GitHub Pages</a>上。</p><p>去年阿里云搞促销，我觉得是时候给博客弄个专属域名了，一百多块买下域名xiamianyu.site，10年期。</p><p>最近把博客分享给老友，老友吐槽博客访问特别慢。我申请的是国内域名，博客却托管在GitHub，国内访问自然慢。</p><p>CloudFlare在全球有很多CDN节点，对个人免费，将域名的NameServer换成CloudFlare的后，访问速度就上去了，老友终于满意了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;不知不觉，个人博客已经十年了，近几年没什么输出，生活和工作变成了转陀螺。&lt;/p&gt;
+&lt;p&gt;记得刚工作时非常有激情，跟一个同事玩得很好，俩人决定开个博客玩玩。&lt;/p&gt;
+&lt;p&gt;对于博客我们有两个指标，一是支持markdown语法，二是免费域名+零服务器成本。&lt;/p&gt;
+&lt;p&gt;最终我</summary>
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>拥抱AI</title>
@@ -467,29 +492,6 @@
     
     
     <category term="IT" scheme="http://xiamianyu.github.io/tags/IT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>主席位</title>
-    <link href="http://xiamianyu.github.io/2016/04/14/leader-seat/"/>
-    <id>http://xiamianyu.github.io/2016/04/14/leader-seat/</id>
-    <published>2016-04-14T14:36:29.000Z</published>
-    <updated>2025-09-21T05:08:37.958Z</updated>
-    
-    <content type="html"><![CDATA[<p>没错，今天我是会议主席，大家听我发号施令！然而实际情况是，最没意见的人要坐主席位。</p><p>今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出来。其中有一个问题，特别有意思，我复现当时的对白。</p><p>“<br>杂物大人：这个产品做到现在还没流量，问题出现在哪里？<br>其他人：沉默中…<br>杂物大人：作为产品的开发人员，自己有用过这个产品吗？<br>某童鞋：我就是在调试bug的时候用过…（杂物大人默默地笑了）<br>”</p><p>曾经我以为，作为开发者，只要按照产品经理说的做就可以把产品做好，产品能否带来PV、收益等是产品经理的事。</p><p>是的，可能有些人跟我想法一样，但如果是比较年轻的公司，产品经理的经验也毕竟有限，需要的是大家的决策，不是什么都是产品经理说了算。</p><p>如果产品经理设计的某些功能不合理，我们完全有理由提出来并打断他，不然到时候功能做出来了才说之前考虑不周，废掉这个功能，这简直就是浪费生命！</p><p>再者，希望自己在负责的产品开发上，不要太局限于技术（在产品没有产生PV之前，再好的代码设计，也没有价值）。</p><p>要多去使用自己的产品，把产品不满意的地方跟产品经理提出来，因为我也是这个产品的用户。如果都懒得去用自己研发的产品，怎么去发现问题？怎么可能把它做好？</p><p>从今天开始，做一个有责任心的开发者吧。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;没错，今天我是会议主席，大家听我发号施令！然而实际情况是，最没意见的人要坐主席位。&lt;/p&gt;
-&lt;p&gt;今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出</summary>
-      
-    
-    
-    
-    
-    <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

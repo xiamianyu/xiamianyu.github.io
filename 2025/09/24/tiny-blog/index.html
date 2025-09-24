@@ -4,7 +4,7 @@
   <head>
   
 
-  <title>archive_a: 2022/3</title>
+  <title>轻量级博客</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,6 +24,10 @@
 
 
   
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
 
   
 
@@ -58,311 +62,45 @@
 
 
       <div class="main">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2025</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="轻量级博客">
-        <div class="time-m-d">09-24</div>
-        <div class="title">
-          <a href="/2025/09/24/tiny-blog/">
-            
-              <span>轻量级博客</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="拥抱AI">
-        <div class="time-m-d">09-20</div>
-        <div class="title">
-          <a href="/2025/09/20/embrace-ai/">
-            
-              <span>拥抱AI</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2024</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="树莓派不落灰">
-        <div class="time-m-d">06-27</div>
-        <div class="title">
-          <a href="/2024/06/27/pi-never-idle/">
-            
-              <span>树莓派不落灰</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="技术之外">
-        <div class="time-m-d">03-27</div>
-        <div class="title">
-          <a href="/2022/03/27/beyond-tech/">
-            
-              <span>技术之外</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="关于NAT">
-        <div class="time-m-d">11-01</div>
-        <div class="title">
-          <a href="/2021/11/01/about-nat/">
-            
-              <span>关于NAT</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="关于Packet">
-        <div class="time-m-d">09-14</div>
-        <div class="title">
-          <a href="/2021/09/14/about-packet/">
-            
-              <span>关于Packet</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="搭建Facebook ATC">
-        <div class="time-m-d">08-27</div>
-        <div class="title">
-          <a href="/2021/08/27/facebook-atc-deploy/">
-            
-              <span>搭建Facebook ATC</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="按需下载Android源码">
-        <div class="time-m-d">01-04</div>
-        <div class="title">
-          <a href="/2021/01/04/download-android-sources-as-needed/">
-            
-              <span>按需下载Android源码</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2020</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="直播种类">
-        <div class="time-m-d">06-28</div>
-        <div class="title">
-          <a href="/2020/06/28/live-category/">
-            
-              <span>直播种类</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="App连麦云端合图实践">
-        <div class="time-m-d">06-21</div>
-        <div class="title">
-          <a href="/2020/06/21/guestlive-server-mix/">
-            
-              <span>App连麦云端合图实践</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2019</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="代码没排版">
-        <div class="time-m-d">03-06</div>
-        <div class="title">
-          <a href="/2019/03/06/code-not-formatted/">
-            
-              <span>代码没排版</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="近几年">
-        <div class="time-m-d">01-10</div>
-        <div class="title">
-          <a href="/2019/01/10/recent-years/">
-            
-              <span>近几年</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2018</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Android自动化构建平台的维护">
-        <div class="time-m-d">02-23</div>
-        <div class="title">
-          <a href="/2018/02/23/android-auto-build-platform-maintenance/">
-            
-              <span>Android自动化构建平台的维护</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2017</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="定制CheckStyle">
-        <div class="time-m-d">03-09</div>
-        <div class="title">
-          <a href="/2017/03/09/custom-checkstyle/">
-            
-              <span>定制CheckStyle</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="搭建Android自动化构建平台">
-        <div class="time-m-d">02-22</div>
-        <div class="title">
-          <a href="/2017/02/22/android-auto-build-platform-deploy/">
-            
-              <span>搭建Android自动化构建平台</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Ubuntu下搭建Jenkins">
-        <div class="time-m-d">02-14</div>
-        <div class="title">
-          <a href="/2017/02/14/ubuntu-jenkins-deploy/">
-            
-              <span>Ubuntu下搭建Jenkins</span>
-            
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2016</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="小小梦想">
-        <div class="time-m-d">12-17</div>
-        <div class="title">
-          <a href="/2016/12/17/little-dream/">
-            
-              <span>小小梦想</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="App发布规范">
-        <div class="time-m-d">12-09</div>
-        <div class="title">
-          <a href="/2016/12/09/app-deploy-specification/">
-            
-              <span>App发布规范</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Android命名规范">
-        <div class="time-m-d">07-28</div>
-        <div class="title">
-          <a href="/2016/07/28/android-code-style/">
-            
-              <span>Android命名规范</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="实体化请求参数">
-        <div class="time-m-d">05-06</div>
-        <div class="title">
-          <a href="/2016/05/06/req-params-object/">
-            
-              <span>实体化请求参数</span>
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="主席位">
-        <div class="time-m-d">04-14</div>
-        <div class="title">
-          <a href="/2016/04/14/leader-seat/">
-            
-              <span>主席位</span>
-            
-          </a>
-        </div>
-      </div>
-    
+<div class="post">
+  <h3 class="date">
+    Sep 24, 2025
+  </h3>
+  <h1>
+    轻量级博客
+  </h1>
+  <div class="content markdown-body">
+    <p>不知不觉，个人博客已经十年了，近几年没什么输出，生活和工作变成了转陀螺。</p>
+<p>记得刚工作时非常有激情，跟一个同事玩得很好，俩人决定开个博客玩玩。</p>
+<p>对于博客我们有两个指标，一是支持markdown语法，二是免费域名+零服务器成本。</p>
+<p>最终我们选择用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>写博客，再将博客部署到<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages">GitHub Pages</a>上。</p>
+<p>去年阿里云搞促销，我觉得是时候给博客弄个专属域名了，一百多块买下域名xiamianyu.site，10年期。</p>
+<p>最近把博客分享给老友，老友吐槽博客访问特别慢。我申请的是国内域名，博客却托管在GitHub，国内访问自然慢。</p>
+<p>CloudFlare在全球有很多CDN节点，对个人免费，将域名的NameServer换成CloudFlare的后，访问速度就上去了，老友终于满意了。</p>
+
   </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2025/09/20/embrace-ai/">OLDER&nbsp;&gt;</a>
+      
+        
+            
 </div>
-
         <div class="footer">
   
     <div class="footer-more">
