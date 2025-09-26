@@ -8,13 +8,13 @@
       <link href="/2025/09/24/blog-10years/"/>
       <url>/2025/09/24/blog-10years/</url>
       
-        <content type="html"><![CDATA[<p>不知不觉，个人博客快十年了，产量不高，质量没眼看，好在没有放弃。</p><p>学生时代用过三方博客，没那么喜欢。出来工作后，想搭建自己的博客，当时也不知道能坚持写多久，就按穷鬼配置找技术支持：</p><ul><li>支持markdown写作</li><li>免费域名+免费托管</li></ul><p>最终选择<a href="https://hexo.io/zh-cn/">Hexo</a>搭配<a href="https://docs.github.com/en/pages">GitHub Pages</a>。Hexo快速简洁高效，支持markdown，可一键部署到GitHub Pages；GitHub Pages自带github.io域名。</p><p>GitHub服务器在海外，国内访问非常慢，不过自己的博客基本自己看，无所谓。</p><p>去年阿里云搞促销，索性买了个xiamianyu.site域名，别名指向xiamianyu.github.io，只做域名重定向，国内访问慢的问题还存在。</p><p>后来了解到Cloudflare在全球有很多CDN节点，国内节点不少，最重要的是对个人免费。做了CDN加速，果然快很多，老友不再骂我的是破博客了。</p><p>我也在微信公众号上记录一些东西，多年下来，我更喜欢自建博客，言论相对自由，还可以DIY博客。</p><p>如果你也想自建博客，不妨可以试试这套方案：</p><ul><li>博客框架：Hexo</li><li>博客托管：GitHub Pages</li><li>域名购买：博客用.me域名更好</li><li>CDN加速：Cloudflare CDN</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>不知不觉，个人博客快十年了，产量不高，质量没眼看，好在没有放弃。</p><p>学生时代用过三方博客，没那么喜欢。出来工作后，想搭建自己的博客，当时也不知道能坚持写多久，就按穷鬼配置找技术支持：</p><ul><li>支持markdown写作</li><li>免费域名+免费托管</li></ul><p>最终选择<a href="https://hexo.io/zh-cn/">Hexo</a>搭配<a href="https://docs.github.com/en/pages">GitHub Pages</a>。Hexo快速简洁高效，支持markdown，可一键部署到GitHub Pages；GitHub Pages自带github.io域名。</p><p>GitHub服务器在海外，国内访问非常慢，不过自己的博客基本自己看，无所谓。</p><p>去年阿里云搞促销，索性买了个xiamianyu.site域名，别名指向xiamianyu.github.io，只做域名重定向，国内访问慢的问题还存在。</p><p>后来了解到Cloudflare在全球有很多CDN节点，国内节点不少，最重要的是对个人免费。做了CDN加速，果然快很多，老友不再骂我的是破博客了。</p><p>我也在微信公众号上记录一些东西，多年下来，我更喜欢自建博客，言论相对自由，还可以DIY博客。</p><p>如果你也想自建博客，不妨试试这个方案：</p><ul><li>博客框架：Hexo</li><li>博客托管：GitHub Pages</li><li>域名购买：博客用.me域名更好</li><li>CDN加速：Cloudflare CDN</li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> 随笔 </tag>
+            <tag> 博客 </tag>
             
         </tags>
       
@@ -27,13 +27,13 @@
       <link href="/2025/09/20/embrace-ai/"/>
       <url>/2025/09/20/embrace-ai/</url>
       
-        <content type="html"><![CDATA[<p>今年春节期间DeepSeek突然出圈，家人也开始关注AI，我给他们装上了AI App，教他们怎么使用，用过都说不错。</p><p>虽然有时候AI答非所问，但只要你不断得跟它对话纠正，结果就会慢慢往正确方向靠拢，这也是对话推理的魅力。</p><p>家人表示，以前经常用百度，找的答案不够全，有AI之后，它能聚合并整理出答案，而且排版很好看，节省很多时间。能提高效率就是好工具。</p><p>我自己呢，会用AI辅助写代码。现在我不再局限于自己熟悉的编程语言，只要有需求，就让AI帮写个工具，编程语言选最合适的即可。</p><p>身边的同事，基本都在用AI辅助写代码。从我的实践来看，目前AI在代码片段上写得比个人还要好，工程上就差一些。</p><p>前阵子，用AI写了几个pyhon脚本分析工具，帮助App成功上架，意料之外。</p><p>最近，用AI写了个离线微信小程序给家人用，依靠广告变现，无需运营，无服务器成本。睡后收入，赚（终于不是挣了）点零花钱，何乐而不为。</p><p>也许，个人开发者使用AI做出产品并实现盈利，也是一种AI创业。</p><p>拥抱AI，让生活工作轻松一点！</p>]]></content>
+        <content type="html"><![CDATA[<p>春节期间DeepSeek突然出圈，家人也开始关注AI，我给他们装上了AI App，教他们怎么使用，用过都说不错。</p><p>虽然有时候AI答非所问，但只要你不断得跟它对话纠正，结果就会慢慢往正确方向靠拢，这也是对话推理的魅力。</p><p>家人表示，以前经常用百度，找的答案不够全，有AI之后，它能聚合并整理出答案，而且排版很好看，节省很多时间。能提高效率就是好工具。</p><p>我自己呢，会用AI辅助写代码。现在我不再局限于自己熟悉的编程语言，只要有需求，就让AI帮写个工具，编程语言选最合适的即可。</p><p>身边的同事，基本都在用AI辅助写代码。从我的实践来看，目前AI在代码片段上写得比个人还要好，工程上就差一些。</p><p>前阵子，用AI写了些分析工具，帮助App成功上架，意料之外。</p><p>最近，用AI写了个离线微信小程序给家人用，依靠广告变现，无运营，无服务器成本。</p><p>或许，产品中不一定要有AI功能，使用AI辅助做出产品并实现盈利，也是一种AI创业。</p><p>拥抱AI，让生活工作轻松一点。</p>]]></content>
       
       
       
         <tags>
             
-            <tag> 随笔 </tag>
+            <tag> AI </tag>
             
         </tags>
       
@@ -52,7 +52,7 @@
       
         <tags>
             
-            <tag> IT </tag>
+            <tag> 树莓派 </tag>
             
         </tags>
       
@@ -90,7 +90,7 @@
       
         <tags>
             
-            <tag> 计算机网络 </tag>
+            <tag> 网络 </tag>
             
         </tags>
       
@@ -109,7 +109,7 @@
       
         <tags>
             
-            <tag> 计算机网络 </tag>
+            <tag> 网络 </tag>
             
         </tags>
       
@@ -128,7 +128,7 @@
       
         <tags>
             
-            <tag> 网络模拟工具 </tag>
+            <tag> 网络 </tag>
             
         </tags>
       
@@ -147,7 +147,7 @@
       
         <tags>
             
-            <tag> IT </tag>
+            <tag> Android </tag>
             
         </tags>
       
@@ -166,7 +166,7 @@
       
         <tags>
             
-            <tag> 音视频开发 </tag>
+            <tag> 音视频 </tag>
             
         </tags>
       
@@ -185,7 +185,7 @@
       
         <tags>
             
-            <tag> 音视频开发 </tag>
+            <tag> 音视频 </tag>
             
         </tags>
       
@@ -204,7 +204,7 @@
       
         <tags>
             
-            <tag> 团队建设 </tag>
+            <tag> 随笔 </tag>
             
         </tags>
       
@@ -242,7 +242,7 @@
       
         <tags>
             
-            <tag> CI </tag>
+            <tag> 自动化构建 </tag>
             
         </tags>
       
@@ -261,7 +261,7 @@
       
         <tags>
             
-            <tag> 团队建设 </tag>
+            <tag> 团建 </tag>
             
         </tags>
       
@@ -280,7 +280,7 @@
       
         <tags>
             
-            <tag> CI </tag>
+            <tag> 自动化构建 </tag>
             
         </tags>
       
@@ -299,7 +299,7 @@
       
         <tags>
             
-            <tag> CI </tag>
+            <tag> 自动化构建 </tag>
             
         </tags>
       
@@ -337,7 +337,7 @@
       
         <tags>
             
-            <tag> 团队建设 </tag>
+            <tag> 团建 </tag>
             
         </tags>
       
@@ -356,7 +356,7 @@
       
         <tags>
             
-            <tag> 团队建设 </tag>
+            <tag> 团建 </tag>
             
         </tags>
       
@@ -372,16 +372,10 @@
         <content type="html"><![CDATA[<p>假设获取新闻列表url为：</p><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//localhost/getNewses?channelID=&amp;pageNo=&amp;pageSize</span></span><br></pre></td></tr></table></figure><p>Java中我们一般会这样拼接url：</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> MobileApi.GET_NEWSES + <span class="string">&quot;?channelID=&quot;</span> + mChannelID + <span class="string">&quot;pageNo=&quot;</span> + mPageNo + <span class="string">&quot;&amp;pageSize=30&quot;</span></span><br></pre></td></tr></table></figure><p>这种写法其实不利于项目维护，我的做法是把请求参数实体化，并放到一个package下统一管理。</p><p>下面是具体的改造：</p><p><strong>接口参数映射</strong></p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MobileApi</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">BASE_URL</span> <span class="operator">=</span> <span class="string">&quot;http:localhost/&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取新闻列表</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> finsl <span class="type">String</span> <span class="variable">GET_NEWSES</span> <span class="operator">=</span> BASE_URL + <span class="string">&quot;getNewses&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">NewsParam</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 栏目ID</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;channelID&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> mChannelID;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 页码</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;pageNo&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> mPageNo;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 每页大小，这里固定是30条</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;pageSize&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">mPageSize</span> <span class="operator">=</span> <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">NewsParam</span><span class="params">(<span class="type">int</span> channelID, <span class="type">int</span> pageNo)</span> &#123;</span><br><span class="line">        mChannelID = channelID;</span><br><span class="line">        mPageNo = pageNo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用Gson的SerializedName将接口字段名称映射为自定义名称，这样如果接口字段名称改了，只需修改SerializedName的值即可。</p><p><strong>参数类型转换</strong></p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ParamFormatter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成json</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toJson</span><span class="params">(Object object)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Gson</span>().toJson(object);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成uri</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toUri</span><span class="params">(Object object)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> genUri(<span class="string">&quot;?&quot;</span>, object);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">genUri</span><span class="params">(String prefix, Object object)</span> &#123;</span><br><span class="line">        <span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">JSONObject</span> <span class="variable">jo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>(toJson(object));</span><br><span class="line">            Iterator&lt;String&gt; keys = jo.keys();</span><br><span class="line">            <span class="keyword">while</span> (keys.hasNext()) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> keys.next();</span><br><span class="line">                <span class="type">Object</span> <span class="variable">value</span> <span class="operator">=</span> jo.get(key);</span><br><span class="line">                key = URLEncoder.encode(key);</span><br><span class="line">                value = URLEncoder.encode(String.valueOf(value));</span><br><span class="line">                sb.append(<span class="string">&quot;&amp;&quot;</span>).append(key).append(<span class="string">&quot;=&quot;</span>).append(value);</span><br><span class="line">                sb.replace(<span class="number">0</span>, <span class="number">1</span>, prefix);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成Map</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title function_">toMap</span><span class="params">(Object object)</span> &#123;</span><br><span class="line">        Map&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, String&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">JSONObject</span> <span class="variable">jsonObject</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>(toJson(object));</span><br><span class="line">            Iterator&lt;String&gt; keys = jsonObject.keys();</span><br><span class="line">            <span class="keyword">while</span> (keys.hasNext()) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> keys.next();</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> String.valueOf(jsonObject.get(key));</span><br><span class="line">                map.put(key, value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 后续可以添加各种格式的转换...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>零件组装</strong></p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">NewsParam</span> <span class="variable">param</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NewsParam</span>(channelID, pageNo);</span><br><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> MobileApi.GET_NEWSES + ParamFormatter.toUri(param);</span><br></pre></td></tr></table></figure>]]></content>
       
       
-      <categories>
-          
-          <category> 项目总结 </category>
-          
-      </categories>
-      
       
         <tags>
             
-            <tag> IT </tag>
+            <tag> Android </tag>
             
         </tags>
       
