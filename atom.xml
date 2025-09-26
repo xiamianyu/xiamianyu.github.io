@@ -6,7 +6,7 @@
   <link href="http://xiamianyu.github.io/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2025-09-22T06:18:04.948Z</updated>
+  <updated>2025-09-26T01:15:40.396Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -17,20 +17,46 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>博客十年</title>
+    <link href="http://xiamianyu.github.io/2025/09/24/blog-10years/"/>
+    <id>http://xiamianyu.github.io/2025/09/24/blog-10years/</id>
+    <published>2025-09-24T04:52:25.000Z</published>
+    <updated>2025-09-26T01:15:40.396Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知不觉，个人博客快十年了，产量不高，质量没眼看，好在没有放弃。</p><p>学生时代用过三方博客，没那么喜欢。出来工作后，想搭建自己的博客，当时也不知道能坚持写多久，就按穷鬼配置找技术支持：</p><ul><li>支持markdown写作</li><li>免费域名+免费托管</li></ul><p>最终选择<a href="https://hexo.io/zh-cn/">Hexo</a>搭配<a href="https://docs.github.com/en/pages">GitHub Pages</a>。Hexo快速简洁高效，支持markdown，可一键部署到GitHub Pages；GitHub Pages自带github.io域名。</p><p>GitHub服务器在海外，国内访问非常慢，不过自己的博客基本自己看，无所谓。</p><p>去年阿里云搞促销，索性买了个xiamianyu.site域名，别名指向xiamianyu.github.io，只做域名重定向，国内访问慢的问题还存在。</p><p>后来了解到Cloudflare在全球有很多CDN节点，国内节点不少，最重要的是对个人免费。做了CDN加速，果然快很多，老友不再骂我的是破博客了。</p><p>我也在微信公众号上记录一些东西，多年下来，我更喜欢自建博客，言论相对自由，还可以DIY博客。</p><p>如果你也想自建博客，不妨试试这个方案：</p><ul><li>博客框架：Hexo</li><li>博客托管：GitHub Pages</li><li>域名购买：博客用.me域名更好</li><li>CDN加速：Cloudflare CDN</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;不知不觉，个人博客快十年了，产量不高，质量没眼看，好在没有放弃。&lt;/p&gt;
+&lt;p&gt;学生时代用过三方博客，没那么喜欢。出来工作后，想搭建自己的博客，当时也不知道能坚持写多久，就按穷鬼配置找技术支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持markdown写作&lt;/li&gt;
+&lt;li&gt;免费域名</summary>
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>拥抱AI</title>
     <link href="http://xiamianyu.github.io/2025/09/20/embrace-ai/"/>
     <id>http://xiamianyu.github.io/2025/09/20/embrace-ai/</id>
     <published>2025-09-20T02:47:11.000Z</published>
-    <updated>2025-09-22T06:18:04.948Z</updated>
+    <updated>2025-09-26T01:18:52.125Z</updated>
     
-    <content type="html"><![CDATA[<p>今年春节期间DeepSeek突然出圈，家人也开始关注AI，我给他们装上了AI App，教他们怎么使用，用过都说不错。</p><p>虽然有时候AI答非所问，但只要你不断得跟它对话纠正，结果就会慢慢往正确方向靠拢，这也是对话推理的魅力。</p><p>家人表示，以前经常用百度，找的答案不够全，有AI之后，它能聚合并整理出答案，而且排版很好看，节省很多时间。能提高效率就是好工具。</p><p>我自己呢，会用AI辅助写代码。现在我不再局限于自己熟悉的编程语言，只要有需求，就让AI帮写个工具，编程语言选最合适的即可。</p><p>身边的同事，基本都在用AI辅助写代码。从我的实践来看，目前AI在代码片段上写得比个人还要好，工程上就差一些。</p><p>前阵子，用AI写了几个pyhon脚本分析工具，帮助App成功上架，意料之外。</p><p>最近，用AI写了个离线微信小程序给家人用，依靠广告变现，无需运营，无服务器成本。睡后收入，赚（终于不是挣了）点零花钱，何乐而不为。</p><p>也许，个人开发者使用AI做出产品并实现盈利，也是一种AI创业。</p><p>拥抱AI，让生活工作轻松一点！</p>]]></content>
+    <content type="html"><![CDATA[<p>春节期间DeepSeek突然出圈，家人也开始关注AI，我给他们装上了AI App，教他们怎么使用，用过都说不错。</p><p>虽然有时候AI答非所问，但只要你不断得跟它对话纠正，结果就会慢慢往正确方向靠拢，这也是对话推理的魅力。</p><p>家人表示，以前经常用百度，找的答案不够全，有AI之后，它能聚合并整理出答案，而且排版很好看，节省很多时间。能提高效率就是好工具。</p><p>我自己呢，会用AI辅助写代码。现在我不再局限于自己熟悉的编程语言，只要有需求，就让AI帮写个工具，编程语言选最合适的即可。</p><p>身边的同事，基本都在用AI辅助写代码。从我的实践来看，目前AI在代码片段上写得比个人还要好，工程上就差一些。</p><p>前阵子，用AI写了些分析工具，帮助App成功上架，意料之外。</p><p>最近，用AI写了个离线微信小程序给家人用，依靠广告变现，无运营，无服务器成本。</p><p>或许，产品中不一定要包含AI功能，使用AI辅助做出产品并实现盈利，也是一种AI创业。</p><p>拥抱AI，让生活工作轻松一点。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;今年春节期间DeepSeek突然出圈，家人也开始关注AI，我给他们装上了AI App，教他们怎么使用，用过都说不错。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;春节期间DeepSeek突然出圈，家人也开始关注AI，我给他们装上了AI App，教他们怎么使用，用过都说不错。&lt;/p&gt;
 &lt;p&gt;虽然有时候AI答非所问，但只要你不断得跟它对话纠正，结果就会慢慢往正确方向靠拢，这也是对话推理的魅力。&lt;/p&gt;
-&lt;p&gt;家人表示，以前经常用百度</summary>
+&lt;p&gt;家人表示，以前经常用百度，找</summary>
       
     
     
@@ -353,7 +379,7 @@
     <link href="http://xiamianyu.github.io/2017/02/14/ubuntu-jenkins-deploy/"/>
     <id>http://xiamianyu.github.io/2017/02/14/ubuntu-jenkins-deploy/</id>
     <published>2017-02-14T10:17:25.000Z</published>
-    <updated>2025-09-23T00:58:22.287Z</updated>
+    <updated>2025-09-25T01:17:21.863Z</updated>
     
     <content type="html"><![CDATA[<p><strong>搭建前准备</strong></p><p>Jenkins需要Java 7或更好版本，我们需要在Ubuntu（我的是 Ubuntu 12.04）上装好，关于Java的安装，这里不再敖述。</p><p><strong>安装Jenkins</strong></p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="built_in">sudo</span> apt-key add -</span><br><span class="line">$ <span class="built_in">sudo</span> sh -c <span class="string">&#x27;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#x27;</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get update</span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install jenkins</span><br></pre></td></tr></table></figure><p>安装成功后，默认会自动开启Jenkins服务。在浏览器上访问<code>http://&lt;服务器 IP&gt;:8080</code>即可看到Jenkins的界面，接下来按照提示配置Jenkins即可。</p><p>开启Jenkins服务失败时，在<code>/var/log/jenkins/jenkins.log</code>中查看出错日志。</p><p><strong>启动或关闭Jenkins服务</strong></p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/jenkins restart</span><br></pre></td></tr></table></figure><p>由于上面的命令需要记住Jenkins的路径，费脑，推荐使用下面这种命令：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">$ <span class="built_in">sudo</span> service jenkins restart</span><br></pre></td></tr></table></figure><p><strong>自定义Jenkins端口</strong></p><p>在<code>/etc/default/jenkins</code>中配置<code>HTTP_PORT</code>：</p><figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">HTTP_PORT=8080</span><br></pre></td></tr></table></figure><p><strong>踩坑</strong></p><p>由于本人Ubuntu上的Java版本为Java 6，升级到Java 8后，重新安装Jenkins，发现服务启动不了，报的错还是因为我系统使用了Java 6。在排除Java版本没问题后，我怀疑Jenkins配置文件中Java版本可能还是旧的，后面真的就在<code>/etc/default/jenkins</code>中找到了解决方案：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># location of java</span></span><br><span class="line">JAVA=升级后的Java路径</span><br></pre></td></tr></table></figure><p><strong>参考</strong></p><ul><li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">Installing Jenkins on Ubuntu</a></li></ul>]]></content>
     
@@ -450,7 +476,7 @@
     <link href="http://xiamianyu.github.io/2016/05/06/req-params-object/"/>
     <id>http://xiamianyu.github.io/2016/05/06/req-params-object/</id>
     <published>2016-05-06T07:29:19.000Z</published>
-    <updated>2025-09-23T00:58:22.287Z</updated>
+    <updated>2025-09-25T01:17:28.873Z</updated>
     
     <content type="html"><![CDATA[<p>假设获取新闻列表url为：</p><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//localhost/getNewses?channelID=&amp;pageNo=&amp;pageSize</span></span><br></pre></td></tr></table></figure><p>Java中我们一般会这样拼接url：</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> MobileApi.GET_NEWSES + <span class="string">&quot;?channelID=&quot;</span> + mChannelID + <span class="string">&quot;pageNo=&quot;</span> + mPageNo + <span class="string">&quot;&amp;pageSize=30&quot;</span></span><br></pre></td></tr></table></figure><p>这种写法其实不利于项目维护，我的做法是把请求参数实体化，并放到一个package下统一管理。</p><p>下面是具体的改造：</p><p><strong>接口参数映射</strong></p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MobileApi</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">BASE_URL</span> <span class="operator">=</span> <span class="string">&quot;http:localhost/&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取新闻列表</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> finsl <span class="type">String</span> <span class="variable">GET_NEWSES</span> <span class="operator">=</span> BASE_URL + <span class="string">&quot;getNewses&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">NewsParam</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 栏目ID</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;channelID&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> mChannelID;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 页码</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;pageNo&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> mPageNo;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 每页大小，这里固定是30条</span></span><br><span class="line">    <span class="meta">@SerializedName(&quot;pageSize&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">mPageSize</span> <span class="operator">=</span> <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">NewsParam</span><span class="params">(<span class="type">int</span> channelID, <span class="type">int</span> pageNo)</span> &#123;</span><br><span class="line">        mChannelID = channelID;</span><br><span class="line">        mPageNo = pageNo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用Gson的SerializedName将接口字段名称映射为自定义名称，这样如果接口字段名称改了，只需修改SerializedName的值即可。</p><p><strong>参数类型转换</strong></p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ParamFormatter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成json</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toJson</span><span class="params">(Object object)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Gson</span>().toJson(object);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成uri</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toUri</span><span class="params">(Object object)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> genUri(<span class="string">&quot;?&quot;</span>, object);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">genUri</span><span class="params">(String prefix, Object object)</span> &#123;</span><br><span class="line">        <span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">JSONObject</span> <span class="variable">jo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>(toJson(object));</span><br><span class="line">            Iterator&lt;String&gt; keys = jo.keys();</span><br><span class="line">            <span class="keyword">while</span> (keys.hasNext()) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> keys.next();</span><br><span class="line">                <span class="type">Object</span> <span class="variable">value</span> <span class="operator">=</span> jo.get(key);</span><br><span class="line">                key = URLEncoder.encode(key);</span><br><span class="line">                value = URLEncoder.encode(String.valueOf(value));</span><br><span class="line">                sb.append(<span class="string">&quot;&amp;&quot;</span>).append(key).append(<span class="string">&quot;=&quot;</span>).append(value);</span><br><span class="line">                sb.replace(<span class="number">0</span>, <span class="number">1</span>, prefix);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换成Map</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title function_">toMap</span><span class="params">(Object object)</span> &#123;</span><br><span class="line">        Map&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, String&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">JSONObject</span> <span class="variable">jsonObject</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>(toJson(object));</span><br><span class="line">            Iterator&lt;String&gt; keys = jsonObject.keys();</span><br><span class="line">            <span class="keyword">while</span> (keys.hasNext()) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> keys.next();</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> String.valueOf(jsonObject.get(key));</span><br><span class="line">                map.put(key, value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 后续可以添加各种格式的转换...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>零件组装</strong></p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">NewsParam</span> <span class="variable">param</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NewsParam</span>(channelID, pageNo);</span><br><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> MobileApi.GET_NEWSES + ParamFormatter.toUri(param);</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -463,33 +489,8 @@
     
     
     
-    <category term="项目总结" scheme="http://xiamianyu.github.io/categories/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
-    
     
     <category term="IT" scheme="http://xiamianyu.github.io/tags/IT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>主席位</title>
-    <link href="http://xiamianyu.github.io/2016/04/14/leader-seat/"/>
-    <id>http://xiamianyu.github.io/2016/04/14/leader-seat/</id>
-    <published>2016-04-14T14:36:29.000Z</published>
-    <updated>2025-09-23T00:58:22.287Z</updated>
-    
-    <content type="html"><![CDATA[<p>没错，今天我是会议主席，大家听我发号施令！然而实际情况是，最没意见的人要坐主席位。</p><p>今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出来。其中有一个问题，特别有意思，我复现当时的对白。</p><p>“<br>杂物大人：这个产品做到现在还没流量，问题出现在哪里？<br>其他人：沉默中…<br>杂物大人：作为产品的开发人员，自己有用过这个产品吗？<br>某童鞋：我就是在调试bug的时候用过…（杂物大人默默地笑了）<br>”</p><p>曾经我以为，作为开发者，只要按照产品经理说的做就可以把产品做好，产品能否带来PV、收益等是产品经理的事。</p><p>是的，可能有些人跟我想法一样，但如果是比较年轻的公司，产品经理的经验也毕竟有限，需要的是大家的决策，不是什么都是产品经理说了算。</p><p>如果产品经理设计的某些功能不合理，我们完全有理由提出来并打断他，不然到时候功能做出来了才说之前考虑不周，废掉这个功能，这简直就是浪费生命！</p><p>再者，希望自己在负责的产品开发上，不要太局限于技术（在产品没有产生PV之前，再好的代码设计，也没有价值）。</p><p>要多去使用自己的产品，把产品不满意的地方跟产品经理提出来，因为我也是这个产品的用户。如果都懒得去用自己研发的产品，怎么去发现问题？怎么可能把它做好？</p><p>从今天开始，做一个有责任心的开发者吧。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;没错，今天我是会议主席，大家听我发号施令！然而实际情况是，最没意见的人要坐主席位。&lt;/p&gt;
-&lt;p&gt;今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出</summary>
-      
-    
-    
-    
-    
-    <category term="随笔" scheme="http://xiamianyu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
