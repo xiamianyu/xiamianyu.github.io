@@ -83,7 +83,7 @@
   </h1>
   <div class="content markdown-body">
     <p><strong>搭建前准备</strong></p>
-<p>Jenkins需要Java 7或更好版本，我们需要在Ubuntu（我的是 Ubuntu 12.04）上装好，关于Java的安装，这里不再敖述。</p>
+<p>Jenkins需要Java 7或更高版本。</p>
 <p><strong>安装Jenkins</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="built_in">sudo</span> apt-key add -</span><br><span class="line">$ <span class="built_in">sudo</span> sh -c <span class="string">&#x27;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#x27;</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get update</span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install jenkins</span><br></pre></td></tr></table></figure>
 
