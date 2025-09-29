@@ -14,7 +14,7 @@
       
         <tags>
             
-            <tag> 博客 </tag>
+            <tag> 杂谈 </tag>
             
         </tags>
       
@@ -33,7 +33,7 @@
       
         <tags>
             
-            <tag> AI </tag>
+            <tag> 杂谈 </tag>
             
         </tags>
       
@@ -65,13 +65,13 @@
       <link href="/2022/03/27/beyond-tech/"/>
       <url>/2022/03/27/beyond-tech/</url>
       
-        <content type="html"><![CDATA[<p>最近几年有幸参与过一个产品从0到1再到10的开发，记录一下这个珍贵的历程。</p><p>产品上线不久后就实现了收支平衡，给了我们很大的信心。在接下来的半年里，马不停蹄补齐核心功能，业务也逐渐稳定，迭代节奏开始慢了下来。</p><p>这时我开始思考一个问题，我们的产品健康吗？看了一圈后台和第三方平台的数据，很多专业名词搞不懂。找了数据分析的书系统地学一遍，了解了一些业务指标如用户指标、行为指标、产品指标以及一些分析方法。</p><p>我就用这些业务指标和分析方法来核对自己的产品，心里就有个数，后续跟产品、运营和市场同学打交道时就能比较好地理解他们的诉求，有时候也会提出自己的想法。</p><p>业务稳定后，运营活动也多了起来。我就想，做了这么多活动，效果到底怎么样了？带着这些疑问，我开始找运营的书看，得知运营主要分用户运营、内容运营和活动运营。活动运营就是通过组织活动在短时间内快速提升相关指标的运营手段。</p><p>后来业务扩张需要投放，我又学习了投放方面的内容，了解了投放的业务指标如效果指标、KPI指标、财务指标以及归因原理。</p><p>前段时间运营同学提出一个召回流失用户的方案：PUSH打开指定页面。</p><p>做技术选型时我发现FR和AF都能满足，但我又从投放的角度想，觉得AF更合适，因为打开指定页面还可以提高广告的转化率。</p><p>试想一下，如果一个用户在广告中看到一个主播，点击广告，下载App，打开App就自动进入她的资料页或直播间，那体验感肯定很好，而且现在的广告更关注留存和转化，这无疑是杀手锏。</p><p>技术人的终极目标应该是支撑业务并给用户提供最好的体验。</p><p>好的用户体验在设计SDK时也是通用的。如果API设计不友好，迭代时频繁改动API，开发者就会抓狂。好的API设计在一定程度上可以弥补内部缺陷，让你有时间去改造。</p>]]></content>
+        <content type="html"><![CDATA[<p>最近几年有幸参与过一个产品从0到1再到10的开发，记录一下这个珍贵的历程。</p><p>产品上线不久后就实现了收支平衡，给了我们很大的信心。在接下来的半年里，马不停蹄补齐核心功能，业务也逐渐稳定，迭代节奏开始慢了下来。</p><p>这时我开始思考一个问题，我们的产品健康吗？看了一圈后台和第三方平台的数据，很多专业名词搞不懂。找了数据分析的书系统地学一遍，了解了一些业务指标如用户指标、行为指标、产品指标以及一些分析方法。</p><p>我就用这些业务指标和分析方法来核对自己的产品，心里就有个数，后续跟产品、运营和市场同学打交道时就能比较好地理解他们的诉求，有时候也会提出自己的想法。</p><p>业务稳定后，运营活动也多了起来。我就想，做了这么多活动，效果到底怎么样了？带着这些疑问，我开始找运营的书看，得知运营主要分用户运营、内容运营和活动运营。活动运营就是通过组织活动在短时间内快速提升相关指标的运营手段。</p><p>后来业务扩张需要投放，我又学习了投放方面的内容，了解了投放的业务指标如效果指标、KPI指标、财务指标以及归因原理。</p><p>前段时间运营同学提出一个召回流失用户的方案：PUSH打开指定页面。</p><p>做技术选型时我发现FR和AF都能满足，但我又从投放的角度想，觉得AF更合适，因为打开指定页面还可以提高广告的转化率。</p><p>试想一下，如果一个用户在广告中看到一个主播，点击广告，下载App，打开App就自动进入她的资料页或直播间，那体验感肯定很好，而且现在的广告更关注留存和转化，这无疑是杀手锏。</p><p>好的用户体验在设计API时也是通用的，如果API设计不友好，迭代时频繁改动API，开发者就会抓狂。好的API设计在一定程度上可以弥补内部缺陷，让你有时间去改造。</p>]]></content>
       
       
       
         <tags>
             
-            <tag> 随笔 </tag>
+            <tag> 杂谈 </tag>
             
         </tags>
       
@@ -204,26 +204,7 @@
       
         <tags>
             
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>近几年</title>
-      <link href="/2019/01/10/recent-years/"/>
-      <url>/2019/01/10/recent-years/</url>
-      
-        <content type="html"><![CDATA[<p>16年下半年开始全面接手团队的管理工作，与大家一起，经过一年的撸力，完成了团队的基础建设，团队趋于规范和稳定，管理工作逐渐轻松。</p><p>不安分的我跨部门学习数据挖掘，几个月后没做出啥成绩，从入门到放弃。</p><p>后面的日子基本是跨组打杂，浑浑噩噩，找不到工作重心，最后心一狠，干脆自愿领盒饭算了。</p><p>离职后，回到领导身边当起了家庭主男。闲暇时间或到户外走走拍拍，或窝在家里写写画画。</p><p>本来打算在领导这边找家公司安顿下来，不用再为异地恋两头奔波。可惜小地方的选择太少，从一线回到小地方的极度不适应感挥之不去。半个月后，我又重返一线干起了老本行，加入现在的公司。</p><p>新公司的组织架构、产品定义、市场推广和运营等勾我的兴趣，这是以前公司没有经历过的，更最重要的是妹子又多又漂亮，有妹子的加持，工作更有动力了。</p><p>18年中，许久未联系的老朋友突然发来一条红色炸弹，我很自然地赶紧抓起手机回了一句「需要我去拍照吗？」。</p><p>果然不出所料，还好我负责的只是结婚的花絮，正式的婚礼由专门摄影师负责，捏了一把冷汗。</p><p>我比较喜欢用手机拍照，没有携带负担。前几年用过一次单反，借别人的，当时还特意请教好心人几个简单操作，如今早已忘却。老朋友的婚礼，我用手机拍，多对不住人家，我这两年不是在考虑入坑单反吗？再不买可说不过去了。</p><p>都说“单反穷三代，摄影毁一生”，起初我对这句话的理解仅仅停留在玩器材上，所以一直与器材划清界限。</p><p>平时周末有空就出去拍照，当周边的知名景点都走遍后，我的目光投向了徒步。</p><p>深入丛林看花花草草，爬到山顶看蓝天白云，早已把家里的山地车忘记了。</p><p>入坑徒步后，又得入手徒步装备，背包、登山杖、冲锋衣和登山鞋等等，好烧钱…</p><p>此时我才真正理解“单反穷三代，摄影毁一生”的意思，当然徒步还是有很多好处的，观赏美景的同时可结交天下英雄豪杰，看花花草草蓝天白云的同时不忘偷窥附近的美女，学习决定性瞬间（偷拍）技术。</p><p>过去一年，身边很多同学朋友都在感慨身体状况欠佳，病痛不断，我自己也深有体会，19年希望大家身体都健健康康的，有个好身体才能做更多有意思的事情。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
+            <tag> 杂谈 </tag>
             
         </tags>
       
@@ -236,13 +217,13 @@
       <link href="/2018/02/23/android-auto-build-platform-maintenance/"/>
       <url>/2018/02/23/android-auto-build-platform-maintenance/</url>
       
-        <content type="html"><![CDATA[<p><a href="/2017/02/22/android-auto-build-platform-deploy/">Android自动化构建平台搭建</a>已过去一年，在过去一年中，随着Android Studio和Android SDK的升级和更新，Android自动化构建平台也需要同步升级，主要升级的内容是Gradle和Android SDK。</p><p><strong>Gradle</strong></p><p>通过本地电脑，从<a href="https://gradle.org/releases/">官网</a>下载指定版本的压缩包，如：gradle-4.1-all.zip。</p><p>将压缩包上传到Jenkins所在的主机：</p><figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>scp gradle-<span class="number">4.1</span>-all.zip ubuntu<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">253</span></span><br></pre></td></tr></table></figure><p>解压压缩包到指定目录：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> unzip gradle-4.1-all.zip -d /opt/gradle/</span></span><br></pre></td></tr></table></figure><p>接着配置Gradle环境</p><p>进入配置文件：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> vim /etc/profile</span></span><br></pre></td></tr></table></figure><p>更新以下内容并保存：</p><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="attribute">GRADLE_HOME</span>=/opt/gradle/gradle-4.1</span><br><span class="line"><span class="built_in">export</span> <span class="attribute">PATH</span>=<span class="variable">$GRADLE_HOME</span>/bin:$PATH</span><br></pre></td></tr></table></figure><p>让上面设置的环境变量立即生效：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure><p>检查升级是否成功：</p><figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="section">$ gradle -v</span></span><br><span class="line"><span class="section">------------------------------------------------------------</span></span><br><span class="line"><span class="section">Gradle 4.1</span></span><br><span class="line"><span class="section">------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">Build time:   2017-08-07 14:38:48 UTC</span><br><span class="line">Revision:     941559e020f6c357ebb08d5c67acdb858a3defc2</span><br><span class="line"></span><br><span class="line">Groovy:       2.4.11</span><br><span class="line">Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015</span><br><span class="line">JVM:          1.8.0_121 (Oracle Corporation 25.121-b13)</span><br><span class="line">OS:           Linux 3.5.0-47-generic amd64</span><br></pre></td></tr></table></figure><p><strong>Android SDK</strong></p><p>Android SDK的升级主要是更新<code>build-tools</code>和<code>platforms</code>目录下的内容，我们通过命令行的方式完成它们的更新。如果你对Android SDK目录不了解，<a href="http://blog.csdn.net/aiynmimi/article/details/51028499">请查看这里</a>。</p><p>列出SDK所有信息：</p><figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">$ android list sdk --all --extended | more</span><br><span class="line"><span class="bullet">...</span></span><br><span class="line"><span class="bullet"></span>id: 2 or &quot;platform-tools&quot;</span><br><span class="line"><span class="code">     Type: PlatformTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Platform-tools, revision 27.0.1</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 3 or &quot;build-tools-27.0.3&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Build-tools, revision 27.0.3</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 4 or &quot;build-tools-27.0.2&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Build-tools, revision 27.0.2</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 5 or &quot;build-tools-27.0.1&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="code">     Desc: Android SDK Build-tools, revision 27.0.1</span></span><br><span class="line"><span class="bullet">...</span></span><br><span class="line"><span class="bullet"></span>id: 42 or &quot;android-27&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 27</span></span><br><span class="line"><span class="section">           Revision 1</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 43 or &quot;android-26&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 26</span></span><br><span class="line"><span class="section">           Revision 2</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 44 or &quot;android-25&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 25</span></span><br><span class="line"><span class="section">           Revision 3</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 45 or &quot;android-24&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 24</span></span><br><span class="line"><span class="code">           Revision 2</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>我们只需要下载Type为BuildTool和Platform的选项即可，BuildTool对应 <code>build-tools</code>，Platform对应<code>platforms</code>。比如<code>build-tools</code>中缺少 27.0.1，<code>platforms</code>中缺少 27，我们可执行以下命令：</p><figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line">$ android <span class="keyword">update</span> sdk -u -a -t <span class="keyword">build</span>-tools<span class="number">-27.0</span><span class="number">.1</span>,android<span class="number">-27</span></span><br></pre></td></tr></table></figure><p>命令讲解<br>-u: –no-ui<br>-a: –all<br>-t: –filter</p><p><strong>参考</strong></p><ul><li><a href="https://stackoverflow.com/questions/17031381/android-exception-in-org-eclipse-swt-swterror-no-more-handles-gtk-init-check">No more handles [gtk_init_check() failed]</a></li><li><a href="https://stackoverflow.com/questions/17963508/how-to-install-android-sdk-build-tools-on-the-command-line">How to install Android SDK Build Tools on the command line</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>随着Android Studio和Android SDK的升级和更新，<a href="/2017/02/22/android-auto-build-platform-deploy/">Android自动化构建平台</a>也需要同步升级，主要升级的内容是Gradle和Android SDK。</p><p><strong>Gradle</strong></p><p>通过本地电脑，从<a href="https://gradle.org/releases/">官网</a>下载指定版本的压缩包，如：gradle-4.1-all.zip。</p><p>将压缩包上传到Jenkins所在的主机：</p><figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>scp gradle-<span class="number">4.1</span>-all.zip ubuntu<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">253</span></span><br></pre></td></tr></table></figure><p>解压压缩包到指定目录：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> unzip gradle-4.1-all.zip -d /opt/gradle/</span></span><br></pre></td></tr></table></figure><p>接着配置Gradle环境</p><p>进入配置文件：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> vim /etc/profile</span></span><br></pre></td></tr></table></figure><p>更新以下内容并保存：</p><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="attribute">GRADLE_HOME</span>=/opt/gradle/gradle-4.1</span><br><span class="line"><span class="built_in">export</span> <span class="attribute">PATH</span>=<span class="variable">$GRADLE_HOME</span>/bin:$PATH</span><br></pre></td></tr></table></figure><p>让上面设置的环境变量立即生效：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure><p>检查升级是否成功：</p><figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="section">$ gradle -v</span></span><br><span class="line"><span class="section">------------------------------------------------------------</span></span><br><span class="line"><span class="section">Gradle 4.1</span></span><br><span class="line"><span class="section">------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">Build time:   2017-08-07 14:38:48 UTC</span><br><span class="line">Revision:     941559e020f6c357ebb08d5c67acdb858a3defc2</span><br><span class="line"></span><br><span class="line">Groovy:       2.4.11</span><br><span class="line">Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015</span><br><span class="line">JVM:          1.8.0_121 (Oracle Corporation 25.121-b13)</span><br><span class="line">OS:           Linux 3.5.0-47-generic amd64</span><br></pre></td></tr></table></figure><p><strong>Android SDK</strong></p><p>Android SDK的升级主要是更新<code>build-tools</code>和<code>platforms</code>目录下的内容，我们通过命令行的方式完成它们的更新。如果你对Android SDK目录不了解，<a href="http://blog.csdn.net/aiynmimi/article/details/51028499">请查看这里</a>。</p><p>列出SDK所有信息：</p><figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">$ android list sdk --all --extended | more</span><br><span class="line"><span class="bullet">...</span></span><br><span class="line"><span class="bullet"></span>id: 2 or &quot;platform-tools&quot;</span><br><span class="line"><span class="code">     Type: PlatformTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Platform-tools, revision 27.0.1</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 3 or &quot;build-tools-27.0.3&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Build-tools, revision 27.0.3</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 4 or &quot;build-tools-27.0.2&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Build-tools, revision 27.0.2</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 5 or &quot;build-tools-27.0.1&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="code">     Desc: Android SDK Build-tools, revision 27.0.1</span></span><br><span class="line"><span class="bullet">...</span></span><br><span class="line"><span class="bullet"></span>id: 42 or &quot;android-27&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 27</span></span><br><span class="line"><span class="section">           Revision 1</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 43 or &quot;android-26&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 26</span></span><br><span class="line"><span class="section">           Revision 2</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 44 or &quot;android-25&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 25</span></span><br><span class="line"><span class="section">           Revision 3</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 45 or &quot;android-24&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 24</span></span><br><span class="line"><span class="code">           Revision 2</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>我们只需要下载Type为BuildTool和Platform的选项即可，BuildTool对应 <code>build-tools</code>，Platform对应<code>platforms</code>。比如<code>build-tools</code>中缺少 27.0.1，<code>platforms</code>中缺少 27，我们可执行以下命令：</p><figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line">$ android <span class="keyword">update</span> sdk -u -a -t <span class="keyword">build</span>-tools<span class="number">-27.0</span><span class="number">.1</span>,android<span class="number">-27</span></span><br></pre></td></tr></table></figure><p>命令讲解<br>-u: –no-ui<br>-a: –all<br>-t: –filter</p><p><strong>参考</strong></p><ul><li><a href="https://stackoverflow.com/questions/17031381/android-exception-in-org-eclipse-swt-swterror-no-more-handles-gtk-init-check">No more handles [gtk_init_check() failed]</a></li><li><a href="https://stackoverflow.com/questions/17963508/how-to-install-android-sdk-build-tools-on-the-command-line">How to install Android SDK Build Tools on the command line</a></li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> 自动化构建 </tag>
+            <tag> CI </tag>
             
         </tags>
       
@@ -261,7 +242,7 @@
       
         <tags>
             
-            <tag> 团建 </tag>
+            <tag> 团队建设 </tag>
             
         </tags>
       
@@ -280,7 +261,7 @@
       
         <tags>
             
-            <tag> 自动化构建 </tag>
+            <tag> CI </tag>
             
         </tags>
       
@@ -299,7 +280,7 @@
       
         <tags>
             
-            <tag> 自动化构建 </tag>
+            <tag> CI </tag>
             
         </tags>
       
@@ -308,17 +289,17 @@
     
     
     <entry>
-      <title>小小梦想</title>
+      <title>初尝团队管理</title>
       <link href="/2016/12/17/little-dream/"/>
       <url>/2016/12/17/little-dream/</url>
       
-        <content type="html"><![CDATA[<p>1年前，刚走出校园，怀着迷迷糊糊的工作梦走进了现在这家公司。</p><p>记得面试时，面试官问我未来有什么计划，我说想当个组长。入职后才发现他就是组长，好尴尬！</p><p>今年年中，我开始全面接手团队的管理工作，将学生团队全部所学付诸实践。在接下来的半年中，主要展开了这些工作：健全团队建设文档、开站立会议、代码审查、技术分享、搭建团队基础框架和自动化构建平台等。</p><p><strong>团队建设文档</strong></p><p>看一个团队是否成熟，只要去看它的团队建设文档就够了，无规矩不成方圆。在这个个性张扬的时代，谁都想表现得不一样，这本来没错，但在一个团队协作中，没有一定的规范约束，大家就会乱来。这里列出团队建设中我觉得必要的文档。</p><p><strong>开发命名规范</strong></p><p>团队开发中，统一开发命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。</p><p><strong>项目结构规范</strong></p><p>今年MVP特别火热，甚至Google都出了自家的MVP规范，目前市面上的MVP规范数不胜数。是否MVP能完全取代MVC，其实没有绝对之说，适合自己的才是最好的。确定了开发架构后，就把该架构对应的项目结构细则整理成文档。</p><p><strong>项目文档管理规范</strong></p><p>一个App从需求到部署上线，会有产品组、项目组、开发组等的参与，每个阶段各组都会产生相应的文档，将它们用SVN的形式整理起来，形成了项目文档，开发期间不仅方便跨组沟通，而且有利于项目后期的维护和交接。</p><p><strong>项目发布规范</strong></p><p>项目发布这一步特别重要，稍有不慎就会酿成大错。特别是像服务器地址、商品价格、支付流程、签名、证书等这些信息要检查正确。</p><p><strong>版本控制策略</strong></p><p>不管是SVN还是Git，多人协作总得有一套版本控制策略。这里推荐使用Git，Git的版本控制策略可参考「<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>」</p><p><strong>站立会议</strong></p><p>站立会议，总结昨天，计划今天，只需10~15min，简短高效，执行以来，效果甚好。</p><p><strong>代码审查</strong></p><p>如果你觉得有了开发命名规范和项目结构规范，组员的代码就会按照上面的规范写好，那真的是太天真了。所谓5%在策略，95%在执行，组员的代码须通过代码审查不断纠正。一般老员工代码相对规范，不需过多审查，可由老员工审查试用期童鞋的代码，组长不定期抽查。</p><p><strong>技术分享</strong></p><p>每周一次的技术分享，说来惭愧，搞了2个月就夭折了。持续学习并保持高产出很难，后来就改为不定期技术分享，慢慢地，分享次数越来越少，最后取消了。</p><p><strong>团队基础框架</strong></p><p>在学生团队时，听师兄说过，只要把骨架搭好，以后想变肥变瘦就轻而易举了。这里的骨架就是团队基础框架，它包含了大多数项目必须的功能，如网络请求、缓存、数据库操作、通用自定义控件等，只需简单配置就可以使用，避免重复造轮子，提高开发效率。</p><p><strong>自动化构建平台</strong></p><p>手动打包 → 上传到SVN → 通知测试人员测试，每天都是这些流水线操作，这些操作可以通过自动化平台解放双手。</p><p>最近半年，自己最大的变化是责任感变强了，组员的问题就是我的问题，不敢怠慢。团队经过半年的努力，逐渐走向规范，我也对自己越来越有信心。</p><p>17年希望在管理好团队的同时，在生活上多去接触周边的人。工作只是生活的一部分，人生还有很多事没做，比如谈个（女）朋友。</p>]]></content>
+        <content type="html"><![CDATA[<p>今年年中，我开始全面接手团队的管理工作，在接下来的半年中，主要展开了这些工作：健全团队建设文档、开站立会议、代码审查、技术分享、搭建团队基础框架和自动化构建平台等。</p><p><strong>团队建设文档</strong></p><p>看一个团队是否成熟，只要去看它的团队建设文档就够了，无规矩不成方圆。在这个个性张扬的时代，谁都想表现得不一样，这本来没错，但在一个团队协作中，没有一定的规范约束，大家就会乱来。这里列出团队建设中我觉得必要的文档。</p><p><strong>开发命名规范</strong></p><p>团队开发中，统一开发命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。</p><p><strong>项目结构规范</strong></p><p>今年MVP特别火热，甚至Google都出了自家的MVP规范，目前市面上的MVP规范数不胜数。是否MVP能完全取代MVC，其实没有绝对之说，适合自己的才是最好的。确定了开发架构后，就把该架构对应的项目结构细则整理成文档。</p><p><strong>项目文档管理规范</strong></p><p>一个App从需求到部署上线，会有产品组、项目组、开发组等的参与，每个阶段各组都会产生相应的文档，将它们用SVN的形式整理起来，形成了项目文档，开发期间不仅方便跨组沟通，而且有利于项目后期的维护和交接。</p><p><strong>项目发布规范</strong></p><p>项目发布这一步特别重要，稍有不慎就会酿成大错。特别是像服务器地址、商品价格、支付流程、签名、证书等这些信息要检查正确。</p><p><strong>版本控制策略</strong></p><p>不管是SVN还是Git，多人协作总得有一套版本控制策略。这里推荐使用Git，Git的版本控制策略可参考「<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>」</p><p><strong>站立会议</strong></p><p>站立会议，总结昨天，计划今天，只需10~15min，简短高效，执行以来，效果甚好。</p><p><strong>代码审查</strong></p><p>如果你觉得有了开发命名规范和项目结构规范，组员的代码就会按照上面的规范写好，那真的是太天真了。所谓5%在策略，95%在执行，组员的代码须通过代码审查不断纠正。一般老员工代码相对规范，不需过多审查，可由老员工审查试用期童鞋的代码，组长不定期抽查。</p><p><strong>技术分享</strong></p><p>每周一次的技术分享，说来惭愧，搞了2个月就夭折了。持续学习并保持高产出很难，后来就改为不定期技术分享，慢慢地，分享次数越来越少，最后取消了。</p><p><strong>团队基础框架</strong></p><p>在学生团队时，听师兄说过，只要把骨架搭好，以后想变肥变瘦就轻而易举了。这里的骨架就是团队基础框架，它包含了大多数项目必须的功能，如网络请求、缓存、数据库操作、通用自定义控件等，只需简单配置就可以使用，避免重复造轮子，提高开发效率。</p><p><strong>自动化构建平台</strong></p><p>手动打包 → 上传到SVN → 通知测试人员测试，每天都是这些流水线操作，这些操作可以通过自动化平台解放双手。</p><p>最近半年，自己最大的变化是责任感变强了，组员的问题就是我的问题，不敢怠慢。团队经过半年的努力，逐渐走向规范，我也对自己越来越有信心。</p><p>17年希望在管理好团队的同时，在生活上多去接触周边的人。工作只是生活的一部分，人生还有很多事没做。</p>]]></content>
       
       
       
         <tags>
             
-            <tag> 随笔 </tag>
+            <tag> 团队建设 </tag>
             
         </tags>
       
@@ -337,7 +318,7 @@
       
         <tags>
             
-            <tag> 团建 </tag>
+            <tag> 团队建设 </tag>
             
         </tags>
       
@@ -356,7 +337,7 @@
       
         <tags>
             
-            <tag> 团建 </tag>
+            <tag> 团队建设 </tag>
             
         </tags>
       
@@ -384,17 +365,17 @@
     
     
     <entry>
-      <title>主席位</title>
+      <title>今天我坐主席位</title>
       <link href="/2016/04/14/leader-seat/"/>
       <url>/2016/04/14/leader-seat/</url>
       
-        <content type="html"><![CDATA[<p>没错，今天我是会议主席，大家听我发号施令！然而实际情况是，最没意见的人要坐主席位。</p><p>今天突然被叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出来。其中有一个问题，特别有意思，我复现当时的对白。</p><p>“<br>杂物大人：这个产品做到现在还没流量，问题出现在哪里？<br>其他人：沉默中…<br>杂物大人：作为产品的开发人员，自己有用过这个产品吗？<br>某童鞋：我就是在调试bug的时候用过…（杂物大人默默地笑了）<br>”</p><p>曾经我以为，作为开发者，只要按照产品经理说的做就可以把产品做好，产品能否带来PV、收益等是产品经理的事。</p><p>是的，可能有些人跟我想法一样，但如果是比较年轻的公司，产品经理的经验也毕竟有限，需要的是大家的决策，不是什么都是产品经理说了算。</p><p>如果产品经理设计的某些功能不合理，我们完全有理由提出来并打断他，不然到时候功能做出来了才说之前考虑不周，废掉这个功能，这简直就是浪费生命！</p><p>再者，希望自己在负责的产品开发上，不要太局限于技术（在产品没有产生PV之前，再好的代码设计，也没有价值）。</p><p>要多去使用自己的产品，把产品不满意的地方跟产品经理提出来，因为我也是这个产品的用户。如果都懒得去用自己研发的产品，怎么去发现问题？怎么可能把它做好？</p><p>从今天开始，做一个有责任心的开发者吧。</p>]]></content>
+        <content type="html"><![CDATA[<p>我是会议主席，大家听我发号施令！然而实际情况是，最没意见的人要坐主席位。</p><p>今天突然被杂物大人叫去参加会议，听完他们对我的安排后，我直接回了一句「还有我的事吗？没有我就先走咯」，结果被杂物大人拦住了，硬是要我坐上了主席位，期间杂物大人抛了几个问题，我愣是答不出来。其中有一个问题，特别有意思，我复现当时的对白。</p><p>“<br>杂物大人：这个产品做到现在还没流量，问题出现在哪里？<br>其他人：沉默中…<br>杂物大人：作为产品的开发人员，自己有用过这个产品吗？<br>某童鞋：我就是在调试bug的时候用过…（杂物大人默默地笑了）<br>”</p><p>曾经我以为，作为开发者，只要按照产品经理说的做就可以把产品做好，产品能否带来PV、收益等是产品经理的事。</p><p>是的，可能有些人跟我想法一样，但如果是比较年轻的公司，产品经理的经验也毕竟有限，需要的是大家的决策，不是什么都是产品经理说了算。</p><p>如果产品经理设计的某些功能不合理，我们完全有理由提出来并打断他，不然到时候功能做出来了才说之前考虑不周，废掉这个功能，这简直就是浪费生命！</p><p>再者，希望自己在负责的产品开发上，不要太局限于技术（在产品没有产生PV之前，再好的代码设计，也没有价值）。</p><p>要多去使用自己的产品，把产品不满意的地方跟产品经理提出来，因为我也是这个产品的用户。如果都懒得去用自己研发的产品，怎么去发现问题？怎么可能把它做好？</p><p>从今天开始，做一个有责任心的开发者吧。</p>]]></content>
       
       
       
         <tags>
             
-            <tag> 随笔 </tag>
+            <tag> 团队建设 </tag>
             
         </tags>
       
