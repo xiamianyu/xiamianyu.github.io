@@ -8,7 +8,7 @@
       <link href="/2025/09/24/blog-10years/"/>
       <url>/2025/09/24/blog-10years/</url>
       
-        <content type="html"><![CDATA[<p>学生时代用过三方博客，没那么喜欢。出来工作后，想搭建自己的博客，当时也不知道能坚持写多久，就按穷鬼配置找技术支持：</p><ul><li>支持markdown写作</li><li>免费域名+免费托管</li></ul><p>最终选择<a href="https://hexo.io/zh-cn/">Hexo</a>搭配<a href="https://docs.github.com/en/pages">GitHub Pages</a>。Hexo快速简洁高效，支持markdown，可一键部署到GitHub Pages；GitHub Pages自带github.io域名。</p><p>GitHub服务器在海外，国内访问非常慢，不过自己的博客基本自己看，无所谓。</p><p>去年阿里云搞促销，索性买了个xiamianyu.site域名，别名指向xiamianyu.github.io，只做域名重定向，国内访问慢的问题还存在。</p><p>后来了解到Cloudflare在全球有很多CDN节点，国内节点不少，最重要的是对个人免费。做了CDN加速，果然快很多，老友不再骂我的是破博客了。</p><p>我也在微信公众号上记录一些东西，多年下来，我更喜欢自建博客，言论相对自由，还可以DIY博客。</p><p>如果你也想自建博客，不妨试试这个方案：</p><ul><li>博客框架：Hexo</li><li>博客托管：GitHub Pages</li><li>域名购买：博客用.me域名更好</li><li>CDN加速：Cloudflare CDN</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>学生时代用过三方博客，没那么喜欢。出来工作后，想搭建自己的博客，当时也不知道能坚持写多久，就按穷鬼配置找技术支持：</p><ul><li>支持markdown写作</li><li>免费域名+免费托管</li></ul><p>最终选择<a href="https://hexo.io/zh-cn/">Hexo</a>搭配<a href="https://docs.github.com/en/pages">GitHub Pages</a>。Hexo支持markdown，可一键部署到GitHub Pages；GitHub Pages自带github.io域名。</p><p>GitHub服务器在海外，国内访问非常慢。去年阿里云搞促销，索性买了个xiamianyu.site域名，别名指向xiamianyu.github.io，只做域名重定向，国内访问慢的问题还存在。</p><p>后来了解到Cloudflare在全球有很多CDN节点，国内节点也不少，最重要的是对个人免费。做了CDN加速，访问没那么慢了。</p><p>如果你也想自建博客，不妨试试这个方案：</p><ul><li>博客框架：Hexo</li><li>博客托管：GitHub Pages</li><li>域名购买：博客用.me域名更好</li><li>CDN加速：Cloudflare CDN</li></ul>]]></content>
       
       
       
