@@ -6,7 +6,7 @@
   <link href="http://xiamianyu.github.io/atom.xml" rel="self"/>
   
   <link href="http://xiamianyu.github.io/"/>
-  <updated>2025-10-05T17:35:34.870Z</updated>
+  <updated>2025-10-06T00:43:12.642Z</updated>
   <id>http://xiamianyu.github.io/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://xiamianyu.github.io/2025/10/05/love-ubuntu/"/>
     <id>http://xiamianyu.github.io/2025/10/05/love-ubuntu/</id>
     <published>2025-10-05T10:28:54.000Z</published>
-    <updated>2025-10-05T17:35:34.870Z</updated>
+    <updated>2025-10-06T00:43:12.642Z</updated>
     
-    <content type="html"><![CDATA[<p>上大学之前，接触电脑只能在网吧里，清一色Windows，当时以为电脑就是这样的。</p><p>大一暑假，参加了学校的嵌入式实验室夏令营培训。期间，师兄第一件事是要求我们安装Ubuntu，我废了九牛二虎之力才在虚拟机上安装成功。</p><p>我的笔记本配置非常一般，开了虚拟机后就更慢了。现在我会推荐虚拟机安装Ubuntu Server，宿主机通过SSH登录Server进行操作。可能当初师兄选择Ubuntu（Desktop），是希望我们能完全在Ubuntu中沉浸式学习。</p><p>我后来在其他实验接触过Fedora，对比过后，还是喜欢Ubuntu，特别是Ubuntu字体，有种莫名的美感。我试过在MacBook中使用Ubuntu字体，呈现出来的效果总是差点意思，唯独在Ubuntu视觉效果最佳。</p><p>夏令营期间最值得回忆的一件事就是学习总结，我当时沉迷于在Ubuntu上安装各种酷炫的效果，如3D桌面，火焰字等，所以学习汇报时特别尴尬，别人都是认真在学习编程，而我却在搞这些无聊的玩意。</p><p>夏令营学习的东西非常多，基本涵盖了大学四年的专业课，对于大一新生来说非常烧脑。多年后，唯独记住<a href="https://linux.vbird.org/">《鸟哥的私房菜》</a>这本书和师兄的一句话：“遇到不会的问题，找男人”，也就是查找man手册。man手册是全英文的，一手资料，比网上的翻译好很多，同时会锻炼你的英文阅读能力。有些英文翻译成中文就变味了，比如service和server这两个词，翻译成中文时经常被搞混。</p><p>参加工作后，买了MacBook，以为就此和Ubuntu说拜拜了。没想到有次帮同事编译一个开源的远程桌面程序，MacBook老是编译失败，又找不到根因，索性切换到Ubuntu下编译，没想到编译成功了，这让我重新思考MacBook是不是不太适合开发。好在自己基本都在做业务层的工作，对开源软件二次开发比较少。</p><p>如果你想完全在Linux下工作还是比较难的，国内小微企业大多喜欢用微信、QQ等软件沟通，这些软件要么不支持Linux，要么Linux版本功能非常简陋。</p><p>这几年微信开始支持Linux，QQ Linux版本也发布重大更新，Linux不再是开发人员的专属，也开始走向普罗大众。我的MacBook也从macOS换成了Ubuntu，10年老古董再战5年不成问题。</p>]]></content>
+    <content type="html"><![CDATA[<p>上大学之前，接触电脑只能在网吧里，当时以为电脑都是Windows的，直到上了大学才知道还有其他操作系统。</p><p>大一暑假，参加了嵌入式实验室夏令营培训。期间，师兄第一件事是要求我们安装Ubuntu，我废了九牛二虎之力才在虚拟机上安装成功。</p><p>我的笔记本配置非常一般，开了虚拟机后就更卡了。如果时光可以倒流，我会选择虚拟机安装Ubuntu Server，宿主机通过SSH登录Server进行操作。可能当初师兄选择Ubuntu（Desktop），是希望我们能完全在Ubuntu中沉浸式学习。</p><p>后来在其他实验室接触过Fedora，对比过后，还是更喜欢Ubuntu，特别是Ubuntu字体，有种莫名的美感。试过在MacBook中使用Ubuntu字体，可呈现出来的效果总是差点意思，唯独在Ubuntu上效果最佳。</p><p>培训期间，我沉迷于在Ubuntu上安装各种酷炫的效果，如3D桌面，火焰字等，所以学习汇报时特别尴尬，别人都是认真在学习编程，而我却在搞这些无聊的玩意。</p><p>培训的内容涵盖了大学四年的专业课，对于大一新生来说非常烧脑。多年后，唯独记住<a href="https://linux.vbird.org/">《鸟哥的私房菜》</a>这本书和师兄的一句话：“遇到不会的问题，找男人”，也就是man手册。</p><p>man手册是全英文的，一手资料，比网上的翻译好很多，同时会锻炼你的英文阅读能力。有些英文翻译成中文就变味了，比如service和server这两个词，翻译成中文时经常被搞混。</p><p>参加工作后，买了MacBook，以为就此和Ubuntu说拜拜了。有次帮同事编译一个开源的GNU远程桌面程序，MacBook老是编译失败，又找不到根因，索性切换到Ubuntu下编译，结果编译成功了，这让我重新思考MacBook是不是不太适合做开发。好在自己基本做业务开发，对开源软件二次开发比较少。</p><p>国内小微企业大多用微信、QQ等软件沟通，这些软件要么不支持Linux，要么Linux版本功能非常简陋，想完全在Linux下工作比较困难。</p><p>这几年微信开始支持Linux，QQ Linux版本也发布重大更新，我也将MacBook的macOS换成了Ubuntu，多年的愿望得以实现，老古董再次焕发活力。</p><p>希望国内越来越多的厂商支持Linux，让普罗大众能接触Linux。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;上大学之前，接触电脑只能在网吧里，清一色Windows，当时以为电脑就是这样的。&lt;/p&gt;
-&lt;p&gt;大一暑假，参加了学校的嵌入式实验室夏令营培训。期间，师兄第一件事是要求我们安装Ubuntu，我废了九牛二虎之力才在虚拟机上安装成功。&lt;/p&gt;
-&lt;p&gt;我的笔记本配置非常一般，开了虚</summary>
+    <summary type="html">&lt;p&gt;上大学之前，接触电脑只能在网吧里，当时以为电脑都是Windows的，直到上了大学才知道还有其他操作系统。&lt;/p&gt;
+&lt;p&gt;大一暑假，参加了嵌入式实验室夏令营培训。期间，师兄第一件事是要求我们安装Ubuntu，我废了九牛二虎之力才在虚拟机上安装成功。&lt;/p&gt;
+&lt;p&gt;我的笔记本配</summary>
       
     
     
