@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+
+  <title>关于Packet</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <link rel="icon" href="/images/favicon.webp">
+  
+
+  <!-- raleway font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+  
+  
+    
+<script src="/js/code-copy.js"></script>
+
+  
+
+  
+    <script src='https://unpkg.com/mermaid@11.12.0/dist/mermaid.min.js'></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'forest'});
+      }
+    </script>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="tags" target="" href="/tags/">
+      <i class="iconfont icon-tags"></i>
+    </a>
+  
+</p>
+
+      <div class="main">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Sep 14, 2021
+  </h3>
+  <h1>
+    关于Packet
+  </h1>
+  <div class="content markdown-body">
+    <p>在<a href="/2021/08/27/facebook-atc-deploy/">搭建Facebook ATC</a>的过程中，发现自己对计算机网络二三层的基本工作原理并不熟悉，后来发现思科网络模拟工具（Cisco Packet Tracer，简称PT）可以模拟二三层的工作原理，特别不错。</p>
+<p>我们先来看下二三层的设备，二层是交换机，三层是路由器。</p>
+<p><strong>交换机的特点</strong></p>
+<ul>
+<li>有多个网口（通常24个以上）供终端主机连接</li>
+<li>为同一局域网内的主机提供连接</li>
+<li>不能为不同局域网或因特网提供连接</li>
+</ul>
+<p><strong>路由器的特点</strong>  </p>
+<ul>
+<li>网口比交换机少</li>
+<li>为不同局域网提供连接</li>
+<li>能发送数据到因特网</li>
+</ul>
+<p>下面我们通过一个简单的网络拓扑图来讲解包的生命周期：</p>
+<p><img src="/../images/net-topology.webp" alt="网络拓扑图（用PT画的）"></p>
+<p>从上图我们可以得到以下信息：</p>
+<table>
+<thead>
+<tr>
+<th>设备类型</th>
+<th>所属局域网</th>
+<th>IP地址</th>
+<th>子网掩码</th>
+<th>默认网关</th>
+<th>MAC地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PC1主机</td>
+<td>局域网1：<br>192.168.1.0&#x2F;24</td>
+<td>192.168.1.1</td>
+<td>255.255.255.0</td>
+<td>192.168.1.254</td>
+<td>0011</td>
+</tr>
+<tr>
+<td>SW1交换机</td>
+<td>局域网1：<br>192.168.1.0&#x2F;24</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>R1路由器左端口</td>
+<td>局域网1：<br>192.168.1.0&#x2F;24</td>
+<td>192.168.1.254</td>
+<td>255.255.255.0</td>
+<td>-</td>
+<td>1254</td>
+</tr>
+<tr>
+<td>R1路由器右端口</td>
+<td>局域网2：<br>192.168.2.0&#x2F;24</td>
+<td>192.168.2.254</td>
+<td>255.255.255.0</td>
+<td>-</td>
+<td>2254</td>
+</tr>
+<tr>
+<td>SW2交换机</td>
+<td>局域网2：<br>192.168.2.0&#x2F;24</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>PC2主机</td>
+<td>局域网2：<br>192.168.2.0&#x2F;24</td>
+<td>192.168.2.1</td>
+<td>255.255.255.0</td>
+<td>192.168.2.254</td>
+<td>0021</td>
+</tr>
+</tbody></table>
+<p>现在我们思考一个问题：PC1 ping PC2的过程是怎么样的？</p>
+<p>这个过程涉及跨子网通信，分三个阶段如下：</p>
+<p><strong>阶段1</strong>：获取默认网关R1的MAC地址</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>发起者</th>
+<th>动作</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>PC1</td>
+<td>对目标IP与自身子网掩码做逻辑与运算</td>
+<td>判断目标PC2不在同一子网，需通过默认网关转发</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PC1</td>
+<td>查询自身ARP缓存表</td>
+<td>检查是否已存储默认网关R1的IP-MAC映射，发现未找到</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PC1</td>
+<td>向SW1发送ARP广播包（目标IP为R1）</td>
+<td>请求获取默认网关R1的MAC地址</td>
+</tr>
+<tr>
+<td>4</td>
+<td>SW1</td>
+<td>识别ARP包为广播包，除PC1连接端口外，向所有其他端口广播</td>
+<td>将ARP查询请求传递给默认网关R1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>R1</td>
+<td>接收ARP广播包，检查头部发现目标IP为自身</td>
+<td>确认自身是ARP查询的目标，准备回应</td>
+</tr>
+<tr>
+<td>6</td>
+<td>R1</td>
+<td>向SW1发送ARP单播回应包（携带自身MAC地址）</td>
+<td>告知PC1自己的MAC地址，供后续数据包封装使用</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SW1</td>
+<td>将R1的ARP单播回应包转发给PC1</td>
+<td>传递网关MAC地址给发起查询的PC1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>PC1</td>
+<td>更新自身ARP缓存表，记录R1的IP-MAC映射</td>
+<td>后续向网关发数据包时，无需重复发起ARP查询</td>
+</tr>
+</tbody></table>
+<p><strong>阶段2</strong>：转发数据包至目标PC2</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>发起者</th>
+<th>动作</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>PC1</td>
+<td>封装目标为PC2的数据包（目标MAC为R1），发送给SW1</td>
+<td>将跨子网数据包先发送给默认网关，由网关转发</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SW1</td>
+<td>将数据包转发给R1</td>
+<td>基于目标R1的MAC，精准传递数据包至网关</td>
+</tr>
+<tr>
+<td>3</td>
+<td>R1</td>
+<td>接收数据包，判断目标IP（PC2）所在子网在自身右端口</td>
+<td>确定数据包的下一跳转发端口</td>
+</tr>
+<tr>
+<td>4</td>
+<td>R1</td>
+<td>查询自身ARP缓存表，检查是否存储PC2的IP-MAC映射，发现未找到</td>
+<td>确认需发起ARP查询获取PC2的MAC地址</td>
+</tr>
+<tr>
+<td>5</td>
+<td>R1</td>
+<td>从右端口向SW2发送ARP广播包（目标IP为PC2）</td>
+<td>请求获取PC2的MAC地址</td>
+</tr>
+<tr>
+<td>6</td>
+<td>SW2</td>
+<td>识别ARP包为广播包，除R1连接端口外，向所有其他端口广播</td>
+<td>将ARP查询请求传递给PC2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>PC2</td>
+<td>接收ARP广播包，检查头部发现目标IP为自身</td>
+<td>确认自身是ARP查询的目标，准备回应</td>
+</tr>
+<tr>
+<td>8</td>
+<td>PC2</td>
+<td>向SW2发送ARP单播回应包（携带自身MAC地址）</td>
+<td>告知R1自己的MAC地址，供后续数据包封装使用</td>
+</tr>
+<tr>
+<td>9</td>
+<td>SW2</td>
+<td>将PC2的ARP单播回应包转发给R1</td>
+<td>传递目标PC的MAC地址给网关R1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>R1</td>
+<td>更新自身ARP缓存表，记录PC2的IP-MAC映射</td>
+<td>后续向PC2发数据包时，无需重复发起ARP查询</td>
+</tr>
+<tr>
+<td>11</td>
+<td>R1</td>
+<td>封装目标为PC2的数据包（目标MAC为PC2），发送给SW2</td>
+<td>将数据包从右端口转发至目标PC所在子网的SW2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>SW2</td>
+<td>将数据包转发给PC2</td>
+<td>基于目标MAC（PC2），精准传递数据包至目标主机</td>
+</tr>
+<tr>
+<td>13</td>
+<td>PC2</td>
+<td>接收并处理R1转发的数据包</td>
+<td>完成跨子网数据包的接收</td>
+</tr>
+</tbody></table>
+<p><strong>阶段3</strong>：PC2向PC1回传回应数据包</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>发起者</th>
+<th>动作</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>PC2</td>
+<td>查询自身ARP缓存表，确认已存储R1的IP-MAC映射（此前通信中已记录）</td>
+<td>无需重复发起ARP查询，直接使用缓存的网关MAC</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PC2</td>
+<td>封装回应数据包（目标MAC为R1），发送给SW2</td>
+<td>将回应包先发送给网关，由网关回传PC1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SW2</td>
+<td>将回应数据包转发给R1</td>
+<td>基于目标MAC（R1），传递回应包至网关</td>
+</tr>
+<tr>
+<td>4</td>
+<td>R1</td>
+<td>查询自身ARP缓存表，确认已存储PC1的IP-MAC映射（阶段1已记录）</td>
+<td>无需重复发起ARP查询，直接使用缓存的PC1 MAC</td>
+</tr>
+<tr>
+<td>5</td>
+<td>R1</td>
+<td>封装回应数据包（目标MAC为PC1），发送给SW1</td>
+<td>将回应包转发至PC1所在子网的交换机</td>
+</tr>
+<tr>
+<td>6</td>
+<td>SW1</td>
+<td>将回应数据包转发给PC1</td>
+<td>基于目标MAC（PC1），精准传递回应包至发起端</td>
+</tr>
+<tr>
+<td>7</td>
+<td>PC1</td>
+<td>接收并处理PC2的回应数据包</td>
+<td>完成整个跨子网通信的“请求-回应”闭环</td>
+</tr>
+</tbody></table>
+<p>我们留意到，整个过程涉及到三个表：</p>
+<ul>
+<li>交换机有MAC地址表，存储着MAC地址和端口的映射关系</li>
+<li>路由器有路由表，存储着IP和端口的映射关系</li>
+<li>主机和路由器都有ARP缓存表，存储着IP和MAC地址的映射关系</li>
+</ul>
+<p>这三张表是怎么来的：</p>
+<ul>
+<li>MAC地址表通过局域网内各节点之间不断通过交换机通信逐步完善起来的</li>
+<li>路由表是各种路由算法+人工配置逐步完善起来的</li>
+<li>ARP缓存表是不断通过ARP协议的请求逐步完善起来的</li>
+</ul>
+<p>如果用PT单步调式，你会发现原始包的目标IP始终不变，变的只是目标MAC地址，所以其实三层并不具备传输包的功能，而是靠二层去传输。</p>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2021/08/27/facebook-atc-deploy/">NEXT&nbsp;&gt;</a>
+    
+    
+      <a id="newer" class="blog-nav" href="/2022/03/27/beyond-tech/">&lt;&nbsp;PREV</a>
+    
+  
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 2025 夏眠鱼
+        
+    </div>
+  
+</div>
+
+      </div>
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+<script src="/js/table-responsive.js"></script>
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          <!-- <span class="search-icon-input">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </span> -->
+          
+            <input type="text" class="search-input" id="search-input" placeholder="请输入要搜索的内容">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-close"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    // inputArea.onclick = function() {
+    //   getSearchFile()
+    //   this.onclick = null
+    // }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+        getSearchFile()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'><span></ul>";
+      // $resultContent.innerHTML = "<ul><span class='local-search-empty'>正在加载中...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'><h2>" + orig_data_title + "</h2></a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<h3 class=\"search-result-abstract\">" + match_content + "...</h3>"
+                }
+                str += "<hr></li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>无相关内容<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/leedom92/hexo-theme-leedom#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+    </div>
+  </body>
+</html>
