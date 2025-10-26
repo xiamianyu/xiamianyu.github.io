@@ -1,0 +1,602 @@
+.gutter pre {
+  color: var(--color-text-light);
+}
+
+pre {
+  color: var(--color-code-text);
+}
+
+pre .function .keyword,
+pre .constant {
+  color: var(--syntax-function-keyword);
+}
+
+pre .keyword,
+pre .attribute {
+  color: var(--color-accent);
+}
+
+pre .number,
+pre .literal {
+  color: var(--syntax-number-literal);
+}
+
+pre .tag,
+pre .tag .title,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title,
+pre .tex .special {
+  color: var(--syntax-tag);
+}
+
+pre .class .title {
+  color: var(--color-white);
+}
+
+pre .symbol,
+pre .symbol .string,
+pre .value,
+pre .regexp {
+  color: var(--syntax-symbol);
+}
+
+pre .title {
+  color: var(--syntax-title);
+}
+
+pre .tag .value,
+pre .string,
+pre .subst,
+pre .haskell .type,
+pre .preprocessor,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .prompt {
+  color: var(--syntax-symbol);
+}
+
+pre .comment,
+pre .java .annotation,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula {
+  color: var(--syntax-comment);
+}
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: 0.5;
+}
+
+.post {
+  position: relative;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.post h1,
+.post h2 {
+  text-transform: none;
+}
+
+.post h1 a:hover,
+.post h2 a:hover {
+  border-bottom: 3px solid var(--color-text-muted);
+}
+
+.post h1 {
+  font-size: 32px;
+  margin: 45px 0 30px;
+  letter-spacing: 1px;
+}
+
+.post h2 {
+  font-size: 24px;
+  margin: 30px 0 15px;
+  position: relative;
+}
+
+.post h2:before {
+  content: '';
+  border-left: 5px solid var(--color-link);
+  position: absolute;
+  left: -15px;
+  height: 75%;
+  top: 12%;
+}
+
+.post h3 {
+  margin: 15px 0;
+}
+
+.date-tags-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.post .date {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  color: var(--color-text-light);
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.post-tags {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.tag-link {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: var(--color-transparent);
+  line-height: 1.2;
+}
+
+.tag-link::before {
+  content: "#";
+  margin-right: 2px;
+}
+
+.tag-link:hover {
+  color: var(--color-text-muted);
+  background-color: var(--color-transparent);
+}
+
+.post .content {
+  text-align: left;
+  line-height: 1.8em;
+}
+
+.post .content p,
+.post .content ul,
+.post .content ol {
+  margin: 1em 0 1.5em;
+}
+
+.post .content strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.post .content ol {
+  padding-left: 1.6em;
+}
+
+.post .content ul {
+  padding-left: 8px;
+  list-style-type: none;
+}
+
+.post .content ul li:before {
+  position: relative;
+  font-weight: 600;
+  content: " · ";
+}
+
+.post .content a {
+  color: var(--color-link);
+  border-bottom: 2px solid var(--color-transparent);
+}
+
+.post .content a:hover {
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-link-hover);
+}
+
+.post .content .highlight,
+.post .content .highlight table {
+  margin: 0;
+  width: 100%;
+}
+
+.post .content .highlight table,
+.post .content .highlight tr,
+.post .content .highlight td {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.post .content code {
+  font-family: var(--font-code);
+  font-size: 13px;
+  background-color: var(--color-code-bg);
+  padding: 3px 10px;
+  margin: 0 5px;
+  border-radius: 2px;
+}
+
+.post .content pre {
+  font-family: var(--font-code);
+  font-size: 13px;
+  overflow-x: auto;
+  text-align: left;
+  padding: 15px 25px;
+  margin: 0;
+  background-color: var(--color-code-bg);
+  line-height: 1.5em;
+  position: relative;
+}
+
+.code-block-wrapper {
+  position: relative;
+}
+
+.code-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: var(--color-link);
+  color: var(--color-white);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: var(--font-primary);
+  z-index: 10;
+}
+
+.code-copy-btn:hover {
+  background-color: var(--color-link-hover);
+}
+
+.code-copy-btn:active {
+  background-color: var(--color-link-hover);
+}
+
+.post .content .code pre {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.post .content .gutter pre {
+  padding: 15px 0 15px 15px;
+  color: var(--color-code-gutter-text);
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.post .content blockquote {
+  margin: 2em 0;
+  padding-left: 30px;
+  border-left: 5px solid var(--color-border-soft);
+}
+
+.post .content blockquote p {
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.8em;
+  color: var(--color-text-light);
+}
+
+.post img {
+  display: block;
+  max-width: 100%;
+}
+
+.post .content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 0.85em;
+  box-shadow: 0 2px 8px var(--color-shadow-soft);
+  border-radius: 6px;
+  overflow: hidden;
+  table-layout: auto;
+}
+
+.post .content table th,
+.post .content table td {
+  padding: 12px 14px;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  min-width: 40px;
+  max-width: 400px;
+}
+
+.post .content table th {
+  background-color: var(--color-table-head-bg);
+  font-weight: 600;
+  color: var(--color-table-head-text);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.post .content table td {
+  background-color: var(--color-bg);
+  color: var(--color-table-text);
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.post .content table tr:nth-child(even) td {
+  background-color: var(--color-table-even-bg);
+}
+
+.post .content table tr:nth-child(odd) td {
+  background-color: var(--color-table-odd-bg);
+}
+
+.post .content table tr:hover td {
+  background-color: var(--color-table-hover-bg);
+}
+
+.post .content table tr:last-child td {
+  border-bottom: none;
+}
+
+.post .content table thead th {
+  position: relative;
+}
+
+.post .content table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.post .content .table-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-scrollbar-thumb-light) var(--color-transparent);
+  border-radius: 6px;
+}
+
+.post .content .table-container::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track-bg);
+  border-radius: 3px;
+}
+
+.post .content .table-container::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb-light);
+  border-radius: 3px;
+}
+
+.post .content .table-container table {
+  margin: 0;
+  width: 100%;
+}
+
+.post .content table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+}
+
+.blog-nav {
+  position: fixed;
+  bottom: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-bottom: 3px solid var(--color-transparent);
+}
+
+#newer {
+  left: 40px;
+}
+
+#older {
+  right: 40px;
+}
+
+.show-comments {
+  font-family: var(--font-primary);
+  text-align: center;
+}
+
+.show-comments a {
+  color: var(--color-text-light);
+  cursor: pointer;
+}
+
+.show-comments a:hover {
+  color: var(--color-text-muted);
+}
+
+@media screen and (max-width: 900px) {
+  .post {
+    padding-bottom: 80px;
+  }
+  
+  .blog-nav {
+    position: absolute;
+    bottom: 30px;
+  }
+  
+  #newer {
+    left: 0;
+  }
+  
+  #older {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post .content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0.8em;
+  }
+  
+  .post .content table thead,
+  .post .content table tbody,
+  .post .content table tr {
+    width: 100%;
+  }
+  
+  .post .content table th {
+    background-color: var(--color-table-head-bg);
+    font-weight: 600;
+    color: var(--color-table-head-text);
+    white-space: nowrap;
+  }
+  
+  .post .content table td {
+    padding: 10px 12px;
+    white-space: nowrap;
+    text-align: left;
+    background-color: var(--color-bg);
+    color: var(--color-table-text);
+  }
+  
+  .post .content table tr:nth-child(even) td {
+    background-color: var(--color-table-even-bg);
+  }
+  
+  .post .content table tr:nth-child(odd) td {
+    background-color: var(--color-table-odd-bg);
+  }
+  
+  .post .content table tr:hover td {
+    background-color: var(--color-table-hover-bg);
+  }
+  
+  .post .content table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .post .content .table-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-scrollbar-thumb-light) var(--color-transparent);
+    border-radius: 6px;
+  }
+  
+  .post .content .table-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .post .content .table-container::-webkit-scrollbar-track {
+    background: var(--color-scrollbar-track-bg);
+    border-radius: 3px;
+  }
+  
+  .post .content .table-container::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-thumb-light);
+    border-radius: 3px;
+  }
+  
+  .post .content .table-container table {
+    font-size: 0.8em;
+    table-layout: auto;
+    width: auto;
+    min-width: 100%;
+    margin: 0;
+  }
+  
+  .post .content .table-container table th,
+  .post .content .table-container table td {
+    white-space: nowrap;
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .main {
+    margin-top: 32px;
+    min-height: calc(100vh - 140px);
+  }
+  
+  .post h1 {
+    font-size: 24px;
+    margin: 30px 0 15px;
+  }
+  
+  .post h2 {
+    font-size: 20px;
+    margin: 15px 0 0;
+  }
+  
+  .post h3 {
+    font-size: 16px;
+    margin: 0 0;
+    line-height: 1.3em;
+  }
+  
+  .post .date {
+    font-size: 12px;
+  }
+  
+  .post .content {
+    font-size: 15px;
+  }
+  
+  .post .content pre {
+    font-size: 12px;
+  }
+  
+  .post .content blockquote p {
+    font-size: 16px;
+  }
+  
+  .post .content p:first-child {
+    margin-top: 1.5em;
+  }
+  
+  .blog-nav {
+    font-size: 14px;
+    color: var(--color-text);
+  }
+}

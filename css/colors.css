@@ -1,0 +1,48 @@
+:root {
+  --color-text: #444;
+  --color-text-muted: #666;
+  --color-text-light: #999;
+  --color-text-subtle: #bbb;
+  --color-text-dim: #aaa;
+  --color-text-strong: #404040;
+  --color-text-emphasis: #535353;
+  --color-link: #f66;
+  --color-link-hover: #f33;
+  --color-accent: #e96900;
+  --color-border: #f0f0f0;
+  --color-border-light: #eee;
+  --color-border-soft: #e6e6e6;
+  --color-border-weak: rgba(88, 88, 88, 0.1);
+  --color-bg: #fff;
+  --color-gray: gray;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-overlay-bg: rgba(0, 0, 0, 0.3);
+  --color-shadow-soft: rgba(0, 0, 0, 0.08);
+  --color-scrollbar-thumb: rgba(144, 147, 153, 0.5);
+  --color-scrollbar-thumb-hover: #a4a4a4;
+  --color-scrollbar-thumb-light: #c1c1c1;
+  --color-scrollbar-track-bg: #f1f1f1;
+  --color-transparent: transparent;
+
+  /* table */
+  --color-table-head-bg: #4a6582;
+  --color-table-head-text: #ffffff;
+  --color-table-text: #2c3e50;
+  --color-table-even-bg: #f0f4f8;
+  --color-table-odd-bg: #f8fafc;
+  --color-table-hover-bg: #f0f7ff;
+
+  /* code */
+  --color-code-bg: #f6f6f6;
+  --color-code-text: #525252;
+  --color-code-gutter-text: #75715e;
+
+  /* syntax highlight */
+  --syntax-function-keyword: #0092db;
+  --syntax-number-literal: #ae81ff;
+  --syntax-tag: #2973b7;
+  --syntax-symbol: #42b983;
+  --syntax-title: #a6e22e;
+  --syntax-comment: #b3b3b3;
+}

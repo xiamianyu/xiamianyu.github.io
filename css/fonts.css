@@ -1,0 +1,5 @@
+:root {
+  --font-primary: Montserrat, "Helvetica Neue";
+  --font-code: "Roboto Mono", monospace;
+  --font-fallback: Arial, sans-serif;
+}
