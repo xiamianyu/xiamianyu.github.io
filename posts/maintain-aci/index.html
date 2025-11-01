@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+
+  <title>维护Android CI</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <link rel="icon" href="/images/favicon.webp">
+  
+
+  <link rel="preload" href="/fonts/Montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/RobotoMono.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- site css -->
+  
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <link href="/vendor/fancybox/5.0.36/fancybox.css" rel="stylesheet">
+  <script src="/vendor/fancybox/5.0.36/fancybox.umd.js" defer></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <script>
+      window.__mermaidInitConfig = {
+        theme: 'default'
+      };
+    </script>
+    <script src='/vendor/mermaid/11.12.0/mermaid.min.js' defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="tags" target="" href="/tags/">
+      <i class="iconfont icon-tags"></i>
+    </a>
+  
+    <a title="about" target="" href="/about/">
+      <i class="iconfont icon-envelope"></i>
+    </a>
+  
+</p>
+
+      <div class="main">
+        <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" src="/vendor/mathjax/3.2.2/es5/tex-chtml.js" defer></script>
+
+<div class="post">
+  <div class="date-tags-container">
+    <h3 class="date">
+      Feb 23, 2018
+    </h3>
+    
+      <div class="post-tags">
+        
+          <a href="/tags/android/" class="tag-link">android</a>
+        
+          <a href="/tags/ci/" class="tag-link">ci</a>
+        
+      </div>
+    
+  </div>
+  <h1>
+    维护Android CI
+  </h1>
+  <div class="content markdown-body">
+    <p>随着Android Studio和Android SDK的升级和更新，Android CI也需要同步升级，主要升级的内容是Gradle和Android SDK。</p>
+<h2 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h2><p>从<a target="_blank" rel="noopener" href="https://gradle.org/releases/">官网</a>下载指定版本的压缩包并将其上传到Jenkins所在的主机：</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>scp gradle-<span class="number">4.1</span>-all.zip ubuntu<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">253</span></span><br></pre></td></tr></table></figure>
+
+<p>解压压缩包到指定目录：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> unzip gradle-4.1-all.zip -d /opt/gradle/</span></span><br></pre></td></tr></table></figure>
+
+<p>配置Gradle到环境变量：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> vim /etc/profile</span></span><br></pre></td></tr></table></figure>
+
+<p>更新以下内容并保存：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="attribute">GRADLE_HOME</span>=/opt/gradle/gradle-4.1</span><br><span class="line"><span class="built_in">export</span> <span class="attribute">PATH</span>=<span class="variable">$GRADLE_HOME</span>/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>让环境变量立即生效：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure>
+
+<p>检查升级是否成功：</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="section">$ gradle -v</span></span><br><span class="line"><span class="section">------------------------------------------------------------</span></span><br><span class="line"><span class="section">Gradle 4.1</span></span><br><span class="line"><span class="section">------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">Build time:   2017-08-07 14:38:48 UTC</span><br><span class="line">Revision:     941559e020f6c357ebb08d5c67acdb858a3defc2</span><br><span class="line"></span><br><span class="line">Groovy:       2.4.11</span><br><span class="line">Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015</span><br><span class="line">JVM:          1.8.0_121 (Oracle Corporation 25.121-b13)</span><br><span class="line">OS:           Linux 3.5.0-47-generic amd64</span><br></pre></td></tr></table></figure>
+
+<h2 id="Android-SDK"><a href="#Android-SDK" class="headerlink" title="Android SDK"></a>Android SDK</h2><p>Android SDK的升级主要是更新<code>build-tools</code>和<code>platforms</code>目录下的内容，我们通过命令行的方式完成它们的更新。</p>
+<p>列出SDK所有信息：</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">$ android list sdk --all --extended | more</span><br><span class="line"><span class="bullet">...</span></span><br><span class="line"><span class="bullet"></span>id: 2 or &quot;platform-tools&quot;</span><br><span class="line"><span class="code">     Type: PlatformTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Platform-tools, revision 27.0.1</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 3 or &quot;build-tools-27.0.3&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Build-tools, revision 27.0.3</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 4 or &quot;build-tools-27.0.2&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="section">     Desc: Android SDK Build-tools, revision 27.0.2</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 5 or &quot;build-tools-27.0.1&quot;</span><br><span class="line"><span class="code">     Type: BuildTool</span></span><br><span class="line"><span class="code">     Desc: Android SDK Build-tools, revision 27.0.1</span></span><br><span class="line"><span class="bullet">...</span></span><br><span class="line"><span class="bullet"></span>id: 42 or &quot;android-27&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 27</span></span><br><span class="line"><span class="section">           Revision 1</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 43 or &quot;android-26&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 26</span></span><br><span class="line"><span class="section">           Revision 2</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 44 or &quot;android-25&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 25</span></span><br><span class="line"><span class="section">           Revision 3</span></span><br><span class="line"><span class="section">----------</span></span><br><span class="line">id: 45 or &quot;android-24&quot;</span><br><span class="line"><span class="code">     Type: Platform</span></span><br><span class="line"><span class="code">     Desc: Android SDK Platform 24</span></span><br><span class="line"><span class="code">           Revision 2</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>我们只需要下载Type为BuildTool和Platform的选项即可，BuildTool对应 <code>build-tools</code>，Platform对应<code>platforms</code>。比如<code>build-tools</code>中缺少 27.0.1，<code>platforms</code>中缺少 27，我们可执行以下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># u: no-ui</span></span><br><span class="line"><span class="comment"># a: all </span></span><br><span class="line"><span class="comment"># t: filter</span></span><br><span class="line"><span class="variable">$</span> android update sdk <span class="literal">-u</span> <span class="literal">-a</span> <span class="literal">-t</span> <span class="built_in">build-tools</span><span class="literal">-27</span>.<span class="number">0.1</span>,android<span class="literal">-27</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/17031381/android-exception-in-org-eclipse-swt-swterror-no-more-handles-gtk-init-check">No more handles [gtk_init_check() failed]</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/17963508/how-to-install-android-sdk-build-tools-on-the-command-line">How to install Android SDK Build Tools on the command line
+</a></li>
+</ul>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/posts/custom-checkstyle/">OLDER&nbsp;&gt;</a>
+    
+    
+      <a id="newer" class="blog-nav" href="/posts/code-not-formatted/">&lt;&nbsp;NEWER</a>
+    
+  
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 2016-2025 Kanpu Li. All rights reserved.
+        
+    </div>
+  
+</div>
+
+      </div>
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+<script src="/js/table.js"></script>
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)" aria-label="搜索...">
+      <i class="iconfont icon-search" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          
+            <input type="text" class="search-input" id="search-input" placeholder="请输入要搜索的内容" aria-label="请输入要搜索的内容">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)" aria-label="Close">
+              <i class="iconfont icon-close" aria-hidden="true"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"
+             data-i18n-noresult="无相关内容"
+             data-i18n-files-notfound="未找到search.xml文件，具体请参考："
+             data-i18n-service-errors="请求失败，尝试重新刷新页面或稍后重试"></div>
+      </div>
+    </div>
+  </div>
+
+  
+<script src="/js/search.js"></script>
+
+
+
+    </div>
+  </body>
+</html>

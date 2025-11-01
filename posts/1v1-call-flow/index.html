@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+
+  <title>1v1通话流程</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <link rel="icon" href="/images/favicon.webp">
+  
+
+  <link rel="preload" href="/fonts/Montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/RobotoMono.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- site css -->
+  
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <link href="/vendor/fancybox/5.0.36/fancybox.css" rel="stylesheet">
+  <script src="/vendor/fancybox/5.0.36/fancybox.umd.js" defer></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <script>
+      window.__mermaidInitConfig = {
+        theme: 'default'
+      };
+    </script>
+    <script src='/vendor/mermaid/11.12.0/mermaid.min.js' defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="tags" target="" href="/tags/">
+      <i class="iconfont icon-tags"></i>
+    </a>
+  
+    <a title="about" target="" href="/about/">
+      <i class="iconfont icon-envelope"></i>
+    </a>
+  
+</p>
+
+      <div class="main">
+        <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" src="/vendor/mathjax/3.2.2/es5/tex-chtml.js" defer></script>
+
+<div class="post">
+  <div class="date-tags-container">
+    <h3 class="date">
+      Sep 21, 2020
+    </h3>
+    
+      <div class="post-tags">
+        
+          <a href="/tags/av/" class="tag-link">av</a>
+        
+      </div>
+    
+  </div>
+  <h1>
+    1v1通话流程
+  </h1>
+  <div class="content markdown-body">
+    <p>泛娱乐音视频社交App的1v1通话流程梳理。</p>
+<h2 id="通话操作"><a href="#通话操作" class="headerlink" title="通话操作"></a>通话操作</h2><ul>
+<li>拨打方：dial, cancel</li>
+<li>接听方：accept, reject</li>
+<li>通话双方：hang</li>
+</ul>
+<h2 id="通话状态"><a href="#通话状态" class="headerlink" title="通话状态"></a>通话状态</h2><ul>
+<li>IDLE</li>
+<li>WAITING</li>
+<li>CONNECTED</li>
+</ul>
+<h2 id="通话状态机"><a href="#通话状态机" class="headerlink" title="通话状态机"></a>通话状态机</h2><table>
+<thead>
+<tr>
+<th align="center">当前状态</th>
+<th align="center">触发事件</th>
+<th align="center">目标状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">IDLE</td>
+<td align="center">dial</td>
+<td align="center">WAITING</td>
+</tr>
+<tr>
+<td align="center">WAITING</td>
+<td align="center">cancel</td>
+<td align="center">IDLE</td>
+</tr>
+<tr>
+<td align="center">WAITING</td>
+<td align="center">reject</td>
+<td align="center">IDLE</td>
+</tr>
+<tr>
+<td align="center">WAITING</td>
+<td align="center">timeout(sys)</td>
+<td align="center">IDLE</td>
+</tr>
+<tr>
+<td align="center">WAITING</td>
+<td align="center">accept</td>
+<td align="center">CONNECTED</td>
+</tr>
+<tr>
+<td align="center">CONNECTED</td>
+<td align="center">hang</td>
+<td align="center">IDLE</td>
+</tr>
+</tbody></table>
+<h2 id="通话时序图"><a href="#通话时序图" class="headerlink" title="通话时序图"></a>通话时序图</h2><ul>
+<li>通话建立&#x2F;挂断</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">步骤</th>
+<th align="center">User A（拨打方）</th>
+<th align="center"></th>
+<th align="center">App Server</th>
+<th align="center"></th>
+<th align="center">User B（接听方）</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">显示拨打页面</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">请求拨打API:<br>&#x2F;call&#x2F;dial</td>
+<td align="center">&gt;</td>
+<td align="center">发送来电IM:<br>RING</td>
+<td align="center">&gt;</td>
+<td align="center">收到来电IM:<br>RING</td>
+<td align="center">A拨打B</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">显示接听页面</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">收到被接听IM:<br>RING_ACCEPT</td>
+<td align="center">&lt;</td>
+<td align="center">发送被接听IM:<br>RING_ACCEPT</td>
+<td align="center">&lt;</td>
+<td align="center">请求接听API:<br>&#x2F;call&#x2F;accept</td>
+<td align="center">B接听A</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">显示通话页面</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">显示通话页面</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">加入RTC频道</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">加入RTC频道</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">请求开始通话API:<br>&#x2F;call&#x2F;start</td>
+<td align="center">&gt;</td>
+<td align="center">开始通话</td>
+<td align="center">&lt;</td>
+<td align="center">请求开始通话API:<br>&#x2F;call&#x2F;start</td>
+<td align="center">通话建立</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">请求心跳API:<br>&#x2F;call&#x2F;hb</td>
+<td align="center">&gt;</td>
+<td align="center">校验A心跳</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A发送心跳</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">校验B心跳</td>
+<td align="center">&lt;</td>
+<td align="center">请求心跳API:<br>&#x2F;call&#x2F;hb</td>
+<td align="center">B发送心跳</td>
+</tr>
+<tr>
+<td align="center">若挂断</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">请求挂断API:<br>&#x2F;call&#x2F;hang</td>
+<td align="center">&gt;</td>
+<td align="center">发送被挂断IM:<br>HANG</td>
+<td align="center">&gt;</td>
+<td align="center">收到被挂断IM:<br>HANG</td>
+<td align="center">A挂断B</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">结束心跳</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">结束心跳</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">退出RTC频道</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">退出RTC频道</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">显示结束页面</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">显示结束页面</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<ul>
+<li>通话取消&#x2F;拒绝&#x2F;超时</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">步骤</th>
+<th align="center">User A（拨打方）</th>
+<th align="center"></th>
+<th align="center">App Server</th>
+<th align="center"></th>
+<th align="center">User B（接听方）</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">显示拨打页面</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">请求拨打API:<br>&#x2F;call&#x2F;dial</td>
+<td align="center">&gt;</td>
+<td align="center">发送来电IM:<br>RING</td>
+<td align="center">&gt;</td>
+<td align="center">收到来电IM:<br>RING</td>
+<td align="center">A拨打B</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">显示接听页面</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">4-若<br>取消</td>
+<td align="center">请求取消API:<br>&#x2F;call&#x2F;cancel</td>
+<td align="center">&gt;</td>
+<td align="center">发送被取消IM:<br>RING_CANCEL</td>
+<td align="center">&gt;</td>
+<td align="center">收到被取消IM:<br>RING_CANCEL</td>
+<td align="center">A取消B</td>
+</tr>
+<tr>
+<td align="center">4-若<br>拒绝</td>
+<td align="center">收到被拒绝IM:<br>RING_REJECT</td>
+<td align="center">&lt;</td>
+<td align="center">发送被拒绝IM:<br>RING_REJECT</td>
+<td align="center">&lt;</td>
+<td align="center">请求拒绝API:<br>&#x2F;call&#x2F;reject</td>
+<td align="center">B拒绝A</td>
+</tr>
+<tr>
+<td align="center">4-若<br>超时</td>
+<td align="center">接收超时IM:<br>RING_TIMEOUT</td>
+<td align="center">&lt;</td>
+<td align="center">发送超时IM:<br>RING_TIMEOUT</td>
+<td align="center">&gt;</td>
+<td align="center">收到超时IM:<br>RING_TIMEOUT</td>
+<td align="center">来电超时</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">关闭拨打页面</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">关闭接听页面</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul>
+<li>&#x2F;call&#x2F;dial：拨打</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">req<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span> <span class="comment">// 自身uid</span></span><br><span class="line">  <span class="attr">&quot;tid&quot;</span><span class="punctuation">:</span> <span class="number">456</span><span class="punctuation">,</span> <span class="comment">// 对方uid</span></span><br><span class="line">  <span class="attr">&quot;callType&quot;</span><span class="punctuation">:</span> <span class="string">&quot;VIDEO/AUDIO&quot;</span> <span class="comment">// 通话类型</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">res<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span><span class="punctuation">,</span> <span class="comment">// 通话ID</span></span><br><span class="line">  <span class="attr">&quot;price&quot;</span><span class="punctuation">:</span> <span class="string">&quot;25金币/分钟&quot;</span> <span class="comment">// 价格</span></span><br><span class="line">  <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="comment">// 对方用户信息</span></span><br><span class="line">    <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abc&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;age&quot;</span><span class="punctuation">:</span> <span class="number">18</span><span class="punctuation">,</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>&#x2F;call&#x2F;cancel：取消</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">req<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span> <span class="comment">// 自身uid</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span><span class="punctuation">,</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">res<span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>&#x2F;call&#x2F;accept：接听</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">req<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span> <span class="comment">// 自身uid</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">res<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span><span class="punctuation">,</span> <span class="comment">// 通话ID</span></span><br><span class="line">  <span class="attr">&quot;channel&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="comment">// 频道信息</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abc&quot;</span><span class="punctuation">,</span> <span class="comment">// 频道名称</span></span><br><span class="line">    <span class="attr">&quot;token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xxx&quot;</span> <span class="comment">// 频道token</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>&#x2F;call&#x2F;reject：拒绝</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">req<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span> <span class="comment">// 自身uid</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">res<span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>&#x2F;call&#x2F;hang：挂断</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">req<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span> <span class="comment">// 自身uid</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">res<span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>&#x2F;call&#x2F;hb：发送心跳</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">req<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span> <span class="comment">// 自身uid</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">res<span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>&#x2F;call&#x2F;start：开始通话</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">req<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span> <span class="comment">// 自身uid</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">res<span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="IM"><a href="#IM" class="headerlink" title="IM"></a>IM</h2><ul>
+<li>RING：来电</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;RING&quot;</span><span class="punctuation">,</span> <span class="comment">// 来电</span></span><br><span class="line">  <span class="attr">&quot;callType&quot;</span><span class="punctuation">:</span> <span class="string">&quot;VIDEO/AUDIO&quot;</span><span class="punctuation">,</span> <span class="comment">// 通话类型</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span><span class="punctuation">,</span> <span class="comment">// 通话ID</span></span><br><span class="line">  <span class="attr">&quot;price&quot;</span><span class="punctuation">:</span> <span class="string">&quot;25金币/分钟&quot;</span> <span class="comment">// 价格</span></span><br><span class="line">  <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="comment">// 对方用户信息</span></span><br><span class="line">    <span class="attr">&quot;uid&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abc&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;age&quot;</span><span class="punctuation">:</span> <span class="number">18</span><span class="punctuation">,</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>RING_ACCEPT：来电被接听</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;RING_ACCEPT&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span><span class="punctuation">,</span> <span class="comment">// 通话ID</span></span><br><span class="line">  <span class="attr">&quot;channel&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="comment">// 频道信息</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abc&quot;</span><span class="punctuation">,</span> <span class="comment">// 频道名称</span></span><br><span class="line">    <span class="attr">&quot;token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xxx&quot;</span> <span class="comment">// 频道token</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>RING_CANCEL：来电被取消</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;RING_CANCEL&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>RING_REJECT：来电被拒</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;RING_REJECT&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>RING_TIMEOUT：来电超时</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;RING_TIMEOUT&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>HANG：通话被挂断</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;HANG&quot;</span><span class="punctuation">,</span> <span class="comment">// 通话被挂断</span></span><br><span class="line">  <span class="attr">&quot;callId&quot;</span><span class="punctuation">:</span> <span class="number">789</span> <span class="comment">// 通话ID</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/posts/guestlive-mix/">OLDER&nbsp;&gt;</a>
+    
+    
+      <a id="newer" class="blog-nav" href="/posts/deploy-atc/">&lt;&nbsp;NEWER</a>
+    
+  
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 2016-2025 Kanpu Li. All rights reserved.
+        
+    </div>
+  
+</div>
+
+      </div>
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+<script src="/js/table.js"></script>
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)" aria-label="搜索...">
+      <i class="iconfont icon-search" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          
+            <input type="text" class="search-input" id="search-input" placeholder="请输入要搜索的内容" aria-label="请输入要搜索的内容">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)" aria-label="Close">
+              <i class="iconfont icon-close" aria-hidden="true"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"
+             data-i18n-noresult="无相关内容"
+             data-i18n-files-notfound="未找到search.xml文件，具体请参考："
+             data-i18n-service-errors="请求失败，尝试重新刷新页面或稍后重试"></div>
+      </div>
+    </div>
+  </div>
+
+  
+<script src="/js/search.js"></script>
+
+
+
+    </div>
+  </body>
+</html>

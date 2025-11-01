@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+
+  <title>关于NAT</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <link rel="icon" href="/images/favicon.webp">
+  
+
+  <link rel="preload" href="/fonts/Montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/RobotoMono.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- site css -->
+  
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <link href="/vendor/fancybox/5.0.36/fancybox.css" rel="stylesheet">
+  <script src="/vendor/fancybox/5.0.36/fancybox.umd.js" defer></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <script>
+      window.__mermaidInitConfig = {
+        theme: 'default'
+      };
+    </script>
+    <script src='/vendor/mermaid/11.12.0/mermaid.min.js' defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="tags" target="" href="/tags/">
+      <i class="iconfont icon-tags"></i>
+    </a>
+  
+    <a title="about" target="" href="/about/">
+      <i class="iconfont icon-envelope"></i>
+    </a>
+  
+</p>
+
+      <div class="main">
+        <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" src="/vendor/mathjax/3.2.2/es5/tex-chtml.js" defer></script>
+
+<div class="post">
+  <div class="date-tags-container">
+    <h3 class="date">
+      Nov 01, 2021
+    </h3>
+    
+      <div class="post-tags">
+        
+          <a href="/tags/net/" class="tag-link">net</a>
+        
+      </div>
+    
+  </div>
+  <h1>
+    关于NAT
+  </h1>
+  <div class="content markdown-body">
+    <p>从主机位置来看：分内网主机（Inside）和外网主机（Outside）<br>从网络视角来看：分内网（Local）和外网（Global）</p>
+<p>那么有以下组合：</p>
+<ul>
+<li>Inside Local：内网主机的IP地址，通常是一个私有地址</li>
+<li>Inside Global：内网主机的对外IP地址，通常是外网地址，由ISP提供</li>
+<li>Outside Local：外网主机的IP地址，不一定是外网地址</li>
+<li>Outside Global：外网主机的对外IP地址，通常由ISP提供</li>
+</ul>
+<h2 id="完全圆锥型NAT"><a href="#完全圆锥型NAT" class="headerlink" title="完全圆锥型NAT"></a>完全圆锥型NAT</h2><p><img src="/../images/full-cone-nat.webp" alt="full-cone-nat"></p>
+<ul>
+<li>一旦内部地址（iAddr:iPort）映射到外部地址（eAddr:ePort），所有发自iAddr:iPort的数据包都经由eAddr:ePort向外发送</li>
+<li>任意外部主机都能经由发送数据包给eAddr:ePort到达iAddr:iPort</li>
+</ul>
+<h2 id="受限圆锥型NAT"><a href="#受限圆锥型NAT" class="headerlink" title="受限圆锥型NAT"></a>受限圆锥型NAT</h2><p><img src="/../images/restricted-cone-nat.webp" alt="restricted-cone-na"></p>
+<ul>
+<li>一旦内部地址（iAddr:iPort）映射到外部地址（eAddr:ePort），所有发自iAddr:iPort的数据包都经由eAddr:ePort向外发送</li>
+<li>只有iAddr:iPort曾经发送数据包到外部主机（nAddr:any），外部主机才能经由发送数据包给eAddr:ePort到达iAddr:iPort（注：any指外部主机源端口不受限制）</li>
+</ul>
+<h2 id="端口受限圆锥型NAT"><a href="#端口受限圆锥型NAT" class="headerlink" title="端口受限圆锥型NAT"></a>端口受限圆锥型NAT</h2><p><img src="/../images/port-restricted-cone-nat.webp" alt="port-restricted-cone-nat"></p>
+<ul>
+<li>一旦内部地址（iAddr:iPort）映射到外部地址（eAddr:ePort），所有发自iAddr:iPort的数据包都经由eAddr:ePort向外发送</li>
+<li>在受限圆锥型NAT基础上增加了外部主机源端口必须是固定的</li>
+</ul>
+<h2 id="对称NAT"><a href="#对称NAT" class="headerlink" title="对称NAT"></a>对称NAT</h2><p><img src="/../images/symmetric-nat.webp" alt="symmetric-nat"></p>
+<ul>
+<li>每一个来自相同内部IP与端口，到一个特定目的地IP和端口的请求，都映射到一个独特的外部IP和端口。同一内部IP与端口发到不同的目的地和端口的信息包，都使用不同的映射</li>
+<li>只有曾经收到过内部主机数据的外部主机，才能够把数据包发回</li>
+</ul>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/posts/about-packet/">OLDER&nbsp;&gt;</a>
+    
+    
+      <a id="newer" class="blog-nav" href="/posts/beyond-tech/">&lt;&nbsp;NEWER</a>
+    
+  
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 2016-2025 Kanpu Li. All rights reserved.
+        
+    </div>
+  
+</div>
+
+      </div>
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+<script src="/js/table.js"></script>
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)" aria-label="搜索...">
+      <i class="iconfont icon-search" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          
+            <input type="text" class="search-input" id="search-input" placeholder="请输入要搜索的内容" aria-label="请输入要搜索的内容">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)" aria-label="Close">
+              <i class="iconfont icon-close" aria-hidden="true"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"
+             data-i18n-noresult="无相关内容"
+             data-i18n-files-notfound="未找到search.xml文件，具体请参考："
+             data-i18n-service-errors="请求失败，尝试重新刷新页面或稍后重试"></div>
+      </div>
+    </div>
+  </div>
+
+  
+<script src="/js/search.js"></script>
+
+
+
+    </div>
+  </body>
+</html>

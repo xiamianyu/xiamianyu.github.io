@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+
+  <title>搭建Android CI</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <link rel="icon" href="/images/favicon.webp">
+  
+
+  <link rel="preload" href="/fonts/Montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/RobotoMono.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- site css -->
+  
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <link href="/vendor/fancybox/5.0.36/fancybox.css" rel="stylesheet">
+  <script src="/vendor/fancybox/5.0.36/fancybox.umd.js" defer></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <script>
+      window.__mermaidInitConfig = {
+        theme: 'default'
+      };
+    </script>
+    <script src='/vendor/mermaid/11.12.0/mermaid.min.js' defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="tags" target="" href="/tags/">
+      <i class="iconfont icon-tags"></i>
+    </a>
+  
+    <a title="about" target="" href="/about/">
+      <i class="iconfont icon-envelope"></i>
+    </a>
+  
+</p>
+
+      <div class="main">
+        <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" src="/vendor/mathjax/3.2.2/es5/tex-chtml.js" defer></script>
+
+<div class="post">
+  <div class="date-tags-container">
+    <h3 class="date">
+      Feb 22, 2017
+    </h3>
+    
+      <div class="post-tags">
+        
+          <a href="/tags/android/" class="tag-link">android</a>
+        
+          <a href="/tags/ci/" class="tag-link">ci</a>
+        
+      </div>
+    
+  </div>
+  <h1>
+    搭建Android CI
+  </h1>
+  <div class="content markdown-body">
+    <h2 id="搭建方案"><a href="#搭建方案" class="headerlink" title="搭建方案"></a>搭建方案</h2><p>Jenkins + Git + Gogs + Gradle + Ubuntu</p>
+<h2 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h2><p>通用SSH远程登录的方式进入装有Ubuntu系统的主机：</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh ubuntu<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">253</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置Android-SDK"><a href="#配置Android-SDK" class="headerlink" title="配置Android SDK"></a>配置Android SDK</h2><p>下载SDK</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>curl <span class="symbol">http:</span>/<span class="regexp">/dl.google.com/android</span><span class="regexp">/android-sdk_r24.4.1-linux.tgz --output android/sdk</span></span><br></pre></td></tr></table></figure>
+
+<p>下载成功后将压缩包的内容解压到<code>android/sdk</code>目录下。官网下载的SDK，在运行过程中会报两个异常。</p>
+<p>异常1：</p>
+<blockquote>
+<p>Ionic build error : You have not accepted the license agreements of the following SDK components: [Android SDK Platform XX]</p>
+</blockquote>
+<p>通过命令行下载的Android SDK没有接受了许可协议，需要手动添加licenses：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> android/sdk</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">mkdir</span> licenses</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="string">&quot;8933bad161af4178b1185d1a37fbf41ea5269c55&quot;</span> &gt; <span class="string">&quot;licenses/android-sdk-license&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>异常2：</p>
+<blockquote>
+<p>&#x2F;var&#x2F;lib&#x2F;jenkins&#x2F;.android&#x2F;repositories.cfg could not be loaded</p>
+</blockquote>
+<p>应该也是通过命令行下载的Android SDK导致的，手动添加repositories.cfg：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>echo -e <span class="string">&quot;### User Sources for Android SDK Manager\ncount=0&quot;</span> &gt; <span class="regexp">/var/lib</span><span class="regexp">/jenkins/</span>.android/repositories.cfg</span><br></pre></td></tr></table></figure>
+
+<p><strong>配置环境变量</strong></p>
+<p>打开环境变量配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> vim /etc/profile</span></span><br></pre></td></tr></table></figure>
+
+<p>文件末尾添加以下内容并保存：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="attribute">ANDROID_HOME</span>=/home/jenkins/android/sdk</span><br><span class="line"><span class="built_in">export</span> <span class="attribute">PATH</span>=<span class="variable">$ANDROID_HOME</span>/tools:$ANDROID_HOME/platfom-tools:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>让上面设置的环境变量立即生效：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><p>下载Git</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ sudo apt-<span class="built_in">get</span> install git</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">$ git <span class="comment">--version</span></span><br><span class="line">git <span class="built_in">version</span> <span class="number">2.11</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置SVN"><a href="#配置SVN" class="headerlink" title="配置SVN"></a>配置SVN</h2><p>下载SVN</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ sudo apt-<span class="built_in">get</span> install svn</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line">$ svn <span class="attr">--version</span></span><br><span class="line">svn，版本 <span class="number">1.6</span><span class="selector-class">.17</span> (r1128011)</span><br></pre></td></tr></table></figure>
+
+<p>SVN Publisher插件的原理，其实是调用了SVN命令行来操作文件。虽然在「系统设置」中配置了SVN的账户密码，但是在构建Job时，还会出现安全认证失败的错误：</p>
+<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line"><span class="symbol">SEVERE:</span> *SVNForceImport <span class="keyword">Error</span>: svn: E170001: Authentication required <span class="keyword">for</span> <span class="comment">&#x27;&lt;http://svn-server:80&gt; </span></span><br></pre></td></tr></table></figure>
+
+<p>解决方法</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换当前用户到jenkins</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">su jenkins</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除已经存在的.subversion</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">rm</span> -fr ~/.subversion</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该操作的目的是保存svn的用户名和密码。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入完密码后，会询问你是否需要保存密码，输入<span class="built_in">yes</span>以保存SVN密码</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">svn checkout --username &lt;username&gt; &lt;svn-repo-url&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置Gradle"><a href="#配置Gradle" class="headerlink" title="配置Gradle"></a>配置Gradle</h2><p>为了方便，我直接从<a target="_blank" rel="noopener" href="http://www.androiddevtools.cn/">这里</a>下载gradle-2.14.1-all.zip，下载好之后，使用<code>scp</code>拷贝到Ubuntu中并解压：</p>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> scp gradle<span class="number">-2.14</span><span class="number">.1</span>-<span class="keyword">all</span>.zip ubuntu@<span class="number">192.168</span><span class="number">.1</span><span class="number">.253</span>:.</span><br><span class="line"><span class="symbol">$</span> sudo unzip gradle<span class="number">-2.14</span><span class="number">.1</span>-<span class="keyword">all</span>.zip -d /opt/gradle/</span><br></pre></td></tr></table></figure>
+
+<p>打开环境变量配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> vim /etc/profile</span></span><br></pre></td></tr></table></figure>
+
+<p>文件末尾添加以下内容并保存：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="attribute">GRADLE_HOME</span>=/opt/gradle/gradle-2.14.1</span><br><span class="line"><span class="built_in">export</span> <span class="attribute">PATH</span>=<span class="variable">$GRADLE_HOME</span>/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>让上面设置的环境变量立即生效：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功：</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="section">$ gradle -v</span></span><br><span class="line"><span class="section">------------------------------------------------------------</span></span><br><span class="line"><span class="section">Gradle 2.14.1</span></span><br><span class="line"><span class="section">------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">Build time:   2016-07-18 06:38:37 UTC</span><br><span class="line">Revision:     d9e2113d9fb05a5caabba61798bdb8dfdca83719</span><br><span class="line"></span><br><span class="line">Groovy:       2.4.4</span><br><span class="line">Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015</span><br><span class="line">JVM:          1.8.0_121 (Oracle Corporation 25.121-b13)</span><br><span class="line">OS:           Linux 3.5.0-47-generic amd64</span><br></pre></td></tr></table></figure>
+
+<h2 id="Jenkins环境配置"><a href="#Jenkins环境配置" class="headerlink" title="Jenkins环境配置"></a>Jenkins环境配置</h2><p>在Jenkins的「管理插件」中下载Git、Gogs、Gradle和SVN Publisher插件。</p>
+<p>打开「系统管理」-&gt;「系统设置」，配置以下环境。</p>
+<ol>
+<li>配置Android SDK环境变量</li>
+</ol>
+<p><img src="/../images/jenkins-system-setting1.webp" alt="jenkins-system-setting1.webp"></p>
+<ol start="2">
+<li>配置SVN账号密码</li>
+</ol>
+<p><img src="/../images/jenkins-system-setting2.webp" alt="jenkins-system-setting2.webp"></p>
+<ol start="3">
+<li>配置JDK &amp; Git &amp; Gradle</li>
+</ol>
+<p>打开「系统管理」-&gt;「Global Tool Configuration」，配置以下环境。通过 <code>which</code> 查看可执行命令路径：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">which</span> java</span><br><span class="line">/usr/local/java/jdk1.8.0_121/bin/java</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">which</span> git</span><br><span class="line">/usr/bin/git</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">which</span> gradle</span><br><span class="line">/opt/gradle/gradle-2.14.1/bin/gradle</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/jenkins-system-setting3.webp" alt="jenkins-system-setting3.webp"></p>
+<p>注意，GRADLE_HOME填 <code>/opt/gradle/gradle-2.14.1</code>，不是 <code>/opt/gradle/gradle-2.14.1/bin/gradle</code>：</p>
+<p><img src="/../images/jenkins-system-setting4.webp" alt="jenkins-system-setting4.webp"></p>
+<h2 id="Jenkins的使用"><a href="#Jenkins的使用" class="headerlink" title="Jenkins的使用"></a>Jenkins的使用</h2><ol>
+<li>创建Job</li>
+</ol>
+<p><img src="/../images/jenkins-create-job1.webp" alt="jenkins-create-job1"><br><img src="/../images/jenkins-create-job2.webp" alt="jenkins-create-job2"></p>
+<ol start="2">
+<li>配置Job</li>
+</ol>
+<p><img src="/../images/jenkins-config-job1.webp" alt="jenkins-config-job1"><br><img src="/../images/jenkins-config-job2.webp" alt="jenkins-config-job2"><br><img src="/../images/jenkins-config-job3.webp" alt="jenkins-config-job3"><br><img src="/../images/jenkins-config-job4.webp" alt="jenkins-config-job4"><br><img src="/../images/jenkins-config-job5.webp" alt="jenkins-config-job5"><br><img src="/../images/jenkins-config-job6.webp" alt="jenkins-config-job6"></p>
+<ol start="3">
+<li>Gogs上配置web钩子</li>
+</ol>
+<p><img src="/../images/gogs-config-webhook1.webp" alt="gogs-config-webhook1"><br><img src="/../images/gogs-config-webhook2.webp" alt="gogs-config-webhook2"><br><img src="/../images/gogs-config-webhook3.webp" alt="gogs-config-webhook3"><br><img src="/../images/gogs-config-webhook4.webp" alt="gogs-config-webhook4"></p>
+<ol start="4">
+<li>测试web钩子</li>
+</ol>
+<p><img src="/../images/gogs-config-webhook5.webp" alt="gogs-config-webhook5"><br><img src="/../images/jenkins-build-history.webp" alt="jenkins-build-history"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/CheNorton/article/details/50345039">CentOS7 命令行安装Android SDK</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/stwstw0123/article/details/47809189">Ubuntu 上安装Gradle</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.mamicode.com/info-detail-529578.html">上传文件到SVN报错</a></li>
+<li><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/40392345/ionic-build-error-you-have-not-accepted-the-license-agreements-of-the-followin">AndroidSDK不接受许可协议</a></li>
+<li><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/38448482/installing-android-studio-in-ubuntu-14-04-64-bit-android-repositories-cfg-could">.android&#x2F;repositories.cfg could not be loaded</a></li>
+</ul>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/posts/deploy-jenkins/">OLDER&nbsp;&gt;</a>
+    
+    
+      <a id="newer" class="blog-nav" href="/posts/custom-checkstyle/">&lt;&nbsp;NEWER</a>
+    
+  
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 2016-2025 Kanpu Li. All rights reserved.
+        
+    </div>
+  
+</div>
+
+      </div>
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+<script src="/js/table.js"></script>
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)" aria-label="搜索...">
+      <i class="iconfont icon-search" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          
+            <input type="text" class="search-input" id="search-input" placeholder="请输入要搜索的内容" aria-label="请输入要搜索的内容">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)" aria-label="Close">
+              <i class="iconfont icon-close" aria-hidden="true"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"
+             data-i18n-noresult="无相关内容"
+             data-i18n-files-notfound="未找到search.xml文件，具体请参考："
+             data-i18n-service-errors="请求失败，尝试重新刷新页面或稍后重试"></div>
+      </div>
+    </div>
+  </div>
+
+  
+<script src="/js/search.js"></script>
+
+
+
+    </div>
+  </body>
+</html>

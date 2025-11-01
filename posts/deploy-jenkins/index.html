@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+
+  <title>搭建Jenkins</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <link rel="icon" href="/images/favicon.webp">
+  
+
+  <link rel="preload" href="/fonts/Montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/RobotoMono.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- site css -->
+  
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <link href="/vendor/fancybox/5.0.36/fancybox.css" rel="stylesheet">
+  <script src="/vendor/fancybox/5.0.36/fancybox.umd.js" defer></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <script>
+      window.__mermaidInitConfig = {
+        theme: 'default'
+      };
+    </script>
+    <script src='/vendor/mermaid/11.12.0/mermaid.min.js' defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="tags" target="" href="/tags/">
+      <i class="iconfont icon-tags"></i>
+    </a>
+  
+    <a title="about" target="" href="/about/">
+      <i class="iconfont icon-envelope"></i>
+    </a>
+  
+</p>
+
+      <div class="main">
+        <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" src="/vendor/mathjax/3.2.2/es5/tex-chtml.js" defer></script>
+
+<div class="post">
+  <div class="date-tags-container">
+    <h3 class="date">
+      Feb 14, 2017
+    </h3>
+    
+      <div class="post-tags">
+        
+          <a href="/tags/ci/" class="tag-link">ci</a>
+        
+      </div>
+    
+  </div>
+  <h1>
+    搭建Jenkins
+  </h1>
+  <div class="content markdown-body">
+    <h2 id="搭建方案"><a href="#搭建方案" class="headerlink" title="搭建方案"></a>搭建方案</h2><p>Ubuntu + Java 7+</p>
+<h2 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="built_in">sudo</span> apt-key add -</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> sh -c <span class="string">&#x27;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#x27;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> apt-get update</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> apt-get install jenkins</span></span><br></pre></td></tr></table></figure>
+
+<p>安装成功后，默认会自动开启Jenkins服务。在浏览器上访问<code>http://&lt;服务器 IP&gt;:8080</code>即可看到Jenkins的界面，接下来按照提示配置Jenkins即可。</p>
+<p>开启Jenkins服务失败时，在<code>/var/log/jenkins/jenkins.log</code>中查看出错日志。</p>
+<h2 id="启动或关闭服务"><a href="#启动或关闭服务" class="headerlink" title="启动或关闭服务"></a>启动或关闭服务</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> /etc/init.d/jenkins start</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">关闭</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> /etc/init.d/jenkins stop</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> /etc/init.d/jenkins restart</span></span><br></pre></td></tr></table></figure>
+
+<p>由于上面的命令需要记住Jenkins的路径，费脑，推荐使用下面这种命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> service jenkins start</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">关闭</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> service jenkins stop</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">sudo</span> service jenkins restart</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义端口"><a href="#自定义端口" class="headerlink" title="自定义端口"></a>自定义端口</h2><p>在<code>/etc/default/jenkins</code>中配置HTTP_PORT：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">HTTP_PORT</span>=<span class="number">8080</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2><p>由于Ubuntu上的Java版本为Java 6，升级到Java 8后，重新安装Jenkins，发现服务启动不了，报的错还是因为我系统使用了Java 6。在排除Java版本没问题后，我怀疑Jenkins配置文件中Java版本可能还是旧的，后面真的就在<code>/etc/default/jenkins</code>中找到了解决方案：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment"># location of java</span></span><br><span class="line"><span class="attr">JAVA</span>=升级后的Java路径</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">Installing Jenkins on Ubuntu</a></li>
+</ul>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/posts/little-dream/">OLDER&nbsp;&gt;</a>
+    
+    
+      <a id="newer" class="blog-nav" href="/posts/deploy-aci/">&lt;&nbsp;NEWER</a>
+    
+  
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 2016-2025 Kanpu Li. All rights reserved.
+        
+    </div>
+  
+</div>
+
+      </div>
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+<script src="/js/table.js"></script>
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)" aria-label="搜索...">
+      <i class="iconfont icon-search" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          
+            <input type="text" class="search-input" id="search-input" placeholder="请输入要搜索的内容" aria-label="请输入要搜索的内容">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)" aria-label="Close">
+              <i class="iconfont icon-close" aria-hidden="true"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"
+             data-i18n-noresult="无相关内容"
+             data-i18n-files-notfound="未找到search.xml文件，具体请参考："
+             data-i18n-service-errors="请求失败，尝试重新刷新页面或稍后重试"></div>
+      </div>
+    </div>
+  </div>
+
+  
+<script src="/js/search.js"></script>
+
+
+
+    </div>
+  </body>
+</html>

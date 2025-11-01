@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+
+  <title>APK自有代码统计</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <link rel="icon" href="/images/favicon.webp">
+  
+
+  <link rel="preload" href="/fonts/Montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/RobotoMono.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- site css -->
+  
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <link href="/vendor/fancybox/5.0.36/fancybox.css" rel="stylesheet">
+  <script src="/vendor/fancybox/5.0.36/fancybox.umd.js" defer></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <script>
+      window.__mermaidInitConfig = {
+        theme: 'default'
+      };
+    </script>
+    <script src='/vendor/mermaid/11.12.0/mermaid.min.js' defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">夏眠鱼</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="tags" target="" href="/tags/">
+      <i class="iconfont icon-tags"></i>
+    </a>
+  
+    <a title="about" target="" href="/about/">
+      <i class="iconfont icon-envelope"></i>
+    </a>
+  
+</p>
+
+      <div class="main">
+        <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" src="/vendor/mathjax/3.2.2/es5/tex-chtml.js" defer></script>
+
+<div class="post">
+  <div class="date-tags-container">
+    <h3 class="date">
+      Jun 25, 2025
+    </h3>
+    
+      <div class="post-tags">
+        
+          <a href="/tags/android/" class="tag-link">android</a>
+        
+      </div>
+    
+  </div>
+  <h1>
+    APK自有代码统计
+  </h1>
+  <div class="content markdown-body">
+    <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ol>
+<li>反编译APK文件</li>
+<li>统计Smali代码中的方法数量</li>
+<li>计算用户指定包前缀的代码占比</li>
+</ol>
+<h2 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h2><ul>
+<li>总方法数</li>
+<li>自有方法数</li>
+<li>第三方方法数</li>
+<li>自有代码百分比</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p><code>python3 apk_stats.py -p package_name [package_name ...] &lt;apk&gt;</code></p>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>apk_stats.py</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"><span class="keyword">import</span> tempfile</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">APKOwnCodeAnalyzer</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, apk_path: <span class="built_in">str</span>, own_prefixes: <span class="built_in">list</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.apk_path = apk_path</span><br><span class="line">        <span class="variable language_">self</span>.own_prefixes = own_prefixes</span><br><span class="line">        <span class="variable language_">self</span>.temp_dir = tempfile.mkdtemp()</span><br><span class="line">        <span class="variable language_">self</span>.total_methods = <span class="number">0</span></span><br><span class="line">        <span class="variable language_">self</span>.own_methods = <span class="number">0</span></span><br><span class="line">        <span class="variable language_">self</span>.all_packages = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run_command</span>(<span class="params">self, cmd: <span class="built_in">list</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            subprocess.check_output(cmd, stderr=subprocess.STDOUT)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">except</span> subprocess.CalledProcessError <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;Command failed: <span class="subst">&#123;<span class="string">&#x27; &#x27;</span>.join(cmd)&#125;</span>\nError: <span class="subst">&#123;e.output.decode()&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decompile_apk</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[*] Decompiling APK using apktool...&quot;</span>)</span><br><span class="line">        apktool_cmd = [<span class="string">&quot;apktool&quot;</span>, <span class="string">&quot;d&quot;</span>, <span class="variable language_">self</span>.apk_path, <span class="string">&quot;-o&quot;</span>, <span class="variable language_">self</span>.temp_dir, <span class="string">&quot;-f&quot;</span>]</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.run_command(apktool_cmd)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_own_package</span>(<span class="params">self, package_path: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;检查是否是自己的包名&quot;&quot;&quot;</span></span><br><span class="line">        normalized_path = package_path.replace(<span class="string">&#x27;/&#x27;</span>, <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">any</span>(normalized_path.startswith(prefix) <span class="keyword">for</span> prefix <span class="keyword">in</span> <span class="variable language_">self</span>.own_prefixes)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">count_methods_in_file</span>(<span class="params">self, smali_file: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;统计单个smali文件中.method指令个数&quot;&quot;&quot;</span></span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(smali_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>, errors=<span class="string">&#x27;replace&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">                    <span class="keyword">if</span> line.strip().startswith(<span class="string">&#x27;.method&#x27;</span>):</span><br><span class="line">                        count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;Error reading <span class="subst">&#123;smali_file&#125;</span>: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">process_smali_dir</span>(<span class="params">self, smali_dir: <span class="built_in">str</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;递归分析目录中的所有small文件&quot;&quot;&quot;</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[*] Processing directory: <span class="subst">&#123;smali_dir&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> root, _, files <span class="keyword">in</span> os.walk(smali_dir):</span><br><span class="line">            rel_path = os.path.relpath(root, smali_dir)</span><br><span class="line">            <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">                <span class="keyword">if</span> file.endswith(<span class="string">&#x27;.smali&#x27;</span>):</span><br><span class="line">                    file_path = os.path.join(root, file)</span><br><span class="line">                    methods = <span class="variable language_">self</span>.count_methods_in_file(file_path)</span><br><span class="line">                    <span class="variable language_">self</span>.total_methods += methods</span><br><span class="line">                    </span><br><span class="line">                    <span class="comment"># 获取包路径（相对于smali_dir）</span></span><br><span class="line">                    rel_dir = os.path.dirname(os.path.relpath(file_path, smali_dir))</span><br><span class="line">                    <span class="variable language_">self</span>.all_packages[rel_dir] = <span class="variable language_">self</span>.all_packages.get(rel_dir, <span class="number">0</span>) + methods</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span> <span class="variable language_">self</span>.is_own_package(rel_path):</span><br><span class="line">                        <span class="variable language_">self</span>.own_methods += methods</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run_analysis</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;主要分析流程&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable language_">self</span>.decompile_apk():</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 处理所有smali目录（包括multi-dex）</span></span><br><span class="line">        <span class="keyword">for</span> entry <span class="keyword">in</span> os.listdir(<span class="variable language_">self</span>.temp_dir):</span><br><span class="line">            full_path = os.path.join(<span class="variable language_">self</span>.temp_dir, entry)</span><br><span class="line">            <span class="keyword">if</span> os.path.isdir(full_path) <span class="keyword">and</span> (entry.startswith(<span class="string">&#x27;smali&#x27;</span>) <span class="keyword">or</span> entry.startswith(<span class="string">&#x27;smali_classes&#x27;</span>)):</span><br><span class="line">                <span class="variable language_">self</span>.process_smali_dir(full_path)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">generate_report</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;生成统计报告&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.total_methods == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;No methods found!&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\nPackage Details:&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 分离自身包和第三方包</span></span><br><span class="line">        self_packages = []</span><br><span class="line">        third_party_packages = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> pkg, count <span class="keyword">in</span> <span class="variable language_">self</span>.all_packages.items():</span><br><span class="line">            <span class="keyword">if</span> <span class="variable language_">self</span>.is_own_package(pkg):</span><br><span class="line">                self_packages.append((pkg, count))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                third_party_packages.append((pkg, count))</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 分别按方法数量降序排序</span></span><br><span class="line">        self_packages.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>], reverse=<span class="literal">True</span>)</span><br><span class="line">        third_party_packages.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>], reverse=<span class="literal">True</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 先输出自身包</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n[SELF] Packages:&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> pkg, count <span class="keyword">in</span> self_packages:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;pkg:&lt;<span class="number">80</span>&#125;</span> | Methods: <span class="subst">&#123;count:&lt;<span class="number">5</span>&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 再输出第三方包</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n[THIRD PARTY] Packages:&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> pkg, count <span class="keyword">in</span> third_party_packages:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;pkg:&lt;<span class="number">80</span>&#125;</span> | Methods: <span class="subst">&#123;count:&lt;<span class="number">5</span>&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span> + <span class="string">&quot;=&quot;</span>*<span class="number">35</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Analysis Report:&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;  Total methods: <span class="subst">&#123;self.total_methods&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;  Self-defined methods: <span class="subst">&#123;self.own_methods&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;  Third-party methods: <span class="subst">&#123;self.total_methods - self.own_methods&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;-&quot;</span>*<span class="number">35</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Self-code Percentage: <span class="subst">&#123;self.own_methods/self.total_methods*<span class="number">100</span>:<span class="number">.2</span>f&#125;</span>%&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;=&quot;</span>*<span class="number">35</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">cleanup</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;删除临时文件&quot;&quot;&quot;</span></span><br><span class="line">        shutil.rmtree(<span class="variable language_">self</span>.temp_dir, ignore_errors=<span class="literal">True</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span> + <span class="string">f&quot;[*] Cleaned up temporary directory&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    parser = argparse.ArgumentParser(description=<span class="string">&#x27;APK Self-Code Ratio Analyzer&#x27;</span>)</span><br><span class="line">    parser.add_argument(<span class="string">&#x27;apk&#x27;</span>, <span class="built_in">help</span>=<span class="string">&#x27;Path to APK file&#x27;</span>)</span><br><span class="line">    parser.add_argument(<span class="string">&#x27;-p&#x27;</span>, <span class="string">&#x27;--prefixes&#x27;</span>, nargs=<span class="string">&#x27;+&#x27;</span>, required=<span class="literal">True</span>,</span><br><span class="line">                        <span class="built_in">help</span>=<span class="string">&#x27;Package prefixes for self-defined code (e.g. com.example.app)&#x27;</span>)</span><br><span class="line">    args = parser.parse_args()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 检查apktool是否安装</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> shutil.which(<span class="string">&#x27;apktool&#x27;</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;ERROR: apktool not found in PATH. Please install apktool.&quot;</span>)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    analyzer = APKOwnCodeAnalyzer(args.apk, args.prefixes)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> analyzer.run_analysis():</span><br><span class="line">            analyzer.generate_report()</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        analyzer.cleanup()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/posts/apk-sim/">OLDER&nbsp;&gt;</a>
+    
+    
+      <a id="newer" class="blog-nav" href="/posts/blog-10years/">&lt;&nbsp;NEWER</a>
+    
+  
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        © 2016-2025 Kanpu Li. All rights reserved.
+        
+    </div>
+  
+</div>
+
+      </div>
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+<script src="/js/table.js"></script>
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)" aria-label="搜索...">
+      <i class="iconfont icon-search" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          
+            <input type="text" class="search-input" id="search-input" placeholder="请输入要搜索的内容" aria-label="请输入要搜索的内容">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)" aria-label="Close">
+              <i class="iconfont icon-close" aria-hidden="true"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"
+             data-i18n-noresult="无相关内容"
+             data-i18n-files-notfound="未找到search.xml文件，具体请参考："
+             data-i18n-service-errors="请求失败，尝试重新刷新页面或稍后重试"></div>
+      </div>
+    </div>
+  </div>
+
+  
+<script src="/js/search.js"></script>
+
+
+
+    </div>
+  </body>
+</html>
