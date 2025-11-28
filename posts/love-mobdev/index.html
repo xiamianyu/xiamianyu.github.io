@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="大二下学期，罗老师按照惯例，课上一半后，又聊起了他以往带学生参赛获奖的经历，接着突然问我们，有没兴趣参加今年的竞赛。也许是听他说多了，我蠢蠢欲动，和隔壁班一个同学一起报名了。 罗老师带我们去他实验室，参观往届师兄的获奖作品，其中有一个作品是通过Android App来控制嵌入式设备上房子窗帘的开关，这操作瞬间就把我迷住了，我决定做这个方向。罗老师安排另一个老师带我们学习，结果发现这位老师在移动开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="结缘移动开发">
+<meta property="og:url" content="http://xiamianyu.github.io/posts/love-mobdev/index.html">
+<meta property="og:site_name" content="夏眠鱼">
+<meta property="og:description" content="大二下学期，罗老师按照惯例，课上一半后，又聊起了他以往带学生参赛获奖的经历，接着突然问我们，有没兴趣参加今年的竞赛。也许是听他说多了，我蠢蠢欲动，和隔壁班一个同学一起报名了。 罗老师带我们去他实验室，参观往届师兄的获奖作品，其中有一个作品是通过Android App来控制嵌入式设备上房子窗帘的开关，这操作瞬间就把我迷住了，我决定做这个方向。罗老师安排另一个老师带我们学习，结果发现这位老师在移动开发">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xiamianyu.github.io/images/mobdev-invite.webp">
+<meta property="og:image" content="http://xiamianyu.github.io/images/jinshanhu.webp">
+<meta property="og:image" content="http://xiamianyu.github.io/images/lab.webp">
+<meta property="og:image" content="http://xiamianyu.github.io/images/ximilu.webp">
+<meta property="og:image" content="http://xiamianyu.github.io/images/fight-end.webp">
+<meta property="article:published_time" content="2025-10-07T07:42:22.000Z">
+<meta property="article:modified_time" content="2025-11-20T09:36:21.401Z">
+<meta property="article:author" content="夏眠鱼">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xiamianyu.github.io/images/mobdev-invite.webp">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>结缘移动开发</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src="/lib/mathjax/latest.js?config=TeX-MML-AM_CHTML" async></script>
+	
+	
+	<!-- mermaid -->
+	
+		<script>
+		  window.__mermaidInitConfig = {
+			theme: 'default'
+		  };
+		</script>
+		<script src="/lib/mermaid/11.12.0/mermaid.min.js" defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+	
+
+  <!-- fancybox css -->
+  
+    <link rel="preload" href="/lib/fancybox/fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fancybox/fancybox.min.css"></noscript>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/posts/path-to-univ/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/posts/love-ubuntu/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+    </span>
+    <br/>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        结缘移动开发
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/" class="p-name" itemprop="name">夏眠鱼</a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-10-07T07:42:22.000Z" class="dt-published" itemprop="datePublished">2025/10/07</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/memoir/">memoir</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>大二下学期，罗老师按照惯例，课上一半后，又聊起了他以往带学生参赛获奖的经历，接着突然问我们，有没兴趣参加今年的竞赛。也许是听他说多了，我蠢蠢欲动，和隔壁班一个同学一起报名了。</p>
+<p>罗老师带我们去他实验室，参观往届师兄的获奖作品，其中有一个作品是通过Android App来控制嵌入式设备上房子窗帘的开关，这操作瞬间就把我迷住了，我决定做这个方向。罗老师安排另一个老师带我们学习，结果发现这位老师在移动开发方面是零基础，我们只能靠自己了。</p>
+<p>大三上学期，我们参加了羊城举办的第四届中国手机应用开发者大会。</p>
+<blockquote>
+<p>开发者大会<br><a href="/../images/mobdev-invite.webp" data-fancybox="gallery" data-caption="mobdev-invite"><img src="/../images/mobdev-invite.webp" alt="mobdev-invite"></a></p>
+</blockquote>
+<p>有一个开发者的分享特别吸引我，他做了一个防iOS悬浮球的Android工具，没想到反响特别好，于是他辞掉工作成立一家公司做大做强。参加完这次开发者大会后，我更坚定走移动开发这条路了。</p>
+<p>Android网上学习资料比较碎片化，我们买了一本《Android和PHP开发最佳实践》边看边学，自己也能开发出简单的App，至于PHP这部分，实在看不下去，三天打鱼两天晒网的，最终我们放弃了这次竞赛。</p>
+<p>散伙后，我继续自学Android开发，经常一个人背着笔记本在空荡的教室里学习。不过孤军奋战，学习热情越来越低，我想进实验室学习可能是个好方法。多方打听，索老师的实验室有Android团队，不过已经不招新了，好失落。</p>
+<p>大三上学期快结束时，我觉得还是要进入实验室学习才行，在实验室有人交流讨论，进步更快。既然索老师的Android团队不招新，那我就创造机会。为此，我在老师的课堂上积极表现，课后要了他的电话。几天后，我鼓起勇气给老师打电话，表明想进入他的Android团队。</p>
+<p>或许是老师被我的真诚打动了，他当场答应我的请求并开启了Android团队的新一轮招新。机会难得，我尽自己最大努力去准备，最终顺利通过考核进入实验室。</p>
+<p>我刚进去实验室时，实验室租在学校对面的一栋高层住宅，环境不错，厅阳台望湖，美！</p>
+<blockquote>
+<p>美丽湖景<br><a href="/../images/jinshanhu.webp" data-fancybox="gallery" data-caption="jinshanhu"><img src="/../images/jinshanhu.webp" alt="jinshanhu"></a></p>
+</blockquote>
+<p>在这里跟着师兄前辈们学习，先巩固基础技能，再学习项目开发、项目管理和团队协作等，我也从一个菜鸟变成一个初级开发者。</p>
+<p>后来实验室搬到老师曾经居住的教师村，两房一厅改造一下就变成了实验室，厨房还保留着。</p>
+<blockquote>
+<p>教师村实验室<br><a href="/../images/lab.webp" data-fancybox="gallery" data-caption="lab"><img src="/../images/lab.webp" alt="lab"></a></p>
+</blockquote>
+<p>在教师村的最后时光，我们其中几个人还私接了外包，逃课通宵赶进度，基本上吃住都在实验室了。早上经常是煮面条，拌着虾米菜脯橄榄菜做早餐，下午偶尔会自己做些美食，如黑凉粉、绿豆西米露、凉拌杨桃等。</p>
+<blockquote>
+<p>绿豆西米露<br><a href="/../images/ximilu.webp" data-fancybox="gallery" data-caption="ximilu"><img src="/../images/ximilu.webp" alt="ximilu"></a></p>
+</blockquote>
+<p>最终我们排除万难，历时两个月交付，拿到尾款后，大家出去嗨皮一顿。这是我们第一次将毕生所学应用到商业项目中，没有老师和师兄们带，完全靠自己，对于还没毕业的我们来说，非常有成就感。</p>
+<blockquote>
+<p>庆祝外包交付<br><a href="/../images/fight-end.webp" data-fancybox="gallery" data-caption="fight-end"><img src="/../images/fight-end.webp" alt="fight-end"></a></p>
+</blockquote>
+<p>大四上学期快结束时，我拿着外包挣的钱，来到羊城租房找工作，一边工作一边准备毕业论文，从此走上了移动开发的道路。虽然还没毕业，但是实验室的那段经历给了自己很大的底气，很多问题都敢迎难而上。</p>
+<p>如今回望，特别感谢罗老师带我叩开行业大门，也感谢索老师给予我深入学习的机会，没有他们，我毕业后的路比较难走。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    夏眠鱼
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+<!-- fancybox js -->
+
+  <script src="/lib/fancybox/fancybox.umd.min.js" defer></script>
+
+</body>
+</html>

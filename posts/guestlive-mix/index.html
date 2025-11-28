@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="连麦合图有两个方案，一是云端合图，二是App端合图，一般推荐使用云端合图，因为App端合图需要多路播放，对手机性能要求较高。 连麦的界面布局一般是大小屏，如下图： 这里有两个问题需要解决：  手机分辨率碎片化严重，合图会被裁剪，怎么避免连麦用户视频画面被裁剪？ 连麦用户视频画面和连麦用户信息如何吻合？  从大数据中了解到，手机分辨率高宽比在1.7~2.1之间，未来手机分辨率高宽比呈增大趋势。连麦用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="连麦云端合图">
+<meta property="og:url" content="http://xiamianyu.github.io/posts/guestlive-mix/index.html">
+<meta property="og:site_name" content="夏眠鱼">
+<meta property="og:description" content="连麦合图有两个方案，一是云端合图，二是App端合图，一般推荐使用云端合图，因为App端合图需要多路播放，对手机性能要求较高。 连麦的界面布局一般是大小屏，如下图： 这里有两个问题需要解决：  手机分辨率碎片化严重，合图会被裁剪，怎么避免连麦用户视频画面被裁剪？ 连麦用户视频画面和连麦用户信息如何吻合？  从大数据中了解到，手机分辨率高宽比在1.7~2.1之间，未来手机分辨率高宽比呈增大趋势。连麦用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xiamianyu.github.io/images/guestlive-stream1.webp">
+<meta property="og:image" content="http://xiamianyu.github.io/images/guestlive-stream2.webp">
+<meta property="og:image" content="http://xiamianyu.github.io/images/guestlive-adapter-vertical.webp">
+<meta property="og:image" content="http://xiamianyu.github.io/images/guestlive-adapter-horizontal.webp">
+<meta property="article:published_time" content="2020-06-28T08:00:59.000Z">
+<meta property="article:modified_time" content="2025-11-19T07:28:13.182Z">
+<meta property="article:author" content="夏眠鱼">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xiamianyu.github.io/images/guestlive-stream1.webp">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>连麦云端合图</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src="/lib/mathjax/latest.js?config=TeX-MML-AM_CHTML" async></script>
+	
+	
+	<!-- mermaid -->
+	
+		<script>
+		  window.__mermaidInitConfig = {
+			theme: 'default'
+		  };
+		</script>
+		<script src="/lib/mermaid/11.12.0/mermaid.min.js" defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+	
+
+  <!-- fancybox css -->
+  
+    <link rel="preload" href="/lib/fancybox/fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fancybox/fancybox.min.css"></noscript>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/posts/1v1-call-flow/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/posts/live-category/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+    </span>
+    <br/>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        连麦云端合图
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/" class="p-name" itemprop="name">夏眠鱼</a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-06-28T08:00:59.000Z" class="dt-published" itemprop="datePublished">2020/06/28</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/av/">av</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>连麦合图有两个方案，一是云端合图，二是App端合图，一般推荐使用云端合图，因为App端合图需要多路播放，对手机性能要求较高。</p>
+<p>连麦的界面布局一般是大小屏，如下图：<br><a href="/../images/guestlive-stream1.webp" data-fancybox="gallery" data-caption="guestlive-stream1"><img src="/../images/guestlive-stream1.webp" alt="guestlive-stream1"></a></p>
+<p>这里有两个问题需要解决：</p>
+<ol>
+<li>手机分辨率碎片化严重，合图会被裁剪，怎么避免连麦用户视频画面被裁剪？</li>
+<li>连麦用户视频画面和连麦用户信息如何吻合？</li>
+</ol>
+<p>从大数据中了解到，手机分辨率高宽比在1.7~2.1之间，未来手机分辨率高宽比呈增大趋势。连麦用户放置在右下角时，其右边比底部更容易被裁剪，所以在旁路推流参数中，主播宽高比应该接近2.1。在实践中发现，将主播的分辨率设为960x480，连麦用户的分辨率设为200x160，再调整连麦用户的左边距和上边距就可以解决问题一。</p>
+<p><a href="/../images/guestlive-stream2.webp" data-fancybox="gallery" data-caption="guestlive-stream2"><img src="/../images/guestlive-stream2.webp" alt="guestlive-stream2"></a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">aw</span> <span class="operator">=</span> <span class="number">480</span>; <span class="comment">// 主播的宽度</span></span><br><span class="line"><span class="type">int</span> <span class="variable">ah</span> <span class="operator">=</span> <span class="number">960</span>; <span class="comment">// 主播的高度</span></span><br><span class="line"><span class="type">int</span> <span class="variable">gw</span> <span class="operator">=</span> <span class="number">160</span>; <span class="comment">// 连麦用户的宽度</span></span><br><span class="line"><span class="type">int</span> <span class="variable">gh</span> <span class="operator">=</span> <span class="number">200</span>; <span class="comment">// 连麦用户的高度</span></span><br><span class="line"><span class="type">int</span> <span class="variable">leftMargin</span> <span class="operator">=</span> aw / <span class="number">2</span> + <span class="number">5</span> * (aw / <span class="number">2</span> - gw) / <span class="number">6</span>; <span class="comment">// 连麦用户的左边距</span></span><br><span class="line"><span class="type">int</span> <span class="variable">topMargin</span> <span class="operator">=</span> ah / <span class="number">2</span> + <span class="number">2</span> * (ah / <span class="number">2</span> - gh) / <span class="number">5</span>; <span class="comment">// 连麦用户的上边距</span></span><br></pre></td></tr></table></figure>
+
+<p>接下来看看问题二，合图被裁剪有两种情况：</p>
+<ol>
+<li><p>合图高宽比大于屏幕高宽比，基于屏幕宽等比例拉伸，垂直方向裁剪<br><a href="/../images/guestlive-adapter-vertical.webp" data-fancybox="gallery" data-caption="guestlive-adapter-vertical"><img src="/../images/guestlive-adapter-vertical.webp" alt="guestlive-adapter-vertical"></a></p>
+</li>
+<li><p>合图高宽比小于屏幕高宽比，基于屏幕高等比例拉伸，水平方向被裁剪<br><a href="/../images/guestlive-adapter-horizontal.webp" data-fancybox="gallery" data-caption="guestlive-adapter-horizontal"><img src="/../images/guestlive-adapter-horizontal.webp" alt="guestlive-adapter-horizontal"></a></p>
+</li>
+</ol>
+<p>基于旁路推流参数和合图被裁剪的分析，可以得出连麦用户和连麦UI窗口的吻合参数：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> <span class="variable">aRatio</span> <span class="operator">=</span> (<span class="type">float</span>) ah / aw; <span class="comment">// 合图高宽比</span></span><br><span class="line"><span class="type">float</span> <span class="variable">sRatio</span> <span class="operator">=</span> (<span class="type">float</span>) sh / sw; <span class="comment">// 屏幕高宽比</span></span><br><span class="line"><span class="type">int</span> leftMargin; <span class="comment">// 连麦UI窗口的左边距</span></span><br><span class="line"><span class="type">int</span> topMargin; <span class="comment">// 连麦UI窗口的上边距</span></span><br><span class="line"><span class="type">int</span> scaleGw; <span class="comment">// 拉伸后的连麦UI窗口宽度</span></span><br><span class="line"><span class="type">int</span> scaleGh; <span class="comment">// 拉伸后的连麦UI窗口高度</span></span><br><span class="line"><span class="keyword">if</span> (aRatio &gt; sRatio) &#123; <span class="comment">// 合图高宽比大于屏幕高宽比</span></span><br><span class="line">    <span class="type">float</span> <span class="variable">scaleRatio</span> <span class="operator">=</span> (<span class="type">float</span>) sw / aw;</span><br><span class="line">    <span class="type">int</span> <span class="variable">scaleAw</span> <span class="operator">=</span> (<span class="type">int</span>) (scaleRatio * aw);</span><br><span class="line">    <span class="type">int</span> <span class="variable">scaleAh</span> <span class="operator">=</span> (<span class="type">int</span>) (scaleRatio * ah);</span><br><span class="line">    scaleGw = (<span class="type">int</span>) (scaleRatio * gw);</span><br><span class="line">    scaleGh = (<span class="type">int</span>) (scaleRatio * gh);</span><br><span class="line">    leftMargin = scaleAw / <span class="number">2</span> + <span class="number">5</span> * (scaleAw / <span class="number">2</span> - scaleGw) / <span class="number">6</span>;</span><br><span class="line">    topMargin = scaleAh / <span class="number">2</span> + <span class="number">2</span> * (scaleAh / <span class="number">2</span> - scaleGh) / <span class="number">5</span> - (scaleAh - sh) / <span class="number">2</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (aRatio &lt; sRatio) &#123; <span class="comment">// 合图高宽比小于屏幕高宽比</span></span><br><span class="line">    <span class="type">float</span> <span class="variable">scaleRatio</span> <span class="operator">=</span> (<span class="type">float</span>) sh / ah; <span class="comment">// 小窗口缩放比</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">scaleAw</span> <span class="operator">=</span> (<span class="type">int</span>) (scaleRatio * aw);</span><br><span class="line">    <span class="type">int</span> <span class="variable">scaleAh</span> <span class="operator">=</span> (<span class="type">int</span>) (scaleRatio * ah);</span><br><span class="line">    scaleGw = (<span class="type">int</span>) (scaleRatio * gw);</span><br><span class="line">    scaleGh = (<span class="type">int</span>) (scaleRatio * gh);</span><br><span class="line">    leftMargin = scaleAw / <span class="number">2</span> + <span class="number">5</span> * (scaleAw / <span class="number">2</span> - scaleGw) / <span class="number">6</span> - (scaleAw - sw) / <span class="number">2</span>;</span><br><span class="line">    topMargin = scaleAh / <span class="number">2</span> + <span class="number">2</span> * (scaleAh / <span class="number">2</span> - scaleGh) / <span class="number">5</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123; <span class="comment">// 合图高宽比等于屏幕高宽比</span></span><br><span class="line">    <span class="type">float</span> <span class="variable">scaleRatio</span> <span class="operator">=</span> (<span class="type">float</span>) sw / aw;</span><br><span class="line">    <span class="type">int</span> <span class="variable">scaleAw</span> <span class="operator">=</span> (<span class="type">int</span>) (scaleRatio * aw);</span><br><span class="line">    <span class="type">int</span> <span class="variable">scaleAh</span> <span class="operator">=</span> (<span class="type">int</span>) (scaleRatio * ah);</span><br><span class="line">    scaleGw = (<span class="type">int</span>) (scaleRatio * gw);</span><br><span class="line">    scaleGh = (<span class="type">int</span>) (scaleRatio * gh);</span><br><span class="line">    leftMargin = scaleAw / <span class="number">2</span> + <span class="number">5</span> * (scaleAw / <span class="number">2</span> - scaleGw) / <span class="number">6</span>;</span><br><span class="line">    topMargin = scaleAh / <span class="number">2</span> + <span class="number">2</span> * (scaleAh / <span class="number">2</span> - scaleGh) / <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    夏眠鱼
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+<!-- fancybox js -->
+
+  <script src="/lib/fancybox/fancybox.umd.min.js" defer></script>
+
+</body>
+</html>

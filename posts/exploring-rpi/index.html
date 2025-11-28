@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="几年前，想买个云主机来玩一下服务端，朋友说还不如买个树莓派，价格便宜，低功耗，能装Linux，可7×24运行。 我想都没想就入手了个PI 4B（2G内存+32G存储），拿到手之后装上Raspbian Lite。 借助树莓派的蓝牙模块，用PluseAudio将家里的老古董音响改造成蓝牙音响，手机连接树莓派的蓝牙即可播放音乐。 现在的在线音乐基本要开会员才能使用，所以我一直在收集MP3格式的音乐并存到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派不落灰">
+<meta property="og:url" content="http://xiamianyu.github.io/posts/exploring-rpi/index.html">
+<meta property="og:site_name" content="夏眠鱼">
+<meta property="og:description" content="几年前，想买个云主机来玩一下服务端，朋友说还不如买个树莓派，价格便宜，低功耗，能装Linux，可7×24运行。 我想都没想就入手了个PI 4B（2G内存+32G存储），拿到手之后装上Raspbian Lite。 借助树莓派的蓝牙模块，用PluseAudio将家里的老古董音响改造成蓝牙音响，手机连接树莓派的蓝牙即可播放音乐。 现在的在线音乐基本要开会员才能使用，所以我一直在收集MP3格式的音乐并存到">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-27T13:31:52.000Z">
+<meta property="article:modified_time" content="2025-11-19T07:28:10.765Z">
+<meta property="article:author" content="夏眠鱼">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>树莓派不落灰</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src="/lib/mathjax/latest.js?config=TeX-MML-AM_CHTML" async></script>
+	
+	
+	<!-- mermaid -->
+	
+		<script>
+		  window.__mermaidInitConfig = {
+			theme: 'default'
+		  };
+		</script>
+		<script src="/lib/mermaid/11.12.0/mermaid.min.js" defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+	
+
+  <!-- fancybox css -->
+  
+    <link rel="preload" href="/lib/fancybox/fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fancybox/fancybox.min.css"></noscript>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/posts/happy-calc/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/posts/req-dec/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+    </span>
+    <br/>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        树莓派不落灰
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/" class="p-name" itemprop="name">夏眠鱼</a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-06-27T13:31:52.000Z" class="dt-published" itemprop="datePublished">2024/06/27</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/rpi/">rpi</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>几年前，想买个云主机来玩一下服务端，朋友说还不如买个树莓派，价格便宜，低功耗，能装Linux，可7×24运行。</p>
+<p>我想都没想就入手了个PI 4B（2G内存+32G存储），拿到手之后装上Raspbian Lite。</p>
+<p>借助树莓派的蓝牙模块，用<a target="_blank" rel="noopener" href="https://github.com/pulseaudio/pulseaudio">PluseAudio</a>将家里的老古董音响改造成蓝牙音响，手机连接树莓派的蓝牙即可播放音乐。</p>
+<p>现在的在线音乐基本要开会员才能使用，所以我一直在收集MP3格式的音乐并存到NAS里。既然树莓派可以输出音频到音响，那可不可以在树莓派上装一个无界面的播放器，从NAS读取MP3文件并输出到音响呢？使用<a target="_blank" rel="noopener" href="https://mpg123.de/">mpg123</a>就能满足这个需求。</p>
+<p>mpg123每次播放音乐都要SSH进去服务器执行命令才能播放，非专业人士就不知道怎么使用了。想着让家里人都能共享音乐资源，最好是有界面可以访问，能选歌和播放，支持多用户。</p>
+<p>于是用<a target="_blank" rel="noopener" href="https://www.navidrome.org/docs/">Navidrome</a>搭建了Web在线音乐服务，读取NAS中的所有音乐。后来我还发现一款很棒的NAS音乐播放器<a target="_blank" rel="noopener" href="https://music.aqzscn.cn/docs/intro">音流</a>，它可连接Navidrome，即可以播放在线音乐又能下载到本地，nice！</p>
+<p>在寻找Web在线音乐服务时意外收获了<a target="_blank" rel="noopener" href="https://emby.media/">Emby</a>，Emby不仅支持音频在线播放，还支持视频、图片和书籍的管理，可以说是NAS一站式服务。部署使用后发现Emby的书籍功能不支持在线浏览，有点遗憾。</p>
+<p>家里的WiFi带宽有限，白天用的人多，网络特别卡，于是想弄个离线下载服务，在夜间人少时下载，充分利用闲时带宽。使用<a target="_blank" rel="noopener" href="https://github.com/aria2/aria2">Aira2</a>+<a target="_blank" rel="noopener" href="https://ariang.mayswind.net/">AriaNg</a>就能很好得满足这一需求。</p>
+<p>家里的NAS仅支持SMB协议，访问方式比较受限，能不能搭建一个Web文件管理服务，读取NAS全部资源呢？最好还有读写权限控制，使用<a target="_blank" rel="noopener" href="https://filebrowser.org/">File Browser</a>就可以搞定。</p>
+<p>有了娃之后，我一直想着用树莓派做点什么。想到的第一个就是搭建一个博客，记录娃成长历程，以后娃也可以在上面写写日记啥的，便用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>+<a target="_blank" rel="noopener" href="https://github.com/nginx/nginx">Nginx</a>搭了个静态博客。</p>
+<p>好像还缺了点什么，怎么能没有游戏呢？对于游戏的选择，我还是想装经典单机游戏，找了很久，终于找到Web版<a target="_blank" rel="noopener" href="https://hub.docker.com/r/wangz2019/jsnes/tags">FC Games</a>。</p>
+<p>到此为止，树莓派上已经有很多好玩的东西了，等娃大一些还可以装<a target="_blank" rel="noopener" href="https://github.com/scratchfoundation/scratch-gui">Scratch</a>少儿编程玩玩。</p>
+<p>树莓派的负载如何？不想ssh+top查看的话，可以在服务器上部署<a target="_blank" rel="noopener" href="https://nicolargo.github.io/glances/">Glances</a>，它不仅支持终端查看，还支持网页端查看，使用起来非常方便。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    夏眠鱼
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+<!-- fancybox js -->
+
+  <script src="/lib/fancybox/fancybox.umd.min.js" defer></script>
+
+</body>
+</html>

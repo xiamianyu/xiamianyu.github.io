@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="CheckStyle是一个帮助Java开发人员遵守代码规范的工具，它能够自动化代码规范检查过程，从而使得开发人员从这项重要但枯燥的任务中解脱。 CheckStyle检验内容 Javadoc注释 命名约定 标题 import语句 体积大小 空白 修饰符 块 代码问题 类设计 混合检查  定制CheckStyle所有的&lt;module&#x2F;&gt;都有对应的&lt;message&#x2F;&gt;，&lt;m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="定制CheckStyle">
+<meta property="og:url" content="http://xiamianyu.github.io/posts/custom-checkstyle/index.html">
+<meta property="og:site_name" content="夏眠鱼">
+<meta property="og:description" content="CheckStyle是一个帮助Java开发人员遵守代码规范的工具，它能够自动化代码规范检查过程，从而使得开发人员从这项重要但枯燥的任务中解脱。 CheckStyle检验内容 Javadoc注释 命名约定 标题 import语句 体积大小 空白 修饰符 块 代码问题 类设计 混合检查  定制CheckStyle所有的&lt;module&#x2F;&gt;都有对应的&lt;message&#x2F;&gt;，&lt;m">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-03-09T14:33:56.000Z">
+<meta property="article:modified_time" content="2025-11-19T08:16:35.695Z">
+<meta property="article:author" content="夏眠鱼">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>定制CheckStyle</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src="/lib/mathjax/latest.js?config=TeX-MML-AM_CHTML" async></script>
+	
+	
+	<!-- mermaid -->
+	
+		<script>
+		  window.__mermaidInitConfig = {
+			theme: 'default'
+		  };
+		</script>
+		<script src="/lib/mermaid/11.12.0/mermaid.min.js" defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+	
+
+  <!-- fancybox css -->
+  
+    <link rel="preload" href="/lib/fancybox/fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fancybox/fancybox.min.css"></noscript>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/posts/maintain-aci/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/posts/deploy-aci/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+    </span>
+    <br/>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CheckStyle%E6%A3%80%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">CheckStyle检验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E5%88%B6CheckStyle"><span class="toc-number">2.</span> <span class="toc-text">定制CheckStyle</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        定制CheckStyle
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/" class="p-name" itemprop="name">夏眠鱼</a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2017-03-09T14:33:56.000Z" class="dt-published" itemprop="datePublished">2017/03/09</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/code-style/">code-style</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>CheckStyle是一个帮助Java开发人员遵守代码规范的工具，它能够自动化代码规范检查过程，从而使得开发人员从这项重要但枯燥的任务中解脱。</p>
+<h2 id="CheckStyle检验内容"><a href="#CheckStyle检验内容" class="headerlink" title="CheckStyle检验内容"></a>CheckStyle检验内容</h2><ul>
+<li>Javadoc注释</li>
+<li>命名约定</li>
+<li>标题</li>
+<li>import语句</li>
+<li>体积大小</li>
+<li>空白</li>
+<li>修饰符</li>
+<li>块</li>
+<li>代码问题</li>
+<li>类设计</li>
+<li>混合检查</li>
+</ul>
+<h2 id="定制CheckStyle"><a href="#定制CheckStyle" class="headerlink" title="定制CheckStyle"></a>定制CheckStyle</h2><p>所有的<code>&lt;module/&gt;</code>都有对应的<code>&lt;message/&gt;</code>，<code>&lt;message/&gt;</code>是不符合规范的代码的提示语，可自定义。更多的CheckStyle配置可看<a target="_blank" rel="noopener" href="http://checkstyle.sourceforge.net/">官网</a>的说明。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">module</span> <span class="keyword">PUBLIC</span></span></span><br><span class="line"><span class="meta">    <span class="string">&quot;-//Puppy Crawl//DTD Check Configuration 1.3//EN&quot;</span></span></span><br><span class="line"><span class="meta">    <span class="string">&quot;http://www.puppycrawl.com/dtds/configuration_1_3.dtd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;Checker&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;severity&quot;</span> <span class="attr">value</span>=<span class="string">&quot;warning&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- tab 制表符--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;FileTabCharacter&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;eachLine&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.containsTab&quot;</span> <span class="attr">value</span>=<span class="string">&quot;文件中不能含有 tab 制表符。&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;TreeWalker&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- import 检查，参考：http://checkstyle.sourceforge.net/config_import.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 限制导入 .* 包 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;AvoidStarImport&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 限制导入多余的包 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;RedundantImport&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 限制导入未使用过的包 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;UnusedImports&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- Javadoc 检查，参考：http://checkstyle.sourceforge.net/config_javadoc.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 类的 Javadoc 注释--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;JavadocType&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;CLASS_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;allowUnknownTags&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;javadoc.missing&quot;</span> <span class="attr">value</span>=<span class="string">&quot;类缺少 Javadoc 注释。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 接口的 Javadoc 注释--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;JavadocType&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;INTERFACE_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;allowUnknownTags&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;javadoc.missing&quot;</span> <span class="attr">value</span>=<span class="string">&quot;接口缺少 Javadoc 注释。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 枚举的 Javadoc 注释--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;JavadocType&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ENUM_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;allowUnknownTags&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;javadoc.missing&quot;</span> <span class="attr">value</span>=<span class="string">&quot;枚举缺少 Javadoc 注释。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 注解的 Javadoc 注释--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;JavadocType&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ANNOTATION_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;allowUnknownTags&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;javadoc.missing&quot;</span> <span class="attr">value</span>=<span class="string">&quot;注解缺少 Javadoc 注释。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 修饰符检查，参考：http://checkstyle.sourceforge.net/config_modifiers.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 修饰符顺序 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;ModifierOrder&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;mod.order&quot;</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">value</span>=<span class="string">&quot;修饰符需遵循如下顺序：public、protected、private、abstract、</span></span></span><br><span class="line"><span class="string"><span class="tag">                     static、final、transient,volatile、synchronized、native、strictfp。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 代码块检查，参考：http://checkstyle.sourceforge.net/config_blocks.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 起始大括号 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;LeftCurly&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;line.previous&quot;</span> <span class="attr">value</span>=<span class="string">&quot;起始大括号的命名规范：&#x27;&#x27;&#123;0&#125;&#x27;&#x27; 应在前一行。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;RightCurly&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 空格检查，参考：http://checkstyle.sourceforge.net/config_whitespace.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 泛型 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;GenericWhitespace&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;ws.followed&quot;</span> <span class="attr">value</span>=<span class="string">&quot;泛型的命名规范：&#x27;&#x27;&#123;0&#125;&#x27;&#x27; 后不应有空格。&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;ws.preceded&quot;</span> <span class="attr">value</span>=<span class="string">&quot;泛型的命名规范：&#x27;&#x27;&#123;0&#125;&#x27;&#x27; 前不应有空格。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 方法参数 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;ParenPad&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;ws.followed&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法参数的命名规范：&#x27;&#x27;&#123;0&#125;&#x27;&#x27; 后不应有空格。&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;ws.preceded&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法参数的命名规范：&#x27;&#x27;&#123;0&#125;&#x27;&#x27; 前不应有空格。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 方法 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MethodParamPad&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;ws.preceded&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法的命名规范：&#x27;&#x27;&#123;0&#125;&#x27;&#x27; 前不应有空格。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 类型转换 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;TypecastParenPad&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;ws.followed&quot;</span> <span class="attr">value</span>=<span class="string">&quot;类型转换的命名规范：&#x27;&#x27;&#123;0&#125;&#x27;&#x27; 后不应有空格。&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;ws.preceded&quot;</span> <span class="attr">value</span>=<span class="string">&quot;类型转换的命名规范：&#x27;&#x27;&#123;0&#125;&#x27;&#x27; 前不应有空格。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 命名规范检查，参考：http://checkstyle.sourceforge.net/config_naming.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 包名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;PackageName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;包名的命名规范：全部小写。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 类名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;TypeName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;CLASS_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;类的命名规范：单个大写字母。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 接口名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;TypeName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;INTERFACE_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;接口的命名规范：单个大写字母。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 枚举名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;TypeName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ENUM_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;枚举的命名规范：单个大写字母。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 注解名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;TypeName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ANNOTATION_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;注解的命名规范：单个大写字母。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 类的类型参数 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;ClassTypeParameterName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;类的类型参数的命名规范：单个大写字母。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 接口的类型参数 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;InterfaceTypeParameterName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;接口的类型参数的命名规范：单个大写字母。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 方法的类型参数 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MethodTypeParameterName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法的类型参数的命名规范：单个大写字母。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 常量--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;ConstantName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;常量的命名规范：大写字母或下划线。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 静态变量 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;StaticVariableName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;format&quot;</span> <span class="attr">value</span>=<span class="string">&quot;^(s|is)[A-Z][a-zA-Z0-9]*$&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;静态变量的命名规范：s前缀+大写驼峰（布尔型的变量可使用 is 前缀）。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 成员变量 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MemberName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;format&quot;</span> <span class="attr">value</span>=<span class="string">&quot;^(m|is)[A-Z][a-zA-Z0-9]*$&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;成员变量的命名规范：m前缀+大写驼峰（布尔型的变量可使用 is 前缀）。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 方法名--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MethodName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法名的命名规范：小写驼峰。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 方法参数 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;ParameterName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法参数的命名规范：小写驼峰。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 局部的 final 类型变量 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;LocalFinalVariableName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;局部的 final 类型变量的命名规范：小写驼峰。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 局部的非 final 类型变量 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;LocalVariableName&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;name.invalidPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;局部的非 final 类型变量的命名规范：小写驼峰。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 大小长度检查，参考：http://checkstyle.sourceforge.net/config_sizes.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 根类数量 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;OuterTypeNumber&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;maxOuterTypes&quot;</span> <span class="attr">value</span>=<span class="string">&quot;一个文件只能有一个根类。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 内部类数量 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;AnonInnerLength&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;max&quot;</span> <span class="attr">value</span>=<span class="string">&quot;60&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;maxLen.anonInner&quot;</span> <span class="attr">value</span>=<span class="string">&quot;内部类过长或数量过多，请将内部类抽离成独立类。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 每个类型的方法数量 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MethodCount&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;maxTotal&quot;</span> <span class="attr">value</span>=<span class="string">&quot;30&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;too.many.methods&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法数量过多，请遵守单一职责设计原则。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 方法的参数数量 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;ParameterNumber&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;max&quot;</span> <span class="attr">value</span>=<span class="string">&quot;5&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;METHOD_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;maxParam&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法的参数不能超过5个，请使用对象包装。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 方法长度 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MethodLength&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tokens&quot;</span> <span class="attr">value</span>=<span class="string">&quot;METHOD_DEF&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;max&quot;</span> <span class="attr">value</span>=<span class="string">&quot;60&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;maxLen.method&quot;</span> <span class="attr">value</span>=<span class="string">&quot;方法做的事情太多，请拆分成多个方法。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 单行代码长度 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;LineLength&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;max&quot;</span> <span class="attr">value</span>=<span class="string">&quot;120&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;maxLineLen&quot;</span> <span class="attr">value</span>=<span class="string">&quot;单行代码过长，请换行。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 代码设计检查，参考：http://checkstyle.sourceforge.net/config_coding.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- swtich 块中 default 的位置 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;DefaultComesLast&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;default.comes.last&quot;</span> <span class="attr">value</span>=<span class="string">&quot;default 应为 switch 块最后一个元素。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- swtich 块缺少 default --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MissingSwitchDefault&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;missing.switch.default&quot;</span> <span class="attr">value</span>=<span class="string">&quot;switch 块未定义 default 。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 空语句 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;EmptyStatement&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;empty.statement&quot;</span> <span class="attr">value</span>=<span class="string">&quot;请移除空语句。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- equals 避免 null --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;EqualsAvoidNull&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;equals.avoid.null&quot;</span> <span class="attr">value</span>=<span class="string">&quot;为防止空指针异常，字符串常量应出现在 equals 比较的左侧。&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;equalsIgnoreCase.avoid.null&quot;</span> <span class="attr">value</span>=<span class="string">&quot;为防止空指针异常，字符串常量应出现在 equals 比较的左侧。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- equals 和 hasCode --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;EqualsHashCode&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;equals.noEquals&quot;</span> <span class="attr">value</span>=<span class="string">&quot;重载 &#x27;&#x27;hashCode()&#x27;&#x27; 方法后，必须重载 &#x27;&#x27;equals()&#x27;&#x27; 方法。&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;equals.noHashCode&quot;</span> <span class="attr">value</span>=<span class="string">&quot;重载 &#x27;&#x27;equals()&#x27;&#x27; 方法后，必须重载 &#x27;&#x27;hashCode()&#x27;&#x27; 方法。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 字符串比较 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;StringLiteralEquality&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;string.literal.equality&quot;</span> <span class="attr">value</span>=<span class="string">&quot;字符串应使用 &#x27;&#x27;equals()&#x27;&#x27; 方法进行比较，而非 &#x27;&#x27;&#123;0&#125;&#x27;&#x27;。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 魔法数字 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MagicNumber&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;magic.number&quot;</span> <span class="attr">value</span>=<span class="string">&quot;请将 &#x27;&#x27;&#123;0&#125;&#x27;&#x27; 替换成常量。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 变量声明 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;OneStatementPerLine&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;multiple.statements.line&quot;</span> <span class="attr">value</span>=<span class="string">&quot;每行只能声明一个变量。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 变量定义 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;MultipleVariableDeclarations&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;multiple.variable.declarations&quot;</span> <span class="attr">value</span>=<span class="string">&quot;每行只能定义一个变量。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- for 嵌套层级 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;NestedForDepth&quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- value 下标从0开始 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;max&quot;</span> <span class="attr">value</span>=<span class="string">&quot;2&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;nested.for.depth&quot;</span> <span class="attr">value</span>=<span class="string">&quot;至多 3 层 for 嵌套。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- if 嵌套层级 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;NestedIfDepth&quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- value 下标从0开始 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;max&quot;</span> <span class="attr">value</span>=<span class="string">&quot;2&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;nested.if.depth&quot;</span> <span class="attr">value</span>=<span class="string">&quot;至多 3 层 if 嵌套。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- try 嵌套层级 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;NestedTryDepth&quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- value 下标从0开始 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;max&quot;</span> <span class="attr">value</span>=<span class="string">&quot;2&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;nested.try.depth&quot;</span> <span class="attr">value</span>=<span class="string">&quot;至多 3 层 try 嵌套。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 简化布尔型的返回值 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;SimplifyBooleanReturn&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;simplify.boolReturn&quot;</span> <span class="attr">value</span>=<span class="string">&quot;不必要的条件逻辑。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- regexp 检查，参考：http://checkstyle.sourceforge.net/config_regexp.html --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 禁止 java.lang.System 打印日志 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span> <span class="attr">name</span>=<span class="string">&quot;Regexp&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;format&quot;</span> <span class="attr">value</span>=<span class="string">&quot;System\.(out|err)\.print*&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;illegalPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">message</span> <span class="attr">key</span>=<span class="string">&quot;illegal.regexp&quot;</span> <span class="attr">value</span>=<span class="string">&quot;请使用 Log 打印日志。&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CheckStyle%E6%A3%80%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">CheckStyle检验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E5%88%B6CheckStyle"><span class="toc-number">2.</span> <span class="toc-text">定制CheckStyle</span></a></li></ol>
+      </div>
+    
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    夏眠鱼
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+<!-- fancybox js -->
+
+  <script src="/lib/fancybox/fancybox.umd.min.js" defer></script>
+
+</body>
+</html>

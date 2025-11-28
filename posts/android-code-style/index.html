@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="团队开发中，统一命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。 Java文件采用驼峰命名法 Activity以Activity作为后缀，如：OrderActivity Fragment以Fragment作为后缀，如：NewsFragment Adapter以Adapter作为后缀，如：NewsAdapter 常量全部大写，单词之间用下划线分开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android命名规范">
+<meta property="og:url" content="http://xiamianyu.github.io/posts/android-code-style/index.html">
+<meta property="og:site_name" content="夏眠鱼">
+<meta property="og:description" content="团队开发中，统一命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。 Java文件采用驼峰命名法 Activity以Activity作为后缀，如：OrderActivity Fragment以Fragment作为后缀，如：NewsFragment Adapter以Adapter作为后缀，如：NewsAdapter 常量全部大写，单词之间用下划线分开">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-07-28T10:28:40.000Z">
+<meta property="article:modified_time" content="2025-11-19T08:10:47.812Z">
+<meta property="article:author" content="夏眠鱼">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Android命名规范</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src="/lib/mathjax/latest.js?config=TeX-MML-AM_CHTML" async></script>
+	
+	
+	<!-- mermaid -->
+	
+		<script>
+		  window.__mermaidInitConfig = {
+			theme: 'default'
+		  };
+		</script>
+		<script src="/lib/mermaid/11.12.0/mermaid.min.js" defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+	
+
+  <!-- fancybox css -->
+  
+    <link rel="preload" href="/lib/fancybox/fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fancybox/fancybox.min.css"></noscript>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/posts/little-dream/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/posts/leader-seat/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+    </span>
+    <br/>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">Java文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity"><span class="toc-number">2.</span> <span class="toc-text">Activity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fragment"><span class="toc-number">3.</span> <span class="toc-text">Fragment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Adapter"><span class="toc-number">4.</span> <span class="toc-text">Adapter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="toc-number">6.</span> <span class="toc-text">静态变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">7.</span> <span class="toc-text">成员变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">8.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E4%BB%B6%E5%8F%98%E9%87%8F"><span class="toc-number">9.</span> <span class="toc-text">控件变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout"><span class="toc-number">10.</span> <span class="toc-text">layout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout-item"><span class="toc-number">11.</span> <span class="toc-text">layout-item</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout-include-merge"><span class="toc-number">12.</span> <span class="toc-text">layout-include&#x2F;merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout-id"><span class="toc-number">13.</span> <span class="toc-text">layout-id</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#drawable-xml"><span class="toc-number">14.</span> <span class="toc-text">drawable-xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#drawable-png"><span class="toc-number">15.</span> <span class="toc-text">drawable-png</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string-xml"><span class="toc-number">16.</span> <span class="toc-text">string.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#colors-xml"><span class="toc-number">17.</span> <span class="toc-text">colors.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dimens-xml"><span class="toc-number">18.</span> <span class="toc-text">dimens.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#style-xml"><span class="toc-number">19.</span> <span class="toc-text">style.xml</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Android命名规范
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/" class="p-name" itemprop="name">夏眠鱼</a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2016-07-28T10:28:40.000Z" class="dt-published" itemprop="datePublished">2016/07/28</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/android/">android</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>团队开发中，统一命名规范，可以减少组员之间交接和沟通的成本，代码规范没有严格的好与坏，只要做到见名知义，方便梳理即可。</p>
+<h2 id="Java文件"><a href="#Java文件" class="headerlink" title="Java文件"></a>Java文件</h2><p>采用驼峰命名法</p>
+<h2 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h2><p>以<code>Activity</code>作为后缀，如：<code>OrderActivity</code></p>
+<h2 id="Fragment"><a href="#Fragment" class="headerlink" title="Fragment"></a>Fragment</h2><p>以<code>Fragment</code>作为后缀，如：<code>NewsFragment</code></p>
+<h2 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h2><p>以<code>Adapter</code>作为后缀，如：<code>NewsAdapter</code></p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>全部大写，单词之间用下划线分开，如：public final String CACHE_PATH &#x3D; “xxx”</p>
+<h2 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h2><p>首字母小写，加前缀s，如：public static String sName</p>
+<h2 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h2><p>首字母小写，加前缀m，如：private int mAge</p>
+<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><p>首字母小写，不用加前缀，如：int age</p>
+<h2 id="控件变量"><a href="#控件变量" class="headerlink" title="控件变量"></a>控件变量</h2><p>Android的控件变量，采用“逻辑功能+控件缩写”的形式，如：登陆按钮为loginBtn。我有个强迫症，变量声明也要排版一下，static变量放在最前面，控件变量放中间，普通成员变量放在后面，示例如下：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">// static 变量</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">static</span> <span class="keyword">final</span> <span class="type">String</span> PHOTO = <span class="string">&quot;photo&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控件变量</span></span><br><span class="line"><span class="keyword">private</span> ImageView mPhotoIv;</span><br><span class="line"><span class="keyword">private</span> FloatingActionButton mEditFbtn;</span><br><span class="line"><span class="keyword">private</span> EditText mDescriptionEdt;</span><br><span class="line"><span class="keyword">private</span> EditText mAddressEdt;</span><br><span class="line"><span class="keyword">private</span> EditText mTimeEdt;</span><br><span class="line"><span class="keyword">private</span> EditText mCategoryEdt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 普通成员变量</span></span><br><span class="line"><span class="keyword">private</span> Photo mPhoto;</span><br></pre></td></tr></table></figure>
+
+<h2 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h2><p>格式</p>
+<ul>
+<li>界面类型_模块.xml</li>
+<li>界面类型_模块_描述.xml</li>
+</ul>
+<p>例如</p>
+<ul>
+<li>activity_login.xml</li>
+<li>fragment_login.xml</li>
+<li>dialog_login.xml</li>
+</ul>
+<h2 id="layout-item"><a href="#layout-item" class="headerlink" title="layout-item"></a>layout-item</h2><p>格式</p>
+<ul>
+<li>item_控件类型_描述</li>
+<li>item_控件类型_模块_描述</li>
+</ul>
+<p>例如</p>
+<ul>
+<li>item_listview_order.xml</li>
+<li>item_gridview_main_photo.xml</li>
+</ul>
+<h2 id="layout-include-merge"><a href="#layout-include-merge" class="headerlink" title="layout-include&#x2F;merge"></a>layout-include&#x2F;merge</h2><p>格式</p>
+<ul>
+<li>包含类型_模块_描述</li>
+<li>包含类型_控件类型_描述</li>
+</ul>
+<p>例如</p>
+<ul>
+<li>merge_detail_footer.xml</li>
+<li>include_refreshview_header.xml</li>
+</ul>
+<h2 id="layout-id"><a href="#layout-id" class="headerlink" title="layout-id"></a>layout-id</h2><p>格式：模块名_控件类型_描述</p>
+<p>例如：activity_category.xml文件下显示姓名的TextView，其命名为<code>android:id=&quot;@+id/category_tv_name&quot;</code></p>
+<h2 id="drawable-xml"><a href="#drawable-xml" class="headerlink" title="drawable-xml"></a>drawable-xml</h2><p>格式</p>
+<ul>
+<li>common_描述：多个模块共用  </li>
+<li>模块_描述：单个某块共用</li>
+</ul>
+<p>例如</p>
+<ul>
+<li>common_delete.xml (共用)</li>
+<li>theme_add.xml （添加主题按钮）</li>
+</ul>
+<h2 id="drawable-png"><a href="#drawable-png" class="headerlink" title="drawable-png"></a>drawable-png</h2><p>格式</p>
+<ul>
+<li>类型_common_描述：多个模块共用  </li>
+<li>类型_模块_描述：单个模块共用  </li>
+<li>类型_模块_描述_状态：配合动态风格使用</li>
+</ul>
+<p>例如</p>
+<ul>
+<li>ic_common_delete.png (删除按钮，多个模块共用)  </li>
+<li>ic_accont_head.png（账户模块下的头像）  </li>
+<li>ic_theme_add_nomal.png (添加主题按钮的正常状态)  </li>
+<li>ic_theme_add_pressed.png (添加主题按钮的被按下状态)</li>
+</ul>
+<h2 id="string-xml"><a href="#string-xml" class="headerlink" title="string.xml"></a>string.xml</h2><p>Java文件和布局文件中，除了注释可以是中文，其他文字性说明都要放入string.xml中统一管理，它们在string.xml中的命名规范如下：</p>
+<p>格式</p>
+<ul>
+<li>控件有声明id：控件id</li>
+<li>控件无声明id：模块_描述</li>
+</ul>
+<p>例如</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">”account_btn_login”</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">”account_forget_pwd”</span>&gt;</span>忘记密码<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="colors-xml"><a href="#colors-xml" class="headerlink" title="colors.xml"></a>colors.xml</h2><p>只定义颜色表，colors.xml文件中只是映射颜色的一个RGBA值。</p>
+<p>糟糕的例子</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;listview_divider&quot;</span>&gt;</span>#cfcfd2<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;listview_normal&quot;</span>&gt;</span>#ffffff<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;listview_selected&quot;</span>&gt;</span>#fafafa<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;actionbar_item_normal&quot;</span>&gt;</span>#20699f<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;actionbar_item_selected&quot;</span>&gt;</span>#105085<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用这种格式，你会非常容易的开始重复定义RGBA值，如果需要改变基本色变的很复杂，而且这些定义是跟一些环境关联起来的，如button，应该放到一个按钮风格中，而不是在color.xml文件中。</p>
+<p>好的例子</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- grayscale --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;white&quot;</span>&gt;</span>#FFFFFF<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;gray_light&quot;</span>&gt;</span>#DBDBDB<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;gray&quot;</span>&gt;</span>#939393<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;gray_dark&quot;</span> &gt;</span>#5F5F5F<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- basic colors --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;green&quot;</span>&gt;</span>#27D34D<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;blue&quot;</span>&gt;</span>#2A91BD<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;orange&quot;</span>&gt;</span>#FF9D2F<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;red&quot;</span>&gt;</span>#FF432F<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="dimens-xml"><a href="#dimens-xml" class="headerlink" title="dimens.xml"></a>dimens.xml</h2><p>像对待colors.xml一样对待dimens.xml文件，看个好的例子:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- font sizes --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;font_larger&quot;</span>&gt;</span>22sp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;font_large&quot;</span>&gt;</span>18sp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;font_normal&quot;</span>&gt;</span>15sp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;font_small&quot;</span>&gt;</span>12sp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- typical spacing between two views --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;spacing_huge&quot;</span>&gt;</span>40dp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;spacing_large&quot;</span>&gt;</span>24dp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;spacing_normal&quot;</span>&gt;</span>14dp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;spacing_small&quot;</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;spacing_tiny&quot;</span>&gt;</span>4dp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- typical sizes of views --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;button_height_tall&quot;</span>&gt;</span>60dp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;button_height_normal&quot;</span>&gt;</span>40dp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dimen</span> <span class="attr">name</span>=<span class="string">&quot;button_height_short&quot;</span>&gt;</span>32dp<span class="tag">&lt;/<span class="name">dimen</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="style-xml"><a href="#style-xml" class="headerlink" title="style.xml"></a>style.xml</h2><p>Android中，styles这个文件名称并没有作用，起作用的是在文件里xml的 <code>&lt;style&gt;</code>标签。因此你可以有多个style文件，如：    </p>
+<ul>
+<li>styles.xml</li>
+<li>style_home.xml</li>
+<li>styles_forms.xml</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">Java文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity"><span class="toc-number">2.</span> <span class="toc-text">Activity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fragment"><span class="toc-number">3.</span> <span class="toc-text">Fragment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Adapter"><span class="toc-number">4.</span> <span class="toc-text">Adapter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="toc-number">6.</span> <span class="toc-text">静态变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">7.</span> <span class="toc-text">成员变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">8.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E4%BB%B6%E5%8F%98%E9%87%8F"><span class="toc-number">9.</span> <span class="toc-text">控件变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout"><span class="toc-number">10.</span> <span class="toc-text">layout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout-item"><span class="toc-number">11.</span> <span class="toc-text">layout-item</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout-include-merge"><span class="toc-number">12.</span> <span class="toc-text">layout-include&#x2F;merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout-id"><span class="toc-number">13.</span> <span class="toc-text">layout-id</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#drawable-xml"><span class="toc-number">14.</span> <span class="toc-text">drawable-xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#drawable-png"><span class="toc-number">15.</span> <span class="toc-text">drawable-png</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string-xml"><span class="toc-number">16.</span> <span class="toc-text">string.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#colors-xml"><span class="toc-number">17.</span> <span class="toc-text">colors.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dimens-xml"><span class="toc-number">18.</span> <span class="toc-text">dimens.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#style-xml"><span class="toc-number">19.</span> <span class="toc-text">style.xml</span></a></li></ol>
+      </div>
+    
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    夏眠鱼
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+<!-- fancybox js -->
+
+  <script src="/lib/fancybox/fancybox.umd.min.js" defer></script>
+
+</body>
+</html>
