@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="上大学之前，接触电脑只能在网吧里，当时以为电脑系统都是Windows的，直到上了大学才知道还有其他的。 大一暑假，唐老师的嵌入式实验室有招新培训，我想都没想就报名了。培训前需要分组，分软件组和底层组，我一看到底层两个字就选了，心想掌握底层技术更有实力。软件组偏应用开发，底层组偏驱动开发。 培训期间，师兄第一件事是要求我们安装Ubuntu Desktop，可以选择双系统安装或者虚拟机安装，小白建议虚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="结缘Ubuntu">
+<meta property="og:url" content="http://xiamianyu.github.io/posts/love-ubuntu/index.html">
+<meta property="og:site_name" content="夏眠鱼">
+<meta property="og:description" content="上大学之前，接触电脑只能在网吧里，当时以为电脑系统都是Windows的，直到上了大学才知道还有其他的。 大一暑假，唐老师的嵌入式实验室有招新培训，我想都没想就报名了。培训前需要分组，分软件组和底层组，我一看到底层两个字就选了，心想掌握底层技术更有实力。软件组偏应用开发，底层组偏驱动开发。 培训期间，师兄第一件事是要求我们安装Ubuntu Desktop，可以选择双系统安装或者虚拟机安装，小白建议虚">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-05T10:28:54.000Z">
+<meta property="article:modified_time" content="2026-03-10T09:49:46.760Z">
+<meta property="article:author" content="夏眠鱼">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>结缘Ubuntu</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src="/lib/mathjax/latest.js?config=TeX-MML-AM_CHTML" async></script>
+	
+	
+	<!-- mermaid -->
+	
+		<script>
+		  window.__mermaidInitConfig = {
+			theme: 'default'
+		  };
+		</script>
+		<script src="/lib/mermaid/11.12.0/mermaid.min.js" defer onload="try{if(window.mermaid){ mermaid.initialize(window.__mermaidInitConfig); }}catch(e){}"></script>
+	
+
+  <!-- fancybox css -->
+  
+    <link rel="preload" href="/lib/fancybox/fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fancybox/fancybox.min.css"></noscript>
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夏眠鱼" type="application/atom+xml">
+</head>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/posts/path-to-mobdev/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/posts/love-mbp/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+    </span>
+    <br/>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        结缘Ubuntu
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/" class="p-name" itemprop="name">夏眠鱼</a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-10-05T10:28:54.000Z" class="dt-published" itemprop="datePublished">2025/10/05</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/memoir/">memoir</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>上大学之前，接触电脑只能在网吧里，当时以为电脑系统都是Windows的，直到上了大学才知道还有其他的。</p>
+<p>大一暑假，唐老师的嵌入式实验室有招新培训，我想都没想就报名了。培训前需要分组，分软件组和底层组，我一看到底层两个字就选了，心想掌握底层技术更有实力。软件组偏应用开发，底层组偏驱动开发。</p>
+<p>培训期间，师兄第一件事是要求我们安装Ubuntu Desktop，可以选择双系统安装或者虚拟机安装，小白建议虚拟机安装，Ubuntu Desktop + Virtual Box，我废了九牛二虎之力才在虚拟机上安装成功。我的笔记本配置非常一般，开了虚拟机后就更卡了。如果时光可以倒流，我会选择虚拟机安装Ubuntu Server，宿主机通过SSH登录Server进行操作，可能当初师兄选择Ubuntu Desktop是希望我们能完全在Ubuntu中沉浸式学习吧。</p>
+<p>培训的内容涵盖了大学四年的专业课，对于大一新生来说非常烧脑，唯独记住《鸟哥的私房菜》这本书和师兄的一句话：遇到不会的问题，找男人。也即是man手册，一手资料，全英文，能锻炼英文阅读能力。我那时候的感觉就是，师兄们对自己的要求好高，膜拜。</p>
+<p>培训期间，我沉迷于在Ubuntu上安装各种酷炫的效果，如3D桌面，火焰字等，学习汇报时特别尴尬，别人都是认真在学习编程，而我却在搞这些无聊的玩意。后来在其他实验室接触过Fedora，对比过后，还是更喜欢Ubuntu，特别是Ubuntu字体，有种莫名的美感，也试着在MacBook中使用Ubuntu字体，可呈现出来的效果总是差点意思，唯独在Ubuntu上效果最佳。</p>
+<p>培训最后，我们需要开发一个练手程序，用C语言实现局域网1v1聊天，为此我还<br>特意买了一本《Linux程序设计》来学习，花了不少时间才完成，完成后，师兄又让我们改造成多人聊天，这个我到培训结束都没有完成。</p>
+<p>培训结束，我没有通过考核，非常遗憾。有个舍友进了软件组，说进去后基本也是自学，师兄都出去实习了，老师也很少带。有个同批进去的大我们一届的师兄，自学成才，能开发出摄像头驱动，可通过程序控制摄像头转动等，还开讲座给我们讲解具体的原理，我听得云里雾里的。</p>
+<p>实验室有一个师兄我印象特别深刻，人长得很帅，高中时就自学单片机开发，进入大学之后目标就很明确，专攻嵌入式开发，毕业后在北京工作，月薪大几万，唐老师在课堂上也时不时拿实验室的师兄们来勉励我们，可惜我们依旧是上课迟到发呆玩手机，课程设计不及格被骂得狗血淋头，恨铁不成钢。</p>
+<p>虽然没能进入实验室，但是我对自己有了一点清醒的认识，自己比较适合有界面的开发。底层技术虽然很有竞争力，但我这种急性子耐不住寂寞去钻研，反而视觉类的东西，所见即所得，能很快反馈，比较适合我，这也就是我后来能坚持做App开发的原因。</p>
+<p>参加工作后，买了MacBook，以为就此和Ubuntu说拜拜了。有次帮同事编译一个开源的GNU程序，MacBook老是编译失败，又找不到根因，索性切换到Ubuntu下编译，结果编译成功了，这让我重新思考MacBook是不是不太适合做开发。好在自己基本做业务开发，对开源软件二次开发比较少。</p>
+<p>MacBook我基本是系统一有更新就马上升级，用到第五年的时候已经有些卡顿，换成Ubuntu后流畅很多。不过国内小微企业大多用微信、QQ等软件沟通，这些软件要么不支持Linux，要么Linux版本功能非常简陋，想完全在Linux下工作比较困难。</p>
+<p>近几年，微信开始支持Linux，QQ Linux版本也发布重大更新，我立马将macOS换成Ubuntu，多年的愿望得以实现，老古董再次焕发活力。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2026
+    夏眠鱼
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+<!-- fancybox js -->
+
+  <script src="/lib/fancybox/fancybox.umd.min.js" defer></script>
+
+</body>
+</html>
